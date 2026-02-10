@@ -1,0 +1,71 @@
+<!-- patTemplate:tmpl name="content" --><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <h2> {APPLICATION_MODULE} </h2>   
+	<!--form method="POST" action="{URL_ADD}" class="form-common">
+      <input type="hidden" name="act" value="ViewAddMbkm">
+      <input class="input-disclaimer btn-sm btn-info" type="submit" name="btnAdd" value="Tambah">
+   </form>
+   <br-->
+   <form method="POST" action="{URL_CARI}" class="form-common">
+      <input type="text" name="cari" value="{CARI}" placeholder="masukan nim / nama">
+      <input class="input-disclaimer btn-sm btn-info" type="submit" name="btnCari" value="Cari">
+   </form>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   <label text-align="right">Total : {TOTAL}</label>
+   <div class="table-responsive">
+		<table class="table-common" width="99%">
+			<tr>
+				<th width="5%"> No </th>
+				<th width="8%"> Aksi </th>
+				<th width="12%"> Nim </th>
+				<th width="15%"> Nama </th>
+				<th width="25%"> Kegiatan </th>
+				<th width="15%"> Tanggal </th>
+				<th width="20%"> Komentar </th>
+			</tr>
+			<!-- patTemplate:tmpl name="list_announcement" type="condition" conditionvar="IS_EMPTY" -->
+				<!-- patTemplate:sub condition="YES" -->
+				<tr>
+					<td colspan="7"><!-- patTemplate:link name="empty_box" src="empty_box" / --></td>
+				</tr>
+				<!-- /patTemplate:sub --> 
+				<!-- patTemplate:sub condition="NO" -->
+					<!-- patTemplate:tmpl name="informasi_item" type="condition" conditionvar="ODDEVEN" -->
+						<!-- patTemplate:sub condition="ODD" -->
+						<tr>
+							<td class="text-center">{INFO_NOMER}</td>
+							<td class="text-center table-common-links" >
+								<!--a href="{INFO_URL_DELETE}"><img src="images/button-delete.gif" alt="Hapus" onClick="return ValidateDelete()"/></a-->
+								<a href="{INFO_URL_KOMENTAR}"><img src="images/button-edit.gif" alt="Ubah" /></a>
+							</td>
+							<td class="text-center">{INFO_NIM}</td>
+							<td>{INFO_NAMA}</td>
+							<td>{INFO_KEGIATAN}</td>
+							<td>{INFO_DATE}</td>
+							<td>{INFO_KOMENTAR}</td>
+						</tr>
+						<!-- /patTemplate:sub --> 
+						<!-- patTemplate:sub condition="EVEN" -->
+						<tr class="table-common-even">
+							<td class="text-center">{INFO_NOMER}</td>
+							<td class="text-center table-common-links" >
+								<!--a href="{INFO_URL_DELETE}"><img src="images/button-delete.gif" alt="Hapus" onClick="return ValidateDelete()"/></a-->
+								<a href="{INFO_URL_KOMENTAR}"><img src="images/button-edit.gif" alt="Ubah" /></a>
+							</td>
+							<td class="text-center">{INFO_NIM}</td>
+							<td>{INFO_NAMA}</td>
+							<td>{INFO_KEGIATAN}</td>
+							<td>{INFO_DATE}</td>
+							<td>{INFO_KOMENTAR}</td>
+						</tr>
+						<!-- /patTemplate:sub --> 
+					<!-- /patTemplate:tmpl -->
+			
+					<!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+				<!-- /patTemplate:sub -->
+			<!-- /patTemplate:tmpl -->
+		</table>
+	</div>
+	<br>
+		
+   
+<!-- /patTemplate:tmpl --> <!-- end of content-->

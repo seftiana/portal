@@ -1,0 +1,103 @@
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript" type="text/javascript">
+<!--
+function popitup(url) {
+	newwindow=window.open(url,'name','height=500,width=500,scrollbars=yes');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+
+// -->
+</script>
+
+	<h2>Daftar Peserta Kelas</h2>
+	<table class="table-common">
+		<tr>
+			<th width="5%">&nbsp</th>
+			<th width="5%">No</th>
+			<th width="15%">{LABEL_NIM}</th>
+			<th width="50%">Nama</th>
+			<th width="25%">Program Studi</th>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="chk[]" /></td>
+			<td>1</td>
+			<td><a href="{URL}" target="_blank" onclick="return popitup('{URL}')">01131004</a></td>
+			<td>LENI SARI</td>
+			<td>Farmasi</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="chk[]" /></td>
+			<td>2</td>
+			<td><a href="{URL}" target="_blank"  onclick="return popitup('{URL}')">01131019</a></td>
+			<td>LIZA ERLINA</td>
+			<td>Farmasi</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="chk[]" /></td>
+			<td>3</td>
+			<td><a href="{URL}" target="_blank"  onclick="return popitup('{URL}')">01131020</a></td>
+			<td>SHIERLY MARGONO</td>
+			<td>Farmasi</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="chk[]" /></td>
+			<td>4</td>
+			<td><a href="{URL}" target="_blank"  onclick="return popitup('{URL}')">01131018</a></td>
+			<td>YANI ORYZA</td>
+			<td>Farmasi</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="chk[]" /></td>
+			<td>5</td>
+			<td><a href="{URL}" target="_blank"  onclick="return popitup('{URL}')">01131016</a></td>
+			<td>MIRZA KESUMA</td>
+			<td>Farmasi</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="chk[]" /></td>
+			<td>6</td>
+			<td><a href="{URL}" target="_blank"  onclick="return popitup('{URL}')">01131014</a></td>
+			<td>HELMI ADE HANDAYANI</td>
+			<td>Farmasi</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="chk[]" /></td>
+			<td>7</td>
+			<td><a href="{URL}" target="_blank"  onclick="return popitup('{URL}')">01131007</a></td>
+			<td>WENDRA ROVIKTO</td>
+			<td>Farmasi</td>
+		</tr>  
+		<tr>
+			<td><input type="checkbox" name="chk[]" /></td>
+			<td>8</td>
+			<td><a href="{URL}" target="_blank"  onclick="return popitup('{URL}')">01131021</a></td>
+			<td>MITTHA LUSIANTI</td>
+			<td>Farmasi</td>
+		</tr> 
+		<tr>
+			<td><input type="checkbox" name="chk[]" /></td>
+			<td>9</td>
+			<td><a href="{URL}" target="_blank"  onclick="return popitup('{URL}')">01131022</a></td>
+			<td>AGUSMAN</td>
+			<td>Farmasi</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="chk[]" /></td>
+			<td>10</td>
+			<td><a href="{URL}" target="_blank"  onclick="return popitup('{URL}')">01131023</a></td>
+			<td>FAJRIA QUDSI</td>
+			<td>Farmasi</td>
+		</tr>
+		<tr>
+			<th colspan="5">
+				<div align="left">
+				  <input type="submit" name="conf" value="Conference" class="input-disclaimer"  onclick="return popitup('{URL_CONF}')" />
+		        </div></th>
+		</tr>
+	</table>
+
+
+
+
+<!-- /patTemplate:tmpl -->

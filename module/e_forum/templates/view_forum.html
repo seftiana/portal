@@ -1,0 +1,115 @@
+<!-- patTemplate:tmpl name="content" -->
+<!-- patTemplate:tmpl name="form_filter" visibility="hidden" -->
+<h2> Daftar Forum </h2>
+<form name="form_pengumuman" action="{URL_ACTION}" class="form-common" method="post">
+	
+  <table class="table-list" width="100%">
+    <!-- patTemplate:tmpl name="view_unit" visibility="hidden" -->
+	<tr>
+		<th>Unit</th>
+		<td>
+			<select name="unit">
+				<!-- patTemplate:tmpl name="list_unit" -->
+				<option value="{UNIT_ALAMAT}" {SELECT_{PRODI_ALAMAT}}>{UNIT_NAMA}</option>
+				<!-- /patTemplate:tmpl -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Program Studi</th>
+		<td>
+			<select name="prodi">
+				<!-- patTemplate:tmpl name="list_prodi" -->
+				<option value="{PRODI_ID}" {SELECT_{PRODI_ID}}>{PRODI_NAMA}</option>
+				<!-- /patTemplate:tmpl -->
+			</select>
+			<input type="submit" name="getUnit" value="Cari" class="input-disclaimer" />
+		</td>
+	</tr>
+	<!-- /patTemplate:tmpl -->
+    <tr>
+    	<th>Pilihan Semester</th>
+        <td width="70%">
+            <select name="semId">
+					<!-- patTemplate:tmpl name="list_semester" -->
+                <option value="{SEM_ID}"{SELECT_{SEM_ID}}>{SEM_SEMESTER} {SEM_TAHUN}</option>
+					 <!-- /patTemplate:tmpl -->
+            </select>
+
+			<input type="submit" name="getSemester" value="Ganti" class="input-disclaimer" />
+        </td>
+    </tr>
+    <tr>
+        <th>
+        	Mata Kuliah       
+        </th>
+        <td>
+            <select name="matkul">
+					<!-- patTemplate:tmpl name="matkul" -->
+                <option value="{MATKUL_ID}"{SELECT_{MATKUL_ID}}>{MATKUL_KLS} - {MATKUL_NAMA}</option>
+					 <!-- /patTemplate:tmpl -->
+            </select>
+        </td>    
+    </tr>
+	
+    <tr>
+          <th colspan=2><input type="submit" name="cari" value="Tampilkan" class="input-disclaimer" /> </th>
+    </tr>
+  </table>
+</form> 
+<!-- /patTemplate:tmpl -->
+  <div id="maincontent">  
+   <!-- patTemplate:tmpl name="show_forum" visibility="hidden" -->      
+    
+   <table class="table-common" width="100%">
+      <tr align="center">
+         <th height="25" width="10"><strong>No.</strong></th>
+         <th width="250"><strong>Forum </strong></th>   
+         <th width="20"><strong>Topik </strong></th>
+         <th width="20"><strong>Terakhir </strong></th>
+         <!-- patTemplate:tmpl name="aksi" visibility="hidden" -->
+         <th width="20" colspan="2"><strong>Aksi </strong></th>
+         <!-- /patTemplate:tmpl -->
+      </tr>
+      <!-- patTemplate:tmpl name="list_forum" -->
+      <tr{EVEN}>
+         <td align="center">{FORUM_NO}</td>   
+         <td><a href="{FORUM_THREAD}">{FORUM_NAMA}</a> <br>
+         {FORUM_DESK}</td>
+         <td align="center">{FORUM_JUMLAH_THREAD}</td>
+         <td align="center">{FORUM_LAST_POST}</td>
+         <!-- patTemplate:tmpl name="link_aksi" visibility="hidden" -->
+         <td class="table-common-links"><a href="{URL_EDIT}"><img src="images/button-edit.gif" alt="Edit" /></a></td>
+         <td class="table-common-links"><a href="{URL_DELETE}"><img src="images/button-delete.gif" alt="Delete" /></a></td>         
+         <!-- /patTemplate:tmpl -->
+      </tr>   
+      <!-- /patTemplate:tmpl -->  
+      <!-- patTemplate:tmpl name="show_warning" visibility="hidden" -->
+         <tr>
+            <td colspan="6" align="center"><i> -- Tidak ada forum baru. --</i></td>
+         </tr>
+      <!-- /patTemplate:tmpl -->
+      
+         
+   </table>  
+	
+		<!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+	<!-- /patTemplate:tmpl -->
+   
+   <!-- patTemplate:tmpl name="tambah" visibility="hidden" -->
+	<form action="{ADD_ACTION}" method="POST" >
+         <div align="right"><input class="input-disclaimer" type="submit" name="tambah" value="Tambah" onclick="return checkMatkul()"></div>
+   </form>
+   
+   <script language="javascript">
+      function checkMatkul() {
+         if (document.forms[0].mkkurId.value == '') {
+            alert('Silahkan pilih mata kuliah terlebih dahulu');
+            return false;
+         }
+         location.href="{URL_ADD}"+document.forms[0].mkkurId.value;
+      }
+   </script>
+   <!-- /patTemplate:tmpl -->
+ </div>
+<!-- /patTemplate:tmpl -->

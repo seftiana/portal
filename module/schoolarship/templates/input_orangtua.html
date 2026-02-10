@@ -1,0 +1,88 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Daftar Beasiswa</h2>
+	<br/>
+   <h5>Keterangan :</h5>
+	<p>Daftar Beasiswa digunakan mendaftarkan beasiswa. 
+	Aplikan diharuskan mengisi data orang tua dan data saudara kandung, sebelum dapat melakukan pendaftaran. 
+	Setelah terdaftar, aplikan diharuskan melengkapi berkas-berkas yang dibutuhkan ke bagian kemahasiswaan.
+	</p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <form class="form-common" method="POST" action="{URL_PROCESS}" name="frmInput" >
+      <input type="hidden" name="doact" value="add">
+      <table class="table-form" width="100%">
+         <tr>
+            <th colspan="2"><b>Form Tambah Data Orang Tua</b>
+               <input name="ortu" type="hidden" value="{ORTU_ID_ORTU}" />
+            </th>
+         </tr>
+         <tr>
+            <th width="100">Nama Orang Tua (*)</th>
+            <td>: <input name="txtNamaOrtu" type="text" maxlength="255" size="30" value="{ORTU_NAMA}" /></td>         
+         </tr>
+         <tr>
+            <th width="100">Pekerjaan (*)</th>
+            <td>: <input name="txtPekerjaanOrtu" type="text" maxlength="255" size="30" value="{ORTU_PEKERJAAN}" /></td>         
+         </tr>
+         <tr>
+            <th width="100">Penghasilan</th>
+            <td>: Rp <input name="txtPenghasilan" type="text" maxlength="255" size="25" value="{ORTU_PENGHASILAN}" /> ,00</td>         
+         </tr>
+         <tr>
+            <th width="100">Status Wali</th>
+            <td>: 
+               <input name="statusWali" type="radio" value="N" {ORTU_HIDUP} />Masih Hidup
+               <input name="statusWali" type="radio" value="Y" {ORTU_MENINGGAL} />Sudah Meninggal
+            </td>         
+         </tr>
+         <tr>
+            <th width="100">Tanggal Meninggal</th>
+            <td>: 
+               <select name="tanggal">
+               <!-- patTemplate:tmpl name="tgl" -->
+                  <option value="{TANGGAL_ID}" {TANGGAL_SELECTED} > {TANGGAL_NAMA} </option>
+               <!-- /patTemplate:tmpl -->
+               </select>
+               &nbsp;
+               <select name="bulan">
+               <!-- patTemplate:tmpl name="bln" -->
+                  <option value="{BULAN_ID}" {BULAN_SELECTED} > {BULAN_NAMA} </option>
+               <!-- /patTemplate:tmpl -->
+               </select>
+               &nbsp;
+               <select name="tahun">
+               <!-- patTemplate:tmpl name="thn" -->
+                  <option value="{TAHUN_ID}" {TAHUN_SELECTED} > {TAHUN_NAMA} </option>
+               <!-- /patTemplate:tmpl -->
+               </select>
+            </td>         
+         </tr>
+         <tr>
+            <th width="100">Keterangan</th>
+            <td>:
+               <select name="ketOrtu">
+               <!-- patTemplate:tmpl name="keterangan_ortu" -->
+                  <option value="{KETORTU_ID}" {KETORTU_SELECTED} > {KETORTU_NAMA} </option>
+               <!-- /patTemplate:tmpl -->
+               </select>
+            </td>         
+         </tr>
+         <tr>   
+            <th>&nbsp;</th>
+            <td>
+               <input class="input-disclaimer" name="act" type="hidden" value="{ORTU_ACT}" />
+               <input class="input-disclaimer" name="btnTambah" type="submit" value="Simpan" />
+               <input class="input-disclaimer" name="btnBatal" type="submit" value="Batal" />
+            </td>
+         </tr>
+      </table>
+      <br/>
+      <div class="petunjuk-area">
+			<h4>Petunjuk:</h4>
+			<ul>
+				<li>Tanda bintang (*) menyatakan field yang harus diisi.</li>
+			</ul>
+		</div>
+   </form>
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,62 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+
+
+<div id="maincontent">
+<h2> {APPLICATION_MODULE} </h2></br><br/>
+  <form name="form_add_materi" class="form-common" method="post" action="{FORM_ACTION}" >
+      <input type="hidden" name="smtId" value="{SEMESTER}" />
+      <input type="hidden" name="id" value="{ID}" />
+      <input type="hidden" name="fileLama" value="{MATERI_NAMA_FILE}" />
+      <input type="hidden" name="klsId" value="{MATERI_MATKUL_ID}" />
+      <input type="hidden" name="dsnId" value="{MATERI_DOSEN_ID}" />
+  		
+  		<table class="table-userbio" width = "100%">
+  		<!-- patTemplate:tmpl name="display_error" visibility="hidden" -->
+  		  <tr>
+  		  	<th colspan="2"><font color="Maroon" size="2">Gagal Menambahkan Data materi Baru. {ERROR} </font></th>
+  		  </tr>
+  		<!-- /patTemplate:tmpl -->
+          <tr>
+              <th>Kelas</th>
+              <td>{MATERI_KELAS_NAMA} </td>
+          </tr>
+          <tr>
+              <th>Judul</th>
+              <td>{MATERI_JUDUL}</td>
+          </tr>
+          <tr>
+              <th valign="=top">File</th>
+              <td><a href="{MATERI_DOWNLOAD}" target="_blank">{MATERI_FILE}</a> </td>
+          </tr>
+          <tr>
+              <th valign="top">Abstraksi</th>
+              <td>{MATERI_DESKRIPSI}</td>
+          </tr>
+         
+           <tr>
+              <th valign="top">Pengirim</th>
+              <td>{MATERI_DOSEN}</td>
+          </tr>
+         
+          <tr>
+          	  <th>Status</th>
+          	  <td>{MATERI_STATUS} </td>
+          </tr>  
+		</table>
+		
+        <table class="table-userbio" width = "100%">
+          <tr>
+          	  <td colspan="2" align="right">
+          	  	<div align="right">
+          	  		<input type="submit" name="batal" value="Kembali" class="input-disclaimer"  />
+          	  	</div>
+          	  </td>
+          </tr>    
+      </table>
+ 
+  </form>  
+ </div>
+<!-- /patTemplate:tmpl -->

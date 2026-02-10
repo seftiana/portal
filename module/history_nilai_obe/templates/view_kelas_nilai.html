@@ -1,0 +1,95 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>{JUDUL}</h2>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="data_dosen" visibility="hidden" -->
+      <table width="100%" class="table-list">
+         <tr> 
+            <th>{LABEL_NIP}</th>
+            <td>{DOSEN_NO_ID}</td>
+         </tr>
+         <tr> 
+            <th width="">Nama</th>
+            <td>{DOSEN_FULLNAME}</td>
+         </tr>
+         <tr> 
+            <th>Program Studi</th>
+            <td>{DOSEN_JENJANG} {DOSEN_INFO}</td>
+         </tr>
+         <!--tr> 
+            <th>Tahun Semester</th>
+            <td>{DOSEN_TAHUN_SEMESTER}</td>
+         </tr-->
+      </table>
+   <!-- /patTemplate:tmpl -->
+   
+   <!-- patTemplate:tmpl name="data_matakuliah_diampu" type="condition" conditionvar="MATAKULIAH_DIAMPU_AVAILABLE" visibility="hidden" -->      
+      <!-- patTemplate:sub condition="YES" -->     
+		<div class="table-responsive">	  
+         <table class="table-common" width="100%">
+         <tr>
+            <th>No.</th>
+            <th>Matakuliah & [Kelompok]</th>
+            <th>SKS</th>
+			<th>Program</th>
+			<th>Nilai</th>
+			<th>CPMK</th>
+         </tr>
+         <!-- patTemplate:tmpl name="data_matakuliah_diampu_item" type="condition" conditionvar="ODDEVEN" -->
+            <!-- patTemplate:sub condition="ODD" -->
+				<tr>
+					<td width="5%" align="center">{MK_DIAMPU_NUMBER}</td>
+					<td width="50%">{MK_DIAMPU_MATAKULIAH} [{MK_DIAMPU_KELAS}]</td>
+					<td width="5%" align="center">{MK_DIAMPU_JUMLAH_SKS}</td>
+					<td width="35%">{MK_DIAMPU_MODEL_PROGRAM}</td>
+			
+					<td class="table-common-links">
+						<a href="{MK_DIAMPU_URL_INPUT}" {MK_DIAMPU_TTLBOBOTCPMK} >Input Nilai</a>
+						<a href="{MK_DIAMPU_URL_PRESENSI}" style="display:{MK_DIAMPU_DISPLAY_PRESENSI}">{MK_DIAMPU_CAPT_PRESENSI}</a>
+						<a href="{MK_DIAMPU_URL_TUGAS_MANDIRI}" style="display:{MK_DIAMPU_DISPLAY_TUGAS_MANDIRI}">{MK_DIAMPU_CAPT_TUGAS_MANDIRI}</a>
+						<a href="{MK_DIAMPU_URL_TUGAS_KELOMPOK}" style="display:{MK_DIAMPU_DISPLAY_TUGAS_KELOMPOK}">{MK_DIAMPU_CAPT_TUGAS_KELOMPOK}</a>
+						<a href="{MK_DIAMPU_URL_PRESENTASI}" style="display:{MK_DIAMPU_DISPLAY_PRESENTASI}">{MK_DIAMPU_CAPT_PRESENTASI}</a>
+						<a href="{MK_DIAMPU_URL_QUIS}" style="display:{MK_DIAMPU_DISPLAY_QUIS}">{MK_DIAMPU_CAPT_QUIS}</a>
+						<a href="{MK_DIAMPU_URL_PRATIKUM}" style="display:{MK_DIAMPU_DISPLAY_PRATIKUM}">{MK_DIAMPU_CAPT_PRATIKUM}</a>
+						<a href="{MK_DIAMPU_URL_UTS}" style="display:{MK_DIAMPU_DISPLAY_UTS}">{MK_DIAMPU_CAPT_UTS}</a>
+						<a href="{MK_DIAMPU_URL_UAS}" style="display:{MK_DIAMPU_DISPLAY_UAS}">{MK_DIAMPU_CAPT_UAS}</a>
+					</td>
+					<td class="table-common-links" align="center">
+						<a href="{MK_DIAMPU_URL_PERBAIKAN}" {MK_DIAMPU_TTLBOBOTCPMK} >Input CPMK</a>
+					</td>
+				</tr>
+            <!-- /patTemplate:sub -->
+            <!-- patTemplate:sub condition="EVEN" -->
+               <tr class="table-common-even">
+                  <td width="5%" align="center">{MK_DIAMPU_NUMBER}</td>
+                  <td width="50%">{MK_DIAMPU_MATAKULIAH} [{MK_DIAMPU_KELAS}]</td>
+					<td width="5%" align="center">{MK_DIAMPU_JUMLAH_SKS}</td>
+					<td width="35%">{MK_DIAMPU_MODEL_PROGRAM}</td>
+			 
+				  <td class="table-common-links">
+					<a href="{MK_DIAMPU_URL_INPUT}" {MK_DIAMPU_TTLBOBOTCPMK} >Input Nilai</a>
+					<a href="{MK_DIAMPU_URL_PRESENSI}" style="display:{MK_DIAMPU_DISPLAY_PRESENSI}">{MK_DIAMPU_CAPT_PRESENSI}</a>
+						<a href="{MK_DIAMPU_URL_TUGAS_MANDIRI}" style="display:{MK_DIAMPU_DISPLAY_TUGAS_MANDIRI}">{MK_DIAMPU_CAPT_TUGAS_MANDIRI}</a>
+						<a href="{MK_DIAMPU_URL_TUGAS_KELOMPOK}" style="display:{MK_DIAMPU_DISPLAY_TUGAS_KELOMPOK}">{MK_DIAMPU_CAPT_TUGAS_KELOMPOK}</a>
+						<a href="{MK_DIAMPU_URL_PRESENTASI}" style="display:{MK_DIAMPU_DISPLAY_PRESENTASI}">{MK_DIAMPU_CAPT_PRESENTASI}</a>
+						<a href="{MK_DIAMPU_URL_QUIS}" style="display:{MK_DIAMPU_DISPLAY_QUIS}">{MK_DIAMPU_CAPT_QUIS}</a>
+						<a href="{MK_DIAMPU_URL_PRATIKUM}" style="display:{MK_DIAMPU_DISPLAY_PRATIKUM}">{MK_DIAMPU_CAPT_PRATIKUM}</a>
+						<a href="{MK_DIAMPU_URL_UTS}" style="display:{MK_DIAMPU_DISPLAY_UTS}">{MK_DIAMPU_CAPT_UTS}</a>
+						<a href="{MK_DIAMPU_URL_UAS}" style="display:{MK_DIAMPU_DISPLAY_UAS}">{MK_DIAMPU_CAPT_UAS}</a>
+				  </td>
+				  <td class="table-common-links" align="center">
+						<a href="{MK_DIAMPU_URL_PERBAIKAN}" {MK_DIAMPU_TTLBOBOTCPMK} >Input CPMK</a>
+				  </td>
+               </tr>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </table>
+	  </div>
+      <br/>
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+<!-- /patTemplate:tmpl -->

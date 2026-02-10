@@ -1,0 +1,1443 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_pdf}
+<div {$pdf_chiddenattr} data-pageid="{$pageid}" data-container="pdf" class="   col-md-12 "> 
+
+{BEGIN printbuttons}
+
+{END printbuttons}
+
+
+
+</div>
+{END container_pdf}
+
+
+
+
+
+{BEGIN container_pageheader}
+<div {$pageheader_chiddenattr} data-pageid="{$pageid}" data-container="pageheader" class="    "> 
+
+{BEGIN printheader}
+	<h2 {$printheader_hiddenattr} data-pageid="{$pageid}" data-brick="printheader" >{$pagetitlelabel mahasiswa print}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END printheader}
+
+
+{BEGIN page_number}
+<span>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></span>
+{END page_number}
+
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="table table-bordered rp-maintable" {$printgrid_hiddenattr} data-pageid="{$pageid}" data-brick="printgrid" >
+	<thead>
+	{BEGIN grid_header}
+		<tr class="{$gridHeader_class}" >
+		{BEGIN record_header}
+			{BEGIN mhsNiu_fieldheadercolumn}
+			<th class="{$mhsNiu_class}" {$mhsNiu_style}  data-field="mhsNiu">
+				{$label mahasiswa mhsNiu}
+			</th>
+			{END mhsNiu_fieldheadercolumn}
+			{BEGIN mhsNif_fieldheadercolumn}
+			<th class="{$mhsNif_class}" {$mhsNif_style}  data-field="mhsNif">
+				{$label mahasiswa mhsNif}
+			</th>
+			{END mhsNif_fieldheadercolumn}
+			{BEGIN mhsNama_fieldheadercolumn}
+			<th class="{$mhsNama_class}" {$mhsNama_style}  data-field="mhsNama">
+				{$label mahasiswa mhsNama}
+			</th>
+			{END mhsNama_fieldheadercolumn}
+			{BEGIN mhsAngkatan_fieldheadercolumn}
+			<th class="{$mhsAngkatan_class}" {$mhsAngkatan_style}  data-field="mhsAngkatan">
+				{$label mahasiswa mhsAngkatan}
+			</th>
+			{END mhsAngkatan_fieldheadercolumn}
+			{BEGIN mhsSemesterMasuk_fieldheadercolumn}
+			<th class="{$mhsSemesterMasuk_class}" {$mhsSemesterMasuk_style}  data-field="mhsSemesterMasuk">
+				{$label mahasiswa mhsSemesterMasuk}
+			</th>
+			{END mhsSemesterMasuk_fieldheadercolumn}
+			{BEGIN mhsPasswordRegistrasi_fieldheadercolumn}
+			<th class="{$mhsPasswordRegistrasi_class}" {$mhsPasswordRegistrasi_style}  data-field="mhsPasswordRegistrasi">
+				{$label mahasiswa mhsPasswordRegistrasi}
+			</th>
+			{END mhsPasswordRegistrasi_fieldheadercolumn}
+			{BEGIN mhsKurId_fieldheadercolumn}
+			<th class="{$mhsKurId_class}" {$mhsKurId_style}  data-field="mhsKurId">
+				{$label mahasiswa mhsKurId}
+			</th>
+			{END mhsKurId_fieldheadercolumn}
+			{BEGIN mhsProdiKode_fieldheadercolumn}
+			<th class="{$mhsProdiKode_class}" {$mhsProdiKode_style}  data-field="mhsProdiKode">
+				{$label mahasiswa mhsProdiKode}
+			</th>
+			{END mhsProdiKode_fieldheadercolumn}
+			{BEGIN mhsProdiKodeUniv_fieldheadercolumn}
+			<th class="{$mhsProdiKodeUniv_class}" {$mhsProdiKodeUniv_style}  data-field="mhsProdiKodeUniv">
+				{$label mahasiswa mhsProdiKodeUniv}
+			</th>
+			{END mhsProdiKodeUniv_fieldheadercolumn}
+			{BEGIN mhsProdikonsentrasiId_fieldheadercolumn}
+			<th class="{$mhsProdikonsentrasiId_class}" {$mhsProdikonsentrasiId_style}  data-field="mhsProdikonsentrasiId">
+				{$label mahasiswa mhsProdikonsentrasiId}
+			</th>
+			{END mhsProdikonsentrasiId_fieldheadercolumn}
+			{BEGIN mhsWktkulId_fieldheadercolumn}
+			<th class="{$mhsWktkulId_class}" {$mhsWktkulId_style}  data-field="mhsWktkulId">
+				{$label mahasiswa mhsWktkulId}
+			</th>
+			{END mhsWktkulId_fieldheadercolumn}
+			{BEGIN mhsNomorTes_fieldheadercolumn}
+			<th class="{$mhsNomorTes_class}" {$mhsNomorTes_style}  data-field="mhsNomorTes">
+				{$label mahasiswa mhsNomorTes}
+			</th>
+			{END mhsNomorTes_fieldheadercolumn}
+			{BEGIN mhsTanggalTerdaftar_fieldheadercolumn}
+			<th class="{$mhsTanggalTerdaftar_class}" {$mhsTanggalTerdaftar_style}  data-field="mhsTanggalTerdaftar">
+				{$label mahasiswa mhsTanggalTerdaftar}
+			</th>
+			{END mhsTanggalTerdaftar_fieldheadercolumn}
+			{BEGIN mhsStatusMasukPt_fieldheadercolumn}
+			<th class="{$mhsStatusMasukPt_class}" {$mhsStatusMasukPt_style}  data-field="mhsStatusMasukPt">
+				{$label mahasiswa mhsStatusMasukPt}
+			</th>
+			{END mhsStatusMasukPt_fieldheadercolumn}
+			{BEGIN mhsIsAsing_fieldheadercolumn}
+			<th class="{$mhsIsAsing_class}" {$mhsIsAsing_style}  data-field="mhsIsAsing">
+				{$label mahasiswa mhsIsAsing}
+			</th>
+			{END mhsIsAsing_fieldheadercolumn}
+			{BEGIN mhsJumlahSksPindahan_fieldheadercolumn}
+			<th class="{$mhsJumlahSksPindahan_class}" {$mhsJumlahSksPindahan_style}  data-field="mhsJumlahSksPindahan">
+				{$label mahasiswa mhsJumlahSksPindahan}
+			</th>
+			{END mhsJumlahSksPindahan_fieldheadercolumn}
+			{BEGIN mhsKodePtPindahan_fieldheadercolumn}
+			<th class="{$mhsKodePtPindahan_class}" {$mhsKodePtPindahan_style}  data-field="mhsKodePtPindahan">
+				{$label mahasiswa mhsKodePtPindahan}
+			</th>
+			{END mhsKodePtPindahan_fieldheadercolumn}
+			{BEGIN mhsKodeProdiDiktiPindahan_fieldheadercolumn}
+			<th class="{$mhsKodeProdiDiktiPindahan_class}" {$mhsKodeProdiDiktiPindahan_style}  data-field="mhsKodeProdiDiktiPindahan">
+				{$label mahasiswa mhsKodeProdiDiktiPindahan}
+			</th>
+			{END mhsKodeProdiDiktiPindahan_fieldheadercolumn}
+			{BEGIN mhsNamaPtPindahan_fieldheadercolumn}
+			<th class="{$mhsNamaPtPindahan_class}" {$mhsNamaPtPindahan_style}  data-field="mhsNamaPtPindahan">
+				{$label mahasiswa mhsNamaPtPindahan}
+			</th>
+			{END mhsNamaPtPindahan_fieldheadercolumn}
+			{BEGIN mhsJjarKodeDiktiPindahan_fieldheadercolumn}
+			<th class="{$mhsJjarKodeDiktiPindahan_class}" {$mhsJjarKodeDiktiPindahan_style}  data-field="mhsJjarKodeDiktiPindahan">
+				{$label mahasiswa mhsJjarKodeDiktiPindahan}
+			</th>
+			{END mhsJjarKodeDiktiPindahan_fieldheadercolumn}
+			{BEGIN mhsTahunMasukPtPindahan_fieldheadercolumn}
+			<th class="{$mhsTahunMasukPtPindahan_class}" {$mhsTahunMasukPtPindahan_style}  data-field="mhsTahunMasukPtPindahan">
+				{$label mahasiswa mhsTahunMasukPtPindahan}
+			</th>
+			{END mhsTahunMasukPtPindahan_fieldheadercolumn}
+			{BEGIN mhsNimLama_fieldheadercolumn}
+			<th class="{$mhsNimLama_class}" {$mhsNimLama_style}  data-field="mhsNimLama">
+				{$label mahasiswa mhsNimLama}
+			</th>
+			{END mhsNimLama_fieldheadercolumn}
+			{BEGIN mhsJenisKelamin_fieldheadercolumn}
+			<th class="{$mhsJenisKelamin_class}" {$mhsJenisKelamin_style}  data-field="mhsJenisKelamin">
+				{$label mahasiswa mhsJenisKelamin}
+			</th>
+			{END mhsJenisKelamin_fieldheadercolumn}
+			{BEGIN mhsKotaKodeLahir_fieldheadercolumn}
+			<th class="{$mhsKotaKodeLahir_class}" {$mhsKotaKodeLahir_style}  data-field="mhsKotaKodeLahir">
+				{$label mahasiswa mhsKotaKodeLahir}
+			</th>
+			{END mhsKotaKodeLahir_fieldheadercolumn}
+			{BEGIN mhsTanggalLahir_fieldheadercolumn}
+			<th class="{$mhsTanggalLahir_class}" {$mhsTanggalLahir_style}  data-field="mhsTanggalLahir">
+				{$label mahasiswa mhsTanggalLahir}
+			</th>
+			{END mhsTanggalLahir_fieldheadercolumn}
+			{BEGIN mhsAgmrId_fieldheadercolumn}
+			<th class="{$mhsAgmrId_class}" {$mhsAgmrId_style}  data-field="mhsAgmrId">
+				{$label mahasiswa mhsAgmrId}
+			</th>
+			{END mhsAgmrId_fieldheadercolumn}
+			{BEGIN mhsSmtaKode_fieldheadercolumn}
+			<th class="{$mhsSmtaKode_class}" {$mhsSmtaKode_style}  data-field="mhsSmtaKode">
+				{$label mahasiswa mhsSmtaKode}
+			</th>
+			{END mhsSmtaKode_fieldheadercolumn}
+			{BEGIN mhsTdftSmta_fieldheadercolumn}
+			<th class="{$mhsTdftSmta_class}" {$mhsTdftSmta_style}  data-field="mhsTdftSmta">
+				{$label mahasiswa mhsTdftSmta}
+			</th>
+			{END mhsTdftSmta_fieldheadercolumn}
+			{BEGIN mhsTahunTamatSmta_fieldheadercolumn}
+			<th class="{$mhsTahunTamatSmta_class}" {$mhsTahunTamatSmta_style}  data-field="mhsTahunTamatSmta">
+				{$label mahasiswa mhsTahunTamatSmta}
+			</th>
+			{END mhsTahunTamatSmta_fieldheadercolumn}
+			{BEGIN mhsTahunLulusSmta_fieldheadercolumn}
+			<th class="{$mhsTahunLulusSmta_class}" {$mhsTahunLulusSmta_style}  data-field="mhsTahunLulusSmta">
+				{$label mahasiswa mhsTahunLulusSmta}
+			</th>
+			{END mhsTahunLulusSmta_fieldheadercolumn}
+			{BEGIN mhsJursmtarKode_fieldheadercolumn}
+			<th class="{$mhsJursmtarKode_class}" {$mhsJursmtarKode_style}  data-field="mhsJursmtarKode">
+				{$label mahasiswa mhsJursmtarKode}
+			</th>
+			{END mhsJursmtarKode_fieldheadercolumn}
+			{BEGIN mhsAlamatSmta_fieldheadercolumn}
+			<th class="{$mhsAlamatSmta_class}" {$mhsAlamatSmta_style}  data-field="mhsAlamatSmta">
+				{$label mahasiswa mhsAlamatSmta}
+			</th>
+			{END mhsAlamatSmta_fieldheadercolumn}
+			{BEGIN mhsNoIjasahSmta_fieldheadercolumn}
+			<th class="{$mhsNoIjasahSmta_class}" {$mhsNoIjasahSmta_style}  data-field="mhsNoIjasahSmta">
+				{$label mahasiswa mhsNoIjasahSmta}
+			</th>
+			{END mhsNoIjasahSmta_fieldheadercolumn}
+			{BEGIN mhsIjasahSmta_fieldheadercolumn}
+			<th class="{$mhsIjasahSmta_class}" {$mhsIjasahSmta_style}  data-field="mhsIjasahSmta">
+				{$label mahasiswa mhsIjasahSmta}
+			</th>
+			{END mhsIjasahSmta_fieldheadercolumn}
+			{BEGIN mhsTanggalIjasahSmta_fieldheadercolumn}
+			<th class="{$mhsTanggalIjasahSmta_class}" {$mhsTanggalIjasahSmta_style}  data-field="mhsTanggalIjasahSmta">
+				{$label mahasiswa mhsTanggalIjasahSmta}
+			</th>
+			{END mhsTanggalIjasahSmta_fieldheadercolumn}
+			{BEGIN mhsNilaiUjianAkhirSmta_fieldheadercolumn}
+			<th class="{$mhsNilaiUjianAkhirSmta_class}" {$mhsNilaiUjianAkhirSmta_style}  data-field="mhsNilaiUjianAkhirSmta">
+				{$label mahasiswa mhsNilaiUjianAkhirSmta}
+			</th>
+			{END mhsNilaiUjianAkhirSmta_fieldheadercolumn}
+			{BEGIN mhsJumlahMpUjianAkhirSmta_fieldheadercolumn}
+			<th class="{$mhsJumlahMpUjianAkhirSmta_class}" {$mhsJumlahMpUjianAkhirSmta_style}  data-field="mhsJumlahMpUjianAkhirSmta">
+				{$label mahasiswa mhsJumlahMpUjianAkhirSmta}
+			</th>
+			{END mhsJumlahMpUjianAkhirSmta_fieldheadercolumn}
+			{BEGIN mhsStnkrId_fieldheadercolumn}
+			<th class="{$mhsStnkrId_class}" {$mhsStnkrId_style}  data-field="mhsStnkrId">
+				{$label mahasiswa mhsStnkrId}
+			</th>
+			{END mhsStnkrId_fieldheadercolumn}
+			{BEGIN mhsJumlahSaudara_fieldheadercolumn}
+			<th class="{$mhsJumlahSaudara_class}" {$mhsJumlahSaudara_style}  data-field="mhsJumlahSaudara">
+				{$label mahasiswa mhsJumlahSaudara}
+			</th>
+			{END mhsJumlahSaudara_fieldheadercolumn}
+			{BEGIN mhsAlamatMhs_fieldheadercolumn}
+			<th class="{$mhsAlamatMhs_class}" {$mhsAlamatMhs_style}  data-field="mhsAlamatMhs">
+				{$label mahasiswa mhsAlamatMhs}
+			</th>
+			{END mhsAlamatMhs_fieldheadercolumn}
+			{BEGIN mhsAlamatTerakhir_fieldheadercolumn}
+			<th class="{$mhsAlamatTerakhir_class}" {$mhsAlamatTerakhir_style}  data-field="mhsAlamatTerakhir">
+				{$label mahasiswa mhsAlamatTerakhir}
+			</th>
+			{END mhsAlamatTerakhir_fieldheadercolumn}
+			{BEGIN mhsAlamatDiKotaIni_fieldheadercolumn}
+			<th class="{$mhsAlamatDiKotaIni_class}" {$mhsAlamatDiKotaIni_style}  data-field="mhsAlamatDiKotaIni">
+				{$label mahasiswa mhsAlamatDiKotaIni}
+			</th>
+			{END mhsAlamatDiKotaIni_fieldheadercolumn}
+			{BEGIN mhsKotaKode_fieldheadercolumn}
+			<th class="{$mhsKotaKode_class}" {$mhsKotaKode_style}  data-field="mhsKotaKode">
+				{$label mahasiswa mhsKotaKode}
+			</th>
+			{END mhsKotaKode_fieldheadercolumn}
+			{BEGIN mhsNgrKode_fieldheadercolumn}
+			<th class="{$mhsNgrKode_class}" {$mhsNgrKode_style}  data-field="mhsNgrKode">
+				{$label mahasiswa mhsNgrKode}
+			</th>
+			{END mhsNgrKode_fieldheadercolumn}
+			{BEGIN mhsKodePos_fieldheadercolumn}
+			<th class="{$mhsKodePos_class}" {$mhsKodePos_style}  data-field="mhsKodePos">
+				{$label mahasiswa mhsKodePos}
+			</th>
+			{END mhsKodePos_fieldheadercolumn}
+			{BEGIN mhsStatrumahId_fieldheadercolumn}
+			<th class="{$mhsStatrumahId_class}" {$mhsStatrumahId_style}  data-field="mhsStatrumahId">
+				{$label mahasiswa mhsStatrumahId}
+			</th>
+			{END mhsStatrumahId_fieldheadercolumn}
+			{BEGIN mhsSbdnrId_fieldheadercolumn}
+			<th class="{$mhsSbdnrId_class}" {$mhsSbdnrId_style}  data-field="mhsSbdnrId">
+				{$label mahasiswa mhsSbdnrId}
+			</th>
+			{END mhsSbdnrId_fieldheadercolumn}
+			{BEGIN mhsHubbiayaId_fieldheadercolumn}
+			<th class="{$mhsHubbiayaId_class}" {$mhsHubbiayaId_style}  data-field="mhsHubbiayaId">
+				{$label mahasiswa mhsHubbiayaId}
+			</th>
+			{END mhsHubbiayaId_fieldheadercolumn}
+			{BEGIN mhsTempatKerja_fieldheadercolumn}
+			<th class="{$mhsTempatKerja_class}" {$mhsTempatKerja_style}  data-field="mhsTempatKerja">
+				{$label mahasiswa mhsTempatKerja}
+			</th>
+			{END mhsTempatKerja_fieldheadercolumn}
+			{BEGIN mhsAlamatTempatKerja_fieldheadercolumn}
+			<th class="{$mhsAlamatTempatKerja_class}" {$mhsAlamatTempatKerja_style}  data-field="mhsAlamatTempatKerja">
+				{$label mahasiswa mhsAlamatTempatKerja}
+			</th>
+			{END mhsAlamatTempatKerja_fieldheadercolumn}
+			{BEGIN mhsNoTelpTempatKerja_fieldheadercolumn}
+			<th class="{$mhsNoTelpTempatKerja_class}" {$mhsNoTelpTempatKerja_style}  data-field="mhsNoTelpTempatKerja">
+				{$label mahasiswa mhsNoTelpTempatKerja}
+			</th>
+			{END mhsNoTelpTempatKerja_fieldheadercolumn}
+			{BEGIN mhsBeasiswa_fieldheadercolumn}
+			<th class="{$mhsBeasiswa_class}" {$mhsBeasiswa_style}  data-field="mhsBeasiswa">
+				{$label mahasiswa mhsBeasiswa}
+			</th>
+			{END mhsBeasiswa_fieldheadercolumn}
+			{BEGIN mhsWnrId_fieldheadercolumn}
+			<th class="{$mhsWnrId_class}" {$mhsWnrId_style}  data-field="mhsWnrId">
+				{$label mahasiswa mhsWnrId}
+			</th>
+			{END mhsWnrId_fieldheadercolumn}
+			{BEGIN mhsJlrrKode_fieldheadercolumn}
+			<th class="{$mhsJlrrKode_class}" {$mhsJlrrKode_style}  data-field="mhsJlrrKode">
+				{$label mahasiswa mhsJlrrKode}
+			</th>
+			{END mhsJlrrKode_fieldheadercolumn}
+			{BEGIN mhsNoAskes_fieldheadercolumn}
+			<th class="{$mhsNoAskes_class}" {$mhsNoAskes_style}  data-field="mhsNoAskes">
+				{$label mahasiswa mhsNoAskes}
+			</th>
+			{END mhsNoAskes_fieldheadercolumn}
+			{BEGIN mhsNoTelp_fieldheadercolumn}
+			<th class="{$mhsNoTelp_class}" {$mhsNoTelp_style}  data-field="mhsNoTelp">
+				{$label mahasiswa mhsNoTelp}
+			</th>
+			{END mhsNoTelp_fieldheadercolumn}
+			{BEGIN mhsNoHp_fieldheadercolumn}
+			<th class="{$mhsNoHp_class}" {$mhsNoHp_style}  data-field="mhsNoHp">
+				{$label mahasiswa mhsNoHp}
+			</th>
+			{END mhsNoHp_fieldheadercolumn}
+			{BEGIN mhsEmail_fieldheadercolumn}
+			<th class="{$mhsEmail_class}" {$mhsEmail_style}  data-field="mhsEmail">
+				{$label mahasiswa mhsEmail}
+			</th>
+			{END mhsEmail_fieldheadercolumn}
+			{BEGIN mhsHomepage_fieldheadercolumn}
+			<th class="{$mhsHomepage_class}" {$mhsHomepage_style}  data-field="mhsHomepage">
+				{$label mahasiswa mhsHomepage}
+			</th>
+			{END mhsHomepage_fieldheadercolumn}
+			{BEGIN mhsFoto_fieldheadercolumn}
+			<th class="{$mhsFoto_class}" {$mhsFoto_style}  data-field="mhsFoto">
+				{$label mahasiswa mhsFoto}
+			</th>
+			{END mhsFoto_fieldheadercolumn}
+			{BEGIN mhsStakmhsrKode_fieldheadercolumn}
+			<th class="{$mhsStakmhsrKode_class}" {$mhsStakmhsrKode_style}  data-field="mhsStakmhsrKode">
+				{$label mahasiswa mhsStakmhsrKode}
+			</th>
+			{END mhsStakmhsrKode_fieldheadercolumn}
+			{BEGIN mhsDsnPegNipPembimbingAkademik_fieldheadercolumn}
+			<th class="{$mhsDsnPegNipPembimbingAkademik_class}" {$mhsDsnPegNipPembimbingAkademik_style}  data-field="mhsDsnPegNipPembimbingAkademik">
+				{$label mahasiswa mhsDsnPegNipPembimbingAkademik}
+			</th>
+			{END mhsDsnPegNipPembimbingAkademik_fieldheadercolumn}
+			{BEGIN mhsSksWajib_fieldheadercolumn}
+			<th class="{$mhsSksWajib_class}" {$mhsSksWajib_style}  data-field="mhsSksWajib">
+				{$label mahasiswa mhsSksWajib}
+			</th>
+			{END mhsSksWajib_fieldheadercolumn}
+			{BEGIN mhsSksPilihan_fieldheadercolumn}
+			<th class="{$mhsSksPilihan_class}" {$mhsSksPilihan_style}  data-field="mhsSksPilihan">
+				{$label mahasiswa mhsSksPilihan}
+			</th>
+			{END mhsSksPilihan_fieldheadercolumn}
+			{BEGIN mhsSksA_fieldheadercolumn}
+			<th class="{$mhsSksA_class}" {$mhsSksA_style}  data-field="mhsSksA">
+				{$label mahasiswa mhsSksA}
+			</th>
+			{END mhsSksA_fieldheadercolumn}
+			{BEGIN mhsSksB_fieldheadercolumn}
+			<th class="{$mhsSksB_class}" {$mhsSksB_style}  data-field="mhsSksB">
+				{$label mahasiswa mhsSksB}
+			</th>
+			{END mhsSksB_fieldheadercolumn}
+			{BEGIN mhsSksC_fieldheadercolumn}
+			<th class="{$mhsSksC_class}" {$mhsSksC_style}  data-field="mhsSksC">
+				{$label mahasiswa mhsSksC}
+			</th>
+			{END mhsSksC_fieldheadercolumn}
+			{BEGIN mhsSksD_fieldheadercolumn}
+			<th class="{$mhsSksD_class}" {$mhsSksD_style}  data-field="mhsSksD">
+				{$label mahasiswa mhsSksD}
+			</th>
+			{END mhsSksD_fieldheadercolumn}
+			{BEGIN mhsSksE_fieldheadercolumn}
+			<th class="{$mhsSksE_class}" {$mhsSksE_style}  data-field="mhsSksE">
+				{$label mahasiswa mhsSksE}
+			</th>
+			{END mhsSksE_fieldheadercolumn}
+			{BEGIN mhsSksTranskrip_fieldheadercolumn}
+			<th class="{$mhsSksTranskrip_class}" {$mhsSksTranskrip_style}  data-field="mhsSksTranskrip">
+				{$label mahasiswa mhsSksTranskrip}
+			</th>
+			{END mhsSksTranskrip_fieldheadercolumn}
+			{BEGIN mhsBobotTotalTranskrip_fieldheadercolumn}
+			<th class="{$mhsBobotTotalTranskrip_class}" {$mhsBobotTotalTranskrip_style}  data-field="mhsBobotTotalTranskrip">
+				{$label mahasiswa mhsBobotTotalTranskrip}
+			</th>
+			{END mhsBobotTotalTranskrip_fieldheadercolumn}
+			{BEGIN mhsIpkTranskrip_fieldheadercolumn}
+			<th class="{$mhsIpkTranskrip_class}" {$mhsIpkTranskrip_style}  data-field="mhsIpkTranskrip">
+				{$label mahasiswa mhsIpkTranskrip}
+			</th>
+			{END mhsIpkTranskrip_fieldheadercolumn}
+			{BEGIN mhsLamaStudiSemester_fieldheadercolumn}
+			<th class="{$mhsLamaStudiSemester_class}" {$mhsLamaStudiSemester_style}  data-field="mhsLamaStudiSemester">
+				{$label mahasiswa mhsLamaStudiSemester}
+			</th>
+			{END mhsLamaStudiSemester_fieldheadercolumn}
+			{BEGIN mhsLamaStudiBulan_fieldheadercolumn}
+			<th class="{$mhsLamaStudiBulan_class}" {$mhsLamaStudiBulan_style}  data-field="mhsLamaStudiBulan">
+				{$label mahasiswa mhsLamaStudiBulan}
+			</th>
+			{END mhsLamaStudiBulan_fieldheadercolumn}
+			{BEGIN mhsIsTranskripAkhirDiarsipkan_fieldheadercolumn}
+			<th class="{$mhsIsTranskripAkhirDiarsipkan_class}" {$mhsIsTranskripAkhirDiarsipkan_style}  data-field="mhsIsTranskripAkhirDiarsipkan">
+				{$label mahasiswa mhsIsTranskripAkhirDiarsipkan}
+			</th>
+			{END mhsIsTranskripAkhirDiarsipkan_fieldheadercolumn}
+			{BEGIN mhsTanggalTranskrip_fieldheadercolumn}
+			<th class="{$mhsTanggalTranskrip_class}" {$mhsTanggalTranskrip_style}  data-field="mhsTanggalTranskrip">
+				{$label mahasiswa mhsTanggalTranskrip}
+			</th>
+			{END mhsTanggalTranskrip_fieldheadercolumn}
+			{BEGIN mhsNomorTranskrip_fieldheadercolumn}
+			<th class="{$mhsNomorTranskrip_class}" {$mhsNomorTranskrip_style}  data-field="mhsNomorTranskrip">
+				{$label mahasiswa mhsNomorTranskrip}
+			</th>
+			{END mhsNomorTranskrip_fieldheadercolumn}
+			{BEGIN mhsTempatLahirTranskrip_fieldheadercolumn}
+			<th class="{$mhsTempatLahirTranskrip_class}" {$mhsTempatLahirTranskrip_style}  data-field="mhsTempatLahirTranskrip">
+				{$label mahasiswa mhsTempatLahirTranskrip}
+			</th>
+			{END mhsTempatLahirTranskrip_fieldheadercolumn}
+			{BEGIN mhsTanggalLahirTranskrip_fieldheadercolumn}
+			<th class="{$mhsTanggalLahirTranskrip_class}" {$mhsTanggalLahirTranskrip_style}  data-field="mhsTanggalLahirTranskrip">
+				{$label mahasiswa mhsTanggalLahirTranskrip}
+			</th>
+			{END mhsTanggalLahirTranskrip_fieldheadercolumn}
+			{BEGIN mhsMetodeBuildTranskrip_fieldheadercolumn}
+			<th class="{$mhsMetodeBuildTranskrip_class}" {$mhsMetodeBuildTranskrip_style}  data-field="mhsMetodeBuildTranskrip">
+				{$label mahasiswa mhsMetodeBuildTranskrip}
+			</th>
+			{END mhsMetodeBuildTranskrip_fieldheadercolumn}
+			{BEGIN mhsMetodePenyetaraanTranskrip_fieldheadercolumn}
+			<th class="{$mhsMetodePenyetaraanTranskrip_class}" {$mhsMetodePenyetaraanTranskrip_style}  data-field="mhsMetodePenyetaraanTranskrip">
+				{$label mahasiswa mhsMetodePenyetaraanTranskrip}
+			</th>
+			{END mhsMetodePenyetaraanTranskrip_fieldheadercolumn}
+			{BEGIN mhsTahunKurikulumPenyetaraanTranskrip_fieldheadercolumn}
+			<th class="{$mhsTahunKurikulumPenyetaraanTranskrip_class}" {$mhsTahunKurikulumPenyetaraanTranskrip_style}  data-field="mhsTahunKurikulumPenyetaraanTranskrip">
+				{$label mahasiswa mhsTahunKurikulumPenyetaraanTranskrip}
+			</th>
+			{END mhsTahunKurikulumPenyetaraanTranskrip_fieldheadercolumn}
+			{BEGIN mhsTanggalLulus_fieldheadercolumn}
+			<th class="{$mhsTanggalLulus_class}" {$mhsTanggalLulus_style}  data-field="mhsTanggalLulus">
+				{$label mahasiswa mhsTanggalLulus}
+			</th>
+			{END mhsTanggalLulus_fieldheadercolumn}
+			{BEGIN mhsNoSuratYudisium_fieldheadercolumn}
+			<th class="{$mhsNoSuratYudisium_class}" {$mhsNoSuratYudisium_style}  data-field="mhsNoSuratYudisium">
+				{$label mahasiswa mhsNoSuratYudisium}
+			</th>
+			{END mhsNoSuratYudisium_fieldheadercolumn}
+			{BEGIN mhsTanggalSuratYudisium_fieldheadercolumn}
+			<th class="{$mhsTanggalSuratYudisium_class}" {$mhsTanggalSuratYudisium_style}  data-field="mhsTanggalSuratYudisium">
+				{$label mahasiswa mhsTanggalSuratYudisium}
+			</th>
+			{END mhsTanggalSuratYudisium_fieldheadercolumn}
+			{BEGIN mhsSemIdLulus_fieldheadercolumn}
+			<th class="{$mhsSemIdLulus_class}" {$mhsSemIdLulus_style}  data-field="mhsSemIdLulus">
+				{$label mahasiswa mhsSemIdLulus}
+			</th>
+			{END mhsSemIdLulus_fieldheadercolumn}
+			{BEGIN mhsTanggalIjasah_fieldheadercolumn}
+			<th class="{$mhsTanggalIjasah_class}" {$mhsTanggalIjasah_style}  data-field="mhsTanggalIjasah">
+				{$label mahasiswa mhsTanggalIjasah}
+			</th>
+			{END mhsTanggalIjasah_fieldheadercolumn}
+			{BEGIN mhsNoIjasah_fieldheadercolumn}
+			<th class="{$mhsNoIjasah_class}" {$mhsNoIjasah_style}  data-field="mhsNoIjasah">
+				{$label mahasiswa mhsNoIjasah}
+			</th>
+			{END mhsNoIjasah_fieldheadercolumn}
+			{BEGIN mhsKodeIjasah_fieldheadercolumn}
+			<th class="{$mhsKodeIjasah_class}" {$mhsKodeIjasah_style}  data-field="mhsKodeIjasah">
+				{$label mahasiswa mhsKodeIjasah}
+			</th>
+			{END mhsKodeIjasah_fieldheadercolumn}
+			{BEGIN mhsPinIjasah_fieldheadercolumn}
+			<th class="{$mhsPinIjasah_class}" {$mhsPinIjasah_style}  data-field="mhsPinIjasah">
+				{$label mahasiswa mhsPinIjasah}
+			</th>
+			{END mhsPinIjasah_fieldheadercolumn}
+			{BEGIN mhsPrlsrId_fieldheadercolumn}
+			<th class="{$mhsPrlsrId_class}" {$mhsPrlsrId_style}  data-field="mhsPrlsrId">
+				{$label mahasiswa mhsPrlsrId}
+			</th>
+			{END mhsPrlsrId_fieldheadercolumn}
+			{BEGIN mhsPrlsrNama_fieldheadercolumn}
+			<th class="{$mhsPrlsrNama_class}" {$mhsPrlsrNama_style}  data-field="mhsPrlsrNama">
+				{$label mahasiswa mhsPrlsrNama}
+			</th>
+			{END mhsPrlsrNama_fieldheadercolumn}
+			{BEGIN mhsPrlsrNamaAsing_fieldheadercolumn}
+			<th class="{$mhsPrlsrNamaAsing_class}" {$mhsPrlsrNamaAsing_style}  data-field="mhsPrlsrNamaAsing">
+				{$label mahasiswa mhsPrlsrNamaAsing}
+			</th>
+			{END mhsPrlsrNamaAsing_fieldheadercolumn}
+			{BEGIN mhsWsdId_fieldheadercolumn}
+			<th class="{$mhsWsdId_class}" {$mhsWsdId_style}  data-field="mhsWsdId">
+				{$label mahasiswa mhsWsdId}
+			</th>
+			{END mhsWsdId_fieldheadercolumn}
+			{BEGIN mhsTanggalPengubahan_fieldheadercolumn}
+			<th class="{$mhsTanggalPengubahan_class}" {$mhsTanggalPengubahan_style}  data-field="mhsTanggalPengubahan">
+				{$label mahasiswa mhsTanggalPengubahan}
+			</th>
+			{END mhsTanggalPengubahan_fieldheadercolumn}
+			{BEGIN mhsUnitPengubah_fieldheadercolumn}
+			<th class="{$mhsUnitPengubah_class}" {$mhsUnitPengubah_style}  data-field="mhsUnitPengubah">
+				{$label mahasiswa mhsUnitPengubah}
+			</th>
+			{END mhsUnitPengubah_fieldheadercolumn}
+			{BEGIN mhsUserPengubah_fieldheadercolumn}
+			<th class="{$mhsUserPengubah_class}" {$mhsUserPengubah_style}  data-field="mhsUserPengubah">
+				{$label mahasiswa mhsUserPengubah}
+			</th>
+			{END mhsUserPengubah_fieldheadercolumn}
+			{BEGIN mhsProdiGelarKelulusan_fieldheadercolumn}
+			<th class="{$mhsProdiGelarKelulusan_class}" {$mhsProdiGelarKelulusan_style}  data-field="mhsProdiGelarKelulusan">
+				{$label mahasiswa mhsProdiGelarKelulusan}
+			</th>
+			{END mhsProdiGelarKelulusan_fieldheadercolumn}
+			{BEGIN mhsSemIdMulai_fieldheadercolumn}
+			<th class="{$mhsSemIdMulai_class}" {$mhsSemIdMulai_style}  data-field="mhsSemIdMulai">
+				{$label mahasiswa mhsSemIdMulai}
+			</th>
+			{END mhsSemIdMulai_fieldheadercolumn}
+			{BEGIN mhsBiayaStudi_fieldheadercolumn}
+			<th class="{$mhsBiayaStudi_class}" {$mhsBiayaStudi_style}  data-field="mhsBiayaStudi">
+				{$label mahasiswa mhsBiayaStudi}
+			</th>
+			{END mhsBiayaStudi_fieldheadercolumn}
+			{BEGIN mhsPekerjaan_fieldheadercolumn}
+			<th class="{$mhsPekerjaan_class}" {$mhsPekerjaan_style}  data-field="mhsPekerjaan">
+				{$label mahasiswa mhsPekerjaan}
+			</th>
+			{END mhsPekerjaan_fieldheadercolumn}
+			{BEGIN mhsPTKerja_fieldheadercolumn}
+			<th class="{$mhsPTKerja_class}" {$mhsPTKerja_style}  data-field="mhsPTKerja">
+				{$label mahasiswa mhsPTKerja}
+			</th>
+			{END mhsPTKerja_fieldheadercolumn}
+			{BEGIN mhsPSKerja_fieldheadercolumn}
+			<th class="{$mhsPSKerja_class}" {$mhsPSKerja_style}  data-field="mhsPSKerja">
+				{$label mahasiswa mhsPSKerja}
+			</th>
+			{END mhsPSKerja_fieldheadercolumn}
+			{BEGIN mhsNIDNPromotor_fieldheadercolumn}
+			<th class="{$mhsNIDNPromotor_class}" {$mhsNIDNPromotor_style}  data-field="mhsNIDNPromotor">
+				{$label mahasiswa mhsNIDNPromotor}
+			</th>
+			{END mhsNIDNPromotor_fieldheadercolumn}
+			{BEGIN mhsKoPromotor1_fieldheadercolumn}
+			<th class="{$mhsKoPromotor1_class}" {$mhsKoPromotor1_style}  data-field="mhsKoPromotor1">
+				{$label mahasiswa mhsKoPromotor1}
+			</th>
+			{END mhsKoPromotor1_fieldheadercolumn}
+			{BEGIN mhsKoPromotor2_fieldheadercolumn}
+			<th class="{$mhsKoPromotor2_class}" {$mhsKoPromotor2_style}  data-field="mhsKoPromotor2">
+				{$label mahasiswa mhsKoPromotor2}
+			</th>
+			{END mhsKoPromotor2_fieldheadercolumn}
+			{BEGIN mhsKoPromotor3_fieldheadercolumn}
+			<th class="{$mhsKoPromotor3_class}" {$mhsKoPromotor3_style}  data-field="mhsKoPromotor3">
+				{$label mahasiswa mhsKoPromotor3}
+			</th>
+			{END mhsKoPromotor3_fieldheadercolumn}
+			{BEGIN mhsKoPromotor4_fieldheadercolumn}
+			<th class="{$mhsKoPromotor4_class}" {$mhsKoPromotor4_style}  data-field="mhsKoPromotor4">
+				{$label mahasiswa mhsKoPromotor4}
+			</th>
+			{END mhsKoPromotor4_fieldheadercolumn}
+			{BEGIN mhsProdiAsal_fieldheadercolumn}
+			<th class="{$mhsProdiAsal_class}" {$mhsProdiAsal_style}  data-field="mhsProdiAsal">
+				{$label mahasiswa mhsProdiAsal}
+			</th>
+			{END mhsProdiAsal_fieldheadercolumn}
+			{BEGIN mhsDiktiShift_fieldheadercolumn}
+			<th class="{$mhsDiktiShift_class}" {$mhsDiktiShift_style}  data-field="mhsDiktiShift">
+				{$label mahasiswa mhsDiktiShift}
+			</th>
+			{END mhsDiktiShift_fieldheadercolumn}
+			{BEGIN mhsPembayaranIpp_fieldheadercolumn}
+			<th class="{$mhsPembayaranIpp_class}" {$mhsPembayaranIpp_style}  data-field="mhsPembayaranIpp">
+				{$label mahasiswa mhsPembayaranIpp}
+			</th>
+			{END mhsPembayaranIpp_fieldheadercolumn}
+			{BEGIN mshNoIpp_fieldheadercolumn}
+			<th class="{$mshNoIpp_class}" {$mshNoIpp_style}  data-field="mshNoIpp">
+				{$label mahasiswa mshNoIpp}
+			</th>
+			{END mshNoIpp_fieldheadercolumn}
+			{BEGIN mhsPersyaratan_fieldheadercolumn}
+			<th class="{$mhsPersyaratan_class}" {$mhsPersyaratan_style}  data-field="mhsPersyaratan">
+				{$label mahasiswa mhsPersyaratan}
+			</th>
+			{END mhsPersyaratan_fieldheadercolumn}
+			{BEGIN mhsPengOrg_fieldheadercolumn}
+			<th class="{$mhsPengOrg_class}" {$mhsPengOrg_style}  data-field="mhsPengOrg">
+				{$label mahasiswa mhsPengOrg}
+			</th>
+			{END mhsPengOrg_fieldheadercolumn}
+			{BEGIN mhsOrg_fieldheadercolumn}
+			<th class="{$mhsOrg_class}" {$mhsOrg_style}  data-field="mhsOrg">
+				{$label mahasiswa mhsOrg}
+			</th>
+			{END mhsOrg_fieldheadercolumn}
+			{BEGIN mhsDomisili_fieldheadercolumn}
+			<th class="{$mhsDomisili_class}" {$mhsDomisili_style}  data-field="mhsDomisili">
+				{$label mahasiswa mhsDomisili}
+			</th>
+			{END mhsDomisili_fieldheadercolumn}
+			{BEGIN mhsJenisSttb_fieldheadercolumn}
+			<th class="{$mhsJenisSttb_class}" {$mhsJenisSttb_style}  data-field="mhsJenisSttb">
+				{$label mahasiswa mhsJenisSttb}
+			</th>
+			{END mhsJenisSttb_fieldheadercolumn}
+			{BEGIN mhsIsKerja_fieldheadercolumn}
+			<th class="{$mhsIsKerja_class}" {$mhsIsKerja_style}  data-field="mhsIsKerja">
+				{$label mahasiswa mhsIsKerja}
+			</th>
+			{END mhsIsKerja_fieldheadercolumn}
+			{BEGIN mhsStatusSmta_fieldheadercolumn}
+			<th class="{$mhsStatusSmta_class}" {$mhsStatusSmta_style}  data-field="mhsStatusSmta">
+				{$label mahasiswa mhsStatusSmta}
+			</th>
+			{END mhsStatusSmta_fieldheadercolumn}
+			{BEGIN mhsAkreditasi_fieldheadercolumn}
+			<th class="{$mhsAkreditasi_class}" {$mhsAkreditasi_style}  data-field="mhsAkreditasi">
+				{$label mahasiswa mhsAkreditasi}
+			</th>
+			{END mhsAkreditasi_fieldheadercolumn}
+			{BEGIN mhsKerja_fieldheadercolumn}
+			<th class="{$mhsKerja_class}" {$mhsKerja_style}  data-field="mhsKerja">
+				{$label mahasiswa mhsKerja}
+			</th>
+			{END mhsKerja_fieldheadercolumn}
+			{BEGIN mhsSaudaraLk_fieldheadercolumn}
+			<th class="{$mhsSaudaraLk_class}" {$mhsSaudaraLk_style}  data-field="mhsSaudaraLk">
+				{$label mahasiswa mhsSaudaraLk}
+			</th>
+			{END mhsSaudaraLk_fieldheadercolumn}
+			{BEGIN mhsSaudaraPr_fieldheadercolumn}
+			<th class="{$mhsSaudaraPr_class}" {$mhsSaudaraPr_style}  data-field="mhsSaudaraPr">
+				{$label mahasiswa mhsSaudaraPr}
+			</th>
+			{END mhsSaudaraPr_fieldheadercolumn}
+			{BEGIN mhsHobi_fieldheadercolumn}
+			<th class="{$mhsHobi_class}" {$mhsHobi_style}  data-field="mhsHobi">
+				{$label mahasiswa mhsHobi}
+			</th>
+			{END mhsHobi_fieldheadercolumn}
+			{BEGIN mhsSmtaLain_fieldheadercolumn}
+			<th class="{$mhsSmtaLain_class}" {$mhsSmtaLain_style}  data-field="mhsSmtaLain">
+				{$label mahasiswa mhsSmtaLain}
+			</th>
+			{END mhsSmtaLain_fieldheadercolumn}
+			{BEGIN mhsAkreditasiSmta_fieldheadercolumn}
+			<th class="{$mhsAkreditasiSmta_class}" {$mhsAkreditasiSmta_style}  data-field="mhsAkreditasiSmta">
+				{$label mahasiswa mhsAkreditasiSmta}
+			</th>
+			{END mhsAkreditasiSmta_fieldheadercolumn}
+			{BEGIN mhsBiayaKuliah_fieldheadercolumn}
+			<th class="{$mhsBiayaKuliah_class}" {$mhsBiayaKuliah_style}  data-field="mhsBiayaKuliah">
+				{$label mahasiswa mhsBiayaKuliah}
+			</th>
+			{END mhsBiayaKuliah_fieldheadercolumn}
+			{BEGIN MhsIdJenisSmta_fieldheadercolumn}
+			<th class="{$MhsIdJenisSmta_class}" {$MhsIdJenisSmta_style}  data-field="MhsIdJenisSmta">
+				{$label mahasiswa MhsIdJenisSmta}
+			</th>
+			{END MhsIdJenisSmta_fieldheadercolumn}
+			{BEGIN mhsSmtaPropinsiKode_fieldheadercolumn}
+			<th class="{$mhsSmtaPropinsiKode_class}" {$mhsSmtaPropinsiKode_style}  data-field="mhsSmtaPropinsiKode">
+				{$label mahasiswa mhsSmtaPropinsiKode}
+			</th>
+			{END mhsSmtaPropinsiKode_fieldheadercolumn}
+			{BEGIN mhsEmailOld_fieldheadercolumn}
+			<th class="{$mhsEmailOld_class}" {$mhsEmailOld_style}  data-field="mhsEmailOld">
+				{$label mahasiswa mhsEmailOld}
+			</th>
+			{END mhsEmailOld_fieldheadercolumn}
+			{BEGIN mhsNoKtp_fieldheadercolumn}
+			<th class="{$mhsNoKtp_class}" {$mhsNoKtp_style}  data-field="mhsNoKtp">
+				{$label mahasiswa mhsNoKtp}
+			</th>
+			{END mhsNoKtp_fieldheadercolumn}
+			{BEGIN mhsNoKk_fieldheadercolumn}
+			<th class="{$mhsNoKk_class}" {$mhsNoKk_style}  data-field="mhsNoKk">
+				{$label mahasiswa mhsNoKk}
+			</th>
+			{END mhsNoKk_fieldheadercolumn}
+			{BEGIN endrecordheader_block}
+			<th class="rnr-cs">&nbsp;</th>
+			{END endrecordheader_block}
+		{END record_header}
+		</tr>
+	{END grid_header}
+	</thead>
+	
+	<tbody>	
+	{BEGIN grid_row}
+		<tr class="{$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+			{BEGIN mhsNiu_fieldcolumn}
+			<td  class="{$mhsNiu_class}" {$mhsNiu_style} {$recordattrs}>
+				{$mhsNiu_value}
+			</td>
+			{END mhsNiu_fieldcolumn}
+			{BEGIN mhsNif_fieldcolumn}
+			<td  class="{$mhsNif_class}" {$mhsNif_style} {$recordattrs}>
+				{$mhsNif_value}
+			</td>
+			{END mhsNif_fieldcolumn}
+			{BEGIN mhsNama_fieldcolumn}
+			<td  class="{$mhsNama_class}" {$mhsNama_style} {$recordattrs}>
+				{$mhsNama_value}
+			</td>
+			{END mhsNama_fieldcolumn}
+			{BEGIN mhsAngkatan_fieldcolumn}
+			<td  class="{$mhsAngkatan_class}" {$mhsAngkatan_style} {$recordattrs}>
+				{$mhsAngkatan_value}
+			</td>
+			{END mhsAngkatan_fieldcolumn}
+			{BEGIN mhsSemesterMasuk_fieldcolumn}
+			<td  class="{$mhsSemesterMasuk_class}" {$mhsSemesterMasuk_style} {$recordattrs}>
+				{$mhsSemesterMasuk_value}
+			</td>
+			{END mhsSemesterMasuk_fieldcolumn}
+			{BEGIN mhsPasswordRegistrasi_fieldcolumn}
+			<td  class="{$mhsPasswordRegistrasi_class}" {$mhsPasswordRegistrasi_style} {$recordattrs}>
+				{$mhsPasswordRegistrasi_value}
+			</td>
+			{END mhsPasswordRegistrasi_fieldcolumn}
+			{BEGIN mhsKurId_fieldcolumn}
+			<td  class="{$mhsKurId_class}" {$mhsKurId_style} {$recordattrs}>
+				{$mhsKurId_value}
+			</td>
+			{END mhsKurId_fieldcolumn}
+			{BEGIN mhsProdiKode_fieldcolumn}
+			<td  class="{$mhsProdiKode_class}" {$mhsProdiKode_style} {$recordattrs}>
+				{$mhsProdiKode_value}
+			</td>
+			{END mhsProdiKode_fieldcolumn}
+			{BEGIN mhsProdiKodeUniv_fieldcolumn}
+			<td  class="{$mhsProdiKodeUniv_class}" {$mhsProdiKodeUniv_style} {$recordattrs}>
+				{$mhsProdiKodeUniv_value}
+			</td>
+			{END mhsProdiKodeUniv_fieldcolumn}
+			{BEGIN mhsProdikonsentrasiId_fieldcolumn}
+			<td  class="{$mhsProdikonsentrasiId_class}" {$mhsProdikonsentrasiId_style} {$recordattrs}>
+				{$mhsProdikonsentrasiId_value}
+			</td>
+			{END mhsProdikonsentrasiId_fieldcolumn}
+			{BEGIN mhsWktkulId_fieldcolumn}
+			<td  class="{$mhsWktkulId_class}" {$mhsWktkulId_style} {$recordattrs}>
+				{$mhsWktkulId_value}
+			</td>
+			{END mhsWktkulId_fieldcolumn}
+			{BEGIN mhsNomorTes_fieldcolumn}
+			<td  class="{$mhsNomorTes_class}" {$mhsNomorTes_style} {$recordattrs}>
+				{$mhsNomorTes_value}
+			</td>
+			{END mhsNomorTes_fieldcolumn}
+			{BEGIN mhsTanggalTerdaftar_fieldcolumn}
+			<td  class="{$mhsTanggalTerdaftar_class}" {$mhsTanggalTerdaftar_style} {$recordattrs}>
+				{$mhsTanggalTerdaftar_value}
+			</td>
+			{END mhsTanggalTerdaftar_fieldcolumn}
+			{BEGIN mhsStatusMasukPt_fieldcolumn}
+			<td  class="{$mhsStatusMasukPt_class}" {$mhsStatusMasukPt_style} {$recordattrs}>
+				{$mhsStatusMasukPt_value}
+			</td>
+			{END mhsStatusMasukPt_fieldcolumn}
+			{BEGIN mhsIsAsing_fieldcolumn}
+			<td  class="{$mhsIsAsing_class}" {$mhsIsAsing_style} {$recordattrs}>
+				{$mhsIsAsing_value}
+			</td>
+			{END mhsIsAsing_fieldcolumn}
+			{BEGIN mhsJumlahSksPindahan_fieldcolumn}
+			<td  class="{$mhsJumlahSksPindahan_class}" {$mhsJumlahSksPindahan_style} {$recordattrs}>
+				{$mhsJumlahSksPindahan_value}
+			</td>
+			{END mhsJumlahSksPindahan_fieldcolumn}
+			{BEGIN mhsKodePtPindahan_fieldcolumn}
+			<td  class="{$mhsKodePtPindahan_class}" {$mhsKodePtPindahan_style} {$recordattrs}>
+				{$mhsKodePtPindahan_value}
+			</td>
+			{END mhsKodePtPindahan_fieldcolumn}
+			{BEGIN mhsKodeProdiDiktiPindahan_fieldcolumn}
+			<td  class="{$mhsKodeProdiDiktiPindahan_class}" {$mhsKodeProdiDiktiPindahan_style} {$recordattrs}>
+				{$mhsKodeProdiDiktiPindahan_value}
+			</td>
+			{END mhsKodeProdiDiktiPindahan_fieldcolumn}
+			{BEGIN mhsNamaPtPindahan_fieldcolumn}
+			<td  class="{$mhsNamaPtPindahan_class}" {$mhsNamaPtPindahan_style} {$recordattrs}>
+				{$mhsNamaPtPindahan_value}
+			</td>
+			{END mhsNamaPtPindahan_fieldcolumn}
+			{BEGIN mhsJjarKodeDiktiPindahan_fieldcolumn}
+			<td  class="{$mhsJjarKodeDiktiPindahan_class}" {$mhsJjarKodeDiktiPindahan_style} {$recordattrs}>
+				{$mhsJjarKodeDiktiPindahan_value}
+			</td>
+			{END mhsJjarKodeDiktiPindahan_fieldcolumn}
+			{BEGIN mhsTahunMasukPtPindahan_fieldcolumn}
+			<td  class="{$mhsTahunMasukPtPindahan_class}" {$mhsTahunMasukPtPindahan_style} {$recordattrs}>
+				{$mhsTahunMasukPtPindahan_value}
+			</td>
+			{END mhsTahunMasukPtPindahan_fieldcolumn}
+			{BEGIN mhsNimLama_fieldcolumn}
+			<td  class="{$mhsNimLama_class}" {$mhsNimLama_style} {$recordattrs}>
+				{$mhsNimLama_value}
+			</td>
+			{END mhsNimLama_fieldcolumn}
+			{BEGIN mhsJenisKelamin_fieldcolumn}
+			<td  class="{$mhsJenisKelamin_class}" {$mhsJenisKelamin_style} {$recordattrs}>
+				{$mhsJenisKelamin_value}
+			</td>
+			{END mhsJenisKelamin_fieldcolumn}
+			{BEGIN mhsKotaKodeLahir_fieldcolumn}
+			<td  class="{$mhsKotaKodeLahir_class}" {$mhsKotaKodeLahir_style} {$recordattrs}>
+				{$mhsKotaKodeLahir_value}
+			</td>
+			{END mhsKotaKodeLahir_fieldcolumn}
+			{BEGIN mhsTanggalLahir_fieldcolumn}
+			<td  class="{$mhsTanggalLahir_class}" {$mhsTanggalLahir_style} {$recordattrs}>
+				{$mhsTanggalLahir_value}
+			</td>
+			{END mhsTanggalLahir_fieldcolumn}
+			{BEGIN mhsAgmrId_fieldcolumn}
+			<td  class="{$mhsAgmrId_class}" {$mhsAgmrId_style} {$recordattrs}>
+				{$mhsAgmrId_value}
+			</td>
+			{END mhsAgmrId_fieldcolumn}
+			{BEGIN mhsSmtaKode_fieldcolumn}
+			<td  class="{$mhsSmtaKode_class}" {$mhsSmtaKode_style} {$recordattrs}>
+				{$mhsSmtaKode_value}
+			</td>
+			{END mhsSmtaKode_fieldcolumn}
+			{BEGIN mhsTdftSmta_fieldcolumn}
+			<td  class="{$mhsTdftSmta_class}" {$mhsTdftSmta_style} {$recordattrs}>
+				{$mhsTdftSmta_value}
+			</td>
+			{END mhsTdftSmta_fieldcolumn}
+			{BEGIN mhsTahunTamatSmta_fieldcolumn}
+			<td  class="{$mhsTahunTamatSmta_class}" {$mhsTahunTamatSmta_style} {$recordattrs}>
+				{$mhsTahunTamatSmta_value}
+			</td>
+			{END mhsTahunTamatSmta_fieldcolumn}
+			{BEGIN mhsTahunLulusSmta_fieldcolumn}
+			<td  class="{$mhsTahunLulusSmta_class}" {$mhsTahunLulusSmta_style} {$recordattrs}>
+				{$mhsTahunLulusSmta_value}
+			</td>
+			{END mhsTahunLulusSmta_fieldcolumn}
+			{BEGIN mhsJursmtarKode_fieldcolumn}
+			<td  class="{$mhsJursmtarKode_class}" {$mhsJursmtarKode_style} {$recordattrs}>
+				{$mhsJursmtarKode_value}
+			</td>
+			{END mhsJursmtarKode_fieldcolumn}
+			{BEGIN mhsAlamatSmta_fieldcolumn}
+			<td  class="{$mhsAlamatSmta_class}" {$mhsAlamatSmta_style} {$recordattrs}>
+				{$mhsAlamatSmta_value}
+			</td>
+			{END mhsAlamatSmta_fieldcolumn}
+			{BEGIN mhsNoIjasahSmta_fieldcolumn}
+			<td  class="{$mhsNoIjasahSmta_class}" {$mhsNoIjasahSmta_style} {$recordattrs}>
+				{$mhsNoIjasahSmta_value}
+			</td>
+			{END mhsNoIjasahSmta_fieldcolumn}
+			{BEGIN mhsIjasahSmta_fieldcolumn}
+			<td  class="{$mhsIjasahSmta_class}" {$mhsIjasahSmta_style} {$recordattrs}>
+				{$mhsIjasahSmta_value}
+			</td>
+			{END mhsIjasahSmta_fieldcolumn}
+			{BEGIN mhsTanggalIjasahSmta_fieldcolumn}
+			<td  class="{$mhsTanggalIjasahSmta_class}" {$mhsTanggalIjasahSmta_style} {$recordattrs}>
+				{$mhsTanggalIjasahSmta_value}
+			</td>
+			{END mhsTanggalIjasahSmta_fieldcolumn}
+			{BEGIN mhsNilaiUjianAkhirSmta_fieldcolumn}
+			<td  class="{$mhsNilaiUjianAkhirSmta_class}" {$mhsNilaiUjianAkhirSmta_style} {$recordattrs}>
+				{$mhsNilaiUjianAkhirSmta_value}
+			</td>
+			{END mhsNilaiUjianAkhirSmta_fieldcolumn}
+			{BEGIN mhsJumlahMpUjianAkhirSmta_fieldcolumn}
+			<td  class="{$mhsJumlahMpUjianAkhirSmta_class}" {$mhsJumlahMpUjianAkhirSmta_style} {$recordattrs}>
+				{$mhsJumlahMpUjianAkhirSmta_value}
+			</td>
+			{END mhsJumlahMpUjianAkhirSmta_fieldcolumn}
+			{BEGIN mhsStnkrId_fieldcolumn}
+			<td  class="{$mhsStnkrId_class}" {$mhsStnkrId_style} {$recordattrs}>
+				{$mhsStnkrId_value}
+			</td>
+			{END mhsStnkrId_fieldcolumn}
+			{BEGIN mhsJumlahSaudara_fieldcolumn}
+			<td  class="{$mhsJumlahSaudara_class}" {$mhsJumlahSaudara_style} {$recordattrs}>
+				{$mhsJumlahSaudara_value}
+			</td>
+			{END mhsJumlahSaudara_fieldcolumn}
+			{BEGIN mhsAlamatMhs_fieldcolumn}
+			<td  class="{$mhsAlamatMhs_class}" {$mhsAlamatMhs_style} {$recordattrs}>
+				{$mhsAlamatMhs_value}
+			</td>
+			{END mhsAlamatMhs_fieldcolumn}
+			{BEGIN mhsAlamatTerakhir_fieldcolumn}
+			<td  class="{$mhsAlamatTerakhir_class}" {$mhsAlamatTerakhir_style} {$recordattrs}>
+				{$mhsAlamatTerakhir_value}
+			</td>
+			{END mhsAlamatTerakhir_fieldcolumn}
+			{BEGIN mhsAlamatDiKotaIni_fieldcolumn}
+			<td  class="{$mhsAlamatDiKotaIni_class}" {$mhsAlamatDiKotaIni_style} {$recordattrs}>
+				{$mhsAlamatDiKotaIni_value}
+			</td>
+			{END mhsAlamatDiKotaIni_fieldcolumn}
+			{BEGIN mhsKotaKode_fieldcolumn}
+			<td  class="{$mhsKotaKode_class}" {$mhsKotaKode_style} {$recordattrs}>
+				{$mhsKotaKode_value}
+			</td>
+			{END mhsKotaKode_fieldcolumn}
+			{BEGIN mhsNgrKode_fieldcolumn}
+			<td  class="{$mhsNgrKode_class}" {$mhsNgrKode_style} {$recordattrs}>
+				{$mhsNgrKode_value}
+			</td>
+			{END mhsNgrKode_fieldcolumn}
+			{BEGIN mhsKodePos_fieldcolumn}
+			<td  class="{$mhsKodePos_class}" {$mhsKodePos_style} {$recordattrs}>
+				{$mhsKodePos_value}
+			</td>
+			{END mhsKodePos_fieldcolumn}
+			{BEGIN mhsStatrumahId_fieldcolumn}
+			<td  class="{$mhsStatrumahId_class}" {$mhsStatrumahId_style} {$recordattrs}>
+				{$mhsStatrumahId_value}
+			</td>
+			{END mhsStatrumahId_fieldcolumn}
+			{BEGIN mhsSbdnrId_fieldcolumn}
+			<td  class="{$mhsSbdnrId_class}" {$mhsSbdnrId_style} {$recordattrs}>
+				{$mhsSbdnrId_value}
+			</td>
+			{END mhsSbdnrId_fieldcolumn}
+			{BEGIN mhsHubbiayaId_fieldcolumn}
+			<td  class="{$mhsHubbiayaId_class}" {$mhsHubbiayaId_style} {$recordattrs}>
+				{$mhsHubbiayaId_value}
+			</td>
+			{END mhsHubbiayaId_fieldcolumn}
+			{BEGIN mhsTempatKerja_fieldcolumn}
+			<td  class="{$mhsTempatKerja_class}" {$mhsTempatKerja_style} {$recordattrs}>
+				{$mhsTempatKerja_value}
+			</td>
+			{END mhsTempatKerja_fieldcolumn}
+			{BEGIN mhsAlamatTempatKerja_fieldcolumn}
+			<td  class="{$mhsAlamatTempatKerja_class}" {$mhsAlamatTempatKerja_style} {$recordattrs}>
+				{$mhsAlamatTempatKerja_value}
+			</td>
+			{END mhsAlamatTempatKerja_fieldcolumn}
+			{BEGIN mhsNoTelpTempatKerja_fieldcolumn}
+			<td  class="{$mhsNoTelpTempatKerja_class}" {$mhsNoTelpTempatKerja_style} {$recordattrs}>
+				{$mhsNoTelpTempatKerja_value}
+			</td>
+			{END mhsNoTelpTempatKerja_fieldcolumn}
+			{BEGIN mhsBeasiswa_fieldcolumn}
+			<td  class="{$mhsBeasiswa_class}" {$mhsBeasiswa_style} {$recordattrs}>
+				{$mhsBeasiswa_value}
+			</td>
+			{END mhsBeasiswa_fieldcolumn}
+			{BEGIN mhsWnrId_fieldcolumn}
+			<td  class="{$mhsWnrId_class}" {$mhsWnrId_style} {$recordattrs}>
+				{$mhsWnrId_value}
+			</td>
+			{END mhsWnrId_fieldcolumn}
+			{BEGIN mhsJlrrKode_fieldcolumn}
+			<td  class="{$mhsJlrrKode_class}" {$mhsJlrrKode_style} {$recordattrs}>
+				{$mhsJlrrKode_value}
+			</td>
+			{END mhsJlrrKode_fieldcolumn}
+			{BEGIN mhsNoAskes_fieldcolumn}
+			<td  class="{$mhsNoAskes_class}" {$mhsNoAskes_style} {$recordattrs}>
+				{$mhsNoAskes_value}
+			</td>
+			{END mhsNoAskes_fieldcolumn}
+			{BEGIN mhsNoTelp_fieldcolumn}
+			<td  class="{$mhsNoTelp_class}" {$mhsNoTelp_style} {$recordattrs}>
+				{$mhsNoTelp_value}
+			</td>
+			{END mhsNoTelp_fieldcolumn}
+			{BEGIN mhsNoHp_fieldcolumn}
+			<td  class="{$mhsNoHp_class}" {$mhsNoHp_style} {$recordattrs}>
+				{$mhsNoHp_value}
+			</td>
+			{END mhsNoHp_fieldcolumn}
+			{BEGIN mhsEmail_fieldcolumn}
+			<td  class="{$mhsEmail_class}" {$mhsEmail_style} {$recordattrs}>
+				{$mhsEmail_value}
+			</td>
+			{END mhsEmail_fieldcolumn}
+			{BEGIN mhsHomepage_fieldcolumn}
+			<td  class="{$mhsHomepage_class}" {$mhsHomepage_style} {$recordattrs}>
+				{$mhsHomepage_value}
+			</td>
+			{END mhsHomepage_fieldcolumn}
+			{BEGIN mhsFoto_fieldcolumn}
+			<td  class="{$mhsFoto_class}" {$mhsFoto_style} {$recordattrs}>
+				{$mhsFoto_value}
+			</td>
+			{END mhsFoto_fieldcolumn}
+			{BEGIN mhsStakmhsrKode_fieldcolumn}
+			<td  class="{$mhsStakmhsrKode_class}" {$mhsStakmhsrKode_style} {$recordattrs}>
+				{$mhsStakmhsrKode_value}
+			</td>
+			{END mhsStakmhsrKode_fieldcolumn}
+			{BEGIN mhsDsnPegNipPembimbingAkademik_fieldcolumn}
+			<td  class="{$mhsDsnPegNipPembimbingAkademik_class}" {$mhsDsnPegNipPembimbingAkademik_style} {$recordattrs}>
+				{$mhsDsnPegNipPembimbingAkademik_value}
+			</td>
+			{END mhsDsnPegNipPembimbingAkademik_fieldcolumn}
+			{BEGIN mhsSksWajib_fieldcolumn}
+			<td  class="{$mhsSksWajib_class}" {$mhsSksWajib_style} {$recordattrs}>
+				{$mhsSksWajib_value}
+			</td>
+			{END mhsSksWajib_fieldcolumn}
+			{BEGIN mhsSksPilihan_fieldcolumn}
+			<td  class="{$mhsSksPilihan_class}" {$mhsSksPilihan_style} {$recordattrs}>
+				{$mhsSksPilihan_value}
+			</td>
+			{END mhsSksPilihan_fieldcolumn}
+			{BEGIN mhsSksA_fieldcolumn}
+			<td  class="{$mhsSksA_class}" {$mhsSksA_style} {$recordattrs}>
+				{$mhsSksA_value}
+			</td>
+			{END mhsSksA_fieldcolumn}
+			{BEGIN mhsSksB_fieldcolumn}
+			<td  class="{$mhsSksB_class}" {$mhsSksB_style} {$recordattrs}>
+				{$mhsSksB_value}
+			</td>
+			{END mhsSksB_fieldcolumn}
+			{BEGIN mhsSksC_fieldcolumn}
+			<td  class="{$mhsSksC_class}" {$mhsSksC_style} {$recordattrs}>
+				{$mhsSksC_value}
+			</td>
+			{END mhsSksC_fieldcolumn}
+			{BEGIN mhsSksD_fieldcolumn}
+			<td  class="{$mhsSksD_class}" {$mhsSksD_style} {$recordattrs}>
+				{$mhsSksD_value}
+			</td>
+			{END mhsSksD_fieldcolumn}
+			{BEGIN mhsSksE_fieldcolumn}
+			<td  class="{$mhsSksE_class}" {$mhsSksE_style} {$recordattrs}>
+				{$mhsSksE_value}
+			</td>
+			{END mhsSksE_fieldcolumn}
+			{BEGIN mhsSksTranskrip_fieldcolumn}
+			<td  class="{$mhsSksTranskrip_class}" {$mhsSksTranskrip_style} {$recordattrs}>
+				{$mhsSksTranskrip_value}
+			</td>
+			{END mhsSksTranskrip_fieldcolumn}
+			{BEGIN mhsBobotTotalTranskrip_fieldcolumn}
+			<td  class="{$mhsBobotTotalTranskrip_class}" {$mhsBobotTotalTranskrip_style} {$recordattrs}>
+				{$mhsBobotTotalTranskrip_value}
+			</td>
+			{END mhsBobotTotalTranskrip_fieldcolumn}
+			{BEGIN mhsIpkTranskrip_fieldcolumn}
+			<td  class="{$mhsIpkTranskrip_class}" {$mhsIpkTranskrip_style} {$recordattrs}>
+				{$mhsIpkTranskrip_value}
+			</td>
+			{END mhsIpkTranskrip_fieldcolumn}
+			{BEGIN mhsLamaStudiSemester_fieldcolumn}
+			<td  class="{$mhsLamaStudiSemester_class}" {$mhsLamaStudiSemester_style} {$recordattrs}>
+				{$mhsLamaStudiSemester_value}
+			</td>
+			{END mhsLamaStudiSemester_fieldcolumn}
+			{BEGIN mhsLamaStudiBulan_fieldcolumn}
+			<td  class="{$mhsLamaStudiBulan_class}" {$mhsLamaStudiBulan_style} {$recordattrs}>
+				{$mhsLamaStudiBulan_value}
+			</td>
+			{END mhsLamaStudiBulan_fieldcolumn}
+			{BEGIN mhsIsTranskripAkhirDiarsipkan_fieldcolumn}
+			<td  class="{$mhsIsTranskripAkhirDiarsipkan_class}" {$mhsIsTranskripAkhirDiarsipkan_style} {$recordattrs}>
+				{$mhsIsTranskripAkhirDiarsipkan_value}
+			</td>
+			{END mhsIsTranskripAkhirDiarsipkan_fieldcolumn}
+			{BEGIN mhsTanggalTranskrip_fieldcolumn}
+			<td  class="{$mhsTanggalTranskrip_class}" {$mhsTanggalTranskrip_style} {$recordattrs}>
+				{$mhsTanggalTranskrip_value}
+			</td>
+			{END mhsTanggalTranskrip_fieldcolumn}
+			{BEGIN mhsNomorTranskrip_fieldcolumn}
+			<td  class="{$mhsNomorTranskrip_class}" {$mhsNomorTranskrip_style} {$recordattrs}>
+				{$mhsNomorTranskrip_value}
+			</td>
+			{END mhsNomorTranskrip_fieldcolumn}
+			{BEGIN mhsTempatLahirTranskrip_fieldcolumn}
+			<td  class="{$mhsTempatLahirTranskrip_class}" {$mhsTempatLahirTranskrip_style} {$recordattrs}>
+				{$mhsTempatLahirTranskrip_value}
+			</td>
+			{END mhsTempatLahirTranskrip_fieldcolumn}
+			{BEGIN mhsTanggalLahirTranskrip_fieldcolumn}
+			<td  class="{$mhsTanggalLahirTranskrip_class}" {$mhsTanggalLahirTranskrip_style} {$recordattrs}>
+				{$mhsTanggalLahirTranskrip_value}
+			</td>
+			{END mhsTanggalLahirTranskrip_fieldcolumn}
+			{BEGIN mhsMetodeBuildTranskrip_fieldcolumn}
+			<td  class="{$mhsMetodeBuildTranskrip_class}" {$mhsMetodeBuildTranskrip_style} {$recordattrs}>
+				{$mhsMetodeBuildTranskrip_value}
+			</td>
+			{END mhsMetodeBuildTranskrip_fieldcolumn}
+			{BEGIN mhsMetodePenyetaraanTranskrip_fieldcolumn}
+			<td  class="{$mhsMetodePenyetaraanTranskrip_class}" {$mhsMetodePenyetaraanTranskrip_style} {$recordattrs}>
+				{$mhsMetodePenyetaraanTranskrip_value}
+			</td>
+			{END mhsMetodePenyetaraanTranskrip_fieldcolumn}
+			{BEGIN mhsTahunKurikulumPenyetaraanTranskrip_fieldcolumn}
+			<td  class="{$mhsTahunKurikulumPenyetaraanTranskrip_class}" {$mhsTahunKurikulumPenyetaraanTranskrip_style} {$recordattrs}>
+				{$mhsTahunKurikulumPenyetaraanTranskrip_value}
+			</td>
+			{END mhsTahunKurikulumPenyetaraanTranskrip_fieldcolumn}
+			{BEGIN mhsTanggalLulus_fieldcolumn}
+			<td  class="{$mhsTanggalLulus_class}" {$mhsTanggalLulus_style} {$recordattrs}>
+				{$mhsTanggalLulus_value}
+			</td>
+			{END mhsTanggalLulus_fieldcolumn}
+			{BEGIN mhsNoSuratYudisium_fieldcolumn}
+			<td  class="{$mhsNoSuratYudisium_class}" {$mhsNoSuratYudisium_style} {$recordattrs}>
+				{$mhsNoSuratYudisium_value}
+			</td>
+			{END mhsNoSuratYudisium_fieldcolumn}
+			{BEGIN mhsTanggalSuratYudisium_fieldcolumn}
+			<td  class="{$mhsTanggalSuratYudisium_class}" {$mhsTanggalSuratYudisium_style} {$recordattrs}>
+				{$mhsTanggalSuratYudisium_value}
+			</td>
+			{END mhsTanggalSuratYudisium_fieldcolumn}
+			{BEGIN mhsSemIdLulus_fieldcolumn}
+			<td  class="{$mhsSemIdLulus_class}" {$mhsSemIdLulus_style} {$recordattrs}>
+				{$mhsSemIdLulus_value}
+			</td>
+			{END mhsSemIdLulus_fieldcolumn}
+			{BEGIN mhsTanggalIjasah_fieldcolumn}
+			<td  class="{$mhsTanggalIjasah_class}" {$mhsTanggalIjasah_style} {$recordattrs}>
+				{$mhsTanggalIjasah_value}
+			</td>
+			{END mhsTanggalIjasah_fieldcolumn}
+			{BEGIN mhsNoIjasah_fieldcolumn}
+			<td  class="{$mhsNoIjasah_class}" {$mhsNoIjasah_style} {$recordattrs}>
+				{$mhsNoIjasah_value}
+			</td>
+			{END mhsNoIjasah_fieldcolumn}
+			{BEGIN mhsKodeIjasah_fieldcolumn}
+			<td  class="{$mhsKodeIjasah_class}" {$mhsKodeIjasah_style} {$recordattrs}>
+				{$mhsKodeIjasah_value}
+			</td>
+			{END mhsKodeIjasah_fieldcolumn}
+			{BEGIN mhsPinIjasah_fieldcolumn}
+			<td  class="{$mhsPinIjasah_class}" {$mhsPinIjasah_style} {$recordattrs}>
+				{$mhsPinIjasah_value}
+			</td>
+			{END mhsPinIjasah_fieldcolumn}
+			{BEGIN mhsPrlsrId_fieldcolumn}
+			<td  class="{$mhsPrlsrId_class}" {$mhsPrlsrId_style} {$recordattrs}>
+				{$mhsPrlsrId_value}
+			</td>
+			{END mhsPrlsrId_fieldcolumn}
+			{BEGIN mhsPrlsrNama_fieldcolumn}
+			<td  class="{$mhsPrlsrNama_class}" {$mhsPrlsrNama_style} {$recordattrs}>
+				{$mhsPrlsrNama_value}
+			</td>
+			{END mhsPrlsrNama_fieldcolumn}
+			{BEGIN mhsPrlsrNamaAsing_fieldcolumn}
+			<td  class="{$mhsPrlsrNamaAsing_class}" {$mhsPrlsrNamaAsing_style} {$recordattrs}>
+				{$mhsPrlsrNamaAsing_value}
+			</td>
+			{END mhsPrlsrNamaAsing_fieldcolumn}
+			{BEGIN mhsWsdId_fieldcolumn}
+			<td  class="{$mhsWsdId_class}" {$mhsWsdId_style} {$recordattrs}>
+				{$mhsWsdId_value}
+			</td>
+			{END mhsWsdId_fieldcolumn}
+			{BEGIN mhsTanggalPengubahan_fieldcolumn}
+			<td  class="{$mhsTanggalPengubahan_class}" {$mhsTanggalPengubahan_style} {$recordattrs}>
+				{$mhsTanggalPengubahan_value}
+			</td>
+			{END mhsTanggalPengubahan_fieldcolumn}
+			{BEGIN mhsUnitPengubah_fieldcolumn}
+			<td  class="{$mhsUnitPengubah_class}" {$mhsUnitPengubah_style} {$recordattrs}>
+				{$mhsUnitPengubah_value}
+			</td>
+			{END mhsUnitPengubah_fieldcolumn}
+			{BEGIN mhsUserPengubah_fieldcolumn}
+			<td  class="{$mhsUserPengubah_class}" {$mhsUserPengubah_style} {$recordattrs}>
+				{$mhsUserPengubah_value}
+			</td>
+			{END mhsUserPengubah_fieldcolumn}
+			{BEGIN mhsProdiGelarKelulusan_fieldcolumn}
+			<td  class="{$mhsProdiGelarKelulusan_class}" {$mhsProdiGelarKelulusan_style} {$recordattrs}>
+				{$mhsProdiGelarKelulusan_value}
+			</td>
+			{END mhsProdiGelarKelulusan_fieldcolumn}
+			{BEGIN mhsSemIdMulai_fieldcolumn}
+			<td  class="{$mhsSemIdMulai_class}" {$mhsSemIdMulai_style} {$recordattrs}>
+				{$mhsSemIdMulai_value}
+			</td>
+			{END mhsSemIdMulai_fieldcolumn}
+			{BEGIN mhsBiayaStudi_fieldcolumn}
+			<td  class="{$mhsBiayaStudi_class}" {$mhsBiayaStudi_style} {$recordattrs}>
+				{$mhsBiayaStudi_value}
+			</td>
+			{END mhsBiayaStudi_fieldcolumn}
+			{BEGIN mhsPekerjaan_fieldcolumn}
+			<td  class="{$mhsPekerjaan_class}" {$mhsPekerjaan_style} {$recordattrs}>
+				{$mhsPekerjaan_value}
+			</td>
+			{END mhsPekerjaan_fieldcolumn}
+			{BEGIN mhsPTKerja_fieldcolumn}
+			<td  class="{$mhsPTKerja_class}" {$mhsPTKerja_style} {$recordattrs}>
+				{$mhsPTKerja_value}
+			</td>
+			{END mhsPTKerja_fieldcolumn}
+			{BEGIN mhsPSKerja_fieldcolumn}
+			<td  class="{$mhsPSKerja_class}" {$mhsPSKerja_style} {$recordattrs}>
+				{$mhsPSKerja_value}
+			</td>
+			{END mhsPSKerja_fieldcolumn}
+			{BEGIN mhsNIDNPromotor_fieldcolumn}
+			<td  class="{$mhsNIDNPromotor_class}" {$mhsNIDNPromotor_style} {$recordattrs}>
+				{$mhsNIDNPromotor_value}
+			</td>
+			{END mhsNIDNPromotor_fieldcolumn}
+			{BEGIN mhsKoPromotor1_fieldcolumn}
+			<td  class="{$mhsKoPromotor1_class}" {$mhsKoPromotor1_style} {$recordattrs}>
+				{$mhsKoPromotor1_value}
+			</td>
+			{END mhsKoPromotor1_fieldcolumn}
+			{BEGIN mhsKoPromotor2_fieldcolumn}
+			<td  class="{$mhsKoPromotor2_class}" {$mhsKoPromotor2_style} {$recordattrs}>
+				{$mhsKoPromotor2_value}
+			</td>
+			{END mhsKoPromotor2_fieldcolumn}
+			{BEGIN mhsKoPromotor3_fieldcolumn}
+			<td  class="{$mhsKoPromotor3_class}" {$mhsKoPromotor3_style} {$recordattrs}>
+				{$mhsKoPromotor3_value}
+			</td>
+			{END mhsKoPromotor3_fieldcolumn}
+			{BEGIN mhsKoPromotor4_fieldcolumn}
+			<td  class="{$mhsKoPromotor4_class}" {$mhsKoPromotor4_style} {$recordattrs}>
+				{$mhsKoPromotor4_value}
+			</td>
+			{END mhsKoPromotor4_fieldcolumn}
+			{BEGIN mhsProdiAsal_fieldcolumn}
+			<td  class="{$mhsProdiAsal_class}" {$mhsProdiAsal_style} {$recordattrs}>
+				{$mhsProdiAsal_value}
+			</td>
+			{END mhsProdiAsal_fieldcolumn}
+			{BEGIN mhsDiktiShift_fieldcolumn}
+			<td  class="{$mhsDiktiShift_class}" {$mhsDiktiShift_style} {$recordattrs}>
+				{$mhsDiktiShift_value}
+			</td>
+			{END mhsDiktiShift_fieldcolumn}
+			{BEGIN mhsPembayaranIpp_fieldcolumn}
+			<td  class="{$mhsPembayaranIpp_class}" {$mhsPembayaranIpp_style} {$recordattrs}>
+				{$mhsPembayaranIpp_value}
+			</td>
+			{END mhsPembayaranIpp_fieldcolumn}
+			{BEGIN mshNoIpp_fieldcolumn}
+			<td  class="{$mshNoIpp_class}" {$mshNoIpp_style} {$recordattrs}>
+				{$mshNoIpp_value}
+			</td>
+			{END mshNoIpp_fieldcolumn}
+			{BEGIN mhsPersyaratan_fieldcolumn}
+			<td  class="{$mhsPersyaratan_class}" {$mhsPersyaratan_style} {$recordattrs}>
+				{$mhsPersyaratan_value}
+			</td>
+			{END mhsPersyaratan_fieldcolumn}
+			{BEGIN mhsPengOrg_fieldcolumn}
+			<td  class="{$mhsPengOrg_class}" {$mhsPengOrg_style} {$recordattrs}>
+				{$mhsPengOrg_value}
+			</td>
+			{END mhsPengOrg_fieldcolumn}
+			{BEGIN mhsOrg_fieldcolumn}
+			<td  class="{$mhsOrg_class}" {$mhsOrg_style} {$recordattrs}>
+				{$mhsOrg_value}
+			</td>
+			{END mhsOrg_fieldcolumn}
+			{BEGIN mhsDomisili_fieldcolumn}
+			<td  class="{$mhsDomisili_class}" {$mhsDomisili_style} {$recordattrs}>
+				{$mhsDomisili_value}
+			</td>
+			{END mhsDomisili_fieldcolumn}
+			{BEGIN mhsJenisSttb_fieldcolumn}
+			<td  class="{$mhsJenisSttb_class}" {$mhsJenisSttb_style} {$recordattrs}>
+				{$mhsJenisSttb_value}
+			</td>
+			{END mhsJenisSttb_fieldcolumn}
+			{BEGIN mhsIsKerja_fieldcolumn}
+			<td  class="{$mhsIsKerja_class}" {$mhsIsKerja_style} {$recordattrs}>
+				{$mhsIsKerja_value}
+			</td>
+			{END mhsIsKerja_fieldcolumn}
+			{BEGIN mhsStatusSmta_fieldcolumn}
+			<td  class="{$mhsStatusSmta_class}" {$mhsStatusSmta_style} {$recordattrs}>
+				{$mhsStatusSmta_value}
+			</td>
+			{END mhsStatusSmta_fieldcolumn}
+			{BEGIN mhsAkreditasi_fieldcolumn}
+			<td  class="{$mhsAkreditasi_class}" {$mhsAkreditasi_style} {$recordattrs}>
+				{$mhsAkreditasi_value}
+			</td>
+			{END mhsAkreditasi_fieldcolumn}
+			{BEGIN mhsKerja_fieldcolumn}
+			<td  class="{$mhsKerja_class}" {$mhsKerja_style} {$recordattrs}>
+				{$mhsKerja_value}
+			</td>
+			{END mhsKerja_fieldcolumn}
+			{BEGIN mhsSaudaraLk_fieldcolumn}
+			<td  class="{$mhsSaudaraLk_class}" {$mhsSaudaraLk_style} {$recordattrs}>
+				{$mhsSaudaraLk_value}
+			</td>
+			{END mhsSaudaraLk_fieldcolumn}
+			{BEGIN mhsSaudaraPr_fieldcolumn}
+			<td  class="{$mhsSaudaraPr_class}" {$mhsSaudaraPr_style} {$recordattrs}>
+				{$mhsSaudaraPr_value}
+			</td>
+			{END mhsSaudaraPr_fieldcolumn}
+			{BEGIN mhsHobi_fieldcolumn}
+			<td  class="{$mhsHobi_class}" {$mhsHobi_style} {$recordattrs}>
+				{$mhsHobi_value}
+			</td>
+			{END mhsHobi_fieldcolumn}
+			{BEGIN mhsSmtaLain_fieldcolumn}
+			<td  class="{$mhsSmtaLain_class}" {$mhsSmtaLain_style} {$recordattrs}>
+				{$mhsSmtaLain_value}
+			</td>
+			{END mhsSmtaLain_fieldcolumn}
+			{BEGIN mhsAkreditasiSmta_fieldcolumn}
+			<td  class="{$mhsAkreditasiSmta_class}" {$mhsAkreditasiSmta_style} {$recordattrs}>
+				{$mhsAkreditasiSmta_value}
+			</td>
+			{END mhsAkreditasiSmta_fieldcolumn}
+			{BEGIN mhsBiayaKuliah_fieldcolumn}
+			<td  class="{$mhsBiayaKuliah_class}" {$mhsBiayaKuliah_style} {$recordattrs}>
+				{$mhsBiayaKuliah_value}
+			</td>
+			{END mhsBiayaKuliah_fieldcolumn}
+			{BEGIN MhsIdJenisSmta_fieldcolumn}
+			<td  class="{$MhsIdJenisSmta_class}" {$MhsIdJenisSmta_style} {$recordattrs}>
+				{$MhsIdJenisSmta_value}
+			</td>
+			{END MhsIdJenisSmta_fieldcolumn}
+			{BEGIN mhsSmtaPropinsiKode_fieldcolumn}
+			<td  class="{$mhsSmtaPropinsiKode_class}" {$mhsSmtaPropinsiKode_style} {$recordattrs}>
+				{$mhsSmtaPropinsiKode_value}
+			</td>
+			{END mhsSmtaPropinsiKode_fieldcolumn}
+			{BEGIN mhsEmailOld_fieldcolumn}
+			<td  class="{$mhsEmailOld_class}" {$mhsEmailOld_style} {$recordattrs}>
+				{$mhsEmailOld_value}
+			</td>
+			{END mhsEmailOld_fieldcolumn}
+			{BEGIN mhsNoKtp_fieldcolumn}
+			<td  class="{$mhsNoKtp_class}" {$mhsNoKtp_style} {$recordattrs}>
+				{$mhsNoKtp_value}
+			</td>
+			{END mhsNoKtp_fieldcolumn}
+			{BEGIN mhsNoKk_fieldcolumn}
+			<td  class="{$mhsNoKk_class}" {$mhsNoKk_style} {$recordattrs}>
+				{$mhsNoKk_value}
+			</td>
+			{END mhsNoKk_fieldcolumn}
+			{BEGIN endrecord_block}
+			<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+			{END endrecord_block}
+		{END grid_record}
+		</tr>
+{END grid_row}
+	</tbody>
+
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

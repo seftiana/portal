@@ -1,0 +1,378 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-view" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_viewpage}
+<div {$viewpage_chiddenattr} data-pageid="{$pageid}" data-container="viewpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-12 "> 
+
+{BEGIN viewheader}
+	<h2 {$viewheader_hiddenattr} data-pageid="{$pageid}" data-brick="viewheader" >{$pagetitlelabel t_user view}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END viewheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_viewpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class=" form-horizontal  col-md-12 "> 
+
+
+<div {$viewfields_hiddenattr} data-pageid="{$pageid}" data-brick="viewfields" >
+
+	<div class="container">
+					{BEGIN tusrNama_fieldblock}
+	<div class="{$fielddispclass_tusrNama} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrNama">
+		<label class="control-label" for="{$labelfor_tusrNama}">
+			{$label t_user tusrNama}
+		</label>
+		<div class="" >
+			{$tusrNama_value}&nbsp;
+		</div>
+	</div>
+{END tusrNama_fieldblock}
+					{BEGIN tusrPassword_fieldblock}
+	<div class="{$fielddispclass_tusrPassword} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrPassword">
+		<label class="control-label" for="{$labelfor_tusrPassword}">
+			{$label t_user tusrPassword}
+		</label>
+		<div class="" >
+			{$tusrPassword_value}&nbsp;
+		</div>
+	</div>
+{END tusrPassword_fieldblock}
+					{BEGIN tusrThakrId_fieldblock}
+	<div class="{$fielddispclass_tusrThakrId} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrThakrId">
+		<label class="control-label" for="{$labelfor_tusrThakrId}">
+			{$label t_user tusrThakrId}
+		</label>
+		<div class="" >
+			{$tusrThakrId_value}&nbsp;
+		</div>
+	</div>
+{END tusrThakrId_fieldblock}
+					{BEGIN tusrProfil_fieldblock}
+	<div class="{$fielddispclass_tusrProfil} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrProfil">
+		<label class="control-label" for="{$labelfor_tusrProfil}">
+			{$label t_user tusrProfil}
+		</label>
+		<div class="" >
+			{$tusrProfil_value}&nbsp;
+		</div>
+	</div>
+{END tusrProfil_fieldblock}
+					{BEGIN tusrPertanyaan_fieldblock}
+	<div class="{$fielddispclass_tusrPertanyaan} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrPertanyaan">
+		<label class="control-label" for="{$labelfor_tusrPertanyaan}">
+			{$label t_user tusrPertanyaan}
+		</label>
+		<div class="" >
+			{$tusrPertanyaan_value}&nbsp;
+		</div>
+	</div>
+{END tusrPertanyaan_fieldblock}
+					{BEGIN tusrJawaban_fieldblock}
+	<div class="{$fielddispclass_tusrJawaban} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrJawaban">
+		<label class="control-label" for="{$labelfor_tusrJawaban}">
+			{$label t_user tusrJawaban}
+		</label>
+		<div class="" >
+			{$tusrJawaban_value}&nbsp;
+		</div>
+	</div>
+{END tusrJawaban_fieldblock}
+					{BEGIN tusrSignature_fieldblock}
+	<div class="{$fielddispclass_tusrSignature} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrSignature">
+		<label class="control-label" for="{$labelfor_tusrSignature}">
+			{$label t_user tusrSignature}
+		</label>
+		<div class="" >
+			{$tusrSignature_value}&nbsp;
+		</div>
+	</div>
+{END tusrSignature_fieldblock}
+					{BEGIN tusrAvatar_fieldblock}
+	<div class="{$fielddispclass_tusrAvatar} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrAvatar">
+		<label class="control-label" for="{$labelfor_tusrAvatar}">
+			{$label t_user tusrAvatar}
+		</label>
+		<div class="" >
+			{$tusrAvatar_value}&nbsp;
+		</div>
+	</div>
+{END tusrAvatar_fieldblock}
+					{BEGIN tusrEmail_fieldblock}
+	<div class="{$fielddispclass_tusrEmail} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrEmail">
+		<label class="control-label" for="{$labelfor_tusrEmail}">
+			{$label t_user tusrEmail}
+		</label>
+		<div class="" >
+			{$tusrEmail_value}&nbsp;
+		</div>
+	</div>
+{END tusrEmail_fieldblock}
+					{BEGIN tusrIsTampilBiodata_fieldblock}
+	<div class="{$fielddispclass_tusrIsTampilBiodata} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrIsTampilBiodata">
+		<label class="control-label" for="{$labelfor_tusrIsTampilBiodata}">
+			{$label t_user tusrIsTampilBiodata}
+		</label>
+		<div class="" >
+			{$tusrIsTampilBiodata_value}&nbsp;
+		</div>
+	</div>
+{END tusrIsTampilBiodata_fieldblock}
+					{BEGIN tusrNoTelp_fieldblock}
+	<div class="{$fielddispclass_tusrNoTelp} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrNoTelp">
+		<label class="control-label" for="{$labelfor_tusrNoTelp}">
+			{$label t_user tusrNoTelp}
+		</label>
+		<div class="" >
+			{$tusrNoTelp_value}&nbsp;
+		</div>
+	</div>
+{END tusrNoTelp_fieldblock}
+					{BEGIN tusrRefIndex_fieldblock}
+	<div class="{$fielddispclass_tusrRefIndex} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrRefIndex">
+		<label class="control-label" for="{$labelfor_tusrRefIndex}">
+			{$label t_user tusrRefIndex}
+		</label>
+		<div class="" >
+			{$tusrRefIndex_value}&nbsp;
+		</div>
+	</div>
+{END tusrRefIndex_fieldblock}
+					{BEGIN tusrUntId_fieldblock}
+	<div class="{$fielddispclass_tusrUntId} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrUntId">
+		<label class="control-label" for="{$labelfor_tusrUntId}">
+			{$label t_user tusrUntId}
+		</label>
+		<div class="" >
+			{$tusrUntId_value}&nbsp;
+		</div>
+	</div>
+{END tusrUntId_fieldblock}
+					{BEGIN tusrIsAgree_fieldblock}
+	<div class="{$fielddispclass_tusrIsAgree} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrIsAgree">
+		<label class="control-label" for="{$labelfor_tusrIsAgree}">
+			{$label t_user tusrIsAgree}
+		</label>
+		<div class="" >
+			{$tusrIsAgree_value}&nbsp;
+		</div>
+	</div>
+{END tusrIsAgree_fieldblock}
+					{BEGIN tusrAgreementDate_fieldblock}
+	<div class="{$fielddispclass_tusrAgreementDate} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrAgreementDate">
+		<label class="control-label" for="{$labelfor_tusrAgreementDate}">
+			{$label t_user tusrAgreementDate}
+		</label>
+		<div class="" >
+			{$tusrAgreementDate_value}&nbsp;
+		</div>
+	</div>
+{END tusrAgreementDate_fieldblock}
+					{BEGIN tusrLastAccess_fieldblock}
+	<div class="{$fielddispclass_tusrLastAccess} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrLastAccess">
+		<label class="control-label" for="{$labelfor_tusrLastAccess}">
+			{$label t_user tusrLastAccess}
+		</label>
+		<div class="" >
+			{$tusrLastAccess_value}&nbsp;
+		</div>
+	</div>
+{END tusrLastAccess_fieldblock}
+					{BEGIN tusrIsOnline_fieldblock}
+	<div class="{$fielddispclass_tusrIsOnline} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrIsOnline">
+		<label class="control-label" for="{$labelfor_tusrIsOnline}">
+			{$label t_user tusrIsOnline}
+		</label>
+		<div class="" >
+			{$tusrIsOnline_value}&nbsp;
+		</div>
+	</div>
+{END tusrIsOnline_fieldblock}
+					{BEGIN tusrProdiKode_fieldblock}
+	<div class="{$fielddispclass_tusrProdiKode} col-md-6 bs-viewcontrolgroup" data-fieldname="tusrProdiKode">
+		<label class="control-label" for="{$labelfor_tusrProdiKode}">
+			{$label t_user tusrProdiKode}
+		</label>
+		<div class="" >
+			{$tusrProdiKode_value}&nbsp;
+		</div>
+	</div>
+{END tusrProdiKode_fieldblock}
+					{BEGIN prodiNamaResmi_fieldblock}
+	<div class="{$fielddispclass_prodiNamaResmi} col-md-6 bs-viewcontrolgroup" data-fieldname="prodiNamaResmi">
+		<label class="control-label" for="{$labelfor_prodiNamaResmi}">
+			{$label t_user prodiNamaResmi}
+		</label>
+		<div class="" >
+			{$prodiNamaResmi_value}&nbsp;
+		</div>
+	</div>
+{END prodiNamaResmi_fieldblock}
+					{BEGIN thakrNama_fieldblock}
+	<div class="{$fielddispclass_thakrNama} col-md-6 bs-viewcontrolgroup" data-fieldname="thakrNama">
+		<label class="control-label" for="{$labelfor_thakrNama}">
+			{$label t_user thakrNama}
+		</label>
+		<div class="" >
+			{$thakrNama_value}&nbsp;
+		</div>
+	</div>
+{END thakrNama_fieldblock}
+	</div>
+</div>
+
+
+
+
+</div>
+{END container_fields}
+
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-6 "> 
+
+{BEGIN viewbuttons}
+{BEGIN back_button}
+<button class="btn btn-primary" {$backbutton_attrs}>Back to list</button>
+{END back_button}
+{BEGIN close_button}
+<button href="#" class="btn btn-primary" {$closebutton_attrs}>Close window</button>
+{END close_button}
+{END viewbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+
+
+{BEGIN container_leftbuttons_1}
+<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="   col-md-4 "> 
+
+{BEGIN rightviewbuttons}
+<div class="btn-group" role="group">
+		{BEGIN prev_button}
+	<button class="btn btn-default {$prevbutton_class}" {$prevbutton_attrs}><span class="glyphicon glyphicon-chevron-left"></span></button>
+	{END prev_button}
+	{BEGIN next_button}
+	<button class="btn btn-default {$nextbutton_class}" {$nextbutton_attrs}><span class="glyphicon glyphicon-chevron-right"></span></button>
+	{END next_button}
+		{BEGIN view_menu_button}
+	<div class="btn-group dropup" role="group">
+		<button class="btn btn-default dropdown-toggle {$groupbutton_class}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<ul class="dropdown-menu dropdown-left">
+									{BEGIN edit_page_button}
+				<li><a href=# {$edit_page_button_attrs}>Edit</a></li>
+			{END edit_page_button}
+		</ul>
+	</div>
+	{END view_menu_button}
+</div>
+{END rightviewbuttons}
+
+
+
+</div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

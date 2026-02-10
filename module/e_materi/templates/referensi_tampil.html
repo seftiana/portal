@@ -1,0 +1,51 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Referensi Silabus</h2>
+<br/>
+<form method="post" action="">
+<table class="table-list" width="100%">    
+    <tr>
+        <th>Kata Kunci</th>
+        <td>
+			<input type="textbox" name="judul" size="40" />
+			<input type="submit" name="cari" value="Cari" class="input-disclaimer" />		
+		</td>
+    </tr>   
+</table>
+<!-- patTemplate:tmpl name="show_table" visibility="hidden" -->
+  <P>
+  	Hasil Pencarian Untuk "<i>{CARI}</i>" : <b>{HASIL}</b>
+  </P>
+  <table class="table-common" width="100%">
+    <tr>
+      <th width="2%">No</th>
+      <th width="15%">Mata Kuliah</th>
+      <th width="25%">Judul</th>
+      <th width="15%">File</th>
+    </tr>
+    <!-- patTemplate:tmpl name="referensi" type="condition" conditionvar="DATA_EXIST" -->
+    <!-- patTemplate:sub condition="no" -->
+		<tr>
+			<td colspan="4"><div align="center">-- Data tidak ditemukan</div></td>
+		</tr>
+		</table>
+	<!-- /patTemplate:sub -->
+    <!-- patTemplate:sub condition="yes" -->
+	    <!-- patTemplate:tmpl name="daftar" -->
+	    <tr>
+	      <td width="2%">{DATA_NO}</td>
+	      <td><div align="left">{DATA_KELAS}<div></td>
+	      <td>
+		  	<div align="left"><strong>{DATA_NAMA}</strong></div>
+		  	{DATA_KETERANGAN}
+	      </td>
+	      <td><div align="left"><a href="{DATA_DOWNLOAD}" target="_blank">{DATA_FILE_DISPLAY}</a></div></td>
+	    </tr>
+	    <!-- /patTemplate:tmpl -->
+  		</table>
+  		<!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+  	<!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+  <!-- /patTemplate:tmpl -->
+  
+</form>  
+<!-- /patTemplate:tmpl -->

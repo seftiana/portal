@@ -1,0 +1,35 @@
+<!-- patTemplate:tmpl name="content" -->
+   
+   <h4>{APPLICATION_MODULE}</h4>
+         
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+         
+   <form name="addForm" class="form-common" method="POST" action="{URL_ADD_PROCESS}">
+      <input name="act" type="hidden" value="doAddPost" />            
+      <input name="forumKategoriId" type="hidden" value="{KATEGORI_ID}" />
+      <input name="forumTopikId" type="hidden" value="{TOPIK_ID}" />
+      <input name="data[ForumThreadId]" type="hidden" value="{THREAD_ID}" />
+      <table class="table-form" width="100%">
+         <tr>
+            <th colspan="2"><b>{FORM_TITLE}</b></th>
+         </tr>
+         <tr>
+            <th>Judul Posting</th>
+            <td><input name="data[ForumPostTitle]" type="text" maxlength="50" size="40" value="{POST_JUDUL}"/></td>
+         </tr>
+         <tr>
+            <th>Isi</th>   
+            <td>
+               <textarea name="data[ForumPostContent]" cols="40" rows="20">{POST_CONTENT}</textarea>
+            </td>
+         </tr>         
+         <tr>
+            <th>&nbsp;</th>
+            <td>
+               <input class="input-disclaimer" name="addBtn" type="submit" value="Kirim" />
+               <input class="input-disclaimer" name="cnclBtn" type="submit" value="Batal" />
+            </td>
+         </tr>
+      </table>
+   </form>
+<!-- /patTemplate:tmpl -->

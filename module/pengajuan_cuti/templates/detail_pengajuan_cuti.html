@@ -1,0 +1,72 @@
+<!-- patTemplate:tmpl name="content" -->
+<style type="text/css">
+.contentUtama {
+   padding:10px 5px;
+}
+
+.input-disclaimer {
+   cursor: pointer;
+}
+</style>
+
+<div class="contentUtama">
+   <h2>Detail Pengajuan Cuti</h2>
+   <br />
+   <h5>Keterangan :</h5>
+   <p>Berikut adalah Informasi Detail Pengajuan Cuti Anda</p>
+
+   <form class="form-common" name="frmInput" method="POST" action="{URL_PROCESS}">
+      <table class="table-form" width="100%">
+         <tr>
+            <th width="25%">Semester</td>
+            <td width="2%">:</td>
+            <td>
+               {SEMESTER_LABEL}
+            </td>
+         </tr>
+         <tr>
+            <th>Tanggal Cuti</td>
+            <td>:</td>
+            <td>
+               {MHSAJUCTTGLCUTI}
+            </td>
+         </tr>
+         <tr>
+            <th>Sebab Cuti</td>
+            <td>:</td>
+            <td>
+               {SBCTRNAMA}
+            </td>
+         </tr>
+         <tr>
+            <th>Keterangan</td>
+            <td>:</td>
+            <td>
+               {MHSAJUCTCATATAN}
+            </td>
+         </tr>
+         <tr>
+            <th>Status Pengajuan</td>
+            <td>:</td>
+            <td>
+               {STATUSCUTI}
+            </td>
+         </tr>
+         <tr>
+            <th>Nomor Surat Ijin Cuti</td>
+            <td>:</td>
+            <td>
+               {MHSAJUCTNOSURATIJINCUTI}
+            </td>
+         </tr>
+         <tr>
+            <th>&nbsp;</td>
+            <td></td>
+            <td>
+               <input class="input-disclaimer" type="button" name="compBtn" value="Batal" onclick="window.location.href='{URL_BACK}';" />
+            </td>
+         </tr>
+      </table>
+   </form>
+</div>
+<!-- /patTemplate:tmpl -->

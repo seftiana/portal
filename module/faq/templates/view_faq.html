@@ -1,0 +1,30 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>FAQ</h2>
+   <br />
+   <p class="text-muted">
+      Keterangan :</p>
+   <p>FAQ (Frequently Asked Question) merupakan menu yang digunakan untuk melihat pertanyaan dan jawaban yang sering dibahas.
+   </p><br />
+
+   <!-- patTemplate:tmpl name="list_faq" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+         
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      
+      <!-- /patTemplate:sub --> 
+      <!-- patTemplate:sub condition="NO" -->
+
+         <!-- patTemplate:tmpl name="kategori_header" -->
+            <h4>{UL_KATEGORI_NAMA}</h4>
+               <ul>
+                  <!-- patTemplate:tmpl name="kategori_list" -->
+                  <li><a href="{LI_KATEGORI_URL}">{LI_KATEGORI_PERTANYAAN}</a></li>
+                  <!-- /patTemplate:tmpl -->
+               </ul>
+				<br/>
+         <!-- /patTemplate:tmpl -->
+      <!-- /patTemplate:sub -->
+
+
+<!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

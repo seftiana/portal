@@ -1,0 +1,66 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Agenda Pribadi Baru</h2><br/>
+<form class="form-common" action="{URL_ACTION}" method="post">
+	<table class="table-form" width="100%">
+		<tr>
+			<th width="25%">Nama Agenda</th>
+			<td width="75%">
+				<input type="text" name="nama" size="30" />
+			 </td>
+		</tr>
+		<tr>			
+			<th>Jenis</th>
+			<td>
+				<select name="jenis">
+					<option>Insidental</option>
+					<option>Mingguan</option>
+					<option>Bulanan</option>
+				</select>
+			</td>
+		</tr>
+		<tr>		
+			<th>Waktu</th>
+			<td>
+          	  	<select name="tglAwal">
+          	  		<!-- patTemplate:tmpl name="tglAwal" -->
+          	  		<option value="{TGL}">{TGL}</option>
+          	  		<!-- /patTemplate:tmpl -->
+          	  	</select>
+          	  	<select name="blnAwal">
+          	  		<option value="01">Januari</option>
+          	  		<option value="02">Februari</option>
+          	  		<option value="03">Maret</option>
+          	  		<option value="04">April</option>
+          	  		<option value="05">Mei</option>
+          	  		<option value="06">Juni</option>
+          	  		<option value="07">Juli</option>
+          	  		<option value="08">Agustus</option>
+          	  		<option value="09">September</option>
+          	  		<option value="10">Oktober</option>
+          	  		<option value="11">Nopember</option>
+          	  		<option value="12">Desember</option>
+          	  	</select>
+          	  	<select name="thnAwal">
+          	  		<!-- patTemplate:tmpl name="thnAwal" -->
+          	  		<option value="{THN}">{THN}</option>
+          	  		<!-- /patTemplate:tmpl -->
+          	  	</select>
+          	  	&nbsp;&nbsp;
+          	  	<select name="jamAwal">
+          	  		<!-- patTemplate:tmpl name="jamAwal" -->
+          	  		<option value="{JAM}">{JAM}</option>
+          	  		<!-- /patTemplate:tmpl -->
+          	  	</select>
+          	  	:
+          	  	<select name="menitAwal">
+          	  		<!-- patTemplate:tmpl name="menitAwal" -->
+          	  		<option value="{MENIT}">{MENIT}</option>
+          	  		<!-- /patTemplate:tmpl -->
+          	  	</select>
+			</td>
+		</tr>
+		
+	</table>
+	<input type="submit" name="simpan" value="Simpan" class="input-disclaimer" />
+</form>
+<!-- /patTemplate:tmpl -->

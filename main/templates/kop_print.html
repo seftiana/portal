@@ -1,0 +1,32 @@
+<!-- patTemplate:tmpl name="kop_print" visibility="hidden" -->
+   <table width="100%">           
+      <!-- patTemplate:tmpl name="kop_data" type="condition" conditionvar="ALIGN" -->
+         <!-- patTemplate:sub condition="left" -->
+            <tr>
+               <td rowspan="3" width="10%"  align="center"><img src="{KOP_UNIVERSITY_LOGO}"  alt="logo" /></td>
+               <td align="left"><h1>{KOP_UNIVERSITY_NAME}</h1></td>
+            </tr>
+            <tr>
+               <td align="left"><h3>{KOP_FACULTY_NAME}</h3></td>
+            </tr>
+            <tr>
+               <td align="left">{KOP_ADDITIONAL}</td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="center" -->
+            <tr>
+               <td align="center"><img src="{KOP_UNIVERSITY_LOGO}"  alt="logo" /></td>
+            </tr>
+            <tr>
+               <td align="center"><h1>{KOP_UNIVERSITY_NAME}</h1></td>
+            </tr>
+            <tr>
+               <td align="center"><h3>{KOP_FACULTY_NAME}</h3></td>
+            </tr>
+            <tr>
+               <td align="center">{KOP_ADDITIONAL}</td>
+            </tr>
+         <!-- /patTemplate:sub -->
+      <!-- /patTemplate:tmpl -->
+   </table><br />
+<!-- /patTemplate:tmpl -->

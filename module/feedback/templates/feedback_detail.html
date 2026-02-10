@@ -1,0 +1,68 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Manajemen Feedback</h2>
+<h4>Feedback Detil</h4>
+<br/><br/>
+
+<!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+<form class="form-common" method="POST" action="{URL_PROCESS}" name="frmFeedback" >
+   <!-- patTemplate:tmpl name="data_feedback" -->
+      <input type="hidden" name="feedback" value="{FB_ID}">
+      <table class="table-form" width="100%">
+         <tr>
+            <th width="150">Nama User</th>
+            <td width="5">:</td>
+            <td>{FB_NAMA_LENGKAP}</td>         
+         </tr>
+         <tr>
+            <th>Tanggal Pengiriman</th>
+            <td>:</td>
+            <td>{FB_TANGGAL_POST}</td>         
+         </tr>
+         <tr>
+            <th>Prioritas</th>
+            <td>:</td>
+         <!-- patTemplate:tmpl name="prioritas" type="condition" conditionvar="CHANGEABLE" -->
+            <!-- patTemplate:sub condition="YES" -->
+               <tr>
+                  <td>
+                     <select name="priority">
+                        <!-- patTemplate:tmpl name="prioritas_list" -->
+                        <option value="{PR_ID}" {PR_SELECTED}> {PR_PRIORITAS} </option>
+                        <!-- /patTemplate:tmpl -->
+                     </select>
+                  </td>         
+            <!-- /patTemplate:sub -->                 
+            <!-- patTemplate:sub condition="NO" -->                 
+                  <td>{FB_PRIORITAS}</td>         
+            <!-- /patTemplate:sub -->                
+         <!-- /patTemplate:tmpl -->
+         </tr>
+         <tr>
+            <th>Last Update</th>
+            <td>:</td>
+            <td>{FB_TANGGAL_KOMENTAR}</td>         
+         </tr>
+         <tr>
+            <th >Feedback</th>
+            <td>:</td>
+            <td>{FB_ISI}</td>         
+         </tr>
+         <tr>
+            <th>Komentar Admin</th>
+            <td>:</td>
+            <td>{FB_KOMENTAR}</td>         
+         </tr>
+      </table>   <br/>
+   <!-- /patTemplate:tmpl -->
+   <!-- patTemplate:tmpl name="btnUbahPrioritas" visibility="hidden" -->
+      <input class="input-disclaimer" type="submit" name="btnPrioritas" value="Ubah Prioritas">
+   <!-- /patTemplate:tmpl -->
+   <input class="input-disclaimer" type="submit" name="btnEdit" value="Edit Feedback">
+   <input class="input-disclaimer" type="submit" name="btnHapus" value="Hapus Feedback">
+   <input class="input-disclaimer" type="submit" name="btnKembali" value="Kembali">
+   <input type="hidden" name="doact" value="detail">
+   <input type="hidden" name="type" value="{TYPE}">
+   <input type="hidden" name="key" value="{KEY_SEARCH}">
+</form>
+<!-- /patTemplate:tmpl -->

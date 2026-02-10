@@ -1,0 +1,64 @@
+<!-- patTemplate:tmpl name="navigation_page" visibility="visible" -->
+<table>   
+   <tr>  
+      <td align="left" width="90%">      
+      <!-- ===page template start here === -->
+      <!--Page Navigation-->
+      <div class="text-right">
+         <span>Halaman : </span >
+         <!-- patTemplate:tmpl name="navigation" type="condition" conditionvar="ARROW_STATUS" -->
+            <!-- patTemplate:sub condition="double" -->
+               <span class="page-forum"><a href="{NAV_URL1}{NAV_PAGE1}">{NAV_LABEL1}</a></span>
+               <!-- patTemplate:tmpl name="navigation_condition" type="condition" conditionvar="IS_AKTIF" -->
+                  <!-- patTemplate:sub condition="aktif" -->
+                     <span class="page-forum"><a href="#">{NAV_LABEL}</a></span >
+                  <!-- /patTemplate:sub -->
+                  <!-- patTemplate:sub condition="inaktif" -->
+                     <span class="page-forum"><a href="{NAV_URL}{NAV_PAGE}">{NAV_LABEL}</a></span>
+                  <!-- /patTemplate:sub -->
+               <!-- /patTemplate:tmpl -->
+               <span class="page-forum"><a href="{NAV_URL2}{NAV_PAGE2}">{NAV_LABEL2}</a></span>
+            <!-- /patTemplate:sub -->
+
+            <!-- patTemplate:sub condition="right" -->
+               <!-- patTemplate:tmpl name="navigation_condition" type="condition" conditionvar="IS_AKTIF" -->
+                  <!-- patTemplate:sub condition="aktif" -->
+                     <span class="page-forum"><a href="#">{NAV_LABEL}</a></span >
+                  <!-- /patTemplate:sub -->
+                  <!-- patTemplate:sub condition="inaktif" -->
+                  <span class="page-forum"><a href="{NAV_URL}{NAV_PAGE}">{NAV_LABEL}</a></span>
+                  <!-- /patTemplate:sub -->
+               <!-- /patTemplate:tmpl -->
+               <span class="page-forum"><a href="{NAV_URL2}{NAV_PAGE2}">{NAV_LABEL2}</a></span>
+            <!-- /patTemplate:sub -->
+         
+            <!-- patTemplate:sub condition="left" -->
+               <span class="page-forum"><a href="{NAV_URL1}{NAV_PAGE1}">{NAV_LABEL1}</a></span>
+               <!-- patTemplate:tmpl name="navigation_condition" type="condition" conditionvar="IS_AKTIF" -->
+                  <!-- patTemplate:sub condition="aktif" -->
+                     <span class="page-forum"><a href="#">{NAV_LABEL}</a></span >
+                  <!-- /patTemplate:sub -->
+                  <!-- patTemplate:sub condition="inaktif" -->
+                     <span class="page-forum"><a href="{NAV_URL}{NAV_PAGE}">{NAV_LABEL}</a></span>
+                  <!-- /patTemplate:sub -->
+               <!-- /patTemplate:tmpl -->
+            <!-- /patTemplate:sub -->
+         
+            <!-- patTemplate:sub condition="none" -->
+               <!-- patTemplate:tmpl name="navigation_condition" type="condition" conditionvar="IS_AKTIF" -->
+                  <!-- patTemplate:sub condition="aktif" -->
+                     <span class="page-forum"><a href="#">{NAV_LABEL}</a></span >
+                  <!-- /patTemplate:sub -->
+                  <!-- patTemplate:sub condition="inaktif" -->
+                     <span class="page-forum"><a href="{NAV_URL}{NAV_PAGE}">{NAV_LABEL}</a></span>
+                  <!-- /patTemplate:sub -->
+               <!-- /patTemplate:tmpl -->
+            <!-- /patTemplate:sub -->
+         
+         <!-- /patTemplate:tmpl -->
+      </div><!--Page Navigation-->
+      <!-- ===end page template=== -->                                                             
+      </td>                                                       
+   </tr>
+</table>
+<!-- /patTemplate:tmpl -->

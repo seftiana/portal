@@ -1,0 +1,251 @@
+<!-- patTemplate:tmpl name="content" -->
+<style type="text/css">
+.hrKop {
+   border:2px solid black;
+}
+br.clearFix {
+   clear:both;
+}
+
+#headerKop {
+   text-align: center;
+}
+
+div#containerJudul {
+   width:100%;
+   margin:0px auto;
+}
+div#judulAreaKiri {
+   float:left;   
+   width:55%
+}
+div#judulAreaKanan {
+   float:left;
+   width:39%
+}
+table#tabelJudul td {
+   padding:2px;
+}
+
+
+table#tabelList td {
+   border:1px solid black;
+   padding:2px;
+}
+table#tabelList thead td, table#tabelList tfoot td {
+   font-weight: bold;
+   text-align: center;
+}
+
+
+table#tabelKeterangan td {
+   padding:1px;
+}
+table#tabelKeterangan td.borderBawah {
+   border-bottom: 1px solid black;
+}
+</style>
+<div class="page-portrait">
+<div class="{BREAK}">
+   <!-- patTemplate:tmpl name="kop" -->   
+   <table width="100%">
+      <tr>
+         <td width="85">
+            <img src="{UNIVERSITY_LOGO}" alt="logo" width="75" />
+         </td>
+         <td align="center">
+            <h2>KEMENTRIAN PENDIDIKAN DAN KEBUDAYAAN</h2>
+            <h1>{UNIVERSITY_NAME}</h1>
+            <h2>{FACULTY_NAME}</h2>
+         </td>
+      </tr>
+   </table>
+   <hr class="hrKop" />
+   <!-- /patTemplate:tmpl -->
+
+   <!-- patTemplate:tmpl name="data_judul" -->      
+   <div id="headerKop">
+      <h2>KARTU HASIL STUDI</h2>
+      <h3>SEMESTER {SEMESTER_NAMA}</h3>
+   </div>
+
+   <br /><br />
+
+   <div id="containerJudul">
+      <div id="judulAreaKiri">
+         <table id="tabelJudul" width="100%">
+            <tr>
+               <td width="120">{LABEL_NIM}</td>
+               <td>:</td>
+               <td>{MHS_NIM}</td>
+            </tr>
+            <tr>
+               <td>Nama Mahasiswa</td>
+               <td>:</td>
+               <td>{MHS_NAMA}</td>
+            </tr>
+            <tr>
+               <td>Program Studi</td>
+               <td>:</td>
+               <td>{MHS_PRODI}</td>
+            </tr>
+            <tr>
+               <td>Bidang Kajian Utama</td>
+               <td>:</td>
+               <td>{MHS_KONSENTRASI}</td>
+            </tr>
+         </table>
+      </div>
+      <div id="judulAreaKanan">
+         <table id="tabelJudul" width="100%">
+            <tr>
+               <td>Semester</td>
+               <td>:</td>
+               <td>{MHS_SEMESTER}</td>
+            </tr>
+            <tr>
+               <td>Dosen Pembimbing</td>
+               <td>:</td>
+               <td>{MHS_DOSEN}</td>
+            </tr>            
+         </table>         
+      </div>
+   </div>
+   <!-- /patTemplate:tmpl -->
+
+   <br class="clearFix" /><br /><br />
+
+   <table id="tabelList" width="100%">
+      <thead>
+         <tr>
+            <td width="4">NO</td>
+            <td width="90">KODE MK</td>
+            <td width="220">MATA KULIAH</td>
+            <td width="65">SKS (K)</td>
+            <td>NILAI (A-E)</td>
+            <td>BOBOT (B)</td>
+            <td width="65">K x B</td>
+         </tr>
+      </thead>
+      <tbody>
+         <!-- patTemplate:tmpl name="data_list" type="condition" conditionvar="MK_KODE" -->               
+         <!-- patTemplate:sub condition="empty" -->
+            <tr>
+               <td colspan="7" align="center"><em>Belum ada data</em></td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="default" -->
+            <tr>
+               <td align="center">{NO}</td>
+               <td align="center">{MK_KODE}</td>
+               <td>{MK_NAMA}</td>
+               <td align="center">{MK_SKS}</td>
+               <td align="center">{MK_NILAI}</td>
+               <td align="center">{MK_BOBOT}</td>
+               <td align="center">{MK_SKS_BOBOT}</td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </tbody>
+      <!-- patTemplate:tmpl name="data_list_footer" -->            
+      <tfoot>
+         <tr>
+            <td colspan="3" align="center">Jumlah</td>
+            <td align="center">{TOT_SKS}</td>
+            <td colspan="2"></td>
+            <td align="center">{TOT_SKS_BOBOT}</td>
+         </tr>
+      </tfoot>
+      <!-- /patTemplate:tmpl -->
+   </table>
+
+   <br />
+
+   <!-- patTemplate:tmpl name="data_keterangan" -->   
+   <table id="tabelKeterangan" width="60%">
+      <tr>
+         <td></td>
+         <td></td>
+         <td align="right">Semester :</td>
+         <td align="right">Kumulatif :</td>
+         <td align="right">Smt Lalu :</td>
+      </tr>
+      <tr>
+         <td>Jumlah Nilai</td>
+         <td>:</td>
+         <td align="right">{TOT_SKS_BOBOT}</td>
+         <td align="right">{TOT_SKS_BOBOT_KUM}</td>
+         <td align="right">{TOT_SKS_BOBOT_PREV}</td>
+      </tr>
+      <tr>
+         <td>Jumlah SKS</td>
+         <td>:</td>
+         <td align="right" class="borderBawah">{TOT_SKS}</td>
+         <td align="right" class="borderBawah">{TOT_SKS_KUM}</td>
+         <td align="right" class="borderBawah">{TOT_SKS_PREV}</td>
+      </tr>
+      <tr>
+         <td>Indeks Prestasi</td>
+         <td>:</td>
+         <td align="right">{IPS}</td>
+         <td align="right">{IPK}</td>
+         <td align="right">{IPS_PREV}</td>
+      </tr>
+   </table>
+   <!-- /patTemplate:tmpl -->
+
+   <br /><br /><br /><br />
+
+   <!-- patTemplate:tmpl name="tanda_tangan" -->      
+   <table width="100%" border="0">
+   <tr>
+      <td width="40%">
+         <table width="100%">
+         <tr>               
+            <td>
+               <span id="tipe_pengesahan0">{PENGESAH}</span><br />
+               <span id="jabatan0">{JABATAN}</span>
+            </td>
+         </tr>
+         <tr>
+            <td align="center" height="75"></td>
+         </tr>
+         <tr>
+            <td nowrap="nowrap">
+               <span id="nama0">{NAMA}</span>
+               <br />----------------------------------------------
+               <br />{LABEL_NIP}: <span id="nip0">{NIP}</span>
+            </td>
+         </tr>
+         </table> 
+      </td>
+      <td></td>
+      <td width="40%">
+         <table width="100%">
+         <tr>               
+            <td>
+               {LOKASI}, <span id="tglDokumen">{TANGGAL_CETAK}</span>
+               <br />
+               <span>{JABATAN_2}</span>
+            </td>
+         </tr>
+         <tr>
+            <td align="center" height="75"></td>
+         </tr>
+         <tr>
+            <td nowrap="nowrap">
+               <span>{NAMA_2}</span>
+               <br />----------------------------------------------
+               <br />{LABEL_NIP}: <span>{NIP_2}</span></td>
+         </tr>
+         </table> 
+      </td>
+   </tr>
+   </table>
+   <!-- /patTemplate:tmpl -->
+
+   <br />
+
+</div>
+</div>
+<!-- /patTemplate:tmpl -->

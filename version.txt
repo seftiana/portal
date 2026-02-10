@@ -1,0 +1,12 @@
+Portal Akademik 
+version 4.1.4 (alpha)
+
+Software spesification (best condition in) :
+OS Server : Windows XP / Linux Fedora Core 3 (kernel 2.6.12-1)
+PHP 4.3.10
+MySQL 4.1.x
+Apache 1.3.31 / 1.3.33
+
+
+2006.08.29 15:00
+Revision 152

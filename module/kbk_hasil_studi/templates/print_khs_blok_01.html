@@ -1,0 +1,202 @@
+<!-- patTemplate:tmpl name="content" -->
+<div class="page-potrait" style="width: 18cm;">
+      <div class="page-break">
+
+         <br />
+         <h2 style="font-size: 11pt;">KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN</h2>
+         <h2 style="font-size: 11pt;">{UNIVERSITY_NAME}</h2>
+         <!-- patTemplate:tmpl name="fakultas" type="condition" conditionvar="TIPE" -->
+            <!-- patTemplate:sub condition="1" -->
+               <h2 style="font-size: 11pt;">{FACULTY_NAME}</h2>
+            <!-- /patTemplate:sub -->
+            <!-- patTemplate:sub condition="2" -->
+               <br />
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+				
+				<h2 align="center"><u>KARTU HASIL STUDI</u></h2>
+				<h2 align="center">KHS</h2>
+				<!-- patTemplate:tmpl name="info_mahasiswa" -->
+				<table class="tabel-info" width="100%">
+					<tr>
+						<td nowrap="nowrap" width="20%">Nama Mahasiswa</td>
+						<td nowrap="nowrap" width="6%">:</td>
+						<td nowrap="nowrap" width="45%">{NAMA}</td>
+						
+						<td nowrap="nowrap" width="*">&nbsp;</td>
+						
+						<td nowrap="nowrap" width="13%">P. Studi</td>
+						<td nowrap="nowrap" width="5%">:</td>
+						<td nowrap="nowrap" width="">{NAMAPRODI}</td>
+					</tr>
+					<tr>
+						<td nowrap="nowrap">{LABEL_NIM}</td>
+						<td nowrap="nowrap">:</td>
+						<td nowrap="nowrap">{NIU}</td>
+						
+						<td nowrap="nowrap">&nbsp;</td>
+						
+						<td nowrap="nowrap">Thn Masuk</td>
+						<td nowrap="nowrap">:</td>
+						<td nowrap="nowrap">{ANGKATAN}</td>
+					</tr>
+					<tr>
+						<td nowrap="nowrap">Sem./TA</td>
+						<td nowrap="nowrap">:</td>
+						<td nowrap="nowrap">{NAMA_SEM}</td>
+						
+						<td nowrap="nowrap">&nbsp;</td>
+						<td nowrap="nowrap">&nbsp;</td>
+						<td nowrap="nowrap">&nbsp;</td>
+						<td nowrap="nowrap">&nbsp;</td>
+						
+					</tr>
+					<tr>
+						<td nowrap="nowrap">D.P.A.M</td>
+						<td nowrap="nowrap">:</td>
+						<td nowrap="nowrap">{PEMBIMBING}</td>
+						
+						<td nowrap="nowrap">&nbsp;</td>
+						<td nowrap="nowrap">&nbsp;</td>
+						<td nowrap="nowrap">&nbsp;</td>
+						<td nowrap="nowrap">&nbsp;</td>
+						
+					</tr>
+					<tr>
+						<td nowrap="nowrap">Dicetak</td>
+						<td nowrap="nowrap">:</td>
+						<td nowrap="nowrap">{TGL_CETAK}</td>
+						
+						<td nowrap="nowrap">&nbsp;</td>
+						<td nowrap="nowrap">&nbsp;</td>
+						<td nowrap="nowrap">&nbsp;</td>
+						<td nowrap="nowrap">&nbsp;</td>
+						
+					</tr>
+				</table>
+				<!-- /patTemplate:tmpl -->
+				<br />
+				<table width="100%" class="tabel-common">
+					<tr>
+						<th nowrap ="nowrap" width="4%">KodeMK</th>
+						<th nowrap ="nowrap" width="">Mata Kuliah</th>
+						<th nowrap ="nowrap" width="2%">SKS</th>
+						<th nowrap ="nowrap" width="2%">nilai</th>
+						<th nowrap ="nowrap" width="2%">(3 X 4)</th>
+						<th nowrap ="nowrap" width="15%">KET</th>
+					</tr>
+					<tr>
+						<th nowrap ="nowrap">1</th>
+						<th nowrap ="nowrap">2</th>
+						<th nowrap ="nowrap">3</th>
+						<th nowrap ="nowrap">4</th>
+						<th nowrap ="nowrap">5</th>
+						<th nowrap ="nowrap">6</th>
+					</tr>
+					<!-- patTemplate:tmpl name="data" type="condition" conditionvar="KODE_MK" -->  
+						<!-- patTemplate:sub condition="default" -->
+							<tr>
+								<td nowrap ="nowrap" align="left">{KODE_MK}</td>
+								<td nowrap ="nowrap" align="left">{NAMA_MK}</td>
+								<td nowrap ="nowrap" align="center">{JML_SKS}</td>
+								<td nowrap ="nowrap" align="center">{KODE_NILAI}</td>
+								<td nowrap ="nowrap" align="center">{SKS_BOBOT}</td>
+								<td nowrap ="nowrap" align="left">{KET}</td>
+							</tr>
+						<!-- /patTemplate:sub -->	
+						<!-- patTemplate:sub condition="empty" -->
+						<tr>
+							<td colspan="6">Data hasil studi masih kosong untuk semester ini</td>
+						</tr>
+						<!-- /patTemplate:sub -->
+					<!-- /patTemplate:tmpl -->
+					<tr>
+						<td align="right" colspan="2">Jumlah</td>
+						<td align="center">Beban Kredit</td>
+						<td align="center">Kredit Capaian</td>
+						<td align="center">Jumlah KN</td>
+						<td align="center">INDEKS PRESTASI</td>
+					</tr>
+					<tr>
+						<td align="right" colspan="2">Semester</td>
+						<td align="center">{TOTAL_SKS}</td>
+						<td align="center">{CAPAIAN_KREDIT}</td>
+						<td align="center">{CAPAIAN_KREDIT}</td>
+						<td align="center">{IP}</td>
+					</tr>
+				</table>
+				
+				<br />
+				
+				<table width="100%" class="tabel-common">
+					<tr>
+						<th nowrap ="nowrap" width="" rowspan="2">No</th>
+						<th nowrap ="nowrap" width="2" rowspan="2">Kode<br />Blok</th>
+						<th nowrap ="nowrap" width="" rowspan="2">Nama Blok</th>
+						<th nowrap ="nowrap" width="" rowspan="2">Nama Modul</th>
+						<th nowrap ="nowrap" width="" rowspan="2">Sks</th>
+						<th nowrap ="nowrap" width="" colspan="4">Nilai</th>
+						<th nowrap ="nowrap" width="" rowspan="2">Afektif<br />(A)</th>
+					</tr>
+					<tr>
+						<th nowrap ="nowrap">Koqnitif<br />(C)</th>
+						<th nowrap ="nowrap">p</th>
+						<th nowrap ="nowrap">po</th>
+						<th nowrap ="nowrap">P</th>
+					</tr>
+					<!-- patTemplate:tmpl name="data_blok" type="condition" conditionvar="MK_ID" -->  
+						<!-- patTemplate:sub condition="default" -->
+							<tr>
+								<!-- patTemplate:tmpl name="show_data_blok" visibility="hidden" -->
+									<td nowrap ="nowrap" width="5" rowspan="{ROWSPAN}" align="right">{NO}</td>
+									<td nowrap ="nowrap" rowspan="{ROWSPAN}" align="center">{BLOK_KODE}</td>
+									<td nowrap ="nowrap" width="135" rowspan="{ROWSPAN}" align="left">{BLOK_NAMA}</td>
+								<!-- /patTemplate:tmpl -->
+								<td nowrap ="nowrap" width="135">{MK_NAMA}</td>
+								<td nowrap ="nowrap" width="10" align="center">{SKS}</td>
+								<td nowrap ="nowrap" width="20" align="center">{NIL_KODE}</td>
+								<td nowrap ="nowrap" width="50" align="left">-</td>
+								<td nowrap ="nowrap" width="50" align="center">-</td>
+								<td nowrap ="nowrap" width="50" align="left">-</td>
+								<td nowrap ="nowrap" width="50" align="center">-</td>
+							</tr>
+						<!-- /patTemplate:sub -->	
+						<!-- patTemplate:sub condition="empty" -->
+						<tr>
+							<td colspan="10">Data matakuliah blok masih kosong untuk semester ini</td>
+						</tr>
+						<!-- /patTemplate:sub -->
+					<!-- /patTemplate:tmpl -->
+					<tr>
+	            	<td style="border-bottom-style:hidden;border-left-style:hidden;border-right-style:hidden;" colspan="10">&nbsp;</td>
+	            </tr>
+					<tr>
+	            	<td style="border-bottom-style:hidden;border-left-style:hidden;border-right-style:hidden;" colspan="10"><b>Ket :</b></td>
+	            </tr>
+	            <tr>
+	            	<td style="border-bottom-style:hidden;border-left-style:hidden;border-right-style:hidden;" colspan="7">p = Psikomotor harian, po = Psikomotor Osce</td>
+	            	<td align="center" style="border-bottom-style:hidden;border-left-style:hidden;border-right-style:hidden;" colspan="3"><b>P= (25%xp)+(75%xpo)</b></td>
+	            </tr>
+				</table>
+				
+				<hr />
+			<div>
+			<br />
+			<!-- patTemplate:tmpl name="tanda_tangan" -->
+			<table align="right" width="100%">
+            <tr>
+            	<td>Dibuat rangkap 3:</td>
+               <td align="center">{TANGGALTANDATANGAN}<br /><span id="{TIPE_SAH}">Ketua Program Studi,</span><br /><span id="{JABATAN_SAH}"></span></td>
+            </tr>
+            <tr>
+            	<td>&nbsp;&nbsp;&nbsp;&nbsp;1. Dosen PA<br />&nbsp;&nbsp;&nbsp;&nbsp;2. Jurusan / PS<br />&nbsp;&nbsp;&nbsp;&nbsp;3. Mahasiswa / Orang Tua</td>
+               <td align="center" height="50"></td>
+            </tr>
+            <tr>
+            	<td>&nbsp;</td>
+            	<td align="center" nowrap="nowrap"><span id="{NAMA_SAH}">{NAMAPEJABAT}</span><br />------------------------------
+					<br />{LABEL_NIP}: <span id="{NIP_SAH}">{NIPPEJABAT}</span></td>
+				</tr>
+			</table>
+		<!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

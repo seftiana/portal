@@ -1,0 +1,79 @@
+<!-- patTemplate:tmpl name="content" -->
+<br />
+<h2>Import Nilai Excel</h2>
+<br />   
+<h5>Keterangan :</h5>
+<p style="font:11px Arial">
+   Form berikut adalah untuk mengimport nilai menggunakan template excel yang sudah tersedia.
+</p>
+
+<br />
+<!-- patTemplate:tmpl name="info_mk_kelas" -->
+<table class="table-form" width="100%"  border="0" cellspacing="1" cellpadding="4">
+   <tr>
+      <td colspan="3">
+         <h5>Info Matakuliah dan Kelas</h5>
+      </td>
+   </tr>
+   <tr>
+      <td width="22%" valign="top">Kode Matakuliah</td>
+      <td width="2%" valign="top">:</td>
+      <td width="76%">
+         {MK_KODE}
+      </td>
+   </tr>
+   <tr>
+      <td width="22%" valign="top">Nama Matakuliah</td>
+      <td width="2%" valign="top">:</td>
+      <td width="76%">
+         {MK_NAMA}
+      </td>
+   </tr>
+   <tr>
+      <td width="22%" valign="top">Kelas Matakuliah</td>
+      <td width="2%" valign="top">:</td>
+      <td width="76%">
+         {KELAS_NAMA}
+      </td>
+   </tr>
+</table>
+<!-- /patTemplate:tmpl -->
+
+
+<!-- patTemplate:tmpl name="temp_excel" -->
+<form class="form-common" action="{URL_PROSES}" method="post" enctype="multipart/form-data">
+<table class="table-form" width="100%"  border="0" cellspacing="1" cellpadding="4">
+   <tr>
+      <td colspan="3">
+         <h5>Excel</h5>
+      </td>
+   </tr>
+   <tr>
+      <td width="22%" valign="top">Template File Excel</td>
+      <td width="2%" valign="top">:</td>
+      <td width="76%" class="table-common-links">
+         <a target="_blank" href="{URL_TEMP_EXCEL}" title="Download File Template Import Nilai">Download File Template Import Nilai</a>
+         <br /><br />(Upload file excel berdasarkan file template ini.)
+      </td>
+   </tr>
+   <tr>
+      <td width="22%" valign="top">Import File Excel</td>
+      <td width="2%" valign="top">:</td>
+      <td width="76%">
+         <input type="file" size="35" name="fileImport">               
+      </td>
+   </tr>
+   <tr>
+      <td colspan="3" align="center">
+         <input class="input-disclaimer" name="simpan" type="submit" value="Upload" />
+         <input class="input-disclaimer" type="button" value="Kembali" onclick="history.go(-1);" />
+         <input type="hidden" name="klsId" value="{KLS_ID}" />
+         <input type="hidden" name="semId" value="{SEM_ID}" />
+         <input type="hidden" name="sia" value="{SIA}" />
+      </td>
+   </tr>
+</table>
+</form>
+<!-- /patTemplate:tmpl -->
+
+<!-- /patTemplate:tmpl -->

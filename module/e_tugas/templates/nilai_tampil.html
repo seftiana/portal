@@ -1,0 +1,118 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+<h2> {APPLICATION_MODULE} </h2><br/>
+<div id="maincontent">
+  <form name="form_add_tugas" class="form-common" method="post" action="{FORM_ACTION}" enctype="multipart/form-data">
+  		<input type="hidden" name="id" value="{TUGAS_ID}" />
+		
+
+		
+  		<table class="table-userbio" width = "100%">
+  		<!-- patTemplate:tmpl name="display_error" visibility="hidden" -->
+  		  <tr>
+  		  	<th colspan="2"><font color="Maroon" size="2">Gagal Menambahkan Data Tugas Baru. {ERROR} </font></th>
+  		  </tr>
+  		<!-- /patTemplate:tmpl -->
+  		  <tr>
+  		  	  <th height="100%">Semester</th>
+  		  	  <th>{TUGAS_NAMA_SEMESTER}</th>
+  		  </tr>
+          <tr>
+              <th width="30%">Mata Kuliah</th>
+              <td width="70%">{TUGAS_MATKUL_KODE} - {TUGAS_MATKUL}</td>
+          </tr>
+          <tr>
+              <th>Judul</th>
+              <td>{TUGAS_JUDUL}</td>
+          </tr>
+          <tr>
+              <th valign="top">File</th>
+              <td><a href="{TUGAS_FILE}">{TUGAS_FILE_DISPLAY}</a> </td>
+          </tr>
+          <tr>
+              <th valign="top">Abstraksi</th>
+              <td>{TUGAS_DESKRIPSI}</td>
+          </tr>   
+          <tr>
+          	  <th>Waktu Mulai</th>
+          	  <td>{TUGAS_MULAI}</td>
+          </tr>   
+          
+          <tr>
+          	  <th>Waktu Selesai</th>
+          	  <td>{TUGAS_SELESAI} </td>
+          </tr>   
+<!-- 		  <tr>
+		  	<th>Jenis Tugas</th>
+		  	<td>{TUGAS_JENIS}
+			</td>
+		  </tr> -->
+		  <tr>
+		  	<th colspan="2">Daftar Peserta Mata Kuliah <br/>
+			</th>			
+		  </tr>          
+		  </table>
+		  
+				<table class="table-common" width="100%">
+					<tr>
+						<th width="5%">No</th>
+						<th width="10%">{LABEL_NIM}</th>
+						<th width="25%">Nama</th>
+						<th width="25%">Program Studi</th>
+						<th width="25%">File</th>
+						<th width="20%">Nilai</th>
+					</tr>
+					<!-- patTemplate:tmpl name="data_peserta" type="condition" conditionvar="DATA_EXIST" -->
+						<!-- patTemplate:sub condition="false" -->
+						<tr>
+							<th colspan="6"><div align="center"><i>-- Data Tidak Ada --</i></div></th>
+						</tr>
+						<!-- /patTemplate:sub -->
+						<!-- patTemplate:sub condition="true" -->
+							<!-- patTemplate:tmpl name="list_peserta" -->						
+							<tr>
+								<td>{PESERTA_NO}</td>
+								<td>{PESERTA_NIM}</td>
+								<td>{PESERTA_NAMA}</td>
+								<td>{PESERTA_PRODI}</td>
+								<td><a href="{PESERTA_DOWNLOAD}" target="_blank">{PESERTA_FILE}</a></td>
+								<td>
+								<select name="nilai[{PESERTA_NIM}]">
+									<option value="" {PESERTA_SELECT}></option>
+									<option value="A" {PESERTA_SELECT_A}>A</option>
+									<option value="B" {PESERTA_SELECT_B}>B</option>
+									<option value="C" {PESERTA_SELECT_C}>C</option>
+									<option value="D" {PESERTA_SELECT_D}>D</option>
+									<option value="E" {PESERTA_SELECT_E}>E</option>
+								</select>
+								</td>
+							</tr>
+							<!-- /patTemplate:tmpl -->
+						<!-- /patTemplate:sub -->
+					<!-- /patTemplate:tmpl -->
+				</table>
+			
+			
+			
+			
+			<table class="table-userbio" width = "100%">
+			<tr> 	
+          	<th colspan="2">&nbsp;</th>          
+		  </tr>
+			<tr>
+          	  <td colspan="2" align="right">
+          	  	<div align="right">
+          	  		<input type="submit" name="nilaiSimpan" value="Simpan"  class="input-disclaimer" />
+          	  		<input type="submit" name="nilaiReset" value="Reset" class="input-disclaimer" />
+          	  		<input type="submit" name="batal" value="Batal" class="input-disclaimer" />
+          	  	</div>
+          	  </td>
+          </tr>    
+      </table>
+ 
+  </form>  
+ </div>
+
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,116 @@
+<!-- patTemplate:tmpl name="content" -->
+	<div id="front-content-full">
+      <div class="front-content-full-left col-lg-12 col-xs-12">
+         <!--h2>{USERFULLNAME}</h2-->
+         <!--p>Selamat Datang di {APPLICATIONNAME}. {APPLICATIONNAME} adalah sistem yang 
+            memungkinkan para civitas academica {APPLICATIONCLIENT} untuk menerima informasi dengan lebih cepat melalui Internet. Sistem ini diharapkan 
+            dapat memberi kemudahan setiap civitas academica untuk melakukan aktivitas-aktivitas 
+            akademik dan proses belajar mengajar. Selamat menggunakan fasilitas ini.</p-->
+			<strong><marquee >Masa studi Anda berakhir pada {SISA_STUDI}</marquee></strong>
+      </div> <!-- end of front-content-full-left -->	
+      <div class="front-content-full-right col-lg-4 col-xs-12">
+         <div class="card d-none">         
+         <!-- patTemplate:tmpl name="view_mailbox" type=condition conditionvar="TYPE_MAILBOX" -->
+            <!-- patTemplate:sub condition="WITH_FEEDBACK" -->
+               <h3><!--Feedback &amp; -->Kotak Pesan</h3>
+               <ul>
+                  <li>Anda memiliki: </li>
+                  <!--li><a href="{URL_FEEDBACK}"><strong>feedback baru ({TOTAL_NEWFEEDBACK})</strong></a></li-->
+                  <li><a href="{URL_INBOX}"><strong>pesan baru ({TOTAL_NEWMSG})</strong></a></li>
+                  <li></li>
+                  <li>
+                     <a href="{URL_INBOX}" title="Lihat pesan masuk">
+                        <button type="button" class="btn btn-info">Masuk</button>
+                     </a>
+                     <a href="{URL_OUTBOX}" title="Lihat pesan keluar">Terkirim</a>
+                  </li>
+               </ul>
+            <!-- /patTemplate:sub -->            
+            <!-- patTemplate:sub condition="empty" -->
+               <h3>Kotak Pesan</h3>
+               <ul>
+                  <li>Anda memiliki  <a href="{URL_INBOX}"><strong>( {TOTAL_NEWMSG} )  pesan baru</strong></a></li>
+                  <li></li>
+                  <li>
+                     <a href="{URL_INBOX}" title="Lihat pesan masuk"><button type="button" class="btn btn-info">Masuk</button></a>&nbsp;<a href="{URL_OUTBOX}" title="Lihat pesan keluar"><button type="button" class="btn btn-info">Terkirim</button></a>
+                  </li>
+               </ul>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+         </div>
+      </div> <!-- end of front-content-full-right -->				
+   </div> <!-- end of front-content-full -->
+   <!-- patTemplate:tmpl name="view_notifikasi" visibility="hidden" -->
+   <!--div id="front-content-notif col-lg-12">
+		<h3>Notifikasi</h3>
+		<marquee><b>
+			Periode revisi KRS online akan berakhir pada : {BATAS_REVISI_KRS}
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Periode input nilai online UTS akan berakhir pada : {BATAS_INPUT_NILAI1}
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Periode input nilai online UAS akan berakhir pada : {BATAS_INPUT_NILAI2}
+			</b>
+	    </marquee>
+   </div-->
+   <!-- /patTemplate:tmpl -->
+   <div id="front-content-half">
+      <div class="front-content-half-left">
+         <div class="card">
+         <div class="card-header"><strong>Pengumuman</strong></div>
+         <!-- patTemplate:tmpl name="category" type="condition" conditionvar="IS_EMPTY" -->
+         <!-- patTemplate:sub condition="0" -->
+         <a href="{URL}">
+            <h3 class="py-3">&nbsp;<i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp;{KATEGORI}</h3></a>
+          <ul>
+            <!-- patTemplate:tmpl name="data_category" type="condition" conditionvar="IS_EMPTY" -->
+               <!-- patTemplate:sub condition="YES" -->
+                  <li>Belum ada informasi untuk kategori ini</li>
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="NO" -->
+                  <!-- patTemplate:tmpl name="list_data" -->
+                  <li><a href="{PENGUMUMAN_URL}">{PENGUMUMAN_TITLE}: &nbsp;<small>{PENGUMUMAN_DATE}</small></a></li>
+                  <!-- /patTemplate:tmpl -->
+               <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl -->						
+         </ul>
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="1" -->
+            <h3>Tidak ada kategori</h3>
+         <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </div>
+      </div> <!-- end of front-content-half-left -->				
+      <div class="front-content-half-left col-lg-12 col-xs-12 ">
+          <div class="card">
+        <div class="card-header"><strong>Diskusi Terbaru</strong></div>
+	<div class="card-body">
+         <ul>
+            <!-- patTemplate:tmpl name="forum_diskusi" type="condition" conditionvar="IS_EMPTY" -->
+               <!-- patTemplate:sub condition="YES" -->
+                  <li>Belum ada forum diskusi</li>                  
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="NO" -->
+                  <!-- patTemplate:tmpl name="forum_diskusi_list" -->
+                  <li>
+                     <a href="{DISCUSSION_URL}">[{DISCUSSION_TOPIC}]<br />{DISCUSSION_THREAD}
+                        <small><br />( {DISCUSSION_JMLPOST} poster, Last Updates {DISCUSSION_LASTUPDATE} )</small></a>
+                  </li>                  
+                  <!-- /patTemplate:tmpl -->                                              
+                  <!--li><a href="#">Perpustakaan Daerah<br /><small>( 5 poster, Last Updates 17 Nov 05 )</small></a></li-->
+               <!-- /patTemplate:sub -->                                       
+            <!-- /patTemplate:tmpl -->
+         </ul>
+      </div>
+	</div>
+      </div> <!-- end of front-content-half-right -->
+   </div> <!-- end of front-content-half -->
+     
+<!-- /patTemplate:tmpl -->

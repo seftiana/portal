@@ -1,0 +1,84 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.button{
+	text-decoration:none;
+	font-size: 9pt !important;
+	padding: 2px !important;
+}
+</style>
+   <h2>{JUDUL}</h2>
+   <br />
+   <h5>Keterangan :</h5>
+   <p>
+         Kesediaan Waktu Mengajar berisi daftar waktu kesediaan dosen untuk mengisi tatap muka matakuliah yang diampu.
+		 Data ini digunakan sebagai prioritas dalam membuat jadwal kuliah, jika kosong, maka dosen pengguna dianggap bersedia mengajar kapan pun
+   </p><br />   
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="data_dosen" visibility="hidden" -->
+      <table width="100%" class="table-list">
+         <tr> 
+            <th width="150">Nama</th>
+            <td>{DOSEN_FULLNAME}</td>
+         </tr>
+         <tr> 
+            <th>{LABEL_NIP}</th>
+            <td>{DOSEN_NO_ID}</td>
+         </tr>
+         <tr> 
+            <th>Program Studi</th>
+            <td>{DOSEN_INFO}</td>
+         </tr>
+         <tr> 
+            <th>Semester</th>
+            <td>{DOSEN_SEM}</td>
+         </tr>
+      </table>
+   <!-- /patTemplate:tmpl -->
+   
+   <form name="form1" method="POST" action="{FORM_AKSI}">
+   <!-- patTemplate:tmpl name="data_waktu" type="condition" conditionvar="AVAILABLE" -->      
+      <!-- patTemplate:sub condition="YES" -->                     
+         <table class="table-common" width="100%">
+         <tr>
+            <th><input type="checkbox" onclick="checkAll(this);"></th>
+            <th>Hari</th>
+            <th>Jam</th>
+         </tr>
+         <!-- patTemplate:tmpl name="data_waktu_item" type="condition" conditionvar="ODDEVEN" -->
+            <!-- patTemplate:sub condition="ODD" -->
+               <tr>
+                  <td width="5%" align="center"><input type="checkbox" name="availableTime[]" value="{ID}"></td>
+                  <td width="56%">{HARI}</td>
+                  <td><a href="{URLUBAH}">{JAM}</a></td>
+               </tr>
+            <!-- /patTemplate:sub -->
+            <!-- patTemplate:sub condition="EVEN" -->
+               <tr class="table-common-even">
+                  <td width="5%" align="center"><input type="checkbox" name="availableTime[]" value="{ID}"></td>
+                  <td width="56%">{HARI}</td>
+                  <td><a href="{URLUBAH}">{JAM}</a></td>
+               </tr>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </table>
+      <br/>
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+		<a class="input-disclaimer button" href="{FORM_TAMBAH}">Tambah</a>
+		<input class="input-disclaimer" type="submit" name="btnProses" value="Hapus" onClick="return ValidateDelete()">
+		</form>
+<script>
+var checkAll=function(e){
+	var a=document.forms['form1'].elements['availableTime[]'];
+	for(var i=0,m=a.length;i<m;++i){
+		a[i].checked=e.checked;
+	}
+};
+</script>
+<!-- /patTemplate:tmpl -->

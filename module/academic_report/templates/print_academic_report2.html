@@ -1,0 +1,206 @@
+<!-- patTemplate:tmpl name="document" -->
+<html>
+<head>
+<title>CETAK KARTU HASIL STUDI</title>
+<link rel="stylesheet" type="text/css" href="styles/a_sia_cetak_new.css" />
+<link rel="stylesheet" type="text/css" media="print" href="styles/a_sia_cetak_media_print_new.css" />
+<style type="text/css">
+.tabelKop tr td {
+   padding:4px;
+}
+.tabelKop tr td h5 {
+   padding-top: 20px;
+}
+
+.tabelHeaderData tr td {
+   font:11px Arial;
+}
+
+#table-data tr td, #table-data tr th {
+   font:10px Arial;
+}
+
+.tabelFooter tr td {
+   font:11px Arial;
+}
+
+.h5JudulSemester {
+   padding: 0px;
+   margin: 0px;
+}
+
+.pFooter {
+   font:10px Arial;
+}
+</style>
+</head>
+<body onLoad="//window.print();">
+<div class="page-portrait">
+
+<div class="nobreak">
+   <table width="100%" class="tabelKop" border="0">
+      <tr>
+         <td width="80" align="left" style="padding:0px;">
+            <img src="images/logo_perbanas.png" width="85" />
+         </td>
+         <td>
+            <!--h5>{NAMA_PT}</h5-->
+		<h3>Kartu Hasil Studi (KHS)</h3>
+         </td>
+         </tr>
+   </table>
+
+   <table width="100%" class="tabelHeaderData" border="0">
+      <tr>
+         <td width="15%"><strong>Semester / TA</strong></td>
+         <td width="3%">:</td>
+         <td width="30%">Semester {SEMESTER_LABEL}</td>
+         <td width="32%"></td>
+       
+      </tr>
+      <tr>
+         <td><strong>Program Studi</strong></td>
+         <td>:</td>
+         <td>{PRODI_NAMA}</td>
+         <td></td>
+         <td valign="top" ></td>
+      </tr>
+      <tr>
+         <td><strong>{LABEL_NIM}</strong></td>
+         <td>:</td>
+         <td>{MHS_NIM}</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td><strong>NAMA</strong></td>
+         <td>:</td>
+         <td>{MHS_NAMA}</td>
+         <td></td>
+         <td valign="top" ></td>
+      </tr>
+      <tr>
+         <td><strong>DOSEN PA</strong></td>
+         <td>:</td>
+         <td>{DOSEN_WALI}</td>
+         <td></td>
+      </tr>
+   </table>
+
+   <table id="table-data" width="100%">
+      <tr>
+         <th>No.</th>
+         <th>Kode MK</th>
+         <th>Matakuliah</th>
+         <th>Nilai (N)</th>
+         <th>Bobot SKS (K)</th>
+         <th>N x K</th>
+      </tr>
+      <!-- patTemplate:tmpl name="data_list"  type="condition" conditionvar="IS_EMPTY" -->
+         <!-- patTemplate:sub condition="YES" -->
+            <tr>
+               <td colspan="6" align="center"><em>Belum ada Data KRS</em></td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="NO" -->
+            <!-- patTemplate:tmpl name="data_list_item" -->
+            <tr>
+               <td align="center">{NO}&nbsp;</td>
+               <td>{KODE_MK}&nbsp;</td>
+               <td>{NAMA_MK}&nbsp;</td>
+               <td align="center">{NILAI}&nbsp;</td>
+               <td align="center">{SKS}&nbsp;</td>
+               <td align="center">{NILAIXBOBOT}&nbsp;</td>
+            </tr>
+            <!-- /patTemplate:tmpl -->
+         <!-- /patTemplate:sub -->
+      <!-- /patTemplate:tmpl -->
+      <tr>
+         <td>&nbsp;</td>
+         <td>&nbsp;</td>
+         <td align="right">JUMLAH</td>
+         <td>&nbsp;</td>
+         <td align="center">{JUMLAH_SKS}&nbsp;</td>
+         <td align="center">{JUMLAH_BOBOTXNILAI}&nbsp;</td>
+      </tr>
+   </table>
+</div>
+<br />
+
+<table width="100%">
+<tr>
+   <td width="35%" valign="top">
+      <table class="tabelFooter" width="100%">
+         <tr>
+            <td>Indeks Prestasi Semester (IPS)</td>
+            <td>:</td>
+            <td>{IPS}</td>
+         </tr>
+         <tr>
+            <td>Indeks Prestasi Kumulatif (IPK)</td>
+            <td>:</td>
+            <td>{IPK}</td>
+         </tr>
+         <tr>
+            <td>Jumlah SKS yang diperoleh</td>
+            <td>:</td>
+            <td>{TOT_SKS}</td>
+         </tr>
+         <tr>
+            <td>Beban SKS semester depan</td>
+            <td>:</td>
+            <td>{MAX_SKS}</td>
+         </tr>
+      </table>
+   </td>
+   <td width="41%"></td>
+   <td width="24%" valign="top">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0"
+  class="tabelFooter">
+     <tr>
+       <td width="27%" valign="top"><strong>NILAI :</strong></td>
+       <td width="73%" valign="top"> A = 4 : Sangat Baik </td>
+     </tr>
+     <tr>
+       <td valign="top" ></td>
+       <td valign="top"> B = 3 : Baik </td>
+     </tr>
+     <tr>
+       <td valign="top" ></td>
+       <td valign="top"> C = 2 : Cukup </td>
+     </tr>
+     <tr>
+       <td valign="top" ></td>
+       <td valign="top"> D = 1 : Kurang </td>
+     </tr>
+     <tr>
+       <td valign="top" ></td>
+       <td valign="top"> E = 0 : Gagal </td>
+     </tr>
+   </table>
+
+      <!--table class="tabelFooter" width="100%">
+         <tr>
+            <td>{TANGGAL_CETAK}<span style="display:none;" id="{TIPE_SAH}">{PENGESAH}</span><br /><span id="{JABATAN_SAH}">{JABATAN}</span></td>
+         </tr>
+         <tr>
+            <td height="65"></td>
+         </tr>
+         <tr>
+            <td nowrap="nowrap"> <span id="{NAMA_SAH}">{NAMA}</span> <br />------------------------------
+            <br />{LABEL_NIP}: <span id="{NIP_SAH}">{NIP}</span></td>
+         </tr>
+      </table-->
+   </td>
+</tr>
+</table>
+
+<!--p class="pFooter">
+Lembar 1 : Mahasiswa<br />
+Lembar 2 : Program Studi
+</p-->
+
+</div>
+</body>
+</html>
+<!-- /patTemplate:tmpl -->

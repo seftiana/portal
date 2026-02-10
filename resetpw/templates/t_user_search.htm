@@ -1,0 +1,473 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-search" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_searchpage}
+<div {$searchpage_chiddenattr} data-pageid="{$pageid}" data-container="searchpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-6 col-md-offset-3"> 
+
+{BEGIN searchheader}
+	<h2 {$bssearchheader_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchheader" >{$pagetitlelabel t_user search}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END searchheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_searchpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$bssearchfields_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchfields" class="form-horizontal" role="form">
+<div class="container">
+	<div class="form-group">
+		<div class="col-md-12" >
+			&nbsp;
+		</div>
+	</div>
+</div>
+	{BEGIN tusrNama_fieldblock}		
+	<div class="container {$fielddispclass_tusrNama}" data-fieldname="tusrNama">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrNama}">
+				{$label t_user tusrNama}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrNama}
+			</div>
+			<div class="col-md-4" >
+				{$tusrNama_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrNama_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrNama_fieldblock}
+	{BEGIN tusrPassword_fieldblock}		
+	<div class="container {$fielddispclass_tusrPassword}" data-fieldname="tusrPassword">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrPassword}">
+				{$label t_user tusrPassword}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrPassword}
+			</div>
+			<div class="col-md-4" >
+				{$tusrPassword_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrPassword_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrPassword_fieldblock}
+	{BEGIN tusrThakrId_fieldblock}		
+	<div class="container {$fielddispclass_tusrThakrId}" data-fieldname="tusrThakrId">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrThakrId}">
+				{$label t_user tusrThakrId}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrThakrId}
+			</div>
+			<div class="col-md-4" >
+				{$tusrThakrId_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrThakrId_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrThakrId_fieldblock}
+	{BEGIN tusrProfil_fieldblock}		
+	<div class="container {$fielddispclass_tusrProfil}" data-fieldname="tusrProfil">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrProfil}">
+				{$label t_user tusrProfil}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrProfil}
+			</div>
+			<div class="col-md-4" >
+				{$tusrProfil_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrProfil_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrProfil_fieldblock}
+	{BEGIN tusrPertanyaan_fieldblock}		
+	<div class="container {$fielddispclass_tusrPertanyaan}" data-fieldname="tusrPertanyaan">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrPertanyaan}">
+				{$label t_user tusrPertanyaan}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrPertanyaan}
+			</div>
+			<div class="col-md-4" >
+				{$tusrPertanyaan_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrPertanyaan_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrPertanyaan_fieldblock}
+	{BEGIN tusrJawaban_fieldblock}		
+	<div class="container {$fielddispclass_tusrJawaban}" data-fieldname="tusrJawaban">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrJawaban}">
+				{$label t_user tusrJawaban}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrJawaban}
+			</div>
+			<div class="col-md-4" >
+				{$tusrJawaban_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrJawaban_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrJawaban_fieldblock}
+	{BEGIN tusrSignature_fieldblock}		
+	<div class="container {$fielddispclass_tusrSignature}" data-fieldname="tusrSignature">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrSignature}">
+				{$label t_user tusrSignature}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrSignature}
+			</div>
+			<div class="col-md-4" >
+				{$tusrSignature_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrSignature_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrSignature_fieldblock}
+	{BEGIN tusrAvatar_fieldblock}		
+	<div class="container {$fielddispclass_tusrAvatar}" data-fieldname="tusrAvatar">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrAvatar}">
+				{$label t_user tusrAvatar}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrAvatar}
+			</div>
+			<div class="col-md-4" >
+				{$tusrAvatar_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrAvatar_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrAvatar_fieldblock}
+	{BEGIN tusrEmail_fieldblock}		
+	<div class="container {$fielddispclass_tusrEmail}" data-fieldname="tusrEmail">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrEmail}">
+				{$label t_user tusrEmail}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrEmail}
+			</div>
+			<div class="col-md-4" >
+				{$tusrEmail_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrEmail_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrEmail_fieldblock}
+	{BEGIN tusrIsTampilBiodata_fieldblock}		
+	<div class="container {$fielddispclass_tusrIsTampilBiodata}" data-fieldname="tusrIsTampilBiodata">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrIsTampilBiodata}">
+				{$label t_user tusrIsTampilBiodata}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrIsTampilBiodata}
+			</div>
+			<div class="col-md-4" >
+				{$tusrIsTampilBiodata_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrIsTampilBiodata_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrIsTampilBiodata_fieldblock}
+	{BEGIN tusrNoTelp_fieldblock}		
+	<div class="container {$fielddispclass_tusrNoTelp}" data-fieldname="tusrNoTelp">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrNoTelp}">
+				{$label t_user tusrNoTelp}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrNoTelp}
+			</div>
+			<div class="col-md-4" >
+				{$tusrNoTelp_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrNoTelp_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrNoTelp_fieldblock}
+	{BEGIN tusrRefIndex_fieldblock}		
+	<div class="container {$fielddispclass_tusrRefIndex}" data-fieldname="tusrRefIndex">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrRefIndex}">
+				{$label t_user tusrRefIndex}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrRefIndex}
+			</div>
+			<div class="col-md-4" >
+				{$tusrRefIndex_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrRefIndex_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrRefIndex_fieldblock}
+	{BEGIN tusrUntId_fieldblock}		
+	<div class="container {$fielddispclass_tusrUntId}" data-fieldname="tusrUntId">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrUntId}">
+				{$label t_user tusrUntId}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrUntId}
+			</div>
+			<div class="col-md-4" >
+				{$tusrUntId_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrUntId_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrUntId_fieldblock}
+	{BEGIN tusrIsAgree_fieldblock}		
+	<div class="container {$fielddispclass_tusrIsAgree}" data-fieldname="tusrIsAgree">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrIsAgree}">
+				{$label t_user tusrIsAgree}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrIsAgree}
+			</div>
+			<div class="col-md-4" >
+				{$tusrIsAgree_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrIsAgree_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrIsAgree_fieldblock}
+	{BEGIN tusrAgreementDate_fieldblock}		
+	<div class="container {$fielddispclass_tusrAgreementDate}" data-fieldname="tusrAgreementDate">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrAgreementDate}">
+				{$label t_user tusrAgreementDate}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrAgreementDate}
+			</div>
+			<div class="col-md-4" >
+				{$tusrAgreementDate_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrAgreementDate_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrAgreementDate_fieldblock}
+	{BEGIN tusrLastAccess_fieldblock}		
+	<div class="container {$fielddispclass_tusrLastAccess}" data-fieldname="tusrLastAccess">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrLastAccess}">
+				{$label t_user tusrLastAccess}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrLastAccess}
+			</div>
+			<div class="col-md-4" >
+				{$tusrLastAccess_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrLastAccess_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrLastAccess_fieldblock}
+	{BEGIN tusrIsOnline_fieldblock}		
+	<div class="container {$fielddispclass_tusrIsOnline}" data-fieldname="tusrIsOnline">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrIsOnline}">
+				{$label t_user tusrIsOnline}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrIsOnline}
+			</div>
+			<div class="col-md-4" >
+				{$tusrIsOnline_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrIsOnline_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrIsOnline_fieldblock}
+	{BEGIN tusrProdiKode_fieldblock}		
+	<div class="container {$fielddispclass_tusrProdiKode}" data-fieldname="tusrProdiKode">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_tusrProdiKode}">
+				{$label t_user tusrProdiKode}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_tusrProdiKode}
+			</div>
+			<div class="col-md-4" >
+				{$tusrProdiKode_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$tusrProdiKode_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END tusrProdiKode_fieldblock}
+</div>
+
+
+
+
+</div>
+{END container_fields}
+
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container form-horizontal   "> 
+
+
+
+
+{BEGIN container_bbuttons}
+<div {$bbuttons_chiddenattr} data-pageid="{$pageid}" data-container="bbuttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-10 col-md-offset-2"> 
+
+{BEGIN searchbuttons}
+{BEGIN search_button}
+<button class="btn btn-primary" {$searchbutton_attrs}>Search</button>
+{END search_button} 
+{BEGIN reset_button}
+<button class="btn btn-default" {$resetbutton_attrs}>Reset</button>
+{END reset_button}
+{BEGIN back_button}
+<button class="btn btn-default" {$backbutton_attrs}>Back to list</button>
+{END back_button}
+{END searchbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+</div>
+{END container_bbuttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

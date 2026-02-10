@@ -1,0 +1,128 @@
+<!-- patTemplate:tmpl name="document" -->
+<html>
+<head>
+<title>CETAK MATAKULIAH DITAWARKAN</title>
+<link rel="stylesheet" type="text/css" href="styles/a_sia_cetak_new.css" />
+<link rel="stylesheet" type="text/css" media="print" href="styles/a_sia_cetak_media_print_new.css" />
+<style type="text/css">
+.tabelKop tr td {
+   padding:7px;
+}
+.tabelKop tr td h5 {
+   padding-top: 20px;
+}
+
+.tabelHeaderData tr td {
+   font:11px Arial;
+}
+
+#table-data tr td, #table-data tr th {
+   font:8px Arial;
+}
+
+.tabelFooter tr td {
+   font:11px Arial;
+}
+
+.h5JudulSemester {
+   padding: 0px;
+   margin: 0px;
+}
+</style>
+</head>
+<body onLoad="//window.print();">
+<div class="page-portrait">
+
+   <!-- patTemplate:tmpl name="page" -->
+   <div class="{BREAK}">
+      <table width="100%" class="tabelKop" border="0">
+         <tr>
+            <td width="80" align="left" style="padding:0px;">
+               <img src="images/logo-big.png" width="70" />
+            </td>
+            <td>
+               <h5>{NAMA_PT}</h5>
+            </td>
+            <td align="right">
+               <h5>RPM</h5>
+            </td>
+         </tr>
+      </table>
+
+      <table width="100%" class="tabelHeaderData" border="0">
+         <tr>
+            <td width="20%"><strong>Semester / TA</strong></td>
+            <td width="3%">:</td>
+            <td>{SEMESTER_LABEL}</td>
+         </tr>
+         <tr>
+            <td><strong>Program Studi</strong></td>
+            <td>:</td>
+            <td>{PRODI_NAMA}</td>
+         </tr>
+      </table>
+
+      <hr />
+      <br />
+
+      <!-- patTemplate:tmpl name="data_list_semester" -->
+      <h5 class="h5JudulSemester">SEMESTER {SEMESTER_KE}</h5>
+      <table id="table-data" width="100%">
+         <tr>
+            <th>Kode MK</th>
+            <th>Matakuliah</th>
+            <th>SKS</th>
+            <th width="5%">&nbsp;</th>
+            <th>Kode MK</th>
+            <th>Matakuliah</th>
+            <th>SKS</th>
+         </tr>
+         <!-- patTemplate:tmpl name="data_list_semester_item" -->
+            <tr>
+               <td>{KODE_MK_KIRI}</td>
+               <td>{NAMA_MK_KIRI}</td>
+               <td>{SKS_MK_KIRI}</td>
+               <td>&nbsp;</td>
+               <td>{KODE_MK_KANAN}</td>
+               <td>{NAMA_MK_KANAN}</td>
+               <td>{SKS_MK_KANAN}</td>
+            </tr>
+         <!-- /patTemplate:tmpl --> <!-- end of data_list_semester_item -->
+      </table>
+      <br />
+      <!-- /patTemplate:tmpl --> <!-- end of data_list_semester -->
+
+   </div>
+   <!-- /patTemplate:tmpl -->
+
+   <hr />
+
+   <br />
+   <table class="tabelFooter" width="100%" border="0">
+      <tr>
+         <td valign="top">
+            Lembar 1. BAAK<br />
+            Lembar 2. Mahasiswa<br />
+            Lembar 3. Jurusan<br />
+         </td>
+         <td width="35%"></td>
+         <td valign="top">
+            <table width="100%">
+               <tr>
+                  <td align="center">{TANGGAL_CETAK}<br /><span id="{TIPE_SAH}">{PENGESAH}</span><br /><span id="{JABATAN_SAH}">{JABATAN}</span></td>
+               </tr>
+               <tr>
+                  <td align="center" height="65"></td>
+               </tr>
+               <tr>
+                  <td align="center" nowrap="nowrap"> <span id="{NAMA_SAH}">{NAMA}</span></td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+
+</div>
+</body>
+</html>
+<!-- /patTemplate:tmpl -->

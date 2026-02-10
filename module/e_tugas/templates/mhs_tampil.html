@@ -1,0 +1,52 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl --> 
+
+<!-- patTemplate:tmpl name="content" -->
+  
+      
+{INVALID}
+<h2> {APPLICATION_MODULE} </h2><br />
+      	
+	<form name="fmTugas" class="form-common" method="post" action="">
+	<table class="table-form" width="100%">
+	  <tr>
+	    <th width="20%">Semester</th>
+	      <td>{SEMESTER}</td>
+	  </tr>		
+	</table>
+	</form>
+	
+    <table width="100%" class="table-common">
+      <tr> 
+        <th width="5%">No</th>
+        <th width="30%">Judul</th>
+        <th width="15%">Download</th>
+        <th width="20%">Mata Kuliah</th>
+        <th width="15%">Waktu Awal</th>
+        <th width="15%">Waktu Akhir</th>         
+      </tr>
+  <!-- patTemplate:tmpl name="tugas" type="condition" conditionvar="IS_EMPTY" -->  
+	<!-- patTemplate:sub condition="empty" -->
+       <tr>
+       		<td colspan="8"><div align="center"><i>-- Tidak Ada Tugas --</i></div></td>
+       </tr>
+	<!-- /patTemplate:sub -->	  
+	<!-- patTemplate:sub condition="isi" -->
+	 	<!-- patTemplate:tmpl name="daftar_tugas" -->
+      	<tr> 
+	        <td align="center">{TUGAS_NO}</td>
+	        <td><a href="{TUGAS_DETAIL}">{TUGAS_JUDUL}</a></td>
+	        <td><a href="{TUGAS_DOWNLOAD}">{TUGAS_FILE}</a></td>
+	        <td>{TUGAS_KUL_KODE} - {TUGAS_KUL_NAMA}</td>
+	        <td>{TUGAS_MULAI}</td>
+	        <td>{TUGAS_SELESAI}</td>        
+	     </tr>
+ 		<!-- /patTemplate:tmpl -->  
+ 	<!-- /patTemplate:sub -->
+    
+
+	<!-- patTemplate:tmpl name="pages" / -->
+  <!-- /patTemplate:tmpl -->
+  </table>
+<!-- /patTemplate:tmpl --> <!-- name="content" -->

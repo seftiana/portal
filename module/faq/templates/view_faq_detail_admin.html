@@ -1,0 +1,42 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2> Detil FAQ </h2>
+   <p class="text-muted">Keterangan :</p>
+   <p>Detail FAQ merupakan informasi detil dari FAQ.
+   </p><br/>
+	<br/>
+   <!-- patTemplate:tmpl name="detail_faq" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->      
+         <table class="table-list">
+            <tr> 
+				   <th>Kategori</th>
+               <td >{DETAIL_KATEGORI_NAMA}</td>
+            </tr>
+				<tr> 
+				   <th>Pertanyaan</th>
+               <td >{DETAIL_PERTANYAAN}</td>
+            </tr>
+            <tr>
+					<th >Jawaban</th>
+               <td >{DETAIL_JAWABAN}</td>
+            </tr>
+				<tr>
+					<th >Tujuan</th>
+               <td >{DETAIL_TUJUAN}</td>
+            </tr>
+            <tr >
+               <td colspan="2" class="table-common-links"><a href="{DETAIL_URL_KEMBALI}" class="btn btn-info">Kembali</a>
+					<a href="{DETAIL_URL_UBAH}" class="btn btn-info">Ubah</a>
+					<a href="{DETAIL_URL_HAPUS}" class="btn btn-info" onClick="return ValidateDelete()">Hapus</a>                  
+               </td>
+            </tr>
+         </table>
+
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl --> 
+   
+<!-- /patTemplate:tmpl --> <!-- end of content-->

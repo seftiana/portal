@@ -1,0 +1,255 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript">
+	function verify()
+	{
+		msg = "Anda yakin ingin menghapus data ini?";	
+		return confirm(msg);
+		
+	}
+	
+	function fBuka()
+	{	
+		
+		if(window.document.form_materi.isKlsDsnLain.checked) 
+		{				
+			window.document.form_materi.klsLainId.disabled = false;
+			window.document.form_materi.dsnLainId.disabled = false;
+			window.document.form_materi.klsDsnLain[0].disabled = false;
+			window.document.form_materi.klsDsnLain[1].disabled = false;
+		}
+		else 
+		{
+			window.document.form_materi.klsLainId.disabled = true;
+			window.document.form_materi.dsnLainId.disabled = true;
+			window.document.form_materi.klsDsnLain[0].disabled = true;
+			window.document.form_materi.klsDsnLain[0].checked = false;
+			window.document.form_materi.klsDsnLain[1].disabled = true;
+			window.document.form_materi.klsDsnLain[1].checked = false;			
+		}
+	}
+	function klsDsnLain0_checked()
+	{
+		if(window.document.form_materi.klsDsnLain[0].checked) 
+		{
+			window.document.form_materi.klsLainId.disabled = false;
+			window.document.form_materi.dsnLainId.disabled = true;
+		}
+	}
+	function klsDsnLain1_checked()
+	{
+		if(window.document.form_materi.klsDsnLain[1].checked) 
+		{
+			window.document.form_materi.klsLainId.disabled = true;
+			window.document.form_materi.dsnLainId.disabled = false;
+		}
+	}
+	function kls_checked()
+	{
+		if(window.document.form_materi.klsDsn[0].checked) 
+		{
+			window.document.form_materi.klsId.disabled = false;
+			window.document.form_materi.dsnId.disabled = true;
+		}
+	}
+	function dsn_checked()
+	{
+		if(window.document.form_materi.klsDsn[1].checked) 
+		{
+			window.document.form_materi.klsId.disabled = true;
+			window.document.form_materi.dsnId.disabled = false;
+		}
+	}
+
+	
+</script>
+
+
+<h2> {APPLICATION_MODULE} </h2></br>
+  
+  <form name="form_materi" class="form-common" method="post" action="{FORM_AKSI}">
+	<input type="hidden" name="hdnSmt" value="{SEMESTER}" />
+  <table class="table-list" width="100%">
+    <tr>
+        <th width="20%" valign="top">Pilihan</th>
+        <td>{NAMA_SEMSTER}</td>
+    </tr>
+    <tr>
+    	<th>Semester</th>
+        <td width="80%">
+            <select name="semId">
+                <!-- patTemplate:tmpl name="list_semester" -->
+                <option value="{SEM_ID}" {SELECT}>{SEM_NAMA}</option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+			  <input type="submit" name="getSemester" value="Ganti" class="input-disclaimer" />
+        </td>
+    </tr>
+    <tr>
+        <th>
+		<!-- patTemplate:tmpl name="showRadioKelas" visibility="hidden" -->
+        	<input type="radio" name="klsDsn" value="kelas" onclick="kls_checked();" {KELAS_CHECK}>
+         <!-- /patTemplate:tmpl -->
+        	Mata Kuliah
+       
+        </th>
+        <td>
+            <select name="klsId" {KELAS_DISABLED} >
+                <!-- patTemplate:tmpl name="list_kelas" -->
+                <option value="{KLS_KODE}" {SELECT_{KLS_KODE}}>{KLS_KODE}-{KLS_NAMA} </option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+        </td>    
+    </tr>
+    <!-- patTemplate:tmpl name="pilihan_lain" type="condition" conditionvar="ROLE" -->
+		    <!-- patTemplate:sub condition="mahasiswa" -->	
+    <tr>
+        <th>
+            <input type="radio" name="klsDsn" value="dosen" onClick="dsn_checked();" {DOSEN_CHECK}  >Dosen
+        </th>
+        <td>
+            <select name="dsnId" {DOSEN_DISABLED}>
+                <!-- patTemplate:tmpl name="list_dosen" -->
+                <option value="{DSN_ID}" {SELECT_{DSN_ID}}>{DSN_NAMA} - {DSN_ID}</option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+        </td>    
+    </tr>
+		<!-- /patTemplate:sub -->	
+ 
+	<!-- /patTemplate:tmpl -->    
+<!--sisipan-->
+	
+    <tr>
+        <th>
+            Judul
+        </th>
+        <td><input type="textbox" name="judul" size="50" /></td>
+    </tr>
+    <tr>
+        <th>Tanggal</th>
+        <td>
+            <select name="tglMulai">
+                <!-- patTemplate:tmpl name="tgl" -->
+                <option value="{TGL}" {SELECT_{TGL}}>{TGL}</option>
+                <!-- /patTemplate:tmpl -->
+            </select> 
+            <select name="blnMulai">  
+				<option value="" ></option>              
+                <option value="1" {SELECT_01}>01</option>
+                <option value="2" {SELECT_02}>02</option>
+                <option value="3" {SELECT_03}>03</option>
+                <option value="4" {SELECT_04}>04</option>
+                <option value="5" {SELECT_05}>05</option>
+                <option value="6" {SELECT_06}>06</option>
+                <option value="7" {SELECT_07}>07</option>
+                <option value="8" {SELECT_08}>08</option>
+                <option value="9" {SELECT_09}>09</option>
+                <option value="10" {SELECT_10}>10</option>
+                <option value="11" {SELECT_11}>11</option>
+                <option value="12" {SELECT_12}>12</option>                
+            </select> 
+            <select name="thnMulai">
+                <!-- patTemplate:tmpl name="thn" -->
+                <option value="{THN}" {SELECT_{THN}}>{THN}</option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+            s/d 
+            <select name="tglAkhir">
+                <!-- patTemplate:tmpl name="tgl" -->
+                <option value="{TGL}" {SELECT_{TGL}}>{TGL}</option>
+                <!-- /patTemplate:tmpl -->
+            </select> 
+            <select name="blnAkhir">   
+				<option value="" ></option>              
+                <option value="1" {SELECT_01}>01</option>
+                <option value="2" {SELECT_02}>02</option>
+                <option value="3" {SELECT_03}>03</option>
+                <option value="4" {SELECT_04}>04</option>
+                <option value="5" {SELECT_05}>05</option>
+                <option value="6" {SELECT_06}>06</option>
+                <option value="7" {SELECT_07}>07</option>
+                <option value="8" {SELECT_08}>08</option>
+                <option value="9" {SELECT_09}>09</option>
+                <option value="10" {SELECT_10}>10</option>
+                <option value="11" {SELECT_11}>11</option>
+                <option value="12" {SELECT_12}>12</option>                 
+            </select>
+            <select name="thnAkhir">
+                <!-- patTemplate:tmpl name="thn" -->
+                <option value="{THN}" {SELECT_{THN}}>{THN}</option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+        </td>
+    </tr>  
+    <tr>
+          <th colspan=2><input type="submit" name="cari" value="Tampilkan" class="input-disclaimer" /> </th>
+    </tr>
+  </table>
+  
+ 
+
+   
+		<!-- patTemplate:tmpl name="show_add_button" visibility="hidden" -->
+			<table width="90%">
+				<tr>
+					<th align="right">
+						<input type="submit" name="addMateri" value="Tambah" />	
+					</th>
+				</tr>
+			</table>	
+	
+		<!-- /patTemplate:tmpl -->
+  <!-- menampilkan hasil pencarian -->  
+  <!-- patTemplate:tmpl name="show_table" visibility="hidden" -->
+      <table class="table-common" width="95%">
+          <tr>
+              <th width="15%">Aksi</th>
+              <th width="5%">No</th>
+              <th width="15%">Mata Kuliah</th>
+              <th width="25%">Judul</th>
+              <th width="15%">Download</th>
+          </tr>
+          <!-- patTemplate:tmpl name="data_materi" type="condition" conditionvar="DATA_EXIST" -->
+		  	<!-- patTemplate:sub condition="false" -->
+				<tr>
+					<td colspan="5" align="center"><i> -- Data Tidak Ditemukan -- </i></td>
+				</tr>
+			<!-- /patTemplate:sub -->
+		  	<!-- patTemplate:sub condition="true" -->	
+		  		<!-- patTemplate:tmpl name="daftar_materi" -->		
+				  <tr>
+					  <td>{MATERI_AKSI}</td>
+					  <td>{MATERI_NO}</td>
+					  <td><div align="left">{MATERI_MATKUL_NAMA}<div></td>
+					  <td><div align="left"><a href="{MATERI_LINK_JUDUL}">{MATERI_JUDUL}</div></a></td>
+					  <td><div align="left"><a href="{MATERI_DOWNLOAD}" target="_blank">{MATERI_FILE}</a></div></td>
+				  </tr>
+			  	<!-- /patTemplate:tmpl -->
+			<!-- /patTemplate:sub -->		  
+          <!-- /patTemplate:tmpl -->
+      </table>
+      
+       <!-- patTemplate:tmpl name="show_activation" visibility="hidden"  -->
+		<table class="table-form" width="90%" >	
+			<tr>
+				<th align="left">
+					Item Terpilih :
+					<select name="isAktifkan">
+						<option value="1">Aktifkan</option>
+						<option value="0">Nonaktifkan</option>
+					</select>
+					<input type="submit" name="simpanAktifasi" value="Simpan" />
+				</th>
+			</tr>		
+		</table>
+	  
+	  <!-- /patTemplate:tmpl -->
+   <!-- /patTemplate:tmpl -->
+	  
+  
+</form>  
+
+<!-- /patTemplate:tmpl -->

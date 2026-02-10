@@ -1,0 +1,42 @@
+<?php
+$dalTables_semester_prodi = array();
+$dalTables_semester_prodi["sempId"] = array("type"=>20,"varname"=>"sempId", "name" => "sempId");
+$dalTables_semester_prodi["sempSemId"] = array("type"=>20,"varname"=>"sempSemId", "name" => "sempSemId");
+$dalTables_semester_prodi["sempProdiKode"] = array("type"=>3,"varname"=>"sempProdiKode", "name" => "sempProdiKode");
+$dalTables_semester_prodi["sempIsAktif"] = array("type"=>16,"varname"=>"sempIsAktif", "name" => "sempIsAktif");
+$dalTables_semester_prodi["sempTanggalKrsMulai"] = array("type"=>7,"varname"=>"sempTanggalKrsMulai", "name" => "sempTanggalKrsMulai");
+$dalTables_semester_prodi["sempTanggalKrsSelesai"] = array("type"=>7,"varname"=>"sempTanggalKrsSelesai", "name" => "sempTanggalKrsSelesai");
+$dalTables_semester_prodi["sempTanggalRevisiMulai"] = array("type"=>7,"varname"=>"sempTanggalRevisiMulai", "name" => "sempTanggalRevisiMulai");
+$dalTables_semester_prodi["sempTanggalRevisiSelesai"] = array("type"=>7,"varname"=>"sempTanggalRevisiSelesai", "name" => "sempTanggalRevisiSelesai");
+$dalTables_semester_prodi["sempTanggalInputNilaiOnlineMulai"] = array("type"=>7,"varname"=>"sempTanggalInputNilaiOnlineMulai", "name" => "sempTanggalInputNilaiOnlineMulai");
+$dalTables_semester_prodi["sempTanggalInputNilaiOnlineSelesai"] = array("type"=>7,"varname"=>"sempTanggalInputNilaiOnlineSelesai", "name" => "sempTanggalInputNilaiOnlineSelesai");
+$dalTables_semester_prodi["sempTanggalInputNilaiOnline2Mulai"] = array("type"=>7,"varname"=>"sempTanggalInputNilaiOnline2Mulai", "name" => "sempTanggalInputNilaiOnline2Mulai");
+$dalTables_semester_prodi["sempTanggalInputNilaiOnline2Selesai"] = array("type"=>7,"varname"=>"sempTanggalInputNilaiOnline2Selesai", "name" => "sempTanggalInputNilaiOnline2Selesai");
+$dalTables_semester_prodi["sempBiayaPerSks"] = array("type"=>14,"varname"=>"sempBiayaPerSks", "name" => "sempBiayaPerSks");
+$dalTables_semester_prodi["sempBobotNilaiBelumKeluar"] = array("type"=>14,"varname"=>"sempBobotNilaiBelumKeluar", "name" => "sempBobotNilaiBelumKeluar");
+$dalTables_semester_prodi["sempBobotNilaiMaxBolehMengulang"] = array("type"=>14,"varname"=>"sempBobotNilaiMaxBolehMengulang", "name" => "sempBobotNilaiMaxBolehMengulang");
+$dalTables_semester_prodi["sempIsCekJatahSks"] = array("type"=>16,"varname"=>"sempIsCekJatahSks", "name" => "sempIsCekJatahSks");
+$dalTables_semester_prodi["sempIsCekPrasyaratMatakuliah"] = array("type"=>16,"varname"=>"sempIsCekPrasyaratMatakuliah", "name" => "sempIsCekPrasyaratMatakuliah");
+$dalTables_semester_prodi["sempIsCekPrasyaratIpk"] = array("type"=>16,"varname"=>"sempIsCekPrasyaratIpk", "name" => "sempIsCekPrasyaratIpk");
+$dalTables_semester_prodi["sempIsCekPrasyaratJumlahSks"] = array("type"=>16,"varname"=>"sempIsCekPrasyaratJumlahSks", "name" => "sempIsCekPrasyaratJumlahSks");
+$dalTables_semester_prodi["sempIsCekPrasyaratJumlahSksWajib"] = array("type"=>16,"varname"=>"sempIsCekPrasyaratJumlahSksWajib", "name" => "sempIsCekPrasyaratJumlahSksWajib");
+$dalTables_semester_prodi["sempIsCekPrasyaratJumlahSksPilihan"] = array("type"=>16,"varname"=>"sempIsCekPrasyaratJumlahSksPilihan", "name" => "sempIsCekPrasyaratJumlahSksPilihan");
+$dalTables_semester_prodi["sempIsCekPrasyaratJumlahSksLulus"] = array("type"=>16,"varname"=>"sempIsCekPrasyaratJumlahSksLulus", "name" => "sempIsCekPrasyaratJumlahSksLulus");
+$dalTables_semester_prodi["sempIsCekPrasyaratJumlahSksWajibLulus"] = array("type"=>16,"varname"=>"sempIsCekPrasyaratJumlahSksWajibLulus", "name" => "sempIsCekPrasyaratJumlahSksWajibLulus");
+$dalTables_semester_prodi["sempIsCekPrasyaratJumlahSksPilihanLulus"] = array("type"=>16,"varname"=>"sempIsCekPrasyaratJumlahSksPilihanLulus", "name" => "sempIsCekPrasyaratJumlahSksPilihanLulus");
+$dalTables_semester_prodi["sempIsCekMaxMengulang"] = array("type"=>16,"varname"=>"sempIsCekMaxMengulang", "name" => "sempIsCekMaxMengulang");
+$dalTables_semester_prodi["sempIsUseNilaiBelumKeluar"] = array("type"=>16,"varname"=>"sempIsUseNilaiBelumKeluar", "name" => "sempIsUseNilaiBelumKeluar");
+$dalTables_semester_prodi["sempIsUseNilaiMaxBolehMengulang"] = array("type"=>16,"varname"=>"sempIsUseNilaiMaxBolehMengulang", "name" => "sempIsUseNilaiMaxBolehMengulang");
+$dalTables_semester_prodi["sempIsCekAdministrasi"] = array("type"=>16,"varname"=>"sempIsCekAdministrasi", "name" => "sempIsCekAdministrasi");
+$dalTables_semester_prodi["sempIsCekPersetujuanKrs"] = array("type"=>16,"varname"=>"sempIsCekPersetujuanKrs", "name" => "sempIsCekPersetujuanKrs");
+$dalTables_semester_prodi["sempIsCekBentrokKuliah"] = array("type"=>16,"varname"=>"sempIsCekBentrokKuliah", "name" => "sempIsCekBentrokKuliah");
+$dalTables_semester_prodi["sempIsCekBentrokUjian"] = array("type"=>16,"varname"=>"sempIsCekBentrokUjian", "name" => "sempIsCekBentrokUjian");
+$dalTables_semester_prodi["sempIsKrsHitungSksTeoriSaja"] = array("type"=>16,"varname"=>"sempIsKrsHitungSksTeoriSaja", "name" => "sempIsKrsHitungSksTeoriSaja");
+$dalTables_semester_prodi["sempSksDefault"] = array("type"=>2,"varname"=>"sempSksDefault", "name" => "sempSksDefault");
+$dalTables_semester_prodi["sempSksMaksimal"] = array("type"=>2,"varname"=>"sempSksMaksimal", "name" => "sempSksMaksimal");
+$dalTables_semester_prodi["sempIsPaket"] = array("type"=>16,"varname"=>"sempIsPaket", "name" => "sempIsPaket");
+$dalTables_semester_prodi["sempIsPaketSemester"] = array("type"=>16,"varname"=>"sempIsPaketSemester", "name" => "sempIsPaketSemester");
+	$dalTables_semester_prodi["sempId"]["key"]=true;
+
+$dal_info["gtakademik_dev_at_localhost__s_semester_prodi"] = &$dalTables_semester_prodi;
+?>

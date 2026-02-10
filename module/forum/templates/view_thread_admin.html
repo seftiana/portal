@@ -1,0 +1,79 @@
+<!-- patTemplate:tmpl name="content" -->
+   
+   <h4>{APPLICATION_MODULE}</h4>   
+   <br>
+   <h5>{TOPIK_TITLE}</h5>
+   <p>{TOPIK_DESCRIPTION}</p>
+   
+   <!-- patTemplate:tmpl name="thread_list" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->          
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <table class="table-forum" width="100%">
+            <tr>
+               <th class="text-center" colspan="2"><div class="th-special-left"></div><div class="th-center"><strong>Thread Diskusi</strong></div></th>
+               <th class="text-center" width="28%"><div class="th-special-right"></div><div class="th-center"><strong>Informasi Thread</strong></div></th>
+            </tr>
+            <!-- patTemplate:tmpl name="thread_item" -->
+            <tr>
+               <td><img src="images/non-public.gif" alt="" /></td>
+               <td>
+                  <strong><a href="{THREAD_URL_DETAIL}" title="{THREAD_JUDUL}">{THREAD_JUDUL_TRUNCATE}</a></strong><br />
+                  <p>{THREAD_DESKRIPSI}</p>
+               </td>
+               <td class="text-center">
+                  Jumlah Post : <b>{THREAD_JMLPOST}</b> <br />
+                  {THREAD_TANGGAL} <br />                  
+                  oleh : <b>{THREAD_NAMALASTPOSTER}</b>
+                  <form name="mdfyForm" class="form-topik-input" method="POST" action="{THREAD_URL_MODIFY_PROCESS}">
+                     <input type="hidden" name="act" value="modifyThread">                 
+                     <input type="hidden" name="forumKategoriId" value="{THREAD_KATEGORIID}" />
+                     <input type="hidden" name="forumTopikId" value="{THREAD_TOPIKID}" />
+                     <input type="hidden" name="data[ForumThreadId]" value="{THREAD_ID}" />
+                     <input type="submit" name="mdfyBtn" value="Ubah" />
+                     <input type="submit" name="mdfyBtn" value="Hapus" onClick="return ValidateDelete()"/>                     
+                  </form>
+               </td>
+            </tr>
+            <!-- /patTemplate:tmpl -->
+         </table>
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+	
+   <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+	<br/>
+	
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <form name="addForm" class="form-common" method="POST" action="{URL_ADD_PROCESS}">
+      <input name="act" type="hidden" value="doAddThread" />
+      <input name="forumKategoriId" type="hidden" value="{KATEGORI_ID}" />                        
+      <input name="data[ForumTopikId]" type="hidden" value="{TOPIK_ID}" />             
+      <table class="table-form" width="100%">
+         <tr>
+            <th colspan="2"><b>Form Tambah Thread</b></th>
+         </tr>
+         <tr>
+            <th>Judul Thread Diskusi</th>
+            <td><input name="data[ForumThreadTitle]" type="text" maxlength="255" size="40" /></td>
+         </tr>               
+         <tr>
+            <th>&nbsp;</th>
+            <td>
+               <input class="input-disclaimer" name="addBtn" type="submit" value="Kirim" />
+               <input class="input-disclaimer" name="reset" type="reset" value="Reset" />
+            </td>
+         </tr>
+      </table>
+   </form>
+         
+   <table>
+      <tr>
+         <td class="table-common-links"><a href="{URL_BACK}">Kembali</a></td>
+      </tr>
+   </table>
+         
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,53 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2> {APPLICATION_MODULE} </h2>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="form_add_announcement" -->        
+         <form class="form-common" method="POST" action="{URL_PROCESS}" enctype="multipart/form-data">
+            <table class="table-form" width="100%">
+               <tr>
+                  <th colspan="2"><strong>Form Tambah Laporan MBKM</strong></th>
+               </tr>
+               <tr>
+                  <th>Tanggal</th>
+                  <td>
+					<select name="data[hari]" id="">
+						<!-- patTemplate:tmpl name="day_type" type="condition" conditionvar="IS_EMPTY" -->
+							<!-- patTemplate:sub condition="NO" -->
+								<option value="{DAY_ID}" {DAY_SELECTED}/>{DAY_NAMA}</option>
+							<!-- /patTemplate:sub -->
+						<!-- /patTemplate:tmpl -->
+					</select> &nbsp;/&nbsp;
+					<select name="data[bulan]" id="">
+						<!-- patTemplate:tmpl name="bulan_type" type="condition" conditionvar="IS_EMPTY" -->
+							<!-- patTemplate:sub condition="NO" -->
+								<option value="{BULAN_ID}" {BULAN_SELECTED}/>{BULAN_NAMA}</option>
+							<!-- /patTemplate:sub -->
+						<!-- /patTemplate:tmpl -->
+					</select> &nbsp;/&nbsp;
+					<select name="data[tahun]" id="">
+						<!-- patTemplate:tmpl name="tahun_type" type="condition" conditionvar="IS_EMPTY" -->
+							<!-- patTemplate:sub condition="NO" -->
+								<option value="{TAHUN_ID}" {TAHUN_SELECTED}/>{TAHUN_NAMA}</option>
+							<!-- /patTemplate:sub -->
+						<!-- /patTemplate:tmpl -->
+					</select>
+					<input type="hidden" name="data[IDUser]" value="{IDUSER}" >
+				  </td>
+               </tr>
+               <tr>
+                  <th>Kegiatan</th>
+                  <td><textarea name="data[Kegiatan]" cols="60" rows="6" ></textarea></td>
+               </tr>
+               <tr>
+                  <td colspan="2">
+                     <input type="hidden" name="act" value="DoAddMbkm">
+                     <input class="input-disclaimer btn btn-primary" type="submit" name="btnAdd" value="Simpan">
+                     <input class="input-disclaimer btn btn-primary" type="submit" name="btnCancel" value="Batal">
+                  </td>
+               </tr>
+            </table>
+         </form>
+   <!-- /patTemplate:tmpl --> <!-- end of message-->
+   
+<!-- /patTemplate:tmpl --> <!-- end of content-->

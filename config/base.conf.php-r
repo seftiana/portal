@@ -1,0 +1,77 @@
+<?php
+   /*========================================
+     *       Application Configuration       *
+     *========================================*/
+   
+   // konfigurasi untuk menampilkan error warning saat pengembangan :: nilai = TRUE atau FALSE
+   $cfg['enable_developer_warning'] = FALSE; //jangan diganti dan hanya perlu diganti ketika sedang men-development aplikasi ini
+   
+   // konfigurasi untuk memfungsikan enkripsi URL :: nilai = TRUE atau FALSE
+   $cfg['enable_url_obfuscator'] = TRUE; //jangan diganti
+   
+   // konfigurasi key yang digunakan untuk proses enkripsi (berfungsi hanya jika fungsi enksripsi URL TRUE)  :: nilai = string
+   $cfg['url_obfuscator_key'] = 'Portal';  //jangan diganti
+   
+   // konfigurasi document root dimana aplikasi terinstall (with trailing slash)
+   $cfg['docroot'] = '/var/data/web/dev/gtportal/'; //isikan path aplikasi ini di webserver
+   // konfigurasi id aplikasi :: nilai sesuai dengan tabel t_unit academica
+   $cfg['app_id'] = '1021001';  //jangan diganti
+   
+   // konfigurasi versi aplikasi :: nilai sekarang 4.0.0
+   $cfg['app_version'] = '4.0.0'; //jangan diganti
+   
+   // konfigurasi nama aplikasi :: nilai = string
+   $cfg['app_name'] = 'Portal Akademik'; //jangan diganti
+   
+   // konfigurasi customer aplikasi :: nilai = string (biasanya nama universitas)
+   $cfg['app_client'] = 'Perbanas Institute ';  //isikan identitas perguruan tinggi
+   $cfg['app_client_location'] = 'Jakarta'; //alamat sia
+   
+   // konfigurasi folder aplikasi (default tidak perlu diubah)
+   //jangan diganti
+   $cfg['app_lib'] = $cfg['docroot'] .'main/lib/';
+   $cfg['app_data'] = $cfg['docroot'] .'main/data/';
+   $cfg['app_proc'] = $cfg['docroot'] .'main/proc/';
+   $cfg['app_service'] = $cfg['docroot'] .'main/communication/';
+   $cfg['app_links'] = $cfg['docroot'] .'main/links/';
+   $cfg['app_sql'] = $cfg['docroot'] .'main/sql/';
+   $cfg['app_module'] = $cfg['docroot'] .'module/';   
+   $cfg['basedir'] = 'main/';
+   // konfigurasi untuk mengatur letak image di dalam sistem sia
+   $cfg['base_image']='http://139.255.43.228/dev/gtadmisi/file/photo/';
+   $cfg['extension']='jpg';
+   //
+   //mengatur letak upload file virtual class, struktur direktory dalam file zip
+   $cfg['file_upload_root'] = '';
+   
+   // konfigurasi URL aplikasi :: nilai = URL dimana aplikasi dapat diakses (with trailing slash)
+   $cfg['baseaddress'] = 'http://139.255.43.228/dev/gtportal/';  //isikan url aplikasi
+   
+   /*========================================
+     *       Database Configuration          *
+     *========================================*/
+       
+   $cfg['db_type'] = 'mysqlt'; //jangan diganti
+ $cfg['db_host'] = '103.206.245.197'; //isikan host:port database
+$cfg['db_user'] = 'gt';  //isikan user database
+$cfg['db_pass'] = 'gtPASS';  //isikan password user database
+$cfg['db_name'] = 'gtportal_dev'; //isikan nama database
+  
+   // tipe perguruan tinggi
+   // 1 = memiliki fakultas (eg: universitas dan institut)
+   // 2 = tanpa fakultas (eg: sekolah tinggi dan akademi)
+   $cfg['university_type'] = 1;
+   
+   $cfg['enable_kuisioner']=false; // nilai nya harus sama dengan enable_kuisioner di gtakademik
+   
+   $cfg['enabled_module']['kbk']['mahasiswa'] = array('matakuliah_ditawarkan', 'rencana_studi','jadwal_kbk', 'hasil_studi','nilai_kbk','hasil_studi_kbk', 'transkrip_nilai', 'informasi_akademik'/*, 'pengajuan'*/, 'beasiswa');
+   $cfg['enabled_module']['kbk']['dosen'] = array('matakuliah_ditawarkan', 'matakuliah_diampu', 'matakuliah_diampu_kbk'/*, 'waktu_mengajar'*/, 'bimbingan_akademik','pengelolaan_nilai');
+$cfg['smtp']['auth']     = true;
+$cfg['smtp']['port']     = 587;
+$cfg['smtp']['secure']   = 'tls';
+$cfg['smtp']['host']     = 'smtp.gmail.com';
+$cfg['smtp']['username'] = 'marketing.support@perbanas.id';
+$cfg['smtp']['password'] = 'marketing2014Perbanas';
+$cfg['smtp']['sender']   = 'testing-marketing.support@perbanas.id';
+$cfg['smtp']['reply']    = 'testing-marketing.support@perbanas.id';
+?>

@@ -1,0 +1,152 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>KMK Remedial</h2>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+
+   <form name="frmKRS" method="POST" action="{FORM_AKSI}">
+      <div class="border border-secondary pt-0 px-2 pb-2">
+         <input type="hidden" name="id" value="{ID}">
+         <!-- patTemplate:tmpl name="mahasiswa" -->
+            <table class="table table-list">
+               <tr>
+                  <th>Nama</th>
+                  <td>{MHS_FULLNAME}</td>
+               </tr>
+               <tr>
+                  <th>{LABEL_NIM}</th>
+                  <td>{MHS_NIU}</td>
+               </tr>
+               <tr>
+                  <th>Program Studi</th>
+                  <td>{MHS_INFO}</td>
+               </tr>
+               <tr>
+                  <th>Semester</th>
+                  <td>{MHS_SEM}</td>
+               </tr>
+            </table>
+         <!-- /patTemplate:tmpl --> <!-- end of mahasiswa -->
+
+         <!-- patTemplate:tmpl name="krs" type="condition" conditionvar="IS_EMPTY" -->
+            <!-- patTemplate:sub condition="YES" -->
+
+               <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+
+            <!-- /patTemplate:sub -->
+
+            <!-- patTemplate:sub condition="NO" -->
+            <table class="table-common">
+            <tr>
+               <th>No</th>
+               <th>Remedial</th>
+               <th>Mata Kuliah</th>
+               <th>Sks</th>
+	       <th>Kelas</th>
+            </tr>
+            <!-- patTemplate:tmpl name="krs_item" visibility="hidden" type="condition" conditionvar="ODDEVEN" -->
+               <!-- patTemplate:sub condition="ODD" -->
+                  <tr>
+                     <td align="center">{LOCAL_NUMBER}</td>
+                     <td align="center"><input type="checkbox" name="kodeMkul[]" value="{LOCAL_KRSDT_ID}" {LOCAL_IS_REMEDIAL} > </td>
+                     <td>{LOCAL_KODE_MK} {LOCAL_NAMA_MK}</td>
+                     <td align="center">{LOCAL_SKS}</td>
+					<td align="center">{LOCAL_KELAS}</td>
+                  </tr>
+				  <input type="hidden" name="krsId[]" value="{LOCAL_KRS_ID}" >
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="EVEN" -->
+                  <tr class="table-common-even">
+                     <td align="center">{LOCAL_NUMBER}</td>
+                     <td align="center"><input type="checkbox" name="kodeMkul[]" value="{LOCAL_KRSDT_ID}" {LOCAL_IS_REMEDIAL} > </td>
+                     <td>{LOCAL_KODE_MK} {LOCAL_NAMA_MK}</td>
+                     <td align="center">{LOCAL_SKS}</td>
+					<td align="center">{LOCAL_KELAS}</td>
+                  </tr>
+				  <input type="hidden" name="krsId[]" value="{LOCAL_KRS_ID}" >
+               <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl --> <!-- end of krs_item -->
+
+            <!-- patTemplate:tmpl name="krs_item_no_check_box" visibility="hidden" type="condition" conditionvar="ODDEVEN" -->
+               <!-- patTemplate:sub condition="ODD" -->
+                  <tr>
+                     <td align="center">{LOCAL_NUMBER}</td>
+                     <td>{LOCAL_REMEDIAL}</td>
+                     <td>{LOCAL_KODE_MK} {LOCAL_NAMA_MK}</td>
+                     <td align="center">{LOCAL_SKS}</td>
+		     <td align="center">{LOCAL_KELAS}</td>
+                  </tr>
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="EVEN" -->
+                  <tr class="table-common-even">
+                     <td align="center">{LOCAL_NUMBER}</td>
+                     <td>{LOCAL_REMEDIAL}</td>
+                     <td>{LOCAL_KODE_MK} {LOCAL_NAMA_MK}</td>
+                     <td align="center">{LOCAL_SKS}</td>
+		     <td align="center">{LOCAL_KELAS}</td>
+                  </tr>
+               <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl --> <!-- end of krs_item -->
+
+              
+            <!-- patTemplate:tmpl name="krs_lintas" visibility="hidden" -->
+               <tr>
+                  <td colspan="5">Satuan Administrasi Lain</td>
+               </tr>
+               <!-- patTemplate:tmpl name="lintas_item" type="condition" conditionvar="ODDEVEN" -->
+                  <!-- patTemplate:sub condition="ODD" -->
+                     <tr>
+                        <td>{LINTAS_NUMBER}</td>
+                        <td>{LINTAS_KODE_MK}</td>
+                        <td>{LINTAS_NAMA_MK}</td>
+                        <td>{LINTAS_SKS}</td>
+						<td>{LINTAS_KELAS}</td>
+                     </tr>
+                  <!-- /patTemplate:sub -->
+                  <!-- patTemplate:sub condition="EVEN" -->
+                     <tr class="table-common-even">
+                        <td>{LINTAS_NUMBER}</td>
+                        <td>{LINTAS_KODE_MK}</td>
+                        <td>{LINTAS_NAMA_MK}</td>
+                        <td>{LINTAS_SKS}</td>
+						<td>{LINTAS_KELAS}</td>
+                     </tr>
+                  <!-- /patTemplate:sub -->
+               <!-- /patTemplate:tmpl --> <!-- end of lintas_item -->
+            <!-- /patTemplate:tmpl --> <!-- end of krs_lintas -->
+
+               <tr>
+                  <td colspan=3 align="right"><b>Total SKS Remedial diambil&nbsp;&nbsp;&nbsp;</b></td>
+                  <td align="center"><b>{SKS_TOTAL}</b></td>
+                  <td align="center"></td>
+               </tr>
+            </table>
+            <!-- Total Matakuliah Diambil : {MATAKULIAH_TOTAL} -->
+
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl --> <!-- end of krs -->
+         <!-- <br /><br /><br /> -->
+         <!-- <br /> -->
+         <!-- <div align="left"> -->
+            <input type="hidden" name="act" value="{ACT}">
+            <input type="hidden" name="viewby" value="{VIEW_BY}">
+            <input type="hidden" name="app" value="{APPROVAL}">
+         <!-- patTemplate:tmpl name="buttonAdd" visibility="hidden" -->
+            <!--input class="input-disclaimer btn btn-info" type="submit" name="btnProses" value="Tambah Matakuliah"-->
+         <!-- /patTemplate:tmpl -->
+         <!-- patTemplate:tmpl name="buttonDel" visibility="hidden" -->
+            <input class="input-disclaimer btn btn-info" type="submit" name="btnProses" value="Simpan Remedial" onClick="return ValidateRemedial()">
+         <!-- /patTemplate:tmpl -->
+      </div>
+
+      <br />
+      <!-- patTemplate:tmpl name="buttonCetak" visibility="hidden" -->
+         <input class="input-disclaimer btn btn-info" type="button" name="btnProses" value="Cetak" onClick="window.open('{URL_CETAK}')">
+      <!-- /patTemplate:tmpl -->
+      <!-- patTemplate:tmpl name="buttonBack" visibility="hidden" -->
+         <input class="input-disclaimer btn btn-info" type="submit" name="btnBack" value="Kembali">
+      <!-- /patTemplate:tmpl -->
+     
+
+      <!-- </div> -->
+
+   </form>
+<!-- /patTemplate:tmpl --> <!-- end of content -->

@@ -1,0 +1,69 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.subhead th{
+	font-weight: bold;
+	font-size: 10pt;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.subhead-common th{
+	font-weight: bold;
+	font-size: 7pt;
+	text-align: center;
+	vertical-align: middle;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.hidden{
+	display: none;
+}
+</style>
+   <h2>Biodata Mahasiswa</h2>
+   <p class="text-muted">Keterangan :</p>
+   <p>Biodata Mahasiswa berisi data pribadi pengguna portal akademik. Apabila terdapat kesalahan data, anda dapat memperbaikinya.
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+     
+   <!-- patTemplate:tmpl name="data_biodata" -->
+         <table class="table table-list" width="100%">
+            <tr class="subhead">
+               <th colspan="2">Biodata</th>
+            </tr>
+            <tr>
+               <th>Nama</th>
+               <td>{MHS_NAMA}</td>
+            </tr>
+            <tr>
+               <th >Nomor Telepon/ Hp</th>
+               <td>{MHS_NO_TELP}</td>
+            </tr>
+			<tr>
+               <th>NIK / Nomor KTP</th>
+               <td>{MHS_NO_KTP}</td>
+            </tr>
+			<tr>
+               <th>Nomor KK (Kartu Keluarga)</th>
+               <td>{MHS_NO_KK}</td>
+            </tr>
+			<tr>
+               <th>Nama Ibu Kandung</th>
+               <td>{MHS_NAMA_IBU}</td>
+            </tr>
+			<tr>
+               <th >Email</th>
+               <td>{MHS_EMAIL}</td>
+            </tr>
+			<tr>
+               <th>Alamat</th>
+               <td>{MHS_ALAMAT}</td>
+            </tr>
+       </table> 
+	<!-- /patTemplate:tmpl -->
+   
+	<div align="center">
+		<form name="frmEdit" action="{URL_EDIT}" method="post">
+		<input class="input-disclaimer btn btn-primary" type="submit" name="btnEdit" value="Ubah">
+		</form>
+	</div>
+	<br>
+<!-- /patTemplate:tmpl -->

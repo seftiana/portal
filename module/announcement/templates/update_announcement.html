@@ -1,0 +1,98 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2> {APPLICATION_MODULE} </h2>
+   <br>
+   <h5>Keterangan :</h5>
+	<p>Ubah Pengumuman digunakan untuk mengubah pengumuman.
+	</p><br/>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="form_update_announcement" type="condition" conditionvar="IS_EMPTY" --> 
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->      
+         <form class="form-common" method="POST" action="{URL_PROCESS}" enctype="multipart/form-data">
+            <table class="table-form" width="100%">
+               <tr>
+                  <th colspan="2"><strong>Form Ubah Pengumuman</strong></th>
+               </tr>
+               <tr>
+                  <th>Jenis Pengumuman</th>
+                  <td>
+                     <select id="type" name="data[AnnouncementTypeId]">
+                        <!-- patTemplate:tmpl name="announcement_type" type="condition" conditionvar="IS_EMPTY" -->
+                           <!-- patTemplate:sub condition="YES" -->                              
+                              <option value="" />{JENIS_EMPTY_MSG}</option>
+                           <!-- /patTemplate:sub -->
+                           <!-- patTemplate:sub condition="NO" -->
+                              <option value="{JENIS_ID}" {JENIS_SELECTED} />{JENIS_NAMA}</option>
+                           <!-- /patTemplate:sub -->
+                        <!-- /patTemplate:tmpl -->
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <th>Judul</th>
+                  <td><input type="text" name="data[AnnouncementTitle]" value="{ANNOUNCEMENT_TITLE}"></td>
+               </tr>
+               <tr>
+                  <th>Tanggal</th>
+                  <td><input type="text" name="data[AnnouncementDate]" value="{ANNOUNCEMENT_DATE}"> <br />
+                      <cite>format tahun-bulan-tanggal</cite></td>
+               </tr>
+               <tr>
+<th>File (.jpg,.jpeg,.png,.gif,.doc,.docx,.xls,.xlsx,.pdf)</th>
+                  <td><input type="file" name="image_file"><br /><br />
+                      <cite>File sekarang&nbsp;:&nbsp;{ANNOUNCEMENT_IMAGE_PATH}</cite></td>
+               </tr>
+               <tr>
+                  <th>Image Alt (diisi jika file adalah image)</th>
+                  <td><input type="text" name="data[AnnouncementImageAlt]" value="{ANNOUNCEMENT_IMAGE_ALT}"></td>
+               </tr>
+               <tr>
+                  <th>Deskripsi</th>
+                  <td><textarea name="data[AnnouncementContent]" cols="40" rows="10" >{ANNOUNCEMENT_CONTENT}</textarea></td>
+               </tr>
+               <tr>
+                  <th>Fakultas</th>
+                  <td>
+                     <!-- patTemplate:tmpl name="fakultas" type="condition" conditionvar="IS_EMPTY" -->
+                        <!-- patTemplate:sub condition="YES" -->
+                           {FAKULTAS_EMPTY_MSG}
+                        <!-- /patTemplate:sub -->
+                        <!-- patTemplate:sub condition="NO" -->
+                           <div><input type="checkbox" name="mArrAnnouncementFakultasId[]" value="{FAK_ID}" {FAK_CHECKED} /> {FAK_NAMA}</div>
+                        <!-- /patTemplate:sub -->
+                     <!-- /patTemplate:tmpl -->
+                  </td>
+               </tr>
+               <tr>
+                  <th>Tujuan</th>
+                  <td>
+                     <!-- patTemplate:tmpl name="tujuan" type="condition" conditionvar="IS_EMPTY" -->
+                        <!-- patTemplate:sub condition="YES" -->
+                              {TUJUAN_EMPTY_MSG}
+                           <!-- /patTemplate:sub -->
+                           <!-- patTemplate:sub condition="NO" -->
+                              <div><input type="checkbox" name="mArrAnnouncementDestination[]" value="{REF_ID}" {REF_CHECKED} /> {REF_NAME}</div>
+                           <!-- /patTemplate:sub -->
+                     <!-- /patTemplate:tmpl -->
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2">
+                     <input type="hidden" name="act" value="DoUpdateAnnouncement">
+                     <input type="hidden" name="oldImageFileName" value="{ANNOUNCEMENT_IMAGE_PATH}">
+                     <input type="hidden" name="data[AnnouncementId]" value="{ANNOUNCEMENT_ID}">
+                     <input class="input-disclaimer btn btn-info" type="submit" name="btnUpd" value="Simpan">
+                     <input class="input-disclaimer btn btn-info" type="submit" name="btnCancel" value="Batal">
+                  </td>
+               </tr>
+            </table>
+         </form>
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl --> <!-- end of message-->
+   
+<!-- /patTemplate:tmpl --> <!-- end of content-->

@@ -1,0 +1,44 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2> {MODULE} </h2>
+   <!--
+   <br>
+   <h5>Keterangan :</h5>
+   <p>{KETERANGAN}
+   </p> 
+   -->
+   <br />
+   <!-- patTemplate:tmpl name="list_announcement" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+         
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      
+      <!-- /patTemplate:sub --> 
+      <!-- patTemplate:sub condition="NO" -->
+         <table class="table-common" width="100%">
+            <tr>
+               <th width="5%"> No </th>
+               <th width="40%"> Judul </th>
+               <th width="20%"> Tanggal </th>               
+            </tr>
+            <!-- patTemplate:tmpl name="informasi_item" type="condition" conditionvar="ODDEVEN" -->
+               <!-- patTemplate:sub condition="ODD" -->
+                  <tr>
+                     <td class="text-center">{INFO_NUMBER}</td>               
+                     <td><a href="{INFO_URL_DETAIL}">{INFO_TITLE}</a></td>
+                     <td>{INFO_DATE}</td>               
+                  </tr>
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="EVEN" -->
+                  <tr class="table-common-even">
+                     <td class="text-center">{INFO_NUMBER}</td>               
+                     <td><a href="{INFO_URL_DETAIL}">{INFO_TITLE}</a></td>
+                     <td>{INFO_DATE}</td>               
+                  </tr>
+               <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl -->
+         </table>
+         <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+<!-- /patTemplate:tmpl --> <!-- end of content-->

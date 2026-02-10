@@ -1,0 +1,81 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2> {APPLICATION_MODULE} </h2>
+   <br>
+   <p class="text-muted">Keterangan :</p>
+   <p>Pesan merupakan fasilitas surat elektronik yang hanya dapat digunakan antar pengguna portal. 
+   </p> <br />
+
+   <table class="table table-form" width="45%">
+      <tr>
+         <td width="10%"><i class="fas fa-inbox"></i></i></td>
+         <td><a href="{URL_INBOX}">Kotak Masuk</a></td>
+         <td>(<b>{JML_NEW}</b>/{JML_INBOX}) Pesan</td>
+      </tr>
+      <tr>
+         <td><i class="fas fa-envelope"></i></td>
+         <td><a href="{URL_SENT}">Kotak Terkirim</a></td>
+         <td>({JML_SENT}) Pesan</td>
+      </tr>
+      <tr>
+         <td><i class="fas fa-trash-alt"></i></td>
+         <td><a href="{URL_TRASH}">Sampah</a></td>
+         <td>({JML_TRASH}) Pesan</td>
+      </tr>
+   </table><br/><br/>
+      
+   <h4> {APPLICATION_SUBMODULE} </h4>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="message" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+         
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      
+      <!-- /patTemplate:sub --> <!-- end of message condition YES -->
+      <!-- patTemplate:sub condition="NO" -->         
+         <table class="table table-common" width="100%">
+            <tr>
+               <th> No </th>
+               <th> Aksi </th>
+               <th> Pengirim </th>
+               <th> Penerima </th>
+               <th> Judul </th>
+               <th> {TANGGAL} </th>
+            </tr>
+               <!-- patTemplate:tmpl name="message_item" type="condition" conditionvar="ODDEVEN" -->
+                  <!-- patTemplate:sub condition="ODD" --> 
+                     <tr>
+                        <td class="text-center">{MSG_NUMBER}</td>
+                        <td class="table-common-links" >
+                           <a href="{MSG_URL_HAPUS}"><img src="images/button-delete.gif" title="Hapus pesan" onClick="return ValidateDelete()"/></a>
+                        </td>
+                        <td> {MSG_PENGIRIM} </td>
+                        <td> {MSG_PENERIMA} </td>
+                        <td><a href="{MSG_URL_DETAIL}" title="Detil pesan">{MSG_JUDUL}</a></td>
+                        <td>{MSG_TANGGAL}</td>
+                     </tr>
+                  <!-- /patTemplate:sub -->
+                  <!-- patTemplate:sub condition="EVEN" --> 
+                     <tr class="table-common-even">
+                        <td class="text-center">{MSG_NUMBER}</td>
+                        <td class="table-common-links" >
+                           <a href="{MSG_URL_HAPUS}"><img src="images/button-delete.gif" title="Hapus pesan" onClick="return ValidateDelete()"/></a>
+                        </td>
+                        <td> {MSG_PENGIRIM} </td>
+                        <td> {MSG_PENERIMA} </td>
+                        <td><a href="{MSG_URL_DETAIL}" title="Detil pesan">{MSG_JUDUL}</a></td>
+                        <td>{MSG_TANGGAL}</td>
+                     </tr>
+                  <!-- /patTemplate:sub -->
+               <!-- /patTemplate:tmpl --> <!-- end of message_item -->
+         </table>
+         
+         <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+         
+      <!-- /patTemplate:sub --> <!-- end of message condition NO -->
+   <!-- /patTemplate:tmpl --> <!-- end of message-->
+   <br>
+   <form method="POST" action="{URL_COMPOSE}" class="form-common">      
+      <input class="input-disclaimer btn btn-info"  value="Pesan Baru" title="Tulis pesan baru" type="submit" name="act">
+   </form>
+<!-- /patTemplate:tmpl --> <!-- end of content-->

@@ -1,0 +1,143 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Informasi Matakuliah Ditawarkan</h2>
+   <br />
+      <h5>Keterangan:</h5>
+   <p>
+   <!-- patTemplate:tmpl name="teksketerangan" type="condition" conditionvar="KET_USER" -->
+      <!-- patTemplate:sub condition="MAHASISWA" -->
+         Informasi Matakuliah Ditawarkan berisi seluruh matakuliah yang ditawarkan pada semester aktif. Dari seluruh matakuliah yang terdapat pada daftar, setiap matakuliah mempunyai aturan tersendiri bergantung pada program studi, kurikulum, dan aturan akademik lainnya. Untuk lebih jelasnya, anda dapat melihat detil kelas.
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="DOSEN" -->
+         Informasi Matakuliah Ditawarkan berisi seluruh matakuliah yang ditawarkan pada semester aktif. Dosen dapat melihat matakuliah yang ditawarkan oleh program studi lain dengan memilih Sistem Informasi Akademik yang bersesuaian. Dari seluruh matakuliah yang terdapat pada daftar, setiap matakuliah mempunyai aturan tersendiri bergantung pada program studi, kurikulum, dan aturan akademik lainnya. Untuk lebih jelasnya, anda dapat melihat detil kelas.
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   </p><br />
+
+   <!-- patTemplate:tmpl name="unit" visibility="hidden" -->
+   <form class="form-common" method="POST" action="{URL_VIEW}" name="frmUser">
+      <table class="table table-form" width="100%">
+         <tr>
+            <th width="200">Sistem Informasi Akademik</th>
+            <td width="100">
+               <select name='sia'>
+                  <!-- patTemplate:tmpl name="unit_list" -->
+                     <option value="{SIA_ADDR}" {SIA_SELECTED}> {SIA_NAMA} </option>
+                  <!-- /patTemplate:tmpl -->
+               </select>
+            </td>
+            <td><input class="input-disclaimer" name="btnLihat" type="submit" value="Lihat" /></td>
+         </tr>
+          <tr>
+         	<th  align="left">Program Studi&nbsp;</td>
+         	<td  align="left">
+         		<select name="siaprodi">
+         			<!-- patTemplate:tmpl name="fmprodi" -->
+         			<option value="{PRODI_KODE}" {IS_SELECTED}>{PRODI_NAMA}</option>
+         			<!-- /patTemplate:tmpl -->
+				</select>
+         	</td>
+         </tr>
+      </table>
+   </form>
+   <br />
+   <!-- /patTemplate:tmpl -->
+
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+
+   <!-- patTemplate:tmpl name="keterangan" visibility="hidden" -->
+      <!--table width="100%" class="table-list">
+         <tr>
+            <th>Semester</th>
+            <td>{SEMESTER}</td>
+         </tr>
+      </table-->
+      <h3>Semester {SEMESTER}</h3>
+    <!-- patTemplate:tmpl name="mprodi" visibility="hidden" -->
+     <form class="form-common" method="POST" action="{URL_VIEW}" name="frmProdi">
+	<table class="table table-responsive table-bordered" width="100%" align="left">
+         <tr>
+         	<th  align="left" class="info">Program Studi&nbsp;</td>
+         	<td  align="left"  class="info">
+         		<select name="prodi">
+         			<!-- patTemplate:tmpl name="fprodi" -->
+         			<option value="{PRODI_KODE}" {IS_SELECTED}>{PRODI_NAMA}</option>
+         			<!-- /patTemplate:tmpl -->
+				</select>
+         	</td>
+         	<td  align="left"  class="info"><button class="btn btn-info" type="submit">lihat</button></td>
+         </tr>
+    </table>
+    </form>
+<!-- /patTemplate:tmpl -->
+
+   <!-- tambahan test sliding untuk per paket semester -->
+
+   <div style="clear:both">
+   <!-- patTemplate:tmpl name="paket_semester" -->
+      <a class="a_none" href="#" onclick="Effect.toggle('semester_{NUM}','blind'); return false;">Paket Semester {NUM}</a><br>
+      <div id="semester_{NUM}" style="display:none">
+         <!-- patTemplate:tmpl name="matakuliah" type="condition" conditionvar="MK_AVAILABLE" -->
+            <!-- patTemplate:sub condition="YES" -->
+            <table class="table-common" width="100%">
+            <tr>
+               <th width="5%">No</th>
+               <th width="15%">Kode</th>
+               <th width="30%">MataKuliah</th>
+               <th width="20%">Nama Dosen</th>
+               <th width="20%">Kelas</th>
+               <th width="5%">W/P</th>
+               <th width="5%">SKS</th>
+            </tr>
+                  <!-- patTemplate:tmpl name="matakuliah_item" type="condition" conditionvar="ODDEVEN" -->
+                  <!-- patTemplate:sub condition="ODD" -->
+                  <tr>
+                     <td align="center">{TAWAR_NUMBER}</td>
+                     <td>{TAWAR_KODE_MATA_KULIAH}</td>
+                     <td>{TAWAR_NAMA_MATA_KULIAH}</td>
+                     <td >{TAWAR_NAMA_DOSEN}</td>
+                     <td><a href="{TAWAR_URL_KELASDETIL}">{TAWAR_NAMA_KELAS}</a></td>
+                     <td align="center">{TAWAR_WP}</td>
+                     <td align="center">{TAWAR_JUMLAH_SKS}</td>
+                  </tr>
+                  <!-- /patTemplate:sub -->
+                  <!-- patTemplate:sub condition="EVEN" -->
+                  <tr class="table-common-even">
+                     <td align="center">{TAWAR_NUMBER}</td>
+                     <td>{TAWAR_KODE_MATA_KULIAH}</td>
+                     <td>{TAWAR_NAMA_MATA_KULIAH}</td>
+                     <td >{TAWAR_NAMA_DOSEN}</td>
+                     <td><a href="{TAWAR_URL_KELASDETIL}">{TAWAR_NAMA_KELAS}</a></td>
+                     <td align="center">{TAWAR_WP}</td>
+                     <td align="center">{TAWAR_JUMLAH_SKS}</td>
+                  </tr>
+                  <!-- /patTemplate:sub -->
+               <!-- /patTemplate:tmpl -->
+               </table>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </div>
+   <!-- /patTemplate:tmpl -->
+
+      <br />
+      <div class="divTombol" align="center">
+
+         <!-- <input class="input-disclaimer" onclick="window.location.href" type="button" value="Lihat" /> -->
+         <a target="_blank" style="text-decoration:none;" href="{LINK_CETAK}">
+            <button class="btn btn-info">Cetak Daftar Matakuliah Ditawarkan</button></a>
+      </div>
+   </div>
+
+   <!-- akhir tambahan -->
+
+   <br />
+   <div class="petunjuk-area">
+      <h4>Petunjuk:</h4>
+      <ul>
+         <li style="font:12px Arial;">Klik link nama kelas untuk melihat detil kelas.</li>
+      </ul>
+   </div>
+   <br/><br/>
+
+	<!-- /patTemplate:tmpl -->
+   <!-- /patTemplate:tmpl -->
+ <!-- end of content -->

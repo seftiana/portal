@@ -1,0 +1,38 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h3>{TOPIK_TITLE}</h3>
+   <p>{TOPIK_DESCRIPTION}</p>
+   
+   <!-- patTemplate:tmpl name="thread_list" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->          
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <table class="table-forum" width="100%">
+            <tr>
+               <th class="text-center" colspan="2"><div class="th-special-left"></div><div class="th-center"><strong>Jenis Layanan</strong></div></th>
+               <th class="text-center" width="28%"><div class="th-special-right"></div><div class="th-center"><strong>Informasi Thread</strong></div></th>
+            </tr>
+            <!-- patTemplate:tmpl name="thread_item" -->
+            <tr>
+               <td><img src="images/public.gif" alt="" /></td>
+               <td>
+                  <strong><a href="{THREAD_URL_DETAIL}" title="{THREAD_JUDUL}">{THREAD_JUDUL_TRUNCATE}</a></strong><br />                  
+               </td>
+               <td class="text-center">
+                  Jumlah Post : <b>{THREAD_JMLPOST}</b> <br />
+                  {THREAD_TANGGAL} <br />               
+               </td>
+            </tr>
+            <!-- /patTemplate:tmpl -->
+         </table>   
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+	
+   <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+	<br/>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   
+<!-- /patTemplate:tmpl -->

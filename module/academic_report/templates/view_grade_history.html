@@ -1,0 +1,84 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Riwayat Nilai</h2><br />
+   <p class="text-muted">Keterangan :</p>
+   <p>Riwayat nilai merupakan fasilitas yang dapat digunakan oleh dosen untuk melihat riwayat nilai mahasiswa bimbingannya selama perkuliahan berlangsung. 
+	Selain dapat dilihat secara online, riwayat nilai ini juga dapat dicetak.
+   </p>
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+
+   <table width="100%" class="table-list">
+      <tr> 
+         <th width="150">Nama</th>
+         <td>{MHS_NAMA}</td>
+      </tr>
+      <tr> 
+         <th>{LABEL_NIM}</th>
+         <td>{MHS_NIM}</td>
+      </tr>
+      <tr> 
+         <th>Program Studi</th>
+         <td>{MHS_PRODI}</td>
+      </tr>
+   </table>
+   <!-- patTemplate:tmpl name="data_nilai" type="condition" conditionvar="NILAI_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+      <div class="table-responsive">
+         <table class="table-common" width="100%">
+            <tr>
+               <th rowspan="2">No</th>
+               <th colspan="2">Matakuliah</th>
+               <th colspan="5">Riwayat Nilai</th>
+            </tr>
+            <tr>
+               <th>Kode</th>
+               <th>Nama</th>
+               <th>1</th>
+               <th>2</th>
+               <th>3</th>
+               <th>4</th>
+               <th>5</th>            
+            </tr>
+            <!-- patTemplate:tmpl name="data_nilai_item" type="condition" conditionvar="ODDEVEN" -->
+            <!-- patTemplate:sub condition="ODD" -->
+               <tr>
+                  <td width="6%" align="center">{NILAI_NUMBER}</td>
+                  <td width="20%">{NILAI_KODE}</td>
+                  <td width="39%">{NILAI_NAMA}</td>
+                  <td width="7%" align="center">{NILAI_SATU}</td>
+                  <td width="7%" align="center">{NILAI_DUA}</td>
+                  <td width="7%" align="center">{NILAI_TIGA}</td>
+                  <td width="7%" align="center">{NILAI_EMPAT}</td>
+                  <td width="7%" align="center">{NILAI_LIMA}</td>
+               </tr>
+            <!-- /patTemplate:sub -->
+            <!-- patTemplate:sub condition="EVEN" -->
+               <tr class="table-common-even">
+                  <td width="6%" align="center">{NILAI_NUMBER}</td>
+                  <td width="20%">{NILAI_KODE}</td>
+                  <td width="39%">{NILAI_NAMA}</td>
+                  <td width="7%" align="center">{NILAI_SATU}</td>
+                  <td width="7%" align="center">{NILAI_DUA}</td>
+                  <td width="7%" align="center">{NILAI_TIGA}</td>
+                  <td width="7%" align="center">{NILAI_EMPAT}</td>
+                  <td width="7%" align="center">{NILAI_LIMA}</td>
+               </tr>
+            <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl --><!--data_user_item-->
+         </table>
+      </div>
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+<br/><br/>   
+	<form method="post" action="{URL_BACK}" name="frmBack" >
+		<input type="hidden" name="viewby" value="{VIEW_BY}">
+      <button type="submit" name="btnBack" class="btn btn-info">Kembali</button>
+		<!-- patTemplate:tmpl name="btn_cetak" type=SimpleCondition requiredvars="URL_CETAK" -->
+			<input class="input-disclaimer btn btn-info" type="button" name="btnCetak" value="Cetak" OnClick="window.open('{URL_CETAK}')">
+		<!-- /patTemplate:tmpl -->
+		
+	</form>   
+<!-- /patTemplate:tmpl -->

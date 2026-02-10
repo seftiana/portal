@@ -1,0 +1,139 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Daftar Peserta Kelas</h2>
+<br />
+  
+<!-- patTemplate:link name="error_box" src="error_box" / -->
+
+<!-- patTemplate:tmpl name="data_kelas" visibility="visible" -->
+<h3>Data Kelas</h3>
+<table class="table-form" width="100%">
+	<tr>
+	   <th width="20%">Semester</th>
+	   <td><b>{KELAS_SMT_NAMA} {KELAS_THN_AJAR}</b></td>
+	</tr>
+	<tr>
+	   <th>Matakuliah</th>
+	   <td><b>{KELAS_MK_NAMA}</b></td>
+	</tr>
+	<tr>
+	   <th>Nama Kelas</th>
+	   <td><b>{KELAS_KLS_NAMA}</b></td>
+	</tr>
+</table>
+<!-- /patTemplate:tmpl -->
+<form class="form-common" method="POST" action="{URL_PROCESS}" >
+<table class="table-form" width="100%">
+	<tr>
+		<th width="22%">Tanggal Rencana</th>
+		<td>
+			<select name="tglRencana">
+				<option value=""></option>
+				<!-- patTemplate:tmpl name="tglRencana" -->
+                <option value="{TGL}"{IS_SELECT}>{TGL}</option>
+				<!-- /patTemplate:tmpl -->
+            </select> 
+            <select name="blnRencana">  
+				<option value=""></option>
+         		<!-- patTemplate:tmpl name="blnRencana" -->
+                <option value="{BLN}"{IS_SELECT}>{BLN}</option>
+				<!-- /patTemplate:tmpl -->
+            </select> 
+            <select name="thnRencana">
+				<option value=""></option>
+				<!-- patTemplate:tmpl name="thnRencana" -->
+                <option value="{THN}"{IS_SELECT}>{THN}</option>
+				<!-- /patTemplate:tmpl -->
+            </select>
+		</td>
+    </tr>
+    <tr>
+		<th>Tanggal Terlaksana</th>
+		<td>
+			<select name="tglTerlaksana">
+				<option value=""></option>
+				<!-- patTemplate:tmpl name="tglTerlaksana" -->
+                <option value="{TGL}"{IS_SELECT}>{TGL}</option>
+				<!-- /patTemplate:tmpl -->
+            </select> 
+            <select name="blnTerlaksana">  
+				<option value=""></option>
+         		<!-- patTemplate:tmpl name="blnTerlaksana" -->
+                <option value="{BLN}"{IS_SELECT}>{BLN}</option>
+				<!-- /patTemplate:tmpl -->
+            </select> 
+            <select name="thnTerlaksana">
+				<option value=""></option>
+				<!-- patTemplate:tmpl name="thnTerlaksana" -->
+                <option value="{THN}"{IS_SELECT}>{THN}</option>
+				<!-- /patTemplate:tmpl -->
+            </select>
+		</td>
+    </tr>
+	<tr>
+		<th>Tema</th>
+		<td><textarea name="tema" cols="50" rows="2">{TEMA}</textarea></td>
+	</tr>
+	<tr>
+		<th>Pokok Bahasan</th>
+		<td><textarea name="pokok_bahasan" cols="50" rows="4">{POKOK_BAHASAN}</textarea>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<h3>Presensi Mahasiswa</h3>
+			<table class="table-common">
+				<tr> 
+					<th align="center">No.</th>
+					<th>{LABEL_NIM}</th>
+					<th>Nama</th>
+					<th>Prodi</th>
+					<th>Email</th>
+				<th>Status</th>
+			</tr>    
+			<!-- patTemplate:tmpl name="data_peserta_list" type="condition" conditionvar="IS_EMPTY" -->
+			<!-- patTemplate:sub condition="YES" -->
+			<tr><td colspan="6">Belum ada data yang dimasukkan</td></tr>
+			<!-- /patTemplate:sub -->
+			
+			<!-- patTemplate:sub condition="NO" -->
+			<!-- patTemplate:tmpl name="data_peserta_list_item" -->
+			<tr>     
+				<td align="right">{NO}</td>
+				<td><input type="hidden" value="{NIM}" name="nimPeserta[]">{NIM}</td>
+				<td>{NAMA}</td>
+				<td>{PRODI}</td>
+				<td>{EMAIL}</td>
+				<td>
+					<select name="{STATUS_KEHADIRAN_LOKAL}" >
+					{OPTION_STATUS}
+					</select>
+				</td>
+			</tr>
+			<!-- /patTemplate:tmpl -->
+			<!-- /patTemplate:sub -->
+			<!-- /patTemplate:tmpl -->
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="2" align="center">
+			<!--input type="Reset" value="Reset" name="Reset" /-->
+			<input type="Submit" value="Simpan" name="Simpan" />
+			<input type="hidden" name="action" value="PresensiKelasEdit" />
+			<input type="hidden" name="klsId" value="{KLS_ID}" />
+			<input type="hidden" name="semId" value="{SEM_ID}" />
+			<input type="hidden" name="pertemuanId" value="{PERTEMUAN_ID}" />
+			<input type="hidden" name="presensiKlsDosenId" value="{PRESKLS_DOSENID}" />			
+			<input type="hidden" name="nipDosen" value="{NIP_DOSEN}" />
+			<input type="hidden" name="sia" value="{SIA}" />
+		</td>
+	</tr>
+</table>
+</form>
+<div>
+	<form action="javascript:history.back()" method="post">
+		<input class="input-disclaimer" type="submit" name="btnBack" value="Kembali">
+	</form>
+</div>
+<!-- /patTemplate:tmpl -->

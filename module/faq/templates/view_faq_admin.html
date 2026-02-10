@@ -1,0 +1,62 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Manajemen FAQ</h2>
+   <p class="text-muted">{KATEGORI_NAMA}</p>
+   <p>{KATEGORI_KETERANGAN}
+   </p><br />
+
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+
+   <!-- patTemplate:tmpl name="data_faq" type="condition" conditionvar="FAQ_IS_EMPTY" -->
+
+      <!-- patTemplate:sub condition="YES" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub --><!--sub:data_faq-YES-->
+
+      <!-- patTemplate:sub condition="NO" -->
+      <table class="table-common" width="100%">
+         <tr>
+            <th width="5%">No</th>
+            <th width="40%">Pertanyaan</th>
+            <th width="40%">Jawaban</th>
+            <th width="15%">Aksi</th>
+         </tr>         
+         <!-- patTemplate:tmpl name="data_faq_item" type="condition" conditionvar="ODDEVEN" -->
+            <!-- patTemplate:sub condition="ODD" -->                 
+               <tr>
+                  <td>{FAQ_NUMBER}</td>
+                  <td><a href="{FAQ_URL_DETAIL}">{FAQ_PERTANYAAN}</a></td>
+                  <td>{FAQ_JAWABAN}</td>
+                  <td class="table-common-links" >
+							<a href="{FAQ_URL_UPDATE}"><img src="images/button-edit.gif" alt="Edit" title="Ubah" /></a>
+                     <a href="{FAQ_URL_DELETE}"><img src="images/button-delete.gif" alt="Delete" title="Delete" onClick="return ValidateDelete()"/></a>
+                  </td>
+               </tr>
+            <!-- /patTemplate:sub -->                 
+            <!-- patTemplate:sub condition="EVEN" -->                 
+               <tr class="table-common-even">
+                  <td>{FAQ_NUMBER}</td>
+                  <td><a href="{FAQ_URL_DETAIL}">{FAQ_PERTANYAAN}</a></td>
+                  <td>{FAQ_JAWABAN}</td>
+                  <td class="table-common-links" >
+							<a href="{FAQ_URL_UPDATE}"><img src="images/button-edit.gif" alt="Edit" title="Ubah" /></a>
+                     <a href="{FAQ_URL_DELETE}"><img src="images/button-delete.gif" alt="Delete" title="Delete" onClick="return ValidateDelete()"/></a>
+                  </td>
+               </tr>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl --><!--data_user_item-->
+      </table>     
+             
+      <!-- /patTemplate:sub --><!--sub:data_faq-NO-->
+   <!-- /patTemplate:tmpl --><!--data_faq-->
+
+   <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+   
+   <br />
+   <form class="form-common" method="POST" action="{URL_ADD}" name="frmFaq">
+      <input type="hidden" name="act" value="ViewAddFaq">
+      <input class="input-disclaimer btn btn-info" name="btnTambah" type="submit" value="Tambah" />
+      <input class="input-disclaimer btn btn-info" name="btnKembali" type="submit" value="Kembali" />
+   </form>
+
+
+<!-- /patTemplate:tmpl -->

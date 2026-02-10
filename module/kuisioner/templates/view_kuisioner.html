@@ -1,0 +1,292 @@
+<!-- patTemplate:tmpl name="content" -->
+<!-- patTemplate:tmpl name="welcome" visibility="hidden" -->
+<!--div id="wlcm" style="z-index:998;position:absolute;left:500px;top:70px;width:400px;height:300px;background-color:#ffffff;text-align:center" class="modal-dialog"-->
+<div id="wlcm" class="popup position-absolute modal-fade shadow-lg mx-auto ">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+		<h3 class="modal-title">Silahkan isi kuesioner</h3>
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	</div>
+	<div class="modal-body">
+		1 = Kurang<br />
+		2 = Cukup<br />
+		3 = Baik<br />
+		4 = Baik Sekali<br />
+      </div>
+      <div class="modal-footer">
+        <input class="input-disclaimer btn btn-info" name="btnSkip" type="button" onClick="beginKuis();" value="Lanjut >>" >
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="endNote" visibility="hidden" -->
+<div id="ennt" style="z-index:997;position:absolute;top: 25%;left: 35%;margin-top: -50px;
+  margin-left: -100px;" class="modal-fade"> <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title" >Terima kasih telah mengisi kuesioner</h3>
+      </div>
+       <div class="modal-body">
+        <a class="input-disclaimer btn btn-info" href="{LINK}"> Lanjut >> </a>
+      </div>
+    </div>
+</div>
+</div>
+<!-- /patTemplate:tmpl -->
+<style type="text/css">
+label { display:block; line-height: 1; min-height: 100%; height: auto !important; height: 100%}
+</style>
+<script language="javascript">
+var arrList={},ct=110,st,mt=0,h,frm,op=100,arrKom={};
+var vk='',vkd='';
+<!-- patTemplate:tmpl name="mk_list" type="simplecondition" requiredvars="ID_MK" -->
+arrList['{ID_MK}']='{MKNAMA}';
+arrKom['{ID_MK}']='{PERTANYAAN_KOM}';
+vkd='{VKD}';
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="validasi_kom" type="simplecondition" requiredvars="VK" -->
+vk='{VK}';
+<!-- /patTemplate:tmpl -->
+
+function checkWelcome(){var el=document.getElementById('wlcm');h=screen.height-ct;el.style.height = h+'px';el.style.width = screen.width+'px';}
+function beginKuis(){op-=10;var el=document.getElementById('wlcm').style;if(op<=0){el.display='none';return;}el.opacity=op/100;el.filter='alpha(opacity='+op+')';setTimeout("beginKuis()",100);}
+function validate(){
+	if(document.forms['frmUser']!==undefined)frm=document.forms['frmUser'];else frm=document.getElementById('frmUser');
+	var par=document.getElementById('tmpMk');
+	var nilc=checkJwbnKomentar();
+	if(nilc=='')return false;
+	
+	var nil=checkJwbn();
+	if(nil=='')return false;
+	
+	var nilcd=checkJwbnKomentarDsn();
+	if(nilcd=='')return false;	
+	var elem=document.getElementById('content-disclaimer');
+	var jdl=document.getElementById('judul');
+	var pk=document.getElementById('pkomt');
+	var jpk=document.getElementById('jpkomt');
+	if(!checkMk)return true;
+	var x;
+	for(x in arrList){
+		frm.elements["tmpMk"].value=x;
+		jpk.name=x;
+		jdl.innerHTML='\''+arrList[x]+'\'';
+		pk.innerHTML=arrKom[x];
+		delete(arrList[x]);
+		delete(arrKom[x]);
+		jpk.value='';
+		clearForm();
+		return false;
+	}frm.submit();
+}
+
+function checkJwbnKomentar(){
+	var retk='';
+	var jpk=document.frmUser;
+	if(vk=='1' && jpk.jwbnKomentar.value==''){
+		alert('Komentar Harus Di isi!');
+		retk='';
+	}else{
+		retk='1';
+	}
+	return retk;
+}
+
+function checkJwbnKomentarDsn(){
+	if(document.forms['frmUser']!==undefined)frm=document.forms['frmUser'];else frm=document.getElementById('frmUser');
+	var ret='1';
+	
+	if(vkd=='1') {
+		var jpk=document.getElementById('jpkomt');
+		var par = document.getElementById('tmpMk');
+		var x = jpk.value;
+		if(x=='' ){
+			alert('Komentar Dosen Harus Di isi');
+			ret='';
+		}
+	}
+	return ret;
+}
+
+function checkJwbn(){
+	var ret='';
+	var nd=document.getElementsByTagName("input");
+	var tmpName='';
+	for(var i=0;i<nd.length;i++){
+		if(nd[i].type=='radio'){
+			if(nd[i].name!=tmpName){
+				var rd=frm.elements[nd[i].name];
+				for(var j = 0; j < rd.length; j++) {
+					var tmp='undefined';
+					if(rd[j].checked) {
+						tmp=rd[j].value;
+						break;
+					}
+				}
+				if(tmp=='undefined'){
+					alert('Semua Pertanyaan Harus Di isi');
+					ret='';
+					break;
+				}else{
+					ret+=';'+nd[i].name.replace(/(jwbn\[)(.*)\]/g,"$2")+'|'+tmp
+				};
+				tmpName=nd[i].name
+			}
+		}
+	}
+	if(ret!=''){
+		ret = ret.substr(1);
+		var mk=frm.elements["tmpMk"];
+		var nm=mk.value;
+		if(nm==''){
+			(mk.parentNode).removeChild(mk);
+		}else{
+			var jpk=document.getElementById('jpkomt'); //add cc
+			var input=document.createElement('input');
+			var node=document.createElement('textarea'); //add cc
+			input.setAttribute("type", "hidden");
+			node.setAttribute("style","display:none"); // add ccp
+			var x = jpk.value; //add ccp
+			input.name='mk['+nm+']';
+			node.name='komentar_dosen['+mk.value+']'; //add ccp
+			input.value=ret;
+			node.value=x; // add ccp
+			frm.appendChild(input);
+			frm.appendChild(node); //add ccp
+		}
+	}
+	return ret;
+}
+
+function clearForm(){
+	var el=document.getElementById('layar');
+	h=screen.height-ct;
+	el.style.width = '900px';
+	el.style.height = h+'px';
+	el.style.backgroundColor="#ffffff";
+	st=setInterval("anim()", 100);
+	var nd=document.getElementsByTagName("input");
+	var tar=document.getElementById("jwbnKomentar"); //add ccp 30-10-2018
+	var tard=document.getElementById("jpkomt"); //add ccp 30-10-2018
+	tar=""; //add ccp 30-10-2018
+	tard=""; //add ccp 30-10-2018
+	for(var i=0;i<nd.length;i++)if(nd[i].type=='radio')nd[i].checked=false;
+}
+function anim(){var elem=document.getElementById('layar').style;mt=(mt+1)*2;ct+=mt;elem.top=ct+'px';h-=mt;elem.height=h+'px';if(ct>h){clearInterval(st);ct=110;mt=0;elem.height='0px';elem.width='0px';elem.top=ct+'px';}}
+function checkMk(){var i;for(i in arrList){if(i>-1){return true;}}return false;}
+window.onload=function(){if(document.getElementById('t').value==0)checkWelcome();}
+</script>
+   <h3>Kuesioner : {GRUP} 
+<!-- patTemplate:tmpl name="mk_label" type="simplecondition" requiredvars="MKNAMA" -->
+   <label id="judul">{MKNAMA}</label>
+<!-- /patTemplate:tmpl -->
+</h3>
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="option_form" visibility="visible" -->
+   <form class="form-common" method="POST" action="{URL_VIEW}" name="frmUser" id="frmUser">   
+   <div id='layar' style="z-index:999;position:absolute;left:0px;top:110px;"></div>
+	<div id="content-disclaimer" align="center">  
+	<!-- patTemplate:tmpl name="option_table" type="condition" conditionvar="ISGRUP"  -->
+	
+		<!-- patTemplate:sub condition="NO" -->
+		  <table class="table-common" width="100%">
+			 <!-- patTemplate:tmpl name="pertanyaan_list_no_grup" -->
+			 <tr>
+				<td align="center" width="16"><font size="2" color="#000000">{NO}</font></td>
+				<td><font size="2" color="#000000">{PERTANYAAN}</font></td>
+				 <!-- patTemplate:tmpl name="jawaban_no_grup" -->
+					<td width="51"><label><input type="radio" name="jwbn[{ID_PERTANYAAN}]" value="{ID_JAWABAN}"> {LABEL_JAWABAN}</label></td>
+				 <!-- /patTemplate:tmpl -->
+			 </tr>
+			 <!-- /patTemplate:tmpl -->
+		  </table>
+		<!-- /patTemplate:sub -->
+	 
+   <!-- patTemplate:sub condition="YES" -->
+      <table class="table-common" width="100%">
+	  <tr>
+            <th rowspan="2" width="15">No</th>
+            <th rowspan="2">Pertanyaan</th>
+            <th colspan="{JML_JAWABAN}">Penilaian</th>
+       </tr>
+	  <tr>
+			<!-- patTemplate:tmpl name="jawaban_list" -->
+            <th width="50">{JAWABAN}</th>
+			<!-- /patTemplate:tmpl -->
+       </tr>
+         <!-- patTemplate:tmpl name="pertanyaan_list" -->
+         <tr>
+            <td align="center"><font size="2" color="#000000">{NO}</font></td>
+            <td><font size="2" color="#000000">{PERTANYAAN}</font></td>
+			 <!-- patTemplate:tmpl name="jawaban" -->
+				<th><label><input type="radio" name="jwbn[{ID_PERTANYAAN}]" value="{ID_JAWABAN}"></label></th>
+			 <!-- /patTemplate:tmpl -->
+         </tr>
+         <!-- /patTemplate:tmpl -->
+      </table>
+	<!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+   <!-- add ccp 2-10-2018 ---------------------------------------------------------------------->
+   <!-- patTemplate:tmpl name="option_komentar" type="condition" conditionvar="ISCOMMENT"  -->
+		<!-- patTemplate:sub condition="COMMENTY" -->
+			<table class="table-common" width="100%">
+			 <!-- patTemplate:tmpl name="pertanyaan_list_komentar" -->
+			 <tr>
+				<td align="center" width="16"><font size="2" color="#000000">{NO}</font></td>
+				<td><font size="2" color="#000000"><label>{PERTANYAAN}</label></font></td>
+				 <!-- patTemplate:tmpl name="jawaban_no_grup_ky" -->
+					<td width="51">
+						<textarea id="jwbnKomentar" name="jwbnKomentar" rows="5" cols="40"></textarea>
+					</td>
+				 <!-- /patTemplate:tmpl -->
+			 </tr>
+			 <!-- /patTemplate:tmpl -->
+			</table>
+		<!-- /patTemplate:sub -->
+	<!-- /patTemplate:tmpl -->
+	
+	<!-- patTemplate:tmpl name="option_komentar_dosen" type="condition" conditionvar="COMD" -->
+		<!-- patTemplate:sub condition="Y" -->
+			<table class="table-common" width="100%">
+			 <tr>
+				<td align="center" width="16"><font size="2" color="#000000">1</font></td>
+				<td>
+				<!-- patTemplate:tmpl name="mk_label_k" type="simplecondition" requiredvars="PERTANYAAN_KOM" -->
+				<font size="2" color="#000000"><label id="pkomt">{PERTANYAAN_KOM}</label></font></td>
+				<!-- /patTemplate:tmpl -->
+				<td width="51">
+					 <!-- patTemplate:tmpl name="mk_label_k2" -->
+					<textarea id="jpkomt" name="{ID_PERTANYAAN_KT}" rows="5" cols="40"></textarea>
+					<!-- /patTemplate:tmpl -->
+				</td>
+			 </tr>
+			</table>
+		<!-- /patTemplate:sub -->
+	<!-- /patTemplate:tmpl -->
+	
+	<!-- add END ---------------------------------------------------------------------->
+   
+   <input type="hidden" id="tmpMk" name="tmpMk" value="{ID_MK}">
+   <input type="hidden" name="t" value="{SEQ}">
+   <!-- patTemplate:tmpl name="isSkip" type="simplecondition" requiredvars="NOTMHS" -->
+   <input class="input-disclaimer" name="btnSkip" type="submit" value="Skip" />
+   <!-- /patTemplate:tmpl -->
+			<input class="input-disclaimer btn btn-info" name="btnLanjut" type="button" onClick="javascript:return validate();" value="Lanjut >>" />
+		<br>
+		<div align="left" class="text-sm mt-3">
+		1 = Kurang<br />
+		2 = Cukup<br />
+		3 = Baik<br />
+		4 = Baik Sekali<br />
+		</div>
+	 </div>
+   </form>
+   <br />
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

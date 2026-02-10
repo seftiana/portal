@@ -1,0 +1,85 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Daftar Peserta Kelas</h2>
+
+<!-- patTemplate:link name="error_box" src="error_box" / -->
+
+<!-- patTemplate:tmpl name="data_kelas" visibility="visible" -->
+<h3>Data Kelas</h3>
+<table class="table-form" width="100%">
+	<tr>
+	   <th width="20%">Semester</th>
+	   <td><b>{KELAS_SMT_NAMA} {KELAS_THN_AJAR}</b></td>
+	</tr>
+	<tr>
+	   <th>Matakuliah</th>
+	   <td><b>{KELAS_MK_NAMA}</b></td>
+	</tr>
+	<tr>
+	   <th>Nama Kelas</th>
+	   <td><b>{KELAS_KLS_NAMA}</b></td>
+	</tr>
+	<!-- /patTemplate:tmpl -->
+	<!-- patTemplate:tmpl name="curl" -->
+	<tr>
+	   <td colspan="2" align="center">
+		<img src="{BARCODE}" width="40%" />
+	   </td>
+	</tr>
+	<!-- /patTemplate:tmpl -->
+</table>
+
+<form class="form-common" method="POST" action="{URL_PROCESS}" >
+<table class="table-form" width="100%">
+	<tr>
+		<td colspan="2">
+			<h3>Peserta Mahasiswa</h3>
+			<table class="table-common">
+				<tr> 
+					<th align="center">No.</th>
+					<th>{LABEL_NIM}</th>
+					<th>Nama</th>
+					<th>Prodi</th>
+					<th>Email</th>
+			</tr>    
+			<!-- patTemplate:tmpl name="data_peserta_list" type="condition" conditionvar="IS_EMPTY" -->
+			<!-- patTemplate:sub condition="YES" -->
+			<tr><td colspan="5">Belum ada data yang dimasukkan</td></tr>
+			<!-- /patTemplate:sub -->
+			
+			<!-- patTemplate:sub condition="NO" -->
+			<!-- patTemplate:tmpl name="data_peserta_list_item" -->
+			<tr>     
+				<td align="right">{NO}</td>
+				<td><input type="hidden" value="{NIM}" name="nimPeserta[]">{NIM}</td>
+				<td>{NAMA}</td>
+				<td>{PRODI}</td>
+				<td>{EMAIL}</td>
+			</tr>
+			<!-- /patTemplate:tmpl -->
+			<!-- /patTemplate:sub -->
+			<!-- /patTemplate:tmpl -->
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="2" align="center">
+			<!--input type="hidden" value="Reset" name="Reset" />
+			<input type="hidden" name="action" value="PresensiKelasInput" />
+			<input type="hidden" name="klsId" value="{KLS_ID}" />
+			<input type="hidden" name="semId" value="{SEM_ID}" />
+			<input type="hidden" name="pertemuanId" value="{PERTEMUAN_ID}" />
+			<input type="hidden" name="nipDosen" value="{NIP_DOSEN}" />
+			<input type="hidden" name="sia" value="{SIA}" /-->
+			<form action="{URL_BACK}" method="post">
+				<input class="input-disclaimer btn btn-info" type="submit" name="btnBack" value="Kembali">
+			</form>
+		</td>
+	</tr>
+</table>
+</form>
+<div>
+	<!-- form action="javascript:history.back()" method="post"-->
+	
+</div>
+<!-- /patTemplate:tmpl -->

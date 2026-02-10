@@ -1,0 +1,176 @@
+<!-- patTemplate:tmpl name="document" -->
+<html>
+<head>
+<title>{TITLE_CETAK}</title>
+<link rel="stylesheet" type="text/css" href="styles/a_sia_cetak_new.css" />
+<link rel="stylesheet" type="text/css" media="print" href="styles/a_sia_cetak_media_print_new.css" />
+<style type="text/css">
+.tabelKop tr td {
+   padding:4px;
+}
+.tabelKop tr td h5 {
+   padding-top: 20px;
+}
+
+.tabelHeaderData tr td {
+   font:11px Arial;
+}
+
+#table-data tr td, #table-data tr th {
+   font:10px Arial;
+}
+
+.tabelFooter tr td {
+   font:11px Arial;
+}
+
+.h5JudulSemester {
+   padding: 0px;
+   margin: 0px;
+}
+</style>
+</head>
+<body onLoad="//window.print();">
+<div class="page-landscape">
+
+<div class="nobreak">
+
+   <table width="100%" class="tabelKop" border="0">
+      <tr>
+         <td width="80" align="left" style="padding:0px;">
+            <img src="{URL_IMG}/images/logo.png" width="85" />
+         </td>
+         <td>
+            <h5>{NAMA_PT}</h5>
+         </td>
+         <td align="right">
+         </td>
+      </tr>
+   </table>
+
+   <table width="100%" border="0">
+   <tr>
+      <td valign="top" width="50%">
+         <table class="tabelHeaderData" width="100%">
+            <tr>
+               <td width="17%">Semester / TA</td>
+               <td width="3%">:</td>
+               <td>
+                  {SEMESTER_LABEL}
+               </td>
+            </tr>
+            <tr>
+               <td width="17%">Program Studi</td>
+               <td width="3%">:</td>
+               <td>
+                  {PRODI_NAMA}
+               </td>
+            </tr>
+            <tr>
+               <td width="17%">{LABEL_NIM}</td>
+               <td width="3%">:</td>
+               <td>
+                  {MHS_NIM}
+               </td>
+            </tr>
+            <tr>
+               <td width="17%">Nama</td>
+               <td width="3%">:</td>
+               <td>
+                  {MHS_NAMA}
+               </td>
+            </tr>
+            <tr>
+               <td width="17%">Dosen Wali</td>
+               <td width="3%">:</td>
+               <td>
+                  {DOSEN_WALI}
+               </td>
+            </tr>
+         </table>
+      </td>
+      <td valign="top" width="50%">
+         <table width="100%">
+            <tr>
+               <td align="right">
+                  <h4 style="text-align:right;">Kartu Peserta Ujian</h4>
+                  <h3 style="text-align:right;">KPU / {SINGK_SESI}</h3>
+               </td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+   </table>
+
+   <table id="table-data" width="100%">
+      <tr>
+         <th width="2%" rowspan="2">No.</th>
+         <th width="10%" rowspan="2">Kode MK</th>
+         <th rowspan="2">Matakuliah</th>
+         <th width="3%" rowspan="2">SKS</th>
+         <th rowspan="2">Kelas</th>
+         <th rowspan="2">Waktu dan Ruang</th>
+         <th colspan="2">PARAF</th>
+      </tr>
+      <tr>
+         <th width="10%">PWS1</th>
+         <th width="10%">PWS2</th>
+      </tr>
+      <!-- patTemplate:tmpl name="data_list"  type="condition" conditionvar="IS_EMPTY" -->
+         <!-- patTemplate:sub condition="YES" -->
+            <tr>
+               <td colspan="8" align="center"><em>Belum ada Data KRS</em></td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="NO" -->
+            <!-- patTemplate:tmpl name="data_list_item" -->
+            <tr>
+               <td align="center">{NO}&nbsp;</td>
+               <td>{KODE_MK}&nbsp;</td>
+               <td>{NAMA_MK}&nbsp;</td>
+               <td align="center">{SKS}&nbsp;</td>
+               <td align="center">{KELAS_NAMA}&nbsp;</td>
+               <td>{WAKTU_RUANG}&nbsp;</td>
+               <td>&nbsp;</td>
+               <td>&nbsp;</td>
+            </tr>
+            <!-- /patTemplate:tmpl -->
+         <!-- /patTemplate:sub -->
+      <!-- /patTemplate:tmpl -->
+   </table>
+
+</div> <!--  endof class nobreak -->
+
+<br />
+<table class="tabelFooter" width="100%" border="0">
+<tr>
+   <td width="65%" valign="top">
+      <p>
+         <strong>CATATAN :</strong><br />
+         Pada saat memasuki ruangan Ujian Peserta wajib menyerahkan KPU ini kepada Dosen atau Pegawas Ujian.
+      </p>
+   </td>
+   <td width="35%">
+      <table width="100%">
+         <tr>
+            <td align="center">
+               {TANGGAL_CETAK}<br />
+               <span id="{JABATAN_SAH}">{JABATAN}</span>
+            </td>
+         </tr>
+         <tr>
+            <td align="center" height="65"></td>
+         </tr>
+         <tr>
+            <td align="center" nowrap="nowrap"> <span id="{NAMA_SAH}">{NAMA}</span> <br />------------------------------
+            <br />{LABEL_NIP}: <span id="{NIP_SAH}">{NIP}</span></td>
+         </tr>
+      </table>
+   </td>
+</tr>
+</table>
+
+</div>
+</body>
+</html>
+<!-- /patTemplate:tmpl -->

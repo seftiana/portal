@@ -1,0 +1,96 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript">
+	function semuaClicked()
+	{		
+		if((window.document.form_add_materi.tujuan[0].checked) || (window.document.form_add_materi.tujuan[1].checked) ) 	
+		{
+			window.document.form_add_materi.addGetListMahasiswa.disabled=true;			
+		}
+		document.getElementByid("divTbl2").style.visibility = "hidden";
+	}
+	
+	function tertentuClicked()
+	{
+		if(window.document.form_add_materi.tujuan[2].checked)
+		{
+			window.document.form_add_materi.addGetListMahasiswa.disabled=false;
+		}
+		document.getElementByid("divTbl2").style.visibility = "visible";
+	}
+	
+</script>
+
+<div id="maincontent">
+<h2> {APPLICATION_MODULE} </h2></br><br/>
+  <form name="form_add_materi" class="form-common" method="post" action="{FORM_ACTION}" enctype="multipart/form-data">
+      <input type="hidden" name="hdnSmt" value="{SEMESTER}" />
+      <input type="hidden" name="id" value="{ID}" />
+      <input type="hidden" name="fileLama" value="{MATERI_NAMA_FILE}" />
+      <input type="hidden" name="hdnMatkulId" value="{HIDDEN_KELAS}" />
+  		
+  		<table class="table-userbio" width = "100%">
+  		<!-- patTemplate:tmpl name="display_error" visibility="hidden" -->
+  		  <tr>
+  		  	<th colspan="2"><font color="Maroon" size="2">Gagal Menambahkan Data materi Baru. {ERROR} </font></th>
+  		  </tr>
+  		<!-- /patTemplate:tmpl -->
+  		  <tr>
+  		  	  <th>Semester</th>
+  		  	  <td><B>{NAMA_SEMESTER}</B></td>
+  		  </tr>
+          <tr>
+              <th>Mata Kuliah</th>
+              <td>
+                  <select name="klsId">
+                      <!-- patTemplate:tmpl name="list_matkul" -->
+                          <option value="{MATKUL_ID}" {SELECT_{MATKUL_ID}}>{MATKUL_KODE} - {MATKUL_NAMA}</option>
+                      <!-- /patTemplate:tmpl -->
+                  </select>
+              </td>
+          </tr>
+          <tr>
+              <th>Judul</th>
+              <td><input type="textbox" name="judul" size="40" value="{MATERI_JUDUL}" maxlength="150" /></td>
+          </tr>
+          <tr>
+              <th valign="=top">File</th>
+              <td>
+              <input type="file" name="fileUpload" size="40" value="{MATERI_NEW_FILE}"  /><br>
+              (Ukuran file maksimal 2MB. Tipe file zip) <br>
+              </td>
+          </tr>
+          <tr>
+              <th valign="top">Abstraksi</th>
+              <td><textarea name="abstraksi"  cols="30" rows="5" >{MATERI_ABSTRAKSI}</textarea> 
+               <br>	
+               [i] <i>miring </i>[/i] [b] <b>tebal </b> [/b]<br>
+               Max. 255 karakter
+              </td>
+          </tr>
+          <tr>
+          	  <th>Status</th>
+          	  <td>
+          	  		<select name="status">
+          	  			<option value="1" {SELECT_1}>Aktif</option>
+          	  			<option value="0" {SELECT_0}>Inaktif</option>
+          	  		</select>
+          	  </td>
+          </tr>
+          <tr>
+          	  <td colspan="2" align="right">
+          	  	<div align="right">
+          	  		<input type="submit" name="addSimpan" value="Simpan" class="input-disclaimer btn btn-info"  />
+          	  		<input type="submit" name="batal" value="Batal" class="input-disclaimer btn btn-info"  />
+          	  	</div>
+          	  </td>
+          </tr>   
+		</table>
+          	
+        
+ 
+  </form>  
+ </div>
+<!-- /patTemplate:tmpl -->

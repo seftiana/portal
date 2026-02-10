@@ -1,0 +1,211 @@
+<!-- patTemplate:tmpl name="body" -->
+<div id="page" class="shadow-lg bg-login my-3 rounded-lg">
+   <div id="header" class="d-flex">
+      <img src="images/logo_perbanas_putih.png" alt="logo perbanas institute" width="75" height="65" class="img-fluid"/>
+		<h1 class="align-self-center ml-4">Portal Akademik {APPLICATION_CUSTOMER_NAME}</h1>
+   </div>
+   <div id="main-content">
+      <div class="row d-flex flex-row-reverse">        
+         <div class="col-lg-3">
+            <div id="sidebar">
+               <div id="user-info" class="card d-flex flex-row flex-lg-column my-lg-2 my-1 p-1 p-lg-0">                  
+                  <div id="userFoto" class="my-3 my-sm-0">
+                     <!-- patTemplate:tmpl name="user_foto" type="condition" conditionvar="IS_AVAIL" -->
+                     <!-- patTemplate:sub condition="NO" -->
+                     <!--img src="{CONFIG_BASEADDRESS}images/user_foto/photo-unavailable.gif" alt="Belum Ada Foto" /-->
+                     <i class="fas fa-user-circle fa-5x"></i>
+                     <!-- /patTemplate:sub -->
+                     <!-- patTemplate:sub condition="YES" -->
+                     <img src="{FILE_FOTO}" alt="FOTO {USER_FULLNAME}" class="img-fluid w-50 m-lg-2"/>
+                     <!-- /patTemplate:sub -->
+                     <!-- /patTemplate:tmpl -->
+                  </div>
+                  <div class="flex-fill align-self-center">
+                     <strong>{USER_FULLNAME}</strong><br>
+                     {USER_IDNUMBER}<br>
+                     {USER_PRODINAME}
+                  </div>
+               </div>               
+                  <!-- patTemplate:tmpl name="menu_item" -->
+               <a href="{MENU_HREF}">
+                  <button type="button" class="btn btn-warning btn-block">
+                     <i class="fas fa-sign-out-alt"></i>&nbsp;{MENU_NAME}</button>
+               </a>
+               <!-- /patTemplate:tmpl -->               
+               <!-- end of user-info -->
+               <nav class="navbar navbar-expand-lg navbar-light p-0 mt-2">
+                  <button class="navbar-toggler btn-block my-3 bg-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                     <span class="navbar-toggler-icon"></span>&nbsp;Menu
+                  </button>
+                  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                     <div id="" class="card border-primary">           
+                        <div class="card-header bg-primary text-white">
+                           <h5>Academics</h5>
+                        </div>
+                        <div class="list-group">
+                           <!-- patTemplate:tmpl name="submenu_item" -->
+                              <a href="{SUBMENU_HREF}" target="_self" class="list-group-item list-group-item-action">
+                                 {SUBMENU_NAME}</a>
+                              <!-- /patTemplate:tmpl -->
+                              <!--a href="manual/panduan_aktivasi_elearning_2019.pdf" target="_blank"><button type="button" class="list-group-item">Panduan E-Learning Angktan 2019</button></a>
+                              <a href="manual/panduan_lupa_password_email_dan_elearning_2019.pdf" target="_blank"><button type="button" class="list-group-item">Panduan Lupa Password Email dan E-Learning</button></a-->
+                        </div>
+                        <!-- patTemplate:tmpl name="bottom_menu_item" -->
+                        <a href="{BOTTOMMENU_HREF}"  class="list-group-item" >{BOTTOMMENU_NAME}</a>
+                        <!-- /patTemplate:tmpl -->
+                        <div id="status-services" >
+                           <h4>Status Service</h4>
+                              <ul>
+                                    <!-- patTemplate:tmpl name="list_sistem" type="condition" conditionvar="IS_AVAILABLE" -->
+                                    <!-- patTemplate:sub condition="UNSET" -->
+                                 <li  class="status-services-unknown">{SISTEM_NAME}</li>
+                                          <!-- /patTemplate:sub -->
+                                          <!-- patTemplate:sub condition="YES" -->
+                                 <li>{SISTEM_NAME}</li>
+                                       <!-- /patTemplate:sub -->
+                                       <!-- patTemplate:sub condition="NO" -->
+                                 <li class="status-services-disable">{SISTEM_NAME}</li>
+                                    <!-- /patTemplate:sub -->
+                                    <!-- /patTemplate:tmpl -->
+                              </ul>
+                        </div>
+                     </div> <!-- end of navigation -->                 
+                     <!--div id="navigation" class="card">
+                     <div class="card-header"><strong>Virtual Class</strong></div>
+                     <div class="list-group"-->
+                     <!-- patTemplate:tmpl name="elearning_menu_item" -->
+                     <!--a href="{ELEARNING_HREF}" target="_self"><button type="button" class="list-group-item">{ELEARNING_NAME}</button></a>-->
+                     <!-- /patTemplate:tmpl -->
+                      <!--/div>
+                     </div -->
+                     <!-- patTemplate:tmpl name="services" visibility="visible" -->
+                     <!-- /patTemplate:tmpl -->
+                  </div>
+               </nav>
+               
+            </div> <!-- end of sidebar -->           
+         </div>
+         <div class="col-lg-9">
+            <div id="content">
+               <!--Content Element-->
+               <!-- patTemplate:tmpl name="content" / -->
+               <!--Content Element-->
+            </div> <!-- end of content -->
+         </div>
+         <div class="clearfix"></div>
+      </div>
+   </div> <!-- end of main-content -->
+   <div id="footer">
+      <p>{APPLICATION_NAME} {APPLICATION_CUSTOMER_NAME}<br />
+      <!-- patTemplate:tmpl name="version" type="condition" conditionvar="IS_ADMIN" -->
+      <!-- patTemplate:sub condition="0" -->
+                <!-- Version {APPLICATION_VERSION} --> 
+                &copy; 2018 - 2020. All Rights Reserved. Perbanas Institute</p>
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="1" -->
+               <!-- <a href="{VERSION_HREF}">Version {APPLICATION_VERSION} </a> --> &copy; 2015. All Right Reserved</p>
+                <div class="row contact">
+              <div class="col-lg-4 col-xs-6">
+                <address>
+                  <h4>Perbanas Institute Kampus Jakarta</h4>
+                  Jl. Perbanas, Karet Kuningan, Setiabudi, Jakarta 12940<br>
+                  Telp: (021) 5252533, 5222501-04<br>
+                  Fax: (021) 5704376, 5228460<br>
+                  Email: contact@perbanas.id<br>
+                  <a href="http://www.perbanas.id">www.perbanas.id</a>
+                </address>
+              </div>
+              <div class="col-lg-4 text-center">
+              {APPLICATION_NAME} {APPLICATION_CUSTOMER_NAME}<br /><!-- Version &copy; {APPLICATION_VERSION} -->All Right Reserved &copy; 2018
+              </div>
+              <div class="col-lg-4 col-xs-6">
+                <address class="pull-right" style="padding-right: 10px;">
+                  <h4>Perbanas Institute Kampus Bekasi</h4>
+                  Jl. Cut Meutia Raya No. 2, Bekasi<br>
+                  Telp: (021) 8224432<br/><br/>
+                  <a href='https://www.facebook.com/perbanas.institute.jakarta'>
+                    <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a> &nbsp;
+                  <a href='http://twitter.com/perbanas'>
+                    <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+                  </a> &nbsp;
+                  <a href='http://youtube.com/perbanasinstitute'>
+                    <i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i>
+                  </a> &nbsp;
+                  <a href='http://instagram.com/perbanas.institute'>
+                    <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                  </a> &nbsp;
+                  
+                </address>
+              </div>
+            </div>
+         <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+         <div class="footer-nav">
+         <ul>
+            <!-- patTemplate:tmpl name="feedback" visibility="visible" -->
+               <!--li><a href="{FEEDBACK_HREF}">Feedback</a> |</li-->
+            <!-- /patTemplate:tmpl -->
+            <!-- patTemplate:tmpl name="disclaimer" visibility="visible" -->
+               <!-- <li><a href="{DISCLAIMER_HREF}">Disclaimer</a> |</li> -->
+            <!-- /patTemplate:tmpl -->
+            <!-- patTemplate:tmpl name="faq" visibility="visible" -->
+               <!-- <li><a href="{FAQ_HREF}">FAQ</a></li> -->
+            <!-- /patTemplate:tmpl -->
+
+         </ul>
+      </div>
+      </div> <!-- end of footer -->
+   </div> <!-- end of page -->
+
+   <script language="javascript">
+
+      function ValidateCheckbox(checkboxName, errMsg) {
+         var checkBox = document.getElementsByName(checkboxName);
+         var len = checkBox.length;
+         var i;
+         var isChecked = false;
+         for (i=0; i<len; i++) {
+            if (eval("checkBox[i].checked == true")) {
+               isChecked = true;
+               break;
+            }
+         }
+         if (isChecked == false) {
+            alert (errMsg);
+         }
+         return isChecked;
+      }
+
+    function ValidateDelete(checkboxName, errMsg){
+         if (checkboxName != null ){
+            if (ValidateCheckbox(checkboxName,errMsg) == false)
+               return false;
+         }
+         if(confirm("Apakah anda ingin menghapus data ini")){
+               return true;
+         }
+         else {
+               return false;
+         }
+    }
+	
+    function ValidateRemedial(checkboxName, errMsg){
+         if (checkboxName != null ){
+            if (ValidateCheckbox(checkboxName,errMsg) == false)
+               return false;
+         }
+         if(confirm("Apakah anda ingin mengambil remedial")){
+               return true;
+         }
+         else {
+               return false;
+         }
+    }
+   </script>
+   <script>
+
+      $('.btn-expand-collapse').click(function(e) {
+              $('.navbar-primary').toggleClass('collapsed');
+  });
+  </script>
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,84 @@
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript">
+<!--//
+
+   function validate(frm) {        
+      if (frm.judul.value == '' || frm.isi.value == '') {
+         alert('judul dan isi pengumuman wajib diisi!'); 
+         return false;           
+      }
+      return true;
+   }
+//-->
+</script>
+
+<h2> {APPLICATION_MODULE} </h2>
+<form class="form-common" action="{URL_UPDATE}" method="post" enctype="multipart/form-data" name="frmAddPengumuman" >
+	<input type="hidden" name="pgmn_id" value="{PGMNID}">
+   <table class="table-form" width="100%"  border="0" cellspacing="1" cellpadding="4">
+  		<!-- patTemplate:tmpl name="display_error" visibility="hidden" -->
+  		  <tr>
+  		  	<th colspan="3"><font color="Maroon" size="2"><b>Gagal Mengubah Data. {ERROR}</b> </font></th>
+  		  </tr>
+  		<!-- /patTemplate:tmpl -->
+      <tr>
+         <td width="22%" valign="top">Kelas</td>
+         <td width="2%" valign="top">:</td>
+         <td width="76%">
+         	<select name="kelas" id="kelas">
+             <!-- patTemplate:tmpl name="list_kelas" -->
+               <option value="{KLS_ID}" {SELECT_{KLS_ID}}>{KLS_KODE} - {KLS_NAMA}</option>
+             <!-- /patTemplate:tmpl -->
+         	</select>
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">Judul Pengumuman </td>
+         <td valign="top">:</td>
+         <td><input name="judul" type="text" id="judul" size="40" value="{PGMNJUDUL}"></td>
+      </tr>
+      <tr>
+         <td valign="top">Isi Pengumuman </td>
+         <td valign="top">:</td>
+         <td><textarea name="isi" cols="30" rows="5" id="isi">{PGMNISI}</textarea>
+         <br>
+         [i] <em>miring</em> [/i] [b] <strong>tebal</strong> [/b] <br>
+         Max. 255 karakter</td>
+      </tr>
+      <tr>
+         <td valign="top">File attachment </td>
+         <td valign="top">:</td>
+         <td><i>{PGMNNAMAFILE}</i>, Kosongkan jika tidak ingin mengganti
+			<input type="file" name="fileUpload">&nbsp;<br>
+			Ukuran File Maksimal 2MB 
+			<input type="hidden" name="fileLama" value="{PGMNNAMAFILE}"></td>
+      </tr>
+      <tr>
+         <td valign="top">Tanggal Batas </td>
+         <td valign="top">:</td>
+         <td><select name="tgl" id="tgl">
+            <!-- patTemplate:tmpl name="list_tgl" -->
+            <option value="{TGL}"{SELECTED}>{TGL}</option>
+            <!-- /patTemplate:tmpl -->
+         </select>
+            <select name="bln" id="bln">
+               <!-- patTemplate:tmpl name="list_bln" -->
+            <option value="{BLN}"{SELECTED}>{BLN}</option>
+            <!-- /patTemplate:tmpl -->
+            </select>
+            <select name="thn" id="thn">
+               <!-- patTemplate:tmpl name="list_thn" -->
+            <option value="{THN}"{SELECTED}>{THN}</option>
+            <!-- /patTemplate:tmpl -->
+            </select></td>
+      </tr>      
+      <tr>
+         <td valign="top">&nbsp;</td>
+         <td>&nbsp;</td>
+         <td><input class="input-disclaimer btn btn-info" name="update" type="submit" id="update" value="Update">
+             <input class="input-disclaimer btn btn-info" name="batal" type="submit" id="kirim" value="Kembali">
+         </td>
+      </tr>
+   </table>
+</form>
+<!-- /patTemplate:tmpl -->

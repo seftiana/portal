@@ -1,0 +1,61 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.hidden{display:none;}
+</style>
+   <h2>History Pembayaran</h2>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <br />
+      <div style="border: 1px solid #B5C3D2; padding: 0px 5px 5px 5px;">
+         <!-- patTemplate:tmpl name="mahasiswa" -->
+            <table width="100%" class="table-list">
+               <tr> 
+                  <th width="150">Nama</th>
+                  <td>{MHS_FULLNAME}</td>
+               </tr>
+               <tr> 
+                  <th>{LABEL_NIM}</th>
+                  <td>{MHS_NIU}</td>
+               </tr>
+               <tr> 
+                  <th>Program Studi</th>
+                  <td>{MHS_JENJANG_KODE} {MHS_INFO}</td>
+               </tr>
+               <tr>
+                  <th>Dosen Pembimbing Akademik</th>
+                  <td>{MHS_DOSEN_PA}</td>
+               </tr>
+            </table>
+         <!-- /patTemplate:tmpl --> <!-- end of mahasiswa -->
+         
+         <!-- patTemplate:tmpl name="data_container" type="condition" conditionvar="IS_EMPTY" -->
+            <!-- patTemplate:sub condition="YES" -->
+            
+               <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+            
+            <!-- /patTemplate:sub -->
+            
+            <!-- patTemplate:sub condition="NO" -->
+            <table class="table-common" width="100%">
+            <tr>
+               <th>No</th>
+               <th>Semester</th>
+               <th>Jenis Pembayaran</th>
+               <th>Lunas</th>
+            </tr>
+            <!-- patTemplate:tmpl name="data_item" -->
+                  <tr class="{_CLASS}">
+                     <td align="center">{NUMBER}</td>
+                     <td align="center">{SEMESTER}</td>
+                     <td align="center">{LABEL}</td>
+                     <td align="center">{IS_LUNAS}</td>
+                  </tr>
+            <!-- /patTemplate:tmpl -->
+      
+            </table>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </div>
+      
+      <br />
+<!-- /patTemplate:tmpl --> <!-- end of content -->

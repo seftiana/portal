@@ -1,0 +1,125 @@
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript">
+function jenis_changed()
+{
+	jenisId = window.document.FrmAdd.jenis.value;
+	alert(jenisId);
+	if(jenisId == 2) //mingguan
+	{
+		document.getElementById("day").style.display = "";
+		document.getElementById("tanggal").style.display = "none";
+	}
+	else
+	{
+		document.getElementById("day").style.display = "none";
+		document.getElementById("tanggal").style.display = "";
+	}
+}
+</script>
+
+
+<h2>Tambah Agenda {NAMA}</h2><br/>
+<form name="FrmAdd" class="form-common" action="{URL_ACTION}" method="post">
+	<input type="hidden" name="jenis" value="{JENIS}" />
+	<table class="table-form" width="100%">
+		<!-- patTemplate:tmpl name="show_kelas" visibility="hidden" -->
+		<tr>
+	        <th>		
+	        	Kelas      
+	        </th>
+	        <td>
+	            <select name="klsId" >
+	                <!-- patTemplate:tmpl name="list_kelas" -->
+	                <option value="{KLS_ID}" {SELECT_{KLS_ID}}>{KLS_KODE} - {KLS_NAMA}</option>
+	                <!-- /patTemplate:tmpl -->
+	            </select>
+	        </td>    
+	    </tr>
+	    <!-- /patTemplate:tmpl -->
+		<tr>
+			<th width="25%">Nama Agenda</th>
+			<td width="75%">
+				<input type="text" name="nama" size="30" />
+			 </td>
+		</tr>
+		<tr>			
+			<th>Frekuensi</th>
+			<td>
+				<select name="frekuensi" >
+					
+					<!-- patTemplate:tmpl name="list_frek" -->
+	                <option value="{ID}" {SELECT_{ID}}>{NAMA}</option>
+	                <!-- /patTemplate:tmpl -->
+				</select>
+			</td>
+		</tr>
+		<tr>		
+			<th>Hari/Tanggal</th>
+			<td id="day" style="display:none;">
+				<select name="hari">
+					<option value="Senin">Senin</option>
+					<option value="Selasa">Selasa</option>
+					<option value="Rabu">Rabu</option>
+					<option value="Kamis">Kamis</option>
+					<option value="Jumat">Jumat</option>
+					<option value="Sabtu">Sabtu</option>
+					<option value="Minggu">Minggu</option>
+				</select>
+			</td>
+			<td id="tanggal" style="display:;">
+          	  	<select name="tglAwal">
+          	  		<!-- patTemplate:tmpl name="tglAwal" -->
+          	  		<option value="{TGL}">{TGL}</option>
+          	  		<!-- /patTemplate:tmpl -->
+          	  	</select>
+          	  	<select name="blnAwal">
+          	  		<option value="01">Januari</option>
+          	  		<option value="02">Februari</option>
+          	  		<option value="03">Maret</option>
+          	  		<option value="04">April</option>
+          	  		<option value="05">Mei</option>
+          	  		<option value="06">Juni</option>
+          	  		<option value="07">Juli</option>
+          	  		<option value="08">Agustus</option>
+          	  		<option value="09">September</option>
+          	  		<option value="10">Oktober</option>
+          	  		<option value="11">Nopember</option>
+          	  		<option value="12">Desember</option>
+          	  	</select>
+          	  	<select name="thnAwal">
+          	  		<!-- patTemplate:tmpl name="thnAwal" -->
+          	  		<option value="{THN}">{THN}</option>
+          	  		<!-- /patTemplate:tmpl -->
+          	  	</select>
+			</td>
+		</tr>
+		<tr>
+			<th>Jam</th>
+			<td>
+				<select name="jamAwal">
+          	  		<!-- patTemplate:tmpl name="jamAwal" -->
+          	  		<option value="{JAM}">{JAM}</option>
+          	  		<!-- /patTemplate:tmpl -->
+          	  	</select>
+          	  	:
+          	  	<select name="menitAwal">
+          	  		<!-- patTemplate:tmpl name="menitAwal" -->
+          	  		<option value="{MENIT}">{MENIT}</option>
+          	  		<!-- /patTemplate:tmpl -->
+          	  	</select>
+			</td>
+		</tr>
+		<tr>
+			<th>Keterangan</th>
+			<td>
+				<textarea name="keterangan" cols="40" rows="5" ></textarea>
+			</td>
+		</tr>
+		<tr>
+			<th colspan="2">
+				<input type="submit" name="AddSimpan" value="Simpan" class="input-disclaimer" />
+			</th>
+		</tr>
+	</table>
+</form>
+<!-- /patTemplate:tmpl -->

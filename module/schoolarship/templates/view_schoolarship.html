@@ -1,0 +1,166 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Beasiswa</h2>
+	<br/>
+   <h5>Keterangan :</h5>
+	<p>Menu Beasiswa digunakan untuk melihat beasiswa yang ada serta untuk mendaftarkan beasiswa. 
+	Semua beasiswa yang terdapat pada daftar beasiswa merupakan beasiswa yang dapat diajukan oleh pengguna yang bersangkutan
+	</p><br />
+	
+	<!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+	<!-- patTemplate:tmpl name="beasiswa_diterima" visibility="hidden" -->
+		<h3>Beasiswa yang sedang diterima</h3>
+		<table width="100%" class="table-list">
+			<tr> 
+				<th width="150">{LABEL_NIM}</th>
+				<td>{BDTR_NIM}</td>
+			</tr> 
+			<tr> 
+				<th>Nama Mahasiswa</th>
+				<td>{BDTR_NAMA_MHS}</td>
+			</tr> 
+			<tr> 
+				<th>Nama Beasiswa</th>
+				<td>{BDTR_NAMA_BEASISWA}</td>
+			</tr> 
+			<tr> 
+				<th>Tanggal Daftar</th>
+				<td>{BDTR_TGL_DAFTAR}</td>
+			</tr> 
+			<tr> 
+				<th>Status Daftar</th>
+				<td>{BDTR_NAMA_STATUS_DAFTAR}</td>
+			</tr> 
+			<tr> 
+				<th>Tipe Pendaftaran</th>
+				<td>{BDTR_NAMA_TIPE_DAFTAR}</td>
+			</tr> 
+		</table><br/>
+	<!-- /patTemplate:tmpl --><!--beasiswa_diterima-->
+	
+	
+	
+   <!-- patTemplate:tmpl name="beasiswa_terdaftar" visibility="hidden" -->
+		<h3>Beasiswa yang telah didaftarkan</h3>
+      <table class="table-common" width="100%">
+         <tr>
+            <th>No</th>
+            <th>Beasiswa</th>
+				<th>Tanggal Daftar</th>
+            <th>Status Daftar</th>
+            <th>Tipe Pendaftaran</th>
+            <!--th>Aksi</th-->
+         </tr>    
+			<!-- patTemplate:tmpl name="beasiswa_terdaftar_item" type="condition" conditionvar="ODDEVEN" -->                  
+            <!-- patTemplate:sub condition="ODD" -->                 
+               <tr>
+                  <td>{BDFTR_NUMBER}</td>
+						<td><a href="{BDFTR_URL_DETIL}">{BDFTR_NAMA_BEASISWA}</a></td>
+						<td>{BDFTR_TGL_DAFTAR}</td>
+                  <td>{BDFTR_NAMA_STATUS_DAFTAR}</td>
+                  <td>{BDFTR_NAMA_TIPE_DAFTAR}</td>
+                  <!--td class="table-common-links"><a href="{BDFTR_URL_BATAL}">Batalkan Pendaftaran</a></td-->
+				  </tr>         
+            <!-- /patTemplate:sub -->                 
+            <!-- patTemplate:sub condition="EVEN" -->                 
+               <tr class="table-common-even">
+                  <td>{BDFTR_NUMBER}</td>
+						<td><a href="{BDFTR_URL_DETIL}">{BDFTR_NAMA_BEASISWA}</a></td>
+						<td>{BDFTR_TGL_DAFTAR}</td>
+                  <td>{BDFTR_NAMA_STATUS_DAFTAR}</td>
+                  <td>{BDFTR_NAMA_TIPE_DAFTAR}</td>
+                  <!--td class="table-common-links"><a href="{BDFTR_URL_BATAL}">Batalkan Pendaftaran</a></td-->
+				  </tr>         
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl --><!--beasiswa_terdaftar_item-->
+      </table><br/> 
+	<!-- /patTemplate:tmpl --><!--beasiswa_terdaftar-->
+	
+	<br/>
+	<h3>Daftar Beasiswa Ditawarkan</h3>
+	<form action="{URL_PROCESS}" method="post" class="form-common">
+	<!-- patTemplate:tmpl name="data_beasiswa" type="condition" conditionvar="BEASISWA_IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+         
+      <!-- /patTemplate:sub --><!--sub:data_user-YES-->
+      <!-- patTemplate:sub condition="NO" -->
+		<table class="table-common" width="100%">
+         <tr>
+            <th>No</th>
+            <th colspan="{COLSPAN}">Beasiswa</th>
+				<th>Jenis</th>
+            <th>Sumber</th>
+            <th>Tanggal Penutupan</th>
+            <th>Status</th>
+         </tr>         
+			<!-- patTemplate:tmpl name="data_beasiswa_is_readonly" type="condition" conditionvar="BEASISWA_IS_READONLY" -->
+			<!-- patTemplate:sub condition="NO" -->
+				<!-- patTemplate:tmpl name="data_beasiswa_item" type="condition" conditionvar="ODDEVEN" -->                  
+					<!-- patTemplate:sub condition="ODD" -->                 
+						<tr>
+							<td>{BSW_NUMBER}</td>
+							<td><input type="radio" name="beasiswa" value="{BSW_ID_ENC}"></td>
+							<td><a href="{BSW_URL_DETIL}">{BSW_NAMA}</a></td>
+							<td>{BSW_JENIS}</td>
+							<td>{BSW_SUMBER}</td>
+							<td>{BSW_END_DATE}</td>
+							<td>{BSW_STATUS}</td>
+					  </tr>         
+					<!-- /patTemplate:sub -->                 
+					<!-- patTemplate:sub condition="EVEN" -->                 
+						<tr class="table-common-even">
+							<td>{BSW_NUMBER}</td>
+							<td><input type="radio" name="beasiswa" value="{BSW_ID_ENC}"></td>
+							<td><a href="{BSW_URL_DETIL}">{BSW_NAMA}</a></td>
+							<td>{BSW_JENIS}</td>
+							<td>{BSW_SUMBER}</td>
+							<td>{BSW_END_DATE}</td>
+							<td>{BSW_STATUS}</td>
+					  </tr>         
+					<!-- /patTemplate:sub -->
+				<!-- /patTemplate:tmpl --><!--data_beasiswa_item-->
+			<!-- /patTemplate:sub --><!--NO data_beasiswa_readonly-->
+			<!-- patTemplate:sub condition="YES" -->         
+				<!-- patTemplate:tmpl name="data_beasiswa_item_readonly" type="condition" conditionvar="ODDEVEN" -->                  
+					<!-- patTemplate:sub condition="ODD" -->                 
+						<tr>
+							<td>{BSW_NUMBER}</td>
+							<td><a href="{BSW_URL_DETIL}">{BSW_NAMA}</a></td>
+							<td>{BSW_JENIS}</td>
+							<td>{BSW_SUMBER}</td>
+							<td>{BSW_END_DATE}</td>
+							<td>{BSW_STATUS}</td>
+					  </tr>         
+					<!-- /patTemplate:sub -->                 
+					<!-- patTemplate:sub condition="EVEN" -->                 
+						<tr class="table-common-even">
+							<td>{BSW_NUMBER}</td>
+							<td><a href="{BSW_URL_DETIL}">{BSW_NAMA}</a></td>
+							<td>{BSW_JENIS}</td>
+							<td>{BSW_SUMBER}</td>
+							<td>{BSW_END_DATE}</td>
+							<td>{BSW_STATUS}</td>
+					  </tr>         
+					<!-- /patTemplate:sub -->
+				<!-- /patTemplate:tmpl --><!--data_beasiswa_item_readonly-->
+			<!-- /patTemplate:sub --><!--YES data_beasiswa_readonly-->
+			<!-- /patTemplate:tmpl --><!--data_beasiswa_readonly-->			
+      </table>     
+		
+		<!-- patTemplate:tmpl name="tmblDaftar" visibility="visible" -->   		
+			<input type="submit" name="btnDaftar" value="Daftar">
+		<!-- /patTemplate:tmpl --><!--tmblDaftar-->
+		</form><br /><br />
+
+		<div class="petunjuk-area">
+			<h4>Petunjuk:</h4>
+			<ul>
+				<li>Klik link beasiswa untuk melihat detil beasiswa.</li>
+				<li>Untuk mendaftar beasiswa, pilih beasiswa yang ingin di daftarkan kemudian klik daftar.</li>
+			</ul>
+		</div>
+      <!-- /patTemplate:sub --><!--sub:data_user-NO-->
+   <!-- /patTemplate:tmpl --><!--data_user-->
+<!-- /patTemplate:tmpl -->

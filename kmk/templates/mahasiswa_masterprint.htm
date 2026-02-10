@@ -1,0 +1,47 @@
+<div {$pageattrs}>
+
+{BEGIN container_column}
+<div class="rnr-c rnr-ch rnr-c-column">
+
+{BEGIN masterlist_title}
+<div  class="style1 rnr-bl rnr-b-masterprintheader {$brickclass_masterprintheader}"><span>{$pagetitlelabel mahasiswa masterprint}</span></div>
+{END masterlist_title}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_column}
+
+
+
+{BEGIN container_mastergrid}
+
+
+
+<table {$bsmasterprintgrid_hiddenattr} data-pageid="{$pageid}" data-brick="bsmasterprintgrid" class="table rnr-b-mastergridfields rnr-gridtable" >
+		<thead>
+		<tr>
+			<th class="{$mhsNiu_class}">{$label mahasiswa mhsNiu}</th>
+			<th class="{$mhsNama_class}">{$label mahasiswa mhsNama}</th>
+			<th class="{$mhsStakmhsrKode_class}">{$label mahasiswa mhsStakmhsrKode}</th>
+			<th class="{$prodiNamaResmi_class}">{$label mahasiswa prodiNamaResmi}</th>
+			<th class="{$mhsStatusMasukPt_class}">{$label mahasiswa mhsStatusMasukPt}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="{$mhsNiu_class}">{$mhsNiu_mastervalue}</td>
+			<td class="{$mhsNama_class}">{$mhsNama_mastervalue}</td>
+			<td class="{$mhsStakmhsrKode_class}">{$mhsStakmhsrKode_mastervalue}</td>
+			<td class="{$prodiNamaResmi_class}">{$prodiNamaResmi_mastervalue}</td>
+			<td class="{$mhsStatusMasukPt_class}">{$mhsStatusMasukPt_mastervalue}</td>
+		</tr>
+	</tbody>
+
+</table> 
+
+
+
+
+{END container_mastergrid}
+
+</div>

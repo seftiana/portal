@@ -1,0 +1,163 @@
+/* CSS Document */
+/* created by PT. Gamatechno Indonesia 2006/01 */
+
+#sidebar {
+}
+
+#user-info {
+	text-align: center;	
+}
+
+#user-info h2, #user-info h3, #user-info h4,#user-info h5,#user-info h6 {
+	color: #FFFFFF !important;
+	background-color: #8a9b21;
+	text-align:center;
+	font-weight: bold;
+	margin-top:0px;
+	padding: 10px;
+}
+
+#user-info a {
+	color: #8F8A51;
+	font-weight: normal;
+	display: block;
+	text-decoration: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 10px;
+}
+
+#user-info a:hover {
+	color: #D19978;
+	text-decoration: underline;
+}
+
+#a_none a {
+	color: #8F8A51;
+	text-decoration: none;
+	/*margin: 0px 0px 0px 0px;*/
+	padding: 0px 0px 0px 0px;
+}
+
+#a_none a:hover {
+	color: #D19978;
+	text-decoration: underline;
+}
+
+#user-info img {
+	margin: 0px auto 0px auto;
+	padding: 0px 0px 0px 0px;
+}
+
+.logout {
+	padding:15px;
+}
+/*
+#navigation {
+	clear: both;
+	color: #6381A7;
+	overflow: hidden;
+	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#navigation h2 {
+	color: #ffffff;
+	background-color: #0397D6;
+	font-weight: bold;
+	text-transform: capitalize;
+	padding:5px;
+}
+
+#navigation ul {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 10px 20px;
+}
+
+#navigation li {
+	list-style: none;
+	font-weight: bold;
+	margin: 0px 0px 0px 0px; 
+	padding: 0px 0px 8px 0px;	
+}
+
+#navigation a {
+	color: #BC904B;
+	text-decoration: none;
+}
+
+#navigation a:hover {
+	color: #AB743A;
+}
+*/
+#shortcut {
+	color: #001D47;
+	color: #6381A7;
+	background-image: url('../images/navigation-bottom.gif');
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	line-height: 10px;
+	text-align: left;	
+	width: 167px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#shortcut ul {
+	text-align: left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 10px 20px;
+}
+
+#shortcut li {
+	list-style: none;
+	font-weight: bold;
+	margin: 0px 0px 0px 0px; 
+	padding: 0px 0px 8px 0px;
+}
+
+#shortcut a {
+	color: #004672;
+	text-decoration: none;
+	font-weight: normal !important;
+}
+
+#shortcut a:hover {
+	color: #AB743A;
+	text-decoration: none;
+}
+
+#status-services {
+	background-color: #FFFFFF;
+	border-top: 1px solid #FFF0C7;
+	font-weight: bold;
+	margin: 0px 0px 0px 0px;
+	padding: 5px 10px 5px 10px;
+}
+
+#status-services h4 {
+	color: #004672;
+	margin: 0px 0px 5px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#status-services ul {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#status-services li {
+	color: #001b48;
+	list-style: none;
+	background-image: url('../images/icon-unable.gif');
+	background-position: left;
+	background-repeat: no-repeat;
+	margin: 7px 0px 0px 0px;
+	padding: 0px 0px 0px 20px;
+}
+
+.status-services-disable {
+	color: #a5a5a5 !important;
+	background-image: url('../images/icon-disable.gif') !important;
+	background-position: left !important;
+	background-repeat: no-repeat !important;
+}

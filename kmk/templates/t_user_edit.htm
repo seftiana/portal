@@ -1,0 +1,540 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-edit" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_editpage}
+<div {$editpage_chiddenattr} data-pageid="{$pageid}" data-container="editpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-9 col-md-offset-3"> 
+
+{BEGIN editheader}
+	<h2 {$editheader_hiddenattr} data-pageid="{$pageid}" data-brick="editheader" >{$pagetitlelabel t_user edit}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END editheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_message}
+<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="   col-md-6 col-md-offset-3"> 
+
+{BEGIN message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN back_button}
+		<button class="btn btn-sm btn-default" {$backbutton_attrs}>Back to list</button>
+{END back_button}
+{BEGIN view_page_button}
+	<button class="btn btn-sm btn-default" {$view_page_button_attrs}>View</button>
+{END view_page_button}
+</div>
+</div>
+
+{END message_block}
+
+
+
+</div>
+{END container_message}
+
+
+
+
+
+
+
+</div>
+{END container_editpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$editfields_hiddenattr} data-pageid="{$pageid}" data-brick="editfields" class="form-horizontal" role="form">
+
+
+
+			{BEGIN tusrNama_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrNama}" data-fieldname="tusrNama" data-signal-error-for="tusrNama{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrNama}">
+		{BEGIN tusrNama_label}{$label t_user tusrNama}{END tusrNama_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrNama_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrNama">
+		<div class="text-muted" >
+		{$tooltip t_user tusrNama}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrNama_fieldblock}
+
+			{BEGIN tusrPassword_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrPassword}" data-fieldname="tusrPassword" data-signal-error-for="tusrPassword{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrPassword}">
+		{BEGIN tusrPassword_label}{$label t_user tusrPassword}{END tusrPassword_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrPassword_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrPassword">
+		<div class="text-muted" >
+		{$tooltip t_user tusrPassword}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrPassword_fieldblock}
+
+			{BEGIN tusrThakrId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrThakrId}" data-fieldname="tusrThakrId" data-signal-error-for="tusrThakrId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrThakrId}">
+		{BEGIN tusrThakrId_label}{$label t_user tusrThakrId}{END tusrThakrId_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrThakrId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrThakrId">
+		<div class="text-muted" >
+		{$tooltip t_user tusrThakrId}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrThakrId_fieldblock}
+
+			{BEGIN tusrProfil_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrProfil}" data-fieldname="tusrProfil" data-signal-error-for="tusrProfil{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrProfil}">
+		{BEGIN tusrProfil_label}{$label t_user tusrProfil}{END tusrProfil_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrProfil_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrProfil">
+		<div class="text-muted" >
+		{$tooltip t_user tusrProfil}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrProfil_fieldblock}
+
+			{BEGIN tusrPertanyaan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrPertanyaan}" data-fieldname="tusrPertanyaan" data-signal-error-for="tusrPertanyaan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrPertanyaan}">
+		{BEGIN tusrPertanyaan_label}{$label t_user tusrPertanyaan}{END tusrPertanyaan_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrPertanyaan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrPertanyaan">
+		<div class="text-muted" >
+		{$tooltip t_user tusrPertanyaan}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrPertanyaan_fieldblock}
+
+			{BEGIN tusrJawaban_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrJawaban}" data-fieldname="tusrJawaban" data-signal-error-for="tusrJawaban{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrJawaban}">
+		{BEGIN tusrJawaban_label}{$label t_user tusrJawaban}{END tusrJawaban_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrJawaban_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrJawaban">
+		<div class="text-muted" >
+		{$tooltip t_user tusrJawaban}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrJawaban_fieldblock}
+
+			{BEGIN tusrSignature_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrSignature}" data-fieldname="tusrSignature" data-signal-error-for="tusrSignature{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrSignature}">
+		{BEGIN tusrSignature_label}{$label t_user tusrSignature}{END tusrSignature_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrSignature_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrSignature">
+		<div class="text-muted" >
+		{$tooltip t_user tusrSignature}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrSignature_fieldblock}
+
+			{BEGIN tusrAvatar_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrAvatar}" data-fieldname="tusrAvatar" data-signal-error-for="tusrAvatar{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrAvatar}">
+		{BEGIN tusrAvatar_label}{$label t_user tusrAvatar}{END tusrAvatar_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrAvatar_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrAvatar">
+		<div class="text-muted" >
+		{$tooltip t_user tusrAvatar}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrAvatar_fieldblock}
+
+			{BEGIN tusrEmail_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrEmail}" data-fieldname="tusrEmail" data-signal-error-for="tusrEmail{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrEmail}">
+		{BEGIN tusrEmail_label}{$label t_user tusrEmail}{END tusrEmail_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrEmail_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrEmail">
+		<div class="text-muted" >
+		{$tooltip t_user tusrEmail}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrEmail_fieldblock}
+
+			{BEGIN tusrIsTampilBiodata_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrIsTampilBiodata}" data-fieldname="tusrIsTampilBiodata" data-signal-error-for="tusrIsTampilBiodata{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrIsTampilBiodata}">
+		{BEGIN tusrIsTampilBiodata_label}{$label t_user tusrIsTampilBiodata}{END tusrIsTampilBiodata_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrIsTampilBiodata_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrIsTampilBiodata">
+		<div class="text-muted" >
+		{$tooltip t_user tusrIsTampilBiodata}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrIsTampilBiodata_fieldblock}
+
+			{BEGIN tusrNoTelp_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrNoTelp}" data-fieldname="tusrNoTelp" data-signal-error-for="tusrNoTelp{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrNoTelp}">
+		{BEGIN tusrNoTelp_label}{$label t_user tusrNoTelp}{END tusrNoTelp_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrNoTelp_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrNoTelp">
+		<div class="text-muted" >
+		{$tooltip t_user tusrNoTelp}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrNoTelp_fieldblock}
+
+			{BEGIN tusrRefIndex_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrRefIndex}" data-fieldname="tusrRefIndex" data-signal-error-for="tusrRefIndex{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrRefIndex}">
+		{BEGIN tusrRefIndex_label}{$label t_user tusrRefIndex}{END tusrRefIndex_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrRefIndex_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrRefIndex">
+		<div class="text-muted" >
+		{$tooltip t_user tusrRefIndex}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrRefIndex_fieldblock}
+
+			{BEGIN tusrUntId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrUntId}" data-fieldname="tusrUntId" data-signal-error-for="tusrUntId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrUntId}">
+		{BEGIN tusrUntId_label}{$label t_user tusrUntId}{END tusrUntId_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrUntId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrUntId">
+		<div class="text-muted" >
+		{$tooltip t_user tusrUntId}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrUntId_fieldblock}
+
+			{BEGIN tusrIsAgree_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrIsAgree}" data-fieldname="tusrIsAgree" data-signal-error-for="tusrIsAgree{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrIsAgree}">
+		{BEGIN tusrIsAgree_label}{$label t_user tusrIsAgree}{END tusrIsAgree_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrIsAgree_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrIsAgree">
+		<div class="text-muted" >
+		{$tooltip t_user tusrIsAgree}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrIsAgree_fieldblock}
+
+			{BEGIN tusrAgreementDate_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrAgreementDate}" data-fieldname="tusrAgreementDate" data-signal-error-for="tusrAgreementDate{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrAgreementDate}">
+		{BEGIN tusrAgreementDate_label}{$label t_user tusrAgreementDate}{END tusrAgreementDate_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrAgreementDate_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrAgreementDate">
+		<div class="text-muted" >
+		{$tooltip t_user tusrAgreementDate}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrAgreementDate_fieldblock}
+
+			{BEGIN tusrLastAccess_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrLastAccess}" data-fieldname="tusrLastAccess" data-signal-error-for="tusrLastAccess{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrLastAccess}">
+		{BEGIN tusrLastAccess_label}{$label t_user tusrLastAccess}{END tusrLastAccess_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrLastAccess_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrLastAccess">
+		<div class="text-muted" >
+		{$tooltip t_user tusrLastAccess}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrLastAccess_fieldblock}
+
+			{BEGIN tusrIsOnline_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrIsOnline}" data-fieldname="tusrIsOnline" data-signal-error-for="tusrIsOnline{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrIsOnline}">
+		{BEGIN tusrIsOnline_label}{$label t_user tusrIsOnline}{END tusrIsOnline_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrIsOnline_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrIsOnline">
+		<div class="text-muted" >
+		{$tooltip t_user tusrIsOnline}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrIsOnline_fieldblock}
+
+			{BEGIN tusrProdiKode_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_tusrProdiKode}" data-fieldname="tusrProdiKode" data-signal-error-for="tusrProdiKode{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_tusrProdiKode}">
+		{BEGIN tusrProdiKode_label}{$label t_user tusrProdiKode}{END tusrProdiKode_label}
+	</label>
+	<div class="col-md-6" >
+		{$tusrProdiKode_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="tusrProdiKode">
+		<div class="text-muted" >
+		{$tooltip t_user tusrProdiKode}
+		</div>
+	</div>
+</div>
+</div>
+{END tusrProdiKode_fieldblock}
+
+
+</div>
+
+
+
+
+</div>
+{END container_fields}
+
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-3"> 
+
+{BEGIN editbuttons}
+	{BEGIN save_button}
+	<button class="btn btn-primary" {$savebutton_attrs}>Save</button>
+	{END save_button}
+	{BEGIN back_button}
+		<button class="btn btn-default" {$backbutton_attrs}>Back to list</button>
+	{END back_button}
+	{BEGIN close_button}
+	<a href="#" class="btn btn-default" {$closebutton_attrs}>Cancel</a>
+	{END close_button}
+
+{END editbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+
+
+{BEGIN container_leftbuttons_1}
+<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="  text-right col-md-3 "> 
+
+{BEGIN righteditbuttons}
+<div class="btn-group" role="group">
+
+	{BEGIN prev_button}
+	<button class="btn btn-default {$prevbutton_class}" {$prevbutton_attrs}><span class="glyphicon glyphicon-chevron-left"></span></button>
+	{END prev_button}
+	{BEGIN next_button}
+	<button class="btn btn-default  {$nextbutton_class}" {$nextbutton_attrs}><span class="glyphicon glyphicon-chevron-right"></span></button>
+	{END next_button}
+	<div class="btn-group dropup" role="group">
+		<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<ul class="dropdown-menu dropdown-left">
+			{BEGIN reset_button}
+				<li><a href="#" {$resetbutton_attrs}>Reset</a></li>
+			{END reset_button}
+			{BEGIN view_page_button}
+				<li><a href="#" {$view_page_button_attrs}>View</a></li>
+			{END view_page_button}
+		</ul>
+	</div>
+</div>
+{END righteditbuttons}
+
+
+
+</div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

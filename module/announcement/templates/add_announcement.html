@@ -1,0 +1,87 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2> {APPLICATION_MODULE} </h2>
+   <br>
+   <p class="text-muted">Keterangan :</p>
+	<p>Tambah Pengumuman digunakan untuk menambahkan pengumuman, baik pengumuman akademik maupun workshop.
+	</p><br/>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="form_add_announcement" -->        
+         <form class="form-common" method="POST" action="{URL_PROCESS}" enctype="multipart/form-data">
+            <table class="table-form" width="100%">
+               <tr>
+                  <th colspan="2"><strong>Form Tambah Pengumuman</strong></th>
+               </tr>
+               <tr>
+                  <th>Jenis Pengumuman</th>
+                  <td>
+                     <select id="type" name="data[AnnouncementTypeId]">
+                        <!-- patTemplate:tmpl name="announcement_type" type="condition" conditionvar="IS_EMPTY" -->
+                           <!-- patTemplate:sub condition="YES" -->                              
+                              <option value="" />{JENIS_EMPTY_MSG}</option>
+                           <!-- /patTemplate:sub -->
+                           <!-- patTemplate:sub condition="NO" -->
+                              <option value="{JENIS_ID}" />{JENIS_NAMA}</option>
+                           <!-- /patTemplate:sub -->
+                        <!-- /patTemplate:tmpl -->
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <th>Judul</th>
+                  <td><input type="text" name="data[AnnouncementTitle]"></td>
+               </tr>
+               <tr>
+                  <th>Tanggal</th>
+                  <td>{ANNOUNCEMENT_DATE}</td>
+               </tr>
+               <tr>
+<th>File (.jpg, .jpeg, .png, .doc, .docx, .xls, .xlsx, .pdf)</th>
+                  <td><input type="file" name="image_file"></td>
+               </tr>
+               <tr>
+                  <th>Image Alt</th>
+                  <td><input type="text" name="data[AnnouncementImageAlt]"></td>
+               </tr>
+               <tr>
+                  <th>Deskripsi</th>
+                  <td><textarea name="data[AnnouncementContent]" cols="40" rows="10" ></textarea></td>
+               </tr>
+               <tr>
+                  <th>Fakultas</th>
+                  <td>
+                     <!-- patTemplate:tmpl name="fakultas" type="condition" conditionvar="IS_EMPTY" -->
+                        <!-- patTemplate:sub condition="YES" -->
+                           {FAKULTAS_EMPTY_MSG}
+                        <!-- /patTemplate:sub -->
+                        <!-- patTemplate:sub condition="NO" -->
+                           <div><input type="checkbox" name="mArrAnnouncementFakultasId[]" value="{FAK_ID}" /> {FAK_NAMA}</div>
+                        <!-- /patTemplate:sub -->
+                     <!-- /patTemplate:tmpl -->
+                  </td>
+               </tr>
+               <tr>
+                  <th>Tujuan</th>
+                  <td>
+                     <!-- patTemplate:tmpl name="tujuan" type="condition" conditionvar="IS_EMPTY" -->
+                        <!-- patTemplate:sub condition="YES" -->
+                              {TUJUAN_EMPTY_MSG}
+                           <!-- /patTemplate:sub -->
+                           <!-- patTemplate:sub condition="NO" -->
+                              <div><input type="checkbox" name="mArrAnnouncementDestination[]" value="{REF_ID}" /> {REF_NAME}</div>
+                           <!-- /patTemplate:sub -->
+                     <!-- /patTemplate:tmpl -->
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2">
+                     <input type="hidden" name="act" value="DoAddAnnouncement">
+                     <input class="input-disclaimer btn btn-primary" type="submit" name="btnAdd" value="Simpan">
+                     <input class="input-disclaimer btn btn-primary" type="submit" name="btnCancel" value="Batal">
+                  </td>
+               </tr>
+            </table>
+         </form>
+   <!-- /patTemplate:tmpl --> <!-- end of message-->
+   
+<!-- /patTemplate:tmpl --> <!-- end of content-->

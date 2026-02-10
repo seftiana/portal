@@ -1,0 +1,335 @@
+body {
+   font-family: Arial;
+   /*background-color: #C0C0C0;*/
+   font-size: 7.5pt;
+   margin: 0;
+   padding: 0;
+}
+
+@page size-A4 {
+   size:  21.0cm 29.7cm; 
+   margin: 1cm;
+}
+
+p {
+   margin: 0;
+   padding: 0;
+}
+
+#container {
+   margin: 0 auto;
+   padding: 5px;
+   width: 200mm;
+   background-color: #fff;
+   height: 267mm;
+   /*overflow: hidden;*/
+   /*border-bottom: 1px solid #c0c0c0;*/
+}
+
+#header {
+   text-align: center;
+   margin-bottom: 15px;
+}
+
+#header h2, #header h3, #header h4 {
+   margin: 0;
+   padding: 0;
+   font-weight: normal;
+}
+
+#header h2 {
+	margin: 0;
+    padding: 0;
+   font-size: 20pt;
+}
+
+#header h3 {
+	margin: 0;
+   padding: 0;
+   font-size: 16pt;
+}
+
+#header h4 {
+	margin: 0;
+   padding: 0;
+   font-size: 10pt;
+}
+
+#header hr {
+   border: 1px solid #ododod;
+}
+
+#header a {
+	display: block;
+	text-align: left;
+	/*float: left;*/
+	text-decoration: underline;
+	/*display: none;*/
+	z-index: 100;
+}
+
+#header a:hover {
+	text-decoration: none;
+}
+
+#logo_ugm {
+   /*text-align: center;*/
+   margin: 0 auto;
+   width: 45px;
+   height: 45px;
+   display: block;
+}
+
+#header img {
+   width: 45px;
+   height: 45px;
+}
+
+#nomor_transkrip {
+   text-align: center;
+   margin-bottom: 15px;
+}
+
+#nomor_transkrip h1 {
+   margin: 0;
+   padding: 0;
+   font-size: 14pt;
+}
+
+#nomor_transkrip hr {
+   margin: 0 auto;
+   padding: 0;
+   width: 290px;
+   border: 1px solid #ododod;
+}
+
+#info_mhs{
+   margin-bottom: 10px;
+}
+
+#info_mhs table {
+   margin: 0;
+   padding: 0;
+}
+
+#info_mhs th {
+   text-align: left;
+   font-weight: normal;
+}
+
+#info_mhs td {
+   width: 240px;
+}
+
+#table_transkrip{
+   margin-bottom: 10px;
+}
+
+#table_transkrip table {
+   /*border: 1px solid #000;*/
+   font-family: Arial;
+   border: none;
+   border-collapse: collapse;
+   width: 100%;
+}
+
+#table_transkrip th {
+   border: 1px solid #000;   
+   padding: 0 2px;
+}
+
+#table_transkrip td {
+   /*border: 1px solid #000;*/
+   /**/
+   border-left: 1px solid #000;
+   border-right: 1px solid #000;
+   /**/
+
+   text-align: center;
+   font-size: 8pt;
+   padding: 0 2px;
+   vertical-align: top;
+}
+
+#table_transkrip .spacer {
+   border-top: none;
+   border-bottom: none;
+   border-left: 1px solid #000;
+   border-right: 1px solid #000;
+}
+
+#table_transkrip .left {
+   text-align: left;
+   /*width: 200px;*/
+}
+
+#table_transkrip .right {
+   text-align: right;
+   /*width: 200px;*/
+}
+
+#table_transkrip .noborder {
+   text-align: left;
+   border: none;
+}
+
+#table_transkrip .border-left {
+   border: none;
+}
+
+#table_transkrip .border-right {
+   text-align: left;
+   border-top: none;
+   border-left: none;
+   border-bottom: none;
+}
+
+#table_transkrip .colspace {
+   border-top: none;
+}
+
+#table_transkrip .colspace-bottom {
+   border-top: none;
+}
+
+#table_transkrip .colspace-up {
+   border-bottom: none;
+}
+
+#table_transkrip .total_sks {
+   border-top: none;
+   border-bottom: none;
+}
+
+#table_transkrip .index-prestasi {
+   text-align: left;
+   border-top: none;
+   border-left: none;
+   border-bottom: none;
+}
+
+#table_transkrip .no-left {
+   border-left: none;
+}
+
+#table_transkrip .no-right {
+   border-right: none;
+}
+
+#table_transkrip .no-top {
+   border-top: none;
+}
+
+#table_transkrip .top {
+   border-top: 1px solid #000;
+}
+
+#table_transkrip .no-bottom {
+   border-bottom: none;
+}
+
+#table_transkrip .bottom {
+   border-bottom: 1px solid #000;
+}
+
+#table_transkrip .no-border {
+   border: none;
+}
+
+#judul-skripsi {
+   margin-bottom: 10px;
+}
+
+#judul-skripsi table {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+#judul-skripsi th {
+   font-weight: normal;
+   text-align: left;
+   width: 95px;
+   vertical-align: top;
+}
+
+#pembimbing {
+   float: left;
+   width: 380px;
+}
+
+#pembimbing table {
+   border-collapse: collapse;
+} 
+
+#pembimbing th {
+   text-align: left;
+   font-weight: normal;
+   vertical-align: top;
+}
+
+#pembimbing td {
+   vertical-align: top;
+   /*width: 250px;*/
+}
+
+#table_right {
+   float: right;
+}
+
+#table_right table {
+   border-collapse: collapse;
+}
+
+#table_right th {
+   text-align: left;
+   font-weight: normal;
+}
+
+#table_right td {
+   width: 250px;
+}
+
+div.nobreak .hidden {
+   visibility: hidden;
+   display: none;
+}
+
+div.page-break /*.hidden */{
+   visibility: visible;
+   margin: 10px 0px 10px 0px;
+}
+
+/*
+#info_studi {
+   float: right;
+   margin-bottom: 12pt;
+}
+
+#info_studi table {
+   border-collapse: collapse;
+}
+
+#info_studi th {
+   text-align: left;
+   font-weight: normal;
+}
+
+#info_studi td {
+   width: 250px;
+}
+
+#pengesah{
+   clear: both;
+   float: right;
+}
+
+#pengesah table {
+   border-collapse: collapse;
+}
+
+#pengesah th {
+   text-align: left;
+   font-weight: normal;
+   width: 325px;
+}
+*/

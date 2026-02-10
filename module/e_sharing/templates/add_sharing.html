@@ -1,0 +1,36 @@
+<!-- patTemplate:tmpl name="content" -->
+
+<h2>Upload File Baru</h2>
+<form class="form-common" action="{URL_ACTION}" method="post" enctype="multipart/form-data">
+	
+	<!-- patTemplate:link name="error_box" src="error_box" / -->
+	<table class="table-form" width="100%">
+		<tr>
+			<th>Judul</th>
+			<td>
+				<input type="text" name="judul" size="30" value="{FILE_JUDUL}" />
+			</td>
+		</tr>
+		<tr>
+			<th>File</th>
+			<td><input type="file" name="fileUpload"  /><br>
+			Ukuran File Maksimal 2MB 
+		</tr>
+		<tr>
+			<th>Keterangan</th>
+			<td>
+				<textarea cols="30" rows="3" name="keterangan">{FILE_KETERANGAN}</textarea>
+				         <br>
+         [i] <em>miring</em> [/i] [b] <strong>tebal</strong> [/b] <br>
+         Max. 255 karakter
+			</td>
+		</tr>
+		<tr>
+			<th colspan="2">
+				<input type="submit" name="AddSimpan" value="Simpan" class="input-disclaimer btn btn-info" />
+				<input type="submit" name="batal" value="Kembali" class="input-disclaimer btn btn-info" />
+			</th>
+		</tr>
+	</table>
+</form>
+<!-- /patTemplate:tmpl -->

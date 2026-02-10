@@ -1,0 +1,106 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Profil Dosen</h2>
+   <br />
+   <h5>Keterangan :</h5>
+   <p>Profil Dosen berisi data pribadi pengguna portal akademik. Apabila terdapat kesalahan data, anda dapat menghubungi bagian akademik untuk memperbaikinya.
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+            
+   <table width="100%" class="table table-list">
+         <tr> 
+            <th>{LABEL_NIP}</th>
+   <!-- patTemplate:tmpl name="data_profile" type="condition" conditionvar="INFO_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+            <td>{PROFILE_NIP}</td>
+         </tr>
+	 <tr> 
+            <th>Nidn</th>
+            <td>{PROFILE_NIDN}</td>
+         </tr>
+         <tr> 
+            <th>Nama</th>
+            <td>{PROFILE_NAMA}</td>
+         </tr>
+	 <tr> 
+            <th>KTP</th>
+            <td>{PROFILE_KTP}</td>
+         </tr>
+         <tr> 
+            <th>Tempat Tanggal Lahir</th>
+            <td>{PROFILE_TEMPAT_LAHIR},&nbsp;{PROFILE_TANGGAL_LAHIR}</td>
+         </tr>
+	 <tr> 
+            <th>Nama Ibu</th>
+            <td>{PROFILE_NAMA_IBU}</td>
+         </tr>
+	 <tr> 
+            <th>Email</th>
+            <td>{PROFILE_EMAIL}</td>
+         </tr>
+	 <tr> 
+            <th>Alamat</th>
+            <td>{PROFILE_ALAMAT}</td>
+         </tr>
+         <tr> 
+            <th>Agama</th>
+            <td>{PROFILE_AGAMA}</td>
+         </tr>
+         <tr> 
+            <th>Jenis Kelamin</th>
+            <td>{PROFILE_JENIS_KELAMIN}</td>
+         </tr>
+         <!--tr> 
+            <th>Telp. Kantor</th>
+            <td>{PROFILE_TELP_KANTOR}</td>
+         </tr>
+         <tr> 
+            <th>Telp. Rumah</th>
+            <td>{PROFILE_TELP_RUMAH}</td>
+         </tr-->   
+         <tr> 
+            <th>Telp. Selular</th>
+            <td>{PROFILE_TELP_SELULAR}</td>
+         </tr>   
+         <!--tr> 
+            <th>Jabatan Fungsional</th>
+            <td>{PROFILE_JABATAN_FUNGSIONAL}</td>
+         </tr>   
+         <tr> 
+            <th>Ruangan</th>
+            <td>{PROFILE_RUANGAN}</td>
+         </tr-->   
+         <tr> 
+            <th>Status</th>
+            <td>{PROFILE_STATUS}</td>
+         </tr>   
+         <!--tr> 
+            <th>Golongan</th>
+            <td>{PROFILE_GOLONGAN}</td>
+         </tr-->   
+      <!-- /patTemplate:sub --><!--sub:data_user-YES-->
+      <!-- patTemplate:sub condition="NO" -->
+            <td>{PROFILE_NIP}</td>
+         </tr>
+         <tr> 
+            <th>Data Detil</th>
+            <td>Tidak ditemukan...</td>
+         </tr>   
+      <!-- /patTemplate:sub --><!--sub:data_user-NO-->
+      <!-- patTemplate:sub condition="NONE" -->
+         <tr> 
+            <th>Data Detil</th>
+            <td>Tidak ditemukan...</td>
+         </tr>   
+      <!-- /patTemplate:sub --><!--sub:data_user-NO-->
+
+   <!-- /patTemplate:tmpl --><!--data_user-->
+   </table>
+	<div align="center">
+		<form name="frmEdit" action="{URL_EDIT}" method="post">
+		<input class="input-disclaimer btn btn-primary" type="submit" name="btnEdit" value="Ubah">
+		</form>
+	</div>
+   <br/>
+   
+<!-- /patTemplate:tmpl -->

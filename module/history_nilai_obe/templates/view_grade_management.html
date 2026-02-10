@@ -1,0 +1,980 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.hidden{
+	display:none;
+}
+</style>
+<script language="javascript">
+window.onload=jumlah;
+function openWindow(url){
+      WindowObjectReference = window.open(url, "CetakForm", "width=600,height=300,resizable,scrollbars=yes,status=1");
+      //WindowObjectReference.print();
+}
+
+var arrNilai =
+            [
+                {SCORE_JSON}
+            ];
+
+function roundNumber(rnum,rlength){
+	var newnumber=Math.round(rnum*Math.pow(10,rlength))/Math.pow(10,rlength);
+	return newnumber;
+}
+function jumlah(){
+	var inHarianRaw=document.form1.elements["inHarian[]"];
+	var inHarian = inHarianRaw.length !== undefined ? inHarianRaw : [inHarianRaw];
+	
+	var inMandiriRaw=document.form1.elements["inMandiri[]"];
+	var inMandiri=inMandiriRaw.length !== undefined ? inMandiriRaw : [inMandiriRaw];
+	
+	var inKelompokRaw=document.form1.elements["inKelompok[]"];
+	var inKelompok=inKelompokRaw.length !== undefined ? inKelompokRaw : [inKelompokRaw];
+	
+	var inPresentasiRaw=document.form1.elements["inPresentasi[]"];
+	var inPresentasi=inPresentasiRaw.length !== undefined ? inPresentasiRaw : [inPresentasiRaw];
+	
+	var inTerstrukturRaw=document.form1.elements["inTerstruktur[]"];
+	var inTerstruktur=inTerstrukturRaw.length !== undefined ? inTerstrukturRaw : [inTerstrukturRaw];
+	
+	var inTambahanRaw=document.form1.elements["inTambahan[]"];
+	var inTambahan=inTambahanRaw.length !== undefined ? inTambahanRaw : [inTambahanRaw];
+	
+	var inUtsRaw=document.form1.elements["inUts[]"];
+	var inUts=inUtsRaw.length !== undefined ? inUtsRaw : [inUtsRaw];
+	
+	var inUasRaw=document.form1.elements["inUas[]"];
+	var inUas=inUasRaw.length !== undefined ? inUasRaw : [inUasRaw];
+
+	var nilHarianRaw=document.form1.elements["nilHarian[]"];
+	var nilHarian=nilHarianRaw.length !== undefined ? nilHarianRaw : [nilHarianRaw];
+	
+	var nilMandiriRaw=document.form1.elements["nilMandiri[]"];
+	var nilMandiri=nilMandiriRaw.length !== undefined ? nilMandiriRaw : [nilMandiriRaw];
+	
+	var nilKelompokRaw=document.form1.elements["nilKelompok[]"];
+	var nilKelompok=nilKelompokRaw.length !== undefined ? nilKelompokRaw : [nilKelompokRaw];
+	
+	var nilPresentasiRaw=document.form1.elements["nilPresentasi[]"];
+	var nilPresentasi=nilPresentasiRaw.length !== undefined ? nilPresentasiRaw : [nilPresentasiRaw];
+	
+	var nilTerstrukturRaw=document.form1.elements["nilTerstruktur[]"];
+	var nilTerstruktur=nilTerstrukturRaw.length !== undefined ? nilTerstrukturRaw : [nilTerstrukturRaw];
+	
+	var nilTambahanRaw=document.form1.elements["nilTambahan[]"];
+	var nilTambahan=nilTambahanRaw.length !== undefined ? nilTambahanRaw : [nilTambahanRaw];
+	
+	var nilUtsRaw=document.form1.elements["nilUts[]"];
+	var nilUts=nilUtsRaw.length !== undefined ? nilUtsRaw : [nilUtsRaw];
+	
+	var nilUasRaw=document.form1.elements["nilUas[]"];
+	var nilUas=nilUasRaw.length !== undefined ? nilUasRaw : [nilUasRaw];
+	
+	var nilAbsolutRaw=document.form1.elements["nilAbsolut[]"];
+	var nilAbsolut=nilAbsolutRaw.length !== undefined ? nilAbsolutRaw : [nilAbsolutRaw];
+
+	var totalBobot=document.getElementById('totalBobot');
+
+	var bbtHarian=parseFloat(document.getElementById("bobotHarian").value)/100;
+	var bbtMandiri=parseFloat(document.getElementById("bobotMandiri").value)/100;
+	var bbtKelompok=parseFloat(document.getElementById("bobotKelompok").value)/100;
+	var bbtPresentasi=parseFloat(document.getElementById("bobotPresentasi").value)/100;
+	var bbtTerstruktur=parseFloat(document.getElementById("bobotTerstruktur").value)/100;
+	var bbtTambahan=parseFloat(document.getElementById("bobotTambahan").value)/100;
+	var btUts=parseFloat(document.getElementById("bobotUts").value)/100;
+	var bbtUas=parseFloat(document.getElementById("bobotUas").value)/100;
+
+	var bbtHarian1=parseFloat(document.getElementById("bobotHarian1").innerText)/100;
+	var bbtHarian2=parseFloat(document.getElementById("bobotHarian2").innerText)/100;
+	var bbtHarian3=parseFloat(document.getElementById("bobotHarian3").innerText)/100;
+	var bbtHarian4=parseFloat(document.getElementById("bobotHarian4").innerText)/100;
+	var bbtHarian5=parseFloat(document.getElementById("bobotHarian5").innerText)/100;
+	var bbtHarian6=parseFloat(document.getElementById("bobotHarian6").innerText)/100;
+	var bbtMandiri1=parseFloat(document.getElementById("bobotMandiri1").innerText)/100;
+	var bbtMandiri2=parseFloat(document.getElementById("bobotMandiri2").innerText)/100;
+	var bbtMandiri3=parseFloat(document.getElementById("bobotMandiri3").innerText)/100;
+	var bbtMandiri4=parseFloat(document.getElementById("bobotMandiri4").innerText)/100;
+	var bbtMandiri5=parseFloat(document.getElementById("bobotMandiri5").innerText)/100;
+	var bbtMandiri6=parseFloat(document.getElementById("bobotMandiri6").innerText)/100;
+	var bbtKelompok1=parseFloat(document.getElementById("bobotKelompok1").innerText)/100;
+	var bbtKelompok2=parseFloat(document.getElementById("bobotKelompok2").innerText)/100;
+	var bbtKelompok3=parseFloat(document.getElementById("bobotKelompok3").innerText)/100;
+	var bbtKelompok4=parseFloat(document.getElementById("bobotKelompok4").innerText)/100;
+	var bbtKelompok5=parseFloat(document.getElementById("bobotKelompok5").innerText)/100;
+	var bbtKelompok6=parseFloat(document.getElementById("bobotKelompok6").innerText)/100;
+	var bbtPresentasi1=parseFloat(document.getElementById("bobotPresentasi1").innerText)/100;
+	var bbtPresentasi2=parseFloat(document.getElementById("bobotPresentasi2").innerText)/100;
+	var bbtPresentasi3=parseFloat(document.getElementById("bobotPresentasi3").innerText)/100;
+	var bbtPresentasi4=parseFloat(document.getElementById("bobotPresentasi4").innerText)/100;
+	var bbtPresentasi5=parseFloat(document.getElementById("bobotPresentasi5").innerText)/100;
+	var bbtPresentasi6=parseFloat(document.getElementById("bobotPresentasi6").innerText)/100;
+	var bbtTerstruktur1=parseFloat(document.getElementById("bobotTerstruktur1").innerText)/100;
+	var bbtTerstruktur2=parseFloat(document.getElementById("bobotTerstruktur2").innerText)/100;
+	var bbtTerstruktur3=parseFloat(document.getElementById("bobotTerstruktur3").innerText)/100;
+	var bbtTerstruktur4=parseFloat(document.getElementById("bobotTerstruktur4").innerText)/100;
+	var bbtTerstruktur5=parseFloat(document.getElementById("bobotTerstruktur5").innerText)/100;
+	var bbtTerstruktur6=parseFloat(document.getElementById("bobotTerstruktur6").innerText)/100;
+	var bbtTambahan1=parseFloat(document.getElementById("bobotTambahan1").innerText)/100;
+	var bbtTambahan2=parseFloat(document.getElementById("bobotTambahan2").innerText)/100;
+	var bbtTambahan3=parseFloat(document.getElementById("bobotTambahan3").innerText)/100;
+	var bbtTambahan4=parseFloat(document.getElementById("bobotTambahan4").innerText)/100;
+	var bbtTambahan5=parseFloat(document.getElementById("bobotTambahan5").innerText)/100;
+	var bbtTambahan6=parseFloat(document.getElementById("bobotTambahan6").innerText)/100;
+	var btUts1=parseFloat(document.getElementById("bobotUts1").innerText)/100;
+	var btUts2=parseFloat(document.getElementById("bobotUts2").innerText)/100;
+	var btUts3=parseFloat(document.getElementById("bobotUts3").innerText)/100;
+	var btUts4=parseFloat(document.getElementById("bobotUts4").innerText)/100;
+	var btUts5=parseFloat(document.getElementById("bobotUts5").innerText)/100;
+	var btUts6=parseFloat(document.getElementById("bobotUts6").innerText)/100;
+	var bbtUas1=parseFloat(document.getElementById("bobotUas1").innerText)/100;
+	var bbtUas2=parseFloat(document.getElementById("bobotUas2").innerText)/100;
+	var bbtUas3=parseFloat(document.getElementById("bobotUas3").innerText)/100;
+	var bbtUas4=parseFloat(document.getElementById("bobotUas4").innerText)/100;
+	var bbtUas5=parseFloat(document.getElementById("bobotUas5").innerText)/100;
+	var bbtUas6=parseFloat(document.getElementById("bobotUas6").innerText)/100;
+	var bbtCpmk1=parseFloat(document.getElementById("bobotCpmk1").value)/100;
+	var bbtCpmk2=parseFloat(document.getElementById("bobotCpmk2").value)/100;
+	var bbtCpmk3=parseFloat(document.getElementById("bobotCpmk3").value)/100;
+	var bbtCpmk4=parseFloat(document.getElementById("bobotCpmk4").value)/100;
+	var bbtCpmk5=parseFloat(document.getElementById("bobotCpmk5").value)/100;
+	var bbtCpmk6=parseFloat(document.getElementById("bobotCpmk6").value)/100;
+	
+	var inCpmk1Raw=document.form1.elements["inCpmk1[]"];
+	var inCpmk1=inCpmk1Raw.length !== undefined ? inCpmk1Raw : [inCpmk1Raw];
+	
+	var inCpmk2Raw=document.form1.elements["inCpmk2[]"];
+	var inCpmk2=inCpmk2Raw.length !== undefined ? inCpmk2Raw : [inCpmk2Raw];
+	
+	var inCpmk3Raw=document.form1.elements["inCpmk3[]"];
+	var inCpmk3=inCpmk3Raw.length !== undefined ? inCpmk3Raw : [inCpmk3Raw];
+	
+	var inCpmk4Raw=document.form1.elements["inCpmk4[]"];
+	var inCpmk4=inCpmk4Raw.length !== undefined ? inCpmk4Raw : [inCpmk4Raw];
+	
+	var inCpmk5Raw=document.form1.elements["inCpmk5[]"];
+	var inCpmk5=inCpmk5Raw.length !== undefined ? inCpmk5Raw : [inCpmk5Raw];
+	
+	var inCpmk6Raw=document.form1.elements["inCpmk6[]"];
+	var inCpmk6=inCpmk6Raw.length !== undefined ? inCpmk6Raw : [inCpmk6Raw];
+	
+	let nilHarian1 = [];
+	let nilHarian2 = [];
+	let nilHarian3 = [];
+	let nilHarian4 = [];
+	let nilHarian5 = [];
+	let nilHarian6 = [];
+	let nilMandiri1 = [];
+	let nilMandiri2 = [];
+	let nilMandiri3 = [];
+	let nilMandiri4 = [];
+	let nilMandiri5 = [];
+	let nilMandiri6 = [];
+	let nilKelompok1 = [];
+	let nilKelompok2 = [];
+	let nilKelompok3 = [];
+	let nilKelompok4 = [];
+	let nilKelompok5 = [];
+	let nilKelompok6 = [];
+	let nilPresentasi1 = [];
+	let nilPresentasi2 = [];
+	let nilPresentasi3 = [];
+	let nilPresentasi4 = [];
+	let nilPresentasi5 = [];
+	let nilPresentasi6 = [];
+	let nilTerstruktur1 = [];
+	let nilTerstruktur2 = [];
+	let nilTerstruktur3 = [];
+	let nilTerstruktur4 = [];
+	let nilTerstruktur5 = [];
+	let nilTerstruktur6 = [];
+	let nilTambahan1 = [];
+	let nilTambahan2 = [];
+	let nilTambahan3 = [];
+	let nilTambahan4 = [];
+	let nilTambahan5 = [];
+	let nilTambahan6 = [];
+	let nilUts1 = [];
+	let nilUts2 = [];
+	let nilUts3 = [];
+	let nilUts4 = [];
+	let nilUts5 = [];
+	let nilUts6 = [];
+	let nilUas1 = [];
+	let nilUas2 = [];
+	let nilUas3 = [];
+	let nilUas4 = [];
+	let nilUas5 = [];
+	let nilUas6 = [];
+	
+	
+	if(inHarian.length>0){
+		for(var i=0;i<inHarian.length;i++){
+			nilHarian[i].value=roundNumber((inHarian[i].value*bbtHarian),2);
+			nilMandiri[i].value=roundNumber((inMandiri[i].value*bbtMandiri),2);
+			nilKelompok[i].value=roundNumber((inKelompok[i].value*bbtKelompok),2);
+			nilPresentasi[i].value=roundNumber((inPresentasi[i].value*bbtPresentasi),2);
+			nilTerstruktur[i].value=roundNumber((inTerstruktur[i].value*bbtTerstruktur),2);
+			nilTambahan[i].value=roundNumber((inTambahan[i].value*bbtTambahan),2);
+			nilUts[i].value=roundNumber((inUts[i].value*btUts),2);
+			nilUas[i].value=roundNumber((inUas[i].value*bbtUas),2);
+			
+			//perhiutungan obe
+			nilHarian1[i]=roundNumber((inHarian[i].value*bbtHarian1),2);
+			nilHarian2[i]=roundNumber((inHarian[i].value*bbtHarian2),2);
+			nilHarian3[i]=roundNumber((inHarian[i].value*bbtHarian3),2);
+			nilHarian4[i]=roundNumber((inHarian[i].value*bbtHarian4),2);
+			nilHarian5[i]=roundNumber((inHarian[i].value*bbtHarian5),2);
+			nilHarian6[i]=roundNumber((inHarian[i].value*bbtHarian6),2);
+			nilMandiri1[i]=roundNumber((inMandiri[i].value*bbtMandiri1),2);
+			nilMandiri2[i]=roundNumber((inMandiri[i].value*bbtMandiri2),2);
+			nilMandiri3[i]=roundNumber((inMandiri[i].value*bbtMandiri3),2);
+			nilMandiri4[i]=roundNumber((inMandiri[i].value*bbtMandiri4),2);
+			nilMandiri5[i]=roundNumber((inMandiri[i].value*bbtMandiri5),2);
+			nilMandiri6[i]=roundNumber((inMandiri[i].value*bbtMandiri6),2);
+			nilKelompok1[i]=roundNumber((inKelompok[i].value*bbtKelompok1),2);
+			nilKelompok2[i]=roundNumber((inKelompok[i].value*bbtKelompok2),2);
+			nilKelompok3[i]=roundNumber((inKelompok[i].value*bbtKelompok3),2);
+			nilKelompok4[i]=roundNumber((inKelompok[i].value*bbtKelompok4),2);
+			nilKelompok5[i]=roundNumber((inKelompok[i].value*bbtKelompok5),2);
+			nilKelompok6[i]=roundNumber((inKelompok[i].value*bbtKelompok6),2);
+			nilPresentasi1[i]=roundNumber((inPresentasi[i].value*bbtPresentasi1),2);
+			nilPresentasi2[i]=roundNumber((inPresentasi[i].value*bbtPresentasi2),2);
+			nilPresentasi3[i]=roundNumber((inPresentasi[i].value*bbtPresentasi3),2);
+			nilPresentasi4[i]=roundNumber((inPresentasi[i].value*bbtPresentasi4),2);
+			nilPresentasi5[i]=roundNumber((inPresentasi[i].value*bbtPresentasi5),2);
+			nilPresentasi6[i]=roundNumber((inPresentasi[i].value*bbtPresentasi6),2);
+			nilTerstruktur1[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur1),2);
+			nilTerstruktur2[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur2),2);
+			nilTerstruktur3[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur3),2);
+			nilTerstruktur4[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur4),2);
+			nilTerstruktur5[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur5),2);
+			nilTerstruktur6[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur6),2);
+			nilTambahan1[i]=roundNumber((inTambahan[i].value*bbtTambahan1),2);
+			nilTambahan2[i]=roundNumber((inTambahan[i].value*bbtTambahan2),2);
+			nilTambahan3[i]=roundNumber((inTambahan[i].value*bbtTambahan3),2);
+			nilTambahan4[i]=roundNumber((inTambahan[i].value*bbtTambahan4),2);
+			nilTambahan5[i]=roundNumber((inTambahan[i].value*bbtTambahan5),2);
+			nilTambahan6[i]=roundNumber((inTambahan[i].value*bbtTambahan6),2);
+			nilUts1[i]=roundNumber((inUts[i].value*btUts1),2);
+			nilUts2[i]=roundNumber((inUts[i].value*btUts2),2);
+			nilUts3[i]=roundNumber((inUts[i].value*btUts3),2);
+			nilUts4[i]=roundNumber((inUts[i].value*btUts4),2);
+			nilUts5[i]=roundNumber((inUts[i].value*btUts5),2);
+			nilUts6[i]=roundNumber((inUts[i].value*btUts6),2);
+			nilUas1[i]=roundNumber((inUas[i].value*bbtUas1),2);
+			nilUas2[i]=roundNumber((inUas[i].value*bbtUas2),2);
+			nilUas3[i]=roundNumber((inUas[i].value*bbtUas3),2);
+			nilUas4[i]=roundNumber((inUas[i].value*bbtUas4),2);
+			nilUas5[i]=roundNumber((inUas[i].value*bbtUas5),2);
+			nilUas6[i]=roundNumber((inUas[i].value*bbtUas6),2);
+			
+			inCpmk1[i].value=roundNumber(
+				(nilHarian1[i]+nilMandiri1[i]+nilKelompok1[i]+nilPresentasi1[i]+
+				nilTerstruktur1[i]+nilTambahan1[i]+nilUts1[i]+nilUas1[i])/bbtCpmk1,2
+			);
+			inCpmk2[i].value=roundNumber(
+				(nilHarian2[i]+nilMandiri2[i]+nilKelompok2[i]+nilPresentasi2[i]+
+				nilTerstruktur2[i]+nilTambahan2[i]+nilUts2[i]+nilUas2[i])/bbtCpmk2,2
+			);
+			inCpmk3[i].value=roundNumber(
+				(nilHarian3[i]+nilMandiri3[i]+nilKelompok3[i]+nilPresentasi3[i]+
+				nilTerstruktur3[i]+nilTambahan3[i]+nilUts3[i]+nilUas3[i])/bbtCpmk3,2
+			);
+			inCpmk4[i].value=roundNumber(
+				(nilHarian4[i]+nilMandiri4[i]+nilKelompok4[i]+nilPresentasi4[i]+
+				nilTerstruktur4[i]+nilTambahan4[i]+nilUts4[i]+nilUas4[i])/bbtCpmk4,2
+			);
+			inCpmk5[i].value=roundNumber(
+				(nilHarian5[i]+nilMandiri5[i]+nilKelompok5[i]+nilPresentasi5[i]+
+				nilTerstruktur5[i]+nilTambahan5[i]+nilUts5[i]+nilUas5[i])/bbtCpmk5,2
+			);
+			inCpmk6[i].value=roundNumber(
+				(nilHarian6[i]+nilMandiri6[i]+nilKelompok6[i]+nilPresentasi6[i]+
+				nilTerstruktur6[i]+nilTambahan6[i]+nilUts6[i]+nilUas6[i])/bbtCpmk6,2
+			);
+			
+				
+			//perhiutungan obe
+
+		
+			nilAbsolut[i].value=roundNumber(((inHarian[i].value*bbtHarian)
+			+(inMandiri[i].value*bbtMandiri)
+			+(inKelompok[i].value*bbtKelompok)
+			+(inPresentasi[i].value*bbtPresentasi)
+			+(inTerstruktur[i].value*bbtTerstruktur)
+			+(inTambahan[i].value*bbtTambahan)
+			+(inUts[i].value*btUts)
+			+(inUas[i].value*bbtUas)),2);
+
+		}
+	} else {
+		nilHarian.value=roundNumber((inHarian[i].value*bbtHarian),2);
+		nilMandiri.value=roundNumber((inMandiri[i].value*bbtMandiri),2);
+		nilKelompok.value=roundNumber((inKelompok[i].value*bbtKelompok),2);
+		nilPresentasi.value=roundNumber((inPresentasi[i].value*bbtPresentasi),2);
+		nilTerstruktur.value=roundNumber((inTerstruktur[i].value*bbtTerstruktur),2);
+		nilTambahan.value=roundNumber((inTambahan[i].value*bbtTambahan),2);
+		nilUts.value=roundNumber((inUts[i].value*btUts),2);
+		nilUas.value=roundNumber((inUas[i].value*bbtUas),2);
+		
+		//perhiutungan obe
+			nilHarian1[i]=roundNumber((inHarian[i].value*bbtHarian1),2);
+			nilHarian2[i]=roundNumber((inHarian[i].value*bbtHarian2),2);
+			nilHarian3[i]=roundNumber((inHarian[i].value*bbtHarian3),2);
+			nilHarian4[i]=roundNumber((inHarian[i].value*bbtHarian4),2);
+			nilHarian5[i]=roundNumber((inHarian[i].value*bbtHarian5),2);
+			nilHarian6[i]=roundNumber((inHarian[i].value*bbtHarian6),2);
+			nilMandiri1[i]=roundNumber((inMandiri[i].value*bbtMandiri1),2);
+			nilMandiri2[i]=roundNumber((inMandiri[i].value*bbtMandiri2),2);
+			nilMandiri3[i]=roundNumber((inMandiri[i].value*bbtMandiri3),2);
+			nilMandiri4[i]=roundNumber((inMandiri[i].value*bbtMandiri4),2);
+			nilMandiri5[i]=roundNumber((inMandiri[i].value*bbtMandiri5),2);
+			nilMandiri6[i]=roundNumber((inMandiri[i].value*bbtMandiri6),2);
+			nilKelompok1[i]=roundNumber((inKelompok[i].value*bbtKelompok1),2);
+			nilKelompok2[i]=roundNumber((inKelompok[i].value*bbtKelompok2),2);
+			nilKelompok3[i]=roundNumber((inKelompok[i].value*bbtKelompok3),2);
+			nilKelompok4[i]=roundNumber((inKelompok[i].value*bbtKelompok4),2);
+			nilKelompok5[i]=roundNumber((inKelompok[i].value*bbtKelompok5),2);
+			nilKelompok6[i]=roundNumber((inKelompok[i].value*bbtKelompok6),2);
+			nilPresentasi1[i]=roundNumber((inPresentasi[i].value*bbtPresentasi1),2);
+			nilPresentasi2[i]=roundNumber((inPresentasi[i].value*bbtPresentasi2),2);
+			nilPresentasi3[i]=roundNumber((inPresentasi[i].value*bbtPresentasi3),2);
+			nilPresentasi4[i]=roundNumber((inPresentasi[i].value*bbtPresentasi4),2);
+			nilPresentasi5[i]=roundNumber((inPresentasi[i].value*bbtPresentasi5),2);
+			nilPresentasi6[i]=roundNumber((inPresentasi[i].value*bbtPresentasi6),2);
+			nilTerstruktur1[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur1),2);
+			nilTerstruktur2[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur2),2);
+			nilTerstruktur3[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur3),2);
+			nilTerstruktur4[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur4),2);
+			nilTerstruktur5[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur5),2);
+			nilTerstruktur6[i]=roundNumber((inTerstruktur[i].value*bbtTerstruktur6),2);
+			nilTambahan1[i]=roundNumber((inTambahan[i].value*bbtTambahan1),2);
+			nilTambahan2[i]=roundNumber((inTambahan[i].value*bbtTambahan2),2);
+			nilTambahan3[i]=roundNumber((inTambahan[i].value*bbtTambahan3),2);
+			nilTambahan4[i]=roundNumber((inTambahan[i].value*bbtTambahan4),2);
+			nilTambahan5[i]=roundNumber((inTambahan[i].value*bbtTambahan5),2);
+			nilTambahan6[i]=roundNumber((inTambahan[i].value*bbtTambahan6),2);
+			nilUts1[i]=roundNumber((inUts[i].value*btUts1),2);
+			nilUts2[i]=roundNumber((inUts[i].value*btUts2),2);
+			nilUts3[i]=roundNumber((inUts[i].value*btUts3),2);
+			nilUts4[i]=roundNumber((inUts[i].value*btUts4),2);
+			nilUts5[i]=roundNumber((inUts[i].value*btUts5),2);
+			nilUts6[i]=roundNumber((inUts[i].value*btUts6),2);
+			nilUas1[i]=roundNumber((inUas[i].value*bbtUas1),2);
+			nilUas2[i]=roundNumber((inUas[i].value*bbtUas2),2);
+			nilUas3[i]=roundNumber((inUas[i].value*bbtUas3),2);
+			nilUas4[i]=roundNumber((inUas[i].value*bbtUas4),2);
+			nilUas5[i]=roundNumber((inUas[i].value*bbtUas5),2);
+			nilUas6[i]=roundNumber((inUas[i].value*bbtUas6),2);
+			
+			inCpmk1[i].value=roundNumber(
+				(nilHarian1[i]+nilMandiri1[i]+nilKelompok1[i]+nilPresentasi1[i]+
+				nilTerstruktur1[i]+nilTambahan1[i]+nilUts1[i]+nilUas1[i])/bbtCpmk1,2
+			);
+			inCpmk2[i].value=roundNumber(
+				(nilHarian2[i]+nilMandiri2[i]+nilKelompok2[i]+nilPresentasi2[i]+
+				nilTerstruktur2[i]+nilTambahan2[i]+nilUts2[i]+nilUas2[i])/bbtCpmk2,2
+			);
+			inCpmk3[i].value=roundNumber(
+				(nilHarian3[i]+nilMandiri3[i]+nilKelompok3[i]+nilPresentasi3[i]+
+				nilTerstruktur3[i]+nilTambahan3[i]+nilUts3[i]+nilUas3[i])/bbtCpmk3,2
+			);
+			inCpmk4[i].value=roundNumber(
+				(nilHarian4[i]+nilMandiri4[i]+nilKelompok4[i]+nilPresentasi4[i]+
+				nilTerstruktur4[i]+nilTambahan4[i]+nilUts4[i]+nilUas4[i])/bbtCpmk4,2
+			);
+			inCpmk5[i].value=roundNumber(
+				(nilHarian5[i]+nilMandiri5[i]+nilKelompok5[i]+nilPresentasi5[i]+
+				nilTerstruktur5[i]+nilTambahan5[i]+nilUts5[i]+nilUas5[i])/bbtCpmk5,2
+			);
+			inCpmk6[i].value=roundNumber(
+				(nilHarian6[i]+nilMandiri6[i]+nilKelompok6[i]+nilPresentasi6[i]+
+				nilTerstruktur6[i]+nilTambahan6[i]+nilUts6[i]+nilUas6[i])/bbtCpmk6,2
+			);
+			
+				
+			//perhiutungan obe
+
+		nilAbsolut.value=roundNumber(((inHarian[i].value*bbtHarian)
+		+(inMandiri[i].value*bbtMandiri)
+		+(inKelompok[i].value*bbtKelompok)
+		+(inPresentasi[i].value*bbtPresentasi)
+		+(inTerstruktur[i].value*bbtTerstruktur)
+		+(inTambahan[i].value*bbtTambahan)
+		+(inUts[i].value*btUts)
+		+(inUas[i].value*bbtUas)),2);
+
+	}
+
+	totalBobot.value=(bbtHarian+bbtMandiri+bbtKelompok+bbtPresentasi+bbtTerstruktur+bbtTambahan+btUts+bbtUas)*100;
+	Calculate();
+}
+
+function Calculate(){
+	var nilKode = document.form1.elements["nilai[]"];
+	var nilAbsolut = document.form1.elements["nilAbsolut[]"];
+	
+	var bbtCpmk1=parseFloat(document.getElementById("bobotCpmk1").value)/100;
+	var bbtCpmk2=parseFloat(document.getElementById("bobotCpmk2").value)/100;
+	var bbtCpmk3=parseFloat(document.getElementById("bobotCpmk3").value)/100;
+	var bbtCpmk4=parseFloat(document.getElementById("bobotCpmk4").value)/100;
+	var bbtCpmk5=parseFloat(document.getElementById("bobotCpmk5").value)/100;
+	var bbtCpmk6=parseFloat(document.getElementById("bobotCpmk6").value)/100;
+	
+	var nilCpmk1=document.form1.elements["inCpmk1[]"];
+	var nilCpmk2=document.form1.elements["inCpmk2[]"];
+	var nilCpmk3=document.form1.elements["inCpmk3[]"];
+	var nilCpmk4=document.form1.elements["inCpmk4[]"];
+	var nilCpmk5=document.form1.elements["inCpmk5[]"];
+	var nilCpmk6=document.form1.elements["inCpmk6[]"];
+	
+           
+			
+	if(nilAbsolut.length > 0){
+		for(var i = 0; i < nilAbsolut.length; i++){
+			for(var j=0; j<arrNilai.length; j++){
+				
+				if(nilCpmk1[i].value <45){
+					nilCpmk1[i].style.backgroundColor = "red"
+				}else{nilCpmk1[i].style.backgroundColor = "#D3D3D3"}
+				if(nilCpmk2[i].value <45){
+					nilCpmk2[i].style.backgroundColor = "red"
+				}else{nilCpmk2[i].style.backgroundColor = "#D3D3D3"}
+				if(nilCpmk3[i].value <45){
+					nilCpmk3[i].style.backgroundColor = "red"
+				}else{nilCpmk3[i].style.backgroundColor = "#D3D3D3"}
+				if(nilCpmk4[i].value <45){
+					nilCpmk4[i].style.backgroundColor = "red"
+				}else{nilCpmk4[i].style.backgroundColor = "#D3D3D3"}
+				if(nilCpmk5[i].value <45){
+					nilCpmk5[i].style.backgroundColor = "red"
+				}else{nilCpmk5[i].style.backgroundColor = "#D3D3D3"}
+				if(nilCpmk6[i].value <45){
+					nilCpmk6[i].style.backgroundColor = "red"
+				}else{nilCpmk6[i].style.backgroundColor = "#D3D3D3"}
+					
+				if((nilCpmk1[i].value <45 && bbtCpmk1 >0) || (nilCpmk2[i].value <45 && bbtCpmk2 >0) || (nilCpmk3[i].value <45 && bbtCpmk3 >0) || (nilCpmk4[i].value <45 && bbtCpmk4 >0) || (nilCpmk5[i].value <45 && bbtCpmk5 >0) || (nilCpmk6[i].value <45 && bbtCpmk6 >0) ){
+					nilKode[i].value = "E"
+				}else{
+					if(arrNilai[j].min <= nilAbsolut[i].value && arrNilai[j].max >= nilAbsolut[i].value && nilAbsolut[i].value != 0.0){
+						nilKode[i].value = arrNilai[j].score
+					}
+				}
+			}
+		}
+	}else{
+		for(var j=0; j<arrNilai.length; j++){
+			if(arrNilai[j].min <= nilAbsolut.value && arrNilai[j].max >= nilAbsolut.value && nilAbsolut.value != 0.0){
+				nilKode.value = arrNilai[j].score
+			}
+		}
+	}
+}
+
+function checkNilai(){
+	var nilAbsolut=window.document.form1.elements["nilAbsolut[]"];
+	var nilai=window.document.form1.elements["nilai[]"]; 
+	var valid=true;
+
+	if(nilAbsolut.length>0){
+		for(var n=0;n<nilAbsolut.length;n++){
+			if(nilAbsolut[n].value > 100 || nilAbsolut[n].value =="NaN"){
+				alert("ada nilai yang melebihi 100 atau ada kesalahan dalam format nilainya");
+				nilAbsolut[n].focus();
+				valid=false;
+				break;
+			}
+		}
+	}
+
+
+	if(typeof nilai[0] !== 'undefined' && nilai[0].nodeName === 'SELECT'){
+		// 1 select tag
+	   if(nilai.length>0){
+		  for(var i=0;i<nilai.length;i++){
+			 if(nilai[i].value==""){
+			 alert("Nilai Relatif tidak boleh kosong, jika belum ada nilainya harus di isi 'T'");
+			 valid=false;
+			 break;
+			 }
+		  }
+	   }
+	}else{
+		 if(nilai.value.replace(/[\t\n\r]+/g,'')==""){
+			alert("Nilai Relatif tidak boleh kosong, jika belum ada nilainya harus di isi 'T'");
+			valid=false;
+		 }
+	}
+
+	var totalBobotEl = document.getElementById('totalBobot');
+	var totalBobot = Math.round(parseFloat(totalBobotEl.value) * 100) / 100;
+	if(totalBobot != 100){
+	  if(totalBobot < 100){
+		alert("Bobot nilai kurang dari 100%");
+	  } else if(totalBobot > 100){
+		alert("Bobot nilai melebihi 100%");
+	  } else {
+		alert("Bobot tidak ditemukan!");
+	  }
+	  valid=false;
+	}
+
+	return valid;
+}
+</script>
+
+<h2>Histori Input Nilai OBE</h2> 
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   <form name="form1" method="post" action="{URL_PROCESS}"> 
+		<input type="hidden" name="action" value="viewMatKulDiampuFromNilai">
+         <input type="hidden" name="kodeProdi" value="{KODE_PRODI}">
+         <input type="hidden" name="sia" value="{SIA}">
+         <input type="hidden" name="smt" value="{SMT}">
+         <input type="hidden" name="kls" value="{KLS}">
+   <table width="100%" class="table-list">
+      <tr>
+         <th width="15%">MataKuliah</th>
+         <td>{KELAS}</td>
+      </tr>
+      <tr>
+         <th>Kelas [Semester]</th>
+         <td>{MATAKULIAH} [{SEMESTER}]</td>
+      </tr>
+	  <!-- patTemplate:tmpl name="nilai_bobot_visible" type="condition" conditionvar="READONLY" -->
+      <!-- patTemplate:sub condition="NO" -->
+	  <!-- patTemplate:tmpl name="nilai_bobot" -->
+	  <tr>
+         <th>Keterangan</th>
+         <td> <small>
+			<div class="{DISPLAY_CPMK1}"><strong>Sub CPMK1</strong> : {NAMA_CPMK1}<br></div>
+			<div class="{DISPLAY_CPMK2}"><strong>Sub CPMK2</strong> : {NAMA_CPMK2}<br></div>
+			<div class="{DISPLAY_CPMK3}"><strong>Sub CPMK3</strong> : {NAMA_CPMK3}<br></div>
+			<div class="{DISPLAY_CPMK4}"><strong>Sub CPMK4</strong> : {NAMA_CPMK4}<br></div>
+			<div class="{DISPLAY_CPMK5}"><strong>Sub CPMK5</strong> : {NAMA_CPMK5}<br></div>
+			<div class="{DISPLAY_CPMK6}"><strong>Sub CPMK6</strong> : {NAMA_CPMK6}<br></div>
+			 </small>
+		 </td>
+      </tr>
+	  <tr>
+		<td colspan="2" align="center">
+			<table border="1">
+				<tr>
+					<td align="center">Sub CPMK</td>
+					<td class="">{LABEL_KOMPONEN_NILAI_SATU}</td>
+					<td class="">{LABEL_KOMPONEN_NILAI_DUA}</td>
+					<td class="">{LABEL_KOMPONEN_NILAI_LIMA}</td>
+					<td class="">{LABEL_KOMPONEN_NILAI_ENAM}</td>
+					<td class="">{LABEL_KOMPONEN_NILAI_TIGA}</td>
+					<td class="">{LABEL_KOMPONEN_NILAI_EMPAT}</td>
+					<td class="">{LABEL_KOMPONEN_NILAI_UTS}</td>
+					<td class="">{LABEL_KOMPONEN_NILAI_UAS}</td>
+				</tr>
+				<tr class="{DISPLAY_CPMK1}">
+					<td align="center">1 ({BOBOTCPMK1}%)<input name="bobotCpmk1" type="hidden" id="bobotCpmk1" value="{BOBOTCPMK1}" size="5" onkeyup="Javascript:jumlah();" /></td>
+					<td align="center" class="{DISPLAY_HARIAN_}"><label id="bobotHarian1">{BOBOT_HARIAN1}</label><!--input name="bobotHarian1" type="hidden" id="bobotHarian1" value="{BOBOT_HARIAN1}" size="5" onkeyup="Javascript:jumlah();"/--> %</td>
+					<td align="center" class="{DISPLAY_MANDIRI_}"><label id="bobotMandiri1">{BOBOT_MANDIRI1}</label><!--input name="bobotMandiri1" type="hidden" id="bobotMandiri1" value="{BOBOT_MANDIRI1}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_KELOMPOK_}"><label id="bobotKelompok1">{BOBOT_KELOMPOK1}</label><!--input name="bobotKelompok1" type="hidden" id="bobotKelompok1" value="{BOBOT_KELOMPOK1}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_PRESENTASI_}"><label id="bobotPresentasi1">{BOBOT_PRESENTASI1}</label></label><!--input name="bobotPresentasi1" type="hidden" id="bobotPresentasi1" value="{BOBOT_PRESENTASI1}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TERSTRUKTUR_}"><label id="bobotTerstruktur1">{BOBOT_TERSTRUKTUR1}</label><!--input name="bobotTerstruktur1" type="hidden" id="bobotTerstruktur1" value="{BOBOT_TERSTRUKTUR1}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TAMBAHAN_}"><label id="bobotTambahan1">{BOBOT_TAMBAHAN1}</label><!--input name="bobotTambahan1" type="hidden" id="bobotTambahan1" value="{BOBOT_TAMBAHAN1}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UTS_}"><label id="bobotUts1">{BOBOT_UTS1}</label><!--input name="bobotUts1" type="hidden" id="bobotUts1" value="{BOBOT_UTS1}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UAS_}"><label id="bobotUas1">{BOBOT_UAS1}</label><!--input name="bobotUas1" type="hidden" id="bobotUas1" value="{BOBOT_UAS1}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+				</tr>
+				<tr class="{DISPLAY_CPMK2}">
+					<td align="center">2 ({BOBOTCPMK2}%)<input name="bobotCpmk2" type="hidden" id="bobotCpmk2" value="{BOBOTCPMK2}" size="5" onkeyup="Javascript:jumlah();" /></td>
+					<td align="center" class="{DISPLAY_HARIAN_}"><label id="bobotHarian2">{BOBOT_HARIAN2}</label><!--input name="bobotHarian2" type="hidden" id="bobotHarian2" value="{BOBOT_HARIAN2}" size="5" onkeyup="Javascript:jumlah();"/--> %</td>
+					<td align="center" class="{DISPLAY_MANDIRI_}"><label id="bobotMandiri2">{BOBOT_MANDIRI2}</label><!--input name="bobotMandiri2" type="hidden" id="bobotMandiri2" value="{BOBOT_MANDIRI2}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_KELOMPOK_}"><label id="bobotKelompok2">{BOBOT_KELOMPOK2}</label><!--input name="bobotKelompok2" type="hidden" id="bobotKelompok2" value="{BOBOT_KELOMPOK2}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_PRESENTASI_}"><label id="bobotPresentasi2">{BOBOT_PRESENTASI2}</label><!--input name="bobotPresentasi2" type="hidden" id="bobotPresentasi2" value="{BOBOT_PRESENTASI2}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TERSTRUKTUR_}"><label id="bobotTerstruktur2">{BOBOT_TERSTRUKTUR2}</label><!--input name="bobotTerstruktur2" type="hidden" id="bobotTerstruktur2" value="{BOBOT_TERSTRUKTUR2}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TAMBAHAN_}"><label id="bobotTambahan2">{BOBOT_TAMBAHAN2}</label><!--input name="bobotTambahan2" type="hidden" id="bobotTambahan2" value="{BOBOT_TAMBAHAN2}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UTS_}"><label id="bobotUts2">{BOBOT_UTS2}</label><!--input name="bobotUts2" type="hidden" id="bobotUts2" value="{BOBOT_UTS2}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UAS_}"><label id="bobotUas2">{BOBOT_UAS2}</label><!--input name="bobotUas2" type="hidden" id="bobotUas2" value="{BOBOT_UAS2}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+				</tr>
+				<tr class="{DISPLAY_CPMK3}">
+					<td align="center">3 ({BOBOTCPMK3}%)<input name="bobotCpmk3" type="hidden" id="bobotCpmk3" value="{BOBOTCPMK3}" size="5" onkeyup="Javascript:jumlah();" /></td>
+					<td align="center" class="{DISPLAY_HARIAN_}"><label id="bobotHarian3">{BOBOT_HARIAN3}</label><!--input name="bobotHarian3" type="hidden" id="bobotHarian3" value="{BOBOT_HARIAN3}" size="5" onkeyup="Javascript:jumlah();"/--> %</td>
+					<td align="center" class="{DISPLAY_MANDIRI_}"><label id="bobotMandiri3">{BOBOT_MANDIRI3}</label><!--input name="bobotMandiri3" type="hidden" id="bobotMandiri3" value="{BOBOT_MANDIRI3}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_KELOMPOK_}"><label id="bobotKelompok3">{BOBOT_KELOMPOK3}</label><!--input name="bobotKelompok3" type="hidden" id="bobotKelompok3" value="{BOBOT_KELOMPOK3}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_PRESENTASI_}"><label id="bobotPresentasi3">{BOBOT_PRESENTASI3}</label><!--input name="bobotPresentasi3" type="hidden" id="bobotPresentasi3" value="{BOBOT_PRESENTASI3}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TERSTRUKTUR_}"><label id="bobotTerstruktur3">{BOBOT_TERSTRUKTUR3}</label><!--input name="bobotTerstruktur3" type="hidden" id="bobotTerstruktur3" value="{BOBOT_TERSTRUKTUR3}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TAMBAHAN_}"><label id="bobotTambahan3">{BOBOT_TAMBAHAN3}</label><!--input name="bobotTambahan3" type="hidden" id="bobotTambahan3" value="{BOBOT_TAMBAHAN3}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UTS_}"><label id="bobotUts3">{BOBOT_UTS3}</label><!--input name="bobotUts3" type="hidden" id="bobotUts3" value="{BOBOT_UTS3}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UAS_}"><label id="bobotUas3">{BOBOT_UAS3}</label><!--input name="bobotUas3" type="hidden" id="bobotUas3" value="{BOBOT_UAS3}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+				</tr>
+				<tr class="{DISPLAY_CPMK4}">
+					<td align="center">4 ({BOBOTCPMK4}%)<input name="bobotCpmk4" type="hidden" id="bobotCpmk4" value="{BOBOTCPMK4}" size="5" onkeyup="Javascript:jumlah();" /></td>
+					<td align="center" class="{DISPLAY_HARIAN_}"><label id="bobotHarian4">{BOBOT_HARIAN4}</label><!--input name="bobotHarian4" type="hidden" id="bobotHarian4" value="{BOBOT_HARIAN4}" size="5" onkeyup="Javascript:jumlah();"/--> %</td>
+					<td align="center" class="{DISPLAY_MANDIRI_}"><label id="bobotMandiri4">{BOBOT_MANDIRI4}</label><!--input name="bobotMandiri4" type="hidden" id="bobotMandiri4" value="{BOBOT_MANDIRI4}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_KELOMPOK_}"><label id="bobotKelompok4">{BOBOT_KELOMPOK4}</label><!--input name="bobotKelompok4" type="hidden" id="bobotKelompok4" value="{BOBOT_KELOMPOK4}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_PRESENTASI_}"><label id="bobotPresentasi4">{BOBOT_PRESENTASI4}</label><!--input name="bobotPresentasi4" type="hidden" id="bobotPresentasi4" value="{BOBOT_PRESENTASI4}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TERSTRUKTUR_}"><label id="bobotTerstruktur4">{BOBOT_TERSTRUKTUR4}</label><!--input name="bobotTerstruktur4" type="hidden" id="bobotTerstruktur4" value="{BOBOT_TERSTRUKTUR4}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TAMBAHAN_}"><label id="bobotTambahan4">{BOBOT_TAMBAHAN4}</label><!--input name="bobotTambahan4" type="hidden" id="bobotTambahan4" value="{BOBOT_TAMBAHAN4}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UTS_}"><label id="bobotUts4">{BOBOT_UTS4}</label><!--input name="bobotUts4" type="hidden" id="bobotUts4" value="{BOBOT_UTS4}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UAS_}"><label id="bobotUas4">{BOBOT_UAS4}</label><!--input name="bobotUas4" type="hidden" id="bobotUas4" value="{BOBOT_UAS4}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+				</tr>
+				<tr class="{DISPLAY_CPMK5}">
+					<td align="center">5 ({BOBOTCPMK5}%)<input name="bobotCpmk5" type="hidden" id="bobotCpmk5" value="{BOBOTCPMK5}" size="5" onkeyup="Javascript:jumlah();" /></td>
+					<td align="center" class="{DISPLAY_HARIAN_}"><label id="bobotHarian5">{BOBOT_HARIAN5}</label><!--input name="bobotHarian5" type="hidden" id="bobotHarian5" value="{BOBOT_HARIAN5}" size="5" onkeyup="Javascript:jumlah();"/--> %</td>
+					<td align="center" class="{DISPLAY_MANDIRI_}"><label id="bobotMandiri5">{BOBOT_MANDIRI5}</label><!--input name="bobotMandiri5" type="hidden" id="bobotMandiri5" value="{BOBOT_MANDIRI5}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_KELOMPOK_}"><label id="bobotKelompok5">{BOBOT_KELOMPOK5}</label><!--input name="bobotKelompok5" type="hidden" id="bobotKelompok5" value="{BOBOT_KELOMPOK5}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_PRESENTASI_}"><label id="bobotPresentasi5">{BOBOT_PRESENTASI5}</label><!--input name="bobotPresentasi5" type="hidden" id="bobotPresentasi5" value="{BOBOT_PRESENTASI5}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TERSTRUKTUR_}"><label id="bobotTerstruktur5">{BOBOT_TERSTRUKTUR5}</label><!--input name="bobotTerstruktur5" type="hidden" id="bobotTerstruktur5" value="{BOBOT_TERSTRUKTUR5}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TAMBAHAN_}"><label id="bobotTambahan5">{BOBOT_TAMBAHAN5}</label><!--input name="bobotTambahan5" type="hidden" id="bobotTambahan5" value="{BOBOT_TAMBAHAN5}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UTS_}"><label id="bobotUts5">{BOBOT_UTS5}</label><!--input name="bobotUts5" type="hidden" id="bobotUts5" value="{BOBOT_UTS5}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UAS_}"><label id="bobotUas5">{BOBOT_UAS5}</label><!--input name="bobotUas5" type="hidden" id="bobotUas5" value="{BOBOT_UAS5}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+				</tr>
+				<tr class="{DISPLAY_CPMK6}">
+					<td align="center">6 ({BOBOTCPMK6}%)<input name="bobotCpmk6" type="hidden" id="bobotCpmk6" value="{BOBOTCPMK6}" size="5" onkeyup="Javascript:jumlah();" /></td>
+					<td align="center" class="{DISPLAY_HARIAN_}"><label id="bobotHarian6">{BOBOT_HARIAN6}</label><!--input name="bobotHarian6" type="hidden" id="bobotHarian6" value="{BOBOT_HARIAN6}" size="5" onkeyup="Javascript:jumlah();"/--> %</td>
+					<td align="center" class="{DISPLAY_MANDIRI_}"><label id="bobotMandiri6">{BOBOT_MANDIRI6}</label><!--input name="bobotMandiri6" type="hidden" id="bobotMandiri6" value="{BOBOT_MANDIRI6}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_KELOMPOK_}"><label id="bobotKelompok6">{BOBOT_KELOMPOK6}</label><!--input name="bobotKelompok6" type="hidden" id="bobotKelompok6" value="{BOBOT_KELOMPOK6}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_PRESENTASI_}"><label id="bobotPresentasi6">{BOBOT_PRESENTASI6}</label><!--input name="bobotPresentasi6" type="hidden" id="bobotPresentasi6" value="{BOBOT_PRESENTASI6}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TERSTRUKTUR_}"><label id="bobotTerstruktur6">{BOBOT_TERSTRUKTUR6}</label><!--input name="bobotTerstruktur6" type="hidden" id="bobotTerstruktur6" value="{BOBOT_TERSTRUKTUR6}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_TAMBAHAN_}"><label id="bobotTambahan6">{BOBOT_TAMBAHAN6}</label><!--input name="bobotTambahan6" type="hidden" id="bobotTambahan6" value="{BOBOT_TAMBAHAN6}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UTS_}"><label id="bobotUts6">{BOBOT_UTS6}</label><!--input name="bobotUts6" type="hidden" id="bobotUts6" value="{BOBOT_UTS5}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+					<td align="center" class="{DISPLAY_UAS_}"><label id="bobotUas6">{BOBOT_UAS6}</label><!--input name="bobotUas6" type="hidden" id="bobotUas6" value="{BOBOT_UAS6}" size="5" onkeyup="Javascript:jumlah();" /--> %</td>
+				</tr>
+				
+				<tr >
+					<td align="center" style="background-color:#D3D3D3;">Total</td>
+					<td align="center" style="background-color:#D3D3D3;" class="{DISPLAY_HARIAN_}">{BOBOT_HARIAN}<input name="bobotHarian" type="hidden" id="bobotHarian" value="{BOBOT_HARIAN}" size="5" maxlength="5" onkeyup="Javascript:jumlah();" disabled /> %</td>
+					<td align="center" style="background-color:#D3D3D3;" class="{DISPLAY_MANDIRI_}">{BOBOT_MANDIRI}<input name="bobotMandiri" type="hidden" id="bobotMandiri" value="{BOBOT_MANDIRI}" size="5" maxlength="5" onkeyup="Javascript:jumlah();" disabled /> %</td>
+					<td align="center" style="background-color:#D3D3D3;" class="{DISPLAY_KELOMPOK_}">{BOBOT_KELOMPOK}<input name="bobotKelompok" type="hidden" id="bobotKelompok" value="{BOBOT_KELOMPOK}" size="5" maxlength="5" onkeyup="Javascript:jumlah();" disabled /> %</td>
+					<td align="center" style="background-color:#D3D3D3;" class="{DISPLAY_PRESENTASI_}">{BOBOT_PRESENTASI}<input name="bobotPresentasi" type="hidden" id="bobotPresentasi" value="{BOBOT_PRESENTASI}" size="5" maxlength="5" onkeyup="Javascript:jumlah();" disabled /> %</td>
+					<td align="center" style="background-color:#D3D3D3;" class="{DISPLAY_TERSTRUKTUR_}">{BOBOT_TERSTRUKTUR}<input name="bobotTerstruktur" type="hidden" id="bobotTerstruktur" value="{BOBOT_TERSTRUKTUR}" size="5" maxlength="5" onkeyup="Javascript:jumlah();" disabled /> %</td>
+					<td align="center" style="background-color:#D3D3D3;" class="{DISPLAY_TAMBAHAN_}">{BOBOT_TAMBAHAN}<input name="bobotTambahan" type="hidden" id="bobotTambahan" value="{BOBOT_TAMBAHAN}" size="5" maxlength="5" onkeyup="Javascript:jumlah();" disabled /> %</td>
+					<td align="center" style="background-color:#D3D3D3;" class="{DISPLAY_UTS_}">{BOBOT_UTS}<input name="bobotUts" type="hidden" id="bobotUts" value="{BOBOT_UTS}" size="5" maxlength="5" onkeyup="Javascript:jumlah();" disabled /> %</td>
+					<td align="center" style="background-color:#D3D3D3;" class="{DISPLAY_UAS_}">{BOBOT_UAS}<input name="bobotUas" type="hidden" id="bobotUas" value="{BOBOT_UAS}" size="5" maxlength="5" onkeyup="Javascript:jumlah();" disabled /> %
+					<input name="totalBobot" type="hidden" id="totalBobot" value="{BOBOT_TOTAL}" size="5" maxlength="5" onload="Javascript:jumlah();" readonly /></td>
+				</tr>
+			</table>
+		</td>
+	  </tr>
+	  <!-- /patTemplate:tmpl -->
+	  <!-- /patTemplate:sub -->
+	  <!-- /patTemplate:tmpl -->
+   </table>
+   
+    Total data : {TOTAL} <br>
+
+	Halaman : {PAGE} dari {HALAMAN}<br>
+	<!-- patTemplate:tmpl name="link_halaman" -->
+		{NOMOR_HALAMAN}
+	<!-- /patTemplate:tmpl -->
+	<br><br>
+	<input type="hidden" value="{PAGE}" name="no_page" >
+	<input type="hidden" value="{HALAMAN}" name="total_halaman" >
+   {NEXT}
+   
+   <!-- <table width="240" class="table-list">
+      <tr>
+        <td ><h3>Metode Penilaian</h3></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><select type="checkbox" name="cara_penilaian" id="cara_penilaian"> -->
+		<!-- patTemplate:tmpl name="cara_penilaian" -->
+		<!--<option value="{ID}" {IS_SELECT}>{NAMA}</option> -->
+		<!-- /patTemplate:tmpl -->
+      <!--  </select> -->
+      <!--  </td> -->
+       <!-- <td></td> -->
+     <!-- </tr> -->
+   <!-- </table> -->
+   <!-- patTemplate:tmpl name="nilai" type="condition" conditionvar="NILAI_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+      <div style="overflow:auto;">
+      <table class="table-common" width="100%">
+         <tr>  
+            <th rowspan="2">{LABEL_NIM}</th>
+            <th rowspan="2">Nama</th>
+            <th colspan="{JUMLAH_DITAMPILKAN}">Nilai Asal</th>
+            <th colspan="{JUMLAH_DITAMPILKAN_CPMK}">Sub CPMK</th>
+            <th rowspan="2">Absolut</th>
+            <th rowspan="2">Relatif<font color="red">*</font></th>
+         </tr>
+         <tr>
+            <th width="1%" class="{DISPLAY_HARIAN}">{LABEL_KOMPONEN_NILAI_SATU}</th>
+            <th width="1%" class="{DISPLAY_MANDIRI}">{LABEL_KOMPONEN_NILAI_DUA}</th>
+			<th width="1%" class="{DISPLAY_KELOMPOK}">{LABEL_KOMPONEN_NILAI_LIMA}</th>
+			<th width="1%" class="{DISPLAY_PRESENTASI}">{LABEL_KOMPONEN_NILAI_ENAM}</th>
+            <th width="1%" class="{DISPLAY_TERSTRUKTUR}">{LABEL_KOMPONEN_NILAI_TIGA}</th>
+            <th width="1%" class="{DISPLAY_TAMBAHAN}">{LABEL_KOMPONEN_NILAI_EMPAT}</th>
+			<th width="1%" class="{DISPLAY_UTS}">{LABEL_KOMPONEN_NILAI_UTS}</th>
+            <th width="1%" class="{DISPLAY_UAS}">{LABEL_KOMPONEN_NILAI_UAS}</th>
+			
+            <th width="1%" class="{DISPLAY_CPMK1}">1</th>
+            <th width="1%" class="{DISPLAY_CPMK2}">2</th>
+            <th width="1%" class="{DISPLAY_CPMK3}">3</th>
+            <th width="1%" class="{DISPLAY_CPMK4}">4</th>
+            <th width="1%" class="{DISPLAY_CPMK5}">5</th>
+            <th width="1%" class="{DISPLAY_CPMK6}">6</th>
+         </tr>
+         
+            <!-- patTemplate:tmpl name="nilai_access" type="condition" conditionvar="READONLY" -->        
+               <!-- patTemplate:sub condition="YES" -->
+			    <!-- patTemplate:tmpl name="nilai_access_item_yes" type="condition" conditionvar="ODDEVEN" -->
+                     <!-- patTemplate:sub condition="ODD" -->
+                        <!-- patTemplate:tmpl name="nilai_access_item_yes_ok" -->             
+                        <tr>
+                              
+							<td>{NILAI_NIF}  </td>
+							<td>{NILAI_NAMA}<!--a href="#" onclick="openWindow('{NILAI_URL_DETAIL}')">{NILAI_NAMA} </a--></td>
+						 
+							<!-- patTemplate:tmpl name="nilai_dpna_noedit" -->
+							<td class="{DISPLAY_HARIAN}">{KRSDPNSHARIANASAL}</td>
+							<td class="{DISPLAY_MANDIRI}">{KRSDPNAMANDIRIASAL}</td>
+							<td class="{DISPLAY_KELOMPOK}">{KRSDPNAKELOMPOKASAL}</td>
+							<td class="{DISPLAY_PRESENTASI}">{KRSDPNAPRESENTASIASAL}</td>
+							<td class="{DISPLAY_TERSTRUKTUR}">{KRSDPNATERSTRUKTURASAL}</td>
+							<td class="{DISPLAY_TAMBAHAN}">{KRSDPNATAMBAHANASAL}</td>
+							<td class="{DISPLAY_UTS}">{KRSDPNSUTSASAL}</td>
+							<td class="{DISPLAY_UAS}">{KRSDPNAUASASAL}</td>          
+
+							<td class="{DISPLAY_CPMK1}">1</td>
+							<td class="{DISPLAY_CPMK2}">2</td>
+							<td class="{DISPLAY_CPMK3}">3</td>
+							<td class="{DISPLAY_CPMK4}">4</td>
+							<td class="{DISPLAY_CPMK5}">5</td>
+							<td class="{DISPLAY_CPMK6}">6</td>
+							
+							<td>{KRSDPNSABSOLUT}</td>
+                           
+							<!-- /patTemplate:tmpl -->
+							<td>{NILAI_NILAI}</td>
+						 
+						</tr>
+                       <!-- /patTemplate:tmpl -->
+				  <!-- /patTemplate:sub -->
+				  <!-- patTemplate:sub condition="EVEN" -->
+                        <!-- patTemplate:tmpl name="nilai_access_item_yes_ok" -->             
+                        <tr>
+							<td>{NILAI_NIF}</td>                          
+							<td>{NILAI_NAMA}</td>
+						 
+							<!-- patTemplate:tmpl name="nilai_dpna_noedit" -->
+							<td class="{DISPLAY_HARIAN}">{KRSDPNSHARIANASAL}</td>
+							<td class="{DISPLAY_MANDIRI}">{KRSDPNAMANDIRIASAL}</td>
+							<td class="{DISPLAY_KELOMPOK}">{KRSDPNAKELOMPOKASAL}</td>
+							<td class="{DISPLAY_PRESENTASI}">{KRSDPNAPRESENTASIASAL}</td>
+							<td class="{DISPLAY_TERSTRUKTUR}">{KRSDPNATERSTRUKTURASAL}</td>
+							<td class="{DISPLAY_TAMBAHAN}">{KRSDPNATAMBAHANASAL}</td>
+							<td class="{DISPLAY_UTS}">{KRSDPNSUTSASAL}</td>
+							<td class="{DISPLAY_UAS}">{KRSDPNAUASASAL}</td>          
+
+							<td class="{DISPLAY_CPMK1}">{KRSDPNACPMKASAL1}</td>
+							<td class="{DISPLAY_CPMK2}">{KRSDPNACPMKASAL2}</td>
+							<td class="{DISPLAY_CPMK3}">{KRSDPNACPMKASAL3}</td>
+							<td class="{DISPLAY_CPMK4}">{KRSDPNACPMKASAL4}</td>
+							<td class="{DISPLAY_CPMK5}">{KRSDPNACPMKASAL5}</td>
+							<td class="{DISPLAY_CPMK6}">{KRSDPNACPMKASAL6}</td>
+							
+							<td>{KRSDPNSABSOLUT}</td>
+                           
+							<!-- /patTemplate:tmpl -->
+							<td>{NILAI_NILAI}</td>						 
+						
+						</tr>
+                       <!-- /patTemplate:tmpl -->
+				  <!-- /patTemplate:sub -->
+                <!-- /patTemplate:tmpl -->
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="NO" -->
+                  <!-- patTemplate:tmpl name="nilai_access_item_no" type="condition" conditionvar="ODDEVEN" -->
+                     <!-- patTemplate:sub condition="ODD" -->   
+               
+                        <tr>
+							<td align="center" {NILAI_STYLE_LIGHT}>
+                              <!--<input type="checkbox" name="cek[krsdtId][{NILAI_URUT}]" {IS_CHECKED} value="{KRSDT_ID}"/>-->
+							  {NILAI_NIF} 
+							  <input type="hidden" name="cek[krsdtId][{NILAI_URUT}]" {IS_CHECKED} value="{KRSDT_ID}"/>
+							</td>
+							<td {NILAI_STYLE_LIGHT}>{NILAI_NAMA}<!--a href="#" onclick="openWindow('{NILAI_URL_DETAIL}')">{NILAI_NAMA} </a--></td>
+							<!-- patTemplate:tmpl name="nilai_dpna" -->
+							<td align="center" class="{DISPLAY_HARIAN}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inHarian[]" id="inHarian[]" value="{KRSDPNSHARIANASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilHarian[]" id="nilHarian[]" value="{KRSDPNAHARIANBOBOT}" size="3" />
+							</td>
+							<td align="center" class="{DISPLAY_MANDIRI}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inMandiri[]" id="inMandiri[]" value="{KRSDPNAMANDIRIASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilMandiri[]" value="{KRSDPNAMANDIRIBOBOT}" id="nilMandiri[]" size="3" />
+							</td>
+							<td align="center" class="{DISPLAY_KELOMPOK}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inKelompok[]" id="inKelompok[]" value="{KRSDPNAKELOMPOKASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilKelompok[]" value="{KRSDPNAKELOMPOKBOBOT}" id="nilKelompok[]" size="2" />
+							</td>
+							<td align="center" class="{DISPLAY_PRESENTASI}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inPresentasi[]" id="inPresentasi[]" value="{KRSDPNAPRESENTASIASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilPresentasi[]" value="{KRSDPNAPRESENTASIBOBOT}" id="nilPresentasi[]" size="2" />
+							</td>
+							<td align="center" class="{DISPLAY_TERSTRUKTUR}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inTerstruktur[]" id="inTerstruktur[]" value="{KRSDPNATERSTRUKTURASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilTerstruktur[]" id="nilTerstruktur[]" value="{KRSDPNATERSTRUKTURBOBOT}" size="2"/>
+							</td>
+							<td align="center" class="{DISPLAY_TAMBAHAN}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inTambahan[]" id="inTambahan[]" value="{KRSDPNATAMBAHANASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilTambahan[]" id="nilTambahan[]" value="{KRSDPNATAMBAHANBOBOT}" size="2"/>
+							</td>
+							<td align="center" class="{DISPLAY_UTS}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inUts[]" id="inUts[]" value="{KRSDPNSUTSASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilUts[]" id="nilUts[]" value="{KRSDPNAUTSBOBOT}" size="2"/>
+							</td>
+							<td align="center" class="{DISPLAY_UAS}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inUas[]" id="inUas[]" value="{KRSDPNAUASASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilUas[]" id="nilUas[]" value="{KRSDPNAUASBOBOT}" size="2"/>
+							</td>
+							
+							<td class="{DISPLAY_CPMK1}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk1[]" id="inCpmk1[]" value="{KRSDPNACPMKASAL1}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							<td class="{DISPLAY_CPMK2}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk2[]" id="inCpmk2[]" value="{KRSDPNACPMKASAL2}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							<td class="{DISPLAY_CPMK3}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk3[]" id="inCpmk3[]" value="{KRSDPNACPMKASAL3}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							<td class="{DISPLAY_CPMK4}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk4[]" id="inCpmk4[]" value="{KRSDPNACPMKASAL4}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							<td class="{DISPLAY_CPMK5}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk5[]" id="inCpmk5[]" value="{KRSDPNACPMKASAL5}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							<td class="{DISPLAY_CPMK6}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk6[]" id="inCpmk6[]" value="{KRSDPNACPMKASAL6}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							
+							<td align="center" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="nilAbsolut[]" id="nilAbsolut[]" value="{KRSDPNSABSOLUT}" size="4" readonly />
+							</td>
+							
+							<!-- /patTemplate:tmpl -->
+							<td {NILAI_STYLE_LIGHT}>
+                              <input type="hidden" name="krsdt[]" value="{NILAI_IDKRSDETIL}">
+                              <input type="hidden" name="niu[]" value="{NILAI_NIF}">
+                              <input type="text" size="1" value="{NILAI_MINIMAL}" {NILAI_MINIMAL_HIDDEN} readonly />
+                              <select name="nilai[]" {NILAI_HIDDEN}>
+                                 <!-- patTemplate:tmpl name="pilihan_nilai" -->
+                                    <option value="{PNL_NILAI}" {PNL_SELECTED}>{PNL_NILAI}</option>
+                                 <!-- /patTemplate:tmpl -->
+                              </select>   
+							</td>
+                        </tr>
+                     <!-- /patTemplate:sub -->
+                     <!-- patTemplate:sub condition="EVEN" -->
+                        <tr>
+							<td align="center" {NILAI_STYLE_LIGHT}>
+								<!--<input type="checkbox" name="cek[krsdtId][{NILAI_URUT}]" {IS_CHECKED} value="{KRSDT_ID}"/>-->
+								{NILAI_NIF}  
+								<input type="hidden" name="cek[krsdtId][]" {IS_CHECKED} value="{KRSDT_ID}"/>
+							</td>
+							<td {NILAI_STYLE_LIGHT}>{NILAI_NAMA}<!--a href="#" onclick="openWindow('{NILAI_URL_DETAIL}')">{NILAI_NAMA} </a--></td>
+							<!-- patTemplate:tmpl name="nilai_dpna" -->
+							<td align="center" class="{DISPLAY_HARIAN}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inHarian[]" id="inHarian[]" value="{KRSDPNSHARIANASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilHarian[]" id="nilHarian[]" value="{KRSDPNAHARIANBOBOT}" size="2" />
+							</td>
+							<td align="center" class="{DISPLAY_MANDIRI}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inMandiri[]" id="inMandiri[]" value="{KRSDPNAMANDIRIASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilMandiri[]" id="nilMandiri[]" value="{KRSDPNAMANDIRIBOBOT}" size="2" />
+							</td>
+							<td align="center" class="{DISPLAY_KELOMPOK}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inKelompok[]" id="inKelompok[]" value="{KRSDPNAKELOMPOKASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilKelompok[]" value="{KRSDPNAKELOMPOKBOBOT}" id="nilKelompok[]" size="2" />
+							</td>
+							<td align="center" class="{DISPLAY_PRESENTASI}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inPresentasi[]" id="inPresentasi[]" value="{KRSDPNAPRESENTASIASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilPresentasi[]" value="{KRSDPNAPRESENTASIBOBOT}" id="nilPresentasi[]" size="2" />
+							</td>
+							<td align="center" class="{DISPLAY_TERSTRUKTUR}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inTerstruktur[]" id="inTerstruktur[]" value="{KRSDPNATERSTRUKTURASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilTerstruktur[]" id="nilTerstruktur[]" value="{KRSDPNATERSTRUKTURBOBOT}" size="2"/>
+							</td>
+							<td align="center" class="{DISPLAY_TAMBAHAN}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inTambahan[]" id="inTambahan[]" value="{KRSDPNATAMBAHANASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilTambahan[]" id="nilTambahan[]" value="{KRSDPNATAMBAHANBOBOT}" size="2"/>
+							</td>
+							<td align="center" class="{DISPLAY_UTS}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inUts[]" id="inUts[]" value="{KRSDPNSUTSASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilUts[]" id="nilUts[]" value="{KRSDPNAUTSBOBOT}" size="2"/>
+							</td>
+							<td align="center" class="{DISPLAY_UAS}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inUas[]" id="inUas[]" value="{KRSDPNAUASASAL}" onkeyup="Javascript:jumlah();" size="3" {READ_ONLY} />
+								<input type="hidden" name="nilUas[]" id="nilUas[]" value="{KRSDPNAUASBOBOT}" size="2"/>
+							</td>
+
+							<td class="{DISPLAY_CPMK1}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk1[]" id="inCpmk1[]" value="{KRSDPNACPMKASAL1}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							<td class="{DISPLAY_CPMK2}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk2[]" id="inCpmk2[]" value="{KRSDPNACPMKASAL2}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							<td class="{DISPLAY_CPMK3}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk3[]" id="inCpmk3[]" value="{KRSDPNACPMKASAL3}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							<td class="{DISPLAY_CPMK4}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk4[]" id="inCpmk4[]" value="{KRSDPNACPMKASAL4}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							<td class="{DISPLAY_CPMK5}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk5[]" id="inCpmk5[]" value="{KRSDPNACPMKASAL5}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							<td class="{DISPLAY_CPMK6}" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="inCpmk6[]" id="inCpmk6[]" value="{KRSDPNACPMKASAL6}" onkeyup="Javascript:jumlah();" size="3" readonly style="background-color:#D3D3D3;"/>
+							</td>
+							
+							<td align="center" {NILAI_STYLE_LIGHT}>
+								<input type="text" name="nilAbsolut[]" id="nilAbsolut[]" value="{KRSDPNSABSOLUT}" size="4" readonly />
+							</td>
+							
+							<!-- /patTemplate:tmpl -->
+                                        
+                           <td {NILAI_STYLE_LIGHT}>
+                              <input type="hidden" name="krsdt[]" value="{NILAI_IDKRSDETIL}">
+                              <input type="hidden" name="niu[]" value="{NILAI_NIF}">
+                              <input type="text" size="1" value="{NILAI_MINIMAL}" {NILAI_MINIMAL_HIDDEN} readonly />
+                              <select name="nilai[]" {NILAI_HIDDEN}>
+                                 <!-- patTemplate:tmpl name="pilihan_nilai" -->
+                                    <option value="{PNL_NILAI}" {PNL_SELECTED}>{PNL_NILAI}</option>
+                                 <!-- /patTemplate:tmpl -->
+                              </select>   
+                           </td>
+                        </tr>
+                     <!-- /patTemplate:sub -->
+                  <!-- /patTemplate:tmpl -->
+               <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl -->
+         </tr>
+      </table>
+      </div>
+      <br />
+      
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl --> <!-- end of nilai -->
+   
+    Total data : {TOTAL} <br>
+	Halaman : {PAGE} dari {HALAMAN}<br>
+	<!-- patTemplate:tmpl name="link_halaman" -->
+		{NOMOR_HALAMAN}
+	<!-- /patTemplate:tmpl -->
+	<br><br>
+	<input type="hidden" value="{PAGE}" name="no_page" >
+	<input type="hidden" value="{HALAMAN}" name="total_halaman" >
+   {NEXT}
+   
+   <div align="center">
+         <!-- patTemplate:tmpl name="btn_ubah" visibility="hidden" -->
+            <!--input class="input-disclaimer btn btn-info" type="submit" name="btnUbah" value="Simpan" onClick="return checkNilai();"-->
+         <!-- /patTemplate:tmpl -->
+        
+         
+   </div>
+   <div><p></p></br></br>
+   <input class="input-disclaimer btn btn-info" type="submit" name="btnKembali" value="<< Kembali">
+   <a href="{URL_PRINT}" target="_blank" rel="noopener noreferrer" class="input-disclaimer btn btn-info">Print/Cetak</a>
+   <p><h6>Keterangan :<br><font color="red">*</font> Jika mahasiswa belum memiliki nilai isikan <strong>T</strong> pada kolom <strong>Relatif</strong> (tidak boleh kosong). <br> &nbsp;&nbsp;  Untuk nilai bilangan desimal menggunakan atribut "." (titik) contoh 98.5</h6></p>
+   </div>
+   </form> 
+   <br/><br/>
+<!-- /patTemplate:tmpl -->

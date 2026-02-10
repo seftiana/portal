@@ -1,0 +1,23 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h3>Selamat Datang di Portal Akademik {UNIV_NAME}</h3>
+   <div id="content-disclaimer">   
+      <br />
+      <p >Portal Akademik adalah sistem yang memungkinkan para civitas
+        akademika {UNIV_NAME} untuk menerima informasi dengan lebih cepat
+        melalui Internet. Sistem ini memberi kemudahan setiap civitas akademika untuk
+        melakukan aktivitas-aktivitas akademik dan proses belajar mengajar. 
+      </p>
+      <p >Sistem mengidentifikasi bahwa ini adalah kali pertama Anda
+        masuk ke Portal Akademik. Untuk dapat menggunakan Portal Akademik, ada beberapa
+        langkah yang harus diikuti terlebih dahulu. Silahkan tekan tombol dibawah untuk
+        melanjutkan proses. 
+      </p><br />
+      <br />
+      <form name="frm" method="post" class="form-disclaimer form-group" action="{URL_NEXT}" >
+         <input type="hidden" name="step" value="intro">
+         <input type="hidden" name="doact" value="agreement">
+         <input type="hidden" name="isIntro" value ="1">
+         <button class="btn btn-primary">Next &gt;&gt;</button>
+      </form>
+   </div> 
+<!-- /patTemplate:tmpl -->

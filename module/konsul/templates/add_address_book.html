@@ -1,0 +1,91 @@
+<!-- patTemplate:tmpl name="content" -->
+   <form name="frmSearch" method="POST" action="{URL_CARI}">       
+      <table width="380" class="table-form">
+         <tr>
+            <th align="left" colspan="4"><b>Form Tambah {APPLICATION_SUBMODULE}</b></th>
+         </tr>
+         <tr>
+            <th width="5"><input type="checkbox" name="chk[niu]" value="niu"></th>
+            <th width="100">{LABEL_NIM}</th>
+            <th style="width:1px">:</th>
+            <th width="100"><input name="searchNiuKey" type="text"  id="niu"></th>
+         </tr>
+         <tr>
+            <th width="5"><input type="checkbox" name="chk[nama]" value="nama"></th>
+            <th width="100">Nama</th>
+            <th style="width:1px">:</th>
+            <th width="100"><input name="searchNamaKey" type="text"  id="nama"></th>
+         </tr>
+         <!--
+         <tr>
+            <th width="5"><input type="checkbox" name="chk[fakultas]" value="fakultas"></th>
+            <th width="100">Fakultas</th>
+            <th style="width:1px">:</th>
+            <th width="100"><input name="searchFakultasKey" type="text"  id="fakultas"></th>
+         </tr>-->
+         <tr>
+            <th width="5"><input type="checkbox" name="chk[prodi]" value="prodi"></th>
+            <th width="100">Program studi</th>
+            <th style="width:1px">:</th>
+            <td>
+               <select name="prodi">
+                  <option value="all"></option>
+                  <!-- patTemplate:tmpl name="prodi" -->
+                  <option value="{KODE}">{PRODI}</option>
+                  <!-- /patTemplate:tmpl -->
+               </select>
+            </td>
+         </tr>
+         <tr>
+            <th colspan="4" align="left"><input class="input-disclaimer btn btn-info" name="searchBtn" type="submit" value="Cari" class="vbtn"></th>
+         </tr>
+      </table>
+   </form>
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="daftar_teman" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <table border="0" cellspacing="0" cellpadding="0" id="1">           
+            <tr>
+               <td>
+                  <table class="table-common">
+                     <tr align="center">
+                        <th>No.</th>
+                        <th>{LABEL_NIM}</th>
+                        <th>Nama Lengkap</th>                        
+                        <th>Program studi</th>
+                        <th>Aksi</th>
+                     </tr>
+                     <!-- patTemplate:tmpl name="list_teman" -->
+                     <tr>
+                        <td align="center">{TEMAN_NUMBER}</td>
+                        <td align="left">{TEMAN_NIU}</td>                         
+                        <td align="left">{TEMAN_NAMA}</td>
+                        <td align="left">{TEMAN_PRODI}</td>
+                        <form name="frmTambah" method="POST" action="{URL_ADD}">
+                        <td>
+                           <input type="hidden" name="pemilik" value="{TEMAN_PEMILIK}">
+                           <input type="hidden" name="teman" value="{TEMAN_NIU}">
+                           <input class="input-disclaimer" type="hidden" name="act" value="AddtoAddressBook">
+                           <input class="input-disclaimer btn btn-info" type="submit" value="Tambah">
+                        </td>
+                        </form>
+                     </tr>
+                     <!-- /patTemplate:tmpl -->
+                  </table>
+                  
+                  <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+                  
+               </td>
+            </tr>
+         </table>        
+
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

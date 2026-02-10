@@ -1,0 +1,433 @@
+<!-- patTemplate:tmpl name="content" -->
+<style type="text/css">
+div#ketTabel {
+   margin-top:15px;
+   font:10px Arial;
+   font-style:italic;
+}
+</style>
+<script type="text/javascript" src="{BASE_ADDRESS}js/jquery.js" /></script>
+<script language="javascript">
+
+function openWindow(url)
+   {
+      WindowObjectReference = window.open(url, "CetakForm", "width=600,height=300,resizable,scrollbars=yes,status=1");
+      //WindowObjectReference.print();
+   }
+function roundNumber(rnum,rlength){var newnumber=Math.round(rnum*Math.pow(10,rlength))/Math.pow(10,rlength);return newnumber;}
+function jumlah(){
+var inHarian=document.form1.elements["inHarian[]"];
+var inMandiri=document.form1.elements["inMandiri[]"];
+var inTerstruktur=document.form1.elements["inTerstruktur[]"];
+var inTambahan=document.form1.elements["inTambahan[]"];
+var inUts=document.form1.elements["inUts[]"];
+var inUas=document.form1.elements["inUas[]"];
+var nilHarian=document.form1.elements["nilHarian[]"];
+var nilMandiri=document.form1.elements["nilMandiri[]"];
+var nilTerstruktur=document.form1.elements["nilTerstruktur[]"];
+var nilTambahan=document.form1.elements["nilTambahan[]"];
+var nilUts=document.form1.elements["nilUts[]"];
+var nilUas=document.form1.elements["nilUas[]"];
+var nilAbsolut=document.form1.elements["nilAbsolut[]"];
+
+var totalBobot=document.getElementById('totalBobot');
+
+var bbtHarian=parseFloat(document.getElementById("bobotHarian").value)/100;
+var bbtMandiri=parseFloat(document.getElementById("bobotMandiri").value)/100;
+var bbtTerstruktur=parseFloat(document.getElementById("bobotTerstruktur").value)/100;
+var bbtTambahan=parseFloat(document.getElementById("bobotTambahan").value)/100;
+var btUts=parseFloat(document.getElementById("bobotUts").value)/100;
+var bbtUas=parseFloat(document.getElementById("bobotUas").value)/100;
+
+if(inHarian.length>0){
+for(var i=0;i<inHarian.length;i++){
+nilHarian[i].value=roundNumber((inHarian[i].value*bbtHarian),3);
+nilMandiri[i].value=roundNumber((inMandiri[i].value*bbtMandiri),3);
+nilTerstruktur[i].value=roundNumber((inTerstruktur[i].value*bbtTerstruktur),3);
+nilTambahan[i].value=roundNumber((inTambahan[i].value*bbtTambahan),3);
+nilUts[i].value=roundNumber((inUts[i].value*btUts),3);
+nilUas[i].value=roundNumber((inUas[i].value*bbtUas),3);
+nilAbsolut[i].value=roundNumber(((inHarian[i].value*bbtHarian)
++(inMandiri[i].value*bbtMandiri)
++(inTerstruktur[i].value*bbtTerstruktur)
++(inTambahan[i].value*bbtTambahan)
++(inUts[i].value*btUts)
++(inUas[i].value*bbtUas)),2);
+}
+} else {
+nilHarian.value=roundNumber((inHarian.value*bbtHarian),3);
+nilMandiri.value=roundNumber((inMandiri.value*bbtMandiri),3);
+nilTerstruktur.value=roundNumber((inTerstruktur.value*bbtTerstruktur),3);
+nilTambahan.value=roundNumber((inTambahan.value*bbtTambahan),3);
+nilUts.value=roundNumber((inUts.value*btUts),3);
+nilUas.value=roundNumber((inUas.value*bbtUas),3);
+nilAbsolut.value=roundNumber(((inHarian.value*bbtHarian)
++(inMandiri.value*bbtMandiri)
++(inTerstruktur.value*bbtTerstruktur)
++(inTambahan.value*bbtTambahan)
++(inUts.value*btUts)
++(inUas.value*bbtUas)),2);
+}
+totalBobot.value=(bbtHarian+bbtMandiri+bbtTerstruktur+bbtTambahan+btUts+bbtUas)*100;
+}
+
+function checkNilai(){
+  var nilai=window.document.form1.elements["nilai[]"];
+  var valid=true;
+  if(nilai.length>0){
+    for(var i=0;i<nilai.length;i++){
+      if(nilai[i].value==""){
+        alert("Terdapat nilai yang kosong.Isikan nilai 'T' jika mahasiswa belum memiliki nilai");
+        valid=false;
+        break;
+      }
+    }
+  }
+  return valid;
+}
+   
+function jumlahAll(){   
+   var inHarian=parseFloat(document.formIsi.elements["bobotHarian"].value);
+   var inMandiri=parseFloat(document.formIsi.elements["bobotMandiri"].value);
+   var inTerstruktur=parseFloat(document.formIsi.elements["bobotTerstruktur"].value);
+   var inTambahan=parseFloat(document.formIsi.elements["bobotTambahan"].value);
+   var inUts=parseFloat(document.formIsi.elements["bobotUts"].value);
+   var inUas=parseFloat(document.formIsi.elements["bobotUas"].value);
+   
+   if(isNaN(inHarian))inHarian=0;
+   if(isNaN(inMandiri))inMandiri=0;
+   if(isNaN(inTerstruktur))inTerstruktur=0;
+   if(isNaN(inTambahan))inTambahan=0;
+   if(isNaN(inUts))inUts=0;
+   if(isNaN(inUas))inUas=0;
+   
+   var total=inHarian+inMandiri+inTerstruktur+inTambahan+inUts+inUas;   
+   document.getElementById("totalBobot").innerHTML=total;                                       
+}
+
+//cek apakah total komponen nilai lebih dari 100
+$(document).ready(function(){
+   
+   $('form[name="formIsi"]').submit(function(){
+      var totalBobot = parseFloat($("#totalBobot").html());      
+      if(totalBobot > 100){
+         alert('Total Komponen Nilai yang dimasukan telah melebihi dari 100%');
+         return false;  
+      }         
+   });
+   
+});
+
+</script>
+<br/>
+   <h2>Pengelolaan Nilai</h2>
+	
+   <h5>Keterangan :</h5>
+   <p>
+		Pengelolaan Nilai dapat digunakan untuk memasukkan nilai mahasiswa secara on-line. Dosen dapat memberikan nilai sesuai dengan matakuliah yang diampunya.
+   </p><br />   
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   <form name="formIsi" method="post" action="{URL_PROCESS_KOMPONEN}">
+   <table width="100%" class="table-list">
+      <tr>
+         <th colspan="2">MataKuliah</th>
+         <td colspan="2">{MATAKULIAH}</td>
+      </tr>
+      <tr>
+         <th colspan="2">Kelas</th>
+         <td colspan="2">{KELAS}</td>
+      </tr>
+      <tr>
+         <th colspan="2">Semester</th>
+         <td colspan="2">{SEMESTER}</td>
+      </tr>
+   <!-- patTemplate:tmpl name="nilai_bobot_visible" type="condition" conditionvar="READONLY" -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:tmpl name="nilai_bobot" -->
+	  <!--<tr>
+         <th>{LABEL_KOMPONEN_NILAI_SATU}</th>
+         <td><input name="bobotHarian" type="text" id="bobotHarian" value="{BOBOT_HARIAN}" size="5" maxlength="5" onkeyup="Javascript:jumlahAll();" />%</td>
+         <th>{LABEL_KOMPONEN_NILAI_DUA}</th>
+         <td><input name="bobotMandiri" type="text" id="bobotMandiri" value="{BOBOT_MANDIRI}" size="5" maxlength="5" onkeyup="Javascript:jumlahAll();" /> %</td>
+      </tr>      
+      <tr>
+         <th>{LABEL_KOMPONEN_NILAI_TIGA}</th>
+         <td><input name="bobotTerstruktur" type="text" id="bobotTerstruktur" value="{BOBOT_TERSTRUKTUR}" size="5" maxlength="5" onkeyup="Javascript:jumlahAll();" /> %</td>
+         <th>{LABEL_KOMPONEN_NILAI_EMPAT}</th>
+         <td><input name="bobotTambahan" type="text" id="bobotTambahan" value="{BOBOT_TAMBAHAN}" size="5" maxlength="5" onkeyup="Javascript:jumlahAll();" /> %</td>
+      </tr>      
+      <tr>
+         <th>{LABEL_KOMPONEN_NILAI_UTS}</th>
+         <td><input name="bobotUts" type="text" id="bobotUts" value="{BOBOT_UTS}" size="5" maxlength="5" onkeyup="Javascript:jumlahAll();" /> %</td>
+         <th>{LABEL_KOMPONEN_NILAI_UAS}</th>
+         <td><input name="bobotUas" type="text" id="bobotUas" value="{BOBOT_UAS}" size="5" maxlength="5" onkeyup="Javascript:jumlahAll();" /> %</td>
+      </tr>      
+      <tr>
+         <th colspan="2">Total</th>
+         <td colspan="2">            
+            <label id="totalBobot" name="totalBobot">{BOBOT_TOTAL}</label> %
+         </td>
+      </tr>
+      <tr>
+         <td colspan="4">
+            <div align="center">         
+               <input class="input-disclaimer" type="submit" name="btnKomponen" value="Save Komponen Nilai" />                  
+               <input type="hidden" name="kodeProdi" value="{KODE_PRODI}" />
+               <input type="hidden" name="sia" value="{SIA}" />
+               <input type="hidden" name="smt" value="{SMT}" />
+               <input type="hidden" name="kls" value="{KLS}" />
+               <input class="input-disclaimer" type="submit" name="btnKembali" value="Kembali" />
+            </div>
+         </td>
+      </tr>-->
+         <!-- /patTemplate:tmpl -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->               
+   </table>      
+   </form>
+         
+   
+   <form name="form1" method="post" action="{URL_PROCESS}"> 
+   <!-- <table width="240" class="table-list">
+      <tr>
+        <td ><h3>Metode Penilaian</h3></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><select type="checkbox" name="cara_penilaian" id="cara_penilaian"> -->
+		<!-- patTemplate:tmpl name="cara_penilaian" -->
+		<!--<option value="{ID}" {IS_SELECT}>{NAMA}</option> -->
+		<!-- /patTemplate:tmpl -->
+      <!--  </select> -->
+      <!--  </td> -->
+       <!-- <td></td> -->
+     <!-- </tr> -->
+   <!-- </table> -->
+   <!-- patTemplate:tmpl name="nilai" type="condition" conditionvar="NILAI_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+      <div style="overflow:hidden;">
+      <!--<div id="ketTabel">
+         Kolom TUGAS+ => Jumlah Tugas Tambahan MAHASISWA<br />
+         Note : Untuk CRUD Tugas+ klik angka Jumlah Tugas+ pada periode input nilai 
+      </div>-->
+      <table class="table-common" style="margin: 10px 0;" width="100%">
+         <tr>
+            <th width="25px">No</th>
+            <th rowspan="1">
+            {LABEL_NIM}
+            <!--<input type="checkbox" name="checkAll" value="1" onchange="return checkOnChange();"  />-->
+            </th>
+            <th rowspan="1" width="300px">Nama</th>
+            <!--<th colspan="7">Nilai Asal</th>--
+            <!--<th colspan="5">Nilai Akhir</th>-->
+            <!--<th rowspan="2">Absolut</th>-->
+            <!--<th rowspan="1">Relatif</th>-->
+            <th rowspan="1">Nilai</th>
+         </tr>
+         <!--<tr>
+            <th width="1%">TUGAS+</th>
+            <th width="1%">{LABEL_KOMPONEN_NILAI_SATU}</th>
+            <th width="1%">{LABEL_KOMPONEN_NILAI_DUA}</th>
+            <th width="1%">{LABEL_KOMPONEN_NILAI_TIGA}</th>
+            <th width="1%">{LABEL_KOMPONEN_NILAI_EMPAT}</th>
+            <th width="1%">{LABEL_KOMPONEN_NILAI_UTS}</th>
+            <th width="1%">{LABEL_KOMPONEN_NILAI_UAS}</th>
+         </tr>-->
+         
+            <!-- patTemplate:tmpl name="nilai_access" type="condition" conditionvar="READONLY" -->        
+               <!-- patTemplate:sub condition="YES" -->
+			    <!-- patTemplate:tmpl name="nilai_access_item_yes" type="condition" conditionvar="ODDEVEN" -->
+                     <!-- patTemplate:sub condition="ODD" -->
+                        <!-- patTemplate:tmpl name="nilai_access_item_yes_ok" -->             
+                        <tr>
+                           <td>{NILAI_NUMBER}</td>
+                           <td>{NILAI_NIF}  </td>
+                           <td>{NILAI_NAMA}<!--a href="#" onclick="openWindow('{NILAI_URL_DETAIL}')">{NILAI_NAMA} </a--></td>
+						 
+                         <!-- patTemplate:tmpl name="nilai_dpna_noedit" -->
+						   <!--<td >{KRSDPNSHARIANASAL}</td>
+                           <td>{KRSDPNAMANDIRIASAL}</td>
+                           <td>{KRSDPNATERSTRUKTURASAL}</td>
+						   <td>{KRSDPNATAMBAHANASAL}</td>
+						   <td >{KRSDPNSUTSASAL}</td>
+                           <td>{KRSDPNAUASASAL}</td>
+                          
+                           <td>{KRSDPNSABSOLUT}</td>-->
+                           
+						 <!-- /patTemplate:tmpl -->
+						 <td>{NILAI_NILAI}</td>
+						 
+                    </tr>
+                       <!-- /patTemplate:tmpl -->
+				  <!-- /patTemplate:sub -->
+				  <!-- patTemplate:sub condition="EVEN" -->
+                        <!-- patTemplate:tmpl name="nilai_access_item_yes_ok" -->             
+                        <tr>
+                           <td>{NILAI_NUMBER}</td>
+                           <td>{NILAI_NIF}</td>
+                          
+                           <td>{NILAI_NAMA}<!--a href="#" onclick="openWindow('{NILAI_URL_DETAIL}')">{NILAI_NAMA} </a--></td>
+						 
+                         <!-- patTemplate:tmpl name="nilai_dpna_noedit" -->
+                         <!--<td align="center">{JMLHTGSTMBHAN}</td>
+						   <td >{KRSDPNSHARIANASAL}</td>
+                           <td>{KRSDPNAMANDIRIASAL}</td>
+                           <td>{KRSDPNATERSTRUKTURASAL}</td>
+						   <td>{KRSDPNATAMBAHANASAL}</td>
+						   <td >{KRSDPNSUTSASAL}</td>
+                           <td>{KRSDPNAUASASAL}</td>
+                          
+                           <td>{KRSDPNSABSOLUT}</td>-->
+                           
+						 <!-- /patTemplate:tmpl -->
+						 <td>{NILAI_NILAI}</td>
+						 
+                    </tr>
+                       <!-- /patTemplate:tmpl -->
+				  <!-- /patTemplate:sub -->
+                <!-- /patTemplate:tmpl -->
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="NO" -->
+                  <!-- patTemplate:tmpl name="nilai_access_item_no" type="condition" conditionvar="ODDEVEN" -->
+                     <!-- patTemplate:sub condition="ODD" -->   
+                        <tr>
+                           <td>{NILAI_NUMBER}</td>
+                           <td align="center">
+                              <!--<input type="checkbox" name="cek[krsdtId][{NILAI_URUT}]" {IS_CHECKED} value="{KRSDT_ID}"/>-->
+							  {NILAI_NIF} 
+							  <input type="hidden" name="cek[krsdtId][{NILAI_URUT}]" {IS_CHECKED} value="{KRSDT_ID}"/>
+                          </td>
+                           <td>{NILAI_NAMA}<!--a href="#" onclick="openWindow('{NILAI_URL_DETAIL}')">{NILAI_NAMA} </a--></td>
+						   <!-- patTemplate:tmpl name="nilai_dpna" -->
+                           <!--<td>
+			                   <input type="text" name="inHarian[]" id="inHarian[]" value="{KRSDPNSHARIANASAL}" onkeyup="Javascript:jumlah();" size="3" maxlength="2" />
+							   <input type="hidden" name="nilHarian[]" id="nilHarian[]" value="{KRSDPNAHARIANBOBOT}" size="2" />
+            </td>
+			               </td>
+							<td>
+             <input type="text" name="inMandiri[]" id="inMandiri[]" value="{KRSDPNAMANDIRIASAL}" onkeyup="Javascript:jumlah();" size="2"/>
+             <input type="hidden" name="nilMandiri[]" value="{KRSDPNAMANDIRIBOBOT}" id="nilMandiri[]" size="2" />
+			</td>
+			<td>
+              <input type="text" name="inTerstruktur[]" id="inTerstruktur[]" value="{KRSDPNATERSTRUKTURASAL}" onkeyup="Javascript:jumlah();" size="2" />
+              <input type="hidden" name="nilTerstruktur[]" id="nilTerstruktur[]" value="{KRSDPNATERSTRUKTURBOBOT}" size="2"/>
+			</td>
+			<td>
+				<input type="text" name="inTambahan[]" id="inTambahan[]" value="{KRSDPNATAMBAHANASAL}" onkeyup="Javascript:jumlah();" size="2" />
+				<input type="hidden" name="nilTambahan[]" id="nilTambahan[]" value="{KRSDPNATAMBAHANBOBOT}" size="2"/>
+			</td>
+			<td>
+               <input type="text" name="inUts[]" id="inUts[]" value="{KRSDPNSUTSASAL}" onkeyup="Javascript:jumlah();" size="2"/>
+               <input type="hidden" name="nilUts[]" id="nilUts[]" value="{KRSDPNAUTSBOBOT}" size="2"/>
+			</td>
+			<td>
+             <input type="text" name="inUas[]" id="inUas[]" value="{KRSDPNAUASASAL}" onkeyup="Javascript:jumlah();" size="2" />
+             <input type="hidden" name="nilUas[]" id="nilUas[]" value="{KRSDPNAUASBOBOT}" size="2"/>
+			</td>
+			
+		 	
+            
+			<td>
+          <input type="text" name="nilAbsolut[]" id="nilAbsolut[]" value="{KRSDPNSABSOLUT}" size="2"/>
+            </td>-->
+							
+							<!-- /patTemplate:tmpl -->
+                           <td>
+                              <input type="hidden" name="krsdt[]" value="{NILAI_IDKRSDETIL}">
+                              <input type="hidden" name="mhstambahan[]" value="{NILAI_ISMHSTAMBAHAN}">
+                              <input type="hidden" name="niu[]" value="{NILAI_NIF}">
+                              <select name="nilai[]">
+                                 <!-- patTemplate:tmpl name="pilihan_nilai" -->
+                                    <option value="{PNL_NILAI}" {PNL_SELECTED}>{PNL_NILAI}</option>
+                                 <!-- /patTemplate:tmpl -->
+                              </select>   
+                           </td>
+                        </tr>
+                     <!-- /patTemplate:sub -->
+                     <!-- patTemplate:sub condition="EVEN" -->
+                        <tr class="table-common-even">
+                           <td>{NILAI_NUMBER}</td>
+                           <td align="center">
+                              <!--<input type="checkbox" name="cek[krsdtId][{NILAI_URUT}]" {IS_CHECKED} value="{KRSDT_ID}"/>-->
+							  {NILAI_NIF}  
+							 <input type="hidden" name="cek[krsdtId][]" {IS_CHECKED} value="{KRSDT_ID}"/>
+                          </td>
+                           <td>{NILAI_NAMA}<!--a href="#" onclick="openWindow('{NILAI_URL_DETAIL}')">{NILAI_NAMA} </a--></td>
+						   <!-- patTemplate:tmpl name="nilai_dpna" -->
+                           <!--<td align="center">
+                              <a href="{URLTUGASTMBHAN}" target="_blank" title="CRUD Tugas+">{JMLHTGSTMBHAN}</a>
+                           </td>
+                           <td>
+			                   <input type="text" name="inHarian[]" id="inHarian[]" value="{KRSDPNSHARIANASAL}" onkeyup="Javascript:jumlah();" size="2" readonly="" />
+			                    <input type="hidden" name="nilHarian[]" id="nilHarian[]" value="{KRSDPNAHARIANBOBOT}" size="2" />
+						   </td>
+							<td>
+             <input type="text" name="inMandiri[]" id="inMandiri[]" value="{KRSDPNAMANDIRIASAL}" onkeyup="Javascript:jumlah();" size="2" />
+              <input type="hidden" name="nilMandiri[]" id="nilMandiri[]" value="{KRSDPNAMANDIRIBOBOT}" size="2" />
+			</td>
+			<td>
+              <input type="text" name="inTerstruktur[]" id="inTerstruktur[]" value="{KRSDPNATERSTRUKTURASAL}" onkeyup="Javascript:jumlah();" size="2" />
+              <input type="hidden" name="nilTerstruktur[]" id="nilTerstruktur[]" value="{KRSDPNATERSTRUKTURBOBOT}" size="2"/>
+			</td>
+			<td>
+				<input type="text" name="inTambahan[]" id="inTambahan[]" value="{KRSDPNATAMBAHANASAL}" onkeyup="Javascript:jumlah();" size="2" />
+				<input type="hidden" name="nilTambahan[]" id="nilTambahan[]" value="{KRSDPNATAMBAHANBOBOT}" size="2"/>
+			</td>
+			<td>
+               <input type="text" name="inUts[]" id="inUts[]" value="{KRSDPNSUTSASAL}" onkeyup="Javascript:jumlah();" size="2" />
+               <input type="hidden" name="nilUts[]" id="nilUts[]" value="{KRSDPNAUTSBOBOT}" size="2"/>
+			</td>
+			<td>
+             <input type="text" name="inUas[]" id="inUas[]" value="{KRSDPNAUASASAL}" onkeyup="Javascript:jumlah();" size="2" />
+                <input type="hidden" name="nilUas[]" id="nilUas[]" value="{KRSDPNAUASBOBOT}" size="2"/>
+			</td>
+			
+            
+			<td>
+          <input type="text" name="nilAbsolut[]" id="nilAbsolut[]" value="{KRSDPNSABSOLUT}" size="2"/>
+            </td>-->
+							
+							<!-- /patTemplate:tmpl -->
+                           
+                           
+                           <td>
+                              <input type="hidden" name="krsdt[]" value="{NILAI_IDKRSDETIL}">
+                              <input type="hidden" name="mhstambahan[]" value="{NILAI_ISMHSTAMBAHAN}">
+                              <input type="hidden" name="niu[]" value="{NILAI_NIF}">
+                              <select name="nilai[]">
+                                 <!-- patTemplate:tmpl name="pilihan_nilai" -->
+                                    <option value="{PNL_NILAI}" {PNL_SELECTED}>{PNL_NILAI}</option>
+                                 <!-- /patTemplate:tmpl -->
+                              </select>   
+                           </td>
+                        </tr>
+                     <!-- /patTemplate:sub -->
+                  <!-- /patTemplate:tmpl -->
+               <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl -->
+         </tr>
+      </table>
+      </div>
+      <br />
+      
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl --> <!-- end of nilai -->
+   <div align="center">
+         <!-- patTemplate:tmpl name="btn_ubah" visibility="hidden" -->
+            <input class="input-disclaimer" type="submit" name="btnUbah" value="Simpan" />
+            <!--<input class="input-disclaimer" type="submit" name="btnImportExcel" value="Import Excel" />-->
+         <!-- /patTemplate:tmpl -->
+         <input type="hidden" name="action" value="viewMatKulDiampuFromNilai">
+         <input type="hidden" name="kodeProdi" value="{KODE_PRODI}">
+         <input type="hidden" name="sia" value="{SIA}">
+         <input type="hidden" name="smt" value="{SMT}">
+         <input type="hidden" name="kls" value="{KLS}">
+         <input class="input-disclaimer" type="submit" name="btnKembali" value="Kembali">
+   </div>
+   </form> 
+   <br/><br/>
+<!-- /patTemplate:tmpl -->

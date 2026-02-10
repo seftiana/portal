@@ -1,0 +1,90 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>{JUDUL}</h2>
+   <br />
+   <h5>Keterangan :</h5>
+   <p>
+         Kesediaan Waktu Mengajar berisi daftar waktu kesediaan dosen untuk mengisi tatap muka matakuliah yang diampu.
+		 Data ini digunakan sebagai prioritas dalam membuat jadwal kuliah, jika kosong, maka dosen pengguna dianggap bersedia mengajar kapan pun
+   </p><br />   
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="data_dosen" visibility="hidden" -->
+      <table width="100%" class="table-list">
+         <tr> 
+            <th width="150">Nama</th>
+            <td>{DOSEN_FULLNAME}</td>
+         </tr>
+         <tr> 
+            <th>{LABEL_NIP}</th>
+            <td>{DOSEN_NO_ID}</td>
+         </tr>
+         <tr> 
+            <th>Program Studi</th>
+            <td>{DOSEN_INFO}</td>
+         </tr>
+         <tr> 
+            <th>Semester</th>
+            <td>{DOSEN_SEM}</td>
+         </tr>
+      </table>
+   <!-- /patTemplate:tmpl -->
+   
+   <form name="form1" method="POST" action="{FORM_AKSI}">
+   <!-- patTemplate:tmpl name="data_waktu" type="condition" conditionvar="AVAILABLE" -->      
+      <!-- patTemplate:sub condition="YES" -->           
+		<input type="hidden" name="kwm" value="{DATAID}">
+		<input type="hidden" name="param" value="{PARAM}">
+		<input type="hidden" name="value" value="{VALUE}">
+		<input type="hidden" name="module" value="{MODULE}">
+         <table class="table-form" width="100%">
+         <tr>
+            <th>Hari</th>
+            <td>
+				<select name="hari">
+				<!-- patTemplate:tmpl name="data_hari" -->   
+				<option value="{VALUE}" {IS_SELECTED}>{LABEL}</option>
+				<!-- /patTemplate:tmpl -->
+				</select>
+			</td>
+         </tr>
+         <tr>
+            <th>Jam</th>
+			<td>
+					<select name="jamMulai">
+				<!-- patTemplate:tmpl name="jam_mulai" -->   
+				<option value="{VALUE}" {IS_SELECTED}>{LABEL}</option>
+				<!-- /patTemplate:tmpl -->
+					</select> 
+					: 
+					<select name="menitMulai">
+				<!-- patTemplate:tmpl name="menit_mulai" -->   
+				<option value="{VALUE}" {IS_SELECTED}>{LABEL}</option>
+				<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="jamSelesai">
+				<!-- patTemplate:tmpl name="jam_selesai" -->   
+				<option value="{VALUE}" {IS_SELECTED}>{LABEL}</option>
+				<!-- /patTemplate:tmpl -->
+					</select> 
+					: 
+					<select name="menitSelesai">
+				<!-- patTemplate:tmpl name="menit_selesai" -->   
+				<option value="{VALUE}" {IS_SELECTED}>{LABEL}</option>
+				<!-- /patTemplate:tmpl -->
+					</select>
+			</td>
+         </tr>
+      </table>
+      <br/>
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+		<input class="input-disclaimer" type="submit" name="btnProses" value="Simpan">
+		<input class="input-disclaimer" type="submit" name="btnKembali" value="Batal">
+		</form>
+<!-- /patTemplate:tmpl -->

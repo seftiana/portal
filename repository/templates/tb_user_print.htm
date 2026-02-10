@@ -1,0 +1,213 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_pdf}
+<div {$pdf_chiddenattr} data-pageid="{$pageid}" data-container="pdf" class="   col-md-12 "> 
+
+{BEGIN printbuttons}
+
+{END printbuttons}
+
+
+
+</div>
+{END container_pdf}
+
+
+
+
+
+{BEGIN container_pageheader}
+<div {$pageheader_chiddenattr} data-pageid="{$pageid}" data-container="pageheader" class="    "> 
+
+{BEGIN printheader}
+	<h2 {$printheader_hiddenattr} data-pageid="{$pageid}" data-brick="printheader" >{$pagetitlelabel tb_user print}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END printheader}
+
+
+{BEGIN page_number}
+<span>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></span>
+{END page_number}
+
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="table table-bordered rp-maintable" {$printgrid_hiddenattr} data-pageid="{$pageid}" data-brick="printgrid" >
+	<thead>
+	{BEGIN grid_header}
+		<tr class="{$gridHeader_class}" >
+		{BEGIN record_header}
+			{BEGIN IDUser_fieldheadercolumn}
+			<th class="{$IDUser_class}" {$IDUser_style}  data-field="IDUser">
+				{$label tb_user IDUser}
+			</th>
+			{END IDUser_fieldheadercolumn}
+			{BEGIN passwd_fieldheadercolumn}
+			<th class="{$passwd_class}" {$passwd_style}  data-field="passwd">
+				{$label tb_user passwd}
+			</th>
+			{END passwd_fieldheadercolumn}
+			{BEGIN nama_fieldheadercolumn}
+			<th class="{$nama_class}" {$nama_style}  data-field="nama">
+				{$label tb_user nama}
+			</th>
+			{END nama_fieldheadercolumn}
+			{BEGIN jabatan_fieldheadercolumn}
+			<th class="{$jabatan_class}" {$jabatan_style}  data-field="jabatan">
+				{$label tb_user jabatan}
+			</th>
+			{END jabatan_fieldheadercolumn}
+			{BEGIN unit_kerja_fieldheadercolumn}
+			<th class="{$unit_kerja_class}" {$unit_kerja_style}  data-field="unit_kerja">
+				{$label tb_user unit_kerja}
+			</th>
+			{END unit_kerja_fieldheadercolumn}
+			{BEGIN atasan_fieldheadercolumn}
+			<th class="{$atasan_class}" {$atasan_style}  data-field="atasan">
+				{$label tb_user atasan}
+			</th>
+			{END atasan_fieldheadercolumn}
+			{BEGIN prodi_fieldheadercolumn}
+			<th class="{$prodi_class}" {$prodi_style}  data-field="prodi">
+				{$label tb_user prodi}
+			</th>
+			{END prodi_fieldheadercolumn}
+			{BEGIN peran_fieldheadercolumn}
+			<th class="{$peran_class}" {$peran_style}  data-field="peran">
+				{$label tb_user peran}
+			</th>
+			{END peran_fieldheadercolumn}
+			{BEGIN roleapps_fieldheadercolumn}
+			<th class="{$roleapps_class}" {$roleapps_style}  data-field="roleapps">
+				{$label tb_user roleapps}
+			</th>
+			{END roleapps_fieldheadercolumn}
+			{BEGIN endrecordheader_block}
+			<th class="rnr-cs">&nbsp;</th>
+			{END endrecordheader_block}
+		{END record_header}
+		</tr>
+	{END grid_header}
+	</thead>
+	
+	<tbody>	
+	{BEGIN grid_row}
+		<tr class="{$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+			{BEGIN IDUser_fieldcolumn}
+			<td  class="{$IDUser_class}" {$IDUser_style} {$recordattrs}>
+				{$IDUser_value}
+			</td>
+			{END IDUser_fieldcolumn}
+			{BEGIN passwd_fieldcolumn}
+			<td  class="{$passwd_class}" {$passwd_style} {$recordattrs}>
+				{$passwd_value}
+			</td>
+			{END passwd_fieldcolumn}
+			{BEGIN nama_fieldcolumn}
+			<td  class="{$nama_class}" {$nama_style} {$recordattrs}>
+				{$nama_value}
+			</td>
+			{END nama_fieldcolumn}
+			{BEGIN jabatan_fieldcolumn}
+			<td  class="{$jabatan_class}" {$jabatan_style} {$recordattrs}>
+				{$jabatan_value}
+			</td>
+			{END jabatan_fieldcolumn}
+			{BEGIN unit_kerja_fieldcolumn}
+			<td  class="{$unit_kerja_class}" {$unit_kerja_style} {$recordattrs}>
+				{$unit_kerja_value}
+			</td>
+			{END unit_kerja_fieldcolumn}
+			{BEGIN atasan_fieldcolumn}
+			<td  class="{$atasan_class}" {$atasan_style} {$recordattrs}>
+				{$atasan_value}
+			</td>
+			{END atasan_fieldcolumn}
+			{BEGIN prodi_fieldcolumn}
+			<td  class="{$prodi_class}" {$prodi_style} {$recordattrs}>
+				{$prodi_value}
+			</td>
+			{END prodi_fieldcolumn}
+			{BEGIN peran_fieldcolumn}
+			<td  class="{$peran_class}" {$peran_style} {$recordattrs}>
+				{$peran_value}
+			</td>
+			{END peran_fieldcolumn}
+			{BEGIN roleapps_fieldcolumn}
+			<td  class="{$roleapps_class}" {$roleapps_style} {$recordattrs}>
+				{$roleapps_value}
+			</td>
+			{END roleapps_fieldcolumn}
+			{BEGIN endrecord_block}
+			<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+			{END endrecord_block}
+		{END grid_record}
+		</tr>
+{END grid_row}
+	</tbody>
+
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

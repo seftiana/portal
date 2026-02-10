@@ -1,0 +1,159 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript">
+function validate()
+{
+	kelas = window.document.form_add_tugas.klsId;
+	if(kelas.value == "")
+	{
+		alert("Mata kuliah harap diisi");
+		kelas.focus();
+		return false;
+	}
+	jenis = window.document.form_add_tugas.jenisTugas;
+	if(jenis.value == "")
+	{
+		alert("Jenis Tugas harap diisi");
+		jenis.focus();
+		return false;
+	}
+	return true;
+}
+	
+
+	
+</script>
+
+
+<h2> {APPLICATION_MODULE} </h2><br/>
+<div id="maincontent">
+  <form name="form_add_tugas" class="form-common" method="post" action="{FORM_ACTION}" enctype="multipart/form-data">
+  		<input type="hidden" name="id" value="{TUGAS_ID}" />
+		<input type="hidden" name="fileLama" value="{TUGAS_NAMA_FILE}" />
+
+		
+  		<table class="table-userbio" width = "100%">
+  		<!-- patTemplate:tmpl name="display_error" visibility="hidden" -->
+  		  <tr>
+  		  	<th colspan="2"><font color="Maroon" size="2">Gagal Menambahkan Data Tugas Baru. {ERROR} </font></th>
+  		  </tr>
+  		<!-- /patTemplate:tmpl -->
+  		  <tr>
+  		  	  <th height="100%">Semester</th>
+  		  	  <th>{TUGAS_NAMA_SEMESTER}</th>
+  		  </tr>
+          <tr>
+              <th width="30%">Mata Kuliah</th>
+              <td width="70%">
+                  <select name="klsId" id="klsId" >
+                      <!-- patTemplate:tmpl name="list_kelas" -->
+                          <option value="{KLS_ID}" {SELECT_{KLS_ID}}>{KLS_KODE} - {KLS_NAMA}</option>
+                      <!-- /patTemplate:tmpl -->
+                  </select>
+              </td>
+          </tr>
+          <tr>
+              <th>Judul</th>
+              <td><input type="textbox" name="judul" size="50" value="{TUGAS_JUDUL}" /></td>
+          </tr>
+          <tr>
+              <th valign="top">File</th>
+              <td><a href="../file_upload/{TUGAS_NAMA_FILE}">{TUGAS_FILE_DISPLAY}</a>, Biarkan kosong jika tidak ingin mengganti <br />
+              <input type="file" name="fileUpload" size="40"  />
+              </td>
+          </tr>
+          <tr>
+              <th valign="top">Abstraksi</th>
+              <td><textarea name="abstraksi"  cols="30" rows="5" >{TUGAS_DESKRIPSI}</textarea> </td>
+          </tr>   
+          <tr>
+          	  <th>Waktu Mulai</th>
+          	  <td>
+                  <select name="tglAwal">
+                     <option value=""></option>
+                      <!-- patTemplate:tmpl name="tglAwal" -->
+                      <option value="{TGL}"{SELECTED}>{TGL}</option>
+                      <!-- /patTemplate:tmpl -->
+                  </select> 
+                  <select name="blnAwal">   
+                     <option value=""></option>
+                     <!-- patTemplate:tmpl name="blnAwal" -->
+                      <option value="{BLN}"{SELECTED}>{BLN}</option>
+                      <!-- /patTemplate:tmpl -->
+                  </select>
+                  <select name="thnAwal">
+                     <option value=""></option>
+                     <!-- patTemplate:tmpl name="thnAwal" -->
+                      <option value="{THN}"{SELECTED}>{THN}</option>
+                      <!-- /patTemplate:tmpl -->
+                  </select>
+                  &nbsp;&nbsp;
+                  <select name="jamAwal">
+                     <!-- patTemplate:tmpl name="jamAwal" -->
+                     <option value="{JAM}"{SELECTED}>{JAM}</option>
+                     <!-- /patTemplate:tmpl -->
+                  </select>
+                  :
+                  <select name="menitAwal">
+                     <!-- patTemplate:tmpl name="menitAwal" -->
+                     <option value="{MENIT}"{SELECTED}>{MENIT}</option>
+                     <!-- /patTemplate:tmpl -->
+                  </select>
+          	  </td>
+          </tr>   
+          
+          <tr>
+          	  <th>Waktu Selesai</th>
+          	  <td>
+                  <select name="tglAkhir">
+                     <option value=""></option>
+                      <!-- patTemplate:tmpl name="tglAkhir" -->
+                      <option value="{TGL}"{SELECTED}>{TGL}</option>
+                      <!-- /patTemplate:tmpl -->
+                  </select> 
+                  <select name="blnAkhir">   
+                     <option value=""></option>
+                     <!-- patTemplate:tmpl name="blnAkhir" -->
+                      <option value="{BLN}"{SELECTED}>{BLN}</option>
+                      <!-- /patTemplate:tmpl -->
+                  </select>
+                  <select name="thnAkhir">
+                     <option value=""></option>
+                     <!-- patTemplate:tmpl name="thnAkhir" -->
+                      <option value="{THN}"{SELECTED}>{THN}</option>
+                      <!-- /patTemplate:tmpl -->
+                  </select>
+                  &nbsp;&nbsp;
+                  <select name="jamAkhir">
+                     <!-- patTemplate:tmpl name="jamAkhir" -->
+                     <option value="{JAM}"{SELECTED}>{JAM}</option>
+                     <!-- /patTemplate:tmpl -->
+                  </select>
+                  :
+                  <select name="menitAkhir">
+                     <!-- patTemplate:tmpl name="menitAkhir" -->
+                     <option value="{MENIT}"{SELECTED}>{MENIT}</option>
+                     <!-- /patTemplate:tmpl -->
+                  </select>
+          	  </td>
+          </tr>   
+          <tr> 	
+          	<th colspan="2">&nbsp;</th>          
+		  </tr>
+          <tr>
+          	  <td colspan="2" align="right">
+          	  	<div align="right">
+          	  		<input type="submit" name="updateSimpan" value="Simpan" class="input-disclaimer" />
+          	  		<input type="submit" name="updateReset" value="Reset" class="input-disclaimer" />
+          	  		<input type="submit" name="batal" value="Batal" class="input-disclaimer" />
+          	  	</div>
+          	  </td>
+          </tr>    
+      </table>
+ 
+  </form>  
+ </div>
+
+<!-- /patTemplate:tmpl -->

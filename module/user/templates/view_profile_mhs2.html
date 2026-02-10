@@ -1,0 +1,69 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Profil Mahasiswa</h2>
+   <br />
+   
+   <h5>Keterangan :</h5>
+   <p>Profil Mahasiswa berisi data pribadi pengguna portal akademik. Apabila terdapat kesalahan data, anda dapat menghubungi bagian akademik untuk memperbaikinya.
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+     
+   <table width="100%" class="table-list">
+   <tr  width="150"> 
+      <th>{LABEL_NIM}</th>
+      <td>{PROFILE_NIM}</td>
+   </tr> 
+   <!-- patTemplate:tmpl name="data_profile" type="condition" conditionvar="INFO_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+         <tr> 
+            <th>Nama</th>
+            <td>{PROFILE_NAMA}</td>
+         </tr>
+		  <tr> 
+            <th>HP</th>
+            <td>{PROFILE_NOMOR_TELEPON}</td>
+         </tr>
+         <tr> 
+            <th>NIK / Nomor KTP</th>
+            <td>{PROFILE_MHSNOKTP}</td>
+         </tr>
+		 <tr> 
+            <th>Nomor Kartu Keluarga (KK)</th>
+            <td>{PROFILE_MHSNOKK}</td>
+         </tr>
+		 <tr> 
+            <th>Nama Ibu</th>
+            <td>{PROFILE_NAMA_IBU}</td>
+         </tr> 	
+		  <tr> 
+            <th>Email</th>
+            <td>{PROFILE_EMAIL}</td>
+         </tr>
+		 <tr> 
+            <th>Alamat</th>
+            <td>{PROFILE_ALAMAT_ASAL}</td>
+         </tr>
+         <tr> 
+            <th>Status</th>
+            <td>{PROFILE_STATUS_MHS}</td>
+         </tr>   
+      <!-- /patTemplate:sub --><!--sub:data_user-YES-->
+      <!-- patTemplate:sub condition="NO" -->
+         <tr> 
+            <th>Data Detil</th>
+            <td>Tidak ditemukan...</td>
+         </tr>   
+      <!-- /patTemplate:sub --><!--sub:data_user-NO-->
+   <!-- /patTemplate:tmpl --><!--data_user-->
+   </table>
+   
+   <br/>
+
+	  <div align="center">
+         <form name="frmUpdate" action="{URL_EDIT}" method="post">
+            <input class="input-disclaimer btn btn-primary" type="submit" name="btnEdit" value="Ubah">
+         </form>
+      </div>
+
+<!-- /patTemplate:tmpl -->

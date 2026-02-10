@@ -1,0 +1,165 @@
+<!-- patTemplate:tmpl name="content" -->
+   <div class="page-potrait" style="width: 18cm;">
+      <div class="{BREAK}">
+
+         <br />
+         <h2 style="font-size: 11pt;">KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN</h2>
+         <h2 style="font-size: 11pt;">{UNIVERSITY_NAME}</h2>
+         <!-- patTemplate:tmpl name="fakultas" type="condition" conditionvar="TIPE" -->
+            <!-- patTemplate:sub condition="1" -->
+               <h2 style="font-size: 11pt;">{FACULTY_NAME}</h2>
+            <!-- /patTemplate:sub -->
+            <!-- patTemplate:sub condition="2" -->
+               <br />
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+         <h1 align="center" style="font-size: 15pt;"><u>KARTU HASIL STUDI</u></h1>
+         <br />
+
+      <table width="100%">
+         <tr>
+            <td width="150">Nama Mahasiswa</td>
+            <td>:</td>
+            <td>{MHS_FULLNAME}</td>
+         </tr>
+         <tr>
+            <td width="150">{LABEL_NIM}</td>
+            <td>:</td>
+            <td>{MHS_NIU}</td>
+         </tr>
+         <tr>
+            <td width="150">IP Semester lalu</td>
+            <td>:</td>
+            <td>{IP_SEMESTER_LALU}</td>
+         </tr>
+         <tr>
+            <td width="150">Jurusan</td>
+            <td>:</td>
+            <td>{MHS_JURUSAN}</td>
+         </tr>
+         <tr>
+            <td width="150">Program Studi</td>
+            <td>:</td>
+            <td>{PRODI_INFO}</td>
+         </tr>
+         <tr>
+            <td width="150">Kurikulum</td>
+            <td>:</td>
+            <td>{MHS_KURTAHUN}</td>
+         </tr>
+         <tr>
+            <td width="150">Tahun Ajaran</td>
+            <td>:</td>
+            <td>{SEMESTER}</td>
+         </tr>
+         <tr>
+            <td width="150">Tanggal Cetak</td>
+            <td>:</td>
+            <td>{TANGGALCETAK}</td>
+            <td width="70">Semester</td>
+            <td>:</td>
+            <td>{SEMESTER_MHS}</td>
+         </tr>
+      </table>
+
+         <br />
+         <!-- patTemplate:tmpl name="khs" type="condition" conditionvar="IS_EMPTY" -->
+            <!-- patTemplate:sub condition="YES" -->
+               Data rencana studi tidak ada.
+            <!-- /patTemplate:sub -->
+            <!-- patTemplate:sub condition="NO" -->
+            <table class="tabel-common" width="100%">
+               <tr> 
+                  <th width="5" rowspan="2">No.</th>
+                  <th width="100" rowspan="2">Nama Blok /<br />Kode Modul</th>
+                  <th width="250" rowspan="2">Modul</th>
+                  <th width="20" rowspan="2">SKS</th>
+                  <th colspan="2">Hasil Studi</th>
+                  <th width="60" rowspan="2">Pembelajaran</th>
+               </tr>
+               <tr>
+                  <th width="30">Nilai</th>
+                  <th width="30">Bobot</th>
+               </tr>
+            <!-- patTemplate:tmpl name="khs_item" -->
+                  <!-- patTemplate:tmpl name="show_judul_blok" visibility="hidden" -->
+                     <tr>
+                        <td colspan="7">&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td nowrap="nowrap" align="right">{MKBLOKKODE}</td>
+                        <td nowrap="nowrap" colspan="6">{MKBLOKNAMA}</td>
+                     </tr>
+                  <!-- /patTemplate:tmpl -->
+                  <tr>
+                     <td nowrap="nowrap" align="right">{KHS_NO}</td>
+                     <td nowrap="nowrap">{KHS_KODE_MATAKULIAH}</td>
+                     <td nowrap="nowrap">{KHS_MATAKULIAH}</td>
+                     <td align="center" nowrap="nowrap">{KHS_SKS_JUMLAH}</td>
+                     <td align="center" nowrap="nowrap">{KHS_NILAI}</td>
+                     <td align="center" nowrap="nowrap">{KHS_BOBOT}</td>
+                     <td nowrap="nowrap">{KHS_METODE}</td>
+                  </tr>
+            <!-- /patTemplate:tmpl -->
+            <!-- patTemplate:tmpl name="krs_lintas_info" visibility="hidden" -->
+                <tr>
+                   <td colspan="7">Belum ada data</td>
+                </tr>
+            <!-- /patTemplate:tmpl -->
+            <!-- patTemplate:tmpl name="total" -->
+
+            <tr>
+               <td colspan="7">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan="3">Bobot Kontrak</td>
+               <td align="center">{TOTALSEMUASKS}</td>
+               <td></td>
+               <td align="center">{TOTALBOBOT}</td>
+               <td></td>
+            </tr>
+            <tr height="20">
+               <td style="border-bottom-style:hidden;border-left-style:hidden;" colspan="3">Keterangan : T = Tunda</td>
+               <td colspan="4">IP SEMESTER {SEMESTERROMAWI} : {TOTALBOBOT} / {TOTALSEMUASKS} = {TOTALIP}</td>
+            </tr>
+            <tr height="20">
+               <td style="border-bottom-style:hidden;border-left-style:hidden;" colspan="3">&nbsp;</td>
+               <td colspan="4">IP KUMULATIF : {TOTALBOBOTKUMULATIF} / {TOTALSEMUASKSKUMULATIF} = {TOTALIPKUMULATIF}</td>
+            </tr>
+            <!-- /patTemplate:tmpl -->
+            </table>
+         <!--<hr width="100%" class="hidden" />
+         Keterangan :<br />
+         Cetakan KRS Komputer ini merupakan KRS RESMI yang adalah salinan data dari KRS sementara dengan <br />
+         kemungkinan terkoreksi akibat batasan aturan IP -> maksimal kontrak, serta pengecekan topik modul bersyarat.-->
+            
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+
+      <div>
+  <br />
+      <!-- patTemplate:tmpl name="tanda_tangan" type="condition" conditionvar="NAMA" -->
+         <!-- patTemplate:sub condition="empty" -->
+         <table align="right" width="100%">
+            <tr>
+               <td>Dibuat rangkap 3:</td>
+               <td align="center">{TANGGALTANDATANGAN}<br /><span id="{TIPE_SAH}">Pembantu Dekan Bidang Akademik,</span><br /><span id="{JABATAN_SAH}"></span></td>
+            </tr>
+            <tr>
+               <td>&nbsp;&nbsp;&nbsp;&nbsp;1. Dosen PA<br />&nbsp;&nbsp;&nbsp;&nbsp;2. Jurusan / PS<br />&nbsp;&nbsp;&nbsp;&nbsp;3. Mahasiswa / Orang Tua</td>
+               <td align="center" height="50"></td>
+            </tr>
+            <tr>
+               <td>&nbsp;</td>
+               <td align="center" nowrap="nowrap"><span id="{NAMA_SAH}">{NAMA_PENGESAH}</span><br />------------------------------
+               <br />{LABEL_NIP}: <span id="{NIP_SAH}">{NIP_PENGESAH}</span></td>
+            </tr>
+         </table> 
+         <!-- /patTemplate:sub -->
+      <!-- /patTemplate:tmpl -->
+   </div>
+
+</div>
+</patTemplate:tmpl>
+   </div>
+<!-- /patTemplate:tmpl --> <!-- end of content -->

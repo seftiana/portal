@@ -1,0 +1,69 @@
+<!-- patTemplate:tmpl name="content" -->      
+   
+   <h4>{APPLICATION_MODULE}</h4>   
+   <br>
+   <h5>{THREAD_TITLE}</h5>   
+   <br>
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+         
+   <!-- patTemplate:tmpl name="post_list" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+         
+         <!-- patTemplate:link name="empty_box" src="empty_box" / --> 
+         
+         <table>
+            <tr>
+               <td class="table-common-links"><a href="{URL_ADD_POST}">Kirim Post</a></td>
+               <td class="table-common-links"><a href="{URL_BACK}">Kembali</a></td>
+            </tr>
+         </table>
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <table class="table-common-forum" width="100%">
+            
+            <tr>
+               <th>Pengirim</td>
+               <th colspan="2">Pesan</td>
+            </tr>
+            <!-- patTemplate:tmpl name="post_item" -->
+            <tr>
+               <td width="221" rowspan="2" class="text-left">
+                  <b>{POST_USERPROFIL}</b><br/>					
+                  {LABEL_NIM} : {POST_USERNAME}<br/>
+                  {POST_USERROLE}<br/>
+               </td>
+               <td width="395" class="text-left">				
+                  <strong>Tanggal Posting :</strong> {POST_TANGGAL}</td>
+                  <td width="116">
+                  <form name="replyForm" method="POST" class="form-common-input" action="{POST_URL_REPLY_PROCESS}">
+                     <input name="act" type="hidden" value="replyPost" />                                 
+                     <input name="forumPostId" type="hidden" value="{POST_ID}" />                                 
+                     <input name="forumThreadId" type="hidden" value="{POST_THREADID}" />                                 
+                     <input name="forumTopikId" type="hidden" value="{POST_TOPIKID}" />                                
+                     <input name="forumKategoriId" type="hidden" value="{POST_KATEGORIID}" />
+                     <input name="btnReply" type="submit" value="Reply" />
+                     <input name="btnReply" type="submit" value="Hapus" onClick="return ValidateDelete()"/>
+                  </form>		
+               </td>
+            </tr>				
+            <tr>
+               <td colspan="2" class="td-content-pengirim">
+                  <p>{POST_JUDUL}</p>
+                  {POST_CONTENT}
+               </td>
+            </tr>	
+            <!-- /patTemplate:tmpl -->            
+         </table>
+         <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+			<br/>
+         <table>
+            <tr>
+               <td class="table-common-links"><a href="{URL_BACK}">Kembali</a></td>
+            </tr>
+         </table>
+   
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+<!-- /patTemplate:tmpl -->       

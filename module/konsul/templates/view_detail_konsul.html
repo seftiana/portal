@@ -1,0 +1,60 @@
+<!-- patTemplate:tmpl name="content" -->
+
+   <h2> {APPLICATION_MODULE} </h2>
+   <h4> {APPLICATION_SUBMODULE} </h4>
+   <br>
+
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <form class="form-common" method="POST" action="{URL_ACTION}">
+   <!-- patTemplate:tmpl name="message_detail" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+         <input class="input-disclaimer" type="submit" name="act" value="Kembali" />&nbsp;
+         
+      <!-- /patTemplate:sub -->
+      
+      <!-- patTemplate:sub condition="NO" -->
+            <input type="hidden" name="msgId" value="{MSG_ID}">
+            <input type="hidden" name="msgType" value="{MSG_TYPE}">
+            <input type="hidden" name="pemilik" value="{MSG_IDPENERIMA}" />
+            <input type="hidden" name="teman" value="{MSG_IDPENGIRIM}" />
+            <input type="hidden" name="act" value="AddAddressBook">
+            <table width="100%" class="table-list">
+                  <tr>
+                        <th width="150">Pengirim</th>
+                        <td> {MSG_PENGIRIM}</td>
+                      </tr>
+                     <tr> 
+                        <th>Penerima</th>
+                        <td> {MSG_PENERIMA}</td>
+                     </tr>
+               <tr>
+                  <th>Judul</th>
+                  <td> {MSG_JUDUL}</td>
+               </tr>
+               <tr> 
+                  <th>Tanggal Pengiriman</th>
+                  <td> {MSG_WAKTUKIRIM}</td>
+               </tr>
+               <tr> 
+                  <th>Isi Pesan</th>
+                  <td> {MSG_ISI}</td>
+               </tr>
+               <tr> 
+                  <th>Tanggal Dihapus</th>
+                  <td> {MSG_WAKTUHAPUS}</td>
+               </tr>
+             
+            </table>
+         <input class="input-disclaimer" type="submit" name="act" value="Kembali" />&nbsp;
+         <!-- patTemplate:tmpl name="reply" visibility="hidden" -->
+            <input class="input-disclaimer" type="submit" name="act" value="Balas" />&nbsp;
+         <!-- /patTemplate:tmpl -->
+            
+            
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl --> <!-- end of message_detail -->
+   </form>
+<!-- /patTemplate:tmpl --> <!-- end of content-->

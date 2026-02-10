@@ -1,0 +1,47 @@
+<?php
+$dalTableprogram_studi = array();
+$dalTableprogram_studi["prodiKode"] = array("type"=>3,"varname"=>"prodiKode", "name" => "prodiKode");
+$dalTableprogram_studi["prodiKodeUm"] = array("type"=>200,"varname"=>"prodiKodeUm", "name" => "prodiKodeUm");
+$dalTableprogram_studi["prodiKodeUniv"] = array("type"=>200,"varname"=>"prodiKodeUniv", "name" => "prodiKodeUniv");
+$dalTableprogram_studi["prodiLabelNim"] = array("type"=>200,"varname"=>"prodiLabelNim", "name" => "prodiLabelNim");
+$dalTableprogram_studi["prodiJurKode"] = array("type"=>2,"varname"=>"prodiJurKode", "name" => "prodiJurKode");
+$dalTableprogram_studi["prodiFakKode"] = array("type"=>2,"varname"=>"prodiFakKode", "name" => "prodiFakKode");
+$dalTableprogram_studi["prodiNamaResmi"] = array("type"=>200,"varname"=>"prodiNamaResmi", "name" => "prodiNamaResmi");
+$dalTableprogram_studi["prodiNamaSingkat"] = array("type"=>200,"varname"=>"prodiNamaSingkat", "name" => "prodiNamaSingkat");
+$dalTableprogram_studi["prodiNamaAsing"] = array("type"=>200,"varname"=>"prodiNamaAsing", "name" => "prodiNamaAsing");
+$dalTableprogram_studi["prodiNamaAsingSingkat"] = array("type"=>200,"varname"=>"prodiNamaAsingSingkat", "name" => "prodiNamaAsingSingkat");
+$dalTableprogram_studi["prodiIsEksakta"] = array("type"=>16,"varname"=>"prodiIsEksakta", "name" => "prodiIsEksakta");
+$dalTableprogram_studi["prodiNamaJenjang"] = array("type"=>200,"varname"=>"prodiNamaJenjang", "name" => "prodiNamaJenjang");
+$dalTableprogram_studi["prodiJjarKode"] = array("type"=>200,"varname"=>"prodiJjarKode", "name" => "prodiJjarKode");
+$dalTableprogram_studi["prodiModelrId"] = array("type"=>2,"varname"=>"prodiModelrId", "name" => "prodiModelrId");
+$dalTableprogram_studi["prodiSksLulus"] = array("type"=>2,"varname"=>"prodiSksLulus", "name" => "prodiSksLulus");
+$dalTableprogram_studi["prodiAlamat"] = array("type"=>200,"varname"=>"prodiAlamat", "name" => "prodiAlamat");
+$dalTableprogram_studi["prodiTelp"] = array("type"=>200,"varname"=>"prodiTelp", "name" => "prodiTelp");
+$dalTableprogram_studi["prodiFax"] = array("type"=>200,"varname"=>"prodiFax", "name" => "prodiFax");
+$dalTableprogram_studi["prodiEmail"] = array("type"=>200,"varname"=>"prodiEmail", "name" => "prodiEmail");
+$dalTableprogram_studi["prodiWebsite"] = array("type"=>200,"varname"=>"prodiWebsite", "name" => "prodiWebsite");
+$dalTableprogram_studi["prodiKontakPerson"] = array("type"=>200,"varname"=>"prodiKontakPerson", "name" => "prodiKontakPerson");
+$dalTableprogram_studi["prodiNomorSkDikti"] = array("type"=>200,"varname"=>"prodiNomorSkDikti", "name" => "prodiNomorSkDikti");
+$dalTableprogram_studi["prodiTanggalSkDikti"] = array("type"=>7,"varname"=>"prodiTanggalSkDikti", "name" => "prodiTanggalSkDikti");
+$dalTableprogram_studi["prodiTanggalBerakhirSkDikti"] = array("type"=>7,"varname"=>"prodiTanggalBerakhirSkDikti", "name" => "prodiTanggalBerakhirSkDikti");
+$dalTableprogram_studi["prodiProdidiktiKode"] = array("type"=>200,"varname"=>"prodiProdidiktiKode", "name" => "prodiProdidiktiKode");
+$dalTableprogram_studi["prodiTanggalBerdiri"] = array("type"=>7,"varname"=>"prodiTanggalBerdiri", "name" => "prodiTanggalBerdiri");
+$dalTableprogram_studi["prodiStprodidikrId"] = array("type"=>2,"varname"=>"prodiStprodidikrId", "name" => "prodiStprodidikrId");
+$dalTableprogram_studi["prodiSahrKode"] = array("type"=>200,"varname"=>"prodiSahrKode", "name" => "prodiSahrKode");
+$dalTableprogram_studi["prodiSemIdStatusDihapus"] = array("type"=>20,"varname"=>"prodiSemIdStatusDihapus", "name" => "prodiSemIdStatusDihapus");
+$dalTableprogram_studi["prodiFpkrKode"] = array("type"=>200,"varname"=>"prodiFpkrKode", "name" => "prodiFpkrKode");
+$dalTableprogram_studi["prodiPpkrKode"] = array("type"=>200,"varname"=>"prodiPpkrKode", "name" => "prodiPpkrKode");
+$dalTableprogram_studi["prodiKetuaProdiNidn"] = array("type"=>200,"varname"=>"prodiKetuaProdiNidn", "name" => "prodiKetuaProdiNidn");
+$dalTableprogram_studi["prodiKetuaProdiNama"] = array("type"=>200,"varname"=>"prodiKetuaProdiNama", "name" => "prodiKetuaProdiNama");
+$dalTableprogram_studi["prodiKetuaProdiNoHp"] = array("type"=>200,"varname"=>"prodiKetuaProdiNoHp", "name" => "prodiKetuaProdiNoHp");
+$dalTableprogram_studi["prodiOperatorNama"] = array("type"=>200,"varname"=>"prodiOperatorNama", "name" => "prodiOperatorNama");
+$dalTableprogram_studi["prodiOperatorNoHp"] = array("type"=>200,"varname"=>"prodiOperatorNoHp", "name" => "prodiOperatorNoHp");
+$dalTableprogram_studi["prodiIsDalamSatuanAdministrasi"] = array("type"=>3,"varname"=>"prodiIsDalamSatuanAdministrasi", "name" => "prodiIsDalamSatuanAdministrasi");
+$dalTableprogram_studi["prodiGelarKelulusan"] = array("type"=>200,"varname"=>"prodiGelarKelulusan", "name" => "prodiGelarKelulusan");
+$dalTableprogram_studi["prodiNamaGelarKelulusan"] = array("type"=>200,"varname"=>"prodiNamaGelarKelulusan", "name" => "prodiNamaGelarKelulusan");
+$dalTableprogram_studi["prodiGelarAsingKelulusan"] = array("type"=>200,"varname"=>"prodiGelarAsingKelulusan", "name" => "prodiGelarAsingKelulusan");
+$dalTableprogram_studi["prodiNamaGelarAsingKelulusan"] = array("type"=>200,"varname"=>"prodiNamaGelarAsingKelulusan", "name" => "prodiNamaGelarAsingKelulusan");
+	$dalTableprogram_studi["prodiKode"]["key"]=true;
+
+$dal_info["gtakademik_dev_at_localhost__program_studi"] = &$dalTableprogram_studi;
+?>

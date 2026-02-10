@@ -1,0 +1,207 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.subhead th{
+	font-weight: bold;
+	font-size: 10pt;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.subhead-common th{
+	font-weight: bold;
+	font-size: 7pt;
+	text-align: center;
+	vertical-align: middle;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.hidden{
+	display: none;
+}
+</style>
+   <h2>Data Orang Tua Mahasiswa</h2>
+   <br />
+   
+   <h5>Keterangan :</h5>
+   <p>Data Orang Tua berisi data Orang Tua Mahasiswa portal akademik. Apabila terdapat kesalahan data, anda dapat memperbaikinya.
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+     
+   <table width="100%" class="table table-list">
+   <!-- patTemplate:tmpl name="data_biodata" -->
+            <tr class="subhead">
+               <th colspan="2"> Data Ayah</th>
+            </tr>  
+            <tr>
+               <th width="23%">Nama Ayah</th>
+               <td width="77%">{ORTU_NAMA_AYAH}</td>
+            </tr>     
+            <tr>
+               <th>Tanggal Lahir Ayah</th>
+               <td>{ORTU_TGL_LAHIR_AYAH}</td>
+            </tr>   
+            <tr>
+               <th >Ayah Meninggal</th>
+               <td >{ORTU_AYAH_MENINGGAL}</td> 
+            </tr>         
+            <tr class="{CLASS_AYAH_MENINGGAL}">
+               <th >Tanggal Ayah Meninggal</th>
+               <td>{ORTU_TGL_AYAH_MENINGGAL}</td>
+            </tr>         
+            <tr>
+               <th >Pendidikan Ayah</th>
+               <td>{LABEL_PENDIDIKAN_AYAH}</td>
+            </tr>         
+            <tr>
+               <th  >Pendidikan Terakhir Ayah</th>
+               <td>{LABEL_PENDIDIKAN_TERAKHIR_AYAH}</td>
+            </tr>  
+            <tr>
+               <th >Pekerjaan Ayah</th>
+               <td>{LABEL_PEKERJAAN_AYAH}</td>
+            </tr>  
+            <tr class="subhead">
+               <th colspan="2"> Data Ibu</th>
+            </tr>  
+            <tr>
+               <th>Nama Ibu</th>
+               <td>{ORTU_NAMA_IBU}</td>
+            </tr>
+            <tr>
+               <th>Tanggal Lahir Ibu</th>
+               <td>{ORTU_TGL_LAHIR_IBU}</td>
+            </tr>   
+            <tr>
+               <th >Ibu Meninggal?</th>
+               <td >{ORTU_IBU_MENINGGAL}</td>
+            </tr>
+            <tr class="{CLASS_IBU_MENINGGAL}">
+               <th >Tanggal Ibu Meninggal</th>
+               <td>{ORTU_TGL_IBU_MENINGGAL}</td>
+            </tr>  
+            <tr>
+               <th >Pendidikan Ibu</th>
+               <td>{LABEL_PENDIDIKAN_IBU}</td>
+            </tr>         
+            <tr>
+               <th >Pendidikan Terakhir Ibu</th>
+               <td>{LABEL_PENDIDIKAN_TERAKHIR_IBU}</td>
+            </tr>  
+            <tr>
+               <th >Pekerjaan Ibu</th>
+               <td>{LABEL_PEKERJAAN_IBU}</td>
+            </tr>    
+            <tr class="subhead">
+               <th colspan="2"> Data Orang Tua</th>
+            </tr>  
+            <tr>
+               <th>Agama Orang Tua</th>
+               <td>{LABEL_AGAMA_ORTU}</td>
+            </tr>            
+            <tr>
+               <th>Warga Negara Orang Tua</th>
+               <td>{LABEL_WARGA_NEGARA_ORTU}</td>
+            </tr> 
+             <tr>
+               <th >Alamat Orang Tua</th>
+               <td>{ORTU_ALAMAT}</td>
+            </tr>
+             <tr>
+               <th >Alamat Kantor Ayah</th>
+               <td>{ORTU_ALAMAT_KANTOR_AYAH}</td>
+            </tr>
+            <tr>
+               <th>Propinsi Orang Tua</th>
+               <td>{LABEL_PROPINSI_ORTU}</td>
+            </tr> 
+            <tr>
+               <th>Kota Orang Tua</th>
+               <td>{LABEL_KOTA_ORTU}</td>
+            </tr>
+            <tr>
+               <th >Kode Pos Orang Tua</th>
+               <td>{ORTU_KODE_POS}</td>
+            </tr>
+            <tr>
+               <th >Nomor Telepon/ Hp Orang Tua</th>
+               <td>{ORTU_NO_TELP}</td>
+            </tr>         
+            <tr>
+               <th >Email Orang Tua</th>
+               <td>{ORTU_EMAIL}</td>
+            </tr> 
+            <tr>
+               <th >Orang Tua Mampu?</th>
+               <td >{ORTU_MAMPU}</td>
+            </tr>
+            <tr>
+               <th >Penghasilan Orang Tua</th>
+               <td>{LABEL_PENGHASILAN_ORTU}</td>
+            </tr>
+            <tr>
+               <th>Jumlah Tanggungan</th>
+               <td>{ORTU_JUMLAH_TANGGUNGAN}</td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2"> Data Wali</th>
+            </tr>  
+            <tr>
+               <th>Nama Wali</th>
+               <td>{ORTU_NAMA_WALI}</td>
+            </tr>   
+            <tr>
+               <th>Tanggal Lahir Wali</th>
+               <td>{ORTU_TGL_LAHIR_WALI}</td>
+            </tr>
+            <tr>
+               <th >Wali Meninggal?</th>
+               <td >{ORTU_WALI_MENINGGAL}</td>
+            </tr>
+            <tr class="{CLASS_WALI_MENINGGAL}">
+               <th >Tanggal Wali Meninggal</th>
+               <td>{ORTU_TGL_WALI_MENINGGAL}</td>
+            </tr>
+            <tr>
+               <th >Alamat Wali</th>
+               <td>{ORTU_ALAMAT_WALI}</td>
+            </tr>
+            <tr>
+               <th >Propinsi Wali</th>
+               <td>{LABEL_PROPINSI_WALI}</td>
+            </tr> 
+            <tr>
+               <th >Pilih Kota Wali</th>
+               <td>{LABEL_KOTA_WALI}</td>
+            </tr>
+            <tr>
+               <th >Kode Pos Wali</th>
+               <td>{ORTU_KODE_POS_WALI}</td>
+            </tr>
+            <tr>
+               <th >Nomor Telepon/ Hp Wali</th>
+               <td>{ORTU_NO_TELP_WALI}</td>
+            </tr>         
+            <tr>
+               <th >Email Wali</th>
+               <td>{ORTU_EMAIL_WALI}</td>
+            </tr>
+            <tr>
+               <th >Pekerjaan Wali</th>
+               <td>{LABEL_PEKERJAAN_WALI}</td>
+            </tr> 
+            <tr>
+               <th >Pendidikan Wali</th>
+               <td>{LABEL_PENDIDIKAN_WALI}</td>
+            </tr>         
+            <tr>
+               <th >Pendidikan Terakhir Wali</th>
+               <td>{LABEL_PENDIDIKAN_TERAKHIR_WALI}</td>
+            </tr>
+   <!-- /patTemplate:tmpl -->
+   </table>
+   
+	<div align="center">
+		<form name="frmEdit" action="{URL_EDIT}" method="post">
+		<input class="input-disclaimer btn btn-primary" type="submit" name="btnEdit" value="Ubah">
+		</form>
+	</div>
+<!-- /patTemplate:tmpl -->

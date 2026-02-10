@@ -1,0 +1,46 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Feedback</h2>
+<!-- patTemplate:tmpl name="data_feedback" type="condition" conditionvar="USER_IS_EMPTY" -->
+   <!-- patTemplate:sub condition="YES" -->
+      <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+   <!-- /patTemplate:sub --><!--sub:data_feedback-YES-->
+   <!-- patTemplate:sub condition="NO" -->
+   <table class="table-common" width="100%">
+      <tr>
+         <th>No</th>
+         <th>User</th>
+         <th>Nama Lengkap</th>
+         <th>Isi Feedback</th>
+         <th>Tanggal Kirim</th>
+         <th>Prioritas</th>
+         <th colspan="3">Aksi</th>
+      </tr>         
+      <!-- patTemplate:tmpl name="data_feedback_item" type="condition" conditionvar="ODDEVEN" -->                  
+            <!-- patTemplate:sub condition="ODD" -->                 
+               <tr>
+                  <td>{FB_NUMBER}</td>
+                  <td>{FB_NAMA_USER}</td>
+                  <td>{FB_NAMA_LENGKAP}</td>
+                  <td>{FB_ISI_FEEDBACK}</td>
+                  <td>{FB_NAMA_LENGKAP}</td>
+                  <td>{FB_PRIORITAS}</td>
+                  <td class="table-common-links" ><a href="{USER_URLDELETE}"><img src="images/button-delete.gif" alt="Delete" /></td>
+                  <td class="table-common-links" ><a href="{USER_URLUPDATE}"><img src="images/button-edit.gif" alt="Edit" /></td>
+               </tr>         
+            <!-- /patTemplate:sub -->                 
+            <!-- patTemplate:sub condition="EVEN" -->                 
+               <tr class="table-common-even">
+                  <td>{FB_NUMBER}</td>
+                  <td>{FB_NAMA_USER}</td>
+                  <td>{FB_NAMA_LENGKAP}</td>
+                  <td>{FB_ISI_FEEDBACK}</td>
+                  <td>{FB_NAMA_LENGKAP}</td>
+                  <td>{FB_PRIORITAS}</td>
+                  <td class="table-common-links" ><a href="{USER_URLDELETE}"><img src="images/button-delete.gif" alt="Delete" /></td>
+                  <td class="table-common-links" ><a href="{USER_URLUPDATE}"><img src="images/button-edit.gif" alt="Edit" /></td>
+               </tr>         
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl --><!--data_data_feedback-->
+   </table>
+   <!-- /patTemplate:sub --><!--sub:data_feedback-YES-->
+<!-- patTemplate:tmpl -->

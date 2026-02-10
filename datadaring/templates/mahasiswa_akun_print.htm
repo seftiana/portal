@@ -1,0 +1,193 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_pdf}
+<div {$pdf_chiddenattr} data-pageid="{$pageid}" data-container="pdf" class="   col-md-12 "> 
+
+{BEGIN printbuttons}
+
+{END printbuttons}
+
+
+
+</div>
+{END container_pdf}
+
+
+
+
+
+{BEGIN container_pageheader}
+<div {$pageheader_chiddenattr} data-pageid="{$pageid}" data-container="pageheader" class="    "> 
+
+{BEGIN printheader}
+	<h2 {$printheader_hiddenattr} data-pageid="{$pageid}" data-brick="printheader" >{$pagetitlelabel mahasiswa_akun print}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END printheader}
+
+
+{BEGIN page_number}
+<span>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></span>
+{END page_number}
+
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="table table-bordered rp-maintable" {$printgrid_hiddenattr} data-pageid="{$pageid}" data-brick="printgrid" >
+	<thead>
+	{BEGIN grid_header}
+		<tr class="{$gridHeader_class}" >
+		{BEGIN record_header}
+			{BEGIN maMhsNiu_fieldheadercolumn}
+			<th class="{$maMhsNiu_class}" {$maMhsNiu_style}  data-field="maMhsNiu">
+				{$label mahasiswa_akun maMhsNiu}
+			</th>
+			{END maMhsNiu_fieldheadercolumn}
+			{BEGIN maEmail_fieldheadercolumn}
+			<th class="{$maEmail_class}" {$maEmail_style}  data-field="maEmail">
+				{$label mahasiswa_akun maEmail}
+			</th>
+			{END maEmail_fieldheadercolumn}
+			{BEGIN maEmailPswd_fieldheadercolumn}
+			<th class="{$maEmailPswd_class}" {$maEmailPswd_style}  data-field="maEmailPswd">
+				{$label mahasiswa_akun maEmailPswd}
+			</th>
+			{END maEmailPswd_fieldheadercolumn}
+			{BEGIN maEmailAktif_fieldheadercolumn}
+			<th class="{$maEmailAktif_class}" {$maEmailAktif_style}  data-field="maEmailAktif">
+				{$label mahasiswa_akun maEmailAktif}
+			</th>
+			{END maEmailAktif_fieldheadercolumn}
+			{BEGIN maElearning_fieldheadercolumn}
+			<th class="{$maElearning_class}" {$maElearning_style}  data-field="maElearning">
+				{$label mahasiswa_akun maElearning}
+			</th>
+			{END maElearning_fieldheadercolumn}
+			{BEGIN maElearningPswd_fieldheadercolumn}
+			<th class="{$maElearningPswd_class}" {$maElearningPswd_style}  data-field="maElearningPswd">
+				{$label mahasiswa_akun maElearningPswd}
+			</th>
+			{END maElearningPswd_fieldheadercolumn}
+			{BEGIN maElearningAktif_fieldheadercolumn}
+			<th class="{$maElearningAktif_class}" {$maElearningAktif_style}  data-field="maElearningAktif">
+				{$label mahasiswa_akun maElearningAktif}
+			</th>
+			{END maElearningAktif_fieldheadercolumn}
+			{BEGIN endrecordheader_block}
+			<th class="rnr-cs">&nbsp;</th>
+			{END endrecordheader_block}
+		{END record_header}
+		</tr>
+	{END grid_header}
+	</thead>
+	
+	<tbody>	
+	{BEGIN grid_row}
+		<tr class="{$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+			{BEGIN maMhsNiu_fieldcolumn}
+			<td  class="{$maMhsNiu_class}" {$maMhsNiu_style} {$recordattrs}>
+				{$maMhsNiu_value}
+			</td>
+			{END maMhsNiu_fieldcolumn}
+			{BEGIN maEmail_fieldcolumn}
+			<td  class="{$maEmail_class}" {$maEmail_style} {$recordattrs}>
+				{$maEmail_value}
+			</td>
+			{END maEmail_fieldcolumn}
+			{BEGIN maEmailPswd_fieldcolumn}
+			<td  class="{$maEmailPswd_class}" {$maEmailPswd_style} {$recordattrs}>
+				{$maEmailPswd_value}
+			</td>
+			{END maEmailPswd_fieldcolumn}
+			{BEGIN maEmailAktif_fieldcolumn}
+			<td  class="{$maEmailAktif_class}" {$maEmailAktif_style} {$recordattrs}>
+				{$maEmailAktif_value}
+			</td>
+			{END maEmailAktif_fieldcolumn}
+			{BEGIN maElearning_fieldcolumn}
+			<td  class="{$maElearning_class}" {$maElearning_style} {$recordattrs}>
+				{$maElearning_value}
+			</td>
+			{END maElearning_fieldcolumn}
+			{BEGIN maElearningPswd_fieldcolumn}
+			<td  class="{$maElearningPswd_class}" {$maElearningPswd_style} {$recordattrs}>
+				{$maElearningPswd_value}
+			</td>
+			{END maElearningPswd_fieldcolumn}
+			{BEGIN maElearningAktif_fieldcolumn}
+			<td  class="{$maElearningAktif_class}" {$maElearningAktif_style} {$recordattrs}>
+				{$maElearningAktif_value}
+			</td>
+			{END maElearningAktif_fieldcolumn}
+			{BEGIN endrecord_block}
+			<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+			{END endrecord_block}
+		{END grid_record}
+		</tr>
+{END grid_row}
+	</tbody>
+
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

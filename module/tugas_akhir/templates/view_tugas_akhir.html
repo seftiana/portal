@@ -1,0 +1,95 @@
+<!-- patTemplate:tmpl name="content" -->
+<style type="text/css">
+.contentUtama {
+   padding:10px 5px;
+}
+.buttonAksi {
+   float:right;
+   margin-bottom:7px;
+}
+.syarat {
+   background-color: #efefef;
+   font-size: 10pt;
+   list-style-type: decimal;
+}
+.syarat li {
+   padding-left: 8px;
+}
+.dosen {
+   font-size: 11px;
+   list-style-type: decimal;
+   padding-left: 12px;
+   margin: 0;
+}
+.dosen li {
+   padding-left: 8px;
+}
+.table-form th {
+   padding: 4px 15px 6px 5px;
+}
+.hidden{
+   display:none;
+}
+</style>
+<div class="contentUtama">
+   <h2>Tugas Akhir</h2>
+   <br />
+   <h4>Keterangan :</h4>
+   <p>Pada Menu ini anda bisa melakukan pendaftaran tugas akhir pada semester yang bersangkutan</p>
+   <p>Berikut adalah syarat - syarat pengajuan tugas akhir, pastikan anda telah memenuhi persyaratan terlebih dahulu.
+		<ol class="syarat">
+		  <!-- patTemplate:tmpl name="data_syarat" -->
+		  <li>{NAME}</li>
+		  <!-- /patTemplate:tmpl -->
+		</ol>
+   </p>
+
+   <br />
+   <br />
+
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+
+   <!-- patTemplate:tmpl name="form" -->
+   <h5>Daftar</h5>
+   <div class="buttonAksi {BUTTON_HIDDEN}">
+      <input onclick="window.location.href='{URL_ADD_PENGAJUAN}';" class="input-disclaimer btn btn-info" style="cursor: pointer;" type="button" value="{LABEL_ADD}" name="act" />
+   </div>
+   <table width="100%" class="table-form {FORM_HIDDEN}">
+		  <!-- patTemplate:tmpl name="data_form" -->
+         <tr>
+            <th width="25%">Topik {NUM}</th>
+            <th width="2%">:</th>
+            <td>
+               {TOPIK}
+            </td>
+         </tr>
+         <tr>
+            <th>Judul {NUM}</th>
+            <th>:</th>
+            <td>
+				{JUDUL}
+            </td>
+         </tr>
+         <tr>
+            <th>File</th>
+            <th>:</th>
+            <td>
+				{PATH}
+            </td>
+         </tr>
+         <tr>
+            <th>Persetujuan</th>
+            <th>:</th>
+            <td>
+               {APPROVED}
+            </td>
+         </tr>
+         <tr>
+            <th colspan="3">&nbsp;</th>
+         </tr>
+		  <!-- /patTemplate:tmpl -->
+   </table>
+   <!-- /patTemplate:tmpl -->
+
+</div>
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,45 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.table-common{width:680px;}
+.table-common td{margin-left:50px;border:none !important;border-bottom:1px solid #c9d5e1;}
+.table-common tr{border-bottom:1px solid #c9d5e1;}
+.table-common a{display:block;}
+.table-common a:hover{background-color:#e3eff9;}
+</style>
+<script language="javascript">
+function expand(id,pr){var el=document.getElementById(id).style;if(el.display==''){el.display='none';pr.innerHTML=pr.innerHTML.replace('-','+');}else{el.display='';pr.innerHTML=pr.innerHTML.replace('+','-');}}
+</script>
+   <h3>Hasil Kuisioner : </h3>
+   
+   <!-- patTemplate:tmpl name="option_form" visibility="visible" -->
+   <form class="form-common" method="POST" action="{URL_VIEW}" name="frmUser" id="frmUser">   
+	<div id="content-disclaimer">
+	<h3 id="judul" align="center" class="m-3">PILIH DOSEN</h3>
+	<table class="table-common">
+   <!-- patTemplate:tmpl name="fakultas" -->
+   <tr><td><a href="#" onClick="expand('f{FAK}',this);">+ {NAMA}</a>
+		<table id="f{FAK}" style="margin-left:30px;display:none;width:96%;">
+		<!-- patTemplate:tmpl name="jurusan" -->
+				<tr><td><a href="#" onClick="expand('j{JUR}',this);">+ {NAMA}</a>
+					<table id="j{JUR}" style="margin-left:30px;display:none;width:96%;">
+			<!-- patTemplate:tmpl name="prodi" -->
+						<tr><td><a href="#" onClick="expand('p{PROD}',this);">+ {NAMA}</a>
+							<table id="p{PROD}" style="margin-left:30px;display:none;width:96%;">
+					<!-- patTemplate:tmpl name="dosen" -->
+								<tr><td><a href="{LNK}">{NAMA}</a></td></tr>
+					<!-- /patTemplate:tmpl -->
+							</table>
+						</td></tr>
+			<!-- /patTemplate:tmpl -->
+					</table>
+				</td></tr>
+		<!-- /patTemplate:tmpl -->
+		</table>
+   </td></tr>
+   <!-- /patTemplate:tmpl -->
+	</table>
+	 </div>
+   </form>
+   <br />
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

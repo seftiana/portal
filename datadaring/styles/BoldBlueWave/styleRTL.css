@@ -1,0 +1,1351 @@
+.BoldBlueWave.rnr-s-empty > .rnr-c
+{
+background:none;
+
+}
+.BoldBlueWave.rnr-s-empty > .rnr-c .rnr-leftbricks
+{
+margin-right: 10px;
+}
+.BoldBlueWave.rnr-s-empty > .rnr-c .rnr-rightbricks
+{
+margin-left: 10px;
+}
+.BoldBlueWave.rnr-s-empty > :not(.runner-c) > *.style1,
+.BoldBlueWave.rnr-s-empty > * > :not(.rnr-b-wrapper) .style1
+{
+color: #333333;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-empty > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-empty > * > :not(.rnr-b-wrapper) .style1,
+.BoldBlueWave.rnr-s-empty > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-empty > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 10px; background:transparent;
+}
+.BoldBlueWave.rnr-s-empty > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 10px; background:transparent;
+}
+.BoldBlueWave.rnr-s-empty > :not(.runner-c) > *.style2,
+.BoldBlueWave.rnr-s-empty > * > :not(.rnr-b-wrapper) .style2
+{
+color: #333333;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-empty > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-empty > * > :not(.rnr-b-wrapper) .style2,
+.BoldBlueWave.rnr-s-empty > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-empty > :not(.runner-c) > *.style3,
+.BoldBlueWave.rnr-s-empty > * > :not(.rnr-b-wrapper) .style3
+{
+color: #333333;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-empty > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-empty > * > :not(.rnr-b-wrapper) .style3,
+.BoldBlueWave.rnr-s-empty > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-menu > .rnr-c
+{
+border: solid #C0C0C0 1px;border-top-right-radius: 2px;border-top-left-radius: 2px;border-bottom-right-radius: 2px;border-bottom-left-radius: 2px;
+}
+.BoldBlueWave.rnr-s-menu > .rnr-ch > .rnr-b-hmenu:first-child
+{
+border-top-right-radius: 1px; padding-right: 1px;
+border-bottom-right-radius: 1px; padding-right: 1px;
+
+}
+.BoldBlueWave.rnr-s-menu > .rnr-ch> .rnr-b-hmenu:last-child
+{
+border-top-left-radius: 1px; padding-left: 1px;
+border-bottom-left-radius: 1px; padding-left: 1px;
+
+}
+.BoldBlueWave.rnr-s-menu > :not(.runner-c) > *.style1,
+.BoldBlueWave.rnr-s-menu > * > :not(.rnr-b-wrapper) .style1
+{
+background-image: none; background-color: #16589C;color: #FFFFFF;
+font-family: Tahoma, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-menu > .rnr-c.rnr-ch
+{
+background-image: none; background-color: #16589C;
+}
+.BoldBlueWave.rnr-s-menu > :not(.runner-c) > *.style2,
+.BoldBlueWave.rnr-s-menu > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #D2D8DC;color: #333333;
+font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-menu > :not(.runner-c) > *.style3,
+.BoldBlueWave.rnr-s-menu > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #D2D8DC;color: #333333;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-menu > .rnr-c .rnr-leftbricks
+{
+margin-right: 2px;
+}
+.BoldBlueWave.rnr-s-menu > .rnr-c .rnr-rightbricks
+{
+margin-left: 2px;
+}
+.BoldBlueWave.rnr-s-menu > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-menu > * > :not(.rnr-b-wrapper) .style1,
+.BoldBlueWave.rnr-s-menu > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-menu > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 2px; background:transparent;
+}
+.BoldBlueWave.rnr-s-menu > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 2px; background:transparent;
+}
+.BoldBlueWave.rnr-s-menu > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-menu > * > :not(.rnr-b-wrapper) .style2,
+.BoldBlueWave.rnr-s-menu > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-menu > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-menu > * > :not(.rnr-b-wrapper) .style3,
+.BoldBlueWave.rnr-s-menu > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-hmenu > .rnr-c
+{
+background:none;
+
+}
+.BoldBlueWave.rnr-s-hmenu > .rnr-c .rnr-leftbricks
+{
+margin-right: 10px;
+}
+.BoldBlueWave.rnr-s-hmenu > .rnr-c .rnr-rightbricks
+{
+margin-left: 10px;
+}
+.BoldBlueWave.rnr-s-hmenu > :not(.runner-c) > *.style1,
+.BoldBlueWave.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style1
+{
+color: #FFFF00;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-hmenu > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style1,
+.BoldBlueWave.rnr-s-hmenu > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 6px 4px;
+}
+.BoldBlueWave.rnr-s-hmenu > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 10px; background:transparent;
+}
+.BoldBlueWave.rnr-s-hmenu > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 10px; background:transparent;
+}
+.BoldBlueWave.rnr-s-hmenu > :not(.runner-c) > *.style2,
+.BoldBlueWave.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style2
+{
+color: #FFFF00;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-hmenu > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style2,
+.BoldBlueWave.rnr-s-hmenu > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-hmenu > :not(.runner-c) > *.style3,
+.BoldBlueWave.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style3
+{
+color: #FFFF00;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-hmenu > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-hmenu > * > :not(.rnr-b-wrapper) .style3,
+.BoldBlueWave.rnr-s-hmenu > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-undermenu > .rnr-c
+{
+border: solid #6699CC 1px;border-top-right-radius: 2px;border-top-left-radius: 2px;border-bottom-right-radius: 2px;border-bottom-left-radius: 2px;
+}
+.BoldBlueWave.rnr-s-undermenu > .rnr-ch > .rnr-b-hmenu:first-child
+{
+border-top-right-radius: 1px; padding-right: 1px;
+border-bottom-right-radius: 1px; padding-right: 1px;
+
+}
+.BoldBlueWave.rnr-s-undermenu > .rnr-ch> .rnr-b-hmenu:last-child
+{
+border-top-left-radius: 1px; padding-left: 1px;
+border-bottom-left-radius: 1px; padding-left: 1px;
+
+}
+.BoldBlueWave.rnr-s-undermenu > :not(.runner-c) > *.style1,
+.BoldBlueWave.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style1
+{
+background-image: none; background-color: #16589C;color: #FFFFFF;
+font-family: Tahoma, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-undermenu > .rnr-c.rnr-ch
+{
+background-image: none; background-color: #16589C;
+}
+.BoldBlueWave.rnr-s-undermenu > :not(.runner-c) > *.style2,
+.BoldBlueWave.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #FFFF00;color: #FFFF00;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-undermenu > :not(.runner-c) > *.style3,
+.BoldBlueWave.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #FFFF00;color: #FFFF00;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-undermenu > .rnr-c .rnr-leftbricks
+{
+margin-right: 2px;
+}
+.BoldBlueWave.rnr-s-undermenu > .rnr-c .rnr-rightbricks
+{
+margin-left: 2px;
+}
+.BoldBlueWave.rnr-s-undermenu > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style1,
+.BoldBlueWave.rnr-s-undermenu > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-undermenu > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 2px; background:transparent;
+}
+.BoldBlueWave.rnr-s-undermenu > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 2px; background:transparent;
+}
+.BoldBlueWave.rnr-s-undermenu > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style2,
+.BoldBlueWave.rnr-s-undermenu > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-undermenu > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-undermenu > * > :not(.rnr-b-wrapper) .style3,
+.BoldBlueWave.rnr-s-undermenu > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-fields > .rnr-c
+{
+border: solid #DCDCDC 2px;border-top-right-radius: 5px;border-top-left-radius: 5px;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;
+}
+.BoldBlueWave.rnr-s-fields > .rnr-ch > .rnr-b-hmenu:first-child
+{
+border-top-right-radius: 3px; padding-right: 2px;
+border-bottom-right-radius: 3px; padding-right: 2px;
+
+}
+.BoldBlueWave.rnr-s-fields > .rnr-ch> .rnr-b-hmenu:last-child
+{
+border-top-left-radius: 3px; padding-left: 2px;
+border-bottom-left-radius: 3px; padding-left: 2px;
+
+}
+.BoldBlueWave.rnr-s-fields > :not(.runner-c) > *.style1,
+.BoldBlueWave.rnr-s-fields > * > :not(.rnr-b-wrapper) .style1
+{
+background-color: #FFFFFF;
+background: linear-gradient(0.000000turn, #FFFFFF, #FFFFFF);
+;
+color: #333381;
+font-family: Tahoma, sans-serif; font-size: 12px; font-weight: bold; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-fields > .rnr-c.rnr-ch
+{
+background-color: #FFFFFF;
+background: linear-gradient(0.000000turn, #FFFFFF, #FFFFFF);
+;
+
+}
+.BoldBlueWave.rnr-s-fields > :not(.runner-c) > *.style2,
+.BoldBlueWave.rnr-s-fields > * > :not(.rnr-b-wrapper) .style2
+{
+background-color: #105198;
+background: linear-gradient(0.500000turn, #0E4A8B, #105198);
+;
+color: #FFFFFF;
+font-family: Tahoma, sans-serif; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-fields > :not(.runner-c) > *.style3,
+.BoldBlueWave.rnr-s-fields > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #FFFFFF;color: #696969;
+font-family: Tahoma, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-fields > .rnr-c .rnr-leftbricks
+{
+margin-right: 5px;
+}
+.BoldBlueWave.rnr-s-fields > .rnr-c .rnr-rightbricks
+{
+margin-left: 5px;
+}
+.BoldBlueWave.rnr-s-fields > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-fields > * > :not(.rnr-b-wrapper) .style1,
+.BoldBlueWave.rnr-s-fields > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 7px 6px;
+}
+.BoldBlueWave.rnr-s-fields > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 5px; background:transparent;
+}
+.BoldBlueWave.rnr-s-fields > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 5px; background:transparent;
+}
+.BoldBlueWave.rnr-s-fields > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-fields > * > :not(.rnr-b-wrapper) .style2,
+.BoldBlueWave.rnr-s-fields > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 8px 5px;
+}
+.BoldBlueWave.rnr-s-fields > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-fields > * > :not(.rnr-b-wrapper) .style3,
+.BoldBlueWave.rnr-s-fields > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 8px 4px;
+}
+.BoldBlueWave.rnr-s-form > .rnr-c
+{
+border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;
+}
+.BoldBlueWave.rnr-s-form > .rnr-ch > .rnr-b-hmenu:first-child
+{
+border-top-right-radius: 10px; padding-right: 5px;
+border-bottom-right-radius: 10px; padding-right: 5px;
+
+}
+.BoldBlueWave.rnr-s-form > .rnr-ch> .rnr-b-hmenu:last-child
+{
+border-top-left-radius: 10px; padding-left: 5px;
+border-bottom-left-radius: 10px; padding-left: 5px;
+
+}
+.BoldBlueWave.rnr-s-form > :not(.runner-c) > *.style1,
+.BoldBlueWave.rnr-s-form > * > :not(.rnr-b-wrapper) .style1
+{
+background-image: none; background-color: #6699CC;color: #000080;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-form > .rnr-c.rnr-ch
+{
+background-image: none; background-color: #6699CC;
+}
+.BoldBlueWave.rnr-s-form > :not(.runner-c) > *.style2,
+.BoldBlueWave.rnr-s-form > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #004080;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-form > :not(.runner-c) > *.style3,
+.BoldBlueWave.rnr-s-form > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #6699CC;color: #003366;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-form > .rnr-c .rnr-leftbricks
+{
+margin-right: 10px;
+}
+.BoldBlueWave.rnr-s-form > .rnr-c .rnr-rightbricks
+{
+margin-left: 10px;
+}
+.BoldBlueWave.rnr-s-form > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-form > * > :not(.rnr-b-wrapper) .style1,
+.BoldBlueWave.rnr-s-form > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-form > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 10px; background:transparent;
+}
+.BoldBlueWave.rnr-s-form > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 10px; background:transparent;
+}
+.BoldBlueWave.rnr-s-form > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-form > * > :not(.rnr-b-wrapper) .style2,
+.BoldBlueWave.rnr-s-form > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-form > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-form > * > :not(.rnr-b-wrapper) .style3,
+.BoldBlueWave.rnr-s-form > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-1 > .rnr-c
+{
+border: solid #C0C0C0 1px;border-top-right-radius: 4px;border-top-left-radius: 4px;border-bottom-right-radius: 4px;border-bottom-left-radius: 4px;
+}
+.BoldBlueWave.rnr-s-1 > .rnr-ch > .rnr-b-hmenu:first-child
+{
+border-top-right-radius: 3px; padding-right: 2px;
+border-bottom-right-radius: 3px; padding-right: 2px;
+
+}
+.BoldBlueWave.rnr-s-1 > .rnr-ch> .rnr-b-hmenu:last-child
+{
+border-top-left-radius: 3px; padding-left: 2px;
+border-bottom-left-radius: 3px; padding-left: 2px;
+
+}
+.BoldBlueWave.rnr-s-1 > :not(.runner-c) > *.style1,
+.BoldBlueWave.rnr-s-1 > * > :not(.rnr-b-wrapper) .style1
+{
+background-color: #6699CC;
+background: linear-gradient(0.000000turn, #75A3D1, #6699CC);
+;
+color: #404040;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-1 > .rnr-c.rnr-ch
+{
+background-color: #6699CC;
+background: linear-gradient(0.000000turn, #75A3D1, #6699CC);
+;
+
+}
+.BoldBlueWave.rnr-s-1 > :not(.runner-c) > *.style2,
+.BoldBlueWave.rnr-s-1 > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #004080;color: #FFFFFF;
+font-family: Tahoma, sans-serif; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-1 > :not(.runner-c) > *.style3,
+.BoldBlueWave.rnr-s-1 > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #6699CC;color: #404040;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-1 > .rnr-c .rnr-leftbricks
+{
+margin-right: 4px;
+}
+.BoldBlueWave.rnr-s-1 > .rnr-c .rnr-rightbricks
+{
+margin-left: 4px;
+}
+.BoldBlueWave.rnr-s-1 > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-1 > * > :not(.rnr-b-wrapper) .style1,
+.BoldBlueWave.rnr-s-1 > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-1 > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 4px; background:transparent;
+}
+.BoldBlueWave.rnr-s-1 > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 4px; background:transparent;
+}
+.BoldBlueWave.rnr-s-1 > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-1 > * > :not(.rnr-b-wrapper) .style2,
+.BoldBlueWave.rnr-s-1 > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 8px 4px;
+}
+.BoldBlueWave.rnr-s-1 > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-1 > * > :not(.rnr-b-wrapper) .style3,
+.BoldBlueWave.rnr-s-1 > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-2 > .rnr-c
+{
+border: solid #DCDCDC 1px;border-top-right-radius: 2px;border-top-left-radius: 2px;border-bottom-right-radius: 2px;border-bottom-left-radius: 2px;
+}
+.BoldBlueWave.rnr-s-2 > .rnr-ch > .rnr-b-hmenu:first-child
+{
+border-top-right-radius: 1px; padding-right: 1px;
+border-bottom-right-radius: 1px; padding-right: 1px;
+
+}
+.BoldBlueWave.rnr-s-2 > .rnr-ch> .rnr-b-hmenu:last-child
+{
+border-top-left-radius: 1px; padding-left: 1px;
+border-bottom-left-radius: 1px; padding-left: 1px;
+
+}
+.BoldBlueWave.rnr-s-2 > :not(.runner-c) > *.style1,
+.BoldBlueWave.rnr-s-2 > * > :not(.rnr-b-wrapper) .style1
+{
+background-color: #6699CC;
+background: linear-gradient(0.000000turn, #E8EFF7, #6699CC);
+;
+color: #404040;
+font-family: Tahoma, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-2 > .rnr-c.rnr-ch
+{
+background-color: #6699CC;
+background: linear-gradient(0.000000turn, #E8EFF7, #6699CC);
+;
+
+}
+.BoldBlueWave.rnr-s-2 > :not(.runner-c) > *.style2,
+.BoldBlueWave.rnr-s-2 > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #3366FF;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-2 > :not(.runner-c) > *.style3,
+.BoldBlueWave.rnr-s-2 > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #6699CC;color: #404040;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-2 > .rnr-c .rnr-leftbricks
+{
+margin-right: 2px;
+}
+.BoldBlueWave.rnr-s-2 > .rnr-c .rnr-rightbricks
+{
+margin-left: 2px;
+}
+.BoldBlueWave.rnr-s-2 > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-2 > * > :not(.rnr-b-wrapper) .style1,
+.BoldBlueWave.rnr-s-2 > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-2 > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 2px; background:transparent;
+}
+.BoldBlueWave.rnr-s-2 > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 2px; background:transparent;
+}
+.BoldBlueWave.rnr-s-2 > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-2 > * > :not(.rnr-b-wrapper) .style2,
+.BoldBlueWave.rnr-s-2 > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-2 > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-2 > * > :not(.rnr-b-wrapper) .style3,
+.BoldBlueWave.rnr-s-2 > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-3 > .rnr-c
+{
+border-top-right-radius: 10px;border-top-left-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;
+}
+.BoldBlueWave.rnr-s-3 > .rnr-ch > .rnr-b-hmenu:first-child
+{
+border-top-right-radius: 10px; padding-right: 5px;
+border-bottom-right-radius: 10px; padding-right: 5px;
+
+}
+.BoldBlueWave.rnr-s-3 > .rnr-ch> .rnr-b-hmenu:last-child
+{
+border-top-left-radius: 10px; padding-left: 5px;
+border-bottom-left-radius: 10px; padding-left: 5px;
+
+}
+.BoldBlueWave.rnr-s-3 > :not(.runner-c) > *.style1,
+.BoldBlueWave.rnr-s-3 > * > :not(.rnr-b-wrapper) .style1
+{
+background-image: none; background-color: #6699CC;color: #000000;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-3 > .rnr-c.rnr-ch
+{
+background-image: none; background-color: #6699CC;
+}
+.BoldBlueWave.rnr-s-3 > :not(.runner-c) > *.style2,
+.BoldBlueWave.rnr-s-3 > * > :not(.rnr-b-wrapper) .style2
+{
+background-image: none; background-color: #3366FF;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-3 > :not(.runner-c) > *.style3,
+.BoldBlueWave.rnr-s-3 > * > :not(.rnr-b-wrapper) .style3
+{
+background-image: none; background-color: #004080;color: #FFFFFF;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.rnr-s-3 > .rnr-c .rnr-leftbricks
+{
+margin-right: 10px;
+}
+.BoldBlueWave.rnr-s-3 > .rnr-c .rnr-rightbricks
+{
+margin-left: 10px;
+}
+.BoldBlueWave.rnr-s-3 > :not(.runner-c) > *.style1:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-3 > * > :not(.rnr-b-wrapper) .style1,
+.BoldBlueWave.rnr-s-3 > :not(.runner-c) > *.style1 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-3 > .rnr-ch:before
+{
+content: "";display:table-cell;padding:0 0 0 10px; background:transparent;
+}
+.BoldBlueWave.rnr-s-3 > .rnr-ch:after
+{
+content: "";display:table-cell;padding:0 0 0 10px; background:transparent;
+}
+.BoldBlueWave.rnr-s-3 > :not(.runner-c) > *.style2:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-3 > * > :not(.rnr-b-wrapper) .style2,
+.BoldBlueWave.rnr-s-3 > :not(.runner-c) > *.style2 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-3 > :not(.runner-c) > *.style3:not(.rnr-hfiller),
+.BoldBlueWave.rnr-s-3 > * > :not(.rnr-b-wrapper) .style3,
+.BoldBlueWave.rnr-s-3 > :not(.runner-c) > *.style3 > .fieldGrid > * > * > td
+{
+padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-toprow:first-child > th:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-toprow:first-child > th:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-toprow:first-child > td:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-toprow:first-child > td:not(.rnr-cs)
+{
+border-top: solid #D8DCDE 1px;
+
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > tbody > tr:last-child > td:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > tbody > tr:last-child > td:not(.rnr-cs)
+{
+border-bottom: solid #D8DCDE 1px;
+
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > * > td:first-child,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > * > td:first-child,
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > * > th:first-child,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > * > th:first-child,
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > * > *.rnr-cs + td,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > * > *.rnr-cs + td,
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > * > *.rnr-cs + th,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > * > *.rnr-cs + th
+{
+border-right: solid #D8DCDE 1px;
+
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > * > *.rnr-edge,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > * > *.rnr-edge
+{
+border-left: solid #D8DCDE 1px;
+
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-toprow:first-child > td:first-child,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-toprow:first-child > td:first-child,
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-toprow:first-child > th:first-child,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-toprow:first-child > th:first-child,
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-toprow:first-child > *.rnr-cs + td,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-toprow:first-child > *.rnr-cs + td,
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-toprow:first-child > *.rnr-cs + th,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-toprow:first-child > *.rnr-cs + th
+{
+border-top-right-radius: 5px;
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > tbody > tr:last-child > td:first-child,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > tbody > tr:last-child > td:first-child,
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > tbody > tr:last-child > th:first-child,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > tbody > tr:last-child > th:first-child,
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > tbody > tr:last-child > *.rnr-cs + td,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > tbody > tr:last-child > *.rnr-cs + td,
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > tbody > tr:last-child > *.rnr-cs + th,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > tbody > tr:last-child > *.rnr-cs + th
+{
+border-bottom-right-radius: 5px;
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-toprow:first-child > .rnr-edge,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-toprow:first-child > .rnr-edge
+{
+border-top-left-radius: 5px;
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > tbody > tr:last-child > .rnr-edge,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > tbody > tr:last-child > .rnr-edge
+{
+border-bottom-left-radius: 5px;
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > tbody > * > .rnr-edge,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > tbody > * > .rnr-edge
+{
+min-width: 5px;
+
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-toprow > th:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-toprow > th:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-toprow > td:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-toprow > td:not(.rnr-cs)
+{
+background-color: #16589C; background-image: none;font-family: Tahoma, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;color: #FFFFFF;padding: 8px 6px;
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-bottomrow > td:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-bottomrow > td:not(.rnr-cs)
+{
+background-color: #DCE2E6; background-image: none;font-family: Tahoma, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;color: #333333;padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-row > td:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-row > td:not(.rnr-cs)
+{
+background-color: #EDF1F3; background-image: none;font-family: Verdana, sans-serif; font-size: 11px; font-weight: normal; font-style: normal; text-decoration: none;color: #333333;color: #333333;padding: 5px 4px;
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-row:nth-last-child(2n+1) > td:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-row:nth-last-child(2n+1) > td:not(.rnr-cs)
+{
+background-color: #FFFFFF; background-image: none;color: #333333;
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical).hoverable > * > .rnr-row:hover > td:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord.hoverable > * > .rnr-row:hover > td:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-row > td.rnr-selected,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-row > td.rnr-selected
+{
+background-color: #DCDCDC; background-image: none;color: #333333;
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical).hoverable > * > .rnr-row:hover:nth-last-child(2n+1) > td:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord.hoverable > * > .rnr-row:hover:nth-last-child(2n+1) > td:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > * > .rnr-row:nth-last-child(2n+1) > td.rnr-selected,
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > * > .rnr-row:nth-last-child(2n+1) > td.rnr-selected
+{
+background-color: #DCE2E6; background-image: none;color: #333333;
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > thead > tr:last-child > th:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > thead > tr:last-child > th:not(.rnr-cs)
+{
+border-bottom: solid #D8DCDE 1px;
+
+}
+.BoldBlueWave.rnr-s-grid > table:not(.runner-c):not(.vertical) > tbody > tr:not(.rnr-bottomrow) + .rnr-bottomrow > td:not(.rnr-cs),
+.BoldBlueWave.rnr-s-grid > table.vertical > * > tr > td > table.rnr-vrecord > tbody > tr:not(.rnr-bottomrow) + .rnr-bottomrow > td:not(.rnr-cs)
+{
+border-top: solid #D8DCDE 1px;
+
+}
+.BoldBlueWave .rnr-search-highlight
+{
+color: #FF0000; background-color: transparent;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > *,
+.BoldBlueWave .rnr-b-vmenu.tree.main > *:not(.subitem)
+{
+background-color: #C0C0C0;
+background: linear-gradient(0.000000turn, #D2D2D2, #C0C0C0);
+;
+color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > * > hr,
+.BoldBlueWave .rnr-b-vmenu.tree.main > *:not(.subitem) > hr
+{
+border-color:#FFFFFF;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > *:hover:not(.expanded):not(.menuSeparator),
+.BoldBlueWave .rnr-b-vmenu.tree.main > *:not(.subitem):not(.manage):hover:not(.menuSeparator)
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #E6E6E6, #DCDCDC);
+;
+color:#3366FF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > *.current.current.current,
+.BoldBlueWave .rnr-b-vmenu.tree.main > *:not(.subitem).current.current.current
+{
+background-color: #16589C;
+background: linear-gradient(0.000000turn, #5988B8, #16589C);
+;
+color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > *:hover:hover:hover.expanded
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #E6E6E6, #DCDCDC);
+;
+color:#3366FF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > * > ul li,
+.BoldBlueWave .rnr-b-vmenu.tree.main > *.subitem
+{
+background-color: #A9A9A9;
+background: linear-gradient(0.000000turn, #C2C2C2, #A9A9A9);
+;
+color:#FFFFFF;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > * > ul li > hr,
+.BoldBlueWave .rnr-b-vmenu.tree.main > *.subitem > hr
+{
+border-color:#FFFFFF;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > * > ul li:hover:not(.expanded):not(.menuSeparator),
+.BoldBlueWave .rnr-b-vmenu.tree.main > *.subitem:hover:not(.menuSeparator)
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #E6E6E6, #DCDCDC);
+;
+color:#FFFF00;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > * > ul li.current.current.current,
+.BoldBlueWave .rnr-b-vmenu.tree.main > *.subitem.current.current.current
+{
+background-color: #16589C;
+background: linear-gradient(0.000000turn, #5B8AB9, #16589C);
+;
+color:#FFFFFF;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > * > ul li:hover:hover:hover.expanded
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #E6E6E6, #DCDCDC);
+;
+color:#FFFF00;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.tree.main > *:not(.subitem) > div
+{
+padding: 8px 4px; margin:1px 2px;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > * > :not(ul) > *
+{
+padding: 8px 4px; margin:1px 2px;
+}
+.BoldBlueWave .rnr-b-vmenu.tree.main > *.subitem > div
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main > * > ul li > :not(ul) > *
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.main >  * ul
+{
+box-shadow:5px 5px 3px rgba(0,0,0,0.2);
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > *,
+.BoldBlueWave .rnr-b-vmenu.tree.second > *:not(.subitem)
+{
+background-color: #C0C0C0;
+background: linear-gradient(0.000000turn, #D2D2D2, #C0C0C0);
+;
+color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > * > hr,
+.BoldBlueWave .rnr-b-vmenu.tree.second > *:not(.subitem) > hr
+{
+border-color:#FFFFFF;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > *:hover:not(.expanded):not(.menuSeparator),
+.BoldBlueWave .rnr-b-vmenu.tree.second > *:not(.subitem):not(.manage):hover:not(.menuSeparator)
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #E6E6E6, #DCDCDC);
+;
+color:#3366FF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > *.current.current.current,
+.BoldBlueWave .rnr-b-vmenu.tree.second > *:not(.subitem).current.current.current
+{
+background-color: #16589C;
+background: linear-gradient(0.000000turn, #5988B8, #16589C);
+;
+color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > *:hover:hover:hover.expanded
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #E6E6E6, #DCDCDC);
+;
+color:#3366FF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > * > ul li,
+.BoldBlueWave .rnr-b-vmenu.tree.second > *.subitem
+{
+background-color: #A9A9A9;
+background: linear-gradient(0.000000turn, #C2C2C2, #A9A9A9);
+;
+color:#FFFFFF;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > * > ul li > hr,
+.BoldBlueWave .rnr-b-vmenu.tree.second > *.subitem > hr
+{
+border-color:#FFFFFF;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > * > ul li:hover:not(.expanded):not(.menuSeparator),
+.BoldBlueWave .rnr-b-vmenu.tree.second > *.subitem:hover:not(.menuSeparator)
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #E6E6E6, #DCDCDC);
+;
+color:#FFFF00;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > * > ul li.current.current.current,
+.BoldBlueWave .rnr-b-vmenu.tree.second > *.subitem.current.current.current
+{
+background-color: #16589C;
+background: linear-gradient(0.000000turn, #5B8AB9, #16589C);
+;
+color:#FFFFFF;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > * > ul li:hover:hover:hover.expanded
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #E6E6E6, #DCDCDC);
+;
+color:#FFFF00;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-vmenu.tree.second > *:not(.subitem) > div
+{
+padding: 8px 4px; margin:1px 2px;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > * > :not(ul) > *
+{
+padding: 8px 4px; margin:1px 2px;
+}
+.BoldBlueWave .rnr-b-vmenu.tree.second > *.subitem > div
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second > * > ul li > :not(ul) > *
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.BoldBlueWave .rnr-b-vmenu.simple.second >  * ul
+{
+box-shadow:5px 5px 3px rgba(0,0,0,0.2);
+}
+.BoldBlueWave .rnr-b-hmenu.main > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #6699CC;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;padding: 5px 4px;border-top-left-radius: 8px;border: solid #000000 1px;
+}
+.BoldBlueWave .rnr-b-hmenu.main > div:not(.rnr-hseparator) > hr
+{
+border-color:#FFFFFF;
+}
+.BoldBlueWave .rnr-b-hmenu.main:hover:not(.expanded) > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #C0C0C0;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.main.current.current > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #16589C;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.main:hover.expanded > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #C0C0C0;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.main > ul li
+{
+background-image:none; background-color: #00FFFF;color:#000080;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.main > ul li > hr
+{
+border-color:#000080;
+}
+.BoldBlueWave .rnr-b-hmenu.main > ul li:hover:not(.expanded):not(.menuSeparator)
+{
+background-image:none; background-color: #00CCCC;color:#0000FF;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.main > ul li.current.current
+{
+background-image:none; background-color: #3366FF;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.main > ul li:hover.expanded
+{
+background-image:none; background-color: #00CCCC;color:#0000FF;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.main > ul li > div > div
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.BoldBlueWave .rnr-b-hmenu.main ul
+{
+box-shadow:5px 5px 3px rgba(0,0,0,0.2);
+}
+.BoldBlueWave .rnr-b-hmenu.main.rnr-b-hmenu.rnr-b-hmenu
+{
+padding-bottom: 0; padding-left:0; padding-right:0; vertical-align: bottom;
+}
+.BoldBlueWave .rnr-b-hmenu.second > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #6699CC;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;padding: 5px 4px;border-top-left-radius: 8px;border: solid #000000 1px;
+}
+.BoldBlueWave .rnr-b-hmenu.second > div:not(.rnr-hseparator) > hr
+{
+border-color:#FFFFFF;
+}
+.BoldBlueWave .rnr-b-hmenu.second:hover:not(.expanded) > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #C0C0C0;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.second.current.current > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #16589C;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.second:hover.expanded > div:not(.rnr-hseparator)
+{
+background-image:none; background-color: #C0C0C0;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 14px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.second > ul li
+{
+background-image:none; background-color: #00FFFF;color:#000080;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.second > ul li > hr
+{
+border-color:#000080;
+}
+.BoldBlueWave .rnr-b-hmenu.second > ul li:hover:not(.expanded):not(.menuSeparator)
+{
+background-image:none; background-color: #00CCCC;color:#0000FF;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.second > ul li.current.current
+{
+background-image:none; background-color: #3366FF;color:#FFFFFF;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.second > ul li:hover.expanded
+{
+background-image:none; background-color: #00CCCC;color:#0000FF;font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-b-hmenu.second > ul li > div > div
+{
+padding: 4px 3px; margin:1px 1px;
+}
+.BoldBlueWave .rnr-b-hmenu.second ul
+{
+box-shadow:5px 5px 3px rgba(0,0,0,0.2);
+}
+.BoldBlueWave .rnr-b-hmenu.second.rnr-b-hmenu.rnr-b-hmenu
+{
+padding-bottom: 0; padding-left:0; padding-right:0; vertical-align: bottom;
+}
+body.BoldBlueWave
+{
+
+background-color:#FFFFFF;
+}
+.BoldBlueWave .rnr-list
+{
+color: #FFFFFF;background-color: #6699CC;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;border: solid #004080 1px;box-shadow:5px 5px 3px rgba(0,0,0,0.2);
+}
+.BoldBlueWave .rnr-tab.selected
+{
+background-color:#0000FF;
+border-top-right-radius:4px;
+border-top-left-radius:4px;
+
+}
+.BoldBlueWave .rnr-tab
+{
+background-color:#C0C0C0;
+border-top-right-radius:4px;
+border-top-left-radius:4px;
+border: solid #000000 1px; border-bottom-width:0;
+}
+.BoldBlueWave .rnr-tab.selected > a
+{
+color: #FFFFFF;
+
+}
+.BoldBlueWave .rnr-tab > a
+{
+color: #000000;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .yui-navset .yui-content
+{
+border: solid #0000FF 1px;border-top-width: 5px;
+}
+.BoldBlueWave .rnr-stepnav > a.active,
+.BoldBlueWave .rnr-stepnav > a:hover:not(.active)
+{
+background-color: #EDF1F3;
+background: linear-gradient(0.000000turn, #F9FBFB, #EDF1F3);
+;
+color: #16589C;
+
+}
+.BoldBlueWave .rnr-stepnav > a.active:after,
+.BoldBlueWave .rnr-stepnav > a:hover:not(.active):after
+{
+background-color: #EDF1F3;
+background: linear-gradient(0.875000turn, #F9FBFB, #EDF1F3);
+;
+
+}
+.BoldBlueWave .rnr-stepnav > a:not(.active),
+.BoldBlueWave .rnr-stepnav > a:not(.active):after
+{
+background-image: none; background-color: #C0C0C0;
+
+}
+.BoldBlueWave .rnr-stepnav > a:before
+{
+background-image: none; background: #DCDCDC;
+
+}
+.BoldBlueWave .rnr-stepnav > a:not(.active)
+{
+color: #A9A9A9;
+
+}
+.BoldBlueWave .rnr-stepnav > a:before 
+{
+color: #333333;
+
+}
+.BoldBlueWave .rnr-stepnav > a,
+ .rnr-pagewrapper .BoldBlueWave .rnr-stepnav > a,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .rnr-stepnav > a
+{
+font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave  .rnr-message
+{
+background-color: #6699CC;border: solid #004080 2px;color: #008000;font-family: Tahoma, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave  .rnr-error.rnr-error
+{
+color: #A80000;font-family: Tahoma, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .yui3-panel-content.yui3-panel-content
+{
+border: solid #C0C0C0 1px;border-radius: 4px;
+}
+.BoldBlueWave  .yui3-panel .yui3-widget-hd.yui3-widget-hd.yui3-widget-hd
+{
+background-color: #004080; background-image: none;font-family: Tahoma, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;color: #FFFFFF;
+}
+.BoldBlueWave  .yui3-widget-ft
+{
+background-color: #105198;
+background: linear-gradient(0.500000turn, #0E4A8B, #105198);
+;
+font-family: Tahoma, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;color: #FFFFFF;
+}
+.BoldBlueWave .rnr-dbbordered
+{
+border: solid #C0C0C0 1px;border-radius: 4px;
+}
+.BoldBlueWave  .rnr-dbelemheader
+{
+background-color: #004080; background-image: none;font-family: Tahoma, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;color: #FFFFFF;
+}
+.BoldBlueWave  .rnr-dbelemfooter
+{
+background-color: #D8D8D8;
+background: linear-gradient(0.500000turn, #C6C6C6, #D8D8D8);
+;
+font-family: Tahoma, sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none;color: #000000;
+}
+.BoldBlueWave  .rnr-dbselectedrow.rnr-dbselectedrow.rnr-dbselectedrow.rnr-dbselectedrow.rnr-dbselectedrow.rnr-dbselectedrow.rnr-dbselectedrow
+{
+background-color: #FFFACD; background-image: none;color: #4C4951;
+}
+.BoldBlueWave .rnr-dashboard
+{
+background-color: #FFFFFF;
+}
+.BoldBlueWave .rnr-button.rnr-button,
+.BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+.BoldBlueWave .button.button.button.rnr-button.rnr-button,
+ .rnr-pagewrapper .BoldBlueWave .rnr-button.rnr-button,
+ .rnr-pagewrapper .BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+ .rnr-pagewrapper .BoldBlueWave .button.button.button.rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .button.button.button.rnr-button.rnr-button
+{
+border: solid 1px;border-radius: 2px;padding: 3px 10px 3px;background-color: #EDF1F3;
+background: linear-gradient(0.000000turn, #F9FBFB, #EDF1F3);
+;
+border-color: #000080;color: #16589C;
+font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .rnr-button.rnr-button.img,
+.BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+.BoldBlueWave .button.button.button.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .BoldBlueWave .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .BoldBlueWave .button.button.button.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .button.button.button.rnr-button.rnr-button.img
+{
+padding: 3px;
+
+}
+.BoldBlueWave .rnr-button:hover,
+.BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:hover,
+.BoldBlueWave .button.button.button.rnr-button:hover,
+ .rnr-pagewrapper .BoldBlueWave .rnr-button:hover,
+ .rnr-pagewrapper .BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:hover,
+ .rnr-pagewrapper .BoldBlueWave .button.button.button.rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .button.button.button.rnr-button:hover
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #F5F5F5, #DCDCDC);
+;
+border-color: #000000;color: #333333;
+
+}
+.BoldBlueWave .rnr-button:active,
+.BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:active,
+.BoldBlueWave .button.button.button.rnr-button:active,
+ .rnr-pagewrapper .BoldBlueWave .rnr-button:active,
+ .rnr-pagewrapper .BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:active,
+ .rnr-pagewrapper .BoldBlueWave .button.button.button.rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .button.button.button.rnr-button:active
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #F5F5F5, #DCDCDC);
+;
+border-color: #C0C0C0;color: #333333;
+
+}
+.BoldBlueWave .rnr-button.disabled,
+.BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+.BoldBlueWave .button.button.button.rnr-button.disabled,
+ .rnr-pagewrapper .BoldBlueWave .rnr-button.disabled,
+ .rnr-pagewrapper .BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+ .rnr-pagewrapper .BoldBlueWave .button.button.button.rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave.asbuttons > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .button.button.button.rnr-button.disabled
+{
+background-color: #C0C0C0;
+background: linear-gradient(0.000000turn, #EDEDED, #C0C0C0);
+;
+border-color: #DCDCDC;color: #A9A9A9;
+
+}
+.BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+.BoldBlueWave .link.link.link.rnr-button.rnr-button,
+ .rnr-pagewrapper .BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+ .rnr-pagewrapper .BoldBlueWave .link.link.link.rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .link.link.link.rnr-button.rnr-button
+{
+background: none; border: none; ;
+border: none;border-radius: 0px;padding: 4px 8px 4px;color: #404040;
+font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+.BoldBlueWave .link.link.link.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .BoldBlueWave .link.link.link.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .link.link.link.rnr-button.rnr-button.img
+{
+padding: 4px;
+
+}
+.BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button:hover,
+.BoldBlueWave .link.link.link.rnr-button:hover,
+ .rnr-pagewrapper .BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button:hover,
+ .rnr-pagewrapper .BoldBlueWave .link.link.link.rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .link.link.link.rnr-button:hover
+{
+color: #696969;
+
+}
+.BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button:active,
+.BoldBlueWave .link.link.link.rnr-button:active,
+ .rnr-pagewrapper .BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button:active,
+ .rnr-pagewrapper .BoldBlueWave .link.link.link.rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .link.link.link.rnr-button:active
+{
+color: #004080;
+
+}
+.BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+.BoldBlueWave .link.link.link.rnr-button.disabled,
+ .rnr-pagewrapper .BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+ .rnr-pagewrapper .BoldBlueWave .link.link.link.rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave.aslinks > * > *:not(.rnr-wrapper) .rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .link.link.link.rnr-button.disabled
+{
+color: #DCDCDC;
+
+}
+.BoldBlueWave .main.main.main.rnr-button.rnr-button,
+ .rnr-pagewrapper .BoldBlueWave .main.main.main.rnr-button.rnr-button,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .main.main.main.rnr-button.rnr-button
+{
+border: solid 1px;border-radius: 2px;padding: 3px 10px 3px;background-color: #EDF1F3;
+background: linear-gradient(0.000000turn, #F9FBFB, #EDF1F3);
+;
+border-color: #000080;color: #16589C;
+font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; font-style: normal; text-decoration: none;
+}
+.BoldBlueWave .main.main.main.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .BoldBlueWave .main.main.main.rnr-button.rnr-button.img,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .main.main.main.rnr-button.rnr-button.img
+{
+padding: 3px;
+
+}
+.BoldBlueWave .main.main.main.rnr-button:hover,
+ .rnr-pagewrapper .BoldBlueWave .main.main.main.rnr-button:hover,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .main.main.main.rnr-button:hover
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #F5F5F5, #DCDCDC);
+;
+border-color: #000000;color: #333333;
+
+}
+.BoldBlueWave .main.main.main.rnr-button:active,
+ .rnr-pagewrapper .BoldBlueWave .main.main.main.rnr-button:active,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .main.main.main.rnr-button:active
+{
+background-color: #DCDCDC;
+background: linear-gradient(0.000000turn, #F5F5F5, #DCDCDC);
+;
+border-color: #C0C0C0;color: #333333;
+
+}
+.BoldBlueWave .main.main.main.rnr-button.disabled,
+ .rnr-pagewrapper .BoldBlueWave .main.main.main.rnr-button.disabled,
+ .rnr-pagewrapper .rnr-pagewrapper .BoldBlueWave .main.main.main.rnr-button.disabled
+{
+background-color: #C0C0C0;
+background: linear-gradient(0.000000turn, #EDEDED, #C0C0C0);
+;
+border-color: #DCDCDC;color: #A9A9A9;
+
+}

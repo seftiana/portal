@@ -1,0 +1,73 @@
+<!-- patTemplate:tmpl name="content" -->
+   
+   <h4>Selamat Datang di {APPLICATION_MODULE}</h4>
+   <br>
+   <h5>Keterangan :</h5>
+   <p>Forum Diskusi diharapkan dapat dipakai untuk berdiskusi antara para civitas akademika 
+      {APPLICATIONCLIENT} dan saling membangun mengembangkan wacana 
+      untuk kemajuan {UNIV_NAME}. Untuk itu dilarang keras
+      memaki dan menghujat dalam forum ini.</p>
+   
+   <!-- patTemplate:tmpl name="kategori_list" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->         
+         
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <table class="table-forum" width="100%">
+            <tr>
+               <th class="text-center" colspan="2"><div class="th-special-left"></div><div class="th-center"><strong>Kategori Diskusi</strong></div></th>
+               <th class="text-center" width="28%"><div class="th-special-right"></div><div class="th-center"><strong>Informasi Kategori</strong></div></th>
+            </tr>
+            <!-- patTemplate:tmpl name="kategori_item" -->
+            <tr>
+               <td><img src="images/non-public.gif" alt="" /></td>
+               <td><strong><a href="{KATEGORI_URL_DETAIL}">{KATEGORI_JUDUL}</a></strong><br />
+               <p>{KATEGORI_DESKRIPSI}.</p>
+               </td>
+               <td class="text-center">{KATEGORI_JML_TOPIK} &nbsp;topik terdaftar
+                  <br/>
+						<form name="mdfyForm" class="form-topik-input" method="POST" action="{KATEGORI_URL_MODIFY_PROCESS}">
+                     <input name="act" type="hidden" value="modifyKategori" />
+                     <input name="data[ForumKategoriId]" type="hidden" value="{KATEGORI_ID}" />
+                     <input name="mdfyBtn" type="submit" value="Ubah" />
+                     <input name="mdfyBtn" type="submit" value="Hapus" onClick="return ValidateDelete()"/>
+						</form>
+               </td>
+            </tr>
+            <!-- /patTemplate:tmpl -->
+         </table>         
+         
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <form name="addForm" class="form-common" method="POST" action="{URL_ADD_PROCESS}">
+      <input name="act" type="hidden" value="doAddKategori" />
+      <table class="table-form" width="100%">
+         <tr>
+            <th colspan="2"><b>Form Tambah Kategori</b></th>
+         </tr>
+         <tr>
+            <th>Nama Kategori Diskusi</th>
+            <td><input name="data[ForumKategoriTitle]" type="text" maxlength="50" size="40" /></td>   
+         </tr>
+         <tr>
+            <th>Deskripsi Kategori Diskusi</th>	
+            <td>
+               <textarea name="data[ForumKategoriDescription]" cols="40" rows="4"></textarea>
+            </td>
+         </tr>               
+         <tr>   
+            <th>&nbsp;</th>
+            <td>
+               <input class="input-disclaimer" name="addBtn" type="submit" value="Simpan" />
+               <input class="input-disclaimer" name="rstBtn" type="reset" value="Reset" />   
+            </td>
+         </tr>
+      </table>
+   </form>
+         
+<!-- /patTemplate:tmpl -->

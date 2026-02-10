@@ -1,0 +1,106 @@
+<!-- patTemplate:tmpl name="document" -->
+<patTemplate:tmpl name="document">
+<!doctype html public "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+	<title> Transkrip Sementara Mahasiswa </title>
+	<link href="styles/a_sia_transcript2.css" rel="stylesheet" type="text/css" media="screen" title="Default" />
+	<link href="styles/a_sia_transcript2_print.css" rel="stylesheet" type="text/css" media="print" title="Default" />
+</head>
+<body onLoad="window.print();">
+<div id="container" class="page-portrait">
+<!-- patTemplate:tmpl name="page" -->
+<div id="header"></div>
+	<h1 align="center" valign="bottom">Transkrip Akademik Sementara</h1>
+	<div class="{BREAK}">
+	<table id="info_mhs" width="100%" border="0">
+		<tr>
+			<th width="20%"><strong>NIM</strong></th>
+			<th width="30%"><strong>{MHS_NIM}</strong></th>
+			<th width="20%"><strong>Program Studi</strong></th>
+			<th width="30%"><strong>{PRODI_NAMA}</strong></th>
+		</tr>
+		<tr>
+			<th ><strong>NAMA</strong></th>
+			<th ><strong>{MHS_NAMA}</strong></th>
+			<th >&nbsp;</th>
+			<th >&nbsp;</th>
+		</tr>
+		<tr>
+			<th ><strong>Tempat, Tanggal Lahir</strong></th>
+			<th ><strong>{TEMPAT_LAHIR}, {TGL_LAHIR}</strong></th>
+			<th >&nbsp;</th>
+			<th >&nbsp;</th>
+		</tr>
+	</table>
+
+	<table id="table_transkrip" width="100%" border="0">
+		<tr>
+			<th width="3%">No</th>
+			<th width="7%">Kode</th>
+			<th width="45%">Mata Kuliah</th>
+			<th width="5%">Semester</th>
+			<th colspan="2">SKS</th>
+			<!--<th width="5%">UTS</th>
+			<th width="5%">Tugas</th>
+			<th width="5%">UAS</th>
+			<th width="5%">Remedial</th>
+			<th width="5%">Akhir</th>-->
+			<th width="5%">Mutu</th>
+		</tr>
+		<!-- patTemplate:tmpl name="data_list"  type="condition" conditionvar="IS_EMPTY" -->
+		<!-- patTemplate:sub condition="YES" -->
+		<tr>
+		   <td colspan="6" align="center"><em>Belum ada Data KRS</em></td>
+		</tr>
+		<!-- /patTemplate:sub -->
+		<!-- patTemplate:sub condition="NO" -->
+		<!-- patTemplate:tmpl name="data_list_item" -->
+        <tr>
+			<td align="center">{NO}</td>
+			<td align="center">{MK_KODE}</td>
+			<td align="left">{MK_NAMA}</td>
+			<td align="center">{SEMESTER}</td>
+			<td align="right" width="5%">{SKS}</td>
+			<td align="left" width="5%">{WAJIB}</td>
+			<!--<td align="center">{NILAI_UTS}</td>
+			<td align="center">{NILAI_MANDIRI}</td>
+			<td align="center">{NILAI_UAS}</td>
+			<td align="center">{NILAI_REMEDIAL}</td>
+			<td align="center">{NILAI_ABOSOLUT}</td>-->
+			<td align="center">{NILAI_RELATIF}</td>
+		</tr>
+		<!-- /patTemplate:tmpl -->
+		<!-- /patTemplate:sub -->
+		<!-- /patTemplate:tmpl -->
+		<tr>
+			<td colspan="4">Total Kredit</td>
+			<td colspan="2" align="center">{TOT_SKS}</td>
+			<td >&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="4">Indeks Prestasi Kumulatif</td>
+			<td colspan="2" align="center">{IPK}</td>
+			<td >&nbsp;</td>
+		</tr>
+	</table>
+</div>
+<!-- /patTemplate:tmpl --> <!-- endof page -->
+<br/>
+	<table id="keterangan" width="100%" border="0">
+		<tr>
+			<td>
+			Keterangan:<br/>
+			<!--Angkatan sebelum 2012 : A=80-100; B=68-79.99; C=56-67.99; D=45-55.99; E=0-44.99<br/>
+			Angkatan 2012 keatas : A=90-100; A-=80-89.99; B+=75-79.99; B=70-74.99; B-=65-69.99; C+=60-64.99; C=55-59.99; C-=50-54.99; D=45-49.99; E=0-44.99<br/>-->
+			IPK Terbilang : {IPK_TERBILANG}<br/>
+			* = Ujian Pengwasan Mutu<br/>
+			(P) = Semester Pendek<br/>
+			</td>
+		</tr>
+	</table>
+
+</div>
+</body>
+</html>
+<!-- /patTemplate:tmpl -->

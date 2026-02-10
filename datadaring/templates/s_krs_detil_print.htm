@@ -1,0 +1,244 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_pdf}
+<div {$pdf_chiddenattr} data-pageid="{$pageid}" data-container="pdf" class="   col-md-12 "> 
+
+{BEGIN printbuttons}
+
+{END printbuttons}
+
+
+
+</div>
+{END container_pdf}
+
+
+
+{BEGIN container_master}
+<div {$master_chiddenattr} data-pageid="{$pageid}" data-container="master" class="    "> 
+
+{BEGIN mastertable_block}
+<div class="panel panel-info table-panel">
+	<div class="panel-heading">
+		{$master_heading}
+	</div>
+	<div class="panel-body">
+		{$showmasterfile}
+		
+	</div>
+</div>
+
+{END mastertable_block}
+
+
+
+</div>
+{END container_master}
+
+
+
+{BEGIN container_pageheader}
+<div {$pageheader_chiddenattr} data-pageid="{$pageid}" data-container="pageheader" class="    "> 
+
+{BEGIN printheader}
+	<h2 {$printheader_hiddenattr} data-pageid="{$pageid}" data-brick="printheader" >{$pagetitlelabel s_krs_detil print}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END printheader}
+
+
+{BEGIN page_number}
+<span>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></span>
+{END page_number}
+
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="table table-bordered rp-maintable" {$printgrid_hiddenattr} data-pageid="{$pageid}" data-brick="printgrid" >
+	<thead>
+	{BEGIN grid_header}
+		<tr class="{$gridHeader_class}" >
+		{BEGIN record_header}
+			{BEGIN krsdtId_fieldheadercolumn}
+			<th class="{$krsdtId_class}" {$krsdtId_style}  data-field="krsdtId">
+				{$label s_krs_detil krsdtId}
+			</th>
+			{END krsdtId_fieldheadercolumn}
+			{BEGIN krsMhsNiu_fieldheadercolumn}
+			<th class="{$krsMhsNiu_class}" {$krsMhsNiu_style}  data-field="krsMhsNiu">
+				{$label s_krs_detil krsMhsNiu}
+			</th>
+			{END krsMhsNiu_fieldheadercolumn}
+			{BEGIN mhsNama_fieldheadercolumn}
+			<th class="{$mhsNama_class}" {$mhsNama_style}  data-field="mhsNama">
+				{$label s_krs_detil mhsNama}
+			</th>
+			{END mhsNama_fieldheadercolumn}
+			{BEGIN mhsProdiKode_fieldheadercolumn}
+			<th class="{$mhsProdiKode_class}" {$mhsProdiKode_style}  data-field="mhsProdiKode">
+				{$label s_krs_detil mhsProdiKode}
+			</th>
+			{END mhsProdiKode_fieldheadercolumn}
+			{BEGIN klsNama_fieldheadercolumn}
+			<th class="{$klsNama_class}" {$klsNama_style}  data-field="klsNama">
+				{$label s_krs_detil klsNama}
+			</th>
+			{END klsNama_fieldheadercolumn}
+			{BEGIN mhsEmail_fieldheadercolumn}
+			<th class="{$mhsEmail_class}" {$mhsEmail_style}  data-field="mhsEmail">
+				{$label s_krs_detil mhsEmail}
+			</th>
+			{END mhsEmail_fieldheadercolumn}
+			{BEGIN sempSemId_fieldheadercolumn}
+			<th class="{$sempSemId_class}" {$sempSemId_style}  data-field="sempSemId">
+				{$label s_krs_detil sempSemId}
+			</th>
+			{END sempSemId_fieldheadercolumn}
+			{BEGIN prodiJjarKode_fieldheadercolumn}
+			<th class="{$prodiJjarKode_class}" {$prodiJjarKode_style}  data-field="prodiJjarKode">
+				{$label s_krs_detil prodiJjarKode}
+			</th>
+			{END prodiJjarKode_fieldheadercolumn}
+			{BEGIN prodiNamaResmi_fieldheadercolumn}
+			<th class="{$prodiNamaResmi_class}" {$prodiNamaResmi_style}  data-field="prodiNamaResmi">
+				{$label s_krs_detil prodiNamaResmi}
+			</th>
+			{END prodiNamaResmi_fieldheadercolumn}
+			{BEGIN krsId_fieldheadercolumn}
+			<th class="{$krsId_class}" {$krsId_style}  data-field="krsId">
+				{$label s_krs_detil krsId}
+			</th>
+			{END krsId_fieldheadercolumn}
+			{BEGIN endrecordheader_block}
+			<th class="rnr-cs">&nbsp;</th>
+			{END endrecordheader_block}
+		{END record_header}
+		</tr>
+	{END grid_header}
+	</thead>
+	
+	<tbody>	
+	{BEGIN grid_row}
+		<tr class="{$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+			{BEGIN krsdtId_fieldcolumn}
+			<td  class="{$krsdtId_class}" {$krsdtId_style} {$recordattrs}>
+				{$krsdtId_value}
+			</td>
+			{END krsdtId_fieldcolumn}
+			{BEGIN krsMhsNiu_fieldcolumn}
+			<td  class="{$krsMhsNiu_class}" {$krsMhsNiu_style} {$recordattrs}>
+				{$krsMhsNiu_value}
+			</td>
+			{END krsMhsNiu_fieldcolumn}
+			{BEGIN mhsNama_fieldcolumn}
+			<td  class="{$mhsNama_class}" {$mhsNama_style} {$recordattrs}>
+				{$mhsNama_value}
+			</td>
+			{END mhsNama_fieldcolumn}
+			{BEGIN mhsProdiKode_fieldcolumn}
+			<td  class="{$mhsProdiKode_class}" {$mhsProdiKode_style} {$recordattrs}>
+				{$mhsProdiKode_value}
+			</td>
+			{END mhsProdiKode_fieldcolumn}
+			{BEGIN klsNama_fieldcolumn}
+			<td  class="{$klsNama_class}" {$klsNama_style} {$recordattrs}>
+				{$klsNama_value}
+			</td>
+			{END klsNama_fieldcolumn}
+			{BEGIN mhsEmail_fieldcolumn}
+			<td  class="{$mhsEmail_class}" {$mhsEmail_style} {$recordattrs}>
+				{$mhsEmail_value}
+			</td>
+			{END mhsEmail_fieldcolumn}
+			{BEGIN sempSemId_fieldcolumn}
+			<td  class="{$sempSemId_class}" {$sempSemId_style} {$recordattrs}>
+				{$sempSemId_value}
+			</td>
+			{END sempSemId_fieldcolumn}
+			{BEGIN prodiJjarKode_fieldcolumn}
+			<td  class="{$prodiJjarKode_class}" {$prodiJjarKode_style} {$recordattrs}>
+				{$prodiJjarKode_value}
+			</td>
+			{END prodiJjarKode_fieldcolumn}
+			{BEGIN prodiNamaResmi_fieldcolumn}
+			<td  class="{$prodiNamaResmi_class}" {$prodiNamaResmi_style} {$recordattrs}>
+				{$prodiNamaResmi_value}
+			</td>
+			{END prodiNamaResmi_fieldcolumn}
+			{BEGIN krsId_fieldcolumn}
+			<td  class="{$krsId_class}" {$krsId_style} {$recordattrs}>
+				{$krsId_value}
+			</td>
+			{END krsId_fieldcolumn}
+			{BEGIN endrecord_block}
+			<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+			{END endrecord_block}
+		{END grid_record}
+		</tr>
+{END grid_row}
+	</tbody>
+
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

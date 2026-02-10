@@ -1,0 +1,203 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_pdf}
+<div {$pdf_chiddenattr} data-pageid="{$pageid}" data-container="pdf" class="   col-md-12 "> 
+
+{BEGIN printbuttons}
+
+{END printbuttons}
+
+
+
+</div>
+{END container_pdf}
+
+
+
+
+
+{BEGIN container_pageheader}
+<div {$pageheader_chiddenattr} data-pageid="{$pageid}" data-container="pageheader" class="    "> 
+
+{BEGIN printheader}
+	<h2 {$printheader_hiddenattr} data-pageid="{$pageid}" data-brick="printheader" >{$pagetitlelabel t_user print}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END printheader}
+
+
+{BEGIN page_number}
+<span>Page <span class="rp-pageno">{$pageno}</span> of <span class="rp-pagecount">{$pagecount}</span></span>
+{END page_number}
+
+
+
+</div>
+{END container_pageheader}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+	<table class="table table-bordered rp-maintable" {$printgrid_hiddenattr} data-pageid="{$pageid}" data-brick="printgrid" >
+	<thead>
+	{BEGIN grid_header}
+		<tr class="{$gridHeader_class}" >
+		{BEGIN record_header}
+			{BEGIN tusrNama_fieldheadercolumn}
+			<th class="{$tusrNama_class}" {$tusrNama_style}  data-field="tusrNama">
+				{$label t_user tusrNama}
+			</th>
+			{END tusrNama_fieldheadercolumn}
+			{BEGIN tusrPassword_fieldheadercolumn}
+			<th class="{$tusrPassword_class}" {$tusrPassword_style}  data-field="tusrPassword">
+				{$label t_user tusrPassword}
+			</th>
+			{END tusrPassword_fieldheadercolumn}
+			{BEGIN tusrThakrId_fieldheadercolumn}
+			<th class="{$tusrThakrId_class}" {$tusrThakrId_style}  data-field="tusrThakrId">
+				{$label t_user tusrThakrId}
+			</th>
+			{END tusrThakrId_fieldheadercolumn}
+			{BEGIN tusrProfil_fieldheadercolumn}
+			<th class="{$tusrProfil_class}" {$tusrProfil_style}  data-field="tusrProfil">
+				{$label t_user tusrProfil}
+			</th>
+			{END tusrProfil_fieldheadercolumn}
+			{BEGIN tusrRefIndex_fieldheadercolumn}
+			<th class="{$tusrRefIndex_class}" {$tusrRefIndex_style}  data-field="tusrRefIndex">
+				{$label t_user tusrRefIndex}
+			</th>
+			{END tusrRefIndex_fieldheadercolumn}
+			{BEGIN tusrUntId_fieldheadercolumn}
+			<th class="{$tusrUntId_class}" {$tusrUntId_style}  data-field="tusrUntId">
+				{$label t_user tusrUntId}
+			</th>
+			{END tusrUntId_fieldheadercolumn}
+			{BEGIN tusrIsAgree_fieldheadercolumn}
+			<th class="{$tusrIsAgree_class}" {$tusrIsAgree_style}  data-field="tusrIsAgree">
+				{$label t_user tusrIsAgree}
+			</th>
+			{END tusrIsAgree_fieldheadercolumn}
+			{BEGIN tusrProdiKode_fieldheadercolumn}
+			<th class="{$tusrProdiKode_class}" {$tusrProdiKode_style}  data-field="tusrProdiKode">
+				{$label t_user tusrProdiKode}
+			</th>
+			{END tusrProdiKode_fieldheadercolumn}
+			{BEGIN endrecordheader_block}
+			<th class="rnr-cs">&nbsp;</th>
+			{END endrecordheader_block}
+		{END record_header}
+		</tr>
+	{END grid_header}
+	</thead>
+	
+	<tbody>	
+	{BEGIN grid_row}
+		<tr class="{$rowclass}" {$rowattrs} {$rowstyle}>
+		{BEGIN grid_record}
+			{BEGIN tusrNama_fieldcolumn}
+			<td  class="{$tusrNama_class}" {$tusrNama_style} {$recordattrs}>
+				{$tusrNama_value}
+			</td>
+			{END tusrNama_fieldcolumn}
+			{BEGIN tusrPassword_fieldcolumn}
+			<td  class="{$tusrPassword_class}" {$tusrPassword_style} {$recordattrs}>
+				{$tusrPassword_value}
+			</td>
+			{END tusrPassword_fieldcolumn}
+			{BEGIN tusrThakrId_fieldcolumn}
+			<td  class="{$tusrThakrId_class}" {$tusrThakrId_style} {$recordattrs}>
+				{$tusrThakrId_value}
+			</td>
+			{END tusrThakrId_fieldcolumn}
+			{BEGIN tusrProfil_fieldcolumn}
+			<td  class="{$tusrProfil_class}" {$tusrProfil_style} {$recordattrs}>
+				{$tusrProfil_value}
+			</td>
+			{END tusrProfil_fieldcolumn}
+			{BEGIN tusrRefIndex_fieldcolumn}
+			<td  class="{$tusrRefIndex_class}" {$tusrRefIndex_style} {$recordattrs}>
+				{$tusrRefIndex_value}
+			</td>
+			{END tusrRefIndex_fieldcolumn}
+			{BEGIN tusrUntId_fieldcolumn}
+			<td  class="{$tusrUntId_class}" {$tusrUntId_style} {$recordattrs}>
+				{$tusrUntId_value}
+			</td>
+			{END tusrUntId_fieldcolumn}
+			{BEGIN tusrIsAgree_fieldcolumn}
+			<td  class="{$tusrIsAgree_class}" {$tusrIsAgree_style} {$recordattrs}>
+				{$tusrIsAgree_value}
+			</td>
+			{END tusrIsAgree_fieldcolumn}
+			{BEGIN tusrProdiKode_fieldcolumn}
+			<td  class="{$tusrProdiKode_class}" {$tusrProdiKode_style} {$recordattrs}>
+				{$tusrProdiKode_value}
+			</td>
+			{END tusrProdiKode_fieldcolumn}
+			{BEGIN endrecord_block}
+			<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+			{END endrecord_block}
+		{END grid_record}
+		</tr>
+{END grid_row}
+	</tbody>
+
+</table>
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

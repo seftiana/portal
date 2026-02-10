@@ -1,0 +1,147 @@
+<!-- patTemplate:tmpl name="content" -->
+<div class="page-potrait" style="width: 18cm;">
+   <div class="page-break">
+      <!-- patTemplate:tmpl name="data_mahasiswa" -->
+      <table width="80%">
+      <td align="right"><h3>No : {MHSNOMORTRANSKRIP}</h3></td>
+      </table>
+      <table>
+         <tr>
+         	<td width="80" height="120" rowspan="7" class="box" align="center">Pas Foto<br />3x4 cm<br /><br />Cap Jempol<br />Tangan Kiri</td>
+         	<td rowspan="7"></td>
+            <td width="170">Nama</td>
+            <td>:</td>
+            <td>{MHSNAMA}</td>
+         </tr>
+         <tr>
+            <td>Tempat Tanggal Lahir</td>
+            <td valign="top">:</td>
+            <td valign="top">{KOTANAMA},{MHSTANGGALLAHIR}</td>
+         </tr>
+         <tr>
+            <td>Nomor Registrasi Induk</td>
+            <td valign="top">:</td>
+            <td valign="top">{MHSNIU}</td>
+         </tr>
+         <tr>
+            <td>Nomor & Jenjang Program Studi</td>
+            <td valign="top">:</td>
+            <td valign="top">{PRODI}</td>
+         </tr>
+         <tr>
+            <td>Tahun Masuk Unsrat</td>
+            <td valign="top">:</td>
+            <td valign="top">{MHSANGKATAN}</td>
+         </tr>
+         <tr>
+            <td>Tanggal Lulus</td>
+            <td valign="top">:</td>
+            <td valign="top">{MHSTANGGALLULUS}</td>
+         </tr>
+         <tr>
+            <td>Tanggal Pemberian Transkrip Nilai</td>
+            <td valign="top">:</td>
+            <td valign="top">{MHSTANGGALTRANSKRIP}</td>
+         </tr>
+      </table>
+      <!-- /patTemplate:tmpl -->
+      <table width="100%">
+         <tr>
+            <td width="50%" valign="top">
+            <!-- patTemplate:tmpl name="show_table_ganjil" visibility="hidden" -->
+               <table width="100%" class="tabel-common">
+               <br />
+               <tr>
+                  <th width="20">PS</th>
+                  <th>Materi</th>
+                  <th>Sks</th>
+                  <th>Nilai</th>
+               </tr>
+               <!-- patTemplate:tmpl name="transkrip_sem_ganjil" -->
+               <tr>
+                  <td align="center">{PAKET_SEM}</td>
+                  <td>{NAMAMK}</td>
+                  <td align="center">{JUMLAH_SKS}</td>
+                  <td align="center">{NILAI}</td>
+               </tr>
+               <!-- /patTemplate:tmpl -->
+               </table>
+             <!-- /patTemplate:tmpl -->
+            </td>
+
+            <td width="50%" valign="top">
+            	<!-- patTemplate:tmpl name="show_table_genap" visibility="hidden" -->
+               <table width="100%" class="tabel-common">
+               <br />
+               <tr>
+                  <th width="20">PS</th>
+                  <th>Materi</th>
+                  <th>Sks</th>
+                  <th>Nilai</th>
+               </tr>
+               <!-- patTemplate:tmpl name="transkrip_sem_genap" -->
+               <tr>
+                  <td align="center">{PAKET_SEM}</td>
+                  <td>{NAMAMK}</td>
+                  <td align="center">{JUMLAH_SKS}</td>
+                  <td align="center">{NILAI}</td>
+               </tr>
+               <!-- /patTemplate:tmpl -->
+               </table>
+               <!-- /patTemplate:tmpl -->
+            </td>
+         </tr>
+      </table>
+      <br />
+      <br />
+      <table width="100%">
+      <!-- patTemplate:tmpl name="data_mahasiswa_2" -->
+      	<tr>
+      		<td width="20%">Total SKS</td>
+      		<td width="1%">:</td>
+      		<td>{MHSSKSTRANSKRIP}</td>
+      	</tr>
+      	<tr>
+      		<td>Indeks Prestasi Kumulatif</td>
+      		<td>:</td>
+      		<td>{MHSIPKTRANSKRIP}</td>
+      	</tr>
+      	<tr>
+      		<td>Predikat Kelulusan</td>
+      		<td>:</td>
+      		<td>{PRLSRNAMA}</td>
+      	</tr>
+      	<tr>
+      		<td>Judul Skripsi</td>
+      		<td>:</td>
+      		<td>{TAJUDUL}</td>
+      	</tr>
+      <!-- /patTemplate:tmpl -->
+      </table>
+      <br />
+		<table align="right" width="100%">
+		<!-- patTemplate:tmpl name="mengetahui" -->
+				<tr>
+					<td align="center" width="250">a.n. REKTOR</td>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+            <tr>
+            	<td align="center">PEMBANTU REKTOR BID. AKADEMIK</td>
+            	<td>&nbsp;</td>
+               <td align="center">DEKAN</td>
+            </tr>
+            <tr>
+            	<td>&nbsp;</td>
+            	<td>&nbsp;</td>
+               <td align="center" height="50"></td>
+            </tr>
+            <tr>
+            	<td align="center">{NAMAREKTOR}<br />{LABEL_NIP}. {NIPREKTOR}</td>
+            	<td></td>
+            	<td align="center" nowrap="nowrap">{NAMADEKAN}<br />{LABEL_NIP}. {NIPDEKAN}</td>
+				</tr>
+		<!-- /patTemplate:tmpl -->
+			</table>	
+   </div>
+   </div>
+<!-- /patTemplate:tmpl -->

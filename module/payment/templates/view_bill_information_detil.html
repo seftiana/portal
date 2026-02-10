@@ -1,0 +1,109 @@
+<!-- patTemplate:tmpl name="content" -->
+<style type="text/css">
+   .table-total{
+      clear: both;
+      padding: 10px 10px 10px 10px;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin: 10px 0px;
+      background-color: #FFFFFF;
+      float: right;
+   }
+   .table-total th{
+      color: #1C4675;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: left;   
+      padding: 0.2em 0.5em;
+   }
+</style>
+   <h2>Detail Tagihan</h2>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <br />
+      <div style="border: 1px solid #B5C3D2; padding: 0px 5px 5px 5px;">
+         <!-- patTemplate:tmpl name="mahasiswa" -->
+            <table width="100%" class="table-list">
+               <tr> 
+                  <th width="150">Nama</th>
+                  <td>{MHS_FULLNAME}</td>
+               </tr>
+               <tr> 
+                  <th>{LABEL_NIM}</th>
+                  <td>{MHS_NIU}</td>
+               </tr>
+               <tr> 
+                  <th>Program Studi</th>
+                  <td>{MHS_INFO}</td>
+               </tr>
+            </table>
+         <!-- /patTemplate:tmpl --> <!-- end of mahasiswa -->
+         <h3>{PERIODE} - {JENIS_TAGIHAN}</h3>
+         <!-- patTemplate:tmpl name="data_container" type="condition" conditionvar="IS_EMPTY" -->
+            <!-- patTemplate:sub condition="YES" -->            
+               <!-- patTemplate:link name="empty_box" src="empty_box" / -->            
+            <!-- /patTemplate:sub -->
+
+            <!-- patTemplate:sub condition="NO" -->
+            <!--div style="overflow:auto;"-->
+<div class="table-responsive">
+            <table class="table-common" width="100%">
+            <tr>
+               <th width="20">No</th>               
+               <!--th>Periode</th-->
+               <th>Jenis Biaya</th>
+               <th width="80">Nominal</th>
+               <th width="80">Potongan</th>
+            </tr>
+            <!-- patTemplate:tmpl name="data_item" -->
+            <tr class="{_CLASS}">
+               <td align="right">{NUMBER}</td>
+               <!--td align="left" nowrap ="nowrap">{PERIODE}</td-->
+               <td align="left" nowrap ="nowrap">{JENIS_BIAYA}</td>
+               <td align="right" nowrap ="nowrap">{NOMINAL_TAGIHAN}</td>
+               <td align="right" nowrap ="nowrap">{NOMINAL_POTONGAN}</td>
+            </tr> 
+            <!-- /patTemplate:tmpl -->
+            <tr>
+               <td colspan="2"></td>
+               <td align="right" nowrap ="nowrap">{TOTAL_BIAYA}</td>
+               <td align="right" nowrap ="nowrap">{TOTAL_POTONGAN}</td>
+            </tr>       
+         </table>
+</div>
+         <table class="table-total" width="auto">
+            <tr>
+               <th align="left">Total Biaya</th>
+               <td>&nbsp;=&nbsp;&nbsp;</td>
+               <td align="right">{TOTAL_BIAYA}</td>
+            </tr>
+            <tr>
+               <th align="left">Total Potongan</th>
+               <td>&nbsp;=&nbsp;&nbsp;</td>
+               <td align="right">{TOTAL_POTONGAN}</td>
+            </tr>
+            <tr>
+               <th align="left">SUDAH DIBAYAR</th>
+               <td>&nbsp;=&nbsp;&nbsp;</td>
+               <td align="right">{SUDAH_DIBAYAR}</td>
+            </tr>
+            <tr>
+               <th align="left">SISA TAGIHAN</th>
+               <td>&nbsp;=&nbsp;&nbsp;</td>
+               <td align="right">{TOTAL_TAGIHAN}</td>
+            </tr>
+         </table>
+         <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      </div>      
+      <br /><div align="center">
+      <form method="post" action="{URL_BACK}" name="frmBack" >
+      <input class="input-disclaimer btn btn-info" type="submit" name="btnBack" value="Kembali">
+      
+   </form>   </div>
+<!-- /patTemplate:tmpl --> <!-- end of content -->

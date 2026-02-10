@@ -1,0 +1,29 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Feedback</h2><br/><br/>
+
+<!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+<form class="form-common" method="POST" action="{URL_PROCESS}" name="frmInput" >
+   <input type="hidden" name="doact" value="add">
+   <table class="table-form" width="100%">
+      <tr>
+         <th colspan="2"><b>Form Feedback</b></th>
+      </tr>
+      <tr>
+         <th width="150">Nama User</th>
+         <td>
+            {USER_NAME}
+         </td>         
+      </tr>
+      <tr>
+         <th >Feedback</th>
+         <td>
+            <textarea name='feedback' cols='50' rows='10'></textarea>
+         </td>         
+      </tr>
+      <tr>
+         <td colspan="2" align="center"><input type="submit" name="btnKirim" value="Kirim" class="input-disclaimer" ></td>
+      </tr>
+   </table>   
+</form>
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,104 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+<h2> {APPLICATION_MODULE} </h2><br/>
+<div id="maincontent">
+  <form name="form_add_tugas" class="form-common" method="post" action="{FORM_ACTION}" enctype="multipart/form-data">
+  		<input type="hidden" name="id" value="{TUGAS_ID}" />
+		<input type="hidden" name="niu" value="{TUGAS_NIU}" />
+		<input type="hidden" name="fileLama" value="{TUGAS_HASIL_FILE}" />
+
+		
+  		<table class="table-userbio" width = "100%">
+  		<!-- patTemplate:tmpl name="display_error" visibility="hidden" -->
+  		  <tr>
+  		  	<th colspan="2"><font color="Maroon" size="2">Gagal Menyimpan Data. {ERROR} </font></th>
+  		  </tr>
+  		<!-- /patTemplate:tmpl -->
+  		  <tr>
+  		  	  <th height="100%">Semester</th>
+  		  	  <th>{TUGAS_SEMESTER}</th>
+  		  </tr>
+          <tr>
+              <th width="30%">Mata Kuliah</th>
+              <td width="70%">{TUGAS_MATKUL_KODE} - {TUGAS_MATKUL_NAMA}</td>
+          </tr>
+          <tr>
+              <th>Judul</th>
+              <td>{TUGAS_JUDUL}</td>
+          </tr>
+          <tr>
+              <th valign="top">File</th>
+              <td><a href="{TUGAS_FILE}">{TUGAS_FILE_DISPLAY}</a> </td>
+          </tr>
+          <tr>
+              <th valign="top">Abstraksi</th>
+              <td>{TUGAS_DESK}</td>
+          </tr>   
+          <tr>
+          	  <th>Waktu Mulai</th>
+          	  <td>{TUGAS_MULAI}</td>
+          </tr>   
+          
+          <tr>
+          	  <th>Waktu Selesai</th>
+          	  <td>{TUGAS_SELESAI} </td>
+          </tr>   
+		  <tr>
+			<th colspan="2">Jawaban</th>
+		  </tr>		  
+		  <!-- patTemplate:tmpl name="jawaban" type="condition" conditionvar="IS_DINILAI" -->
+			  <!-- patTemplate:sub condition="false" -->
+			  <tr>
+				<td valign="top">File</td>
+				<td><a href="{JAWABAN_LINK}">{JAWABAN_FILE}</a>, Kosongkan Jika tidak ingin mengganti <br/>
+					<input type="file" name="jawabanUpload" size="40"  />
+				</td>
+			  </tr>
+			  <tr>
+				<td valign="top">Keterangan</td>
+				<td>
+					<textarea name="jawabanDesk">{JAWABAN_DESK}</textarea>
+				</td>
+			  </tr>
+			  <!-- /patTemplate:sub -->
+			  <!-- patTemplate:sub condition="true" -->
+				<tr>
+					<td>File</td>
+					<td><a href="{JAWABAN_LINK}">{JAWABAN_FILE}</a></td>
+				 </tr>
+				 <tr>
+					<td>Keterangan</td>
+					<td>{JAWABAN_DESK}
+					</td>
+				 </tr>
+				 <tr>
+					<th>Nilai</th>
+					<td>{JAWABAN_NILAI}</td>
+				  </tr>
+			  <!-- /patTemplate:sub -->		
+		  <!-- /patTemplate:tmpl -->  
+		  </table>
+		  
+				
+			
+			
+			<table class="table-userbio" width = "100%">
+			<tr> 	
+          	<th colspan="2">&nbsp;</th>          
+		  </tr>
+			<tr>
+          	  <td colspan="2" align="right">
+          	  	<div align="right">
+          	  		<input type="submit" name="jawabanSimpan" value="Simpan"  class="input-disclaimer" />
+          	  		<input type="submit" name="jawabanBatal" value="Batal" class="input-disclaimer" />
+          	  	</div>
+          	  </td>
+          </tr>    
+      </table>
+ 
+  </form>  
+ </div>
+
+<!-- /patTemplate:tmpl -->

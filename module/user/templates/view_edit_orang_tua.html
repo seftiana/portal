@@ -1,0 +1,554 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.subhead th{
+	font-weight: bold;
+	font-size: 10pt;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.subhead-common th{
+	font-weight: bold;
+	font-size: 7pt;
+	text-align: center;
+	vertical-align: middle;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.links{
+	text-decoration: none;
+}
+.links img{
+	border: none;
+	height: 16px;
+}
+.links img:hover{
+	border: none;
+	height: 20px;
+}
+.hidden{
+	display: none;
+}
+</style>
+   <h2>Edit Data Orang Tua</h2>
+   <br />
+   
+   <h5>Keterangan :</h5>
+   <p>Isilah Data Orang Tua anda dengan lengkap
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="data_biodata" -->
+   <form class="form-common" method="POST" action="{URL_PROCESS}" name="frmInput" >  
+   <input type="hidden" name="doact" value="edit_orang_tua">
+   <table class="table-form" width="100%">
+            <tr class="subhead">
+               <th colspan="2"> Data Ayah</th>
+            </tr>  
+            <tr>
+               <th width="150" >Nama Ayah</th>
+               <td>
+                  <input type="text" name="ortu[ayah_nama]" value="{ORTU_NAMA_AYAH}" size="30" maxLength="255" notab="2" />
+               </td>
+            </tr>     
+            <tr>
+               <th width="60" >Tanggal Lahir Ayah</th>
+               <td>
+					<select name="ortu[ayah_lahir_tanggal]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ayah_tanggal_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="ortu[ayah_lahir_bulan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ayah_bulan_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="ortu[ayah_lahir_tahun]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ayah_tahun_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>   
+            <tr id="ayah_meninggal">
+               <th >Ayah Meninggal</th>
+               <td >
+                  <input id="ayah_meninggal1" type="radio" name="ortu[ayah_meninggal]" onclick="isMeninggal('ayah_meninggal', this.value);" value="1" {CHECKED_AYAH1}><label for="ayah_meninggal1">&nbsp;Ya</label>
+                  <input id="ayah_meninggal2" type="radio" name="ortu[ayah_meninggal]" onclick="isMeninggal('ayah_meninggal', this.value);" value="0" {CHECKED_AYAH2} ><label for="ayah_meninggal2">&nbsp;Tidak</label>
+               </td> 
+            </tr>         
+            <tr>
+               <th >Tanggal Ayah Meninggal</th>
+               <td>
+					<select name="ortu[ayah_meninggal_tanggal]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ayah_tanggal_meninggal" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="ortu[ayah_meninggal_bulan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ayah_bulan_meninggal" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="ortu[ayah_meninggal_tahun]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ayah_tahun_meninggal" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>         
+            <tr>
+               <th >Pendidikan Ayah</th>
+               <td>
+					<select name="ortu[ayah_pendidikan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ayah_pendidikan" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>         
+            <tr>
+               <th  >Pendidikan Terakhir Ayah</th>
+               <td>
+					<select name="ortu[ayah_pendidikan_terakhir]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ayah_pendidikan_terakhir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>  
+            <tr>
+               <th >Pekerjaan Ayah</th>
+               <td>
+					<select name="ortu[ayah_pekerjaan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ayah_pekerjaan" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>  
+            <tr class="subhead">
+               <th colspan="2"> Data Ibu</th>
+            </tr>  
+            <tr>
+               <th width="60" >Nama Ibu</th>
+               <td>
+                  <input type="text" name="ortu[ibu_nama]" value="{ORTU_NAMA_IBU}" size="30" maxLength="255" notab="2" />
+               </td>
+            </tr>
+            <tr>
+               <th width="60" >Tanggal Lahir Ibu</th>
+               <td>
+					<select name="ortu[ibu_lahir_tanggal]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ibu_tanggal_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="ortu[ibu_lahir_bulan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ibu_bulan_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="ortu[ibu_lahir_tahun]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ibu_tahun_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>   
+            <tr id="ibu_meninggal">
+               <th >Ibu Meninggal?</th>
+               <td >
+                  <input id="ibu_meninggal1" type="radio" name="ortu[ibu_meninggal]" onclick="isMeninggal('ibu_meninggal', this.value);" value="1" {CHECKED_IBU1}><label for="ibu_meninggal1">&nbsp;Ya</label>
+                  <input id="ibu_meninggal2" type="radio" name="ortu[ibu_meninggal]" onclick="isMeninggal('ibu_meninggal', this.value);" value="0" {CHECKED_IBU2} ><label for="ibu_meninggal2">&nbsp;Tidak</label>
+               </td>
+            </tr>
+            <tr>
+               <th >Tanggal Ibu Meninggal</th>
+               <td>
+					<select name="ortu[ibu_meninggal_tanggal]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ibu_tanggal_meninggal" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="ortu[ibu_meninggal_bulan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ibu_bulan_meninggal" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="ortu[ibu_meninggal_tahun]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ibu_tahun_meninggal" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>  
+            <tr>
+               <th >Pendidikan Ibu</th>
+               <td>
+					<select name="ortu[ibu_pendidikan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ibu_pendidikan" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>         
+            <tr>
+               <th >Pendidikan Terakhir Ibu</th>
+               <td>
+					<select name="ortu[ibu_pendidikan_terakhir]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ibu_pendidikan_terakhir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>  
+            <tr>
+               <th >Pekerjaan Ibu</th>
+               <td>
+					<select name="ortu[ibu_pekerjaan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ibu_pekerjaan" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>    
+            <tr class="subhead">
+               <th colspan="2"> Data Orang Tua</th>
+            </tr>  
+            <tr>
+               <th width="60">Agama Orang Tua</th>
+               <td>  
+					<select name="ortu[agama]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ortu_agama" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>            
+            <tr>
+               <th width="60">Warga Negara Orang Tua</th>
+               <td>
+					<select name="ortu[warga_negara]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ortu_warga_negara" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr> 
+             <tr>
+               <th >Alamat Orang Tua</th>
+               <td>
+                  <Textarea name="ortu[alamat]" cols="50" rows="" >{ORTU_ALAMAT}</textarea>
+                  <p><font color="green">maksimal 50 karakter, gunakan spasi untuk memisahkan tiap kata</font></p>
+               </td>
+            </tr>
+             <tr>
+               <th >Alamat Kantor Ayah</th>
+               <td>
+                  <Textarea name="ortu[alamat_kantor_ayah]" cols="50" rows="" >{ORTU_ALAMAT_KANTOR_AYAH}</textarea>
+                  <p><font color="green">maksimal 50 karakter, gunakan spasi untuk memisahkan tiap kata</font></p>
+               </td>
+            </tr>
+            <tr>
+               <th width="60">Pilih Propinsi Orang Tua</th>
+               <td>
+					<select name="ortu[propinsi]" id="ortu" onchange="propinsiChange(this);">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ortu_propinsi" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr> 
+            <tr>
+               <th width="60">Pilih Kota Orang Tua</th>
+               <td>
+                  <div id="kota_ortu"> 
+					<select name="ortu[kota]">
+						<option value="">-- PILIH KOTA  --</option>
+						<!-- patTemplate:tmpl name="data_kota_ortu" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <th >Kode Pos Orang Tua</th>
+               <td>
+                  <input type="text" name="ortu[kode_pos]" value="{ORTU_KODE_POS}" size="5" maxLength="5" notab="2" />
+                  <font color="green">misal: 31711, jika belum tahu, isi dengan 0</font>
+               </td>
+            </tr>
+            <tr>
+               <th >Nomor Telepon/ Hp Orang Tua</th>
+               <td>
+                  <input type="text" name="ortu[no_telp]" value="{ORTU_NO_TELP}" size="20" maxLength="50" notab="2" /><BR>
+                  <font color="green">isi dengan angkanya saja, misal: 0734451418 / 0814447568</font>
+               </td>
+            </tr>         
+            <tr>
+               <th >Email Orang Tua</th>
+               <td>
+                  <input type="text" name="ortu[email]" value="{ORTU_EMAIL}" size="30" maxLength="255" notab="2" /><BR>
+                  <font color="green">misal: <i>email_contoh@contoh.com</i></font>
+               </td>
+            </tr> 
+            <tr>
+               <th >Orang Tua Mampu?</th>
+               <td >
+                  <input id="is_mampu1" type="radio" name="ortu[mampu]" value="1" {CHECKED_MAMPU1}><label for="is_ibu_meninggal">&nbsp;Ya</label>
+                  <input id="is_mampu2" type="radio" name="ortu[mampu]" value="0" {CHECKED_MAMPU2} ><label for="is_ibu_meninggal">&nbsp;Tidak</label>
+               </td>
+            </tr>
+            <tr>
+               <th >Penghasilan Orang Tua</th>
+               <td>
+					<select name="ortu[penghasilan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_ortu_penghasilan" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th width="60" >Jumlah Tanggungan</th>
+               <td>
+                  <input type="text" name="ortu[jumlah_tanggungan]" value="{ORTU_JUMLAH_TANGGUNGAN}" size="5" maxLength="3" notab="2" />
+               </td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2"> Data Wali</th>
+            </tr>  
+            <tr>
+               <th width="60" >Nama Wali</th>
+               <td>
+                  <input type="text" name="wali[nama]" value="{ORTU_NAMA_WALI}" size="30" maxLength="255" notab="2" />
+               </td>
+            </tr>   
+            <tr>
+               <th width="60" >Tanggal Lahir Wali</th>
+               <td>
+					<select name="wali[lahir_tanggal]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_wali_tanggal_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="wali[lahir_bulan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_wali_bulan_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="wali[lahir_tahun]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_wali_tahun_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr id="wali_meninggal">
+               <th >Wali Meninggal?</th>
+               <td >
+                  <input id="wali_meninggal1" type="radio" name="wali[meninggal]" onclick="isMeninggal('wali_meninggal', this.value);" value="1" {CHECKED_WALI1}><label for="wali_meninggal1">&nbsp;Ya</label>
+                  <input id="wali_meninggal2" type="radio" name="wali[meninggal]" onclick="isMeninggal('wali_meninggal', this.value);" value="0" {CHECKED_WALI2} ><label for="wali_meninggal2">&nbsp;Tidak</label>
+               </td>
+            </tr>
+            <tr>
+               <th >Tanggal Wali Meninggal</th>
+               <td>
+					<select name="wali[meninggal_tanggal]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_wali_tanggal_meninggal" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="wali[meninggal_bulan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_wali_bulan_meninggal" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="wali[meninggal_tahun]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_wali_tahun_meninggal" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th >Alamat Wali</th>
+               <td>
+                  <Textarea name="wali[alamat]"  cols="50" rows="" >{ORTU_ALAMAT_WALI}</textarea>
+                  <p><font color="green">maksimal 50 karakter, gunakan spasi untuk memisahkan tiap kata</font></p>
+               </td>
+            </tr>
+            <tr>
+               <th >Pilih Propinsi Wali</th>
+               <td>
+					<select name="wali[propinsi]" id="wali" onchange="propinsiChange(this);">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_wali_propinsi" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr> 
+            <tr>
+               <th >Pilih Kota Wali</th>
+               <td>
+                  <div id="kota_wali">
+					<select name="wali[kota]">
+						<option value="">-- PILIH KOTA  --</option>
+						<!-- patTemplate:tmpl name="data_kota_wali" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <th >Kode Pos Wali</th>
+               <td>
+                  <input type="text" name="wali[kode_pos]" value="{ORTU_KODE_POS_WALI}" size="5" maxLength="5" notab="2" />
+                  <font color="green">misal: 31711, jika belum tahu, isi dengan 0</font>
+               </td>
+            </tr>
+            <tr>
+               <th >Nomor Telepon/ Hp Wali</th>
+               <td>
+                  <input type="text" name="wali[no_telp]" value="{ORTU_NO_TELP_WALI}" size="20" maxLength="50" notab="2" /><BR>
+                  <font color="green">isi dengan angkanya saja, misal: 0734451418 / 0814447568</font>
+               </td>
+            </tr>         
+            <tr>
+               <th >Email Wali</th>
+               <td>
+                  <input type="text" name="wali[email]" value="{ORTU_EMAIL_WALI}" size="30" maxLength="255" notab="2" /><BR>
+                  <font color="green">misal: <i>email_contoh@contoh.com</i></font>
+
+               </td>
+            </tr>
+            <tr>
+               <th >Pekerjaan Wali</th>
+               <td>
+					<select name="wali[pekerjaan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_wali_pekerjaan" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr> 
+            <tr>
+               <th >Pendidikan Wali</th>
+               <td>
+					<select name="wali[pendidikan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_wali_pendidikan" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>         
+            <tr>
+               <th >Pendidikan Terakhir Wali</th>
+               <td>
+					<select name="wali[pendidikan_terakhir]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_wali_pendidikan_terakhir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr> 
+		<tr class="buttons">
+		<th width="230"></th>
+		<td>
+		   <input class="input-disclaimer btn btn-primary" type="submit" id="simpan" name="simpan" value="Simpan" />
+		   <input class="input-disclaimer btn btn-primary" type="button" id="kembali" name="kembali" value="Kembali" onclick="location.href='{URL_KEMBALI}'" />
+		</td>
+		</tr>
+   </table>
+   
+   </form>
+<script language="javascript">
+var isMeninggal=function(idEl, val){
+	var tr=document.getElementById(idEl);
+	var row=tr.parentNode.rows;
+	var i=tr.rowIndex+1;
+	var m=i+1;
+	if(val=='1'){
+		var style='';
+		document.getElementById(idEl+'1').checked=true;
+	}else{
+		var style='none';
+		document.getElementById(idEl+'2').checked=true;
+	}
+	do{
+		row[i].style.display=style;
+	}while(++i<m);
+};
+var propinsiChange=function(el){
+	var id='kota_'+el.id;
+	var name=el.id+'[kota]';
+	var dest=document.getElementById(id);
+	var pr=el.parentNode;
+	pr.appendChild(loadingBox);
+	el.disabled=true;
+	new mAjax('{URL_COMBO}',function(result){
+		dest.innerHTML=result;
+		loadingBox.parentNode.removeChild(loadingBox);
+		el.disabled=false;
+	},'e='+name+'&m=kota&p='+el.value);
+};
+
+window.onload=function(){
+	loadingBox=document.createElement('img');
+	loadingBox.src='images/ajax-loader.gif';
+	loadingBox.width='48';
+	loadingBox.height='16';
+	isMeninggal('ayah_meninggal', {ORTU_AYAH_MENINGGAL});
+	isMeninggal('ibu_meninggal', {ORTU_IBU_MENINGGAL});
+	isMeninggal('wali_meninggal', {ORTU_WALI_MENINGGAL});
+};
+var loadingBox;
+</script>
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

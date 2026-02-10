@@ -1,0 +1,190 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript">
+	function verify()
+	{
+		msg = "Anda yakin ingin menghapus data ini?";	
+		return confirm(msg);
+		
+	}
+	
+	function fBuka()
+	{	
+		
+		if(window.document.form_materi.isKlsDsnLain.checked) 
+		{				
+			window.document.form_materi.klsLainId.disabled = false;
+			window.document.form_materi.dsnLainId.disabled = false;
+			window.document.form_materi.klsDsnLain[0].disabled = false;
+			window.document.form_materi.klsDsnLain[1].disabled = false;
+		}
+		else 
+		{
+			window.document.form_materi.klsLainId.disabled = true;
+			window.document.form_materi.dsnLainId.disabled = true;
+			window.document.form_materi.klsDsnLain[0].disabled = true;
+			window.document.form_materi.klsDsnLain[0].checked = false;
+			window.document.form_materi.klsDsnLain[1].disabled = true;
+			window.document.form_materi.klsDsnLain[1].checked = false;			
+		}
+	}
+	function klsDsnLain0_checked()
+	{
+		if(window.document.form_materi.klsDsnLain[0].checked) 
+		{
+			window.document.form_materi.klsLainId.disabled = false;
+			window.document.form_materi.dsnLainId.disabled = true;
+		}
+	}
+	function klsDsnLain1_checked()
+	{
+		if(window.document.form_materi.klsDsnLain[1].checked) 
+		{
+			window.document.form_materi.klsLainId.disabled = true;
+			window.document.form_materi.dsnLainId.disabled = false;
+		}
+	}
+	function kls_checked()
+	{
+		if(window.document.form_materi.klsDsn[0].checked) 
+		{
+			window.document.form_materi.klsId.disabled = false;
+			window.document.form_materi.dsnId.disabled = true;
+		}
+	}
+	function dsn_checked()
+	{
+		if(window.document.form_materi.klsDsn[1].checked) 
+		{
+			window.document.form_materi.klsId.disabled = true;
+			window.document.form_materi.dsnId.disabled = false;
+		}
+	}
+	
+	function checkAll() {
+		
+	   var count = document.form_materi.elements.length;	   
+	   for (i=4; i<count; i++)
+	      eval('document.form_materi.elements[' + i + ']').checked = true;
+				//alert(count);
+	}
+	
+	function uncheckAll()
+	{		
+		var count = document.form_materi.elements.length;
+	   	for (i=4; i<count; i++)
+	      eval('document.form_materi.elements[' + i + ']').checked = false;
+	}	
+	
+	
+	function allSelected()
+	{		
+		
+		if(window.document.form_materi.chkAll.checked) checkAll();
+		else uncheckAll();
+	}
+
+	
+</script>
+
+
+<h2> {APPLICATION_MODULE} </h2></br>
+  
+  <form name="form_materi" class="form-common" method="post" action="{FORM_AKSI}">
+	<input type="hidden" name="hdnSmt" value="{SEMESTER}" />
+  <table class="table-list" width="100%">
+    <tr>
+        <th width="20%" valign="top">Pilihan</th>
+        <td>Ganjil 2007</td>
+    </tr>
+    <tr>
+    	<th>Semester</th>
+        <td width="80%">
+            <select name="semId">                
+                <option value="20041" {SELECT_{SEM_ID})>Ganjil 2004</option>				
+                <option value="20042" {SELECT_{SEM_ID})>Genap 2004</option>
+                <option value="20051" {SELECT_{SEM_ID})>Ganjil 2005</option>
+                <option value="20052" {SELECT_{SEM_ID})>Genap 2005</option>
+                <option value="20061" {SELECT_{SEM_ID})>Ganjil 2006</option>
+                <option value="20062" {SELECT_{SEM_ID})>Genap 2006</option>
+                <option value="20071" {SELECT_{SEM_ID})>Ganjil 2007</option>
+                
+            </select>
+			  <input type="submit" name="getSemester" value="Ganti" class="input-disclaimer" />
+        </td>
+    </tr>
+    <tr>
+        <th>		
+        	Kelas       
+        </th>
+        <td>
+            <select name="klsId" >
+                <option value="{KLS_ID}" {SELECT_{KLS_ID}}>(FAR361-A) Kimia Kriminologi </option>
+                <option value="{KLS_ID}" {SELECT_{KLS_ID}}>(FAR362-A) Kosmetologi</option>
+                <option value="{KLS_ID}" {SELECT_{KLS_ID}}>(FAR363-A) Sistem Penangan Obat</option>
+                <option value="{KLS_ID}" {SELECT_{KLS_ID}}>(FAR364-A) Bioteknologi Farmasi</option>
+            </select>
+        </td>    
+    </tr>
+    <tr>
+        <th>
+            Judul
+        </th>
+        <td><input type="textbox" name="judul" size="50" /></td>
+    </tr>
+   
+    <tr>
+          <th colspan=2><input type="submit" name="cari" value="Tampilkan" class="input-disclaimer" /> </th>
+    </tr>
+  </table>
+ 
+  <!-- menampilkan hasil pencarian -->  
+  <!-- patTemplate:tmpl name="show_table" visibility="hidden" -->
+      <table class="table-common" width="100%">
+          <tr>
+              <th width="2%">No</th>
+              <th width="15%">Mata Kuliah</th>
+              <th width="25%">Judul</th>
+              <th width="15%">File</th>
+          </tr>          
+		  <tr>
+			  <td width="2%">1</td>
+			  <td><div align="left">FAR363-A<div></td>
+			  <td><div align="left"><a href="{MATERI_LINK_JUDUL}">Sistem Penangan Obat Chapter 1</div></a></td>
+			  <td><div align="left"><a href="{MATERI_DOWNLOAD}" target="_blank">sistem_penanganan_obat_1.doc</a></div></td>
+		  </tr>         
+		  <tr>
+			  <td width="2%">2</td>
+			  <td><div align="left">FAR363-A<div></td>
+			  <td><div align="left"><a href="{MATERI_LINK_JUDUL}">Sistem Penangan Obat Chapter 2</div></a></td>
+			  <td><div align="left"><a href="{MATERI_DOWNLOAD}" target="_blank">sistem_penanganan_obat_2.doc</a></div></td>
+		  </tr>         
+		  <tr>
+			  <td width="2%">3</td>
+			  <td><div align="left">FAR363-A<div></td>
+			  <td><div align="left"><a href="{MATERI_LINK_JUDUL}">Sistem Penangan Obat Chapter 3</div></a></td>
+			  <td><div align="left"><a href="{MATERI_DOWNLOAD}" target="_blank">sistem_penanganan_obat_3.doc</a></div></td>
+		  </tr>         
+		  <tr>
+			  <td width="2%">4</td>
+			  <td><div align="left">FAR363-A<div></td>
+			  <td><div align="left"><a href="{MATERI_LINK_JUDUL}">Sistem Penangan Obat Chapter 4</div></a></td>
+			  <td><div align="left"><a href="{MATERI_DOWNLOAD}" target="_blank">sistem_penanganan_obat_4.doc</a></div></td>
+		  </tr>         
+		  <tr>
+			  <td width="2%">5</td>
+			  <td><div align="left">FAR363-A<div></td>
+			  <td><div align="left"><a href="{MATERI_LINK_JUDUL}">Sistem Penangan Obat Chapter 5</div></a></td>
+			  <td><div align="left"><a href="{MATERI_DOWNLOAD}" target="_blank">sistem_penanganan_obat_5.doc</a></div></td>
+		  </tr>
+      </table>
+      
+       
+   <!-- /patTemplate:tmpl -->
+	  
+  
+</form>  
+
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,16 @@
+	<!-- patTemplate:tmpl name="content" -->
+   <h2> {APPLICATION_MODULE} </h2>
+   
+   <table class="table-common" width="100%">
+      <tr align="center">
+         <th width="10"><strong>No.</strong></th>
+         <th width="250"><strong>Nama Kelas</strong></th>            
+      </tr>
+      <!-- patTemplate:tmpl name="list_kelas" -->
+      <tr{EVEN}>
+         <td align="center">{KELAS_NO}</td>   
+         <td><a href="{URL_PENGUMUMAN}">{KELAS_NAMA}</a> <br>         
+      </tr>   
+      <!-- /patTemplate:tmpl -->      
+   </table>  
+<!-- /patTemplate:tmpl -->

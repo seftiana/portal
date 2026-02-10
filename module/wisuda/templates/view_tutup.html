@@ -1,0 +1,322 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.subhead th{
+	font-weight: bold;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.subhead-common th{
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.links{
+	text-decoration: none;
+}
+.links img{
+	border: none;
+	height: 16px;
+}
+.links img:hover{
+	border: none;
+	height: 20px;
+}
+
+.btn{
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	 -moz-user-select: none;
+	  -ms-user-select: none;
+	   -o-user-select: none;
+		  user-select: none;
+}
+.btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #333333;
+  text-decoration: none;
+}
+.btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active {
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+function myUpload() {
+	const fileupload = $('#fileupload').prop('files')[0];
+	var nama_file 	= document.getElementById("nama_file").value;
+	var nim 	= document.getElementById("nim").value;
+	var tgl_wisuda 	= document.getElementById("tgl_wisuda").value;
+	var nomor_wisuda 	= document.getElementById("nomor_wisuda").value;
+	var foto_ori 	= document.getElementById("foto_ori").value;
+
+	if (nama_file!="" && fileupload.name!="") {
+		
+		if(fileupload.size > 1000*1000){
+			alert("File foto lebih dari 1 mb ");
+		}else{
+		
+			let formData = new FormData();
+			formData.append('fileupload', fileupload);
+			formData.append('nama_file', nama_file);
+			formData.append('nim', nim);
+			formData.append('tanggal_wisuda', tgl_wisuda);
+			formData.append('nomor_pendaftaran', nomor_wisuda);
+			formData.append('foto_ori', foto_ori);
+
+			$.ajax({
+				type: 'POST',
+				url: "{URL_UPLOAD_FOTO_WISUDA}",
+				data: formData,
+				cache: false,
+				processData: false,
+				contentType: false,
+				success: function (msg) {
+					alert("File "+msg+" ");
+					document.getElementById("form-data").reset();
+					document.getElementById("gbr").style.display = "none";
+					document.getElementById("gbr_new").style.display = "";
+					document.getElementById("gbr_new").src = "{IMG_SRC}"+msg;
+					document.getElementById("nama_file").style.display = "none";
+					window.location.reload(true);
+					
+				},
+				error: function () {
+					alert("Data Gagal Diupload");
+				}
+			});
+		}
+	};
+
+}
+</script>
+
+<br>
+   <center><h3>Pendaftaran Wisuda Periode {TANGGAL_WISUDA}</h3></center>
+   <center><h3>Dibuka tanggal 20 Maret 2025</h3></center>
+   <br>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+	<table class="table table-userbio" width="100%">
+   <!-- patTemplate:tmpl name="data_profile" type="condition" conditionvar="INFO_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+            <tr class="subhead">
+               <th colspan="2">Biodata</th>
+            </tr>
+			<tr>
+               <th>Nomor Wisudawan</th>
+               <td>
+					<strong><font color="red">{PROFILE_NOMOR_PENDAFTARAN}</font></strong>
+               </td>
+            </tr>
+			<tr>
+				<th>Status Validasi</th>
+				<td>
+					{PROFILE_VALIDASI_VALID}<br>
+					<font color="red"><i>{PROFILE_KET}</i></font>
+				</td>
+			</tr>
+			<tr>
+				<th>Nomor Tiket Ambil Toga dan Undangan</th>
+				<td>
+					<div style="display:{PROFILE_VALIDASI_SUDAH_AMBIL}">
+						<strong><font color="red">{PROFILE_VALIDASI_TIKET}</font></strong> <i>(untuk jadwal pengambilan menunggu informasi selanjutnya)</i>
+						<form name="frmTiket" action="{PROFILE_URL_TIKET}" method="post">
+							<input type="hidden" name="doact" value="tiket_ambil_tutup">
+							<input type="hidden" name="nim_mhs" value="{PROFILE_NIM}">
+							<input type="hidden" name="email_mhs" value="{PROFILE_EMAIL}">
+							<input type="hidden" name="nama_mhs" value="{PROFILE_NAMA_MAHASISWA}">
+							<input type="hidden" name="tanggal_w" value="{PROFILE_TANGGAL_WISUDA_ORI}" />
+							<input type="hidden" name="no_wisuda" value="{PROFILE_NOMOR_PENDAFTARAN}" />
+							<!--input class="input-disclaimer btn btn-primary" style="display:{PROFILE_VALIDASI_TOKEN}" type="submit" name="btnTiket" value="Ambil Tiket Toga"-->
+						</form>
+					</div>
+					{PROFILE_VIEW_SUDAH_AMBIL}
+				</td>
+			</tr>
+            
+			<tr>
+				<th></th>
+               <td>
+				<form class="form-common" method="POST" action="{URL_PROCESS}" name="frmInput" id="form-data"> 
+					<img id="gbr" src="{PROFILE_IMG_ORI}" width="100" />
+					<br><font color="green"><i> (foto wisuda)</i></font>
+					<img id="gbr_new" src="" width="100" style="display:none"/>
+               </td>
+            </tr>
+			<tr>
+				<th>Ubah Foto</th>
+				<td>
+					<div style="display:{PROFILE_TOMBOL_UBAH_FOTO}">
+						<input type="hidden" name="foto_ori" id="foto_ori" value="{PROFILE_FOTO_ORI}" />
+						<input type="hidden" name="nim" id="nim" value="{PROFILE_NIM}" />
+						<input type="hidden" name="tgl_wisuda" id="tgl_wisuda" value="{PROFILE_TANGGAL_WISUDA_ORI}" />
+						<input type="hidden" name="nomor_wisuda" id="nomor_wisuda" value="{PROFILE_NOMOR_PENDAFTARAN}" />
+						<input type="hidden" name="nama_file" id="nama_file" value="{PROFILE_NIM}_foto" />
+						<input type="file"  accept="image/*" name="fileupload" id="fileupload" class="form-control" onchange="myUpload()" />
+					</div>
+				</form>
+				</td>
+            </tr>
+			<tr>
+               <th>Tanggal Wisuda</th>
+               <td>
+					{PROFILE_TANGGAL_WISUDA}
+               </td>
+            </tr>
+            <tr>
+               <th>NIM</th>
+               <td>
+					{PROFILE_NIM}
+               </td>
+            </tr>
+			<tr>
+               <th>Nama Lengkap</th>
+               <td>
+					{PROFILE_NAMA_MAHASISWA}
+               </td>
+            </tr>
+			<tr>
+               <th>Program Studi</th>
+               <td>
+					{PROFILE_JENJANG} {PROFILE_NAMA_PRODI}
+               </td>
+            </tr>
+			<tr>
+               <th>Tempat Lahir</th>
+               <td>
+					{PROFILE_TEMPAT_LAHIR}
+               </td>
+            </tr>
+			<tr>
+               <th >Tgl. Lahir</th>
+               <td> 
+					{PROFILE_TANGGAL_LAHIR}
+               </td>
+            </tr>
+			<tr>
+               <th>Nomor KTP</th>
+               <td> 
+					{PROFILE_NO_KTP}
+               </td>
+            </tr>
+            <tr>
+               <th>Nomor HP (WA)</th>
+               <td>
+					{PROFILE_TELEPON}
+               </td>
+            </tr>
+			<tr>
+               <th>Email</th>
+               <td>
+					{PROFILE_EMAIL}
+               </td>
+            </tr>
+			<tr>
+               <th>Alamat Terakhir</th>
+               <td>
+					{PROFILE_ALAMAT}
+               </td>
+            </tr>
+			<tr>
+               <th >Nama Orangtua</th>
+               <td>
+					{PROFILE_NAMA_ORANGTUA}
+               </td>
+            </tr>
+			
+			<tr class="subhead">
+               <th colspan="2">Data Profesi Mahasiswa</th>
+            </tr>
+			<tr>
+               <th>Pekerjaan</th>
+               <td>
+					{PROFILE_PEKERJAAN_MAHASISWA}
+               </td>
+            </tr>
+			<tr>
+               <th>Nama Instansi</th>
+               <td>
+					{PROFILE_NAMA_KANTOR}
+               </td>
+            </tr>
+			<tr>
+               <th>Alamat Instansi</th>
+               <td>
+					{PROFILE_ALAMAT_KANTOR}
+               </td>
+            </tr>
+			
+			<tr class="subhead">
+               <th colspan="2">Data Kelulusan</th>
+            </tr>
+			<tr>
+               <th >Tgl. Lulus</th>
+               <td>
+					{PROFILE_TANGGAL_LULUS}
+               </td>
+            </tr>
+			<tr>
+               <th>Judul TA.</th>
+               <td>
+					{PROFILE_JUDUL_TA}
+               </td>
+            </tr>
+			<tr>
+               <th >Nama Dosen Pembimbing</th>
+               <td>
+					{PROFILE_DOSEN_PEMBIMBING}
+               </td>
+            </tr>
+			<tr>
+               <th>Total Sks / IPK</th>
+               <td>
+					{PROFILE_AKD_SKS} / {PROFILE_AKD_IPK}
+					<font color="green"><i> (sesuai transkrip akhir)</i></font>
+               </td>
+            </tr>
+			<tr>
+               <th>Ukuran Toga / Topi</th>
+               <td>
+					{PROFILE_UKURAN_TOGA} / {PROFILE_UKURAN_TOPI}
+               </td>
+            </tr>
+			
+			
+      <!-- /patTemplate:sub --><!--sub:data_user-YES-->
+      <!-- patTemplate:sub condition="NO" -->
+        ...
+      <!-- /patTemplate:sub --><!--sub:data_user-NO-->
+   <!-- /patTemplate:tmpl --><!--data_user-->
+   </table>
+   
+   <br/>
+
+<!-- /patTemplate:tmpl -->

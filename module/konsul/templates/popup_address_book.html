@@ -1,0 +1,52 @@
+<!-- patTemplate:tmpl name="content" -->
+ 
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="daftar_teman" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+         
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+             
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <table border="0" cellspacing="0" cellpadding="0" id="1">           
+            <tr>
+               <td>
+                  <table border="1" cellpadding="5" cellspacing="0" class="table-common">
+                     <tr align="center">
+                        <th>No.</th>
+                        <th>{LABEL_NIM}</th>
+                        <th>Nama Lengkap</th>                        
+                        <th>Program Studi</th>
+                        <th>Aksi</th>
+                     </tr>
+                     <!-- patTemplate:tmpl name="list_teman" -->
+                     <tr>
+                        <td align="center">{TEMAN_NUMBER}</td>
+                        <td align="left">{TEMAN_NIM}</td>                         
+                        <td align="left">{TEMAN_NAMA}</td>
+                        <td align="left">{TEMAN_PROGRAM_STUDI}</td>
+                        <form name="frmDelete" method="POST" action="{URL_DELETE}">
+                        <td>
+                           <input name="kode" type="radio" 
+                              onclick="self.opener.document.frmInput.idrec.value ='{TEMAN_NIM}';
+                                       window.close()">
+                           <input type="hidden" name="data[MessageReceiver]" value="{TEMAN_PEMILIK}">
+                           <input type="hidden" name="data[MessageSender]" value="{TEMAN_NIM}">
+                         
+                        </td>
+                        </form>
+                     </tr>
+                     <!-- /patTemplate:tmpl -->
+                  </table>
+                  
+                  <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+                  
+               </td>
+            </tr>
+         </table>        
+
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

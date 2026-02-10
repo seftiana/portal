@@ -1,0 +1,61 @@
+<!-- patTemplate:tmpl name="content" -->
+<div id='layar' style="z-index:999;position:absolute;left:100px;top:110px;width:800px;visibility:hidden;align:center"><img src="images/progressbar.gif" style="position:relative;left:35%;top:110px;"></div>
+<style type="text/css">
+.button:hover{ position:relative;background-color:#bbbbd5;color:#ffffff;display:block;}
+</style>
+<link rel=stylesheet type="text/css" href="styles/a_portal_diagram.css" />
+<script Language="JavaScript" src="js/diagram.js"></script>
+<script Language="JavaScript" src="js/hasil_kuisioner.js"></script>
+<script Language="JavaScript" src="js/export_excel_hasil_kuisioner.js"></script>
+<script language="javascript">
+var dAsk=new Array(
+<!-- patTemplate:tmpl name="data_axis_label" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var dData=new Array(
+<!-- patTemplate:tmpl name="data_rerata" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var pData=new Array(
+<!-- patTemplate:tmpl name="data_prev_rerata" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var dGrup=new Array(
+<!-- patTemplate:tmpl name="data_grup" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+<!-- patTemplate:tmpl name="data_dest" type="simplecondition" requiredvars="DATA" -->
+var dDest=new Array({DATA});
+<!-- /patTemplate:tmpl -->
+showNotify();
+window.onload=drawSebaranResponden;
+</script>
+   <h3>Hasil Kuisioner : </h3>
+   
+   <!-- patTemplate:tmpl name="option_form" visibility="visible" -->
+   <form class="form-common" method="POST" action="{URL_VIEW}" name="frmUser" id="frmUser">
+      <div id="content-disclaimer">
+         <table class="table-common" id="pilihGrup">
+         <tr>
+         </tr>
+         </table>
+         <!-- patTemplate:tmpl name="judul" -->
+         <h3 id="judul" align="center" class="mb-3">REKAPITULASI SEBARAN RESPONDEN<br>PROSES BELAJAR MENGAJAR PERSPEKTIF MAHASISWA TAHUN {THNAJARAN}</h3>
+         <a href="#" class="input-disclaimer btn btn-info right mb-3" style="text-decoration:none;" onmousedown="exportExcel('s');return false;"> Export To Excel </a>
+         <a href="#" class="input-disclaimer btn btn-info right mb-3"  onclick="cetakGrafik();return false;"> Cetak Grafik </a>
+         <!-- /patTemplate:tmpl -->
+         <div id="cont"></div>
+         <div id="butt" style="margin-bottom:10px;">
+            <a href="#" id="shBut" class="input-disclaimer btn btn-info left" style="text-decoration:none;" onclick="switchPrevChartVisibility();return false;"> Sembunyikan Semester Sebelumnya </a>
+         <!-- patTemplate:tmpl name="link_kembali" type="simplecondition" requiredvars="LINK" -->
+         <a class="input-disclaimer btn btn-info left" href="{LINK}"style="text-decoration:none;" > Kembali </a>
+            <!-- /patTemplate:tmpl -->
+         </div>
+      </div>
+   </form>
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

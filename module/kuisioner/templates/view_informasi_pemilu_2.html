@@ -1,0 +1,44 @@
+<!-- patTemplate:tmpl name="content" -->
+<style type="text/css">
+label { display:block; line-height: 1; min-height: 100%; height: auto !important; height: 100%}
+</style>
+<h4 align="center">PEMILIHAN UMUM CALON KETUA HMPS-MANAJEMEN</h4>
+<h4 align="center">PERIODE 19</h4>
+<form class="form-common" method="POST" action="{URL_GOTO}" name="frmUser" id="frmUser">   
+	<div id='layar' style="z-index:999;position:absolute;left:0px;top:110px;"></div>
+
+	{ERROR}
+	<!--table width="65%" align="center" border="1" class="table table-common table-responsive"-->
+	<table width="70%" align="center" border="1" class="">	
+		<tr align ="center">
+			<td >
+				<img src="{PATH1}" width="40%" >
+			</td>
+			<td >
+				<img src="{PATH2}" width="40%" >
+			</td>
+		</tr>
+		<tr align ="center">
+			<td ><b>1.<br>
+			Muhammad Hiroiko</b>
+			</td>
+			<td >
+				<b>2.<br>
+				Raissa Citra Yolanda</b>
+			</td>
+		</tr>
+		<tr>
+			<td width="50%" align ="center" > 
+				<input type="radio" id="1" name="calon" value="1" > PILIH 
+			</td>
+			<td width="50%" align ="center" > 
+				<input type="radio" id="2" name="calon" value="2" > PILIH
+			</td>
+		</tr>
+	</table>
+	<br>
+	<div id="content-disclaimer" align="center">
+	<input class="input-disclaimer" name="btnSkip" type="submit" value="SIMPAN" />
+	</div>
+</form>
+<!-- /patTemplate:tmpl -->

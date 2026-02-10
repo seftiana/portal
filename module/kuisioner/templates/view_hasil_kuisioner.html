@@ -1,0 +1,111 @@
+<!-- patTemplate:tmpl name="content" -->
+<div id='layar' style="z-index:999;position:absolute;left:0px;top:110px;width:900px;align:center"><img src="images/progressbar.gif" style="position:relative;left:35%;top:110px;"></div>
+<style type="text/css">
+.button{display:block;height:1%;}
+.button:hover{background-color:#bbbbd5;color:#ffffff;}
+</style>
+<link rel=stylesheet type="text/css" href="styles/a_portal_diagram.css" />
+<script Language="JavaScript" src="js/diagram.js"></script>
+<script Language="JavaScript" src="js/hasil_kuisioner.js"></script>
+<script language="javascript">
+var dAsk=new Array(
+<!-- patTemplate:tmpl name="data_axis_label" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var dAId=new Array(
+<!-- patTemplate:tmpl name="data_axis_id" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var pAId=new Array(
+<!-- patTemplate:tmpl name="data_prev_axis_id" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var dData=new Array(
+<!-- patTemplate:tmpl name="data_rerata" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var pData=new Array(
+<!-- patTemplate:tmpl name="data_prev_rerata" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var dJumlah=new Array(
+<!-- patTemplate:tmpl name="data_jumlah" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var dCount=new Array(
+<!-- patTemplate:tmpl name="data_count" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var pJumlah=new Array(
+<!-- patTemplate:tmpl name="data_prev_jumlah" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var dGrup=new Array(
+<!-- patTemplate:tmpl name="data_grup" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var dIns=new Array(
+<!-- patTemplate:tmpl name="data_instansi" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+var dLink=new Array(
+<!-- patTemplate:tmpl name="data_link" type="simplecondition" requiredvars="DATA" -->
+{DATA}
+<!-- /patTemplate:tmpl -->
+);
+<!-- patTemplate:tmpl name="tipe_data" type="simplecondition" requiredvars="DATA" -->
+var dTipe='{DATA}';
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="data_dest" type="simplecondition" requiredvars="DATA" -->
+var dDest=new Array({DATA});
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="arr_data_matakuliah" type="simplecondition" requiredvars="DATA" -->
+var dMk={DATA};
+<!-- /patTemplate:tmpl -->
+showNotify();
+window.onload=drawHasilKuisioner;
+</script>
+   <h3>Hasil Kuisioner : </h3>
+   
+   <!-- patTemplate:tmpl name="option_form" visibility="visible" -->
+   <form class="form-common" method="POST" action="{URL_VIEW}" name="frmUser" id="frmUser">   
+	<div id="content-disclaimer" class="table-responsive">
+	<table class="table-common" id="pilihGrup">
+   <tr>
+   </tr>
+	</table>
+   <!-- patTemplate:tmpl name="judul" -->
+	<h3 id="judul" align="center" class="mb-3">REKAPITULASI HASIL EVALUASI<br>PROSES BELAJAR MENGAJAR PERSPEKTIF MAHASISWA TAHUN {THNAJARAN}</h3>
+	<!-- patTemplate:tmpl name="isAdmin" visibility="hidden" -->
+	<script Language="JavaScript" src="js/export_excel_hasil_kuisioner.js"></script>
+	<script Language="JavaScript">iA=true;iPD={ISPD};var gTipe={GTIPE};var gUp='{GUP}';var gJumlah=new Array({GJML});</script>
+	<!-- patTemplate:tmpl name="isAdminMK" type="simplecondition" requiredvars="LINK_DOSEN" -->
+	<a href="{LINK_DOSEN}" class="input-disclaimer btn btn-info mb-3 left" style="text-decoration:none;"> {LABEL} </a>
+	<!-- /patTemplate:tmpl -->  
+	<a href="{LINK_EXP}" class="input-disclaimer btn btn-info mb-3 left" style="text-decoration:none;"> Export Data Mentah </a>
+	<a href="#" class="input-disclaimer btn btn-info mb-3 right" style="text-decoration:none;" onmousedown="exportExcel('');return false;"> Export To Excel </a>
+	<a href="#" class="input-disclaimer btn btn-info mb-3 right" style="text-decoration:none;" onclick="cetakGrafik();return false;"> Cetak Grafik </a>
+	<!-- /patTemplate:tmpl -->  
+   <!-- /patTemplate:tmpl -->
+   <div id="cont" style="margin-bottom:10px;"></div>
+	<a href="#" id="shBut" class="input-disclaimer btn btn-info left" style="text-decoration:none;" onclick="switchPrevChartVisibility();return false;"> Sembunyikan Semester Sebelumnya </a>
+   <!-- patTemplate:tmpl name="link_kembali" -->
+   <a class="input-disclaimer btn btn-info left" href="{LINK}"style="text-decoration:none;" > Kembali </a>
+   <!-- /patTemplate:tmpl -->   
+	<a href="#" class="input-disclaimer btn btn-info right ml-2" style="text-decoration:none;" onclick="nextChart(this);return false;">Berikutnya >></a>
+	<a href="#" class="input-disclaimer btn btn-info right" style="text-decoration:none;" onclick="prevChart(this);return false;"><< Sebelumnya</a>
+	 </div>
+   </form>
+   <br />
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

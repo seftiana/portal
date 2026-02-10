@@ -1,0 +1,166 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2> {APPLICATION_MODULE}</h2>
+<!-- patTemplate:tmpl name="filter" -->
+<script language="javascript">
+<!--//
+function getKelas(){
+	var frm = document.forms['form_pengumuman'];
+	frm.action=frm.action+'&act={ENC_KELAS}';
+}
+
+function getList(){
+	var frm = document.forms['form_pengumuman'];
+	frm.action=frm.action+'&act={ENC_FILTER}';	
+}
+//-->>
+</script>
+<form name="form_pengumuman" class="form-common" method="post" action="{URL_FILTER}&{URL_POST}">
+	
+  <table class="table-list" width="100%">
+    <!-- patTemplate:tmpl name="view_unit" visibility="hidden" -->
+	<tr>
+		<th>Unit</th>
+		<td>
+			<select name="unit">
+				<!-- patTemplate:tmpl name="list_unit" -->
+				<option value="{UNIT_ALAMAT}" {SELECT_{PRODI_ALAMAT}}>{UNIT_NAMA}</option>
+				<!-- /patTemplate:tmpl -->
+			</select>
+			<input type="submit" name="getUnit" value="Ganti" class="input-disclaimer btn btn-info" />
+		</td>
+	</tr>
+	<!-- /patTemplate:tmpl -->
+    <tr>
+    	<th>Pilihan Semester</th>
+        <td width="80%">
+            <select name="semId">
+                <!-- patTemplate:tmpl name="list_semester" -->
+                <option value="{SEM_ID}" {SELECT_{SEM_ID}}>{SEM_NAMA}</option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+			<input type="submit" name="getSemester" value="Ganti" class="input-disclaimer btn btn-info" />
+        </td>
+    </tr>
+    <tr>
+        <th>		
+        	Kelas      
+        </th>
+        <td>
+            <select name="klsId" >
+                <!-- patTemplate:tmpl name="list_kelas" -->
+                <option value="{KLS_ID}" {SELECT_{KLS_ID}}>{KLS_KODE} - {KLS_NAMA}</option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+        </td>    
+    </tr>
+	
+    <tr>
+        <th>
+            Judul
+        </th>
+        <td><input type="textbox" name="judul" size="50" value="{JUDUL}" /></td>
+
+    </tr>
+    <tr>
+        <th>Tanggal</th>
+        <td>
+            <select name="tglMulai">
+					<option value=""></option>
+					<!-- patTemplate:tmpl name="tglMulai" -->
+                <option value="{TGL}"{SELECTED}>{TGL}</option>
+					 <!-- /patTemplate:tmpl -->
+            </select> 
+            <select name="blnMulai">  
+					<option value=""></option>
+         		<!-- patTemplate:tmpl name="blnMulai" -->
+                <option value="{BLN}"{SELECTED}>{BLN}</option>
+					 <!-- /patTemplate:tmpl -->
+            </select> 
+            <select name="thnMulai">
+					<option value=""></option>
+					<!-- patTemplate:tmpl name="thnMulai" -->
+                <option value="{THN}"{SELECTED}>{THN}</option>
+					 <!-- /patTemplate:tmpl -->
+            </select>
+            s/d 
+            <select name="tglAkhir">
+					<option value=""></option>
+                <!-- patTemplate:tmpl name="tglAkhir" -->
+                <option value="{TGL}"{SELECTED}>{TGL}</option>
+					 <!-- /patTemplate:tmpl -->
+            </select> 
+            <select name="blnAkhir">   
+					<option value=""></option>
+					<!-- patTemplate:tmpl name="blnAkhir" -->
+                <option value="{BLN}"{SELECTED}>{BLN}</option>
+					 <!-- /patTemplate:tmpl -->
+            </select>
+            <select name="thnAkhir">
+					<option value=""></option>
+               <!-- patTemplate:tmpl name="thnAkhir" -->
+                <option value="{THN}"{SELECTED}>{THN}</option>
+					 <!-- /patTemplate:tmpl -->
+            </select>
+        </td>
+    </tr>  
+    <tr>
+          <th colspan=2><input type="submit" name="cari" value="Tampilkan" class="input-disclaimer btn btn-info" onClick="return getList()" /> </th>
+    </tr>
+  </table>
+  
+      <!-- patTemplate:tmpl name="tambah" visibility="hidden" -->
+			<div align="right"><input class="input-disclaimer btn btn-info" name="tambah" type="submit" id="tambah" value="Tambah" ></div>
+	
+		<!-- /patTemplate:tmpl -->
+</form> 
+<!-- /patTemplate:tmpl -->
+
+      
+<!-- patTemplate:tmpl name="list_pgmn" visibility="hidden" -->
+<table class="table-common" width="100%">
+   <tr>
+      <th width="5%">No.</th>
+      <th width="18%">Tanggal</th>
+		<!-- patTemplate:tmpl name="header_kelas" visibility="hidden" -->
+		<th>Mata Kuliah - Kelas</th>
+		<!-- /patTemplate:tmpl -->
+      <th width="40%">Judul</th>
+		<!-- patTemplate:tmpl name="aksi" visibility="hidden" -->
+      <th width="19%">Tanggal Batas </th>
+      <th width="12%">Status</th>
+		
+         <th width="20" colspan="3"><strong>Aksi </strong></th>
+         <!-- /patTemplate:tmpl -->
+   </tr>
+	<!-- patTemplate:tmpl name="list_pengumuman"  -->
+   <tr{EVEN}>
+      <td>{PENGUMUMAN_NO}</td>
+      <td>{PENGUMUMAN_TANGGAL}</td>
+		<!-- patTemplate:tmpl name="kolom_kelas" visibility="hidden" -->
+		<td>{PENGUMUMAN_KELAS}</td>
+		<!-- /patTemplate:tmpl -->
+      <td><a href="{URL_DETAIL_PENGUMUMAN}">{PENGUMUMAN_JUDUL}</a></td>		
+		<!-- patTemplate:tmpl name="link_aksi" visibility="hidden" -->
+      <td>{PENGUMUMAN_TGLBATAS}</td>
+      <td>{PENGUMUMAN_AKTIF}</td>
+		 
+	    	<td class="table-common-links"><a href="{URL_AKTIF}"><img src="images/non-public.gif" alt="Aktifasi" title="Aktifkan Pengumuman"/></a></td>         
+         <td class="table-common-links"><a href="{URL_EDIT}"><img src="images/button-edit.gif" alt="Edit" title="Ubah Pengumunan" /></a></td>
+         <td class="table-common-links"><a href="{URL_DELETE}"><img src="images/button-delete.gif" alt="Delete" title="Hapus Pengumuman"/></a></td>         
+         <!-- /patTemplate:tmpl -->
+   </tr>
+	<!-- /patTemplate:tmpl -->
+	
+	<!-- patTemplate:tmpl name="no_new_pgmn" visibility="hidden" -->
+   <tr>
+      <td colspan="6" align="center"><i> -- Tidak ada pengumuman baru. --</i></td>
+   </tr>
+	<!-- /patTemplate:tmpl -->
+</table>
+<!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+<!-- /patTemplate:tmpl -->
+
+<!-- patTemplate:tmpl name="daftar" visibility="hidden" -->
+<a href="{URL_DAFTAR}"><small>Daftar Semua Pengumuman</small></a>
+<!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,78 @@
+<!-- patTemplate:tmpl name="document" -->
+<html>
+<head>
+<title>Cetak Absensi Kelas</title>
+<link rel="stylesheet" type="text/css" href="styles/a_sia_cetak_krs.css" />
+<link rel="stylesheet" type="text/css" media="print" href="../styles/a_sia_cetak_krs_print.css" />
+
+</head>
+<body onLoad="window.print();">
+<div class="page-portrait">
+
+<div class="nobreak">
+	<!-- patTemplate:tmpl name="content" -->
+<style>
+.hidden{
+	display:none;
+}
+</style>
+<script language="javascript">
+function openWindow(url)
+   {
+      WindowObjectReference = window.open(url, "CetakForm", "width=600,height=300,resizable,scrollbars=yes,status=1");
+   }
+</script>
+	<h2><center>Daftar Pertemuan Kelas</center></h2>
+		<!-- patTemplate:tmpl name="data_kelas" visibility="visible" -->
+	<table class="table-form">
+		<tr>
+		   <td width="50%">Semester</td>
+		   <td>: <b>{KELAS_SMT_NAMA} {KELAS_THN_AJAR}</b></td>
+		</tr>
+		<tr>
+		   <td>Matakuliah</td>
+		   <td>: <b>{KELAS_MK_NAMA}</b></td>
+		</tr>
+		<tr>
+		   <td>Nama Kelas</td>
+		   <td>: <b>{KELAS_KLS_NAMA}</b></td>
+		</tr>
+	</table>
+		<!-- /patTemplate:tmpl -->
+   <br>
+		<!-- patTemplate:tmpl name="data_pertemuan" visibility="hidden" -->
+<div class="table-responsive">
+	<table border="1" class="table-common" width="100%">
+		<tr> 
+			<th align="center">NO</th>
+			<th>TANGGAL</th>
+			<th>TEMA</th>
+			<th>BAHASAN</th>
+		</tr>
+			<!-- patTemplate:tmpl name="data_pertemuan_list" type="condition" conditionvar="IS_EMPTY" -->
+		
+				<!-- patTemplate:sub condition="YES" -->
+		<tr>
+			<td colspan="4">Belum ada data pertemuan.</td>
+		</tr>
+				<!-- /patTemplate:sub -->
+		
+				<!-- patTemplate:sub condition="NO" -->
+					<!-- patTemplate:tmpl name="data_pertemuan_list_item" -->
+		<tr>    
+			<td  nowrap ="nowrap" align="center">{PERTEMUAN_KE}</td>
+			<td  nowrap ="nowrap" >{TANGGAL_TERLAKSANA_INDO}</td>
+			<td>{TEMA}</td>
+			<td>{POKOK_BAHASAN}</td>
+		</tr>
+					<!-- /patTemplate:tmpl -->
+				<!-- /patTemplate:sub -->
+		
+			<!-- /patTemplate:tmpl -->
+	</table>
+</div>
+		<!-- /patTemplate:tmpl -->
+
+   
+	<!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

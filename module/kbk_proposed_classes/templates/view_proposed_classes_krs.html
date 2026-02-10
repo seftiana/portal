@@ -1,0 +1,116 @@
+<!-- patTemplate:tmpl name="content" -->
+
+<script type="text/javascript">
+<!--
+function exclusiveCheck(className, actor) {
+    var elements;
+
+    var actorValue = actor.checked;
+
+    if (document.getElementsByClassName)
+    {
+        elements = document.getElementsByClassName(className);
+    }
+    else
+    {
+        var elArray = [];
+        var tmp = document.getElementsByTagName('input');
+        var regex = new RegExp("*" + className+ "*");
+        for ( var i = 0; i < tmp.length; i++ ) {
+
+            if ( regex.test(tmp[i].className) ) {
+                elArray.push(tmp[i]);
+            }
+        }
+
+        elements = elArray;
+    }
+
+    for(var i = 0; i < elements.length; i++) {
+       elements[i].checked = false;
+    }
+
+    actor.checked = actorValue;
+}
+//-->
+</script>
+
+   <h2>Daftar Matakuliah Ditawarkan</h2>
+   <br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="keterangan" -->
+      <table width="100%" class="table-list">
+         <tr>
+            <th>Program Studi</th>
+            <td>{PRODI}</td>
+         </tr>
+         <tr>
+            <th>Semester</th>
+            <td>{SEMESTER}</td>
+         </tr>
+      </table>
+   <!-- /patTemplate:tmpl -->
+   
+   <!-- tambahan test sliding untuk per paket semester -->
+   
+   <form name="frmKRS" method="POST" action="{FORM_AKSI}">  
+   <!-- patTemplate:tmpl name="paket_semester" -->
+      <a class="a_none" href="#" onclick="Effect.toggle('semester_{NUM}','blind'); return false;">Paket Semester {NUM}</a><br>
+      <div id="semester_{NUM}" style="display:none">
+   <!-- patTemplate:tmpl name="matakuliah" type="condition" conditionvar="MK_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+         <table class="table-common" width="100%">
+         <tr>
+            <th width="3%">No</th>
+            <th width="3%">&nbsp;</th>
+            <th width="10%">Kelas
+            <th width="24%">Mata Kuliah</th>
+            <!--<th width="15%">Jadwal Kuliah</th>-->
+            <!--<th width="20%">Jadwal Ujian</th>-->
+            <th width="5%">Sks</th>
+            <th width="10%">Keterangan</th>
+         </tr>
+            <!-- patTemplate:tmpl name="matakuliah_item" type="condition" conditionvar="ODDEVEN" -->
+               <!-- patTemplate:sub condition="ODD" -->
+                  <tr>
+                     <td align="center">{TAWAR_NUMBER}</td>
+                     <td><input type="checkbox" name="kodeMkul[]" value="{TAWAR_ID}" class="mkkurid-{TAWAR_MK_KUR_ID}" onclick="exclusiveCheck('mkkurid-{TAWAR_MK_KUR_ID}', this)"></td>
+                     <td>{TAWAR_NAMA_KELAS}</td>
+                     <td>{TAWAR_NAMA_MATA_KULIAH}</td>
+                     <!--<td>{TAWAR_JADWALKULIAH}</td>-->
+                     <!--<td>{TAWAR_JADWALUJIAN}</td>-->
+                     <td align="center">{TAWAR_JUMLAH_SKS}</td>
+                     <td>{TAWAR_KETERANGAN}</td>
+                  </tr>
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="EVEN" -->
+                  <tr class="table-common-even">
+                     <td align="center">{TAWAR_NUMBER}</td>
+                     <td><input type="checkbox" name="kodeMkul[]" value="{TAWAR_ID}" class="mkkurid-{TAWAR_MK_KUR_ID}" onclick="exclusiveCheck('mkkurid-{TAWAR_MK_KUR_ID}', this)"></td>
+                     <td>{TAWAR_NAMA_KELAS}</td>
+                     <td>{TAWAR_NAMA_MATA_KULIAH}</td>
+                     <!--<td>{TAWAR_JADWALKULIAH}</td>-->
+                     <!--<td>{TAWAR_JADWALUJIAN}</td>-->
+                     <td align="center">{TAWAR_JUMLAH_SKS}</td>
+                     <td>{TAWAR_KETERANGAN}</td>
+                  </tr>
+               <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl -->
+         </table>
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl --> <!-- end of krs -->
+      </div>
+   <!-- /patTemplate:tmpl -->
+      <input type="hidden" name="act" value="addKrs">
+      <!-- patTemplate:tmpl name="btn_tambah" visibility="visible" -->
+         <br />
+         <input class="input-disclaimer" type="submit" name="btnAdd" value="Tambah" onClick="return validateCheckbox('kodeMkul[]', 'Anda belum memilih matakuliah')">
+      <!-- /patTemplate:tmpl -->
+      <input class="input-disclaimer" type="submit" name="btnBack" value="Batal">
+   </form>
+<!-- /patTemplate:tmpl --> <!-- end of content -->

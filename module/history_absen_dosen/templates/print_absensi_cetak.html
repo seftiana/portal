@@ -1,0 +1,85 @@
+<!-- patTemplate:tmpl name="document" -->
+<html>
+<head>
+<title>Cetak Absensi Kelas</title>
+<link rel="stylesheet" type="text/css" href="styles/a_sia_cetak_krs.css" />
+<link rel="stylesheet" type="text/css" media="print" href="../styles/a_sia_cetak_krs_print.css" />
+
+</head>
+<body onLoad="window.print();">
+<div class="page-portrait">
+
+<div class="nobreak">
+	<!-- patTemplate:tmpl name="content" -->
+<style>
+.hidden{
+	display:none;
+}
+</style>
+<script language="javascript">
+function openWindow(url)
+   {
+      WindowObjectReference = window.open(url, "CetakForm", "width=600,height=300,resizable,scrollbars=yes,status=1");
+   }
+</script>
+	<h2><center>Absen Kehadiran Mahasiswa</center></h2>
+		<!-- patTemplate:tmpl name="data_kelas" visibility="visible" -->
+	<table class="table-form">
+		<tr>
+		   <td width="50%">Semester</td>
+		   <td>: <b>{KELAS_SMT_NAMA} {KELAS_THN_AJAR}</b></td>
+		</tr>
+		<tr>
+		   <td>Matakuliah</td>
+		   <td>: <b>{KELAS_MK_NAMA}</b></td>
+		</tr>
+		<tr>
+		   <td>Nama Kelas</td>
+		   <td>: <b>{KELAS_KLS_NAMA}</b></td>
+		</tr>
+		<tr>
+		   <td>Dosen</td>
+		   <td>: <b>{KELAS_NOREG}</b></td>
+		</tr>
+	</table>
+		<!-- /patTemplate:tmpl -->
+   <br>
+		<!-- patTemplate:tmpl name="data_pertemuan" visibility="hidden" -->
+	<div class="table-responsive">
+		<table border="1" class="table-common" width="100%">
+		  <tr>
+			 <th>No.</th>
+			 <th>Nim</th>
+			 <th>Nama</th>
+			 <!-- patTemplate:tmpl name="semester" type="SimpleCondition" requiredvars="PERTEMUAN" -->
+			 <th>{PERTEMUAN}</th>
+			 <!-- /patTemplate:tmpl -->
+		  </tr>
+		<!-- patTemplate:tmpl name="report" type="condition" conditionvar="NIM" -->
+		  <!-- patTemplate:sub condition="empty" -->
+		  <tr><td colspan="4">Tidak ada data ditemukan</td></tr>
+		  <!-- /patTemplate:sub -->
+
+		  <!-- patTemplate:sub condition="default" -->
+		  <tr>
+			 <td align="right">{NO}</td>
+			 <td align="left" nowrap="nowrap">{NIM}</td>
+			 <td align="left" nowrap="nowrap">{NAMA}</td>
+			 <!-- patTemplate:tmpl name="ip_semester" type="condition" conditionvar="IPSEM" -->
+				<!-- patTemplate:sub condition="default" -->
+				   <td align="center" nowrap="nowrap">{IPSEM}</td>
+				<!-- /patTemplate:sub -->
+				<!-- patTemplate:sub condition="kosong" -->
+				<td></td>
+				<!-- /patTemplate:sub -->
+			 <!-- /patTemplate:tmpl -->
+		  </tr>
+		  <!-- /patTemplate:sub -->
+		<!-- /patTemplate:tmpl -->
+		</table>
+	</div>
+		<!-- /patTemplate:tmpl -->
+
+   
+	<!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

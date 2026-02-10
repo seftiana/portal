@@ -1,0 +1,83 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Daftar Agenda Kelas</h2><br/>
+<form class="form-common" method="post" action="{URL_TAMPIL}">
+	<table class="table-list" width="100%">
+    <tr>
+        <th width="20%" valign="top">Semester</th>
+        <td>{NMSMT}</td>
+    </tr>
+    <tr>
+        <th>		
+        	Kelas      
+        </th>
+        <td>
+            <select name="klsId" >
+                <!-- patTemplate:tmpl name="list_kelas" -->
+                <option value="{KLS_ID}" {SELECT_{KLS_ID}}>{KLS_KODE} - {KLS_NAMA}</option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+        </td>    
+    </tr>
+    <tr>
+    	<th>Frekuensi</th>
+    	<td>
+    	<select name="frekuensi">
+    		<!-- patTemplate:tmpl name="list_frek" -->
+	        <option value="{ID}" {SELECT_{ID}}>{NAMA}</option>
+	        <!-- /patTemplate:tmpl -->
+    	</select>
+    	</td>
+    </tr>
+    <tr>
+    	<th colspan="2"> 
+    		<input type="checkbox" name="OnlyUndone" value="1" {CHECKED_1} />
+    		 Tampilkan hanya yang belum selesai
+    	</th>
+    </tr>
+    <tr>
+    	<th colspan="2">
+    		<input type="submit" name="cari" value="Tampilkan" class="input-disclaimer" />
+    	</th>
+    </tr>
+  </table>
+ 
+  <br/>
+  
+  <!-- patTemplate:tmpl name="show_table" visibility="hidden" -->
+  <h3>Agenda {TIPE}</h3>
+  </form> 
+  <form class="form-common" method="post" action="{URL_ACTION}">
+  <input type="hidden" name="jenis" value="1" />
+  <table class="table-common">
+  	<tr>
+		<th width="70%">Agenda</th>
+		<th width="25%">Waktu</th>
+	</tr>
+	<!-- patTemplate:tmpl name="data" type="condition" conditionvar="DATA_EXIST" -->
+	  <!-- patTemplate:sub condition="no" -->
+	  	<tr>
+			<td colspan="3" align="center"><i> -- Data Tidak Ditemukan -- </i></td>
+		</tr>
+		</table>
+	  <!-- /patTemplate:sub -->
+	  <!-- patTemplate:sub condition="yes" -->	  
+	  	 <!-- patTemplate:tmpl name="list"	 -->
+			<tr>
+				
+				<td>
+					<strong>{DATA_NAMA}</strong><br/>
+					{DATA_KETERANGAN}
+				</td>
+				<td>{DATA_WAKTU}</td>
+			</tr>
+		  <!-- /patTemplate:tmpl -->
+		  </table>
+		  
+		<!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+    <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+  <!-- /patTemplate:tmpl -->
+ </form>
+  
+
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,157 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Manajemen Feedback</h2>
+<br/>
+<h5>Keterangan :</h5>
+<p>Manajemen Feedback digunakan untuk menampilkan, merubah, dan menghapus feedback yang diberikan oleh pengguna.
+</p><br/>
+<table class="table-form" width="45%">
+   <tr>
+      <td width="10%"><img src="images/public.gif" alt="" /></td>
+      <td>New Feedback</td>
+      <td>({JML_NEW}) Feedback</td>
+   </tr>
+   <tr>
+      <td><img src="images/public.gif" alt="" /> </td>
+      <td>Total Feedback</td>
+      <td>({JML_FEEDBACK}) Feedback</td>
+   </tr>
+</table>
+
+   <form class="form-common" method="POST" action="{URL_PROCESS}" name="frmProcess">
+   
+   
+      <input name="doact" type="hidden" value="view" />
+   <!-- patTemplate:tmpl name="cont_feedback" type="condition" conditionvar="FEEDBACK_TYPE" -->
+      <!-- patTemplate:sub condition="empty" -->
+         <br />
+            <table class="table-form" width="100%">
+               <tr>
+                  <th colspan="3"><b>Cari Feedback</b></th>
+               </tr>
+               <tr>
+                  <th width="100">Isi Feedback</th>
+                  <td width="100"><input name="cari" type="text" maxlength="255" size="20" value="{CARI_FEEDBACK}" /></td>
+                  <td><input class="input-disclaimer" name="btnCari" type="submit" value="Cari" /></td>
+               </tr>
+            </table>
+         <!-- patTemplate:link name="error_box" src="error_box" / -->
+         
+         <!-- patTemplate:tmpl name="data_feedback" type="condition" conditionvar="DATA_IS_EMPTY" -->
+            <!-- patTemplate:sub condition="YES" -->
+               <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+            <!-- /patTemplate:sub --><!--sub:data_feedback-YES-->
+            <!-- patTemplate:sub condition="NO" -->
+               <table class="table-common" width="100%">
+                  <tr>
+                     <!--th>No</th-->
+                     <!--th>User</th-->
+                     <th>&nbsp;</th>
+                     <th>Feedback</th>
+                     <th>Tanggal</th>
+                     <th>Prioritas</th>
+                     <th>Komentar</th>
+                     <!--th colspan="3">Aksi</th-->
+                  </tr>         
+                  <!-- patTemplate:tmpl name="data_feedback_item" type="condition" conditionvar="ODDEVEN" -->                  
+                        <!-- patTemplate:sub condition="ODD" -->                 
+                           <tr>
+                              <!--td>{FB_NUMBER}</td-->
+                              <!--td>{FB_NAMA_USER}</td-->
+                              <td><input type='checkbox' name='chk[]' value='{FB_ID}'></td>
+                              <td><b>{FB_NAMA_LENGKAP}</b><br />
+                                       <img src="{FB_NEW_ICON}"  />
+                                       <a href='{FB_URL_DETAIL}'>{FB_ISI}</a></td>
+                              <td>{FB_TANGGAL_POST}</td>
+                              <td>{FB_PRIORITAS}</td>                           
+                              <td>{FB_KOMENTAR}</td>
+                           </tr>         
+                        <!-- /patTemplate:sub -->                 
+                        <!-- patTemplate:sub condition="EVEN" -->                 
+                           <tr class="table-common-even">
+                              <!--td>{FB_NUMBER}</td-->
+                              <!--td>{FB_NAMA_USER}</td-->
+                              <td><input type='checkbox' name='chk[]' value='{FB_ID}'></td>
+                              <td><b>{FB_NAMA_LENGKAP}</b><br />
+                                       <img src="{FB_NEW_ICON}"  />                                       
+                                       <a href='{FB_URL_DETAIL}'>{FB_ISI}</a></td>
+                              <td>{FB_TANGGAL_POST}</td>
+                              <td>{FB_PRIORITAS}</td>                           
+                              <td>{FB_KOMENTAR}</td>
+                           </tr>         
+                        <!-- /patTemplate:sub -->
+                     <!-- /patTemplate:tmpl --><!--data_feedback_item-->
+               </table>
+               
+            <!-- /patTemplate:sub --><!--sub:data_feedback-NO-->
+         <!-- /patTemplate:tmpl --><!--data_data_feedback-->
+      <!-- /patTemplate:sub --><!---sub:feedback-empty-->
+         
+      <!-- patTemplate:sub condition="NEW" -->
+         <!-- patTemplate:tmpl name="new_feedback" type="condition" conditionvar="NEWDATA_IS_EMPTY" -->
+            <!-- patTemplate:sub condition="YES" -->
+               <!-- patTemplate:link name="empty_box_new" src="empty_box" / -->
+            <!-- /patTemplate:sub --><!--sub:new_feedback-YES-->
+            <!-- patTemplate:sub condition="NO" -->
+               <br/>
+               <!-- patTemplate:link name="error_box_new" src="error_box" / -->
+               <table class="table-common" width="100%">
+                  <tr>
+                     <!--th>No</th-->
+                     <!--th>User</th-->
+                     <th>&nbsp;</th>
+                     <th>Nama User</th>
+                     <th>Isi Feedback</th>
+                     <th>Tanggal</th>
+                     <th>Prioritas</th>
+                     <!--th colspan="3">Aksi</th-->
+                  </tr>         
+                  <!-- patTemplate:tmpl name="new_feedback_item" type="condition" conditionvar="ODDEVEN" -->                  
+                        <!-- patTemplate:sub condition="ODD" -->                 
+                           <tr>
+                              <!--td>{FB_NUMBER}</td-->
+                              <!--td>{FB_NAMA_USER}</td-->
+                              <td><input type='checkbox' name='chk[]' value='{FB_ID}'></td>
+                              <td>{FB_NAMA_LENGKAP}</td>
+                              <td><a href='{FB_URL_DETAIL}'>{FB_ISI}</a></td>
+                              <td>{FB_TANGGAL_POST}</td>
+                              <td>{FB_PRIORITAS}</td>                           
+                           </tr>         
+                        <!-- /patTemplate:sub -->                 
+                        <!-- patTemplate:sub condition="EVEN" -->                 
+                           <tr class="table-common-even">
+                              <td>{FB_NUMBER}</td>
+                              <!--td>{FB_NAMA_USER}</td-->
+                              <td><input type='checkbox' name='chk[]' value='{FB_ID}'></td>
+                              <td>{FB_NAMA_LENGKAP}</td>
+                              <td><a href='{FB_URL_DETAIL}'>{FB_ISI}</a></td>
+                              <td>{FB_TANGGAL_POST}</td>
+                              <td>{FB_PRIORITAS}</td>                           
+                           </tr>         
+                        <!-- /patTemplate:sub -->
+                     <!-- /patTemplate:tmpl --><!--new_feedback_item-->
+               </table>
+            <!-- /patTemplate:sub --><!--sub:new_feedback-NO-->
+         <!-- /patTemplate:tmpl -->
+      <!-- /patTemplate:sub --><!--sub:feedback-NEW-->
+   <!-- /patTemplate:tmpl -->
+   
+   <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+   <br/>
+   <!-- patTemplate:tmpl name="process_form" visibility="hidden" -->
+      <input name="type" type="hidden" value="{TYPE}" />
+      <table>
+         <tr>
+            <td>Prioritas: </td>
+            <td><select name='prior'>
+                           <!-- patTemplate:tmpl name="priority_list" -->
+                              <option value='{PRIOR_ID}' {PRIOR_SELECTED}>{PRIOR_PRIORITAS}</option>
+                           <!-- /patTemplate:tmpl -->
+                        </select>
+            </td>
+            <td><input class="input-disclaimer" name="btnUpdate" type="submit" value="Ubah Prioritas" onClick="return ValidateCheckbox('chk[]', 'Anda belum memilih feedback yang akan diubah prioritasnya') "/></td>
+            <td><input class="input-disclaimer" name="btnHapus" type="submit" value="Hapus" onClick="return ValidateDelete('chk[]', 'Anda belum memilih feedback yang akan dihapus')"/></td>
+         <tr>
+      </table>
+   <!-- /patTemplate:tmpl -->
+   </form>
+<!-- /patTemplate:tmpl -->

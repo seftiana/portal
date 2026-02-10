@@ -1,0 +1,275 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.subhead th{
+	font-weight: bold;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.subhead-common th{
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.links{
+	text-decoration: none;
+}
+.links img{
+	border: none;
+	height: 16px;
+}
+.links img:hover{
+	border: none;
+	height: 20px;
+}
+
+.btn{
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	 -moz-user-select: none;
+	  -ms-user-select: none;
+	   -o-user-select: none;
+		  user-select: none;
+}
+.btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #333333;
+  text-decoration: none;
+}
+.btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active {
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+</style>
+   <h2>Edit Biodata Mahasiswa</h2>
+   <br />
+   
+   <h5>Keterangan :</h5>
+   <p>Isilah biodata anda dengan lengkap, tidak boleh ada yang kosong..!
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="data_biodata" -->
+<script>
+var updateUserFoto = function(){
+	var a = ['userFoto', 'editFoto'];
+	var t = new Date().getTime();
+	for(var i = 0, m = a.length; i < m; ++i){
+		var g = document.getElementById(a[i]);
+		if(g)g.innerHTML='<img src="{FILE_FOTO}&'+t+'"  width="100" />';
+	}
+	document.getElementById('mhs[mhs_foto]').value = '1';
+};
+var errorUserFoto = function(err){
+	document.getElementById('mhs[mhs_foto]').value = '';
+	alert(err);
+};
+</script>
+<iframe id="hiddenFrame" name="hiddenFrame" style="display:none"></iframe>
+<form method="POST" action="{URL_UPLOAD_FOTO}" name="frmFoto" class="" id="frmFoto" enctype="multipart/form-data" target="hiddenFrame">
+<input type="file" name="uploadFoto" id="uploadFoto" onchange="submit();" style="display:none">
+</form>
+   <form class="form-common" method="POST" action="{URL_PROCESS}" name="frmInput" > 
+   <input type="hidden" name="doact" value="edit_mhs">
+   <input type="hidden" name="mhs[decId]" value="{NIM}">
+         <table class="table table-userbio" width="100%">
+            <tr class="subhead">
+               <th colspan="2">Biodata</th>
+            </tr>
+            <tr>
+               <th>NIM</th>
+               <td>
+                 {NIM}
+               </td>
+            </tr>
+			<tr>
+               <th>Nama</th>
+               <td>
+                 {NAMA}
+               </td>
+            </tr>
+            <tr>
+               <th >Nomor Hp</th>
+               <td>
+                  <input type="text" name="mhs[mhs_no_telp]" value="{NOMOR_TELEPON}" size="20" maxLength="14" notab="2" required /><BR>
+                  <font color="green">isikan salah satu nomor HP dengan angkanya saja, misal: 081234567890</font>
+               </td>
+            </tr>
+			<tr>
+               <th >NIK / Nomor KTP</th>
+               <td>
+                  <input type="text" name="mhs[mhs_no_ktp]" value="{MHSNOKTP}" size="30" maxLength="50" notab="4" required />
+               </td>
+            </tr>
+			<tr>
+               <th >Nomor KK</th>
+               <td>
+                  <input type="text" name="mhs[mhs_no_kk]" value="{MHSNOKK}" size="30" maxLength="50" notab="4" required />
+               </td>
+            </tr>
+			
+			<!--tr>
+               <th>Propinsi Tempat Lahir</th>
+               <td>
+					<select name="mhs[dsn_propinsi_lahir]" id="lahir" onchange="propinsiChange(this);">
+						<option value="">-- PILIH PROPINSI  --</option>
+						<!-- patTemplate:tmpl name="data_propinsi_lahir" -->
+						<!--option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					<!--/select>
+               </td>
+            </tr> 
+            <tr>
+               <th>Kota Tempat Lahir</th>
+               <td>
+                  <div id="kota_lahir">
+					<select name="mhs[kota_lahir]">
+						<option value="">-- PILIH KOTA  --</option>
+						<!-- patTemplate:tmpl name="data_kota_lahir" -->
+						<!--option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					<!--/select>
+                  </div>
+     
+               </td>
+            </tr>
+			<tr>
+               <th >Tanggal Lahir</th>
+               <td>
+					<select name="mhs[mhs_lahir_tanggal]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_tanggal_lahir" -->
+						<!--option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					<!--/select>
+					-
+					<select name="mhs[mhs_lahir_bulan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_bulan_lahir" -->
+						<!--option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					<!--/select>
+					-
+					<select name="mhs[mhs_lahir_tahun]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_tahun_lahir" -->
+						<!--option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					<!--/select>
+               </td>
+            </tr-->
+			
+			
+			 <tr>
+               <th >Nama Ibu Lengkap Kandung</th>
+               <td>
+                  <input type="text" name="mhs[mhs_mhsortuNamaIbu]" value="{NAMA_IBU}" size="30" maxLength="90" notab="3" required /><BR>
+                  <font color="green">Tanpa menggunakan gelar</i></font>
+               </td>
+            </tr>
+			<tr>
+               <th >Email</th>
+               <td>
+                  <input type="text" name="mhs[mhs_email]" value="{EMAIL}" size="50" maxLength="50" notab="4" required />  
+               </td>
+            </tr>
+             <tr>
+               <th>Alamat Terakhir</th>
+               <td>
+                  <Textarea name="mhs[mhs_alamat]" cols="50" rows="" required >{ALAMAT_ASAL}</textarea>
+                  <p><font color="green">gunakan spasi untuk memisahkan tiap kata</font></p>
+               </td>
+            </tr>
+			 
+			 <tr>
+				<th>&nbsp;</th>
+				<td>
+				   <input class="input-disclaimer btn btn-primary" type="submit" id="simpan" name="simpan" value="Simpan" />
+				   <input class="input-disclaimer btn btn-primary" type="button" id="kembali" name="kembali" value="Kembali" onclick="location.href='{URL_KEMBALI}'" />
+				</td>
+			 </tr>
+       </table> 
+   
+   </form>
+<script language="javascript">
+var jenisPekerjaan=function(val){
+	var tr=document.getElementById('status_kerja');
+	var row=tr.parentNode.rows;
+	var i=tr.rowIndex+1;
+	var m=i+4;
+	if(val=='1'){
+		var style='';
+		document.getElementById('is_kerja_y').checked=true;
+	}else{
+		var style='none';
+		document.getElementById('is_kerja_t').checked=true;
+	}
+	do{
+		row[i].style.display=style;
+	}while(++i<m);
+};
+var jumlahSdr=function(){
+	var lk=parseInt(document.getElementById('jml_lk').value);
+	var pr=parseInt(document.getElementById('jml_pr').value);
+	document.getElementById('jml_sdr').value = lk+pr;
+};
+var propinsiChange=function(el){
+	var id='kota_'+el.id;
+	var name='mhs['+id+']';
+	var dest=document.getElementById(id);
+	var hidden=document.getElementById('hidden_'+id);
+	var pr=el.parentNode;
+	pr.appendChild(loadingBox);
+	el.disabled=true;
+	new mAjax('{URL_COMBO}',function(result){
+		dest.innerHTML=result;
+		loadingBox.parentNode.removeChild(loadingBox);
+		el.disabled=false;
+	},'e='+name+'&m=kota&p='+el.value);
+};
+var popupPengOrg=function(){
+	document.getElementById('pengorgTable').style.display='block';
+};
+var hapus_entri=function(el){
+	var tr=el.parentNode.parentNode;
+	tr.parentNode.removeChild(tr);
+};
+
+window.onload=function(){
+	loadingBox=document.createElement('img');
+	loadingBox.src='images/ajax-loader.gif';
+	loadingBox.width='48';
+	loadingBox.height='16';
+	jenisPekerjaan({MHS_STATUS_KERJA});
+};
+var loadingBox;
+</script>
+	<!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

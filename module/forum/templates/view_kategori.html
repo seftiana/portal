@@ -1,0 +1,38 @@
+<!-- patTemplate:tmpl name="content" -->
+   
+   <h4>Selamat Datang di {APPLICATION_MODULE}</h4>
+   <br>
+   <h5>Keterangan :</h5>
+   <p>Forum Diskusi diharapkan dapat dipakai untuk berdiskusi antara para civitas akademika 
+      {APPLICATIONCLIENT} dan saling membangun mengembangkan wacana
+      untuk kemajuan {UNIV_NAME}. Untuk itu dilarang keras
+      memaki dan menghujat dalam forum ini.</p>   
+   
+   <!-- patTemplate:tmpl name="kategori_list" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <table class="table-forum" width="100%">
+            <tr>
+               <th class="text-center" colspan="2"><div class="th-special-left"></div><div class="th-center"><strong>Kategori Diskusi</strong></div></th>
+               <th class="text-center" width="28%"><div class="th-special-right"></div><div class="th-center"><strong>Informasi Kategori</strong></div></th>
+            </tr>
+            <!-- patTemplate:tmpl name="kategori_item" -->
+            <tr>
+               <td><img src="images/public.gif" alt="" /></td>
+               <td><strong><a href="{KATEGORI_URL_DETAIL}">{KATEGORI_JUDUL}</a></strong><br />
+               <p>{KATEGORI_DESKRIPSI}.</p>
+               </td>
+               <td class="text-center">
+                  {KATEGORI_JML_TOPIK} &nbsp; topik terdaftar                  
+               </td>
+            </tr>
+            <!-- /patTemplate:tmpl -->
+         </table>
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+            
+<!-- /patTemplate:tmpl -->

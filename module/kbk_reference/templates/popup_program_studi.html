@@ -1,0 +1,67 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h3>Pilihan Program Studi</h3>
+   
+   <form name="fmSearch" method="post" action="{URL_CARI}">       
+   <input name="action" type="hidden" value="doSearchProdi">
+   <table width="380" class="table-form">
+      <tr> 
+         <th width="105">Nama Program Studi</th>
+         <th style="width:1px">:</th>
+         <th width="100"><input name="prodiKey" value="{SEARCH_KEY}" type="text"  id="1"></th>
+         <th align="right"><input class="input-disclaimer" name="searchBtn" type="submit" value="Cari" class="vbtn" ></th>
+      </tr>          
+   </table>
+   </form>     
+   
+   <!-- patTemplate:tmpl name="daftar_prodi" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="yes" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+     
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="no" -->
+         <table border="0" cellspacing="0" cellpadding="0" id="1">           
+            <tr>
+               <td>
+                  <table border="1" cellpadding="5" cellspacing="0" class="table-common">
+                     <tr align="center">
+                        <th>No.</th>
+                        <th>Kode Program Studi</th>
+                        <th>Nama Program Studi</th>                        
+                        <th>Aksi</th>
+                     </tr>
+                     <!-- patTemplate:tmpl name="list_prodi" type="condition" conditionvar="ODDEVEN" -->
+                        <!-- patTemplate:sub condition="ODD" -->
+                           <tr>
+                              <td align="center">{PRODI_NUMBER}</td>
+                              <td align="left">{PRODI_CODE}</td>                                                  
+                              <td align="left">{PRODI_NAME}</td>                        
+                              <td><input name="kode" type="radio" 
+                                    onclick="self.opener.document.frmInput.prodiKode.value ='{PRODI_NAME}';                                       
+                                             self.opener.document.frmInput.prodiId.value ='{PRODI_ID}';
+                                             window.close()"></td>
+                           </tr> 
+                        <!-- /patTemplate:sub -->                 
+                        <!-- patTemplate:sub condition="EVEN" -->
+                           <tr class="table-common-even">
+                              <td align="center">{PRODI_NUMBER}</td>
+                              <td align="left">{PRODI_CODE}</td>                                                  
+                              <td align="left">{PRODI_NAME}</td>                        
+                              <td><input name="kode" type="radio" 
+                                    onclick="self.opener.document.frmInput.prodiKode.value ='{PRODI_NAME}';                                       
+                                             self.opener.document.frmInput.prodiId.value ='{PRODI_ID}';
+                                             window.close()"></td>
+                           </tr>
+                        <!-- /patTemplate:sub -->
+                     <!-- /patTemplate:tmpl -->
+                  </table>
+                  
+                  <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+                  
+               </td>
+            </tr>
+         </table>        
+
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

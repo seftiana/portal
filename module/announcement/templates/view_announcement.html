@@ -1,0 +1,67 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2> {APPLICATION_MODULE} </h2>   
+   <br>
+   <p class="text-muted">Keterangan :</p>
+	<p>Pengumuman digunakan untuk menampilkan, menambah, merubah, dan menghapus pengumuman akademik dan workshop.
+   </p><br />
+	
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="list_announcement" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+         
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      
+      <!-- /patTemplate:sub --> 
+      <!-- patTemplate:sub condition="NO" -->
+      <div class="table-responsive">
+         <table class="table-common" width="100%">
+            <tr>
+               <th width="5%"> No </th>
+               <th width="10%"> Aksi </th>
+               <th width="30%"> Judul </th>
+               <th width="15%"> Tanggal </th>
+               <th width="20%"> Tipe </th>
+	       <th width="20%"> File </th>
+            </tr>
+            <!-- patTemplate:tmpl name="informasi_item" type="condition" conditionvar="ODDEVEN" -->
+               <!-- patTemplate:sub condition="ODD" -->
+                  <tr>
+                     <td class="text-center">{INFO_NOMER}</td>
+                     <td class="table-common-links" >
+                        <a href="{INFO_URL_DELETE}"><img src="images/button-delete.gif" alt="Hapus" onClick="return ValidateDelete()"/></a>
+                        <a href="{INFO_URL_EDIT}"><img src="images/button-edit.gif" alt="Ubah" /></a>
+                     </td>
+                     <td>{INFO_TITLE}</td>
+                     <td>{INFO_DATE}</td>
+                     <td>{INFO_TYPE_NAMA}</td>
+		     <td>{INFO_IMAGE_PATH}</td>
+                  </tr>
+               <!-- /patTemplate:sub --> 
+               <!-- patTemplate:sub condition="EVEN" -->
+                  <tr class="table-common-even">
+                     <td class="text-center">{INFO_NOMER}</td>
+                     <td class="table-common-links" >
+                        <a href="{INFO_URL_DELETE}"><img src="images/button-delete.gif" alt="Hapus" onClick="return ValidateDelete()"/></a>
+                        <a href="{INFO_URL_EDIT}"><img src="images/button-edit.gif" alt="Ubah" /></a>
+                     </td>
+                     <td>{INFO_TITLE}</td>
+                     <td>{INFO_DATE}</td>
+                     <td>{INFO_TYPE_NAMA}</td>
+		     <td>{INFO_IMAGE_PATH}</td>
+                  </tr>
+               <!-- /patTemplate:sub --> 
+            <!-- /patTemplate:tmpl -->
+         </table>
+      </div>
+         <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+   <br>
+   <form method="POST" action="{URL_ADD}" class="form-common">
+      <input type="hidden" name="act" value="ViewAddPengumuman">
+      <input class="input-disclaimer btn btn-info" type="submit" name="btnAdd" value="Tambah">
+   </form>
+   
+<!-- /patTemplate:tmpl --> <!-- end of content-->

@@ -1,0 +1,226 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript">
+	function verify()
+	{
+		msg = "Anda yakin ingin menghapus data ini?";	
+		return confirm(msg);
+		
+	}
+	
+	function fBuka()
+	{	
+		
+		if(window.document.form_materi.isKlsDsnLain.checked) 
+		{				
+			window.document.form_materi.klsLainId.disabled = false;
+			window.document.form_materi.dsnLainId.disabled = false;
+			window.document.form_materi.klsDsnLain[0].disabled = false;
+			window.document.form_materi.klsDsnLain[1].disabled = false;
+		}
+		else 
+		{
+			window.document.form_materi.klsLainId.disabled = true;
+			window.document.form_materi.dsnLainId.disabled = true;
+			window.document.form_materi.klsDsnLain[0].disabled = true;
+			window.document.form_materi.klsDsnLain[0].checked = false;
+			window.document.form_materi.klsDsnLain[1].disabled = true;
+			window.document.form_materi.klsDsnLain[1].checked = false;			
+		}
+	}
+	function klsDsnLain0_checked()
+	{
+		if(window.document.form_materi.klsDsnLain[0].checked) 
+		{
+			window.document.form_materi.klsLainId.disabled = false;
+			window.document.form_materi.dsnLainId.disabled = true;
+		}
+	}
+	function klsDsnLain1_checked()
+	{
+		if(window.document.form_materi.klsDsnLain[1].checked) 
+		{
+			window.document.form_materi.klsLainId.disabled = true;
+			window.document.form_materi.dsnLainId.disabled = false;
+		}
+	}
+	function kls_checked()
+	{
+		if(window.document.form_materi.klsDsn[0].checked) 
+		{
+			window.document.form_materi.klsId.disabled = false;
+			window.document.form_materi.dsnId.disabled = true;
+		}
+	}
+	function dsn_checked()
+	{
+		if(window.document.form_materi.klsDsn[1].checked) 
+		{
+			window.document.form_materi.klsId.disabled = true;
+			window.document.form_materi.dsnId.disabled = false;
+		}
+	}
+	
+	function checkAll() {
+		
+	   var count = document.form_materi.elements.length;	   
+	   for (i=4; i<count; i++)
+	      eval('document.form_materi.elements[' + i + ']').checked = true;
+				//alert(count);
+	}
+	
+	function uncheckAll()
+	{		
+		var count = document.form_materi.elements.length;
+	   	for (i=4; i<count; i++)
+	      eval('document.form_materi.elements[' + i + ']').checked = false;
+	}	
+	
+	
+	function allSelected()
+	{		
+		
+		if(window.document.form_materi.chkAll.checked) checkAll();
+		else uncheckAll();
+	}
+
+	
+</script>
+
+
+<h2> {APPLICATION_MODULE} </h2></br>
+
+ <form name="form_materi" class="form-common" method="post" action="{FORM_AKSI}">
+  <input type="hidden" name="hdnSmt" value="{SEMESTER}" />
+  <table class="table-list" width="100%">
+	<!-- patTemplate:tmpl name="view_unit" visibility="hidden" -->
+	<tr>
+		<th>Unit</th>
+		<td>
+			<select name="unit">
+				<!-- patTemplate:tmpl name="list_unit" -->
+				<option value="{UNIT_ALAMAT}" {SELECT_{PRODI_ALAMAT}}>{UNIT_NAMA}</option>
+				<!-- /patTemplate:tmpl -->
+			</select>
+			<input type="submit" name="getUnit" value="Ganti" class="input-disclaimer btn btn-info" />
+		</td>
+	</tr>
+	<!-- /patTemplate:tmpl -->
+    <tr>
+        <th width="20%" valign="top">Semester</th>
+        <td>{NMSMT}</td>
+    </tr>
+    <tr>
+    	<th>Pilihan Semester</th>
+        <td width="80%">
+            <select name="semId">
+                <!-- patTemplate:tmpl name="list_semester" -->
+                <option value="{SEM_ID}" {SELECT_{SEM_ID}}>{SEM_NAMA}</option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+			<input type="submit" name="getSemester" value="Ganti" class="input-disclaimer btn btn-info" />
+        </td>
+    </tr>
+    <tr>
+        <th>		
+        	Kelas      
+        </th>
+        <td>
+            <select name="klsId" >
+                <!-- patTemplate:tmpl name="list_kelas" -->
+                <option value="{KLS_ID}" {SELECT_{KLS_ID}}>{KLS_KODE} - {KLS_NAMA}</option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+        </td>    
+    </tr>
+    <tr>
+        <th>
+            Judul
+        </th>
+        <td><input type="textbox" name="judul" size="50" /></td>
+    </tr>
+    <tr>
+          <th colspan=2><input type="submit" name="cari" value="Tampilkan" class="input-disclaimer btn btn-info" /> </th>
+    </tr>
+  </table>
+  
+ 
+
+   
+		<!-- patTemplate:tmpl name="show_add_button" visibility="hidden" -->
+			<table width="100%">
+				<tr>
+					<th align="right">
+						<input type="submit" name="addMateri"  class="input-disclaimer btn btn-info" value="Tambah" />	
+					</th>
+				</tr>
+			</table>	
+	
+		<!-- /patTemplate:tmpl -->
+  <!-- menampilkan hasil pencarian -->  
+  <!-- patTemplate:tmpl name="show_table" visibility="hidden" -->
+      <table class="table-common" width="100%">
+          <tr>
+              <th width="2%"><input type="checkbox" name="chkAll" onclick="allSelected();" /></th>
+              <th width="2%">No</th>
+              <th width="15%">Mata Kuliah</th>
+              <th width="25%">Judul</th>
+              <th>Status</th>
+              <th width="15%">File</th>
+          </tr>
+          <!-- patTemplate:tmpl name="data_materi" type="condition" conditionvar="DATA_EXIST" -->
+		  	<!-- patTemplate:sub condition="false" -->
+				<tr>
+					<td colspan="6" align="center"><i> -- Data Tidak Ditemukan -- </i></td>
+				</tr>
+			<!-- /patTemplate:sub -->
+		  	<!-- patTemplate:sub condition="true" -->	
+		  		<!-- patTemplate:tmpl name="daftar_materi" -->		
+				  <tr>
+				  	  <td width="2%">{MATERI_AKSI}</td>
+					  <td width="2%">{MATERI_NO}</td>
+					  <td><div align="left">{MATERI_KELAS}<div></td>
+					  <td><div align="left"><a href="{MATERI_LINK_JUDUL}">{MATERI_JUDUL}</div></a></td>
+			  		  <td width="2%">{MATERI_ISAKTIF}</td>					  
+					  <td><div align="left"><a href="{MATERI_DOWNLOAD}" target="_blank">{MATERI_FILE}</a></div></td>
+					  
+				  </tr>
+			  	<!-- /patTemplate:tmpl -->
+			<!-- /patTemplate:sub -->		  
+          <!-- /patTemplate:tmpl -->
+      </table>
+      <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+       
+       
+       <!-- patTemplate:tmpl name="show_activation" visibility="hidden"  -->
+       
+		<table class="table-form" width="60%" >	
+			<tr>
+				<th align="left" colspan="2">
+					Item Terpilih :
+					<select name="isAktifkan">
+						<option value="1">Aktifkan</option>
+						<option value="0">Nonaktifkan</option>
+						<option value="del">Hapus</option>
+					</select>
+					<input type="submit" name="simpanAktifasi" value="Simpan"  class="input-disclaimer btn btn-info" />					
+				</th>
+			</tr>	
+		
+			<tr>
+				<th valign="top">Keterangan Status</th>			
+				<td>A : Aktif <br/>
+					T : Tidak Aktif
+				</td>
+			</tr>
+		</table>
+	  
+	  <!-- /patTemplate:tmpl -->
+   <!-- /patTemplate:tmpl -->
+	  
+  
+</form>  
+
+<!-- /patTemplate:tmpl -->

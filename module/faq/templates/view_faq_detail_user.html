@@ -1,0 +1,32 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>FAQ Detail</h2>
+   <br />
+   <h5>{KATEGORI_NAMA}</h5>
+   <p>{KATEGORI_KETERANGAN}</p>
+   <br />
+   <!-- patTemplate:tmpl name="detail_faq_user" type="condition" conditionvar="IS_EMPTY" -->
+
+      <!-- patTemplate:sub condition="YES" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+
+   <!-- patTemplate:sub condition="NO" -->
+      <!--<ul>
+         <!-- patTemplate:tmpl name="kategori_list" -- >
+         <h6><li><a href="#{KATEGORI_ID}">{KATEGORI_PERTANYAAN}</a></li></h6>
+         <!-- /patTemplate:tmpl -- >
+      </ul>
+
+      <br /><br /> -->
+      
+         <!-- patTemplate:tmpl name="kategori_list_detail" -->
+            <h4><a id="{DETAIL_KATEGORI_ID}">{DETAIL_KATEGORI_PERTANYAAN}</a></h4>
+            <ul>{DETAIL_KATEGORI_JAWABAN}</ul>
+            <br />
+         <!-- /patTemplate:tmpl -->
+      
+   <!-- /patTemplate:sub -->
+
+   <!-- /patTemplate:tmpl -->
+
+<!-- /patTemplate:tmpl -->

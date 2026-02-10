@@ -1,0 +1,121 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Detil Beasiswa</h2>
+   <br />
+   
+   <h5>Keterangan :</h5>
+   <p>Detil beasiswa digunakan untuk melihat data beasiswa secara detil. 
+	Dari menu ini pengguna dapat melakukan pendaftaran beasiswa
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+     
+   
+   <!-- patTemplate:tmpl name="data_beasiswa" type="condition" conditionvar="INFO_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+		<h3>Beasiswa {BSW_NAMA}</h3>
+		<table width="100%" class="table-form">
+			<tr width="150"> 
+				<th>Jenis</th>
+            <td>{BSW_JENIS}</td>
+         </tr>
+         <tr> 
+            <th>Sumber</th>
+            <td>{BSW_SUMBER}</td>
+         </tr>
+         <tr> 
+            <th>Tanggal Penutupan</th>
+            <td>{BSW_END_DATE}</td>
+         </tr>
+         <tr> 
+            <th>Jumlah Penerima</th>
+            <td>{BSW_JUMLAH_PENERIMA}</td>
+         </tr>
+         <tr> 
+            <th>Jumlah Pelamar</th>
+            <td>{BSW_JUMLAH_PELAMAR}</td>
+         </tr>
+         <tr> 
+            <th>Semester</th>
+            <td>{BSW_SEMESTER}</td>
+         </tr>
+         <tr> 
+            <th>Minimal IPK</th>
+            <td>{BSW_IPK}</td>
+         </tr>   
+         <tr> 
+            <th>Tanggunggan Orang Tua</th>
+            <td>{BSW_TANGGUNGAN}</td>
+         </tr>   
+         <tr> 
+            <th>Penghasilan Orang Tua</th>
+            <td>{BSW_PENGHASILAN}</td>
+         </tr>   
+         <tr> 
+            <th>Periode Pembayaran</th>
+            <td>{BSW_PERIODE}</td>
+         </tr>   
+         <tr> 
+            <th>Status</th>
+            <td>{BSW_STATUS}</td>
+         </tr>   
+			<tr> 
+            <th>Deskripsi</th>
+            <td>{BSW_DESKRIPSI}</td>
+         </tr>   
+		</table>
+		<!-- patTemplate:tmpl name="jumlah_nominal" visibility="hidden" -->
+			<h4>Jumlah Nominal</h4>
+			<table class="table-common" width="100%">
+         <tr>
+            <th>No</th>
+            <th>Periode Awal</th>
+				<th>Periode Akhir</th>
+            <th>Jumlah Nominal</th>
+         </tr>    
+			<!-- patTemplate:tmpl name="jumlah_nominal_item" type="condition" conditionvar="ODDEVEN" -->                  
+				<!-- patTemplate:sub condition="ODD" -->                 
+					<tr>
+						<td>{NOM_NUMBER}</td>
+						<td>{NOM_PERIODE_AWAL}</td>
+						<td>{NOM_PERIODE_AKHIR}</td>
+						<td>{NOM_NOMINAL}</td>
+					</tr>         
+				<!-- /patTemplate:sub -->                 
+				<!-- patTemplate:sub condition="EVEN" -->                 
+					<tr class="table-common-even">
+						<td>{NOM_NUMBER}</td>
+						<td>{NOM_PERIODE_AWAL}</td>
+						<td>{NOM_PERIODE_AKHIR}</td>
+						<td>{NOM_NOMINAL}</td>
+				  </tr>         
+				<!-- /patTemplate:sub -->
+			<!-- /patTemplate:tmpl --><!--jumlah_nominal_item-->			
+			</table>
+		<!-- /patTemplate:tmpl --><!--jumlah_nominal -->
+		
+		<br />  
+			<!-- patTemplate:tmpl name="data_pendaftaran" visibility="hidden" -->
+				<h4>Status Pendaftaran</h4>
+				
+			<!-- /patTemplate:tmpl --><!--data_pendaftaran -->
+    
+      <!-- /patTemplate:sub --><!--sub:data_beasiswa-YES-->
+      <!-- patTemplate:sub condition="NO" -->
+			<!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub --><!--sub:data_beasiswa-NO-->
+   <!-- /patTemplate:tmpl --><!--data_beasiswa-->
+   
+   
+   <form name="frmBack" action="{URL_PROCESS}" method="post">
+      <input type="hidden" name="beasiswa" value="{BEA_ID}">
+      <input class="input-disclaimer" type="submit" name="btnBack" value="Kembali">
+      <!-- patTemplate:tmpl name="buttonPendaftaran" visibility="hidden" -->
+         <input class="input-disclaimer" type="submit" name="btnDaftar" value="Daftar">
+      <!-- /patTemplate:tmpl --><!--buttonPendaftaran -->
+      <!-- patTemplate:tmpl name="buttonBatalPendaftaran" visibility="hidden" -->
+         <input class="input-disclaimer" type="submit" name="btnBatal" value="Batalkan Pendaftaran">
+      <!-- /patTemplate:tmpl --><!--buttonBatalPendaftaran -->
+   </form>
+
+<!-- /patTemplate:tmpl -->

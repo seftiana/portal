@@ -1,0 +1,45 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2> Manajemen FAQ </h2>
+   <br>
+   <h5>Keterangan :</h5>
+   <p>Ubah Kategori FAQ digunakan untuk merubah kategori FAQ .
+   </p><br/>
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="form_update_faq_kategori" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->      
+
+         <form class="form-common" method="POST" action="{URL_PROCESS}" name="frmInput" >
+            <input type="hidden" name="doact" value="add">
+            <table class="table-form" width="100%">
+               <tr>
+                  <th colspan="3"><b>Form ubah kategori FAQ</b></th>
+               </tr>
+               <tr>
+                  <th width="100">Pertanyaan</th>
+                  <td width="100"><input name="TxtNama" type="text" size="50" value="{KATEGORI_NAMA}" /></td>
+               </tr>
+               <tr>
+                  <th width="100">Jawaban</th>
+                  <td width="100"><textarea name="TxtKeterangan" cols="50" rows="10">{KATEGORI_KETERANGAN}</textarea></td>
+               </tr>
+               <tr>
+                  <th>&nbsp;</th>
+                  <td>
+                     <input type="hidden" name="act" value="DoUpdateFaqKategori">
+                     <input type="hidden" name="katid" value="{KATEGORI_ID}">
+                     <input class="input-disclaimer btn btn-info" name="btnUpdate" type="submit" value="Simpan" />
+                     <input class="input-disclaimer btn btn-info" name="btnBatal" type="submit" value="Batal" />
+                  </td>
+               </tr>
+            </table>
+         </form>
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl --> <!-- end of content-->

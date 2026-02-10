@@ -1,0 +1,28 @@
+<!-- patTemplate:tmpl name="content " -->
+   <!-- patTemplate:tmpl name="view_version" type="condition" conditionvar="INFO_AVAILABLE" -->
+
+     <!-- patTemplate:sub condition="YES" -->
+      <!-- patTemplate:tmpl name="version_awal" -->
+         <h4>{VERSION_HEADER}</h4>
+            {VERSION_ISI}
+         <!-- /patTemplate:tmpl -->
+            <br /><br /><br />
+            <h4>Version Log</h4>
+         <!-- patTemplate:tmpl name="version_log " -->
+               <ul>
+                    <li>{UL_VERSION_LOG_UL}</li>           
+                        <ul>
+                         <!-- patTemplate:tmpl name="version_log_li " -->
+                          <li>{LI_VERSION_LOG_LI} </li>
+                          <!-- /patTemplate:tmpl -->
+                          </ul>
+               </ul>
+         <!-- /patTemplate:tmpl -->
+     <!-- /patTemplate:sub --><!--sub:data_user-YES-->
+
+     <!-- patTemplate:sub condition="NO" -->
+          <!-- patTemplate:link name="error_box" src="error_box" / -->
+     <!-- /patTemplate:sub --><!--sub:data_user-NO-->
+
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

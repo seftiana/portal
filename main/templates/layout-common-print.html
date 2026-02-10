@@ -1,0 +1,14 @@
+<!-- patTemplate:tmpl name="document" -->	   
+   <html>
+      <head>
+         <title>{PRINT_TITLE} - {APPLICATION_NAME}</title>
+         <link href="{CONFIG_BASEADDRESS}styles/a-portal-print.css" rel="stylesheet" type="text/css" title="Default" />
+         <link href="{CONFIG_BASEADDRESS}styles/a-portal-media-print.css" rel="stylesheet" type="text/css" title="Default" />
+      </head>
+      <body onLoad="window.print()">
+            <div class="page">
+               <!-- patTemplate:tmpl name="content" / -->
+            </div>
+      </body>
+   </html>
+<!-- /patTemplate:tmpl -->		

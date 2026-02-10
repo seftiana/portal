@@ -1,0 +1,1498 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-view" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_viewpage}
+<div {$viewpage_chiddenattr} data-pageid="{$pageid}" data-container="viewpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-12 "> 
+
+{BEGIN viewheader}
+	<h2 {$viewheader_hiddenattr} data-pageid="{$pageid}" data-brick="viewheader" >{$pagetitlelabel mahasiswa view}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END viewheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_viewpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class=" form-horizontal  col-md-12 "> 
+
+
+<div {$viewfields_hiddenattr} data-pageid="{$pageid}" data-brick="viewfields" >
+
+	<div class="container">
+					{BEGIN mhsNiu_fieldblock}
+	<div class="{$fielddispclass_mhsNiu} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNiu">
+		<label class="control-label" for="{$labelfor_mhsNiu}">
+			{$label mahasiswa mhsNiu}
+		</label>
+		<div class="" >
+			{$mhsNiu_value}&nbsp;
+		</div>
+	</div>
+{END mhsNiu_fieldblock}
+					{BEGIN mhsNif_fieldblock}
+	<div class="{$fielddispclass_mhsNif} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNif">
+		<label class="control-label" for="{$labelfor_mhsNif}">
+			{$label mahasiswa mhsNif}
+		</label>
+		<div class="" >
+			{$mhsNif_value}&nbsp;
+		</div>
+	</div>
+{END mhsNif_fieldblock}
+					{BEGIN mhsNama_fieldblock}
+	<div class="{$fielddispclass_mhsNama} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNama">
+		<label class="control-label" for="{$labelfor_mhsNama}">
+			{$label mahasiswa mhsNama}
+		</label>
+		<div class="" >
+			{$mhsNama_value}&nbsp;
+		</div>
+	</div>
+{END mhsNama_fieldblock}
+					{BEGIN mhsAngkatan_fieldblock}
+	<div class="{$fielddispclass_mhsAngkatan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsAngkatan">
+		<label class="control-label" for="{$labelfor_mhsAngkatan}">
+			{$label mahasiswa mhsAngkatan}
+		</label>
+		<div class="" >
+			{$mhsAngkatan_value}&nbsp;
+		</div>
+	</div>
+{END mhsAngkatan_fieldblock}
+					{BEGIN mhsSemesterMasuk_fieldblock}
+	<div class="{$fielddispclass_mhsSemesterMasuk} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSemesterMasuk">
+		<label class="control-label" for="{$labelfor_mhsSemesterMasuk}">
+			{$label mahasiswa mhsSemesterMasuk}
+		</label>
+		<div class="" >
+			{$mhsSemesterMasuk_value}&nbsp;
+		</div>
+	</div>
+{END mhsSemesterMasuk_fieldblock}
+					{BEGIN mhsPasswordRegistrasi_fieldblock}
+	<div class="{$fielddispclass_mhsPasswordRegistrasi} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsPasswordRegistrasi">
+		<label class="control-label" for="{$labelfor_mhsPasswordRegistrasi}">
+			{$label mahasiswa mhsPasswordRegistrasi}
+		</label>
+		<div class="" >
+			{$mhsPasswordRegistrasi_value}&nbsp;
+		</div>
+	</div>
+{END mhsPasswordRegistrasi_fieldblock}
+					{BEGIN mhsKurId_fieldblock}
+	<div class="{$fielddispclass_mhsKurId} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKurId">
+		<label class="control-label" for="{$labelfor_mhsKurId}">
+			{$label mahasiswa mhsKurId}
+		</label>
+		<div class="" >
+			{$mhsKurId_value}&nbsp;
+		</div>
+	</div>
+{END mhsKurId_fieldblock}
+					{BEGIN mhsProdiKode_fieldblock}
+	<div class="{$fielddispclass_mhsProdiKode} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsProdiKode">
+		<label class="control-label" for="{$labelfor_mhsProdiKode}">
+			{$label mahasiswa mhsProdiKode}
+		</label>
+		<div class="" >
+			{$mhsProdiKode_value}&nbsp;
+		</div>
+	</div>
+{END mhsProdiKode_fieldblock}
+					{BEGIN mhsProdiKodeUniv_fieldblock}
+	<div class="{$fielddispclass_mhsProdiKodeUniv} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsProdiKodeUniv">
+		<label class="control-label" for="{$labelfor_mhsProdiKodeUniv}">
+			{$label mahasiswa mhsProdiKodeUniv}
+		</label>
+		<div class="" >
+			{$mhsProdiKodeUniv_value}&nbsp;
+		</div>
+	</div>
+{END mhsProdiKodeUniv_fieldblock}
+					{BEGIN mhsProdikonsentrasiId_fieldblock}
+	<div class="{$fielddispclass_mhsProdikonsentrasiId} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsProdikonsentrasiId">
+		<label class="control-label" for="{$labelfor_mhsProdikonsentrasiId}">
+			{$label mahasiswa mhsProdikonsentrasiId}
+		</label>
+		<div class="" >
+			{$mhsProdikonsentrasiId_value}&nbsp;
+		</div>
+	</div>
+{END mhsProdikonsentrasiId_fieldblock}
+					{BEGIN mhsWktkulId_fieldblock}
+	<div class="{$fielddispclass_mhsWktkulId} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsWktkulId">
+		<label class="control-label" for="{$labelfor_mhsWktkulId}">
+			{$label mahasiswa mhsWktkulId}
+		</label>
+		<div class="" >
+			{$mhsWktkulId_value}&nbsp;
+		</div>
+	</div>
+{END mhsWktkulId_fieldblock}
+					{BEGIN mhsNomorTes_fieldblock}
+	<div class="{$fielddispclass_mhsNomorTes} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNomorTes">
+		<label class="control-label" for="{$labelfor_mhsNomorTes}">
+			{$label mahasiswa mhsNomorTes}
+		</label>
+		<div class="" >
+			{$mhsNomorTes_value}&nbsp;
+		</div>
+	</div>
+{END mhsNomorTes_fieldblock}
+					{BEGIN mhsTanggalTerdaftar_fieldblock}
+	<div class="{$fielddispclass_mhsTanggalTerdaftar} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTanggalTerdaftar">
+		<label class="control-label" for="{$labelfor_mhsTanggalTerdaftar}">
+			{$label mahasiswa mhsTanggalTerdaftar}
+		</label>
+		<div class="" >
+			{$mhsTanggalTerdaftar_value}&nbsp;
+		</div>
+	</div>
+{END mhsTanggalTerdaftar_fieldblock}
+					{BEGIN mhsStatusMasukPt_fieldblock}
+	<div class="{$fielddispclass_mhsStatusMasukPt} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsStatusMasukPt">
+		<label class="control-label" for="{$labelfor_mhsStatusMasukPt}">
+			{$label mahasiswa mhsStatusMasukPt}
+		</label>
+		<div class="" >
+			{$mhsStatusMasukPt_value}&nbsp;
+		</div>
+	</div>
+{END mhsStatusMasukPt_fieldblock}
+					{BEGIN mhsIsAsing_fieldblock}
+	<div class="{$fielddispclass_mhsIsAsing} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsIsAsing">
+		<label class="control-label" for="{$labelfor_mhsIsAsing}">
+			{$label mahasiswa mhsIsAsing}
+		</label>
+		<div class="" >
+			{$mhsIsAsing_value}&nbsp;
+		</div>
+	</div>
+{END mhsIsAsing_fieldblock}
+					{BEGIN mhsJumlahSksPindahan_fieldblock}
+	<div class="{$fielddispclass_mhsJumlahSksPindahan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsJumlahSksPindahan">
+		<label class="control-label" for="{$labelfor_mhsJumlahSksPindahan}">
+			{$label mahasiswa mhsJumlahSksPindahan}
+		</label>
+		<div class="" >
+			{$mhsJumlahSksPindahan_value}&nbsp;
+		</div>
+	</div>
+{END mhsJumlahSksPindahan_fieldblock}
+					{BEGIN mhsKodePtPindahan_fieldblock}
+	<div class="{$fielddispclass_mhsKodePtPindahan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKodePtPindahan">
+		<label class="control-label" for="{$labelfor_mhsKodePtPindahan}">
+			{$label mahasiswa mhsKodePtPindahan}
+		</label>
+		<div class="" >
+			{$mhsKodePtPindahan_value}&nbsp;
+		</div>
+	</div>
+{END mhsKodePtPindahan_fieldblock}
+					{BEGIN mhsKodeProdiDiktiPindahan_fieldblock}
+	<div class="{$fielddispclass_mhsKodeProdiDiktiPindahan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKodeProdiDiktiPindahan">
+		<label class="control-label" for="{$labelfor_mhsKodeProdiDiktiPindahan}">
+			{$label mahasiswa mhsKodeProdiDiktiPindahan}
+		</label>
+		<div class="" >
+			{$mhsKodeProdiDiktiPindahan_value}&nbsp;
+		</div>
+	</div>
+{END mhsKodeProdiDiktiPindahan_fieldblock}
+					{BEGIN mhsNamaPtPindahan_fieldblock}
+	<div class="{$fielddispclass_mhsNamaPtPindahan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNamaPtPindahan">
+		<label class="control-label" for="{$labelfor_mhsNamaPtPindahan}">
+			{$label mahasiswa mhsNamaPtPindahan}
+		</label>
+		<div class="" >
+			{$mhsNamaPtPindahan_value}&nbsp;
+		</div>
+	</div>
+{END mhsNamaPtPindahan_fieldblock}
+					{BEGIN mhsJjarKodeDiktiPindahan_fieldblock}
+	<div class="{$fielddispclass_mhsJjarKodeDiktiPindahan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsJjarKodeDiktiPindahan">
+		<label class="control-label" for="{$labelfor_mhsJjarKodeDiktiPindahan}">
+			{$label mahasiswa mhsJjarKodeDiktiPindahan}
+		</label>
+		<div class="" >
+			{$mhsJjarKodeDiktiPindahan_value}&nbsp;
+		</div>
+	</div>
+{END mhsJjarKodeDiktiPindahan_fieldblock}
+					{BEGIN mhsTahunMasukPtPindahan_fieldblock}
+	<div class="{$fielddispclass_mhsTahunMasukPtPindahan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTahunMasukPtPindahan">
+		<label class="control-label" for="{$labelfor_mhsTahunMasukPtPindahan}">
+			{$label mahasiswa mhsTahunMasukPtPindahan}
+		</label>
+		<div class="" >
+			{$mhsTahunMasukPtPindahan_value}&nbsp;
+		</div>
+	</div>
+{END mhsTahunMasukPtPindahan_fieldblock}
+					{BEGIN mhsNimLama_fieldblock}
+	<div class="{$fielddispclass_mhsNimLama} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNimLama">
+		<label class="control-label" for="{$labelfor_mhsNimLama}">
+			{$label mahasiswa mhsNimLama}
+		</label>
+		<div class="" >
+			{$mhsNimLama_value}&nbsp;
+		</div>
+	</div>
+{END mhsNimLama_fieldblock}
+					{BEGIN mhsJenisKelamin_fieldblock}
+	<div class="{$fielddispclass_mhsJenisKelamin} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsJenisKelamin">
+		<label class="control-label" for="{$labelfor_mhsJenisKelamin}">
+			{$label mahasiswa mhsJenisKelamin}
+		</label>
+		<div class="" >
+			{$mhsJenisKelamin_value}&nbsp;
+		</div>
+	</div>
+{END mhsJenisKelamin_fieldblock}
+					{BEGIN mhsKotaKodeLahir_fieldblock}
+	<div class="{$fielddispclass_mhsKotaKodeLahir} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKotaKodeLahir">
+		<label class="control-label" for="{$labelfor_mhsKotaKodeLahir}">
+			{$label mahasiswa mhsKotaKodeLahir}
+		</label>
+		<div class="" >
+			{$mhsKotaKodeLahir_value}&nbsp;
+		</div>
+	</div>
+{END mhsKotaKodeLahir_fieldblock}
+					{BEGIN mhsTanggalLahir_fieldblock}
+	<div class="{$fielddispclass_mhsTanggalLahir} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTanggalLahir">
+		<label class="control-label" for="{$labelfor_mhsTanggalLahir}">
+			{$label mahasiswa mhsTanggalLahir}
+		</label>
+		<div class="" >
+			{$mhsTanggalLahir_value}&nbsp;
+		</div>
+	</div>
+{END mhsTanggalLahir_fieldblock}
+					{BEGIN mhsAgmrId_fieldblock}
+	<div class="{$fielddispclass_mhsAgmrId} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsAgmrId">
+		<label class="control-label" for="{$labelfor_mhsAgmrId}">
+			{$label mahasiswa mhsAgmrId}
+		</label>
+		<div class="" >
+			{$mhsAgmrId_value}&nbsp;
+		</div>
+	</div>
+{END mhsAgmrId_fieldblock}
+					{BEGIN mhsSmtaKode_fieldblock}
+	<div class="{$fielddispclass_mhsSmtaKode} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSmtaKode">
+		<label class="control-label" for="{$labelfor_mhsSmtaKode}">
+			{$label mahasiswa mhsSmtaKode}
+		</label>
+		<div class="" >
+			{$mhsSmtaKode_value}&nbsp;
+		</div>
+	</div>
+{END mhsSmtaKode_fieldblock}
+					{BEGIN mhsTdftSmta_fieldblock}
+	<div class="{$fielddispclass_mhsTdftSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTdftSmta">
+		<label class="control-label" for="{$labelfor_mhsTdftSmta}">
+			{$label mahasiswa mhsTdftSmta}
+		</label>
+		<div class="" >
+			{$mhsTdftSmta_value}&nbsp;
+		</div>
+	</div>
+{END mhsTdftSmta_fieldblock}
+					{BEGIN mhsTahunTamatSmta_fieldblock}
+	<div class="{$fielddispclass_mhsTahunTamatSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTahunTamatSmta">
+		<label class="control-label" for="{$labelfor_mhsTahunTamatSmta}">
+			{$label mahasiswa mhsTahunTamatSmta}
+		</label>
+		<div class="" >
+			{$mhsTahunTamatSmta_value}&nbsp;
+		</div>
+	</div>
+{END mhsTahunTamatSmta_fieldblock}
+					{BEGIN mhsTahunLulusSmta_fieldblock}
+	<div class="{$fielddispclass_mhsTahunLulusSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTahunLulusSmta">
+		<label class="control-label" for="{$labelfor_mhsTahunLulusSmta}">
+			{$label mahasiswa mhsTahunLulusSmta}
+		</label>
+		<div class="" >
+			{$mhsTahunLulusSmta_value}&nbsp;
+		</div>
+	</div>
+{END mhsTahunLulusSmta_fieldblock}
+					{BEGIN mhsJursmtarKode_fieldblock}
+	<div class="{$fielddispclass_mhsJursmtarKode} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsJursmtarKode">
+		<label class="control-label" for="{$labelfor_mhsJursmtarKode}">
+			{$label mahasiswa mhsJursmtarKode}
+		</label>
+		<div class="" >
+			{$mhsJursmtarKode_value}&nbsp;
+		</div>
+	</div>
+{END mhsJursmtarKode_fieldblock}
+					{BEGIN mhsAlamatSmta_fieldblock}
+	<div class="{$fielddispclass_mhsAlamatSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsAlamatSmta">
+		<label class="control-label" for="{$labelfor_mhsAlamatSmta}">
+			{$label mahasiswa mhsAlamatSmta}
+		</label>
+		<div class="" >
+			{$mhsAlamatSmta_value}&nbsp;
+		</div>
+	</div>
+{END mhsAlamatSmta_fieldblock}
+					{BEGIN mhsNoIjasahSmta_fieldblock}
+	<div class="{$fielddispclass_mhsNoIjasahSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNoIjasahSmta">
+		<label class="control-label" for="{$labelfor_mhsNoIjasahSmta}">
+			{$label mahasiswa mhsNoIjasahSmta}
+		</label>
+		<div class="" >
+			{$mhsNoIjasahSmta_value}&nbsp;
+		</div>
+	</div>
+{END mhsNoIjasahSmta_fieldblock}
+					{BEGIN mhsIjasahSmta_fieldblock}
+	<div class="{$fielddispclass_mhsIjasahSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsIjasahSmta">
+		<label class="control-label" for="{$labelfor_mhsIjasahSmta}">
+			{$label mahasiswa mhsIjasahSmta}
+		</label>
+		<div class="" >
+			{$mhsIjasahSmta_value}&nbsp;
+		</div>
+	</div>
+{END mhsIjasahSmta_fieldblock}
+					{BEGIN mhsTanggalIjasahSmta_fieldblock}
+	<div class="{$fielddispclass_mhsTanggalIjasahSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTanggalIjasahSmta">
+		<label class="control-label" for="{$labelfor_mhsTanggalIjasahSmta}">
+			{$label mahasiswa mhsTanggalIjasahSmta}
+		</label>
+		<div class="" >
+			{$mhsTanggalIjasahSmta_value}&nbsp;
+		</div>
+	</div>
+{END mhsTanggalIjasahSmta_fieldblock}
+					{BEGIN mhsNilaiUjianAkhirSmta_fieldblock}
+	<div class="{$fielddispclass_mhsNilaiUjianAkhirSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNilaiUjianAkhirSmta">
+		<label class="control-label" for="{$labelfor_mhsNilaiUjianAkhirSmta}">
+			{$label mahasiswa mhsNilaiUjianAkhirSmta}
+		</label>
+		<div class="" >
+			{$mhsNilaiUjianAkhirSmta_value}&nbsp;
+		</div>
+	</div>
+{END mhsNilaiUjianAkhirSmta_fieldblock}
+					{BEGIN mhsJumlahMpUjianAkhirSmta_fieldblock}
+	<div class="{$fielddispclass_mhsJumlahMpUjianAkhirSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsJumlahMpUjianAkhirSmta">
+		<label class="control-label" for="{$labelfor_mhsJumlahMpUjianAkhirSmta}">
+			{$label mahasiswa mhsJumlahMpUjianAkhirSmta}
+		</label>
+		<div class="" >
+			{$mhsJumlahMpUjianAkhirSmta_value}&nbsp;
+		</div>
+	</div>
+{END mhsJumlahMpUjianAkhirSmta_fieldblock}
+					{BEGIN mhsStnkrId_fieldblock}
+	<div class="{$fielddispclass_mhsStnkrId} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsStnkrId">
+		<label class="control-label" for="{$labelfor_mhsStnkrId}">
+			{$label mahasiswa mhsStnkrId}
+		</label>
+		<div class="" >
+			{$mhsStnkrId_value}&nbsp;
+		</div>
+	</div>
+{END mhsStnkrId_fieldblock}
+					{BEGIN mhsJumlahSaudara_fieldblock}
+	<div class="{$fielddispclass_mhsJumlahSaudara} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsJumlahSaudara">
+		<label class="control-label" for="{$labelfor_mhsJumlahSaudara}">
+			{$label mahasiswa mhsJumlahSaudara}
+		</label>
+		<div class="" >
+			{$mhsJumlahSaudara_value}&nbsp;
+		</div>
+	</div>
+{END mhsJumlahSaudara_fieldblock}
+					{BEGIN mhsAlamatMhs_fieldblock}
+	<div class="{$fielddispclass_mhsAlamatMhs} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsAlamatMhs">
+		<label class="control-label" for="{$labelfor_mhsAlamatMhs}">
+			{$label mahasiswa mhsAlamatMhs}
+		</label>
+		<div class="" >
+			{$mhsAlamatMhs_value}&nbsp;
+		</div>
+	</div>
+{END mhsAlamatMhs_fieldblock}
+					{BEGIN mhsAlamatTerakhir_fieldblock}
+	<div class="{$fielddispclass_mhsAlamatTerakhir} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsAlamatTerakhir">
+		<label class="control-label" for="{$labelfor_mhsAlamatTerakhir}">
+			{$label mahasiswa mhsAlamatTerakhir}
+		</label>
+		<div class="" >
+			{$mhsAlamatTerakhir_value}&nbsp;
+		</div>
+	</div>
+{END mhsAlamatTerakhir_fieldblock}
+					{BEGIN mhsAlamatDiKotaIni_fieldblock}
+	<div class="{$fielddispclass_mhsAlamatDiKotaIni} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsAlamatDiKotaIni">
+		<label class="control-label" for="{$labelfor_mhsAlamatDiKotaIni}">
+			{$label mahasiswa mhsAlamatDiKotaIni}
+		</label>
+		<div class="" >
+			{$mhsAlamatDiKotaIni_value}&nbsp;
+		</div>
+	</div>
+{END mhsAlamatDiKotaIni_fieldblock}
+					{BEGIN mhsKotaKode_fieldblock}
+	<div class="{$fielddispclass_mhsKotaKode} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKotaKode">
+		<label class="control-label" for="{$labelfor_mhsKotaKode}">
+			{$label mahasiswa mhsKotaKode}
+		</label>
+		<div class="" >
+			{$mhsKotaKode_value}&nbsp;
+		</div>
+	</div>
+{END mhsKotaKode_fieldblock}
+					{BEGIN mhsNgrKode_fieldblock}
+	<div class="{$fielddispclass_mhsNgrKode} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNgrKode">
+		<label class="control-label" for="{$labelfor_mhsNgrKode}">
+			{$label mahasiswa mhsNgrKode}
+		</label>
+		<div class="" >
+			{$mhsNgrKode_value}&nbsp;
+		</div>
+	</div>
+{END mhsNgrKode_fieldblock}
+					{BEGIN mhsKodePos_fieldblock}
+	<div class="{$fielddispclass_mhsKodePos} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKodePos">
+		<label class="control-label" for="{$labelfor_mhsKodePos}">
+			{$label mahasiswa mhsKodePos}
+		</label>
+		<div class="" >
+			{$mhsKodePos_value}&nbsp;
+		</div>
+	</div>
+{END mhsKodePos_fieldblock}
+					{BEGIN mhsStatrumahId_fieldblock}
+	<div class="{$fielddispclass_mhsStatrumahId} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsStatrumahId">
+		<label class="control-label" for="{$labelfor_mhsStatrumahId}">
+			{$label mahasiswa mhsStatrumahId}
+		</label>
+		<div class="" >
+			{$mhsStatrumahId_value}&nbsp;
+		</div>
+	</div>
+{END mhsStatrumahId_fieldblock}
+					{BEGIN mhsSbdnrId_fieldblock}
+	<div class="{$fielddispclass_mhsSbdnrId} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSbdnrId">
+		<label class="control-label" for="{$labelfor_mhsSbdnrId}">
+			{$label mahasiswa mhsSbdnrId}
+		</label>
+		<div class="" >
+			{$mhsSbdnrId_value}&nbsp;
+		</div>
+	</div>
+{END mhsSbdnrId_fieldblock}
+					{BEGIN mhsHubbiayaId_fieldblock}
+	<div class="{$fielddispclass_mhsHubbiayaId} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsHubbiayaId">
+		<label class="control-label" for="{$labelfor_mhsHubbiayaId}">
+			{$label mahasiswa mhsHubbiayaId}
+		</label>
+		<div class="" >
+			{$mhsHubbiayaId_value}&nbsp;
+		</div>
+	</div>
+{END mhsHubbiayaId_fieldblock}
+					{BEGIN mhsTempatKerja_fieldblock}
+	<div class="{$fielddispclass_mhsTempatKerja} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTempatKerja">
+		<label class="control-label" for="{$labelfor_mhsTempatKerja}">
+			{$label mahasiswa mhsTempatKerja}
+		</label>
+		<div class="" >
+			{$mhsTempatKerja_value}&nbsp;
+		</div>
+	</div>
+{END mhsTempatKerja_fieldblock}
+					{BEGIN mhsAlamatTempatKerja_fieldblock}
+	<div class="{$fielddispclass_mhsAlamatTempatKerja} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsAlamatTempatKerja">
+		<label class="control-label" for="{$labelfor_mhsAlamatTempatKerja}">
+			{$label mahasiswa mhsAlamatTempatKerja}
+		</label>
+		<div class="" >
+			{$mhsAlamatTempatKerja_value}&nbsp;
+		</div>
+	</div>
+{END mhsAlamatTempatKerja_fieldblock}
+					{BEGIN mhsNoTelpTempatKerja_fieldblock}
+	<div class="{$fielddispclass_mhsNoTelpTempatKerja} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNoTelpTempatKerja">
+		<label class="control-label" for="{$labelfor_mhsNoTelpTempatKerja}">
+			{$label mahasiswa mhsNoTelpTempatKerja}
+		</label>
+		<div class="" >
+			{$mhsNoTelpTempatKerja_value}&nbsp;
+		</div>
+	</div>
+{END mhsNoTelpTempatKerja_fieldblock}
+					{BEGIN mhsBeasiswa_fieldblock}
+	<div class="{$fielddispclass_mhsBeasiswa} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsBeasiswa">
+		<label class="control-label" for="{$labelfor_mhsBeasiswa}">
+			{$label mahasiswa mhsBeasiswa}
+		</label>
+		<div class="" >
+			{$mhsBeasiswa_value}&nbsp;
+		</div>
+	</div>
+{END mhsBeasiswa_fieldblock}
+					{BEGIN mhsWnrId_fieldblock}
+	<div class="{$fielddispclass_mhsWnrId} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsWnrId">
+		<label class="control-label" for="{$labelfor_mhsWnrId}">
+			{$label mahasiswa mhsWnrId}
+		</label>
+		<div class="" >
+			{$mhsWnrId_value}&nbsp;
+		</div>
+	</div>
+{END mhsWnrId_fieldblock}
+					{BEGIN mhsJlrrKode_fieldblock}
+	<div class="{$fielddispclass_mhsJlrrKode} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsJlrrKode">
+		<label class="control-label" for="{$labelfor_mhsJlrrKode}">
+			{$label mahasiswa mhsJlrrKode}
+		</label>
+		<div class="" >
+			{$mhsJlrrKode_value}&nbsp;
+		</div>
+	</div>
+{END mhsJlrrKode_fieldblock}
+					{BEGIN mhsNoAskes_fieldblock}
+	<div class="{$fielddispclass_mhsNoAskes} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNoAskes">
+		<label class="control-label" for="{$labelfor_mhsNoAskes}">
+			{$label mahasiswa mhsNoAskes}
+		</label>
+		<div class="" >
+			{$mhsNoAskes_value}&nbsp;
+		</div>
+	</div>
+{END mhsNoAskes_fieldblock}
+					{BEGIN mhsNoTelp_fieldblock}
+	<div class="{$fielddispclass_mhsNoTelp} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNoTelp">
+		<label class="control-label" for="{$labelfor_mhsNoTelp}">
+			{$label mahasiswa mhsNoTelp}
+		</label>
+		<div class="" >
+			{$mhsNoTelp_value}&nbsp;
+		</div>
+	</div>
+{END mhsNoTelp_fieldblock}
+					{BEGIN mhsNoHp_fieldblock}
+	<div class="{$fielddispclass_mhsNoHp} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNoHp">
+		<label class="control-label" for="{$labelfor_mhsNoHp}">
+			{$label mahasiswa mhsNoHp}
+		</label>
+		<div class="" >
+			{$mhsNoHp_value}&nbsp;
+		</div>
+	</div>
+{END mhsNoHp_fieldblock}
+					{BEGIN mhsEmail_fieldblock}
+	<div class="{$fielddispclass_mhsEmail} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsEmail">
+		<label class="control-label" for="{$labelfor_mhsEmail}">
+			{$label mahasiswa mhsEmail}
+		</label>
+		<div class="" >
+			{$mhsEmail_value}&nbsp;
+		</div>
+	</div>
+{END mhsEmail_fieldblock}
+					{BEGIN mhsHomepage_fieldblock}
+	<div class="{$fielddispclass_mhsHomepage} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsHomepage">
+		<label class="control-label" for="{$labelfor_mhsHomepage}">
+			{$label mahasiswa mhsHomepage}
+		</label>
+		<div class="" >
+			{$mhsHomepage_value}&nbsp;
+		</div>
+	</div>
+{END mhsHomepage_fieldblock}
+					{BEGIN mhsFoto_fieldblock}
+	<div class="{$fielddispclass_mhsFoto} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsFoto">
+		<label class="control-label" for="{$labelfor_mhsFoto}">
+			{$label mahasiswa mhsFoto}
+		</label>
+		<div class="" >
+			{$mhsFoto_value}&nbsp;
+		</div>
+	</div>
+{END mhsFoto_fieldblock}
+					{BEGIN mhsStakmhsrKode_fieldblock}
+	<div class="{$fielddispclass_mhsStakmhsrKode} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsStakmhsrKode">
+		<label class="control-label" for="{$labelfor_mhsStakmhsrKode}">
+			{$label mahasiswa mhsStakmhsrKode}
+		</label>
+		<div class="" >
+			{$mhsStakmhsrKode_value}&nbsp;
+		</div>
+	</div>
+{END mhsStakmhsrKode_fieldblock}
+					{BEGIN mhsDsnPegNipPembimbingAkademik_fieldblock}
+	<div class="{$fielddispclass_mhsDsnPegNipPembimbingAkademik} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsDsnPegNipPembimbingAkademik">
+		<label class="control-label" for="{$labelfor_mhsDsnPegNipPembimbingAkademik}">
+			{$label mahasiswa mhsDsnPegNipPembimbingAkademik}
+		</label>
+		<div class="" >
+			{$mhsDsnPegNipPembimbingAkademik_value}&nbsp;
+		</div>
+	</div>
+{END mhsDsnPegNipPembimbingAkademik_fieldblock}
+					{BEGIN mhsSksWajib_fieldblock}
+	<div class="{$fielddispclass_mhsSksWajib} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSksWajib">
+		<label class="control-label" for="{$labelfor_mhsSksWajib}">
+			{$label mahasiswa mhsSksWajib}
+		</label>
+		<div class="" >
+			{$mhsSksWajib_value}&nbsp;
+		</div>
+	</div>
+{END mhsSksWajib_fieldblock}
+					{BEGIN mhsSksPilihan_fieldblock}
+	<div class="{$fielddispclass_mhsSksPilihan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSksPilihan">
+		<label class="control-label" for="{$labelfor_mhsSksPilihan}">
+			{$label mahasiswa mhsSksPilihan}
+		</label>
+		<div class="" >
+			{$mhsSksPilihan_value}&nbsp;
+		</div>
+	</div>
+{END mhsSksPilihan_fieldblock}
+					{BEGIN mhsSksA_fieldblock}
+	<div class="{$fielddispclass_mhsSksA} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSksA">
+		<label class="control-label" for="{$labelfor_mhsSksA}">
+			{$label mahasiswa mhsSksA}
+		</label>
+		<div class="" >
+			{$mhsSksA_value}&nbsp;
+		</div>
+	</div>
+{END mhsSksA_fieldblock}
+					{BEGIN mhsSksB_fieldblock}
+	<div class="{$fielddispclass_mhsSksB} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSksB">
+		<label class="control-label" for="{$labelfor_mhsSksB}">
+			{$label mahasiswa mhsSksB}
+		</label>
+		<div class="" >
+			{$mhsSksB_value}&nbsp;
+		</div>
+	</div>
+{END mhsSksB_fieldblock}
+					{BEGIN mhsSksC_fieldblock}
+	<div class="{$fielddispclass_mhsSksC} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSksC">
+		<label class="control-label" for="{$labelfor_mhsSksC}">
+			{$label mahasiswa mhsSksC}
+		</label>
+		<div class="" >
+			{$mhsSksC_value}&nbsp;
+		</div>
+	</div>
+{END mhsSksC_fieldblock}
+					{BEGIN mhsSksD_fieldblock}
+	<div class="{$fielddispclass_mhsSksD} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSksD">
+		<label class="control-label" for="{$labelfor_mhsSksD}">
+			{$label mahasiswa mhsSksD}
+		</label>
+		<div class="" >
+			{$mhsSksD_value}&nbsp;
+		</div>
+	</div>
+{END mhsSksD_fieldblock}
+					{BEGIN mhsSksE_fieldblock}
+	<div class="{$fielddispclass_mhsSksE} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSksE">
+		<label class="control-label" for="{$labelfor_mhsSksE}">
+			{$label mahasiswa mhsSksE}
+		</label>
+		<div class="" >
+			{$mhsSksE_value}&nbsp;
+		</div>
+	</div>
+{END mhsSksE_fieldblock}
+					{BEGIN mhsSksTranskrip_fieldblock}
+	<div class="{$fielddispclass_mhsSksTranskrip} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSksTranskrip">
+		<label class="control-label" for="{$labelfor_mhsSksTranskrip}">
+			{$label mahasiswa mhsSksTranskrip}
+		</label>
+		<div class="" >
+			{$mhsSksTranskrip_value}&nbsp;
+		</div>
+	</div>
+{END mhsSksTranskrip_fieldblock}
+					{BEGIN mhsBobotTotalTranskrip_fieldblock}
+	<div class="{$fielddispclass_mhsBobotTotalTranskrip} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsBobotTotalTranskrip">
+		<label class="control-label" for="{$labelfor_mhsBobotTotalTranskrip}">
+			{$label mahasiswa mhsBobotTotalTranskrip}
+		</label>
+		<div class="" >
+			{$mhsBobotTotalTranskrip_value}&nbsp;
+		</div>
+	</div>
+{END mhsBobotTotalTranskrip_fieldblock}
+					{BEGIN mhsIpkTranskrip_fieldblock}
+	<div class="{$fielddispclass_mhsIpkTranskrip} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsIpkTranskrip">
+		<label class="control-label" for="{$labelfor_mhsIpkTranskrip}">
+			{$label mahasiswa mhsIpkTranskrip}
+		</label>
+		<div class="" >
+			{$mhsIpkTranskrip_value}&nbsp;
+		</div>
+	</div>
+{END mhsIpkTranskrip_fieldblock}
+					{BEGIN mhsLamaStudiSemester_fieldblock}
+	<div class="{$fielddispclass_mhsLamaStudiSemester} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsLamaStudiSemester">
+		<label class="control-label" for="{$labelfor_mhsLamaStudiSemester}">
+			{$label mahasiswa mhsLamaStudiSemester}
+		</label>
+		<div class="" >
+			{$mhsLamaStudiSemester_value}&nbsp;
+		</div>
+	</div>
+{END mhsLamaStudiSemester_fieldblock}
+					{BEGIN mhsLamaStudiBulan_fieldblock}
+	<div class="{$fielddispclass_mhsLamaStudiBulan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsLamaStudiBulan">
+		<label class="control-label" for="{$labelfor_mhsLamaStudiBulan}">
+			{$label mahasiswa mhsLamaStudiBulan}
+		</label>
+		<div class="" >
+			{$mhsLamaStudiBulan_value}&nbsp;
+		</div>
+	</div>
+{END mhsLamaStudiBulan_fieldblock}
+					{BEGIN mhsIsTranskripAkhirDiarsipkan_fieldblock}
+	<div class="{$fielddispclass_mhsIsTranskripAkhirDiarsipkan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsIsTranskripAkhirDiarsipkan">
+		<label class="control-label" for="{$labelfor_mhsIsTranskripAkhirDiarsipkan}">
+			{$label mahasiswa mhsIsTranskripAkhirDiarsipkan}
+		</label>
+		<div class="" >
+			{$mhsIsTranskripAkhirDiarsipkan_value}&nbsp;
+		</div>
+	</div>
+{END mhsIsTranskripAkhirDiarsipkan_fieldblock}
+					{BEGIN mhsTanggalTranskrip_fieldblock}
+	<div class="{$fielddispclass_mhsTanggalTranskrip} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTanggalTranskrip">
+		<label class="control-label" for="{$labelfor_mhsTanggalTranskrip}">
+			{$label mahasiswa mhsTanggalTranskrip}
+		</label>
+		<div class="" >
+			{$mhsTanggalTranskrip_value}&nbsp;
+		</div>
+	</div>
+{END mhsTanggalTranskrip_fieldblock}
+					{BEGIN mhsNomorTranskrip_fieldblock}
+	<div class="{$fielddispclass_mhsNomorTranskrip} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNomorTranskrip">
+		<label class="control-label" for="{$labelfor_mhsNomorTranskrip}">
+			{$label mahasiswa mhsNomorTranskrip}
+		</label>
+		<div class="" >
+			{$mhsNomorTranskrip_value}&nbsp;
+		</div>
+	</div>
+{END mhsNomorTranskrip_fieldblock}
+					{BEGIN mhsTempatLahirTranskrip_fieldblock}
+	<div class="{$fielddispclass_mhsTempatLahirTranskrip} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTempatLahirTranskrip">
+		<label class="control-label" for="{$labelfor_mhsTempatLahirTranskrip}">
+			{$label mahasiswa mhsTempatLahirTranskrip}
+		</label>
+		<div class="" >
+			{$mhsTempatLahirTranskrip_value}&nbsp;
+		</div>
+	</div>
+{END mhsTempatLahirTranskrip_fieldblock}
+					{BEGIN mhsTanggalLahirTranskrip_fieldblock}
+	<div class="{$fielddispclass_mhsTanggalLahirTranskrip} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTanggalLahirTranskrip">
+		<label class="control-label" for="{$labelfor_mhsTanggalLahirTranskrip}">
+			{$label mahasiswa mhsTanggalLahirTranskrip}
+		</label>
+		<div class="" >
+			{$mhsTanggalLahirTranskrip_value}&nbsp;
+		</div>
+	</div>
+{END mhsTanggalLahirTranskrip_fieldblock}
+					{BEGIN mhsMetodeBuildTranskrip_fieldblock}
+	<div class="{$fielddispclass_mhsMetodeBuildTranskrip} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsMetodeBuildTranskrip">
+		<label class="control-label" for="{$labelfor_mhsMetodeBuildTranskrip}">
+			{$label mahasiswa mhsMetodeBuildTranskrip}
+		</label>
+		<div class="" >
+			{$mhsMetodeBuildTranskrip_value}&nbsp;
+		</div>
+	</div>
+{END mhsMetodeBuildTranskrip_fieldblock}
+					{BEGIN mhsMetodePenyetaraanTranskrip_fieldblock}
+	<div class="{$fielddispclass_mhsMetodePenyetaraanTranskrip} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsMetodePenyetaraanTranskrip">
+		<label class="control-label" for="{$labelfor_mhsMetodePenyetaraanTranskrip}">
+			{$label mahasiswa mhsMetodePenyetaraanTranskrip}
+		</label>
+		<div class="" >
+			{$mhsMetodePenyetaraanTranskrip_value}&nbsp;
+		</div>
+	</div>
+{END mhsMetodePenyetaraanTranskrip_fieldblock}
+					{BEGIN mhsTahunKurikulumPenyetaraanTranskrip_fieldblock}
+	<div class="{$fielddispclass_mhsTahunKurikulumPenyetaraanTranskrip} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTahunKurikulumPenyetaraanTranskrip">
+		<label class="control-label" for="{$labelfor_mhsTahunKurikulumPenyetaraanTranskrip}">
+			{$label mahasiswa mhsTahunKurikulumPenyetaraanTranskrip}
+		</label>
+		<div class="" >
+			{$mhsTahunKurikulumPenyetaraanTranskrip_value}&nbsp;
+		</div>
+	</div>
+{END mhsTahunKurikulumPenyetaraanTranskrip_fieldblock}
+					{BEGIN mhsTanggalLulus_fieldblock}
+	<div class="{$fielddispclass_mhsTanggalLulus} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTanggalLulus">
+		<label class="control-label" for="{$labelfor_mhsTanggalLulus}">
+			{$label mahasiswa mhsTanggalLulus}
+		</label>
+		<div class="" >
+			{$mhsTanggalLulus_value}&nbsp;
+		</div>
+	</div>
+{END mhsTanggalLulus_fieldblock}
+					{BEGIN mhsNoSuratYudisium_fieldblock}
+	<div class="{$fielddispclass_mhsNoSuratYudisium} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNoSuratYudisium">
+		<label class="control-label" for="{$labelfor_mhsNoSuratYudisium}">
+			{$label mahasiswa mhsNoSuratYudisium}
+		</label>
+		<div class="" >
+			{$mhsNoSuratYudisium_value}&nbsp;
+		</div>
+	</div>
+{END mhsNoSuratYudisium_fieldblock}
+					{BEGIN mhsTanggalSuratYudisium_fieldblock}
+	<div class="{$fielddispclass_mhsTanggalSuratYudisium} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTanggalSuratYudisium">
+		<label class="control-label" for="{$labelfor_mhsTanggalSuratYudisium}">
+			{$label mahasiswa mhsTanggalSuratYudisium}
+		</label>
+		<div class="" >
+			{$mhsTanggalSuratYudisium_value}&nbsp;
+		</div>
+	</div>
+{END mhsTanggalSuratYudisium_fieldblock}
+					{BEGIN mhsSemIdLulus_fieldblock}
+	<div class="{$fielddispclass_mhsSemIdLulus} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSemIdLulus">
+		<label class="control-label" for="{$labelfor_mhsSemIdLulus}">
+			{$label mahasiswa mhsSemIdLulus}
+		</label>
+		<div class="" >
+			{$mhsSemIdLulus_value}&nbsp;
+		</div>
+	</div>
+{END mhsSemIdLulus_fieldblock}
+					{BEGIN mhsTanggalIjasah_fieldblock}
+	<div class="{$fielddispclass_mhsTanggalIjasah} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTanggalIjasah">
+		<label class="control-label" for="{$labelfor_mhsTanggalIjasah}">
+			{$label mahasiswa mhsTanggalIjasah}
+		</label>
+		<div class="" >
+			{$mhsTanggalIjasah_value}&nbsp;
+		</div>
+	</div>
+{END mhsTanggalIjasah_fieldblock}
+					{BEGIN mhsNoIjasah_fieldblock}
+	<div class="{$fielddispclass_mhsNoIjasah} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNoIjasah">
+		<label class="control-label" for="{$labelfor_mhsNoIjasah}">
+			{$label mahasiswa mhsNoIjasah}
+		</label>
+		<div class="" >
+			{$mhsNoIjasah_value}&nbsp;
+		</div>
+	</div>
+{END mhsNoIjasah_fieldblock}
+					{BEGIN mhsKodeIjasah_fieldblock}
+	<div class="{$fielddispclass_mhsKodeIjasah} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKodeIjasah">
+		<label class="control-label" for="{$labelfor_mhsKodeIjasah}">
+			{$label mahasiswa mhsKodeIjasah}
+		</label>
+		<div class="" >
+			{$mhsKodeIjasah_value}&nbsp;
+		</div>
+	</div>
+{END mhsKodeIjasah_fieldblock}
+					{BEGIN mhsPinIjasah_fieldblock}
+	<div class="{$fielddispclass_mhsPinIjasah} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsPinIjasah">
+		<label class="control-label" for="{$labelfor_mhsPinIjasah}">
+			{$label mahasiswa mhsPinIjasah}
+		</label>
+		<div class="" >
+			{$mhsPinIjasah_value}&nbsp;
+		</div>
+	</div>
+{END mhsPinIjasah_fieldblock}
+					{BEGIN mhsPrlsrId_fieldblock}
+	<div class="{$fielddispclass_mhsPrlsrId} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsPrlsrId">
+		<label class="control-label" for="{$labelfor_mhsPrlsrId}">
+			{$label mahasiswa mhsPrlsrId}
+		</label>
+		<div class="" >
+			{$mhsPrlsrId_value}&nbsp;
+		</div>
+	</div>
+{END mhsPrlsrId_fieldblock}
+					{BEGIN mhsPrlsrNama_fieldblock}
+	<div class="{$fielddispclass_mhsPrlsrNama} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsPrlsrNama">
+		<label class="control-label" for="{$labelfor_mhsPrlsrNama}">
+			{$label mahasiswa mhsPrlsrNama}
+		</label>
+		<div class="" >
+			{$mhsPrlsrNama_value}&nbsp;
+		</div>
+	</div>
+{END mhsPrlsrNama_fieldblock}
+					{BEGIN mhsPrlsrNamaAsing_fieldblock}
+	<div class="{$fielddispclass_mhsPrlsrNamaAsing} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsPrlsrNamaAsing">
+		<label class="control-label" for="{$labelfor_mhsPrlsrNamaAsing}">
+			{$label mahasiswa mhsPrlsrNamaAsing}
+		</label>
+		<div class="" >
+			{$mhsPrlsrNamaAsing_value}&nbsp;
+		</div>
+	</div>
+{END mhsPrlsrNamaAsing_fieldblock}
+					{BEGIN mhsWsdId_fieldblock}
+	<div class="{$fielddispclass_mhsWsdId} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsWsdId">
+		<label class="control-label" for="{$labelfor_mhsWsdId}">
+			{$label mahasiswa mhsWsdId}
+		</label>
+		<div class="" >
+			{$mhsWsdId_value}&nbsp;
+		</div>
+	</div>
+{END mhsWsdId_fieldblock}
+					{BEGIN mhsTanggalPengubahan_fieldblock}
+	<div class="{$fielddispclass_mhsTanggalPengubahan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsTanggalPengubahan">
+		<label class="control-label" for="{$labelfor_mhsTanggalPengubahan}">
+			{$label mahasiswa mhsTanggalPengubahan}
+		</label>
+		<div class="" >
+			{$mhsTanggalPengubahan_value}&nbsp;
+		</div>
+	</div>
+{END mhsTanggalPengubahan_fieldblock}
+					{BEGIN mhsUnitPengubah_fieldblock}
+	<div class="{$fielddispclass_mhsUnitPengubah} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsUnitPengubah">
+		<label class="control-label" for="{$labelfor_mhsUnitPengubah}">
+			{$label mahasiswa mhsUnitPengubah}
+		</label>
+		<div class="" >
+			{$mhsUnitPengubah_value}&nbsp;
+		</div>
+	</div>
+{END mhsUnitPengubah_fieldblock}
+					{BEGIN mhsUserPengubah_fieldblock}
+	<div class="{$fielddispclass_mhsUserPengubah} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsUserPengubah">
+		<label class="control-label" for="{$labelfor_mhsUserPengubah}">
+			{$label mahasiswa mhsUserPengubah}
+		</label>
+		<div class="" >
+			{$mhsUserPengubah_value}&nbsp;
+		</div>
+	</div>
+{END mhsUserPengubah_fieldblock}
+					{BEGIN mhsProdiGelarKelulusan_fieldblock}
+	<div class="{$fielddispclass_mhsProdiGelarKelulusan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsProdiGelarKelulusan">
+		<label class="control-label" for="{$labelfor_mhsProdiGelarKelulusan}">
+			{$label mahasiswa mhsProdiGelarKelulusan}
+		</label>
+		<div class="" >
+			{$mhsProdiGelarKelulusan_value}&nbsp;
+		</div>
+	</div>
+{END mhsProdiGelarKelulusan_fieldblock}
+					{BEGIN mhsSemIdMulai_fieldblock}
+	<div class="{$fielddispclass_mhsSemIdMulai} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSemIdMulai">
+		<label class="control-label" for="{$labelfor_mhsSemIdMulai}">
+			{$label mahasiswa mhsSemIdMulai}
+		</label>
+		<div class="" >
+			{$mhsSemIdMulai_value}&nbsp;
+		</div>
+	</div>
+{END mhsSemIdMulai_fieldblock}
+					{BEGIN mhsBiayaStudi_fieldblock}
+	<div class="{$fielddispclass_mhsBiayaStudi} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsBiayaStudi">
+		<label class="control-label" for="{$labelfor_mhsBiayaStudi}">
+			{$label mahasiswa mhsBiayaStudi}
+		</label>
+		<div class="" >
+			{$mhsBiayaStudi_value}&nbsp;
+		</div>
+	</div>
+{END mhsBiayaStudi_fieldblock}
+					{BEGIN mhsPekerjaan_fieldblock}
+	<div class="{$fielddispclass_mhsPekerjaan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsPekerjaan">
+		<label class="control-label" for="{$labelfor_mhsPekerjaan}">
+			{$label mahasiswa mhsPekerjaan}
+		</label>
+		<div class="" >
+			{$mhsPekerjaan_value}&nbsp;
+		</div>
+	</div>
+{END mhsPekerjaan_fieldblock}
+					{BEGIN mhsPTKerja_fieldblock}
+	<div class="{$fielddispclass_mhsPTKerja} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsPTKerja">
+		<label class="control-label" for="{$labelfor_mhsPTKerja}">
+			{$label mahasiswa mhsPTKerja}
+		</label>
+		<div class="" >
+			{$mhsPTKerja_value}&nbsp;
+		</div>
+	</div>
+{END mhsPTKerja_fieldblock}
+					{BEGIN mhsPSKerja_fieldblock}
+	<div class="{$fielddispclass_mhsPSKerja} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsPSKerja">
+		<label class="control-label" for="{$labelfor_mhsPSKerja}">
+			{$label mahasiswa mhsPSKerja}
+		</label>
+		<div class="" >
+			{$mhsPSKerja_value}&nbsp;
+		</div>
+	</div>
+{END mhsPSKerja_fieldblock}
+					{BEGIN mhsNIDNPromotor_fieldblock}
+	<div class="{$fielddispclass_mhsNIDNPromotor} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNIDNPromotor">
+		<label class="control-label" for="{$labelfor_mhsNIDNPromotor}">
+			{$label mahasiswa mhsNIDNPromotor}
+		</label>
+		<div class="" >
+			{$mhsNIDNPromotor_value}&nbsp;
+		</div>
+	</div>
+{END mhsNIDNPromotor_fieldblock}
+					{BEGIN mhsKoPromotor1_fieldblock}
+	<div class="{$fielddispclass_mhsKoPromotor1} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKoPromotor1">
+		<label class="control-label" for="{$labelfor_mhsKoPromotor1}">
+			{$label mahasiswa mhsKoPromotor1}
+		</label>
+		<div class="" >
+			{$mhsKoPromotor1_value}&nbsp;
+		</div>
+	</div>
+{END mhsKoPromotor1_fieldblock}
+					{BEGIN mhsKoPromotor2_fieldblock}
+	<div class="{$fielddispclass_mhsKoPromotor2} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKoPromotor2">
+		<label class="control-label" for="{$labelfor_mhsKoPromotor2}">
+			{$label mahasiswa mhsKoPromotor2}
+		</label>
+		<div class="" >
+			{$mhsKoPromotor2_value}&nbsp;
+		</div>
+	</div>
+{END mhsKoPromotor2_fieldblock}
+					{BEGIN mhsKoPromotor3_fieldblock}
+	<div class="{$fielddispclass_mhsKoPromotor3} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKoPromotor3">
+		<label class="control-label" for="{$labelfor_mhsKoPromotor3}">
+			{$label mahasiswa mhsKoPromotor3}
+		</label>
+		<div class="" >
+			{$mhsKoPromotor3_value}&nbsp;
+		</div>
+	</div>
+{END mhsKoPromotor3_fieldblock}
+					{BEGIN mhsKoPromotor4_fieldblock}
+	<div class="{$fielddispclass_mhsKoPromotor4} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKoPromotor4">
+		<label class="control-label" for="{$labelfor_mhsKoPromotor4}">
+			{$label mahasiswa mhsKoPromotor4}
+		</label>
+		<div class="" >
+			{$mhsKoPromotor4_value}&nbsp;
+		</div>
+	</div>
+{END mhsKoPromotor4_fieldblock}
+					{BEGIN mhsProdiAsal_fieldblock}
+	<div class="{$fielddispclass_mhsProdiAsal} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsProdiAsal">
+		<label class="control-label" for="{$labelfor_mhsProdiAsal}">
+			{$label mahasiswa mhsProdiAsal}
+		</label>
+		<div class="" >
+			{$mhsProdiAsal_value}&nbsp;
+		</div>
+	</div>
+{END mhsProdiAsal_fieldblock}
+					{BEGIN mhsDiktiShift_fieldblock}
+	<div class="{$fielddispclass_mhsDiktiShift} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsDiktiShift">
+		<label class="control-label" for="{$labelfor_mhsDiktiShift}">
+			{$label mahasiswa mhsDiktiShift}
+		</label>
+		<div class="" >
+			{$mhsDiktiShift_value}&nbsp;
+		</div>
+	</div>
+{END mhsDiktiShift_fieldblock}
+					{BEGIN mhsPembayaranIpp_fieldblock}
+	<div class="{$fielddispclass_mhsPembayaranIpp} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsPembayaranIpp">
+		<label class="control-label" for="{$labelfor_mhsPembayaranIpp}">
+			{$label mahasiswa mhsPembayaranIpp}
+		</label>
+		<div class="" >
+			{$mhsPembayaranIpp_value}&nbsp;
+		</div>
+	</div>
+{END mhsPembayaranIpp_fieldblock}
+					{BEGIN mshNoIpp_fieldblock}
+	<div class="{$fielddispclass_mshNoIpp} col-md-6 bs-viewcontrolgroup" data-fieldname="mshNoIpp">
+		<label class="control-label" for="{$labelfor_mshNoIpp}">
+			{$label mahasiswa mshNoIpp}
+		</label>
+		<div class="" >
+			{$mshNoIpp_value}&nbsp;
+		</div>
+	</div>
+{END mshNoIpp_fieldblock}
+					{BEGIN mhsPersyaratan_fieldblock}
+	<div class="{$fielddispclass_mhsPersyaratan} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsPersyaratan">
+		<label class="control-label" for="{$labelfor_mhsPersyaratan}">
+			{$label mahasiswa mhsPersyaratan}
+		</label>
+		<div class="" >
+			{$mhsPersyaratan_value}&nbsp;
+		</div>
+	</div>
+{END mhsPersyaratan_fieldblock}
+					{BEGIN mhsPengOrg_fieldblock}
+	<div class="{$fielddispclass_mhsPengOrg} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsPengOrg">
+		<label class="control-label" for="{$labelfor_mhsPengOrg}">
+			{$label mahasiswa mhsPengOrg}
+		</label>
+		<div class="" >
+			{$mhsPengOrg_value}&nbsp;
+		</div>
+	</div>
+{END mhsPengOrg_fieldblock}
+					{BEGIN mhsOrg_fieldblock}
+	<div class="{$fielddispclass_mhsOrg} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsOrg">
+		<label class="control-label" for="{$labelfor_mhsOrg}">
+			{$label mahasiswa mhsOrg}
+		</label>
+		<div class="" >
+			{$mhsOrg_value}&nbsp;
+		</div>
+	</div>
+{END mhsOrg_fieldblock}
+					{BEGIN mhsDomisili_fieldblock}
+	<div class="{$fielddispclass_mhsDomisili} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsDomisili">
+		<label class="control-label" for="{$labelfor_mhsDomisili}">
+			{$label mahasiswa mhsDomisili}
+		</label>
+		<div class="" >
+			{$mhsDomisili_value}&nbsp;
+		</div>
+	</div>
+{END mhsDomisili_fieldblock}
+					{BEGIN mhsJenisSttb_fieldblock}
+	<div class="{$fielddispclass_mhsJenisSttb} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsJenisSttb">
+		<label class="control-label" for="{$labelfor_mhsJenisSttb}">
+			{$label mahasiswa mhsJenisSttb}
+		</label>
+		<div class="" >
+			{$mhsJenisSttb_value}&nbsp;
+		</div>
+	</div>
+{END mhsJenisSttb_fieldblock}
+					{BEGIN mhsIsKerja_fieldblock}
+	<div class="{$fielddispclass_mhsIsKerja} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsIsKerja">
+		<label class="control-label" for="{$labelfor_mhsIsKerja}">
+			{$label mahasiswa mhsIsKerja}
+		</label>
+		<div class="" >
+			{$mhsIsKerja_value}&nbsp;
+		</div>
+	</div>
+{END mhsIsKerja_fieldblock}
+					{BEGIN mhsStatusSmta_fieldblock}
+	<div class="{$fielddispclass_mhsStatusSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsStatusSmta">
+		<label class="control-label" for="{$labelfor_mhsStatusSmta}">
+			{$label mahasiswa mhsStatusSmta}
+		</label>
+		<div class="" >
+			{$mhsStatusSmta_value}&nbsp;
+		</div>
+	</div>
+{END mhsStatusSmta_fieldblock}
+					{BEGIN mhsAkreditasi_fieldblock}
+	<div class="{$fielddispclass_mhsAkreditasi} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsAkreditasi">
+		<label class="control-label" for="{$labelfor_mhsAkreditasi}">
+			{$label mahasiswa mhsAkreditasi}
+		</label>
+		<div class="" >
+			{$mhsAkreditasi_value}&nbsp;
+		</div>
+	</div>
+{END mhsAkreditasi_fieldblock}
+					{BEGIN mhsKerja_fieldblock}
+	<div class="{$fielddispclass_mhsKerja} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsKerja">
+		<label class="control-label" for="{$labelfor_mhsKerja}">
+			{$label mahasiswa mhsKerja}
+		</label>
+		<div class="" >
+			{$mhsKerja_value}&nbsp;
+		</div>
+	</div>
+{END mhsKerja_fieldblock}
+					{BEGIN mhsSaudaraLk_fieldblock}
+	<div class="{$fielddispclass_mhsSaudaraLk} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSaudaraLk">
+		<label class="control-label" for="{$labelfor_mhsSaudaraLk}">
+			{$label mahasiswa mhsSaudaraLk}
+		</label>
+		<div class="" >
+			{$mhsSaudaraLk_value}&nbsp;
+		</div>
+	</div>
+{END mhsSaudaraLk_fieldblock}
+					{BEGIN mhsSaudaraPr_fieldblock}
+	<div class="{$fielddispclass_mhsSaudaraPr} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSaudaraPr">
+		<label class="control-label" for="{$labelfor_mhsSaudaraPr}">
+			{$label mahasiswa mhsSaudaraPr}
+		</label>
+		<div class="" >
+			{$mhsSaudaraPr_value}&nbsp;
+		</div>
+	</div>
+{END mhsSaudaraPr_fieldblock}
+					{BEGIN mhsHobi_fieldblock}
+	<div class="{$fielddispclass_mhsHobi} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsHobi">
+		<label class="control-label" for="{$labelfor_mhsHobi}">
+			{$label mahasiswa mhsHobi}
+		</label>
+		<div class="" >
+			{$mhsHobi_value}&nbsp;
+		</div>
+	</div>
+{END mhsHobi_fieldblock}
+					{BEGIN mhsSmtaLain_fieldblock}
+	<div class="{$fielddispclass_mhsSmtaLain} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSmtaLain">
+		<label class="control-label" for="{$labelfor_mhsSmtaLain}">
+			{$label mahasiswa mhsSmtaLain}
+		</label>
+		<div class="" >
+			{$mhsSmtaLain_value}&nbsp;
+		</div>
+	</div>
+{END mhsSmtaLain_fieldblock}
+					{BEGIN mhsAkreditasiSmta_fieldblock}
+	<div class="{$fielddispclass_mhsAkreditasiSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsAkreditasiSmta">
+		<label class="control-label" for="{$labelfor_mhsAkreditasiSmta}">
+			{$label mahasiswa mhsAkreditasiSmta}
+		</label>
+		<div class="" >
+			{$mhsAkreditasiSmta_value}&nbsp;
+		</div>
+	</div>
+{END mhsAkreditasiSmta_fieldblock}
+					{BEGIN mhsBiayaKuliah_fieldblock}
+	<div class="{$fielddispclass_mhsBiayaKuliah} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsBiayaKuliah">
+		<label class="control-label" for="{$labelfor_mhsBiayaKuliah}">
+			{$label mahasiswa mhsBiayaKuliah}
+		</label>
+		<div class="" >
+			{$mhsBiayaKuliah_value}&nbsp;
+		</div>
+	</div>
+{END mhsBiayaKuliah_fieldblock}
+					{BEGIN MhsIdJenisSmta_fieldblock}
+	<div class="{$fielddispclass_MhsIdJenisSmta} col-md-6 bs-viewcontrolgroup" data-fieldname="MhsIdJenisSmta">
+		<label class="control-label" for="{$labelfor_MhsIdJenisSmta}">
+			{$label mahasiswa MhsIdJenisSmta}
+		</label>
+		<div class="" >
+			{$MhsIdJenisSmta_value}&nbsp;
+		</div>
+	</div>
+{END MhsIdJenisSmta_fieldblock}
+					{BEGIN mhsSmtaPropinsiKode_fieldblock}
+	<div class="{$fielddispclass_mhsSmtaPropinsiKode} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsSmtaPropinsiKode">
+		<label class="control-label" for="{$labelfor_mhsSmtaPropinsiKode}">
+			{$label mahasiswa mhsSmtaPropinsiKode}
+		</label>
+		<div class="" >
+			{$mhsSmtaPropinsiKode_value}&nbsp;
+		</div>
+	</div>
+{END mhsSmtaPropinsiKode_fieldblock}
+					{BEGIN mhsEmailOld_fieldblock}
+	<div class="{$fielddispclass_mhsEmailOld} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsEmailOld">
+		<label class="control-label" for="{$labelfor_mhsEmailOld}">
+			{$label mahasiswa mhsEmailOld}
+		</label>
+		<div class="" >
+			{$mhsEmailOld_value}&nbsp;
+		</div>
+	</div>
+{END mhsEmailOld_fieldblock}
+					{BEGIN mhsNoKtp_fieldblock}
+	<div class="{$fielddispclass_mhsNoKtp} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNoKtp">
+		<label class="control-label" for="{$labelfor_mhsNoKtp}">
+			{$label mahasiswa mhsNoKtp}
+		</label>
+		<div class="" >
+			{$mhsNoKtp_value}&nbsp;
+		</div>
+	</div>
+{END mhsNoKtp_fieldblock}
+					{BEGIN mhsNoKk_fieldblock}
+	<div class="{$fielddispclass_mhsNoKk} col-md-6 bs-viewcontrolgroup" data-fieldname="mhsNoKk">
+		<label class="control-label" for="{$labelfor_mhsNoKk}">
+			{$label mahasiswa mhsNoKk}
+		</label>
+		<div class="" >
+			{$mhsNoKk_value}&nbsp;
+		</div>
+	</div>
+{END mhsNoKk_fieldblock}
+	</div>
+</div>
+
+
+
+
+</div>
+{END container_fields}
+
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-6 "> 
+
+{BEGIN viewbuttons}
+{BEGIN back_button}
+<button class="btn btn-primary" {$backbutton_attrs}>Back to list</button>
+{END back_button}
+{BEGIN close_button}
+<button href="#" class="btn btn-primary" {$closebutton_attrs}>Close window</button>
+{END close_button}
+{END viewbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+
+
+{BEGIN container_leftbuttons_1}
+<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="   col-md-4 "> 
+
+{BEGIN rightviewbuttons}
+<div class="btn-group" role="group">
+		{BEGIN prev_button}
+	<button class="btn btn-default {$prevbutton_class}" {$prevbutton_attrs}><span class="glyphicon glyphicon-chevron-left"></span></button>
+	{END prev_button}
+	{BEGIN next_button}
+	<button class="btn btn-default {$nextbutton_class}" {$nextbutton_attrs}><span class="glyphicon glyphicon-chevron-right"></span></button>
+	{END next_button}
+		{BEGIN view_menu_button}
+	<div class="btn-group dropup" role="group">
+		<button class="btn btn-default dropdown-toggle {$groupbutton_class}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<ul class="dropdown-menu dropdown-left">
+									{BEGIN edit_page_button}
+				<li><a href=# {$edit_page_button_attrs}>Edit</a></li>
+			{END edit_page_button}
+		</ul>
+	</div>
+	{END view_menu_button}
+</div>
+{END rightviewbuttons}
+
+
+
+</div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

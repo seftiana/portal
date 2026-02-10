@@ -1,0 +1,273 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.subhead th{
+	font-weight: bold;
+	font-size: 10pt;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.subhead-common th{
+	font-weight: bold;
+	font-size: 7pt;
+	text-align: center;
+	vertical-align: middle;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.hidden{
+	display: none;
+}
+</style>
+   <h2>Biodata Mahasiswa</h2>
+   <br />
+   
+   <h5>Keterangan :</h5>
+   <p>Biodata Mahasiswa berisi data pribadi pengguna portal akademik. Apabila terdapat kesalahan data, anda dapat memperbaikinya.
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+     
+   <!-- patTemplate:tmpl name="data_biodata" -->
+         <table class="table table-list" width="100%">
+            <tr class="subhead">
+               <th colspan="2">Biodata</th>
+            </tr>
+            <tr>
+               <th>Nama</th>
+               <td>{MHS_NAMA}</td>
+            </tr>
+            <tr>
+               <th >Jenis Kelamin</th>
+               <td >{MHS_JENIS_KELAMIN}</td> 
+            </tr>
+            <tr>
+               <th>Propinsi Tempat Lahir</th>
+               <td>{MHS_PROP_LAHIR}</td>
+            </tr> 
+            <tr>
+               <th>Kota Tempat Lahir</th>
+               <td>{MHS_KOTA_LAHIR}</td>
+            </tr>
+            <tr>
+               <th >Tempat Lahir</th>
+               <td>{MHS_TMPT_LAHIR}</td>
+            </tr>
+            <tr>
+               <th >Tanggal Lahir</th>
+               <td>{MHS_TANGGAL_LAHIR}</td>
+            </tr>
+            <tr>
+               <th>Golongan Darah</th>
+               <td>{MHS_GOL_DARAH}</td>
+            </tr>
+            <tr>
+               <th>Tinggi Badan</th>
+               <td>{MHS_TINGGI_BADAN} cm</td>
+            </tr>
+            <tr>
+               <th>Berat Badan</th>
+               <td>{MHS_BERAT_BADAN} kg</td>
+            </tr>
+            <tr>
+               <th>Kondisi Buta Warna</th>
+               <td>{MHS_BUTA_WARNA}</td>
+            </tr>
+            <tr>
+               <th>Memakai Kacamata</th>
+               <td>{MHS_KACAMATA}</td>
+            </tr>
+            <tr>
+               <th>Kondisi Gigi</th>
+               <td>{MHS_KONDISI_GIGI}</td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2">Kemahasiswaan</th>
+            </tr>
+            <tr>
+               <th>Program Studi</th>
+               <td>{MHS_PRODI}</td>
+            </tr>
+            <!-- patTemplate:tmpl name="sesi_kelas" type="condition" conditionvar="USE_SESI" -->
+            <!-- patTemplate:sub condition="YES" -->
+            <tr>
+               <th>Sesi Kuliah</th>
+               <td>*        
+               </td>
+            </tr>
+            <!-- /patTemplate:sub -->
+            <!-- patTemplate:sub condition="NO" -->
+               <input type="hidden" value="" name="mhs[mhs_sesi_kuliah]" ></input>              
+            <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl --> 
+            <tr>                        
+               <th>Periode Masuk</th>         
+               <td>{MHS_PERIODE_MASUK}</td>       
+            </tr> 
+            <tr>
+               <th >Angkatan</th>
+               <td>{MHS_ANGKATAN}</td>
+            </tr>
+            <tr>
+               <th >No. Tes</th>
+               <td>{MHS_NO_TES}</td>
+            </tr>
+            <tr>
+               <th>Jalur Masuk</th>
+               <td>{MHS_JALUR_MASUK}</td>
+            </tr>  
+            <tr>
+               <th >Tanggal Daftar</th>
+               <td >{MHS_TANGGAL_DAFTAR}</td>
+            </tr>        
+            <tr>
+               <th >Gelombang Pendaftaran</th>
+               <td >{MHS_GELOMBANG_DAFTAR}</td>
+            </tr>
+            <tr>
+               <th >Status Masuk</th>
+               <td>{MHS_STATUS_MASUK}</td>
+            </tr>   
+            <tr class="subhead">
+               <th colspan="2">Kewarganegaraan</th>
+            </tr>
+            <tr>
+               <th >Agama</th>
+               <td>{MHS_AGAMA}</td>
+            </tr>         
+            <tr>
+               <th >Status Nikah</th>
+               <td>{MHS_STATUS_NIKAH}</td>
+            </tr>
+            <tr>
+               <th >Kewarganegaraan</th>
+               <td>{MHS_WARGA_NEGARA}</td>
+            </tr>     
+            <tr>
+               <th >Status Rumah</th>
+               <td>{MHS_STATUS_RUMAH}</td>
+            </tr>
+            <tr>
+               <th>Propinsi Tempat Tinggal</th>
+               <td>{MHS_PROP_TINGGAL}</td>
+            </tr> 
+            <tr>
+               <th>Kota Tempat Tinggal</th>
+               <td>{MHS_KOTA}</td>
+            </tr>
+             <tr>
+               <th>Alamat</th>
+               <td>{MHS_ALAMAT}</td>
+            </tr>
+            <tr>
+               <th>Kelurahan</th>
+               <td>{MHS_KELURAHAN}</td>
+            </tr>
+            <tr>
+               <th>Kecamatan</th>
+               <td>{MHS_KECAMATAN}</td>
+            </tr>
+            <tr>
+               <th >Kode Pos</th>
+               <td>{MHS_KODE_POS}</td>
+            </tr>
+            <tr>
+               <th >Negara</th>
+               <td>{MHS_NEGARA}</td>
+            </tr>
+            <tr>
+               <th >Nomor Telepon/ Hp</th>
+               <td>{MHS_NO_TELP}</td>
+            </tr>
+            <tr>
+               <th >Email</th>
+               <td>{MHS_EMAIL}</td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2">Lain-lain</th>
+            </tr>
+             <tr>
+               <th>Hubungan Biaya</th>
+               <td>{MHS_HUBUNGAN_BIAYA}</td>
+            </tr>
+            <tr>
+               <th>Sumber Dana</th>
+               <td>{MHS_SUMBER_DANA}</td>
+            </tr>
+            </tr>
+            <tr>
+               <th >Sumber Dana Beasiswa</th>
+               <td>{MHS_BEASISWA}</td>
+            </tr>
+            <tr >
+               <th >Jumlah Saudara</th>
+               <td>{MHS_JUMLAH_SDR}</td>
+            </tr>     
+            <tr>
+               <th>Status Bekerja</th>
+               <td>{MHS_STATUS_KERJA}</td>
+            </tr>         
+            <tr class="{CLASS_IS_KERJA}">
+               <th>Jenis Pekerjaan</th>
+               <td >{MHS_KERJA}
+               </td>
+            </tr>
+            <tr class="{CLASS_IS_KERJA}">
+               <th >Intitusi/Kantor</th>
+               <td>{MHS_TEMPAT_KERJA}</td>
+            </tr>
+            <tr class="{CLASS_IS_KERJA}">
+               <th>Alamat Intitusi/Kantor</th>
+               <td>{MHS_ALAMAT_KANTOR}</td>
+            </tr>
+            <tr class="{CLASS_IS_KERJA}">
+               <th>Nomor Telepon Intitusi/Kantor</th>
+               <td>{MHS_NO_TELP_KANTOR}</td>
+            </tr>
+            <tr>
+               <th >No. Asuransi</th>
+               <td>{MHS_NO_ASKES}</td>
+            </tr>
+            <tr >
+               <th >Hobi</th>
+               <td>{MHS_HOBY}</td>
+            </tr> 
+            <tr>
+               <th>Tahu Kampus ini dari</th>
+               <td>{MHS_SMBR_INFO}</td>
+            </tr> 
+            <tr class="subhead">
+               <th colspan="2">Pengalaman Organisasi</th>
+            </tr>
+            <tr>
+               <td colspan="2">
+                  <table class="table-common" width="580" >
+                        <tr class="subhead-common">
+                           <th width="5">No</th>
+                           <th width="200">Tempat</th>
+                           <th>Pengalaman Organisasi</th>
+                        </tr>
+                            <!-- patTemplate:tmpl name="data_pengalaman" type="simplecondition" requiredVars="NO" -->
+                           <tr>
+                              <td align="center">
+                                 {NO}
+                              </td>
+                              <td>
+                                 {TEMPAT}
+                              </td>                              
+                              <td>
+                                 {ORGANISASI}
+                              </td>
+                           </tr>                    
+                           <!-- /patTemplate:tmpl -->
+                  </table>
+               </td>
+            </tr>
+       </table> 
+	<!-- /patTemplate:tmpl -->
+   
+	<div align="center">
+		<form name="frmEdit" action="{URL_EDIT}" method="post">
+		<input class="input-disclaimer btn btn-primary" type="submit" name="btnEdit" value="Ubah">
+		</form>
+	</div>
+	<br>
+<!-- /patTemplate:tmpl -->

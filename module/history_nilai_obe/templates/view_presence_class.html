@@ -1,0 +1,67 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Daftar Pertemuan Kelas</h2>
+<br />
+  
+<!-- patTemplate:link name="error_box" src="error_box" / -->
+
+<!-- patTemplate:tmpl name="data_kelas" visibility="visible" -->
+<table width="100%" class="table-form">
+	<tr>
+	   <th>Semester</th>
+	   <td><b>{KELAS_SMT_NAMA} {KELAS_THN_AJAR}</b></td>
+	</tr>
+	<tr>
+	   <th width="40%">Matakuliah</th>
+	   <td><b>{KELAS_MK_NAMA}</b></td>
+	</tr>
+	<tr>
+	   <th>Nama Kelas</th>
+	   <td><b>{KELAS_KLS_NAMA}</b></td>
+	</tr>
+</table>
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="data_pertemuan" visibility="hidden" -->
+<div class="table-responsive">
+<table class="table-common" width="100%">
+	<tr> 
+		<th align="center">NO</th>
+		<th>TANGGAL</th>
+		<th>TEMA</th>
+		<th>BAHASAN</th>
+		<th>AKSI</th>
+    </tr>
+	<!-- patTemplate:tmpl name="data_pertemuan_list" type="condition" conditionvar="IS_EMPTY" -->
+	
+	<!-- patTemplate:sub condition="YES" -->
+	<tr>
+		<td colspan="4">Belum ada data pertemuan.</td>
+	</tr>
+	<!-- /patTemplate:sub -->
+	
+	<!-- patTemplate:sub condition="NO" -->
+	<!-- patTemplate:tmpl name="data_pertemuan_list_item" -->
+	<tr {STATUS}>    
+		<td  nowrap ="nowrap" align="center">{PERTEMUAN_KE}</td>
+		<td  nowrap ="nowrap" >{TANGGAL_TERLAKSANA_INDO}</td>
+		<td>{TEMA}</td>
+		<td>{POKOK_BAHASAN}</td>
+		<td nowrap ="nowrap" align="center" class="table-common-links">
+			<a href="{LINK_PRESENSI_DETIL_INSERT_EDIT}" {HIDE_TGL}>{NAMA_LINK}</a>
+		</td>
+    </tr>
+	<!-- /patTemplate:tmpl -->
+	<!-- /patTemplate:sub -->
+	
+	<!-- /patTemplate:tmpl -->
+</table>
+</div>
+<!-- /patTemplate:tmpl -->
+<div>
+	<a href="" ></a>
+</div>
+<div>
+	<form action="{URL_BACK}" method="post">
+		<input class="input-disclaimer btn btn-info" type="submit" name="btnBack" value="Kembali">
+	</form>
+</div>
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,173 @@
+<!-- patTemplate:tmpl name="document" -->
+<!doctype html public "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+	<title> Transkrip Mahasiswa </title>
+	<link href="styles/a_sia_transcript_default.css" rel="stylesheet" type="text/css" media="screen" title="Default" />
+	<link href="styles/a_sia_transcript_default_print.css" rel="stylesheet" type="text/css" media="print" title="Default" />
+</head>
+<body onLoad="window.print();">
+	<div id="container" class="page-portrait">
+		<div id="header">
+<h3 align="center">Transkrip Akademik Sementara</h3>		
+		</div>
+		<!-- patTemplate:tmpl name="nomor_transkrip" -->
+		<table align="center" style="visibility:hidden;">
+			<tr>
+				<td>No : {NOMOR}</td>
+			</tr>
+		</table>
+		<!-- /patTemplate:tmpl -->
+		<br/>
+		<div class="page_break">
+		<!-- patTemplate:tmpl name="data_mahasiswa" -->
+		<div id="info_mhs">
+			<table width="100%" border="0">
+				<tr>
+					<th width="16%">NIM</th>
+					<th width="1%">:</th>
+					<td width="33%">{NIM}</td>
+					<th width="16%">Jenjang Pendidikan</th>
+					<th width="1%">:</th>
+					<td width="33%">{JENJANG} ({JENJANG_KODE})</td>
+				</tr>
+				<tr>
+					<th>Nama</th>
+					<th>:</th>
+					<td>{NAMA}</td>
+					<th>Program Studi</th>
+					<th>:</th>
+					<td>{PRODI}</td>
+				</tr>
+				<tr>
+					<th>Tempat, Tgl Lahir</th>
+					<th>:</th>
+					<td>{TEMPAT_LAHIR}, {TGL_LAHIR}</td>
+					<th>Tanggal Yudisium</th>
+					<th>:</th>
+					<td>{TANGGAL_LULUS}</td>
+				</tr>
+			</table>
+		</div>
+		<!-- /patTemplate:tmpl -->
+		<!-- patTemplate:tmpl name="page" -->
+		<div id="table_transkrip">
+			<table>
+				<tr>
+					<th width="3%" class="no-border">No</th>
+					<th width="5%" class="no-border">Kode</th>
+					<th width="23%" class="no-border">Mata Kuliah</th>
+					<th class="no-border" colspan="2">Kredit</th>
+					<th width="4%" class="no-border">Nilai</th>
+					<th width="3%" class="no-border">No</th>
+					<th width="5%" class="no-border">Kode</th>
+					<th width="23%" class="no-border">Mata Kuliah</th>
+					<th class="no-border" colspan="2">Kredit</th>
+					<th width="4%" class="no-border">Nilai</th>
+				</tr>
+				<!-- patTemplate:tmpl name="transkrip" type="condition" conditionvar="SHOW" -->
+				<!-- patTemplate:sub condition="empty" -->
+				<tr>
+					<td colspan="5" class="no-border">Data masih kosong</td>
+					<td colspan="5" class="no-border">Data masih kosong</td>
+				</tr>
+				<!-- /patTemplate:sub -->
+				<!-- patTemplate:sub condition="default" -->
+				<tr>
+					<td class="{LEFT_SPAN2}">{LEFT_NO}</td>
+					<td class="{LEFT_SPAN}">{LEFT_KODE}</td>
+					<td class="{LEFT_SPAN} left">{LEFT_MK}</td>
+					<td class="{LEFT_SPAN}" width="4%">{LEFT_SKS}</td>
+					<td class="{LEFT_SPAN} left" width="1%">{LEFT_WAJIB}</td>
+					<td class="{LEFT_SPAN}">{LEFT_NILAI}</td>
+					<td class="{MID_SPAN}">{MID_NO}</td>
+					<td class="{MID_SPAN}">{MID_KODE}</td>
+					<td class="{MID_SPAN} left">{MID_MK}</td>
+					<td class="{MID_SPAN}" width="4%">{MID_SKS}</td>
+					<td class="{MID_SPAN} left" width="1%">{MID_WAJIB}</td>
+					<td class="{MID_SPAN2}">{MID_NILAI}</td>
+				</tr>
+				<!-- /patTemplate:sub -->
+				<!-- /patTemplate:tmpl -->
+			</table>
+		</div>
+		<div>
+			<!-- patTemplate:tmpl name="prestasi_akademik" -->
+			<table width="50%" border="0"  style="float:right;clear:both;">
+				<tr>
+					<td width="7%" rowspan="3">&nbsp;</td>
+					<td width="38%">Jumlah Kredit</td>
+					<td width="1%">:</td>
+					<td >{SKS_KUMULATIF} sks</td>
+				</tr>
+				<tr>
+					<td>Indeks Prestasi Kumulatif</td>
+					<td>:</td>
+					<td>{IPK}</td>
+				</tr>
+				<tr>
+					<td>IPK Terbilang</td>
+					<td>:</td>
+					<td>{IPK_TERBILANG}</td>
+				</tr>
+			</table>
+			<!-- /patTemplate:tmpl -->
+		</div>
+		<div style="clear:both;">
+			<br/>
+			<!-- patTemplate:tmpl name="tanda_tangan" -->
+			<table width="100%" border="0">
+				<tr>
+					<td width="70%" rowspan="4">
+						<table border="0">
+							<tr>
+								<td colspan="3">Keterangan</td>
+							</tr>
+							<tr>
+								<td>Nilai</td>
+								<td>:</td>
+								<td>
+									A = 4 (Sangat Baik);
+									B = 3 (Baik);
+									C = 2 (Cukup);
+									D = 1 (Kurang);
+									E = 0 (Gagal);
+								</td>
+							</tr>
+							<tr>
+								<td>IPK</td>
+								<td>:</td>
+								<td>
+									2.76 - 3.00 Memuaskan;<br/>
+									3.01 - 3.50 Sangat Memuaskan;<br/>
+									3.51 - 4.00 Pujian
+								</td>
+							</tr>
+							<tr>
+								<td>*</td>
+								<td>:</td>
+								<td>Ujian Pengawasan Mutu (UPM)</td>
+							</tr>
+						</table>
+					</td>
+					<td width="4%" rowspan="4">&nbsp;</td>
+					<td width="26%">{TGL_TRANSKRIP}</td>
+				</tr>
+				<tr>
+					<td>{JABATAN_KANAN}</td>
+				</tr>
+				<tr height="60">
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>{NAMA_KANAN}</td>
+				</tr>
+			</table>
+			<!-- /patTemplate:tmpl -->
+		</div>
+		<!-- /patTemplate:tmpl -->
+		</div>
+	</div>
+</body>
+<html>
+<!-- /patTemplate:tmpl -->

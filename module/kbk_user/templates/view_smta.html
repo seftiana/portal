@@ -1,0 +1,83 @@
+<!-- patTemplate:tmpl name="content" unusedvars="ignore"  -->
+<style>
+#editable_text, #editable_select{
+	font-size: 11px;
+}
+</style>
+   <h2>Pilih SMTA</h2>
+   <br />
+   <form action="{URL_FILTER}" method="post" name="smta_filter">
+   <table style="width: 500px;" class="table-list">
+	<tr>
+		<th  width="75">Pilih Propinsi</th>
+		<td>: 
+			<select onchange="submit();" name="propinsi">
+				<!-- patTemplate:tmpl name="data_propinsi" -->
+				<option value="{VALUE}" {IS_SELECTED}>{LABEL}</option>
+				<!-- /patTemplate:tmpl -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Pilih Kota</th>
+		<td id="kota">: 
+			<select name="kota">
+				<!-- patTemplate:tmpl name="data_kota" -->
+				<option value="{VALUE}" {IS_SELECTED}>{LABEL}</option>
+				<!-- /patTemplate:tmpl -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th colspan="2" style="text-align:center"><input class="input-disclaimer" type="submit" name="Lihat" value="Lihat"></th>
+	</tr>
+   </table>
+   </form>
+   <br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <br/>
+   
+   <table  style="width: 550px;" class="table-common">
+	<tr>
+		<th  width="10">No</th>
+		<th  width="50">Aksi</th>
+		<th>Nama Smta</th>
+	</tr>
+   <!-- patTemplate:tmpl name="data_smta" type="condition" conditionvar="EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+	<tr>
+		<td  colspan="3" align="center">Data Tidak Ditemukan</td>
+	</tr>
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+	<tr>
+		<td  width="10">{NO}</td>
+		<td  width="50" align="center"><input type="button" class="input-disclaimer" value="Pilih" name="{VALUE}" title="{NAMA}" onclick="pilihSmta(this);"></td>
+		<td>{NAMA}</td>
+	</tr>
+      <!-- /patTemplate:sub -->
+      <!-- /patTemplate:tmpl -->
+   </table>
+	  
+<script language="javascript">
+var pilihSmta = function (el) {
+	var pr = window.opener;
+	var frm = pr.document.forms['frmInput'].elements;
+	var prop = frm['propinsi'].options;
+	var val = document.forms['smta_filter'].elements['propinsi'].value;
+	frm['nama_smta'].value = el.title;
+	frm['kode_smta'].value = el.name;
+	var i=prop.length -1;
+	if(i>0)
+		do{
+			if(prop[i].value == val){
+				prop[i].selected = true;
+				break;
+			}
+		}while(i--);
+	window.close();
+};
+</script>
+<!-- /patTemplate:tmpl -->

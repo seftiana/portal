@@ -1,0 +1,48 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Manajemen Feedback</h2>
+<h4>Ubah Feedback</h4>
+<br/><br/>
+
+<form class="form-common" method="POST" action="{URL_PROCESS}" name="frmFeedback" >
+   <!-- patTemplate:tmpl name="data_feedback" -->
+      <input type="hidden" name="feedback" value="{FB_ID}">
+      <table class="table-form" width="100%">
+         <tr>
+            <th width="150">Nama User</th>
+            <td>:</td>
+            <td>{FB_NAMA_LENGKAP}</td>         
+         </tr>
+         <tr>
+            <th width="150">Tanggal Pengiriman</th>
+            <td>:</td>
+            <td>{FB_TANGGAL_POST}</td>         
+         </tr>
+         <tr>
+            <th width="150">Prioritas</th>
+            <td>:</td>
+            <td>
+               <select name="priority">
+                  <!-- patTemplate:tmpl name="prioritas_list" -->
+                  <option value="{PR_ID}" {PR_SELECTED}> {PR_PRIORITAS} </option>
+                  <!-- /patTemplate:tmpl -->
+               </select>
+            </td>         
+         </tr>
+         <tr>
+            <th >Feedback</th>
+            <td valign="top">:</td>
+            <td>{FB_ISI}</td>         
+         </tr>
+         <tr>
+            <th width="150">Komentar Admin</th>
+            <td valign="top">:</td>
+            <td><textarea name='komentar' cols='40' rows='10'>{FB_KOMENTAR}</textarea></td>         
+         </tr>
+      </table>   <br/>
+   <!-- /patTemplate:tmpl -->
+   <input class="input-disclaimer" type="submit" name="btnEdit" value="Simpan">
+   <input class="input-disclaimer" type="submit" name="btnKembali" value="Batal">
+   <input type="hidden" name="doact" value="edit">
+   <input type="hidden" name="key" value="{KEY_SEARCH}">
+</form>
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,57 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Nilai Mahasiswa</h2>
+   <br />
+   <!-- patTemplate:tmpl name="info_mk" -->
+   <table width="100%" class="table-list">
+      <tr>
+        <th width="150">Matakuliah</th>
+        <td><abbr title="{LABEL_MK}">{MK_NAMA}</abbr></td>
+      </tr>
+      <tr>
+        <th>Kategori</th>
+        <td>{MKKATNAMA}</td>
+      </tr>
+      <tr>
+        <th>Semester</th>
+        <td>{SEM}</td>
+      </tr>
+    </table>
+    <!-- /patTemplate:tmpl -->
+    <!-- patTemplate:tmpl name="data_bobot" type="condition" conditionvar="BOBOT_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+    <table class="table-list">
+      <tr>
+      	<th>&nbsp;</th>
+      	<th>Jenis</th>
+      	<th>Persentase</th>
+      </tr>
+      <!-- patTemplate:tmpl name="bobot_nilai_item" type="condition" conditionvar="ODDEVEN" -->
+         <!-- patTemplate:sub condition="ODD" -->
+            <tr>
+               <td width="6%" align="center">{BOBOT_NUMBER}</td>
+               <td width="20%">{BOBOT_DPNAJNSNAMA}</td>
+               <td width="20%">{BOBOT_KLSDPNAPERSEN} %</td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="EVEN" -->
+            <tr class="table-common-even">
+               <td width="6%" align="center">{BOBOT_NUMBER}</td>
+               <td width="20%">{BOBOT_DPNAJNSNAMA}</td>
+               <td width="20%">{BOBOT_KLSDPNAPERSEN} %</td>
+            </tr>
+         <!-- /patTemplate:sub -->
+      <!-- /patTemplate:tmpl --><!--data_user_item-->
+    </table>
+    <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   <iframe src="{VIEW_PESERTA}" width="100%" height="250%" scrolling="yes"></iframe>
+   <br />
+<div>
+      <form action="{URL_BACK}" method="post">
+         <input class="input-disclaimer" type="submit" name="btnBack" value="Kembali">
+      </form>
+   </div>
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,241 @@
+
+body {
+	/*ackground-color: #333333 !important;*/
+	background-color: #f8f8f8 !important;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12pt;
+}
+/**
+Fixing bootstrap columns for safari
+ */
+ .row{ 
+            display: -webkit-box; 
+            display: -webkit-flex; 
+            display: -ms-flexbox; 
+            display: flex; 
+            -webkit-flex-wrap: wrap; 
+            -ms-flex-wrap: wrap; 
+            flex-wrap: wrap; 
+        }
+#loginBox-title{
+	text-align: left;
+	color: white;	
+	font-family: 'Raleway', sans-serif;	
+}
+
+#loginBox-title h1 {
+	font-size: 2.4rem;
+	font-weight: bold;
+	
+}
+#loginBox-title span {
+	font-size: 2rem;	
+}	
+
+h2 {
+	visibility: none;
+	display: none;
+}
+#loginWrapper {
+	max-width: 450px;
+	margin-top:100px;
+}
+#loginBox {
+	/*background-color: #282828;
+	margin: 20px auto 10px auto;
+	padding: 0px 0px 10px 0px;
+	border-radius:5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	max-width: 450px;*/
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+
+#loginBox-head h1{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 25px 0px 0px 10px;
+	float:left;
+	color: #CCCCCC;
+    text-shadow: 0px 2px 1px #3e3e3e;
+}
+#loginHelp {
+	color: #666666;
+	margin: 10px auto 0px auto;
+}
+
+#form-login {
+	/*padding: 14px 0px 0px 0px;
+	width: 254px;
+	color: #eaeaea;
+	text-shadow: 0px 2px 2px #0C0C0C;
+	text-align: left;
+	margin: 0px auto 0px auto;*/
+	font-family: 'raleway', sans-serif;
+}
+
+#form-login label {
+	font-weight: bold;
+	width: 80px;
+	float: left;
+	padding: 5px 0px 0px 0px;
+	font-size: 12pt;
+}
+
+#form-login hr {
+	border-top: solid 1px #FFFFFF;
+	border-bottom: 1px solid #999999;
+	border-left: none;
+	border-right: none;
+	margin: 10px 0px 3px 0px;
+	padding: 38px 0px 0px 0px;
+}
+/*
+#form-login div {
+	font-size: 11px;
+	padding: 8px 0px 0px 104px;
+	margin: 0px 0px;
+	display: none;
+}
+*/
+#form-login a{
+	color: #FF6C00;
+	text-decoration: none;
+}
+
+#form-login a:hover {
+	color: #FFA84B;
+	text-decoration: underline;
+}
+#form-login input{
+	font-size: 1.5rem;
+}
+
+#login-box-info {
+	
+	/*margin: 0px 10px 0px 40px;
+	padding: 30px 0px 0px 0px;*/
+	color: #eaeaea;
+	text-align: left;
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+
+#login-box-info img {
+	margin: 0px 10px 10px 0px;
+	padding: 0px 0px 50px 0px;
+	float: left;
+}
+
+#login-box-info a {
+	color: #bcd420;
+	text-decoration: none;
+}
+
+#login-box-info a:hover {
+	color: #FFA84B;
+	text-decoration: underline;
+}
+
+.button {
+	border: none;
+	font-weight: bold;
+	color: #001849;
+	background-color: #E6F7FF;
+	background-image: url('../images/login-button.gif');
+	background-repeat: repeat-x;
+}
+
+.button:hover {
+	color: #122BA5;
+	background-color: #ffffff;
+}
+
+.hidden {
+	visibility: hidden;
+	display: none;
+}
+
+#login-box-link {
+	margin:20px 0px 0px 15px;
+	text-align:center;
+}
+
+#login-box-link a {
+	color:#CCCCCC;
+	text-decoration:none;
+}
+
+#login-box-link a:hover {
+	color:#FEF0E0;
+}
+#loginBox-head_bootstrap {
+	text-align: left;
+	/*overflow:auto;*/
+}
+
+#loginBoxhead_img{
+	float: left;
+	margin-right:20px;
+	margin-left:5px;
+	margin-top:10px;
+	margin-bottom:10px;
+	padding: 15px;
+	width: 100px;
+}
+.contact
+{
+	font-size: 0.8em;
+	color:#043f61;
+	text-align: left;
+}
+address{
+	font-size: .8rem;
+}
+.bg-login {
+	background: rgb(0,70,114);
+    background: linear-gradient(0deg, rgba(0,70,114,1) 0%, rgba(0,132,216,0.9163866230085784) 35%);
+}
+.btn-login {
+	background-color: #bcd420;
+	color: white;
+	border-radius: 5px;
+}
+.btn-login:hover{
+	background-color: #95a819;
+	color: white;
+}
+img.logo{ 
+	position: absolute;
+    top: 10%;
+    left: 57vw;
+	transform: translateX(-50%);
+	z-index: 2;
+}
+@media only screen and (max-width: 990px) {
+	img.logo {
+		position: absolute;
+		top: 45px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 2;
+	}
+	#loginBox {		
+		padding:1rem;
+		max-height: 100%;
+	}
+	#loginBox-title h1 {
+		font-size: 2rem;
+		font-weight: bold;		
+	}
+	#loginBox-title span {
+		font-size: 1.5rem;	
+	}
+	.contact
+	{
+		margin-top:2rem;
+		font-size: 0.8em;
+		color: darkblue;
+		text-align: left;
+	}
+}

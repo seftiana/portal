@@ -1,0 +1,45 @@
+<!-- patTemplate:tmpl name="content" -->
+<form class="form-common" method="post" >
+  <div id="maincontent">
+   <h2> {APPLICATION_MODULE} </h2>
+   <!-- patTemplate:tmpl name="view_unit" visibility="hidden" -->
+   <table class="table-form">
+	<tr>
+		<th>Unit</th>
+		<td>
+			<select name="unit">
+				<!-- patTemplate:tmpl name="list_unit" -->
+				<option value="{UNIT_ALAMAT}" {SELECT_{PRODI_ALAMAT}}>{UNIT_NAMA}</option>
+				<!-- /patTemplate:tmpl -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Program Studi</th>
+		<td>
+			<select name="prodi">
+				<!-- patTemplate:tmpl name="list_prodi" -->
+				<option value="{PRODI_ID}" {SELECT_{PRODI_ID}}>{PRODI_NAMA}</option>
+				<!-- /patTemplate:tmpl -->
+			</select>
+			<input type="submit" name="getUnit" value="Cari" class="input-disclaimer" />
+		</td>
+	</tr>
+	</table>
+	<!-- /patTemplate:tmpl -->
+   <table class="table-common" width="100%">
+      <tr align="center">
+         <th width="10"><strong>No.</strong></th>
+         <th width="250"><strong>Mata Kuliah </strong></th>            
+      </tr>
+      <!-- patTemplate:tmpl name="list_matkul" -->
+      <tr{EVEN}>
+         <td align="center">{MATKUL_NO}</td>   
+         <td><a href="{URL_FORUM}">{MATKUL_NAMA}</a> <br>         
+      </tr>   
+      <!-- /patTemplate:tmpl -->      
+   </table>  
+
+ </div>
+ </form>
+<!-- /patTemplate:tmpl -->

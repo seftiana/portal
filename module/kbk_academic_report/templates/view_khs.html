@@ -1,0 +1,117 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Kartu Hasil Studi</h2>
+   <br />
+   <h5>Keterangan :</h5>
+   <p>Kartu Hasil Studi merupakan fasilitas yang dapat digunakan untuk melihat hasil studi mahasiswa persemester. Selain dapat dilihat secara online, hasil studi ini juga dapat dicetak.
+   </p><br />
+   <!-- patTemplate:tmpl name="view_semester_list" visibility="visible" -->
+   <form class="form-common" method="POST" action="{URL_VIEW}" name="frmUser">
+      <table class="table-form" width="100%">
+         <tr>
+            <th width="100">Semester</th>
+            <td width="100">
+               <select name="lstSemester">
+               <!-- patTemplate:tmpl name="semester_list" -->
+                  <option value="{SMT_ID}" {SMT_SELECTED}> {SMT_NAME} </option>
+               <!-- /patTemplate:tmpl -->
+            </select>
+            </td>
+            <td><input class="input-disclaimer" name="btnLihat" type="submit" value="Lihat" /></td>
+         </tr>
+      </table>
+   </form>
+   <br />
+   <!-- /patTemplate:tmpl -->
+            
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+
+   <!-- patTemplate:tmpl name="data_khs" type="condition" conditionvar="KHS_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+         <table width="100%" class="table-list">
+            <tr> 
+               <th width="150">Nama</th>
+               <td>{MHS_NAMA}</td>
+            </tr>
+            <tr> 
+               <th>{LABEL_NIM}</th>
+               <td>{MHS_NIM}</td>
+            </tr>
+            <tr> 
+               <th>Program Studi</th>
+               <td>{MHS_PRODI}</td>
+            </tr>
+            <tr> 
+               <th>Semester</th>
+               <td>{MHS_SEM}</td>
+            </tr>
+         </table>   
+         <table class="table-common" width="100%">
+         <tr>
+            <th>No</th>
+            <th>Kode</th>
+            <th>Mata Kuliah</th>
+            <th>Kelas</th>
+            <th><acronym title="W = Wajib; P = Pilihan">W/P</acronym></th>
+            <th>Sks</th>
+            <th>Nilai</th>
+         </tr>
+         <!-- patTemplate:tmpl name="data_khs_item" type="condition" conditionvar="ODDEVEN" -->
+         <!-- patTemplate:sub condition="ODD" -->
+            <tr>
+               <td width="6%" align="center">{KHS_NUMBER}</td>
+               <td width="10%">{KHS_KODE_MATAKULIAH}</td>
+               <td width="44%">{KHS_MATAKULIAH}</td>
+               <td width="22%">{KHS_KELAS}</td>
+               <td width="6%" align="center">{KHS_WP_ABBR}</td>
+               <td width="6%" align="center">{KHS_SKS_JUMLAH}</td>
+               <td width="6%" align="center">{KHS_NILAI}</td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="EVEN" -->
+            <tr class="table-common-even">
+               <td width="6%" align="center">{KHS_NUMBER}</td>
+               <td width="10%">{KHS_KODE_MATAKULIAH}</td>
+               <td width="44%">{KHS_MATAKULIAH}</td>
+               <td width="22%">{KHS_KELAS}</td>
+               <td width="6%" align="center">{KHS_WP_ABBR}</td>
+               <td width="6%" align="center">{KHS_SKS_JUMLAH}</td>
+               <td width="6%" align="center">{KHS_NILAI}</td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl --><!--data_user_item-->
+      </table>
+      <table>
+         <tr>
+            <td>Jumlah SKS diambil</td>
+            <td>: {MHS_SKS_DIAMBIL}</td>
+         </tr>
+         <tr>
+            <td>Jumlah mata kuliah diambil</td>
+            <td>: {MHS_MATAKULIAH_DIAMBIL}</td>
+         </tr>
+         <tr>
+            <td>IP Semester</td>
+            <td>: {MHS_IP_SEMESTER}</td>
+         </tr>
+      </table><br/>
+      
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+<br/> 
+	<form method="post" action="{URL_BACK}" name="frmBack" >  
+	<!-- patTemplate:tmpl name="buttonBack" visibility="hidden" -->
+		<input type="hidden" name="viewby" value="{VIEW_BY}">
+		<input class="input-disclaimer" type="submit" name="btnBack" value="Kembali">
+	<!-- /patTemplate:tmpl -->
+	<!-- patTemplate:tmpl name="buttonCetak" type="SimpleCondition" requiredvars="URL_CETAK" -->
+      <!--<input class="input-disclaimer" type="button" name="btnPrint" value="Cetak format Pasca"  onClick="window.open('{URL_CETAK}')" />
+      <input class="input-disclaimer" type="button" name="btnPrintMM" value="Cetak format MM"  onClick="window.open('{URL_CETAK_MM}')" />-->
+      <input class="input-disclaimer" type="button" name="btnPrint" value="Cetak KHS"  onClick="window.open('{URL_CETAK}')" />
+		<!-- <input class="input-disclaimer" type="button" name="btnPrint" value="Cetak 2"  onClick="window.open('{URL_CETAK_2}')"> -->
+	<!-- /patTemplate:tmpl -->
+	</form>   
+
+<!-- /patTemplate:tmpl -->

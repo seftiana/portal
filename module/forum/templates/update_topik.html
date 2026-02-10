@@ -1,0 +1,67 @@
+<!-- patTemplate:tmpl name="content" -->
+   
+   <h4>{APPLICATION_MODULE}</h4>
+   
+   <!-- patTemplate:tmpl name="topik_detail" type="condition" conditionvar="IS_FOUND" -->
+      <!-- patTemplate:sub condition="NO" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="YES" -->
+         
+         <!-- patTemplate:link name="error_box" src="error_box" / -->
+         
+         <form name="updForm" class="form-common" method="POST" action="{URL_UPDATE_PROCESS}">
+            <input name="act" type="hidden" value="doUpdateTopik" />            
+            <input name="data[ForumTopikId]" type="hidden" value="{TOPIK_ID}" />
+            <input name="forumKategoriId" type="hidden" value="{TOPIK_KATEGORIID}" />
+            <table class="table-form" width="100%">
+               <tr>
+                  <th colspan="2"><b>Form Ubah Topik</b></th>
+               </tr>
+               <tr>
+                  <th>Judul Topik Diskusi</th>
+                  <td><input name="data[ForumTopikTitle]" type="text" maxlength="50" size="40" value="{TOPIK_JUDUL}"/></td>
+               </tr>
+               <tr>
+                  <th>Deskripsi</th>   
+                  <td>
+                     <textarea name="data[ForumTopikDescription]" cols="40" rows="4">{TOPIK_DESKRIPSI}</textarea>
+                  </td>
+               </tr>
+               <tr>
+                  <th>Moderator</th>
+                  <td><input name="data[ForumTopikModeratorId]" type="text" maxlength="50" size="20" value="{TOPIK_MODERATORID}" /></td>
+               </tr>
+               <tr>
+                  <th>Hak Akses</th>
+                  <td>
+                     <!-- patTemplate:tmpl name="hak_akses" type="condition" conditionvar="IS_EMPTY" -->
+                        <!-- patTemplate:sub condition="NO" -->
+                           <!-- patTemplate:tmpl name="hak_akses_item" -->
+                           <input type="checkbox" name="forumHakAkses[]" value="{HAK_ID}" {HAK_CHECKED}/>{HAK_NAME}
+                           <br />   
+                           <input type="hidden" name="forumHakAksesAll[]" value="{HAK_ID}" />
+                           <!-- /patTemplate:tmpl -->
+                        <!-- /patTemplate:sub -->
+                        <!-- patTemplate:sub condition="YES" -->
+                           {EMPTY_MESSAGE}
+                        <!-- /patTemplate:sub -->
+                     <!-- /patTemplate:tmpl -->               
+                  </td>
+               </tr>         
+               <tr>
+                  <th>&nbsp;</th>
+                  <td>
+                     <input class="input-disclaimer" name="updBtn" type="submit" value="Kirim" />
+                     <input class="input-disclaimer" name="cnclBtn" type="submit" value="Batal" />
+                  </td>
+               </tr>
+            </table>
+         </form>
+         
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+<!-- /patTemplate:tmpl -->

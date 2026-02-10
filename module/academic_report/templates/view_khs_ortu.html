@@ -1,0 +1,173 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.hidden{
+	display:none;
+}
+.table-common th, .table-common td
+{
+   font-size: 0.8em;
+}
+</style>
+   <h2>Kartu Hasil Studi</h2>
+<!-- patTemplate:tmpl name="data_hutang" type="condition" conditionvar="BLOCK" -->
+<!-- patTemplate:sub condition="NO" -->
+   <p class="text-muted">Keterangan :</p>
+   <p>Kartu Hasil Studi merupakan fasilitas yang dapat digunakan untuk melihat hasil studi mahasiswa persemester. Selain dapat dilihat secara online, hasil studi ini juga dapat dicetak.
+   </p><br />
+
+   <!-- patTemplate:tmpl name="view_semester_list" visibility="visible" -->
+   <form class="form-common" method="POST" action="{URL_VIEW}" name="frmUser">
+      <table class="table table-form" width="100%">
+         <tr>
+            <th width="100">Semester</th>
+            <td width="100">
+               <select name="lstSemester">
+               <!-- patTemplate:tmpl name="semester_list" -->
+                  <option value="{SMT_ID}" {SMT_SELECTED}> {SMT_NAME} </option>
+               <!-- /patTemplate:tmpl -->
+            </select>
+            </td>
+            <td><input class="input-disclaimer btn btn-primary" name="btnLihat" type="submit" value="Lihat" /></td>
+         </tr>
+      </table>
+   </form>
+   <br />
+   <!-- /patTemplate:tmpl -->
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+
+   <!-- patTemplate:tmpl name="data_khs" type="condition" conditionvar="KHS_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+	
+         <table width="100%" class="table-list">
+            <tr> 
+               <th>Nama</th>
+               <td>{MHS_NAMA}</td>
+            </tr>
+            <tr> 
+               <th>{LABEL_NIM}</th>
+               <td>{MHS_NIM}</td>
+            </tr>
+            <tr> 
+               <th>Program Studi</th>
+               <td>{MHS_PRODI}</td>
+            </tr>
+            <tr> 
+               <th>Semester</th>
+               <td>{MHS_SEM}</td>
+            </tr>
+         </table>   
+		 <div style="overflow:auto;" class="table-responsive">
+         <table class="table-common" width="100%">
+         <tr>
+            <th>No</th>
+            <th>Kode</th>
+            <th>Mata Kuliah</th>
+            <th>Kelas</th>
+            <th>Sks</th>
+            <th>Absen</th>
+            <th>Nilai</th>
+         </tr>
+         <!-- patTemplate:tmpl name="data_khs_item" type="condition" conditionvar="ODDEVEN" -->
+         <!-- patTemplate:sub condition="ODD" -->
+            <tr>
+               <td align="center">{KHS_NUMBER}</td>
+               <td>{KHS_KODE_MATAKULIAH}</td>
+               <td>{KHS_MATAKULIAH}</td>
+               <td>{KHS_KELAS}</td>
+               <td align="center">{KHS_SKS_JUMLAH}</td>
+			   <td align="center">{KHS_HADIR}</td>
+               <td align="center">{KHS_NILAI}</td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="EVEN" -->
+            <tr class="table-common-even">
+               <td align="center">{KHS_NUMBER}</td>
+               <td>{KHS_KODE_MATAKULIAH}</td>
+               <td>{KHS_MATAKULIAH}</td>
+               <td>{KHS_KELAS}</td>
+               <td align="center">{KHS_SKS_JUMLAH}</td>
+			   <td align="center">{KHS_HADIR}</td>
+               <td align="center">{KHS_NILAI}</td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl --><!--data_user_item-->
+      </table>
+	  </div>
+      <table>
+         <tr>
+            <td>Jumlah SKS diambil</td>
+            <td>: {MHS_SKS_DIAMBIL}</td>
+         </tr>
+         <tr>
+            <td>Jumlah mata kuliah diambil</td>
+            <td>: {MHS_MATAKULIAH_DIAMBIL}</td>
+         </tr>
+         <tr>
+            <td>IP Semester</td>
+            <td>: {MHS_IP_SEMESTER}</td>
+         </tr>
+      </table><br/>
+      
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+<br/> 
+	<form method="post" action="{URL_BACK}" name="frmBack" >  
+	<!-- patTemplate:tmpl name="buttonBack" visibility="hidden" -->
+		<input type="hidden" name="viewby" value="{VIEW_BY}">
+		<input class="input-disclaimer btn btn-info" type="submit" name="btnBack" value="Kembali">
+	<!-- /patTemplate:tmpl -->
+	<!-- patTemplate:tmpl name="buttonCetak" type="SimpleCondition" requiredvars="URL_CETAK" -->
+		<input class="input-disclaimer btn btn-info" type="button" name="btnPrint" value="Cetak"  onClick="window.open('{URL_CETAK}')">
+	<!-- /patTemplate:tmpl -->
+	</form>   
+<!-----------add ccp 6-3-2019---------------!>	
+<!-- /patTemplate:sub -->
+<!-- patTemplate:sub condition="YES" -->
+	Mohon maaf anda belum dapat mengakses Kartu Hasil Studi melalui portal dikarenakan masih ada kewajiban keuangan yg harus diselesaikan sebagai berikut:
+	
+	<div class="table responsive">
+		<table class="table table-common" width="100%">
+			<tr>
+			   <th width="10">No</th>      
+			   <th >Periode</th>
+			   <th >Tagihan</th>
+			   <th width="70">Batas Pembayaran</th>
+			   <th width="60">Total Tagihan</th>
+			   <th width="60">Sudah Bayar</th>
+			   <th width="60">Total Potongan</th>
+			   <th width="60">Sisa</th>
+			   <th width="75">Status</th>
+			</tr>
+			<!-- patTemplate:tmpl name="data_item_tagihan" -->
+			<tr class="{_CLASS}">
+			   <td align="right">{NUMBER}</td>
+			   <td align="left">{PERIODE}</td>
+			   <td align="left">{TAGIHAN}</td>
+			   <td align="center" nowrap ="nowrap">{BATAS_AKHIR}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_TAGIHAN}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_KWITANSI}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_POTONGAN}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_SISA}</td>
+			   <td align="left">
+				  <div style="float:left; width:auto;">{STATUS}</div>
+				</td>
+			</tr>
+			<!-- /patTemplate:tmpl -->      
+		</table>
+	</div>
+<!-- /patTemplate:sub -->
+
+
+<!-- patTemplate:sub condition="PROSES_ENTRI" -->
+	<h5>Keterangan :</h5>
+	<p>Kartu Hasil Studi belum bisa diakses, masih dalam proses input nilai oleh dosen.</p>
+<!-- /patTemplate:sub -->
+
+<!-- /patTemplate:tmpl -->
+
+
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,50 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript">
+function validate()
+{
+
+}
+	
+
+	
+</script>
+
+
+<h2> {APPLICATION_MODULE} </h2><br/>
+<div id="maincontent">
+  <form name="form_add_tugas" class="form-common" method="post" action="{FORM_ACTION}" enctype="multipart/form-data">
+  		<input type="hidden" name="dosenId" value="{TUGAS_DOSEN}" />
+
+
+		
+  		<table class="table-userbio" width = "100%">
+  		<!-- patTemplate:tmpl name="display_error" visibility="hidden" -->
+  		  <tr>
+  		  	<th colspan="2"><font color="Maroon" size="2">Gagal Menambahkan Data Jenis Tugas Baru. {ERROR} </font></th>
+  		  </tr>
+  		<!-- /patTemplate:tmpl -->  		 
+          <tr>
+              <th>Nama</th>
+              <td><input type="textbox" name="nama" size="50" value="{TUGAS_NAMA}" /></td>
+          </tr>   		        
+          <tr>
+              <th valign="top">Persen Nilai</th>
+              <td><input type="textbox" name="persen" size="4" value="{TUGAS_BOBOT}" /> % </td>
+          </tr>             		  
+          <tr>
+          	  <td colspan="2" align="right">
+          	  	<div align="right">
+          	  		<input type="submit" name="insertJenis" value="Simpan" onclick="return validate();" class="input-disclaimer" />
+          	  		<input type="submit" name="batalJenis" value="Batal" class="input-disclaimer" />
+          	  	</div>
+          	  </td>
+          </tr>    
+      </table>
+ 
+  </form>  
+ </div>
+
+<!-- /patTemplate:tmpl -->

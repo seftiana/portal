@@ -1,0 +1,61 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>{JUDUL}</h2>
+  <br />
+   <h5>Keterangan :</h5>
+   <p>Detil Kelas merupakan informasi detil mengenai sub kelas/kelompok untuk matakuliah tertentu. Sub kelas/kelompok yang tampil sesuai dengan sub kelas/kelompok yang diampu oleh dosen pengguna.</p>   
+   <br /><br />
+<!-- patTemplate:tmpl name="data_matakuliah_diampu" type="condition" conditionvar="MATAKULIAH_DIAMPU_AVAILABLE" visibility="hidden" -->      
+      <!-- patTemplate:sub condition="YES" -->                     
+         <table class="table-common" width="100%">
+         <tr>
+            <th rowspan="2">No.</th>
+            <th rowspan="2">Tanggal</th>
+            <th colspan="2">Waktu</th>
+            <th rowspan="2">Metode Pembelajaran</th>
+            <th rowspan="2">Materi</th>
+            <th rowspan="2">Kelompok</th>
+         </tr>
+         <tr>
+            <th>Mulai</th>
+            <th>Selesai</th>
+         </tr>
+         <!-- patTemplate:tmpl name="data_matakuliah_diampu_item" type="condition" conditionvar="ODDEVEN" -->
+            <!-- patTemplate:sub condition="ODD" -->
+               <tr>
+                  <td width="5%" align="center">{MK_JADWAL_NUMBER}</td>
+                  <td width="20%">{MK_JADWAL_TANGGAL}</td>
+                  <td width="8%" align="center">{MK_JADWAL_JAMMULAI}</td>
+                  <td width="8%" align="center">{MK_JADWAL_JAMSELESAI}</td>
+                  <td width="8%" align="center"><acronym title="{MK_JADWAL_METODENAMA}">{MK_JADWAL_METODEKODE}</acronym></td>
+                  <td width="8%" align="center">{MK_JADWAL_MATERINAMA}</td>
+                  <td width="8%" align="center">{MK_JADWAL_KELOMPOK}</td>
+               </tr>
+            <!-- /patTemplate:sub -->
+            <!-- patTemplate:sub condition="EVEN" -->
+               <tr class="table-common-even">
+                  <td width="5%" align="center">{MK_JADWAL_NUMBER}</td>
+                  <td width="20%">{MK_JADWAL_TANGGAL}</td>
+                  <td width="8%" align="center">{MK_JADWAL_JAMMULAI}</td>
+                  <td width="8%" align="center">{MK_JADWAL_JAMSELESAI}</td>
+                  <td width="8%" align="center"><acronym title="{MK_JADWAL_METODENAMA}">{MK_JADWAL_METODEKODE}</acronym></td>
+                  <td width="8%" align="center">{MK_JADWAL_MATERINAMA}</td>
+                  <td width="8%" align="center">{MK_JADWAL_KELOMPOK}</td>
+               </tr>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </table>
+      <br/>
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   <br/>
+   <div>
+      <form action="{URL_BACK}" method="post">
+         <input type="hidden" name="par" value="{PARAM}">
+         <input type="hidden" name="val" value="{VALUE}">
+         <input type="hidden" name="loc" value="{MODULE}">
+         <input class="input-disclaimer" type="submit" name="btnBack" value="Kembali">
+      </form>
+   </div>  
+<!-- /patTemplate:tmpl -->

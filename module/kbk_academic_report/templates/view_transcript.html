@@ -1,0 +1,107 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Transkrip Nilai</h2>
+   <br />
+   <h5>Keterangan :</h5>
+   <p>Transkrip Nilai berisi informasi nilai hasil studi mahasiswa mulai dari semester awal sampai dengan semester terakhir mahasiswa.
+   </p><br />
+      
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="user" visibility="hidden" -->
+   <table width="100%" class="table-list">
+      <tr> 
+         <th width="150">Nama</th>
+         <td>{MHS_FULLNAME}</td>
+      </tr>
+      <tr> 
+         <th>{LABEL_NIM}</th>
+         <td>{MHS_NO_ID}</td>
+      </tr>
+      <tr> 
+         <th>Program Studi</th>
+         <td>{MHS_INFO}</td>
+      </tr>
+   </table>
+   <!-- /patTemplate:tmpl -->
+   
+   <!-- patTemplate:tmpl name="transkrip" visibility="hidden" -->
+      <table class="table-common" width="100%">
+         <tr>
+            <th>No</th>
+            <th>Semester</th>
+            <th>Kode</th>
+            <th>Mata Kuliah</th>
+            <th>Sks</th>
+            <th>Nilai</th>
+         </tr>
+         <!-- patTemplate:tmpl name="transkrip_item" type="condition" conditionvar="ODDEVEN" -->
+            <!-- patTemplate:sub condition="ODD" -->
+               <tr>
+                  <td width="3%" align="center">{TRANS_NUMBER}</td>
+                  <td width="25%">{TRANS_SEMESTER}</td>
+                  <td>{TRANS_KODE_MATAKULIAH}</td>
+                  <td>{TRANS_MATAKULIAH}</td>
+                  <td align="center">{TRANS_SKS_JUMLAH}</td>
+                  <td align="center">{TRANS_NILAI}</td>
+               </tr>
+            <!-- /patTemplate:sub -->
+            <!-- patTemplate:sub condition="EVEN" -->
+               <tr class="table-common-even">
+                  <td width="3%" align="center">{TRANS_NUMBER}</td>
+                  <td width="25%">{TRANS_SEMESTER}</td>
+                  <td>{TRANS_KODE_MATAKULIAH}</td>
+                  <td>{TRANS_MATAKULIAH}</td>
+                  <td align="center">{TRANS_SKS_JUMLAH}</td>
+                  <td align="center">{TRANS_NILAI}</td>
+               </tr>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </table>
+   <!-- /patTemplate:tmpl -->
+   <br>
+   <!-- patTemplate:tmpl name="prestasi" visibility="hidden" -->
+      Prestasi Akademik
+      <table>
+         <tr>
+            <td>Jumlah SKS diambil</td>
+            <td>: {PRES_SKS_DIAMBIL}</td>
+         </tr>
+         <tr>
+            <td>Jumlah mata kuliah diambil</td>
+            <td>: {PRES_MATAKULIAH_DIAMBIL}</td>
+         </tr>
+         <tr>
+            <td>IP Kumulatif</td>
+            <td>: {PRES_IP_KUMULATIF}</td>
+         </tr>
+      </table>
+   <!-- /patTemplate:tmpl -->
+   <br>
+   <!-- patTemplate:tmpl name="keterangan" visibility="hidden" -->
+      Keterangan Nilai
+      <table>
+      <!-- patTemplate:tmpl name="list_nilai" -->
+         <tr>
+            <td>{NILAI_KODE}</td>
+            <td>: {NILAI_BOBOT}</td>
+         </tr>
+      <!-- /patTemplate:tmpl -->
+      </table>
+   <!-- /patTemplate:tmpl -->
+   
+
+   <br/>   
+	<form method="post" action="{URL_BACK}" name="frmBack" >
+   <!-- patTemplate:tmpl name="buttonBack" visibility="hidden" -->
+		<input type="hidden" name="viewby" value="{VIEW_BY}">
+		<input class="input-disclaimer" type="submit" name="btnBack" value="Kembali">
+   <!-- /patTemplate:tmpl -->
+	<!-- patTemplate:tmpl name="buttonCetak" type="SimpleCondition" requiredvars="URL_CETAK" -->
+      <!--<input class="input-disclaimer" type="button" name="btnCetak" value="Cetak format Pasca" onClick="window.open('{URL_CETAK}')" />
+      <input class="input-disclaimer" type="button" name="btnCetakMM" value="Cetak format MM" onClick="window.open('{URL_CETAK_MM}')" />      -->
+      <!-- <input class="input-disclaimer" type="button" name="btnCetak" value="Cetak Transkrip" onClick="window.open('{URL_CETAK}')" /> -->
+      <input class="input-disclaimer" type="button" name="btnCetak" value="Cetak Transkrip" onClick="window.open('{URL_CETAK_TRANSKRIP}')" />
+   <!-- /patTemplate:tmpl -->
+   
+	</form>   
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,29 @@
+[version] 4.1.4(alpha)
+	[#] Perbaikan tampilan jadwal kuliah pada daftar KRS
+	[#] Foto untuk user, ngambil dari sia
+	[#] Perbaikan tampilan cetak KRS
+
+[version] 4.1.3(alpha)
+   [#] Bugfixing error session expired
+   [#] Add view announcement for admin
+	[#] Edit tombol Tambahkan ke kontak
+   [#] Mengganti nama menu untuk semua user
+	[#] Validasi penambahan kontak
+   [#] Perbaikan tampilan untuk cetak
+	[#] Pengantisipasian 'remember me' dialog box
+	[#] menambahkan baris Dosen PTA pada cetak KRS
+	
+[version] 4.1.2(alpha)
+   [#] new module feedback + version
+   [#] Renew User Interface (+  Indonesianese)
+
+[version] 4.0.1(alpha)
+   [#] Bufixing user interface krs print
+   [#] Renew manual
+   
+[version] 4.0.0(alpha)
+   [#] Porting into new framework, using gtfw 1
+
+[version] 3.2.5(alpha)
+   [#] Renewal of KRS module: enhancement in system design and code
+   [#] Test

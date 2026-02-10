@@ -1,0 +1,65 @@
+<!-- patTemplate:tmpl name="content" -->
+   <div class="page-potrait">
+
+   <!-- patTemplate:tmpl name="data_to_print" -->
+      <!-- patTemplate:link name="kop_print" src="kop_print" / -->
+
+      <h2 align="center">RIWAYAT NILAI</h2><br/><br/>
+      <table width="100%" class="table-info">
+         <tr> 
+            <td width="20%">Nama Mahasiswa</td>
+            <td width="60%">: {MHS_NAMA}</td>
+         </tr>
+         <tr> 
+            <td>{LABEL_NIM}</td>
+            <td>: {MHS_NIM}</td>
+         </tr>
+         <tr> 
+            <td>Program Studi</td>
+            <td>: {MHS_PRODI}</td>
+         </tr>
+      </table>
+      <br/>
+      <!-- patTemplate:tmpl name="data_nilai" type="condition" conditionvar="NILAI_AVAILABLE" -->            
+         <!-- patTemplate:sub condition="NO" -->
+            Data hasil studi tidak ada. <br/>
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="YES" -->
+            <table width="100%" class="tabel-common">
+               <tr>
+                  <th rowspan="2">No</th>
+                  <th colspan="2">Matakuliah</th>
+                  <th colspan="5">Riwayat Nilai</th>
+               </tr>
+               <tr>
+                  <th>Kode</th>
+                  <th>Nama</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>            
+               </tr>
+               <!-- patTemplate:tmpl name="data_nilai_item" -->
+               <tr>
+                  <td width="6%" align="center">{NILAI_NUMBER}</td>
+                  <td width="20%">{NILAI_KODE}</td>
+                  <td width="39%">{NILAI_NAMA}</td>
+                  <td width="7%" align="center">{NILAI_SATU}</td>
+                  <td width="7%" align="center">{NILAI_DUA}</td>
+                  <td width="7%" align="center">{NILAI_TIGA}</td>
+                  <td width="7%" align="center">{NILAI_EMPAT}</td>
+                  <td width="7%" align="center">{NILAI_LIMA}</td>
+               </tr>
+               <!-- /patTemplate:tmpl --> <!-- end of nilai_item -->
+            </table>
+            
+         <!-- /patTemplate:sub -->
+      <!-- /patTemplate:tmpl -->
+   <hr class=hidden>
+   <br />
+   <br sytle="page-break-before:always;" />
+   <br sytle="page-break-after:always;" />
+   <!-- /patTemplate:tmpl -->
+   </div>
+<!-- /patTemplate:tmpl --> <!-- end of content -->

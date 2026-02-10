@@ -1,0 +1,95 @@
+<!-- patTemplate:tmpl name="content" -->
+ <h2>Profil Mahasiswa</h2>
+   <p class="text-muted">Keterangan :</p>
+   <p>Profil Mahasiswa berisi data pribadi pengguna portal akademik. Apabila terdapat kesalahan data, anda dapat menghubungi bagian akademik untuk memperbaikinya.
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <div class="table-responsive">  
+   <table width="100%" class="table table-list">
+ <thead class="thead-light"> <tr class="">               
+         <th colspan="2" class="display-6"><strong>Profil</strong></th>
+      </tr>
+   </thead>
+   <tr  width="150"> 
+      <th>{LABEL_NIM}</th>
+      <td>{PROFILE_NIM}</td>
+   </tr> 
+   <!-- patTemplate:tmpl name="data_profile" type="condition" conditionvar="INFO_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+         <tr> 
+            <th>Nama</th>
+            <td>{PROFILE_NAMA}</td>
+         </tr>
+         <tr> 
+            <th>Alamat</th>
+            <td>{PROFILE_ALAMAT_ASAL}</td>
+         </tr>
+         <tr> 
+            <th>Tempat Tanggal Lahir</th>
+            <td>{PROFILE_TEMPAT_LAHIR},&nbsp;{PROFILE_TANGGAL_LAHIR}</td>
+         </tr>
+	 <tr> 
+            <th>HP</th>
+            <td>{PROFILE_NOMOR_TELEPON}</td>
+         </tr>
+		 <!--tr> 
+            <th>HP</th>
+            <td>{PROFILE_NOMOR_HP}</td>
+         </tr-->
+         <tr> 
+            <th>Agama</th>
+            <td>{PROFILE_AGAMA}</td>
+         </tr>
+         <tr> 
+            <th>Jenis Kelamin</th>
+            <td>{PROFILE_JENIS_KELAMIN}</td>
+         </tr>
+         <tr> 
+            <th>Asal SLTA</th>
+            <td>{PROFILE_ASAL_SLTA}</td>
+         </tr>
+         <tr> 
+            <th>Tanggal Terdaftar</th>
+            <td>{PROFILE_TANGGAL_TERDAFTAR}</td>
+         </tr>   
+         <tr> 
+            <th>Nama Ayah</th>
+            <td>{PROFILE_NAMA_AYAH}</td>
+         </tr> 
+	 <tr> 
+            <th>Nama Ibu</th>
+            <td>{PROFILE_NAMA_IBU}</td>
+         </tr>   
+         <tr> 
+            <th>Alamat Orang Tua</th>
+            <td>{PROFILE_ALAMAT_ORANGTUA}</td>
+         </tr>   
+         <tr> 
+            <th>Warga Negara</th>
+            <td>{PROFILE_WARGA_NEGARA}</td>
+         </tr>   
+         <tr> 
+            <th>Status</th>
+            <td>{PROFILE_STATUS_MHS}</td>
+         </tr>   
+      <!-- /patTemplate:sub --><!--sub:data_user-YES-->
+      <!-- patTemplate:sub condition="NO" -->
+         <tr> 
+            <th>Data Detil</th>
+            <td>Tidak ditemukan...</td>
+         </tr>   
+      <!-- /patTemplate:sub --><!--sub:data_user-NO-->
+   <!-- /patTemplate:tmpl --><!--data_user-->
+   </table>
+   </div>
+   <br/>
+   <!-- patTemplate:tmpl name="buttonBack" visibility="hidden" -->
+      <div align="center">
+         <form name="frmBack" action="{URL_BACK}" method="post">
+            <input class="input-disclaimer" type="submit" name="btnBack" value="Kembali">
+         </form>
+      </div>
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

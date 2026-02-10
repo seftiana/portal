@@ -1,0 +1,90 @@
+<div {$pageattrs}>
+
+{BEGIN container_column}
+<div class="rnr-c rnr-ch rnr-c-column">
+
+{BEGIN masterlist_title}
+<div  class="style1 rnr-bl rnr-b-masterlistheader {$brickclass_masterlistheader}"><a {$backtomasterlink_attrs} class="btn btn-link btn-xs">Back to {$backtomasterlink_caption}</a><span>{$pagetitlelabel s_kelas masterlist}</span></div>
+{END masterlist_title}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_column}
+
+
+
+{BEGIN container_mastergrid}
+
+
+
+	<style>
+	.bs-gridcell[data-field=klsId]:before {
+		content: "{$label s_kelas klsId}";
+	}
+	.bs-gridcell[data-field=klsSemId]:before {
+		content: "{$label s_kelas klsSemId}";
+	}
+	.bs-gridcell[data-field=mkkurKode]:before {
+		content: "{$label s_kelas mkkurKode}";
+	}
+	.bs-gridcell[data-field=mkkurNamaResmi]:before {
+		content: "{$label s_kelas mkkurNamaResmi}";
+	}
+	.bs-gridcell[data-field=klsNama]:before {
+		content: "{$label s_kelas klsNama}";
+	}
+	.bs-gridcell[data-field=prodiJjarKode]:before {
+		content: "{$label s_kelas prodiJjarKode}";
+	}
+	.bs-gridcell[data-field=prodiNamaResmi]:before {
+		content: "{$label s_kelas prodiNamaResmi}";
+	}
+	.bs-gridcell[data-field=dsnkDsnPegNip]:before {
+		content: "{$label s_kelas dsnkDsnPegNip}";
+	}
+	.bs-gridcell[data-field=dosen_2]:before {
+		content: "{$label s_kelas dosen_2}";
+	}
+	.bs-gridcell[data-field=dosen_all]:before {
+		content: "{$label s_kelas dosen_all}";
+	}
+</style>
+<table {$masterlistgrid_hiddenattr} data-pageid="{$pageid}" data-brick="masterlistgrid" class="table rnr-b-mastergridfields rnr-gridtable bs-flexgrid" >
+		<thead>
+		<tr>
+			<th class="{$klsId_class}">{$label s_kelas klsId}</th>
+			<th class="{$klsSemId_class}">{$label s_kelas klsSemId}</th>
+			<th class="{$mkkurKode_class}">{$label s_kelas mkkurKode}</th>
+			<th class="{$mkkurNamaResmi_class}">{$label s_kelas mkkurNamaResmi}</th>
+			<th class="{$klsNama_class}">{$label s_kelas klsNama}</th>
+			<th class="{$prodiJjarKode_class}">{$label s_kelas prodiJjarKode}</th>
+			<th class="{$prodiNamaResmi_class}">{$label s_kelas prodiNamaResmi}</th>
+			<th class="{$dsnkDsnPegNip_class}">{$label s_kelas dsnkDsnPegNip}</th>
+			<th class="{$dosen_2_class}">{$label s_kelas dosen_2}</th>
+			<th class="{$dosen_all_class}">{$label s_kelas dosen_all}</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<td class="{$klsId_class} bs-gridcell" data-field=klsId>{$klsId_mastervalue}</td>
+			<td class="{$klsSemId_class} bs-gridcell" data-field=klsSemId>{$klsSemId_mastervalue}</td>
+			<td class="{$mkkurKode_class} bs-gridcell" data-field=mkkurKode>{$mkkurKode_mastervalue}</td>
+			<td class="{$mkkurNamaResmi_class} bs-gridcell" data-field=mkkurNamaResmi>{$mkkurNamaResmi_mastervalue}</td>
+			<td class="{$klsNama_class} bs-gridcell" data-field=klsNama>{$klsNama_mastervalue}</td>
+			<td class="{$prodiJjarKode_class} bs-gridcell" data-field=prodiJjarKode>{$prodiJjarKode_mastervalue}</td>
+			<td class="{$prodiNamaResmi_class} bs-gridcell" data-field=prodiNamaResmi>{$prodiNamaResmi_mastervalue}</td>
+			<td class="{$dsnkDsnPegNip_class} bs-gridcell" data-field=dsnkDsnPegNip>{$dsnkDsnPegNip_mastervalue}</td>
+			<td class="{$dosen_2_class} bs-gridcell" data-field=dosen_2>{$dosen_2_mastervalue}</td>
+			<td class="{$dosen_all_class} bs-gridcell" data-field=dosen_all>{$dosen_all_mastervalue}</td>
+		</tr>
+	</tbody>
+
+</table> 
+
+
+
+
+{END container_mastergrid}
+
+</div>

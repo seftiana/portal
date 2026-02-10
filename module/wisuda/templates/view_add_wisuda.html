@@ -1,0 +1,516 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.subhead th{
+	font-weight: bold;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.subhead-common th{
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.links{
+	text-decoration: none;
+}
+.links img{
+	border: none;
+	height: 16px;
+}
+.links img:hover{
+	border: none;
+	height: 20px;
+}
+
+.btn{
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	 -moz-user-select: none;
+	  -ms-user-select: none;
+	   -o-user-select: none;
+		  user-select: none;
+}
+.btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #333333;
+  text-decoration: none;
+}
+.btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active {
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+</style>
+   <h2>Pendaftaran Wisuda Mahasiswa</h2>
+   
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="data_biodata" -->
+   <h5>Keterangan :</h5>
+   <p>Silahkan lengkapi data-data anda di bawah ini.</p><br />
+<script>
+var updateUserFoto = function(){
+	var a = ['userFoto', 'editFoto'];
+	var t = new Date().getTime();
+	for(var i = 0, m = a.length; i < m; ++i){
+		var g = document.getElementById(a[i]);
+		if(g)g.innerHTML='<img src="{FILE_FOTO}&'+t+'"  width="100" />';
+	}
+	document.getElementById('mhs[mhs_foto]').value = '1';
+};
+var errorUserFoto = function(err){
+	document.getElementById('mhs[mhs_foto]').value = '';
+	alert(err);
+};
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!--- ---->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+$(function() {
+    $("#mhs_dosen_pembimbing").autocomplete({
+        source: "{URL_SEARCH}",
+    });
+});
+</script>
+<!--- ---->
+
+<script>
+function myUpload() {
+	const fileupload = $('#fileupload').prop('files')[0];
+	var nama_file 	= document.getElementById("nama_file").value;
+
+	if (nama_file!="" && fileupload.name!="") {
+		
+		if(fileupload.size > 1000*1000){
+			alert("File foto lebih dari 1 mb ");
+		}else{
+		
+			let formData = new FormData();
+			formData.append('fileupload', fileupload);
+			formData.append('nama_file', nama_file);
+
+			$.ajax({
+				type: 'POST',
+				url: "{URL_UPLOAD_FOTO_WISUDA}",
+				data: formData,
+				cache: false,
+				processData: false,
+				contentType: false,
+				success: function (msg) {
+					alert("File "+msg+" ");
+					document.getElementById("form-data").reset();
+					document.getElementById("gbr").src = "{IMG_SRC}"+msg;
+					document.getElementById("nama_file").value = msg;
+					document.getElementById("file_upload").value = msg;
+				},
+				error: function () {
+					alert("Data Gagal Diupload");
+				}
+			});
+		}
+	};
+
+}
+</script>
+
+
+<iframe id="hiddenFrame" name="hiddenFrame" style="display:none"></iframe>
+
+<form method="POST" action="{URL_UPLOAD_FOTO}" name="frmFoto" class="" id="frmFoto" enctype="multipart/form-data" target="hiddenFrame">
+	<input type="file" name="uploadFoto" id="uploadFoto" onchange="submit();" style="display:none">
+</form>
+
+<form class="form-common" method="POST" action="{URL_PROCESS}" name="frmInput" id="form-data"> 
+	<input type="hidden" name="doact" value="simpan_wisuda">
+	<input type="hidden" name="mhs[decId]" value="{NIM}">
+         <table class="table table-userbio" width="100%">
+            <tr class="subhead">
+               <th colspan="2">Biodata</th>
+            </tr>
+			<tr>
+               <th>Upload Foto <font color="red"> *</font></th>
+               <td>
+					<img id="gbr" src="{IMG_SRC}" width="100" />
+					<input type="hidden" name="mhs[file_upload]" id="file_upload" value="" />
+					<input type="hidden" name="nama_file" id="nama_file" value="{NIM}_foto"  />
+					<input type="file"  accept="image/*" name="fileupload" id="fileupload" class="form-control" onchange="myUpload()" />
+               </td>
+            </tr>
+			<tr>
+               <th>Tanggal Wisuda</th>
+               <td>
+					{TGL_WISUDA_INDO}
+					<input type="hidden" id="tgl_wisuda" name="mhs[tgl_wisuda]" value="{TGL_WISUDA}" />
+               </td>
+            </tr>
+            <tr>
+               <th>NIM</th>
+               <td>
+                 {NIM}<input type="hidden" id="nim" name="mhs[mhs_nim]" value="{NIM}" />
+               </td>
+            </tr>
+			<tr>
+               <th>Nama Lengkap</th>
+               <td>
+                 {NAMA}<input type="hidden" name="mhs[mhs_nama]" value="{NAMA}" />
+               </td>
+            </tr>
+			<tr>
+               <th>Program Studi</th>
+               <td>
+                 {PRODI}
+				 <input type="hidden" name="mhs[kode_prodi]" value="{KODE_PRODI}" />
+				 <input type="hidden" name="mhs[kode_prodi_singkat]" value="{KODE_SINGKAT}" />
+               </td>
+            </tr>
+			<tr>
+               <th>Tempat Lahir <font color="red"> *</font></th>
+               <td>
+					<input type="text" name="mhs[mhs_kota_tempat_lahir]" value="{TEMPAT_LAHIR}" notab="1" id="mhs_kota_tempat_lahir" required />
+               </td>
+            </tr>
+			<tr>
+               <th >Tgl. Lahir <font color="red"> *</font></th>
+               <td> Hari
+					<select name="mhs[mhs_lahir_tanggal]" notab="2" id="mhs_lahir_tanggal" required>
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_tanggal_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					 / Bulan
+					<select name="mhs[mhs_lahir_bulan]" notab="3" id="mhs_lahir_bulan" required>
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_bulan_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					 / Tahun
+					<select name="mhs[mhs_lahir_tahun]" notab="4" id="mhs_lahir_tahun" required >
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_tahun_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+			<tr>
+               <th>Nomor KTP <font color="red"> *</font></th>
+               <td>
+                  <input type="text" name="mhs[mhs_no_ktp]" value="{MHSNOKTP}" size="30" maxLength="50" notab="5" id="mhs_no_ktp" required />
+               </td>
+            </tr>
+            <tr>
+               <th>Nomor HP (WA)<font color="red"> *</font></th>
+               <td>
+                  <input type="text" name="mhs[mhs_no_telp]" value="{NOMOR_TELEPON}" size="20" maxLength="15" notab="6" id="mhs_no_telp" required /><BR>
+                  <font color="green"><i>isikan salah satu nomor HP dengan angkanya saja, misal: 081234567890</i></font>
+               </td>
+            </tr>
+			<tr>
+               <th >Email <font color="red"> *</font></th>
+               <td>
+                  <input type="text" name="mhs[mhs_email]" value="{EMAIL}" size="50" maxLength="50" notab="7" id="mhs_email" required />
+				  <p><font color="green"><i>bukti pendaftaran wisuda akan terkirim ke email ini.</i></font></p>
+               </td>
+            </tr>
+			<tr>
+               <th>Alamat Terakhir <font color="red"> *</font></th>
+               <td>
+                  <Textarea name="mhs[mhs_alamat]" cols="50" rows="" notab="8" id="mhs_alamat" required ></textarea>
+                  <p><font color="green"><i>gunakan spasi untuk memisahkan tiap kata</i></font></p>
+               </td>
+            </tr>
+			<!--tr>
+               <th >Nomor KK</th>
+               <td>
+                  <input type="text" name="mhs[mhs_no_kk]" value="{MHSNOKK}" size="30" maxLength="50" notab="4" required />
+               </td>
+            </tr-->
+			
+			
+			<!--tr>
+               <th>Propinsi Tempat Lahir</th>
+               <td>
+					<select name="mhs[dsn_propinsi_lahir]" id="lahir" onchange="propinsiChange(this);">
+						<option value="">-- PILIH PROPINSI  --</option>
+						<!-- patTemplate:tmpl name="data_propinsi_lahir" -->
+						<!--option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					<!--/select>
+               </td>
+            </tr> 
+            <tr>
+               <th>Kota Tempat Lahir</th>
+               <td>
+                  <div id="kota_lahir">
+					<select name="mhs[kota_lahir]">
+						<option value="">-- PILIH KOTA  --</option>
+						<!-- patTemplate:tmpl name="data_kota_lahir" -->
+						<!--option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					<!--/select>
+                  </div>
+     
+               </td>
+            </tr-->
+			<tr class="subhead">
+               <th colspan="2">Data Profesi Mahasiswa</th>
+            </tr>
+			<tr>
+               <th>Pekerjaan</th>
+               <td>
+                  <input type="text" name="mhs_pekerjaan_mahasiswa" notab="9" />  
+               </td>
+            </tr>
+			<tr>
+               <th>Nama Instansi</th>
+               <td>
+                  <input type="text" name="mhs_nama_instansi_mahasiswa" notab="10" />  
+               </td>
+            </tr>
+			<tr>
+               <th>Alamat Instansi</th>
+               <td>
+                  <Textarea name="mhs_alamat_instansi" cols="50" rows="" notab="11" ></textarea>
+               </td>
+            </tr>
+			<tr class="subhead">
+               <th colspan="2">Data Orang Tua</th>
+            </tr>
+			<tr>
+               <th >Nama Orangtua</th>
+               <td>
+                  <input type="text" name="mhs_nama_ibu" value="{NAMA_IBU}" size="30" maxLength="90" notab="12" /><BR>
+                  <font color="green"><i>Tanpa menggunakan gelar</i></font>
+               </td>
+            </tr>
+			<!--tr>
+               <th >Nama Ayah Kandung Lengkap</th>
+               <td>
+                  <input type="text" name="mhs_nama_ayah" value="{NAMA_AYAH}" size="30" maxLength="90" notab="13" /><BR>
+                  <font color="green"><i>Tanpa menggunakan gelar</i></font>
+               </td>
+            </tr-->
+			<tr class="subhead">
+               <th colspan="2">Data Kelulusan</th>
+            </tr>
+			<tr>
+               <th >Tgl. Lulus <font color="red"> *</font></th>
+               <td> Hari
+					<select name="mhs[mhs_lulus_tanggal]" notab="14" id="mhs_lulus_tanggal" required >
+						<option value="00">00</option>
+						<!-- patTemplate:tmpl name="data_tanggal_lulus" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					 / Bulan
+					<select name="mhs[mhs_lulus_bulan]" notab="15" id="mhs_lulus_bulan" required >
+						<option value="00">00</option>
+						<!-- patTemplate:tmpl name="data_bulan_lulus" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					 / Tahun
+					<select name="mhs[mhs_lulus_tahun]" notab="16" id="mhs_lulus_tahun" required >
+						<option value="0000">0000</option>
+						<!-- patTemplate:tmpl name="data_tahun_lulus" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+			<tr>
+               <th>Judul TA. <font color="red"> *</font></th>
+               <td>
+                  <Textarea name="mhs[mhs_judul_ta]" cols="50" rows="" notab="17" id="mhs_judul_ta" required ></textarea>
+               </td>
+            </tr>
+			<tr>
+               <th >Nama Dosen Pembimbing <font color="red"> *</font></th>
+               <td>
+			   <input type="text" class="nama_dosen" id="mhs_dosen_pembimbing" name="mhs[mhs_dosen_pembimbing]" size="50" notab="18" required />
+                  <!--input type="text" name="mhs[mhs_dosen_pembimbing]" size="50" notab="18" id="mhs_dosen_pembimbing" required /-->
+				  <BR>
+                  <font color="green"><i>Lengkap menggunakan gelar</i></font>
+               </td>
+            </tr>
+			<tr>
+               <th>IPK</th>
+               <td>
+					{IPK}
+					<input type="hidden" name="mhs_ipk" value="{IPK}" />
+					<font color="green"><i> (sesuai transkrip akhir)</i></font>
+               </td>
+            </tr>
+			<tr>
+               <th>Total SKS</th>
+               <td>
+                 {SKS} 
+				 <input type="hidden" name="mhs_total_sks" value="{SKS}" />
+ 				 <font color="green"><i> (sesuai transkrip akhir)</i></font>
+               </td>
+            </tr>
+			<tr>
+               <th>Ukuran Toga <font color="red"> *</font></th>
+               <td>
+					<select name="mhs[mhs_ukuran_toga]" id="mhs_ukuran_toga" required notab="19" >
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_toga" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select><br>
+					<font color="green"><i>(pb:Panjang Baju, lp:Lebar Pundak, pt:Panjang Tangan)</i></font>
+               </td>
+            </tr>
+			<tr>
+               <th>Ukuran Topi <font color="red"> *</font></th>
+               <td>
+					<select name="mhs[mhs_ukuran_topi]" id="mhs_ukuran_topi" required notab="20">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_topi" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select><br>
+               </td>
+            </tr>
+			<tr>
+			   <th>Persetujuan <font color="red"> *</font></th>
+               <td>
+					<input type="checkbox" id="setuju" name="setuju" value="checked"  onclick="myFunction()" required>
+					<font color="green"><i>saya telah menyetujui dan mengisi data dengan benar untuk mendaftar wisuda</i></font>
+               </td>
+            </tr>
+			
+			 <tr>
+				<th>&nbsp;</th>
+				<td>
+					<input class="input-disclaimer btn btn-primary" type="button" style="display:" id="textk" name="kembali" value="Kembali" onclick="location.href='{URL_KEMBALI}'" />
+					<div id="text" style="display:none">
+						<input class="input-disclaimer btn btn-primary" type="submit" id="simpan" name="simpan" value="Simpan" />
+						<input class="input-disclaimer btn btn-primary" type="button" id="kembali" name="kembali" value="Kembali" onclick="location.href='{URL_KEMBALI}'" />
+				   </div>
+				</td>
+			 </tr>
+       </table> 
+   
+   </form>
+<script language="javascript">
+function myFunction() {
+	var checkBox = document.getElementById("setuju");
+	var text = document.getElementById("text");
+	var textk = document.getElementById("textk");
+	
+	var mhs_kota_tempat_lahir = document.getElementById("mhs_kota_tempat_lahir").value;
+	var mhs_lahir_tanggal = document.getElementById("mhs_lahir_tanggal").value;
+	var mhs_lahir_bulan = document.getElementById("mhs_lahir_bulan").value;
+	var mhs_lahir_tahun = document.getElementById("mhs_lahir_tahun").value;
+	var mhs_no_ktp = document.getElementById("mhs_no_ktp").value;
+	var mhs_no_telp = document.getElementById("mhs_no_telp").value;
+	var mhs_email = document.getElementById("mhs_email").value;
+	var mhs_alamat = document.getElementById("mhs_alamat").value;
+	var mhs_lulus_tanggal = document.getElementById("mhs_lulus_tanggal").value;
+	var mhs_lulus_bulan = document.getElementById("mhs_lulus_bulan").value;
+	var mhs_lulus_tahun = document.getElementById("mhs_lulus_tahun").value;
+	var mhs_judul_ta = document.getElementById("mhs_judul_ta").value;
+	var mhs_dosen_pembimbing = document.getElementById("mhs_dosen_pembimbing").value;
+	var mhs_ukuran_toga = document.getElementById("mhs_ukuran_toga").value;
+	var mhs_ukuran_topi = document.getElementById("mhs_ukuran_topi").value;
+	var file_upload = document.getElementById("file_upload").value;
+	
+	if (checkBox.checked == true){
+		if(
+			mhs_kota_tempat_lahir =="" ||
+			mhs_lahir_tanggal =="" ||
+			mhs_lahir_bulan =="" ||
+			mhs_lahir_tahun =="" ||
+			mhs_no_ktp =="" ||
+			mhs_no_telp =="" ||
+			mhs_email =="" ||
+			mhs_alamat =="" ||
+			mhs_lulus_tanggal =="" ||
+			mhs_lulus_bulan =="" ||
+			mhs_lulus_tahun =="" ||
+			mhs_judul_ta =="" ||
+			mhs_dosen_pembimbing =="" ||
+			mhs_ukuran_toga =="" ||
+			mhs_ukuran_topi =="" ||
+			file_upload ==""
+		){
+			checkBox.checked = false;
+			alert('Isian tanda bintang harus diisi! dan wajib upload foto');
+			text.style.display = "none";
+		}else{
+			textk.style.display = "none";
+			text.style.display = "block";
+		}
+	} else {
+		text.style.display = "none";
+		textk.style.display = "block";
+	}
+}
+
+var propinsiChange=function(el){
+	var id='kota_'+el.id;
+	var name='mhs['+id+']';
+	var dest=document.getElementById(id);
+	var hidden=document.getElementById('hidden_'+id);
+	var pr=el.parentNode;
+	pr.appendChild(loadingBox);
+	el.disabled=true;
+	new mAjax('{URL_COMBO}',function(result){
+		dest.innerHTML=result;
+		loadingBox.parentNode.removeChild(loadingBox);
+		el.disabled=false;
+	},'e='+name+'&m=kota&p='+el.value);
+};
+var popupPengOrg=function(){
+	document.getElementById('pengorgTable').style.display='block';
+};
+var hapus_entri=function(el){
+	var tr=el.parentNode.parentNode;
+	tr.parentNode.removeChild(tr);
+};
+
+window.onload=function(){
+	loadingBox=document.createElement('img');
+	loadingBox.src='images/ajax-loader.gif';
+	loadingBox.width='48';
+	loadingBox.height='16';
+
+};
+var loadingBox;
+</script>
+	<!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

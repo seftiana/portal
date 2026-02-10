@@ -1,0 +1,22 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+  <div id="maincontent">
+   <h2> {APPLICATION_MODULE} </h2>
+      <form name="edit_topik" method="post" action="{URL_UPDATE}" class="form-common">
+         <table width="100%" border="0" class="table-form">  
+            <input type="hidden" name="forum_id" value="{FORUM_ID}">
+            <input type="hidden" name="thread_id" value="{THREAD_ID}">
+            <tr>
+               <td width="19%">Judul Topik: </td>
+               <td width="81%"><input name="judul_thread" type="text" size="50" value="{JUDUL}"></td>
+            </tr>            
+            <tr>
+               <td>&nbsp;</td>
+               <td><input class="input-disclaimer" name="editSimpan" type="submit" id="simpan" value="Simpan"></td>
+            </tr>
+         </table>
+      </form>
+   </div>
+<!-- /patTemplate:tmpl -->

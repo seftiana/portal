@@ -1,0 +1,100 @@
+<!-- patTemplate:tmpl name="content" -->
+   
+   <h4>{APPLICATION_MODULE}</h4>
+   <br>
+   <h5>{KATEGORI_TITLE}</h5>
+   <p>{KATEGORI_DESCRIPTION}</p>
+   
+   <!-- patTemplate:tmpl name="topik_list" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->         
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <table class="table-forum" width="100%">
+            <tr>
+               <th class="text-center" colspan="2"><div class="th-special-left"></div><div class="th-center"><strong>Topik Diskusi</strong></div></th>
+               <th class="text-center" width="28%"><div class="th-special-right"></div><div class="th-center"><strong>Informasi Topik</strong></div></th>
+            </tr>
+            <!-- patTemplate:tmpl name="topik_item" -->
+            <tr>
+               <td><img src="images/non-public.gif" alt="" /></td>
+               <td>
+                  <strong><a href="{TOPIK_URL_DETAIL}">{TOPIK_JUDUL}</a></strong><br />
+                  <p>{TOPIK_DESKRIPSI}</p>
+               </td>
+               <td class="text-center">                  
+                  {TOPIK_TANGGAL} <br /> 
+                  Moderator : <b>{TOPIK_NAMAMODERATOR}</b><br />                  
+                  <form name="mdfyForm" class="form-topik-input" method="POST" action="{TOPIK_URL_MODIFY_PROCESS}">
+                     <input type="hidden" name="act" value="modifyTopik">
+                     <input type="hidden" name="data[ForumKategoriId]" value="{TOPIK_KATEGORIID}" />
+                     <input type="hidden" name="data[ForumTopikId]" value="{TOPIK_TOPID}" />
+                     <input type="submit" name="mdfyBtn" value="Ubah" />
+                     <input type="submit" name="mdfyBtn" value="Hapus" onClick="return ValidateDelete()"/>                     
+                  </form>
+               </td>
+            </tr>
+            <!-- /patTemplate:tmpl -->
+         </table>
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <form name="addForm" class="form-common" method="POST" action="{URL_ADD_PROCESS}">
+      <input name="act" type="hidden" value="doAddTopik" />            
+      <input name="data[ForumKategoriId]" type="hidden" value="{KATEGORI_ID}" />
+      <table class="table-form" width="100%">
+         <tr>
+            <th colspan="2"><b>Form Tambah Topik</b></th>
+         </tr>
+         <tr>
+            <th>Judul Topik Diskusi</th>
+            <td><input name="data[ForumTopikTitle]" type="text" maxlength="50" size="40" /></td>
+         </tr>
+         <tr>
+            <th>Deskripsi</th>   
+            <td>
+               <textarea name="data[ForumTopikDescription]" cols="40" rows="4"></textarea>
+            </td>
+         </tr>
+         <tr>
+            <th>Moderator</th>
+            <td><input name="data[ForumTopikModeratorId]" type="text" maxlength="50" size="20" /></td>
+         </tr>
+         <tr>
+            <th>Hak Akses</th>
+            <td>
+               <!-- patTemplate:tmpl name="hak_akses" type="condition" conditionvar="IS_EMPTY" -->
+                  <!-- patTemplate:sub condition="NO" -->
+                     <!-- patTemplate:tmpl name="hak_akses_item" -->
+                     <input type="checkbox" name="forumHakAkses[]" value="{HAK_ID}" />{HAK_NAME}
+                     <br />   
+                     <input type="hidden" name="forumHakAksesAll[]" value="{HAK_ID}" />
+                     <!-- /patTemplate:tmpl -->
+                  <!-- /patTemplate:sub -->
+                  <!-- patTemplate:sub condition="YES" -->
+                     {EMPTY_MESSAGE}
+                  <!-- /patTemplate:sub -->
+               <!-- /patTemplate:tmpl -->               
+            </td>
+         </tr>         
+         <tr>
+            <th>&nbsp;</th>
+            <td>
+               <input class="input-disclaimer" name="addBtn" type="submit" value="Kirim" />
+               <input class="input-disclaimer" name="reset" type="reset" value="Reset" />
+            </td>
+         </tr>
+      </table>
+   </form>
+   
+   <table>
+      <tr>
+         <td class="table-common-links"><a href="{URL_BACK}">Kembali</a></td>
+      </tr>
+   </table>
+   
+<!-- /patTemplate:tmpl -->

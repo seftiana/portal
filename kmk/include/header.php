@@ -1,0 +1,6 @@
+<style>
+body  {
+  background-image: url("bg.jpg");
+  background-color: #cccccc;
+}
+</style>

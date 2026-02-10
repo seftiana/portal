@@ -1,0 +1,41 @@
+<!-- patTemplate:tmpl name="content" -->
+   
+   <h4>{APPLICATION_MODULE}</h4>
+   
+   <!-- patTemplate:tmpl name="thread_detail" type="condition" conditionvar="IS_FOUND" -->
+      <!-- patTemplate:sub condition="NO" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / --> 
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="YES" -->
+         
+         <!-- patTemplate:link name="error_box" src="error_box" / -->
+         
+         <form name="updForm" class="form-common" method="POST" action="{URL_UPDATE_PROCESS}">
+            <input name="act" type="hidden" value="doUpdateThread" />
+            <input name="forumKategoriId" type="hidden" value="{THREAD_KATEGORIID}" />                        
+            <input name="forumTopikId" type="hidden" value="{THREAD_TOPIKID}" />             
+            <input name="data[ForumThreadId]" type="hidden" value="{THREAD_ID}" />             
+            <table class="table-form" width="100%">
+               <tr>
+                  <th colspan="2"><b>Form Ubah Thread</b></th>
+               </tr>
+               <tr>
+                  <th>Judul Thread Diskusi</th>
+                  <td><input name="data[ForumThreadTitle]" type="text" maxlength="255" size="40" value="{THREAD_JUDUL}"/></td>
+               </tr>               
+               <tr>
+                  <th>&nbsp;</th>
+                  <td>
+                     <input class="input-disclaimer" name="updBtn" type="submit" value="Kirim" />
+                     <input class="input-disclaimer" name="cnclBtn" type="submit" value="Batal" />
+                  </td>
+               </tr>
+            </table>
+         </form>
+         
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,336 @@
+<?php
+/**
+ * DisplayViewKelasNilai
+ * DisplayViewKelasNilai class
+ *
+ * @package display
+ * @author Ageng Prianto
+ * @copyright Copyright (c) 2006 GamaTechno
+ * @version 1.0
+ * @date 2006-03-23
+ * @revision Maya Alipin 2006-08-02
+ *
+ */
+
+class DisplayViewKelasNilai extends DisplayBaseFull {
+   
+   /**
+     * var $mErrorMessage string Error Messages
+     */
+   var $mErrorMessage;
+   
+   /**
+     * var $mViewedFrom string indicate from where module would be loaded
+     */
+   var $mViewedFrom;
+   
+   /**
+     * var $mDosenNip string NIP Dosen
+     */
+   var $mDosenNip;
+   
+   /**
+     * var $mDosenProdiId string Prodi Id Dosen
+     */
+   var $mDosenProdiId;
+   
+   /**
+     * var $mSemesterId string Semester Id Matakuliah Diampu
+     */
+   var $mSemesterId;
+   
+   /**
+     * var $mNamaSemester string Nama Semester Matakuliah Diampu
+     */
+   var $mNamaSemester;
+   
+   /**
+     * var $mServiceServer string Service Server Address
+     */
+   var $mServiceServer;
+   
+   /**
+     * DisplayViewKelasNilai::DisplayViewKelasNilai
+     * Constructor for DisplayViewKelasNilai
+     *
+     * @param $configObject object configuration
+     * @param $security object security
+     * @param $errMsg Error Messages
+     * @return void
+     */
+   function DisplayViewKelasNilai(&$configObject, &$security, $dsnNip, $prodiId, $viewFrom, $semesterId, $sia, $errMsg) {
+      DisplayBaseFull::DisplayBaseFull($configObject, $security);
+      
+      $this->mErrorMessage = $errMsg;
+      $this->mViewedFrom = $viewFrom;
+      $this->mDosenNip = $dsnNip;
+      $this->mDosenProdiId = $prodiId;
+      $this->mSemesterId = $semesterId;
+      $this->mServiceServer = $sia;
+         
+      $this->SetErrorAndEmptyBox();
+      $this->SetTemplateBasedir($configObject->GetValue('app_module') . 'history_nilai_obe/templates/');
+      $this->SetTemplateFile('view_kelas_nilai.html');
+   }
+   
+   /**
+     * DisplayViewKelasNilai::GetDataDosen
+     * Mengambil data dosen
+     *
+     * @param
+     * @return void
+     */
+   function GetDataDosen() {
+      $objUserService = new UserClientService($this->mrUserSession->GetProperty("ServerServiceAddress"),
+         false, $this->mDosenNip);
+      if ($objUserService->IsError()) {
+         $this->mErrorMessage .= $this->mUserService->GetProperty("ErrorMessages");
+      }else{
+         $objUserService->SetProperty("UserRole", 2 );
+         $dataUser = $objUserService->GetUserInfo();
+			if (false === $dataUser){    
+            $this->mErrorMessage .= $objUserService->GetProperty("ErrorMessages");
+            $this->mrUserSession->SetProperty("ServerServiceAvailable", $arrService);
+            $this->mrSecurity->RefreshSessionInfo();
+            return false;
+         } else {
+            return $dataUser;
+         }
+      }
+   }
+   
+   /**
+     * DisplayViewKelasNilai::GetDataSemesterAktif
+     * Mengambil data semester yang sedang aktif
+     *
+     * @param &$objService Object Dosen Service
+     * @return object
+     */
+   function GetDataSemesterAktif(&$objService) {
+      // $objService->SetProperty("UserProdiId", $this->mDosenProdiId);
+      // $objService->SetProperty("UserRole", $this->mrUserSession->GetProperty("Role"));
+      // $dataSemesterAktif = $objService->DoSiaSetting();
+	  $dataSemesterAktif = $this->mSemesterId;
+      return $dataSemesterAktif;
+   }
+   
+   /**
+     * DisplayViewKelasNilai::GetDaftarSemester
+     * Mengambil data semester yang pernah diampu dosen
+     *
+     * @param &$objService Object Dosen Service
+     * @return object
+     */
+   function GetDaftarSemester(&$objService) {
+      $objService->SetProperty("UserId", $this->mDosenNip);
+      $dataSemesterDosen = $objService->GetAllSupportedSemesterDosen();
+      return $dataSemesterDosen;
+   }
+   
+   /**
+     * DisplayViewKelasNilai::ShowErrorBox
+     * Menampilkan pesan Kesalahan
+     *
+     * @param
+     * @return void
+     */
+   function ShowErrorBox($strError="") {
+      if ($strError == ""){
+         if ($this->mViewedFrom == "nilai") {
+            $strError  = "Pengambilan data pengelolaan nilai tidak berhasil. ";
+         } else {
+            $strError  = "Pengambilan data matakuliah diampu tidak berhasil. ";
+         }
+      }
+      
+      $this->AddVar("error_box", "ERROR_MESSAGE",
+            $this->ComposeErrorMessage($strError , $this->mErrorMessage));
+      $this->mTemplate->SetAttribute('error_box', 'visibility', 'visible');
+   }
+   
+   /**
+     * DisplayViewKelasNilai::ShowEmptyBox
+     * Menampilkan pesan Kesalahan data tidak ditemukan
+     *
+     * @param
+     * @return void
+     */
+   function ShowEmptyBox() {
+      if ($this->mViewedFrom == "nilai") {
+         $strError  = "Data untuk pengelolaan nilai tidak ditemukan. ";
+      } else {
+         $strError  = "Data tidak ditemukan. ";
+      }
+      $this->AddVar("empty_type", "TYPE", "INFO");
+      $this->AddVar("empty_box", "WARNING_MESSAGE",
+            $this->ComposeErrorMessage($strError,$this->mErrorMessage));
+   }
+   
+   /**
+     * DisplayViewKelasNilai::ShowSemesterList
+     * Menampilkan combo list semester jika module ini ditampilkan dari pengelolaan nilai
+     *
+     * @param
+     * @return void
+     */
+   function ShowSemesterList(&$objService, $semAktif) {
+      // ambil daftar semesternya, then parse
+      $daftarSemester = $this->GetDaftarSemester($objService);
+      if(false === $daftarSemester) {
+         return false;
+      } else {
+         $this->mTemplate->SetAttribute('view_semester_list', 'visibility', 'visible');
+         for($i = 0; $i < count($daftarSemester); $i++) {
+            if(false !== $semAktif) {
+               if($daftarSemester[$i]['id'] == $semAktif) {
+                  $daftarSemester[$i]['selected'] = 'selected';
+                  $this->mNamaSemester = $daftarSemester[$i]["name"];
+               } else {
+                  $daftarSemester[$i]['selected'] = '';
+               }
+            }
+            $daftarSemester[$i]['id'] = $this->mrConfig->Enc($daftarSemester[$i]['id']);
+         }
+         $this->ParseData("semester_list", $daftarSemester, "SMT_");
+         return true;
+      }
+   }	 
+
+   function Display() {
+      // cek apakah service sia is available
+      $dataDosen = $this->GetDataDosen();
+      DisplayBaseFull::Display("[ Logout ]");
+      
+   
+      if(empty($this->mServiceServer)) {
+         $serverUsed = $this->mrUserSession->GetProperty("ServerServiceAddress");
+         $this->mServiceServer = $serverUsed;
+		 }
+      else {
+         $serverUsed = $this->mServiceServer;
+	  }      
+      // parse data unit sia yang tersedia
+      // $isUnitAvailable = $this->ShowUnitList($serverUsed);
+      
+      if (false !== $dataDosen) {
+         
+         
+         $objDosenService = new DosenClientService($serverUsed, false, $this->mDosenNip, $this->mDosenProdiId);
+         
+         if(empty($this->mSemesterId)) {
+            if($procSemAktif = $this->GetDataSemesterAktif($objDosenService)) {
+               $semesterAktif = $objDosenService->GetProperty("SemesterProdiSemesterId");
+            } else
+               $semesterAktif = false;
+         } else {
+            $semesterAktif = $this->mSemesterId;
+         }
+         
+         // cek apakah module ini ditampilkan dari module pengelolaan nilai
+       
+			$this->AddVar('content', 'JUDUL', 'OBE Matakuliah Semester '.$this->mSemesterId);
+			$this->AddVar('keterangan_halaman', 'TYPE', 'MATAKULIAH');
+			$this->SetAttribute('data_matakuliah_diampu', 'visibility', 'visible');
+			//add ccp 7 maret 2017  untuk menampilkan pilihan semester di menu matakuliah diampu
+			if($this->ShowSemesterList($objDosenService, $semesterAktif)) {
+               $isDosenMengajar = true;
+            } else {
+               $isDosenMengajar = false;
+            }
+         
+			
+		if(empty($this->mServiceServer)) {
+		   $this->SetAttribute('data_matakuliah_diampu', 'visibility', 'hidden');
+		   $this->SetAttribute('data_dosen', 'visibility', 'hidden');
+		} else {
+		   if(false != $semesterAktif) {
+				if($isDosenMengajar) {
+					$nextThSemester = $objDosenService->GetProperty("TahunSemester") + 1;
+					$nmSemester = $objDosenService->GetProperty("NamaSemester") . ' ' .
+								  $objDosenService->GetProperty("TahunSemester") . '/' .
+								  $nextThSemester;
+					$dataDosen[0]['SEM'] = $nmSemester;
+				 
+					$this->SetAttribute('view_semester_list', 'visibility', 'hidden'); // add cecep 17 mei 2017
+					$this->SetAttribute('button_lihat', 'visibility', 'hidden'); // add cecep 17 mei 2017
+					$this->SetAttribute('data_dosen', 'visibility', 'visible');
+					$dataDosen[0]['TAHUN_SEMESTER'] = $semesterAktif;
+					$this->ParseData("data_dosen", $dataDosen, "DOSEN_");
+				 
+					// ambil data matakuliah yang diampu dosen yang bersangkutan pada semester yang dikehendaki
+					$this->SetAttribute('data_matakuliah_diampu', 'visibility', 'visible');
+					$objDosenService->SetProperty("SemesterProdiSemesterId", $semesterAktif);
+					$dataMatakuliahDiampu = $objDosenService->GetAllKelasDosenForSemesterObe();
+					// echo "line 264<pre>";print_r($dataMatakuliahDiampu);echo "</pre>";
+					if(false === $dataMatakuliahDiampu) {
+						$this->AddVar("data_matakuliah_diampu", "MATAKULIAH_DIAMPU_AVAILABLE", "NO");
+						$this->mErrorMessage = $this->mErrorMessage. $objDosenService->GetProperty("FaultMessages");
+						$this->ShowEmptyBox();
+					} else {
+						$this->AddVar("data_matakuliah_diampu", "MATAKULIAH_DIAMPU_AVAILABLE", "YES");
+						// tentukan URLDETAIL untuk kelas
+						for($i = 0; $i < count($dataMatakuliahDiampu); $i++) {
+						   $dataMatakuliahDiampu[$i]['id'] = $this->mrConfig->Enc($dataMatakuliahDiampu[$i]['id']);
+							
+							$total_bobot_cpmk = $dataMatakuliahDiampu[$i]['BOBOTCPMK1']+
+												$dataMatakuliahDiampu[$i]['BOBOTCPMK2']+
+												$dataMatakuliahDiampu[$i]['BOBOTCPMK3']+
+												$dataMatakuliahDiampu[$i]['BOBOTCPMK4']+
+												$dataMatakuliahDiampu[$i]['BOBOTCPMK5']+
+												$dataMatakuliahDiampu[$i]['BOBOTCPMK6'];
+							($total_bobot_cpmk!=0)?'':'onclick="alert("Are you sure you want to delete this item?"); return false;"';
+							$dataMatakuliahDiampu[$i]['TTLBOBOTCPMK'] = ($total_bobot_cpmk!=0)?'':'onclick="alert(\'Bobot CPMK Kelas Matakuliah belum ditetapkan oleh Program Studi !!\'); return false;"';
+							
+							$dataMatakuliahDiampu[$i]['url_input'] = $this->mrConfig->GetURL('history_nilai_obe', 'grade_management', 'view').'&smt='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['sem_kelas']).'&kelas=' . $dataMatakuliahDiampu[$i]['id'].'&pkk='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['prodi_kode_kelas']);
+							
+							$dataMatakuliahDiampu[$i]['URL_PERBAIKAN'] = $this->mrConfig->GetURL('history_nilai_obe', 'input_perbaikan', 'view').'&smt='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['sem_kelas']).'&kelas=' . $dataMatakuliahDiampu[$i]['id'].'&pkk='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['prodi_kode_kelas']);
+				
+							$dataMatakuliahDiampu[$i]['kelas'] = str_replace('-','',substr($dataMatakuliahDiampu[$i]['kelas'],-2,2));
+							
+							$dataMatakuliahDiampu[$i]['URL_PRESENSI'] = $this->mrConfig->GetURL('history_nilai_obe', 'grade_management', 'view').'&smt='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['sem_kelas']).'&kelas=' . $dataMatakuliahDiampu[$i]['id'].'&pkk='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['prodi_kode_kelas']).'&cpmk='.$this->mrConfig->Enc('harian');
+							$dataMatakuliahDiampu[$i]['URL_TUGAS_MANDIRI'] = $this->mrConfig->GetURL('history_nilai_obe', 'grade_management', 'view').'&smt='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['sem_kelas']).'&kelas=' . $dataMatakuliahDiampu[$i]['id'].'&pkk='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['prodi_kode_kelas']).'&cpmk='.$this->mrConfig->Enc('mandiri');
+							$dataMatakuliahDiampu[$i]['URL_TUGAS_KELOMPOK'] = $this->mrConfig->GetURL('history_nilai_obe', 'grade_management', 'view').'&smt='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['sem_kelas']).'&kelas=' . $dataMatakuliahDiampu[$i]['id'].'&pkk='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['prodi_kode_kelas']).'&cpmk='.$this->mrConfig->Enc('kelompok');
+							$dataMatakuliahDiampu[$i]['URL_PRESENTASI'] = $this->mrConfig->GetURL('history_nilai_obe', 'grade_management', 'view').'&smt='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['sem_kelas']).'&kelas=' . $dataMatakuliahDiampu[$i]['id'].'&pkk='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['prodi_kode_kelas']).'&cpmk='.$this->mrConfig->Enc('presentasi');
+							$dataMatakuliahDiampu[$i]['URL_QUIS'] = $this->mrConfig->GetURL('history_nilai_obe', 'grade_management', 'view').'&smt='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['sem_kelas']).'&kelas=' . $dataMatakuliahDiampu[$i]['id'].'&pkk='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['prodi_kode_kelas']).'&cpmk='.$this->mrConfig->Enc('terstruktur');
+							$dataMatakuliahDiampu[$i]['URL_PRATIKUM'] = $this->mrConfig->GetURL('history_nilai_obe', 'grade_management', 'view').'&smt='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['sem_kelas']).'&kelas=' . $dataMatakuliahDiampu[$i]['id'].'&pkk='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['prodi_kode_kelas']).'&cpmk='.$this->mrConfig->Enc('tambahan');
+							$dataMatakuliahDiampu[$i]['URL_UTS'] = $this->mrConfig->GetURL('history_nilai_obe', 'grade_management', 'view').'&smt='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['sem_kelas']).'&kelas=' . $dataMatakuliahDiampu[$i]['id'].'&pkk='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['prodi_kode_kelas']).'&cpmk='.$this->mrConfig->Enc('uts');
+							$dataMatakuliahDiampu[$i]['URL_UAS'] = $this->mrConfig->GetURL('history_nilai_obe', 'grade_management', 'view').'&smt='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['sem_kelas']).'&kelas=' . $dataMatakuliahDiampu[$i]['id'].'&pkk='.$this->mrConfig->Enc($dataMatakuliahDiampu[$i]['prodi_kode_kelas']).'&cpmk='.$this->mrConfig->Enc('uas');
+							$dataMatakuliahDiampu[$i]['CAPT_PRESENSI']= "Presensi";
+							$dataMatakuliahDiampu[$i]['CAPT_TUGAS_MANDIRI']= "Tugas Mandiri";
+							$dataMatakuliahDiampu[$i]['CAPT_TUGAS_KELOMPOK']= "Tugas Kelompok";
+							$dataMatakuliahDiampu[$i]['CAPT_PRESENTASI']= "Presentasi";
+							$dataMatakuliahDiampu[$i]['CAPT_QUIS']= "Quis";
+							$dataMatakuliahDiampu[$i]['CAPT_PRATIKUM']= "Pratikum";
+							$dataMatakuliahDiampu[$i]['CAPT_UTS']= "UTS";
+							$dataMatakuliahDiampu[$i]['CAPT_UAS']= "UAS";
+							$dataMatakuliahDiampu[$i]['DISPLAY_PRESENSI'] = (empty($dataMatakuliahDiampu[$i]['TTLBOBOT_PRESENSI']))? 'none':'none';
+							$dataMatakuliahDiampu[$i]['DISPLAY_TUGAS_MANDIRI'] = (empty($dataMatakuliahDiampu[$i]['TTLBOBOT_TUGAS_MANDIRI']))? 'none':'none';
+							$dataMatakuliahDiampu[$i]['DISPLAY_TUGAS_KELOMPOK'] = (empty($dataMatakuliahDiampu[$i]['TTLBOBOT_TUGAS_KELOMPOK']))? 'none':'none';
+							$dataMatakuliahDiampu[$i]['DISPLAY_PRESENTASI'] = (empty($dataMatakuliahDiampu[$i]['TTLBOBOT_PRESENTASI']))? 'none':'none';
+							$dataMatakuliahDiampu[$i]['DISPLAY_QUIS'] = (empty($dataMatakuliahDiampu[$i]['TTLBOBOT_QUIS']))? 'none':'none';
+							$dataMatakuliahDiampu[$i]['DISPLAY_PRATIKUM'] = (empty($dataMatakuliahDiampu[$i]['TTLBOBOT_PRATIKUM']))? 'none':'none';
+							$dataMatakuliahDiampu[$i]['DISPLAY_UTS'] = (empty($dataMatakuliahDiampu[$i]['TTLBOBOT_UTS']))? 'none':'none';
+							$dataMatakuliahDiampu[$i]['DISPLAY_UAS'] = (empty($dataMatakuliahDiampu[$i]['TTLBOBOT_UAS']))? 'none':'none';
+							
+						}
+						$this->ParseData("data_matakuliah_diampu_item", $dataMatakuliahDiampu, "MK_DIAMPU_", 1);
+					}
+				} else {
+					$this->SetAttribute('button_lihat', 'visibility', 'hidden');
+					$this->mErrorMessage = $objDosenService->GetProperty("ErrorMessages");
+					$this->ShowErrorBox("Anda tidak mengampu matakuliah di unit ini. ");
+				}
+			} else {
+			  $this->mErrorMessage = $this->mErrorMessage . $objDosenService->GetProperty("ErrorMessages");
+			  $this->ShowErrorBox("Data semester aktif tidak ditemukan. ");
+		   }
+		}
+         
+      } else {
+         $this->ShowErrorBox();
+      }
+      
+      $this->DisplayTemplate();
+   }
+}
+?>

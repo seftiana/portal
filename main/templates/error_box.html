@@ -1,0 +1,42 @@
+<!-- patTemplate:tmpl name="error_box" visibility="hidden" -->
+   <!-- patTemplate:tmpl name="page_type" type="condition" conditionvar="TYPE" -->
+      <!-- patTemplate:sub condition="empty" -->
+         <table class="table-forum" width="100%">				
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="popup" -->
+         <table class="table-forum" width="98%">           
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->   
+            <tr>
+               <td colspan="3" class="text-center">
+                  <!-- DIV untuk Warning message -->
+                  <div id="warning">
+                     <table>
+                        <tr>							
+                           <!-- patTemplate:tmpl name="error_type" type="condition" conditionvar="TYPE" -->
+                              <!-- patTemplate:sub condition="empty" -->
+                                 <td rowspan="2"><i class="fa fa-exclamation-triangle fa-4x text-danger" aria-hidden="true"></i></td>
+                                 <td><h3>PERINGATAN</h3></td>
+                              <!-- /patTemplate:sub -->
+                              <!-- patTemplate:sub condition="WARNING" -->
+                                 <td rowspan="2"><i class="fa fa-exclamation-triangle fa-4x  text-danger" aria-hidden="true"></i></td>
+                                 <td><h3>PERINGATAN</h3></td>
+                              <!-- /patTemplate:sub -->
+                              <!-- patTemplate:sub condition="INFO" -->
+                                 <td rowspan="2"><i class="fa fa-info-circle fa-4x" aria-hidden="true"></i>
+</td>
+                                 <td><h3>INFORMASI</h3></td>
+                              <!-- /patTemplate:sub -->               
+                              
+                           <!-- /patTemplate:tmpl -->
+                        </tr>
+                        <tr>
+                           <td>{ERROR_MESSAGE}{FIRST_TEXT}<font color="red"><b>{NEW_PASS}</b></font></td>
+                        </tr>
+                     </table>
+                  </div>
+                  <!-- end warning message -->	
+               </td>
+            </tr>
+         </table>   
+<!-- /patTemplate:tmpl -->

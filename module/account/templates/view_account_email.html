@@ -1,0 +1,66 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.hidden{display:none;}
+</style>
+   <h2>Account Email dan Hotspot Perbanas</h2>
+   <br>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   <div class="border border-secondary pt-0 px-2 pb-2">
+         <!-- patTemplate:tmpl name="mahasiswa" -->
+         <div class="table-responsive">
+            <table width="100%" class="table-list">
+               <tr> 
+                  <th>Nama</th>
+                  <td>{MHS_FULLNAME}</td>
+               </tr>
+               <tr> 
+                  <th>{LABEL_NIM}</th>
+                  <td>{MHS_NIU}</td>
+               </tr>
+               <tr> 
+                  <th>Program Studi</th>
+                  <td>{MHS_JENJANG_KODE} {MHS_INFO}</td>
+               </tr>
+               <tr>
+                  <th>Dosen Pembimbing Akademik</th>
+                  <td>{MHS_DOSEN_PA}</td>
+               </tr>
+            </table>
+         </div>
+         <!-- /patTemplate:tmpl --> <!-- end of mahasiswa -->         
+         <!-- patTemplate:tmpl name="data_container" type="condition" conditionvar="IS_EMPTY" -->
+            <!-- patTemplate:sub condition="YES" -->            
+               <!-- patTemplate:link name="empty_box" src="empty_box" / -->            
+            <!-- /patTemplate:sub -->            
+            <!-- patTemplate:sub condition="NO" -->            
+            <table class="table-common">
+            <tr>
+               <th>No</th>
+               <th>Akun Perbanas</th>
+               <th>Password</th>
+            </tr>
+            <!-- patTemplate:tmpl name="data_item" -->
+                  <tr class="{_CLASS}">
+                     <td align="center">1</td>
+                     <td align="">Email Perbanas : <b>{USERNAME}</b></td>
+                     <td align="center"><b>{PASSWORD}</b></td>
+                  </tr>
+		            <tr class="{_CLASS}">
+                     <td align="center">2</td>
+                     <td align="">User Elearning : <b>{ELEARNING}</b></td>
+                     <td align="center"><b>{PASSWORDEL}</b></td>
+                  </tr>
+            <!-- /patTemplate:tmpl -->
+      
+            </table>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </div>
+      <br>
+      <ol>
+         <li>Untuk login email perbanas <a href="https://accounts.google.com/ServiceLogin" target="_BLANK">https://accounts.google.com/ServiceLogin</a> atau <a href="https://gmail.com" target="_BLANK">https://gmail.com</a></li>
+         <li>Password diatas hanya dipakai satu kali saat pertama kali login. Untuk selanjutnya silahkan gunakan password baru anda.</li>
+         <li>Panduan Aktivasi atau Lupa Password Email Perbanas di link <a href="https://daring.perbanas.id/mod/forum/discuss.php?d=1#p1" target="_BLANK">https://daring.perbanas.id/mod/forum/discuss.php?d=1#p1</a></li>
+         <li>Panduan Aktivasi Elearning Perbanas di link <a href="https://daring.perbanas.id/mod/forum/discuss.php?d=3#p3" target="_BLANK">https://daring.perbanas.id/mod/forum/discuss.php?d=3#p3</a></li>
+     </ol>
+<!-- /patTemplate:tmpl --> <!-- end of content -->

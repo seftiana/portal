@@ -1,0 +1,127 @@
+<!-- patTemplate:tmpl name="document" -->
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml">
+      
+      <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		 <link href="{CONFIG_BASEADDRESS}styles/a-portal-default-loader.css" rel="stylesheet" type="text/css" title="Default" />
+    
+         <!-- patTemplate:tmpl name="head_addition" / -->
+      </head>
+      <body id="common"> 
+         
+<!-- patTemplate:tmpl name="content" -->
+<!-- patTemplate:tmpl name="data_peserta_kelas" type="condition" conditionvar="PESERTA_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->   
+         <table class="table-common" width="100%">
+         <tr>
+            <th rowspan="2">No</th>
+            <th rowspan="2">Nim</th>
+            <th rowspan="2">Nama</th>
+            <th colspan="{COLSPAN_NILAI_ASAL}">Nilai Asal</th>
+            <th colspan="{COLSPAN_NILAI_AKHIR}">Nilai Akhir</th>
+            <th rowspan="2">Nilai Absolut</th>
+            <th rowspan="2">Nilai Relatif</th>
+         </tr>
+         <tr>
+              <!-- patTemplate:tmpl name="dpna_jenis_asal" -->
+              	<th rowspan="{ROWSPAN2}">{JENIS_NAMA}</th>
+              	<!-- patTemplate:tmpl name="show_remidi" visibility="hidden" -->
+              		<th>Remedial</th>
+              	<!-- /patTemplate:tmpl -->
+              <!-- /patTemplate:tmpl -->
+              <!-- patTemplate:tmpl name="dpna_jenis_akhir" -->
+              	<th rowspan="{ROWSPAN2}">{JENIS_NAMA}</th>
+              <!-- /patTemplate:tmpl -->
+            </tr>
+         <!-- patTemplate:tmpl name="data_peserta_kelas_item" type="condition" conditionvar="ODDEVEN" -->
+         <!-- patTemplate:sub condition="ODD" -->
+            <tr>
+               <td width="6%" align="center">{PESERTA_NUMBER}</td>
+               <td width="10%">{PESERTA_MHS_NIM}</td>
+               <td width="44%">{PESERTA_MHS_NAMA}</td>
+               		<!-- patTemplate:tmpl name="nilai_dpna" -->
+                             <td>
+                             	<!-- <input type="text" id="nilai_dpna_{MHS_ID}_{DPNAJNSID}" name="nilai_dpna[{MHS_ID}][{DPNAJNSID}]" class="nilai_dpna" value="{KRSDTDPNANILAI}" size="5" maxlength="5" onkeyup="CalcRemedial({KLSDPNAPERSEN}, {DPNAJNSID},{MHS_ID});" /> -->
+                             	{KRSDTDPNANILAI}
+                             </td>
+                             <!-- patTemplate:tmpl name="show_data_remidi" visibility="hidden" -->
+                             	<td>
+                             	{NILAIREMIDI}
+                             	</td>
+                             <!-- /patTemplate:tmpl -->
+                             <!-- <patTemplate:tmpl name="show_input_remedial" visibility="hidden">
+                             		<patTemplate:tmpl name="show_col_null1" visibility="hidden">
+                             			<td></td>
+                             		</patTemplate:tmpl>
+                             		<td>
+                             			<input type="text" id="nilai_remedial_dpna_{MHS_ID}_{RMDDPNAJNSID}" name="nilai_remedial[{MHS_ID}][{RMDDPNAJNSID}]" class="nilai_dpna" value="{KRSDTDPNARMDNILAI}" size="5" maxlength="5" onkeyup="CalcRemedial({RMDKLSDPNAPERSEN}, {RMDDPNAJNSID},{MHS_ID});" />
+                             			<input type="hidden" name="nilai_remedial_id[{MHS_ID}][{RMDDPNAJNSID}]" value="{KRSDTDPNARMDID}" />
+                             		</td>
+                             	</patTemplate:tmpl>
+                             	<patTemplate:tmpl name="show_double_input_remedial" visibility="hidden">
+                             		<td>
+                             			{KRSDTDPNARMDNILAITERBAIK}
+                             			<input type="hidden" id="nilai_remedial_terbaik_{MHS_ID}_{RMDDPNAJNSID}" value="{KRSDTDPNARMDNILAITERBAIK}" />
+                             		</td>
+                             		<td>
+                             			<input type="text" id="nilai_remedial_terakhir_dpna_{MHS_ID}_{RMDDPNAJNSID}" name="nilai_remedial[{MHS_ID}][{RMDDPNAJNSID}]" class="nilai_dpna" value="{KRSDTDPNARMDNILAI}" size="5" maxlength="5" onkeyup="CalcRemedial({RMDKLSDPNAPERSEN}, {RMDDPNAJNSID},{MHS_ID});" />
+                             			<input type="hidden" name="nilai_remedial_id[{MHS_ID}][{RMDDPNAJNSID}]" value="{KRSDTDPNARMDID}" /><acronym title="{RMDSEMID}">&nbsp;i&nbsp;</acronym>
+                             		</td>
+                             	</patTemplate:tmpl>
+                             	<patTemplate:tmpl name="show_input_hidden_remedial" visibility="hidden">
+                             		<td></td>
+                             	</patTemplate:tmpl>
+                             	<patTemplate:tmpl name="show_input_hidden_remedial_double" visibility="hidden">
+                             		<td></td>
+                             		<td></td>
+                             	</patTemplate:tmpl> -->
+                       <!-- /patTemplate:tmpl -->
+                       <!-- patTemplate:tmpl name="dpna_skor" -->
+                             <td align="center">
+                             	<!-- <input type="text" id="skor_dpna_{DPNAJNSID}_{MHS_ID}" class="skor_dpna_{MHS_ID} readonly-text" value="{SKOR_DPNA}" size="5" maxlength="5" readonly="readonly" tabindex= "90{DPNAJNSID}" /> -->
+                             	{SKOR_DPNA}
+                             	</td>
+                       <!-- /patTemplate:tmpl -->
+                       <td>{PESERTA_STDDTNILAIDPNASKOR}</td>
+                       <td>{PESERTA_NILAI_RELATIF}</td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="EVEN" -->
+            <tr class="table-common-even">
+               <td width="6%" align="center">{PESERTA_NUMBER}</td>
+               <td width="10%">{PESERTA_MHS_NIM}</td>
+               <td width="44%">{PESERTA_MHS_NAMA}</td>
+               <!-- patTemplate:tmpl name="nilai_dpna" -->
+                             <td>
+                             	<!-- <input type="text" id="nilai_dpna_{MHS_ID}_{DPNAJNSID}" name="nilai_dpna[{MHS_ID}][{DPNAJNSID}]" class="nilai_dpna" value="{KRSDTDPNANILAI}" size="5" maxlength="5" onkeyup="CalcRemedial({KLSDPNAPERSEN}, {DPNAJNSID},{MHS_ID});" /> -->
+                             	{KRSDTDPNANILAI}
+                             </td>
+                             <!-- patTemplate:tmpl name="show_data_remidi" visibility="hidden" -->
+                             	<td>
+                             	{NILAIREMIDI}
+                             	</td>
+                             <!-- /patTemplate:tmpl -->
+                       <!-- /patTemplate:tmpl -->
+                       <!-- patTemplate:tmpl name="dpna_skor" -->
+                             <td align="center">
+                             	<!-- <input type="text" id="skor_dpna_{DPNAJNSID}_{MHS_ID}" class="skor_dpna_{MHS_ID} readonly-text" value="{SKOR_DPNA}" size="5" maxlength="5" readonly="readonly" tabindex= "90{DPNAJNSID}" /> -->
+                             	{SKOR_DPNA}
+                             	</td>
+                       <!-- /patTemplate:tmpl -->
+                       <td>{PESERTA_STDDTNILAIDPNASKOR}</td>
+                       <td>{PESERTA_NILAI_RELATIF}</td>
+            </tr>
+         <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl --><!--data_user_item-->
+      </table><br/>
+      
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->
+      </body>
+   </html>
+<!-- /patTemplate:tmpl -->

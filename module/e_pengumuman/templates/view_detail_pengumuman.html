@@ -1,0 +1,41 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2> {APPLICATION_MODULE} </h2>
+   <table class="table-form" width="100%"  border="0" cellspacing="1" cellpadding="4">
+		<tr>
+         <td width="26%" valign="top">Tanggal</td>
+         <td width="2%" valign="top">:</td>
+         <td width="72%">{PGMNTANGGAL}</td>
+      </tr>
+      <tr>
+         <td width="26%" valign="top">Kelas</td>
+         <td width="2%" valign="top">:</td>
+         <td width="72%">{KLSNAMA} - {MKKURNAMARESMI}</td>
+      </tr>
+      <tr>
+         <td valign="top">Judul Pengumuman </td>
+         <td valign="top">:</td>
+         <td>{PGMNJUDUL}</td>
+      </tr>
+      <tr>
+         <td valign="top">Isi Pengumuman </td>
+         <td valign="top">:</td>
+         <td>{PGMNISI}</td>
+      </tr>
+      <tr>
+         <td valign="top">File attachment </td>
+         <td valign="top">:</td>
+         <td><a href="{URL_FILE}" target="_blank">{PGMNNAMAFILE}</a>&nbsp;<img src="images/front-a.gif" /></td>
+      </tr>
+      <tr>
+         <td valign="top">Tanggal Batas </td>
+         <td valign="top">:</td>
+         <td>{PGMNTGLBTS}</td>
+      </tr>      
+      <tr>
+         <td valign="top">&nbsp;</td>
+         <td>&nbsp;</td>
+         <td><input class="input-disclaimer btn btn-info" name="kembali" type="button" id="kembali" value="Kembali" onClick="javascript:history.back(-1)">
+         </td>
+      </tr>
+   </table>
+<!-- /patTemplate:tmpl -->

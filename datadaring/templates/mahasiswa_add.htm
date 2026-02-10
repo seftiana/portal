@@ -1,0 +1,2557 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-add" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_editpage}
+<div {$editpage_chiddenattr} data-pageid="{$pageid}" data-container="editpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-9 col-md-offset-3"> 
+
+{BEGIN addheader}
+	<h2 {$addheader_hiddenattr} data-pageid="{$pageid}" data-brick="addheader" >{$pagetitlelabel mahasiswa add}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END addheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_message}
+<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="   col-md-6 col-md-offset-3"> 
+
+{BEGIN message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN back_button}
+		<button class="btn btn-sm btn-default" {$backbutton_attrs}>Back to list</button>
+{END back_button}
+{BEGIN view_page_button}
+	<button class="btn btn-sm btn-default" {$view_page_button_attrs}>View</button>
+{END view_page_button}
+{BEGIN edit_page_button}
+	<button class="btn btn-sm btn-default" {$edit_page_button_attrs}>Edit</button>
+{END edit_page_button}
+</div>
+</div>
+
+{END message_block}
+
+
+
+</div>
+{END container_message}
+
+
+
+
+
+
+
+</div>
+{END container_editpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$addfields_hiddenattr} data-pageid="{$pageid}" data-brick="addfields" class="form-horizontal" role="form">
+			{BEGIN mhsNiu_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNiu}" data-fieldname="mhsNiu" data-signal-error-for="mhsNiu{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNiu}">
+		{BEGIN mhsNiu_label}{$label mahasiswa mhsNiu}{END mhsNiu_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNiu_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNiu">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNiu}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNiu_fieldblock}
+
+			{BEGIN mhsNif_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNif}" data-fieldname="mhsNif" data-signal-error-for="mhsNif{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNif}">
+		{BEGIN mhsNif_label}{$label mahasiswa mhsNif}{END mhsNif_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNif_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNif">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNif}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNif_fieldblock}
+
+			{BEGIN mhsNama_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNama}" data-fieldname="mhsNama" data-signal-error-for="mhsNama{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNama}">
+		{BEGIN mhsNama_label}{$label mahasiswa mhsNama}{END mhsNama_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNama_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNama">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNama}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNama_fieldblock}
+
+			{BEGIN mhsAngkatan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsAngkatan}" data-fieldname="mhsAngkatan" data-signal-error-for="mhsAngkatan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsAngkatan}">
+		{BEGIN mhsAngkatan_label}{$label mahasiswa mhsAngkatan}{END mhsAngkatan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsAngkatan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsAngkatan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsAngkatan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsAngkatan_fieldblock}
+
+			{BEGIN mhsSemesterMasuk_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSemesterMasuk}" data-fieldname="mhsSemesterMasuk" data-signal-error-for="mhsSemesterMasuk{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSemesterMasuk}">
+		{BEGIN mhsSemesterMasuk_label}{$label mahasiswa mhsSemesterMasuk}{END mhsSemesterMasuk_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSemesterMasuk_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSemesterMasuk">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSemesterMasuk}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSemesterMasuk_fieldblock}
+
+			{BEGIN mhsPasswordRegistrasi_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsPasswordRegistrasi}" data-fieldname="mhsPasswordRegistrasi" data-signal-error-for="mhsPasswordRegistrasi{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsPasswordRegistrasi}">
+		{BEGIN mhsPasswordRegistrasi_label}{$label mahasiswa mhsPasswordRegistrasi}{END mhsPasswordRegistrasi_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsPasswordRegistrasi_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsPasswordRegistrasi">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsPasswordRegistrasi}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsPasswordRegistrasi_fieldblock}
+
+			{BEGIN mhsKurId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKurId}" data-fieldname="mhsKurId" data-signal-error-for="mhsKurId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKurId}">
+		{BEGIN mhsKurId_label}{$label mahasiswa mhsKurId}{END mhsKurId_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKurId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKurId">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKurId}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKurId_fieldblock}
+
+			{BEGIN mhsProdiKode_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsProdiKode}" data-fieldname="mhsProdiKode" data-signal-error-for="mhsProdiKode{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsProdiKode}">
+		{BEGIN mhsProdiKode_label}{$label mahasiswa mhsProdiKode}{END mhsProdiKode_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsProdiKode_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsProdiKode">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsProdiKode}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsProdiKode_fieldblock}
+
+			{BEGIN mhsProdiKodeUniv_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsProdiKodeUniv}" data-fieldname="mhsProdiKodeUniv" data-signal-error-for="mhsProdiKodeUniv{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsProdiKodeUniv}">
+		{BEGIN mhsProdiKodeUniv_label}{$label mahasiswa mhsProdiKodeUniv}{END mhsProdiKodeUniv_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsProdiKodeUniv_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsProdiKodeUniv">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsProdiKodeUniv}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsProdiKodeUniv_fieldblock}
+
+			{BEGIN mhsProdikonsentrasiId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsProdikonsentrasiId}" data-fieldname="mhsProdikonsentrasiId" data-signal-error-for="mhsProdikonsentrasiId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsProdikonsentrasiId}">
+		{BEGIN mhsProdikonsentrasiId_label}{$label mahasiswa mhsProdikonsentrasiId}{END mhsProdikonsentrasiId_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsProdikonsentrasiId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsProdikonsentrasiId">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsProdikonsentrasiId}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsProdikonsentrasiId_fieldblock}
+
+			{BEGIN mhsWktkulId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsWktkulId}" data-fieldname="mhsWktkulId" data-signal-error-for="mhsWktkulId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsWktkulId}">
+		{BEGIN mhsWktkulId_label}{$label mahasiswa mhsWktkulId}{END mhsWktkulId_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsWktkulId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsWktkulId">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsWktkulId}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsWktkulId_fieldblock}
+
+			{BEGIN mhsNomorTes_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNomorTes}" data-fieldname="mhsNomorTes" data-signal-error-for="mhsNomorTes{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNomorTes}">
+		{BEGIN mhsNomorTes_label}{$label mahasiswa mhsNomorTes}{END mhsNomorTes_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNomorTes_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNomorTes">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNomorTes}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNomorTes_fieldblock}
+
+			{BEGIN mhsTanggalTerdaftar_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTanggalTerdaftar}" data-fieldname="mhsTanggalTerdaftar" data-signal-error-for="mhsTanggalTerdaftar{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTanggalTerdaftar}">
+		{BEGIN mhsTanggalTerdaftar_label}{$label mahasiswa mhsTanggalTerdaftar}{END mhsTanggalTerdaftar_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTanggalTerdaftar_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTanggalTerdaftar">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTanggalTerdaftar}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTanggalTerdaftar_fieldblock}
+
+			{BEGIN mhsStatusMasukPt_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsStatusMasukPt}" data-fieldname="mhsStatusMasukPt" data-signal-error-for="mhsStatusMasukPt{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsStatusMasukPt}">
+		{BEGIN mhsStatusMasukPt_label}{$label mahasiswa mhsStatusMasukPt}{END mhsStatusMasukPt_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsStatusMasukPt_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsStatusMasukPt">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsStatusMasukPt}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsStatusMasukPt_fieldblock}
+
+			{BEGIN mhsIsAsing_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsIsAsing}" data-fieldname="mhsIsAsing" data-signal-error-for="mhsIsAsing{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsIsAsing}">
+		{BEGIN mhsIsAsing_label}{$label mahasiswa mhsIsAsing}{END mhsIsAsing_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsIsAsing_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsIsAsing">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsIsAsing}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsIsAsing_fieldblock}
+
+			{BEGIN mhsJumlahSksPindahan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsJumlahSksPindahan}" data-fieldname="mhsJumlahSksPindahan" data-signal-error-for="mhsJumlahSksPindahan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsJumlahSksPindahan}">
+		{BEGIN mhsJumlahSksPindahan_label}{$label mahasiswa mhsJumlahSksPindahan}{END mhsJumlahSksPindahan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsJumlahSksPindahan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsJumlahSksPindahan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsJumlahSksPindahan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsJumlahSksPindahan_fieldblock}
+
+			{BEGIN mhsKodePtPindahan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKodePtPindahan}" data-fieldname="mhsKodePtPindahan" data-signal-error-for="mhsKodePtPindahan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKodePtPindahan}">
+		{BEGIN mhsKodePtPindahan_label}{$label mahasiswa mhsKodePtPindahan}{END mhsKodePtPindahan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKodePtPindahan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKodePtPindahan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKodePtPindahan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKodePtPindahan_fieldblock}
+
+			{BEGIN mhsKodeProdiDiktiPindahan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKodeProdiDiktiPindahan}" data-fieldname="mhsKodeProdiDiktiPindahan" data-signal-error-for="mhsKodeProdiDiktiPindahan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKodeProdiDiktiPindahan}">
+		{BEGIN mhsKodeProdiDiktiPindahan_label}{$label mahasiswa mhsKodeProdiDiktiPindahan}{END mhsKodeProdiDiktiPindahan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKodeProdiDiktiPindahan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKodeProdiDiktiPindahan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKodeProdiDiktiPindahan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKodeProdiDiktiPindahan_fieldblock}
+
+			{BEGIN mhsNamaPtPindahan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNamaPtPindahan}" data-fieldname="mhsNamaPtPindahan" data-signal-error-for="mhsNamaPtPindahan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNamaPtPindahan}">
+		{BEGIN mhsNamaPtPindahan_label}{$label mahasiswa mhsNamaPtPindahan}{END mhsNamaPtPindahan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNamaPtPindahan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNamaPtPindahan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNamaPtPindahan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNamaPtPindahan_fieldblock}
+
+			{BEGIN mhsJjarKodeDiktiPindahan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsJjarKodeDiktiPindahan}" data-fieldname="mhsJjarKodeDiktiPindahan" data-signal-error-for="mhsJjarKodeDiktiPindahan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsJjarKodeDiktiPindahan}">
+		{BEGIN mhsJjarKodeDiktiPindahan_label}{$label mahasiswa mhsJjarKodeDiktiPindahan}{END mhsJjarKodeDiktiPindahan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsJjarKodeDiktiPindahan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsJjarKodeDiktiPindahan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsJjarKodeDiktiPindahan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsJjarKodeDiktiPindahan_fieldblock}
+
+			{BEGIN mhsTahunMasukPtPindahan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTahunMasukPtPindahan}" data-fieldname="mhsTahunMasukPtPindahan" data-signal-error-for="mhsTahunMasukPtPindahan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTahunMasukPtPindahan}">
+		{BEGIN mhsTahunMasukPtPindahan_label}{$label mahasiswa mhsTahunMasukPtPindahan}{END mhsTahunMasukPtPindahan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTahunMasukPtPindahan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTahunMasukPtPindahan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTahunMasukPtPindahan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTahunMasukPtPindahan_fieldblock}
+
+			{BEGIN mhsNimLama_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNimLama}" data-fieldname="mhsNimLama" data-signal-error-for="mhsNimLama{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNimLama}">
+		{BEGIN mhsNimLama_label}{$label mahasiswa mhsNimLama}{END mhsNimLama_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNimLama_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNimLama">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNimLama}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNimLama_fieldblock}
+
+			{BEGIN mhsJenisKelamin_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsJenisKelamin}" data-fieldname="mhsJenisKelamin" data-signal-error-for="mhsJenisKelamin{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsJenisKelamin}">
+		{BEGIN mhsJenisKelamin_label}{$label mahasiswa mhsJenisKelamin}{END mhsJenisKelamin_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsJenisKelamin_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsJenisKelamin">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsJenisKelamin}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsJenisKelamin_fieldblock}
+
+			{BEGIN mhsKotaKodeLahir_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKotaKodeLahir}" data-fieldname="mhsKotaKodeLahir" data-signal-error-for="mhsKotaKodeLahir{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKotaKodeLahir}">
+		{BEGIN mhsKotaKodeLahir_label}{$label mahasiswa mhsKotaKodeLahir}{END mhsKotaKodeLahir_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKotaKodeLahir_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKotaKodeLahir">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKotaKodeLahir}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKotaKodeLahir_fieldblock}
+
+			{BEGIN mhsTanggalLahir_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTanggalLahir}" data-fieldname="mhsTanggalLahir" data-signal-error-for="mhsTanggalLahir{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTanggalLahir}">
+		{BEGIN mhsTanggalLahir_label}{$label mahasiswa mhsTanggalLahir}{END mhsTanggalLahir_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTanggalLahir_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTanggalLahir">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTanggalLahir}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTanggalLahir_fieldblock}
+
+			{BEGIN mhsAgmrId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsAgmrId}" data-fieldname="mhsAgmrId" data-signal-error-for="mhsAgmrId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsAgmrId}">
+		{BEGIN mhsAgmrId_label}{$label mahasiswa mhsAgmrId}{END mhsAgmrId_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsAgmrId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsAgmrId">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsAgmrId}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsAgmrId_fieldblock}
+
+			{BEGIN mhsSmtaKode_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSmtaKode}" data-fieldname="mhsSmtaKode" data-signal-error-for="mhsSmtaKode{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSmtaKode}">
+		{BEGIN mhsSmtaKode_label}{$label mahasiswa mhsSmtaKode}{END mhsSmtaKode_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSmtaKode_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSmtaKode">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSmtaKode}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSmtaKode_fieldblock}
+
+			{BEGIN mhsTdftSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTdftSmta}" data-fieldname="mhsTdftSmta" data-signal-error-for="mhsTdftSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTdftSmta}">
+		{BEGIN mhsTdftSmta_label}{$label mahasiswa mhsTdftSmta}{END mhsTdftSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTdftSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTdftSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTdftSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTdftSmta_fieldblock}
+
+			{BEGIN mhsTahunTamatSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTahunTamatSmta}" data-fieldname="mhsTahunTamatSmta" data-signal-error-for="mhsTahunTamatSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTahunTamatSmta}">
+		{BEGIN mhsTahunTamatSmta_label}{$label mahasiswa mhsTahunTamatSmta}{END mhsTahunTamatSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTahunTamatSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTahunTamatSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTahunTamatSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTahunTamatSmta_fieldblock}
+
+			{BEGIN mhsTahunLulusSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTahunLulusSmta}" data-fieldname="mhsTahunLulusSmta" data-signal-error-for="mhsTahunLulusSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTahunLulusSmta}">
+		{BEGIN mhsTahunLulusSmta_label}{$label mahasiswa mhsTahunLulusSmta}{END mhsTahunLulusSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTahunLulusSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTahunLulusSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTahunLulusSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTahunLulusSmta_fieldblock}
+
+			{BEGIN mhsJursmtarKode_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsJursmtarKode}" data-fieldname="mhsJursmtarKode" data-signal-error-for="mhsJursmtarKode{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsJursmtarKode}">
+		{BEGIN mhsJursmtarKode_label}{$label mahasiswa mhsJursmtarKode}{END mhsJursmtarKode_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsJursmtarKode_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsJursmtarKode">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsJursmtarKode}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsJursmtarKode_fieldblock}
+
+			{BEGIN mhsAlamatSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsAlamatSmta}" data-fieldname="mhsAlamatSmta" data-signal-error-for="mhsAlamatSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsAlamatSmta}">
+		{BEGIN mhsAlamatSmta_label}{$label mahasiswa mhsAlamatSmta}{END mhsAlamatSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsAlamatSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsAlamatSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsAlamatSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsAlamatSmta_fieldblock}
+
+			{BEGIN mhsNoIjasahSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNoIjasahSmta}" data-fieldname="mhsNoIjasahSmta" data-signal-error-for="mhsNoIjasahSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNoIjasahSmta}">
+		{BEGIN mhsNoIjasahSmta_label}{$label mahasiswa mhsNoIjasahSmta}{END mhsNoIjasahSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNoIjasahSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNoIjasahSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNoIjasahSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNoIjasahSmta_fieldblock}
+
+			{BEGIN mhsIjasahSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsIjasahSmta}" data-fieldname="mhsIjasahSmta" data-signal-error-for="mhsIjasahSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsIjasahSmta}">
+		{BEGIN mhsIjasahSmta_label}{$label mahasiswa mhsIjasahSmta}{END mhsIjasahSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsIjasahSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsIjasahSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsIjasahSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsIjasahSmta_fieldblock}
+
+			{BEGIN mhsTanggalIjasahSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTanggalIjasahSmta}" data-fieldname="mhsTanggalIjasahSmta" data-signal-error-for="mhsTanggalIjasahSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTanggalIjasahSmta}">
+		{BEGIN mhsTanggalIjasahSmta_label}{$label mahasiswa mhsTanggalIjasahSmta}{END mhsTanggalIjasahSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTanggalIjasahSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTanggalIjasahSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTanggalIjasahSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTanggalIjasahSmta_fieldblock}
+
+			{BEGIN mhsNilaiUjianAkhirSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNilaiUjianAkhirSmta}" data-fieldname="mhsNilaiUjianAkhirSmta" data-signal-error-for="mhsNilaiUjianAkhirSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNilaiUjianAkhirSmta}">
+		{BEGIN mhsNilaiUjianAkhirSmta_label}{$label mahasiswa mhsNilaiUjianAkhirSmta}{END mhsNilaiUjianAkhirSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNilaiUjianAkhirSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNilaiUjianAkhirSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNilaiUjianAkhirSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNilaiUjianAkhirSmta_fieldblock}
+
+			{BEGIN mhsJumlahMpUjianAkhirSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsJumlahMpUjianAkhirSmta}" data-fieldname="mhsJumlahMpUjianAkhirSmta" data-signal-error-for="mhsJumlahMpUjianAkhirSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsJumlahMpUjianAkhirSmta}">
+		{BEGIN mhsJumlahMpUjianAkhirSmta_label}{$label mahasiswa mhsJumlahMpUjianAkhirSmta}{END mhsJumlahMpUjianAkhirSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsJumlahMpUjianAkhirSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsJumlahMpUjianAkhirSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsJumlahMpUjianAkhirSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsJumlahMpUjianAkhirSmta_fieldblock}
+
+			{BEGIN mhsStnkrId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsStnkrId}" data-fieldname="mhsStnkrId" data-signal-error-for="mhsStnkrId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsStnkrId}">
+		{BEGIN mhsStnkrId_label}{$label mahasiswa mhsStnkrId}{END mhsStnkrId_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsStnkrId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsStnkrId">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsStnkrId}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsStnkrId_fieldblock}
+
+			{BEGIN mhsJumlahSaudara_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsJumlahSaudara}" data-fieldname="mhsJumlahSaudara" data-signal-error-for="mhsJumlahSaudara{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsJumlahSaudara}">
+		{BEGIN mhsJumlahSaudara_label}{$label mahasiswa mhsJumlahSaudara}{END mhsJumlahSaudara_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsJumlahSaudara_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsJumlahSaudara">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsJumlahSaudara}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsJumlahSaudara_fieldblock}
+
+			{BEGIN mhsAlamatMhs_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsAlamatMhs}" data-fieldname="mhsAlamatMhs" data-signal-error-for="mhsAlamatMhs{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsAlamatMhs}">
+		{BEGIN mhsAlamatMhs_label}{$label mahasiswa mhsAlamatMhs}{END mhsAlamatMhs_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsAlamatMhs_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsAlamatMhs">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsAlamatMhs}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsAlamatMhs_fieldblock}
+
+			{BEGIN mhsAlamatTerakhir_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsAlamatTerakhir}" data-fieldname="mhsAlamatTerakhir" data-signal-error-for="mhsAlamatTerakhir{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsAlamatTerakhir}">
+		{BEGIN mhsAlamatTerakhir_label}{$label mahasiswa mhsAlamatTerakhir}{END mhsAlamatTerakhir_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsAlamatTerakhir_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsAlamatTerakhir">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsAlamatTerakhir}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsAlamatTerakhir_fieldblock}
+
+			{BEGIN mhsAlamatDiKotaIni_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsAlamatDiKotaIni}" data-fieldname="mhsAlamatDiKotaIni" data-signal-error-for="mhsAlamatDiKotaIni{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsAlamatDiKotaIni}">
+		{BEGIN mhsAlamatDiKotaIni_label}{$label mahasiswa mhsAlamatDiKotaIni}{END mhsAlamatDiKotaIni_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsAlamatDiKotaIni_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsAlamatDiKotaIni">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsAlamatDiKotaIni}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsAlamatDiKotaIni_fieldblock}
+
+			{BEGIN mhsKotaKode_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKotaKode}" data-fieldname="mhsKotaKode" data-signal-error-for="mhsKotaKode{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKotaKode}">
+		{BEGIN mhsKotaKode_label}{$label mahasiswa mhsKotaKode}{END mhsKotaKode_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKotaKode_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKotaKode">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKotaKode}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKotaKode_fieldblock}
+
+			{BEGIN mhsNgrKode_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNgrKode}" data-fieldname="mhsNgrKode" data-signal-error-for="mhsNgrKode{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNgrKode}">
+		{BEGIN mhsNgrKode_label}{$label mahasiswa mhsNgrKode}{END mhsNgrKode_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNgrKode_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNgrKode">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNgrKode}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNgrKode_fieldblock}
+
+			{BEGIN mhsKodePos_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKodePos}" data-fieldname="mhsKodePos" data-signal-error-for="mhsKodePos{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKodePos}">
+		{BEGIN mhsKodePos_label}{$label mahasiswa mhsKodePos}{END mhsKodePos_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKodePos_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKodePos">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKodePos}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKodePos_fieldblock}
+
+			{BEGIN mhsStatrumahId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsStatrumahId}" data-fieldname="mhsStatrumahId" data-signal-error-for="mhsStatrumahId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsStatrumahId}">
+		{BEGIN mhsStatrumahId_label}{$label mahasiswa mhsStatrumahId}{END mhsStatrumahId_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsStatrumahId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsStatrumahId">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsStatrumahId}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsStatrumahId_fieldblock}
+
+			{BEGIN mhsSbdnrId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSbdnrId}" data-fieldname="mhsSbdnrId" data-signal-error-for="mhsSbdnrId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSbdnrId}">
+		{BEGIN mhsSbdnrId_label}{$label mahasiswa mhsSbdnrId}{END mhsSbdnrId_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSbdnrId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSbdnrId">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSbdnrId}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSbdnrId_fieldblock}
+
+			{BEGIN mhsHubbiayaId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsHubbiayaId}" data-fieldname="mhsHubbiayaId" data-signal-error-for="mhsHubbiayaId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsHubbiayaId}">
+		{BEGIN mhsHubbiayaId_label}{$label mahasiswa mhsHubbiayaId}{END mhsHubbiayaId_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsHubbiayaId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsHubbiayaId">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsHubbiayaId}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsHubbiayaId_fieldblock}
+
+			{BEGIN mhsTempatKerja_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTempatKerja}" data-fieldname="mhsTempatKerja" data-signal-error-for="mhsTempatKerja{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTempatKerja}">
+		{BEGIN mhsTempatKerja_label}{$label mahasiswa mhsTempatKerja}{END mhsTempatKerja_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTempatKerja_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTempatKerja">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTempatKerja}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTempatKerja_fieldblock}
+
+			{BEGIN mhsAlamatTempatKerja_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsAlamatTempatKerja}" data-fieldname="mhsAlamatTempatKerja" data-signal-error-for="mhsAlamatTempatKerja{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsAlamatTempatKerja}">
+		{BEGIN mhsAlamatTempatKerja_label}{$label mahasiswa mhsAlamatTempatKerja}{END mhsAlamatTempatKerja_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsAlamatTempatKerja_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsAlamatTempatKerja">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsAlamatTempatKerja}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsAlamatTempatKerja_fieldblock}
+
+			{BEGIN mhsNoTelpTempatKerja_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNoTelpTempatKerja}" data-fieldname="mhsNoTelpTempatKerja" data-signal-error-for="mhsNoTelpTempatKerja{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNoTelpTempatKerja}">
+		{BEGIN mhsNoTelpTempatKerja_label}{$label mahasiswa mhsNoTelpTempatKerja}{END mhsNoTelpTempatKerja_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNoTelpTempatKerja_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNoTelpTempatKerja">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNoTelpTempatKerja}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNoTelpTempatKerja_fieldblock}
+
+			{BEGIN mhsBeasiswa_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsBeasiswa}" data-fieldname="mhsBeasiswa" data-signal-error-for="mhsBeasiswa{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsBeasiswa}">
+		{BEGIN mhsBeasiswa_label}{$label mahasiswa mhsBeasiswa}{END mhsBeasiswa_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsBeasiswa_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsBeasiswa">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsBeasiswa}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsBeasiswa_fieldblock}
+
+			{BEGIN mhsWnrId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsWnrId}" data-fieldname="mhsWnrId" data-signal-error-for="mhsWnrId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsWnrId}">
+		{BEGIN mhsWnrId_label}{$label mahasiswa mhsWnrId}{END mhsWnrId_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsWnrId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsWnrId">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsWnrId}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsWnrId_fieldblock}
+
+			{BEGIN mhsJlrrKode_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsJlrrKode}" data-fieldname="mhsJlrrKode" data-signal-error-for="mhsJlrrKode{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsJlrrKode}">
+		{BEGIN mhsJlrrKode_label}{$label mahasiswa mhsJlrrKode}{END mhsJlrrKode_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsJlrrKode_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsJlrrKode">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsJlrrKode}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsJlrrKode_fieldblock}
+
+			{BEGIN mhsNoAskes_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNoAskes}" data-fieldname="mhsNoAskes" data-signal-error-for="mhsNoAskes{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNoAskes}">
+		{BEGIN mhsNoAskes_label}{$label mahasiswa mhsNoAskes}{END mhsNoAskes_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNoAskes_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNoAskes">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNoAskes}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNoAskes_fieldblock}
+
+			{BEGIN mhsNoTelp_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNoTelp}" data-fieldname="mhsNoTelp" data-signal-error-for="mhsNoTelp{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNoTelp}">
+		{BEGIN mhsNoTelp_label}{$label mahasiswa mhsNoTelp}{END mhsNoTelp_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNoTelp_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNoTelp">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNoTelp}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNoTelp_fieldblock}
+
+			{BEGIN mhsNoHp_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNoHp}" data-fieldname="mhsNoHp" data-signal-error-for="mhsNoHp{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNoHp}">
+		{BEGIN mhsNoHp_label}{$label mahasiswa mhsNoHp}{END mhsNoHp_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNoHp_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNoHp">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNoHp}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNoHp_fieldblock}
+
+			{BEGIN mhsEmail_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsEmail}" data-fieldname="mhsEmail" data-signal-error-for="mhsEmail{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsEmail}">
+		{BEGIN mhsEmail_label}{$label mahasiswa mhsEmail}{END mhsEmail_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsEmail_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsEmail">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsEmail}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsEmail_fieldblock}
+
+			{BEGIN mhsHomepage_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsHomepage}" data-fieldname="mhsHomepage" data-signal-error-for="mhsHomepage{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsHomepage}">
+		{BEGIN mhsHomepage_label}{$label mahasiswa mhsHomepage}{END mhsHomepage_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsHomepage_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsHomepage">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsHomepage}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsHomepage_fieldblock}
+
+			{BEGIN mhsFoto_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsFoto}" data-fieldname="mhsFoto" data-signal-error-for="mhsFoto{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsFoto}">
+		{BEGIN mhsFoto_label}{$label mahasiswa mhsFoto}{END mhsFoto_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsFoto_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsFoto">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsFoto}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsFoto_fieldblock}
+
+			{BEGIN mhsStakmhsrKode_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsStakmhsrKode}" data-fieldname="mhsStakmhsrKode" data-signal-error-for="mhsStakmhsrKode{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsStakmhsrKode}">
+		{BEGIN mhsStakmhsrKode_label}{$label mahasiswa mhsStakmhsrKode}{END mhsStakmhsrKode_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsStakmhsrKode_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsStakmhsrKode">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsStakmhsrKode}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsStakmhsrKode_fieldblock}
+
+			{BEGIN mhsDsnPegNipPembimbingAkademik_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsDsnPegNipPembimbingAkademik}" data-fieldname="mhsDsnPegNipPembimbingAkademik" data-signal-error-for="mhsDsnPegNipPembimbingAkademik{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsDsnPegNipPembimbingAkademik}">
+		{BEGIN mhsDsnPegNipPembimbingAkademik_label}{$label mahasiswa mhsDsnPegNipPembimbingAkademik}{END mhsDsnPegNipPembimbingAkademik_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsDsnPegNipPembimbingAkademik_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsDsnPegNipPembimbingAkademik">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsDsnPegNipPembimbingAkademik}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsDsnPegNipPembimbingAkademik_fieldblock}
+
+			{BEGIN mhsSksWajib_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSksWajib}" data-fieldname="mhsSksWajib" data-signal-error-for="mhsSksWajib{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSksWajib}">
+		{BEGIN mhsSksWajib_label}{$label mahasiswa mhsSksWajib}{END mhsSksWajib_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSksWajib_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSksWajib">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSksWajib}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSksWajib_fieldblock}
+
+			{BEGIN mhsSksPilihan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSksPilihan}" data-fieldname="mhsSksPilihan" data-signal-error-for="mhsSksPilihan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSksPilihan}">
+		{BEGIN mhsSksPilihan_label}{$label mahasiswa mhsSksPilihan}{END mhsSksPilihan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSksPilihan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSksPilihan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSksPilihan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSksPilihan_fieldblock}
+
+			{BEGIN mhsSksA_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSksA}" data-fieldname="mhsSksA" data-signal-error-for="mhsSksA{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSksA}">
+		{BEGIN mhsSksA_label}{$label mahasiswa mhsSksA}{END mhsSksA_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSksA_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSksA">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSksA}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSksA_fieldblock}
+
+			{BEGIN mhsSksB_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSksB}" data-fieldname="mhsSksB" data-signal-error-for="mhsSksB{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSksB}">
+		{BEGIN mhsSksB_label}{$label mahasiswa mhsSksB}{END mhsSksB_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSksB_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSksB">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSksB}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSksB_fieldblock}
+
+			{BEGIN mhsSksC_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSksC}" data-fieldname="mhsSksC" data-signal-error-for="mhsSksC{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSksC}">
+		{BEGIN mhsSksC_label}{$label mahasiswa mhsSksC}{END mhsSksC_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSksC_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSksC">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSksC}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSksC_fieldblock}
+
+			{BEGIN mhsSksD_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSksD}" data-fieldname="mhsSksD" data-signal-error-for="mhsSksD{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSksD}">
+		{BEGIN mhsSksD_label}{$label mahasiswa mhsSksD}{END mhsSksD_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSksD_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSksD">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSksD}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSksD_fieldblock}
+
+			{BEGIN mhsSksE_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSksE}" data-fieldname="mhsSksE" data-signal-error-for="mhsSksE{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSksE}">
+		{BEGIN mhsSksE_label}{$label mahasiswa mhsSksE}{END mhsSksE_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSksE_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSksE">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSksE}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSksE_fieldblock}
+
+			{BEGIN mhsSksTranskrip_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSksTranskrip}" data-fieldname="mhsSksTranskrip" data-signal-error-for="mhsSksTranskrip{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSksTranskrip}">
+		{BEGIN mhsSksTranskrip_label}{$label mahasiswa mhsSksTranskrip}{END mhsSksTranskrip_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSksTranskrip_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSksTranskrip">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSksTranskrip}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSksTranskrip_fieldblock}
+
+			{BEGIN mhsBobotTotalTranskrip_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsBobotTotalTranskrip}" data-fieldname="mhsBobotTotalTranskrip" data-signal-error-for="mhsBobotTotalTranskrip{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsBobotTotalTranskrip}">
+		{BEGIN mhsBobotTotalTranskrip_label}{$label mahasiswa mhsBobotTotalTranskrip}{END mhsBobotTotalTranskrip_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsBobotTotalTranskrip_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsBobotTotalTranskrip">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsBobotTotalTranskrip}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsBobotTotalTranskrip_fieldblock}
+
+			{BEGIN mhsIpkTranskrip_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsIpkTranskrip}" data-fieldname="mhsIpkTranskrip" data-signal-error-for="mhsIpkTranskrip{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsIpkTranskrip}">
+		{BEGIN mhsIpkTranskrip_label}{$label mahasiswa mhsIpkTranskrip}{END mhsIpkTranskrip_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsIpkTranskrip_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsIpkTranskrip">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsIpkTranskrip}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsIpkTranskrip_fieldblock}
+
+			{BEGIN mhsLamaStudiSemester_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsLamaStudiSemester}" data-fieldname="mhsLamaStudiSemester" data-signal-error-for="mhsLamaStudiSemester{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsLamaStudiSemester}">
+		{BEGIN mhsLamaStudiSemester_label}{$label mahasiswa mhsLamaStudiSemester}{END mhsLamaStudiSemester_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsLamaStudiSemester_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsLamaStudiSemester">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsLamaStudiSemester}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsLamaStudiSemester_fieldblock}
+
+			{BEGIN mhsLamaStudiBulan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsLamaStudiBulan}" data-fieldname="mhsLamaStudiBulan" data-signal-error-for="mhsLamaStudiBulan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsLamaStudiBulan}">
+		{BEGIN mhsLamaStudiBulan_label}{$label mahasiswa mhsLamaStudiBulan}{END mhsLamaStudiBulan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsLamaStudiBulan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsLamaStudiBulan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsLamaStudiBulan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsLamaStudiBulan_fieldblock}
+
+			{BEGIN mhsIsTranskripAkhirDiarsipkan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsIsTranskripAkhirDiarsipkan}" data-fieldname="mhsIsTranskripAkhirDiarsipkan" data-signal-error-for="mhsIsTranskripAkhirDiarsipkan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsIsTranskripAkhirDiarsipkan}">
+		{BEGIN mhsIsTranskripAkhirDiarsipkan_label}{$label mahasiswa mhsIsTranskripAkhirDiarsipkan}{END mhsIsTranskripAkhirDiarsipkan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsIsTranskripAkhirDiarsipkan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsIsTranskripAkhirDiarsipkan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsIsTranskripAkhirDiarsipkan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsIsTranskripAkhirDiarsipkan_fieldblock}
+
+			{BEGIN mhsTanggalTranskrip_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTanggalTranskrip}" data-fieldname="mhsTanggalTranskrip" data-signal-error-for="mhsTanggalTranskrip{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTanggalTranskrip}">
+		{BEGIN mhsTanggalTranskrip_label}{$label mahasiswa mhsTanggalTranskrip}{END mhsTanggalTranskrip_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTanggalTranskrip_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTanggalTranskrip">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTanggalTranskrip}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTanggalTranskrip_fieldblock}
+
+			{BEGIN mhsNomorTranskrip_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNomorTranskrip}" data-fieldname="mhsNomorTranskrip" data-signal-error-for="mhsNomorTranskrip{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNomorTranskrip}">
+		{BEGIN mhsNomorTranskrip_label}{$label mahasiswa mhsNomorTranskrip}{END mhsNomorTranskrip_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNomorTranskrip_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNomorTranskrip">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNomorTranskrip}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNomorTranskrip_fieldblock}
+
+			{BEGIN mhsTempatLahirTranskrip_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTempatLahirTranskrip}" data-fieldname="mhsTempatLahirTranskrip" data-signal-error-for="mhsTempatLahirTranskrip{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTempatLahirTranskrip}">
+		{BEGIN mhsTempatLahirTranskrip_label}{$label mahasiswa mhsTempatLahirTranskrip}{END mhsTempatLahirTranskrip_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTempatLahirTranskrip_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTempatLahirTranskrip">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTempatLahirTranskrip}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTempatLahirTranskrip_fieldblock}
+
+			{BEGIN mhsTanggalLahirTranskrip_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTanggalLahirTranskrip}" data-fieldname="mhsTanggalLahirTranskrip" data-signal-error-for="mhsTanggalLahirTranskrip{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTanggalLahirTranskrip}">
+		{BEGIN mhsTanggalLahirTranskrip_label}{$label mahasiswa mhsTanggalLahirTranskrip}{END mhsTanggalLahirTranskrip_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTanggalLahirTranskrip_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTanggalLahirTranskrip">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTanggalLahirTranskrip}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTanggalLahirTranskrip_fieldblock}
+
+			{BEGIN mhsMetodeBuildTranskrip_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsMetodeBuildTranskrip}" data-fieldname="mhsMetodeBuildTranskrip" data-signal-error-for="mhsMetodeBuildTranskrip{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsMetodeBuildTranskrip}">
+		{BEGIN mhsMetodeBuildTranskrip_label}{$label mahasiswa mhsMetodeBuildTranskrip}{END mhsMetodeBuildTranskrip_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsMetodeBuildTranskrip_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsMetodeBuildTranskrip">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsMetodeBuildTranskrip}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsMetodeBuildTranskrip_fieldblock}
+
+			{BEGIN mhsMetodePenyetaraanTranskrip_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsMetodePenyetaraanTranskrip}" data-fieldname="mhsMetodePenyetaraanTranskrip" data-signal-error-for="mhsMetodePenyetaraanTranskrip{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsMetodePenyetaraanTranskrip}">
+		{BEGIN mhsMetodePenyetaraanTranskrip_label}{$label mahasiswa mhsMetodePenyetaraanTranskrip}{END mhsMetodePenyetaraanTranskrip_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsMetodePenyetaraanTranskrip_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsMetodePenyetaraanTranskrip">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsMetodePenyetaraanTranskrip}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsMetodePenyetaraanTranskrip_fieldblock}
+
+			{BEGIN mhsTahunKurikulumPenyetaraanTranskrip_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTahunKurikulumPenyetaraanTranskrip}" data-fieldname="mhsTahunKurikulumPenyetaraanTranskrip" data-signal-error-for="mhsTahunKurikulumPenyetaraanTranskrip{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTahunKurikulumPenyetaraanTranskrip}">
+		{BEGIN mhsTahunKurikulumPenyetaraanTranskrip_label}{$label mahasiswa mhsTahunKurikulumPenyetaraanTranskrip}{END mhsTahunKurikulumPenyetaraanTranskrip_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTahunKurikulumPenyetaraanTranskrip_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTahunKurikulumPenyetaraanTranskrip">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTahunKurikulumPenyetaraanTranskrip}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTahunKurikulumPenyetaraanTranskrip_fieldblock}
+
+			{BEGIN mhsTanggalLulus_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTanggalLulus}" data-fieldname="mhsTanggalLulus" data-signal-error-for="mhsTanggalLulus{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTanggalLulus}">
+		{BEGIN mhsTanggalLulus_label}{$label mahasiswa mhsTanggalLulus}{END mhsTanggalLulus_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTanggalLulus_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTanggalLulus">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTanggalLulus}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTanggalLulus_fieldblock}
+
+			{BEGIN mhsNoSuratYudisium_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNoSuratYudisium}" data-fieldname="mhsNoSuratYudisium" data-signal-error-for="mhsNoSuratYudisium{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNoSuratYudisium}">
+		{BEGIN mhsNoSuratYudisium_label}{$label mahasiswa mhsNoSuratYudisium}{END mhsNoSuratYudisium_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNoSuratYudisium_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNoSuratYudisium">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNoSuratYudisium}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNoSuratYudisium_fieldblock}
+
+			{BEGIN mhsTanggalSuratYudisium_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTanggalSuratYudisium}" data-fieldname="mhsTanggalSuratYudisium" data-signal-error-for="mhsTanggalSuratYudisium{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTanggalSuratYudisium}">
+		{BEGIN mhsTanggalSuratYudisium_label}{$label mahasiswa mhsTanggalSuratYudisium}{END mhsTanggalSuratYudisium_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTanggalSuratYudisium_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTanggalSuratYudisium">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTanggalSuratYudisium}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTanggalSuratYudisium_fieldblock}
+
+			{BEGIN mhsSemIdLulus_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSemIdLulus}" data-fieldname="mhsSemIdLulus" data-signal-error-for="mhsSemIdLulus{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSemIdLulus}">
+		{BEGIN mhsSemIdLulus_label}{$label mahasiswa mhsSemIdLulus}{END mhsSemIdLulus_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSemIdLulus_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSemIdLulus">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSemIdLulus}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSemIdLulus_fieldblock}
+
+			{BEGIN mhsTanggalIjasah_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTanggalIjasah}" data-fieldname="mhsTanggalIjasah" data-signal-error-for="mhsTanggalIjasah{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTanggalIjasah}">
+		{BEGIN mhsTanggalIjasah_label}{$label mahasiswa mhsTanggalIjasah}{END mhsTanggalIjasah_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTanggalIjasah_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTanggalIjasah">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTanggalIjasah}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTanggalIjasah_fieldblock}
+
+			{BEGIN mhsNoIjasah_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNoIjasah}" data-fieldname="mhsNoIjasah" data-signal-error-for="mhsNoIjasah{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNoIjasah}">
+		{BEGIN mhsNoIjasah_label}{$label mahasiswa mhsNoIjasah}{END mhsNoIjasah_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNoIjasah_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNoIjasah">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNoIjasah}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNoIjasah_fieldblock}
+
+			{BEGIN mhsKodeIjasah_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKodeIjasah}" data-fieldname="mhsKodeIjasah" data-signal-error-for="mhsKodeIjasah{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKodeIjasah}">
+		{BEGIN mhsKodeIjasah_label}{$label mahasiswa mhsKodeIjasah}{END mhsKodeIjasah_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKodeIjasah_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKodeIjasah">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKodeIjasah}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKodeIjasah_fieldblock}
+
+			{BEGIN mhsPinIjasah_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsPinIjasah}" data-fieldname="mhsPinIjasah" data-signal-error-for="mhsPinIjasah{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsPinIjasah}">
+		{BEGIN mhsPinIjasah_label}{$label mahasiswa mhsPinIjasah}{END mhsPinIjasah_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsPinIjasah_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsPinIjasah">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsPinIjasah}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsPinIjasah_fieldblock}
+
+			{BEGIN mhsPrlsrId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsPrlsrId}" data-fieldname="mhsPrlsrId" data-signal-error-for="mhsPrlsrId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsPrlsrId}">
+		{BEGIN mhsPrlsrId_label}{$label mahasiswa mhsPrlsrId}{END mhsPrlsrId_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsPrlsrId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsPrlsrId">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsPrlsrId}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsPrlsrId_fieldblock}
+
+			{BEGIN mhsPrlsrNama_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsPrlsrNama}" data-fieldname="mhsPrlsrNama" data-signal-error-for="mhsPrlsrNama{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsPrlsrNama}">
+		{BEGIN mhsPrlsrNama_label}{$label mahasiswa mhsPrlsrNama}{END mhsPrlsrNama_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsPrlsrNama_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsPrlsrNama">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsPrlsrNama}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsPrlsrNama_fieldblock}
+
+			{BEGIN mhsPrlsrNamaAsing_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsPrlsrNamaAsing}" data-fieldname="mhsPrlsrNamaAsing" data-signal-error-for="mhsPrlsrNamaAsing{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsPrlsrNamaAsing}">
+		{BEGIN mhsPrlsrNamaAsing_label}{$label mahasiswa mhsPrlsrNamaAsing}{END mhsPrlsrNamaAsing_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsPrlsrNamaAsing_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsPrlsrNamaAsing">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsPrlsrNamaAsing}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsPrlsrNamaAsing_fieldblock}
+
+			{BEGIN mhsWsdId_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsWsdId}" data-fieldname="mhsWsdId" data-signal-error-for="mhsWsdId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsWsdId}">
+		{BEGIN mhsWsdId_label}{$label mahasiswa mhsWsdId}{END mhsWsdId_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsWsdId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsWsdId">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsWsdId}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsWsdId_fieldblock}
+
+			{BEGIN mhsTanggalPengubahan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsTanggalPengubahan}" data-fieldname="mhsTanggalPengubahan" data-signal-error-for="mhsTanggalPengubahan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsTanggalPengubahan}">
+		{BEGIN mhsTanggalPengubahan_label}{$label mahasiswa mhsTanggalPengubahan}{END mhsTanggalPengubahan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsTanggalPengubahan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsTanggalPengubahan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsTanggalPengubahan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsTanggalPengubahan_fieldblock}
+
+			{BEGIN mhsUnitPengubah_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsUnitPengubah}" data-fieldname="mhsUnitPengubah" data-signal-error-for="mhsUnitPengubah{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsUnitPengubah}">
+		{BEGIN mhsUnitPengubah_label}{$label mahasiswa mhsUnitPengubah}{END mhsUnitPengubah_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsUnitPengubah_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsUnitPengubah">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsUnitPengubah}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsUnitPengubah_fieldblock}
+
+			{BEGIN mhsUserPengubah_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsUserPengubah}" data-fieldname="mhsUserPengubah" data-signal-error-for="mhsUserPengubah{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsUserPengubah}">
+		{BEGIN mhsUserPengubah_label}{$label mahasiswa mhsUserPengubah}{END mhsUserPengubah_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsUserPengubah_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsUserPengubah">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsUserPengubah}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsUserPengubah_fieldblock}
+
+			{BEGIN mhsProdiGelarKelulusan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsProdiGelarKelulusan}" data-fieldname="mhsProdiGelarKelulusan" data-signal-error-for="mhsProdiGelarKelulusan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsProdiGelarKelulusan}">
+		{BEGIN mhsProdiGelarKelulusan_label}{$label mahasiswa mhsProdiGelarKelulusan}{END mhsProdiGelarKelulusan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsProdiGelarKelulusan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsProdiGelarKelulusan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsProdiGelarKelulusan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsProdiGelarKelulusan_fieldblock}
+
+			{BEGIN mhsSemIdMulai_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSemIdMulai}" data-fieldname="mhsSemIdMulai" data-signal-error-for="mhsSemIdMulai{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSemIdMulai}">
+		{BEGIN mhsSemIdMulai_label}{$label mahasiswa mhsSemIdMulai}{END mhsSemIdMulai_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSemIdMulai_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSemIdMulai">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSemIdMulai}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSemIdMulai_fieldblock}
+
+			{BEGIN mhsBiayaStudi_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsBiayaStudi}" data-fieldname="mhsBiayaStudi" data-signal-error-for="mhsBiayaStudi{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsBiayaStudi}">
+		{BEGIN mhsBiayaStudi_label}{$label mahasiswa mhsBiayaStudi}{END mhsBiayaStudi_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsBiayaStudi_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsBiayaStudi">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsBiayaStudi}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsBiayaStudi_fieldblock}
+
+			{BEGIN mhsPekerjaan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsPekerjaan}" data-fieldname="mhsPekerjaan" data-signal-error-for="mhsPekerjaan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsPekerjaan}">
+		{BEGIN mhsPekerjaan_label}{$label mahasiswa mhsPekerjaan}{END mhsPekerjaan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsPekerjaan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsPekerjaan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsPekerjaan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsPekerjaan_fieldblock}
+
+			{BEGIN mhsPTKerja_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsPTKerja}" data-fieldname="mhsPTKerja" data-signal-error-for="mhsPTKerja{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsPTKerja}">
+		{BEGIN mhsPTKerja_label}{$label mahasiswa mhsPTKerja}{END mhsPTKerja_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsPTKerja_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsPTKerja">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsPTKerja}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsPTKerja_fieldblock}
+
+			{BEGIN mhsPSKerja_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsPSKerja}" data-fieldname="mhsPSKerja" data-signal-error-for="mhsPSKerja{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsPSKerja}">
+		{BEGIN mhsPSKerja_label}{$label mahasiswa mhsPSKerja}{END mhsPSKerja_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsPSKerja_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsPSKerja">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsPSKerja}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsPSKerja_fieldblock}
+
+			{BEGIN mhsNIDNPromotor_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNIDNPromotor}" data-fieldname="mhsNIDNPromotor" data-signal-error-for="mhsNIDNPromotor{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNIDNPromotor}">
+		{BEGIN mhsNIDNPromotor_label}{$label mahasiswa mhsNIDNPromotor}{END mhsNIDNPromotor_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNIDNPromotor_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNIDNPromotor">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNIDNPromotor}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNIDNPromotor_fieldblock}
+
+			{BEGIN mhsKoPromotor1_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKoPromotor1}" data-fieldname="mhsKoPromotor1" data-signal-error-for="mhsKoPromotor1{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKoPromotor1}">
+		{BEGIN mhsKoPromotor1_label}{$label mahasiswa mhsKoPromotor1}{END mhsKoPromotor1_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKoPromotor1_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKoPromotor1">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKoPromotor1}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKoPromotor1_fieldblock}
+
+			{BEGIN mhsKoPromotor2_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKoPromotor2}" data-fieldname="mhsKoPromotor2" data-signal-error-for="mhsKoPromotor2{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKoPromotor2}">
+		{BEGIN mhsKoPromotor2_label}{$label mahasiswa mhsKoPromotor2}{END mhsKoPromotor2_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKoPromotor2_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKoPromotor2">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKoPromotor2}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKoPromotor2_fieldblock}
+
+			{BEGIN mhsKoPromotor3_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKoPromotor3}" data-fieldname="mhsKoPromotor3" data-signal-error-for="mhsKoPromotor3{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKoPromotor3}">
+		{BEGIN mhsKoPromotor3_label}{$label mahasiswa mhsKoPromotor3}{END mhsKoPromotor3_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKoPromotor3_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKoPromotor3">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKoPromotor3}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKoPromotor3_fieldblock}
+
+			{BEGIN mhsKoPromotor4_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKoPromotor4}" data-fieldname="mhsKoPromotor4" data-signal-error-for="mhsKoPromotor4{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKoPromotor4}">
+		{BEGIN mhsKoPromotor4_label}{$label mahasiswa mhsKoPromotor4}{END mhsKoPromotor4_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKoPromotor4_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKoPromotor4">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKoPromotor4}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKoPromotor4_fieldblock}
+
+			{BEGIN mhsProdiAsal_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsProdiAsal}" data-fieldname="mhsProdiAsal" data-signal-error-for="mhsProdiAsal{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsProdiAsal}">
+		{BEGIN mhsProdiAsal_label}{$label mahasiswa mhsProdiAsal}{END mhsProdiAsal_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsProdiAsal_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsProdiAsal">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsProdiAsal}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsProdiAsal_fieldblock}
+
+			{BEGIN mhsDiktiShift_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsDiktiShift}" data-fieldname="mhsDiktiShift" data-signal-error-for="mhsDiktiShift{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsDiktiShift}">
+		{BEGIN mhsDiktiShift_label}{$label mahasiswa mhsDiktiShift}{END mhsDiktiShift_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsDiktiShift_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsDiktiShift">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsDiktiShift}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsDiktiShift_fieldblock}
+
+			{BEGIN mhsPembayaranIpp_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsPembayaranIpp}" data-fieldname="mhsPembayaranIpp" data-signal-error-for="mhsPembayaranIpp{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsPembayaranIpp}">
+		{BEGIN mhsPembayaranIpp_label}{$label mahasiswa mhsPembayaranIpp}{END mhsPembayaranIpp_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsPembayaranIpp_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsPembayaranIpp">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsPembayaranIpp}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsPembayaranIpp_fieldblock}
+
+			{BEGIN mshNoIpp_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mshNoIpp}" data-fieldname="mshNoIpp" data-signal-error-for="mshNoIpp{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mshNoIpp}">
+		{BEGIN mshNoIpp_label}{$label mahasiswa mshNoIpp}{END mshNoIpp_label}
+	</label>
+	<div class="col-md-6" >
+		{$mshNoIpp_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mshNoIpp">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mshNoIpp}
+		</div>
+	</div>
+</div>
+</div>
+{END mshNoIpp_fieldblock}
+
+			{BEGIN mhsPersyaratan_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsPersyaratan}" data-fieldname="mhsPersyaratan" data-signal-error-for="mhsPersyaratan{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsPersyaratan}">
+		{BEGIN mhsPersyaratan_label}{$label mahasiswa mhsPersyaratan}{END mhsPersyaratan_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsPersyaratan_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsPersyaratan">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsPersyaratan}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsPersyaratan_fieldblock}
+
+			{BEGIN mhsPengOrg_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsPengOrg}" data-fieldname="mhsPengOrg" data-signal-error-for="mhsPengOrg{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsPengOrg}">
+		{BEGIN mhsPengOrg_label}{$label mahasiswa mhsPengOrg}{END mhsPengOrg_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsPengOrg_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsPengOrg">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsPengOrg}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsPengOrg_fieldblock}
+
+			{BEGIN mhsOrg_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsOrg}" data-fieldname="mhsOrg" data-signal-error-for="mhsOrg{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsOrg}">
+		{BEGIN mhsOrg_label}{$label mahasiswa mhsOrg}{END mhsOrg_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsOrg_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsOrg">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsOrg}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsOrg_fieldblock}
+
+			{BEGIN mhsDomisili_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsDomisili}" data-fieldname="mhsDomisili" data-signal-error-for="mhsDomisili{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsDomisili}">
+		{BEGIN mhsDomisili_label}{$label mahasiswa mhsDomisili}{END mhsDomisili_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsDomisili_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsDomisili">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsDomisili}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsDomisili_fieldblock}
+
+			{BEGIN mhsJenisSttb_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsJenisSttb}" data-fieldname="mhsJenisSttb" data-signal-error-for="mhsJenisSttb{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsJenisSttb}">
+		{BEGIN mhsJenisSttb_label}{$label mahasiswa mhsJenisSttb}{END mhsJenisSttb_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsJenisSttb_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsJenisSttb">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsJenisSttb}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsJenisSttb_fieldblock}
+
+			{BEGIN mhsIsKerja_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsIsKerja}" data-fieldname="mhsIsKerja" data-signal-error-for="mhsIsKerja{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsIsKerja}">
+		{BEGIN mhsIsKerja_label}{$label mahasiswa mhsIsKerja}{END mhsIsKerja_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsIsKerja_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsIsKerja">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsIsKerja}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsIsKerja_fieldblock}
+
+			{BEGIN mhsStatusSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsStatusSmta}" data-fieldname="mhsStatusSmta" data-signal-error-for="mhsStatusSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsStatusSmta}">
+		{BEGIN mhsStatusSmta_label}{$label mahasiswa mhsStatusSmta}{END mhsStatusSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsStatusSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsStatusSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsStatusSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsStatusSmta_fieldblock}
+
+			{BEGIN mhsAkreditasi_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsAkreditasi}" data-fieldname="mhsAkreditasi" data-signal-error-for="mhsAkreditasi{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsAkreditasi}">
+		{BEGIN mhsAkreditasi_label}{$label mahasiswa mhsAkreditasi}{END mhsAkreditasi_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsAkreditasi_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsAkreditasi">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsAkreditasi}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsAkreditasi_fieldblock}
+
+			{BEGIN mhsKerja_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsKerja}" data-fieldname="mhsKerja" data-signal-error-for="mhsKerja{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsKerja}">
+		{BEGIN mhsKerja_label}{$label mahasiswa mhsKerja}{END mhsKerja_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsKerja_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsKerja">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsKerja}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsKerja_fieldblock}
+
+			{BEGIN mhsSaudaraLk_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSaudaraLk}" data-fieldname="mhsSaudaraLk" data-signal-error-for="mhsSaudaraLk{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSaudaraLk}">
+		{BEGIN mhsSaudaraLk_label}{$label mahasiswa mhsSaudaraLk}{END mhsSaudaraLk_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSaudaraLk_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSaudaraLk">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSaudaraLk}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSaudaraLk_fieldblock}
+
+			{BEGIN mhsSaudaraPr_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSaudaraPr}" data-fieldname="mhsSaudaraPr" data-signal-error-for="mhsSaudaraPr{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSaudaraPr}">
+		{BEGIN mhsSaudaraPr_label}{$label mahasiswa mhsSaudaraPr}{END mhsSaudaraPr_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSaudaraPr_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSaudaraPr">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSaudaraPr}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSaudaraPr_fieldblock}
+
+			{BEGIN mhsHobi_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsHobi}" data-fieldname="mhsHobi" data-signal-error-for="mhsHobi{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsHobi}">
+		{BEGIN mhsHobi_label}{$label mahasiswa mhsHobi}{END mhsHobi_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsHobi_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsHobi">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsHobi}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsHobi_fieldblock}
+
+			{BEGIN mhsSmtaLain_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSmtaLain}" data-fieldname="mhsSmtaLain" data-signal-error-for="mhsSmtaLain{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSmtaLain}">
+		{BEGIN mhsSmtaLain_label}{$label mahasiswa mhsSmtaLain}{END mhsSmtaLain_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSmtaLain_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSmtaLain">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSmtaLain}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSmtaLain_fieldblock}
+
+			{BEGIN mhsAkreditasiSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsAkreditasiSmta}" data-fieldname="mhsAkreditasiSmta" data-signal-error-for="mhsAkreditasiSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsAkreditasiSmta}">
+		{BEGIN mhsAkreditasiSmta_label}{$label mahasiswa mhsAkreditasiSmta}{END mhsAkreditasiSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsAkreditasiSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsAkreditasiSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsAkreditasiSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsAkreditasiSmta_fieldblock}
+
+			{BEGIN mhsBiayaKuliah_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsBiayaKuliah}" data-fieldname="mhsBiayaKuliah" data-signal-error-for="mhsBiayaKuliah{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsBiayaKuliah}">
+		{BEGIN mhsBiayaKuliah_label}{$label mahasiswa mhsBiayaKuliah}{END mhsBiayaKuliah_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsBiayaKuliah_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsBiayaKuliah">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsBiayaKuliah}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsBiayaKuliah_fieldblock}
+
+			{BEGIN MhsIdJenisSmta_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_MhsIdJenisSmta}" data-fieldname="MhsIdJenisSmta" data-signal-error-for="MhsIdJenisSmta{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_MhsIdJenisSmta}">
+		{BEGIN MhsIdJenisSmta_label}{$label mahasiswa MhsIdJenisSmta}{END MhsIdJenisSmta_label}
+	</label>
+	<div class="col-md-6" >
+		{$MhsIdJenisSmta_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="MhsIdJenisSmta">
+		<div class="text-muted" >
+		{$tooltip mahasiswa MhsIdJenisSmta}
+		</div>
+	</div>
+</div>
+</div>
+{END MhsIdJenisSmta_fieldblock}
+
+			{BEGIN mhsSmtaPropinsiKode_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsSmtaPropinsiKode}" data-fieldname="mhsSmtaPropinsiKode" data-signal-error-for="mhsSmtaPropinsiKode{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsSmtaPropinsiKode}">
+		{BEGIN mhsSmtaPropinsiKode_label}{$label mahasiswa mhsSmtaPropinsiKode}{END mhsSmtaPropinsiKode_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsSmtaPropinsiKode_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsSmtaPropinsiKode">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsSmtaPropinsiKode}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsSmtaPropinsiKode_fieldblock}
+
+			{BEGIN mhsEmailOld_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsEmailOld}" data-fieldname="mhsEmailOld" data-signal-error-for="mhsEmailOld{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsEmailOld}">
+		{BEGIN mhsEmailOld_label}{$label mahasiswa mhsEmailOld}{END mhsEmailOld_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsEmailOld_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsEmailOld">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsEmailOld}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsEmailOld_fieldblock}
+
+			{BEGIN mhsNoKtp_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNoKtp}" data-fieldname="mhsNoKtp" data-signal-error-for="mhsNoKtp{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNoKtp}">
+		{BEGIN mhsNoKtp_label}{$label mahasiswa mhsNoKtp}{END mhsNoKtp_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNoKtp_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNoKtp">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNoKtp}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNoKtp_fieldblock}
+
+			{BEGIN mhsNoKk_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_mhsNoKk}" data-fieldname="mhsNoKk" data-signal-error-for="mhsNoKk{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_mhsNoKk}">
+		{BEGIN mhsNoKk_label}{$label mahasiswa mhsNoKk}{END mhsNoKk_label}
+	</label>
+	<div class="col-md-6" >
+		{$mhsNoKk_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="mhsNoKk">
+		<div class="text-muted" >
+		{$tooltip mahasiswa mhsNoKk}
+		</div>
+	</div>
+</div>
+</div>
+{END mhsNoKk_fieldblock}
+
+
+</div>
+
+
+
+
+</div>
+{END container_fields}
+
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-3"> 
+
+{BEGIN addbuttons}
+	{BEGIN save_button}
+	<button class="btn btn-primary" {$savebutton_attrs}>Save</button>
+	{END save_button}
+	{BEGIN reset_button}
+	<button class="btn btn-default" id="resetButton{$id}">Reset</button>
+	{END reset_button}
+	{BEGIN back_button}
+		<button class="btn btn-default" id="backButton{$id}">Back to list</button>
+	{END back_button}
+	{BEGIN cancel_button}
+	<a href="#" class="btn btn-default" id="cancelButton{$id}">Cancel</a>
+	{END cancel_button}
+
+{END addbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

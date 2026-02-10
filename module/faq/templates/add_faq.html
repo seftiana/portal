@@ -1,0 +1,45 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2> Tambah FAQ </h2><br />
+   <p class="text-muted">{KATEGORI_NAMA}</p>
+   <p class="text-muted">{KATEGORI_KETERANGAN}</p><br/>
+
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+	<form class="form-common" method="POST" action="{URL_PROCESS}" name="frmInput" >
+		<table class="table-form" width="100%">
+			<tr>
+				<th colspan="3"><b>Form Tambah FAQ</b></th>
+			</tr>
+			<tr>
+				<th width="100">Pertanyaan</th>
+				<td width="100"><input name="TxtPertanyaan" type="text" size="50" value="{FAQ_PERTANYAAN}" /></td>
+			</tr>
+			<tr>
+				<th width="100">Jawaban</th>
+				<td width="100"><textarea name="TxtJawaban" cols="50" rows="10">{FAQ_JAWABAN}</textarea></td>
+			</tr>
+			<tr>
+				<th>Tujuan</th>
+				<td>
+					<!-- patTemplate:tmpl name="tujuan" type="condition" conditionvar="IS_EMPTY" -->
+						<!-- patTemplate:sub condition="YES" -->
+								{TUJUAN_EMPTY_MSG}
+							<!-- /patTemplate:sub -->
+							<!-- patTemplate:sub condition="NO" -->
+								<div><input type="checkbox" name="tujuan[]" value="{REF_ID}" /> {REF_NAME}</div>
+							<!-- /patTemplate:sub -->
+					<!-- /patTemplate:tmpl -->
+				</td>
+			</tr>
+			<tr>
+				<th>&nbsp;</th>
+				<td>
+					<input type="hidden" name="act" value="TambahFaq">
+					<input type="hidden" name="katid" value="{KATEGORI_ID}">
+					<input class="input-disclaimer btn btn-info" name="btnTambah" type="submit" value="Simpan" onClick="return ValidateCheckbox('tujuan[]', 'Harap pilih tujuan')" />
+					<input class="input-disclaimer btn btn-info" name="btnBatal" type="submit" value="Batal" />
+				</td>
+			</tr>
+		</table>   
+	</form>
+   
+<!-- /patTemplate:tmpl --> <!-- end of content-->

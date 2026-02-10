@@ -1,0 +1,45 @@
+<!-- patTemplate:tmpl name="content" -->
+   
+   <h4>{APPLICATION_MODULE}</h4>
+      
+   <!-- patTemplate:tmpl name="kategori_detail" type="condition" conditionvar="IS_FOUND" -->
+      <!-- patTemplate:sub condition="NO" -->
+         
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="YES" -->
+         
+         <!-- patTemplate:link name="error_box" src="error_box" / -->
+         
+         <form name="updForm" class="form-common" method="POST" action="{KATEGORI_URL_UPDATE_PROCESS}">
+            <input name="act" type="hidden" value="doUpdateKategori" />
+            <input name="data[ForumKategoriId]" type="hidden" value="{KATEGORI_ID}" />
+            <table class="table-form" width="100%">
+               <tr>
+                  <th colspan="2"><b>Form Ubah Kategori</b></th>
+               </tr>
+               <tr>
+                  <th>Judul Kategori Diskusi</th>
+                  <td><input name="data[ForumKategoriTitle]" type="text" maxlength="50" size="40" value="{KATEGORI_JUDUL}"/></td>
+               </tr>
+               <tr>
+                  <th>Deskripsi Kategori Diskusi</th>   
+                  <td>
+                     <textarea name="data[ForumKategoriDescription]" cols="40" rows="4">{KATEGORI_DESKRIPSI}</textarea>
+                  </td>
+               </tr>         
+               <tr>
+                  <th>&nbsp;</th>
+                  <td>                     
+                     <input class="input-disclaimer" name="updBtn" type="submit" value="Kirim" />
+                     <input class="input-disclaimer" name="cnclBtn" type="submit" value="Batal" />
+                  </td>
+               </tr>
+            </table>
+         </form>
+
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+<!-- /patTemplate:tmpl -->

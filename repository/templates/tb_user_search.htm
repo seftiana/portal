@@ -1,0 +1,329 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-search" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_searchpage}
+<div {$searchpage_chiddenattr} data-pageid="{$pageid}" data-container="searchpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-6 col-md-offset-3"> 
+
+{BEGIN searchheader}
+	<h2 {$bssearchheader_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchheader" >{$pagetitlelabel tb_user search}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END searchheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_searchpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$bssearchfields_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchfields" class="form-horizontal" role="form">
+<div class="container">
+	<div class="form-group">
+		<div class="col-md-12" >
+			&nbsp;
+		</div>
+	</div>
+</div>
+	{BEGIN ID_fieldblock}		
+	<div class="container {$fielddispclass_ID}" data-fieldname="ID">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_ID}">
+				{$label tb_user ID}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_ID}
+			</div>
+			<div class="col-md-4" >
+				{$ID_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$ID_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END ID_fieldblock}
+	{BEGIN IDUser_fieldblock}		
+	<div class="container {$fielddispclass_IDUser}" data-fieldname="IDUser">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_IDUser}">
+				{$label tb_user IDUser}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_IDUser}
+			</div>
+			<div class="col-md-4" >
+				{$IDUser_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$IDUser_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END IDUser_fieldblock}
+	{BEGIN passwd_fieldblock}		
+	<div class="container {$fielddispclass_passwd}" data-fieldname="passwd">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_passwd}">
+				{$label tb_user passwd}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_passwd}
+			</div>
+			<div class="col-md-4" >
+				{$passwd_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$passwd_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END passwd_fieldblock}
+	{BEGIN nama_fieldblock}		
+	<div class="container {$fielddispclass_nama}" data-fieldname="nama">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_nama}">
+				{$label tb_user nama}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_nama}
+			</div>
+			<div class="col-md-4" >
+				{$nama_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$nama_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END nama_fieldblock}
+	{BEGIN jabatan_fieldblock}		
+	<div class="container {$fielddispclass_jabatan}" data-fieldname="jabatan">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_jabatan}">
+				{$label tb_user jabatan}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_jabatan}
+			</div>
+			<div class="col-md-4" >
+				{$jabatan_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$jabatan_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END jabatan_fieldblock}
+	{BEGIN unit_kerja_fieldblock}		
+	<div class="container {$fielddispclass_unit_kerja}" data-fieldname="unit_kerja">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_unit_kerja}">
+				{$label tb_user unit_kerja}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_unit_kerja}
+			</div>
+			<div class="col-md-4" >
+				{$unit_kerja_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$unit_kerja_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END unit_kerja_fieldblock}
+	{BEGIN atasan_fieldblock}		
+	<div class="container {$fielddispclass_atasan}" data-fieldname="atasan">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_atasan}">
+				{$label tb_user atasan}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_atasan}
+			</div>
+			<div class="col-md-4" >
+				{$atasan_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$atasan_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END atasan_fieldblock}
+	{BEGIN prodi_fieldblock}		
+	<div class="container {$fielddispclass_prodi}" data-fieldname="prodi">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_prodi}">
+				{$label tb_user prodi}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_prodi}
+			</div>
+			<div class="col-md-4" >
+				{$prodi_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$prodi_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END prodi_fieldblock}
+	{BEGIN peran_fieldblock}		
+	<div class="container {$fielddispclass_peran}" data-fieldname="peran">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_peran}">
+				{$label tb_user peran}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_peran}
+			</div>
+			<div class="col-md-4" >
+				{$peran_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$peran_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END peran_fieldblock}
+	{BEGIN roleapps_fieldblock}		
+	<div class="container {$fielddispclass_roleapps}" data-fieldname="roleapps">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_roleapps}">
+				{$label tb_user roleapps}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_roleapps}
+			</div>
+			<div class="col-md-4" >
+				{$roleapps_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$roleapps_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END roleapps_fieldblock}
+</div>
+
+
+
+
+</div>
+{END container_fields}
+
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container form-horizontal   "> 
+
+
+
+
+{BEGIN container_bbuttons}
+<div {$bbuttons_chiddenattr} data-pageid="{$pageid}" data-container="bbuttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-10 col-md-offset-2"> 
+
+{BEGIN searchbuttons}
+{BEGIN search_button}
+<button class="btn btn-primary" {$searchbutton_attrs}>Search</button>
+{END search_button} 
+{BEGIN reset_button}
+<button class="btn btn-default" {$resetbutton_attrs}>Reset</button>
+{END reset_button}
+{BEGIN back_button}
+<button class="btn btn-default" {$backbutton_attrs}>Back to list</button>
+{END back_button}
+{END searchbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+</div>
+{END container_bbuttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

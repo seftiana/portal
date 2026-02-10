@@ -1,0 +1,60 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+<div id="maincontent">
+   <h2> {APPLICATION_MODULE} </h2>
+<table width="100%" class="table-common">
+   <tr align="center">
+
+      <th height="25"><strong>Pengirim</strong></th>
+      <th ><strong>Isi Pesan </strong></th>
+      <!-- patTemplate:tmpl name="aksi" visibility="hidden" -->
+      <th ><strong>Aksi</strong></th>
+      <!-- /patTemplate:tmpl -->
+   </tr>
+<!-- patTemplate:tmpl name="list_post" -->   
+   <tr{EVEN}>
+<td valign="top"><strong>User ID:</strong> {USER_ID} <br>
+
+          {NAMA_PENGIRIM} ({JUMLAH_POST}) 
+      
+      </td>
+      <td valign="top"><strong>Dikirim:</strong> {TANGGAL} <strong>Jam:</strong> {JAM} <br>
+         --------------------------------------------------<br>
+         {PESAN}
+        </td>
+      <!-- patTemplate:tmpl name="link_aksi" visibility="hidden" -->
+      <td align="center"><a href="{URL_DELETE}">Hapus</a></td>
+      <!-- /patTemplate:tmpl -->
+   </tr>
+<!-- /patTemplate:tmpl -->      
+</table>
+<br>
+<!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+<form name="tambah_post" method="post" action="{URL_INSERT}">
+   <table width="100%" border="1" class="table-form">
+      <tr>
+         <td colspan="2" valign="top"><strong>Kirim Pesan </strong></td>
+      </tr>
+       <input type="hidden" name="thread_id" value="{THREAD_ID}">
+      <tr>
+         <td valign="top">Isi Pesan</td>
+         <td><textarea name="pesan" cols="50" rows="10"></textarea></td>
+      </tr>
+      <tr>
+         <td valign="top">Petunjuk</td>
+         <td>[i] <em>Cetak miring </em>[/i]<br>
+
+         [b]<strong> Cetak Tebal </strong>[/b]</td>
+      </tr>
+      <tr align="center">
+         <td colspan="2">
+         	<input class="input-disclaimer" type="button" name="back" value="Kembali Ke Forum" onclick="location.href='{URL_VIEW}'">
+         	<input class="input-disclaimer" class="button-special-box" name="addSimpan" type="submit" id="addSimpan" value="Kirim">
+         </td>
+      </tr>
+   </table>
+</form>
+</div>
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,72 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Informasi Tagihan Pembayaran</h2>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->   
+   <br />
+   <div class="border border-secondary pt-0 px-2 pb-2">
+         <!-- patTemplate:tmpl name="mahasiswa" -->
+            <table width="100%" class="table table-list">
+               <tr> 
+                  <th>Nama</th>
+                  <td>{MHS_FULLNAME}</td>
+               </tr>
+               <tr> 
+                  <th>{LABEL_NIM}</th>
+                  <td>{MHS_NIU}</td>
+               </tr>
+               <tr> 
+                  <th>Program Studi</th>
+                  <td>{MHS_INFO}</td>
+               </tr>
+	       <tr> 
+                  <th>Nomor VA</th>
+                  <td>89525{MHS_NIU}</td>
+               </tr>
+            </table>
+         <!-- /patTemplate:tmpl --> <!-- end of mahasiswa -->
+         
+         <div align="right"><h4>{DEPOSIT}</h4></div><div align="right"><h4>{SALDO_HUTANG}</h4></div>
+         <!-- patTemplate:tmpl name="data_container" type="condition" conditionvar="IS_EMPTY" -->
+            <!-- patTemplate:sub condition="YES" -->            
+               <!-- patTemplate:link name="empty_box" src="empty_box" / -->            
+            <!-- /patTemplate:sub -->
+
+            <!-- patTemplate:sub condition="NO" -->
+            <!--div style="overflow:auto;"-->
+<div class="table-responsive">
+            <table class="table-common">
+            <tr>
+               <th width="10">No</th>               
+               <!--th>Periode</th-->
+               <th >Tagihan</th>
+               <th width="70">Mulai Pembayaran</th>
+               <th width="60">Total Tagihan</th>
+		<th width="60">Sudah Bayar</th>
+                <th width="60">Total Potongan</th>
+                <th width="60">Sisa</th>
+               <th width="75">Status</th>
+            </tr>
+            <!-- patTemplate:tmpl name="data_item" -->
+            <tr class="{_CLASS}">
+               <td align="right">{NUMBER}</td>
+               <!--td align="left" nowrap ="nowrap">{PERIODE}</td-->
+               <td align="left">{PERIODE}<br>{TAGIHAN}</td>
+               <td align="center" nowrap ="nowrap">{BATAS_AWAL}</td>
+               <td align="right" nowrap ="nowrap">{TOTAL_TAGIHAN}</td>
+		<td align="right" nowrap ="nowrap">{TOTAL_KWITANSI}</td>
+                <td align="right" nowrap ="nowrap">{TOTAL_POTONGAN}</td>
+                <td align="right" nowrap ="nowrap">{TOTAL_SISA}</td>
+               <td align="left">
+                  <div style="float:left; width:auto;">{STATUS}</div>
+                  <div style="float:right; width:auto;">
+                     <!--a href="{URL_DETIL}" target="_self" title="Lihat Detail Tagihan"><img src="images/button-detail.gif"></a-->
+                  </div></td>
+            </tr>  
+            <!-- /patTemplate:tmpl -->      
+            </table>
+</div>
+            <!--/div-->
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </div>      
+      <br />
+<!-- /patTemplate:tmpl --> <!-- end of content -->

@@ -1,0 +1,329 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-search" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_searchpage}
+<div {$searchpage_chiddenattr} data-pageid="{$pageid}" data-container="searchpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-6 col-md-offset-3"> 
+
+{BEGIN searchheader}
+	<h2 {$bssearchheader_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchheader" >{$pagetitlelabel s_krs_detil search}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END searchheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_searchpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$bssearchfields_hiddenattr} data-pageid="{$pageid}" data-brick="bssearchfields" class="form-horizontal" role="form">
+<div class="container">
+	<div class="form-group">
+		<div class="col-md-12" >
+			&nbsp;
+		</div>
+	</div>
+</div>
+	{BEGIN krsdtId_fieldblock}		
+	<div class="container {$fielddispclass_krsdtId}" data-fieldname="krsdtId">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_krsdtId}">
+				{$label s_krs_detil krsdtId}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_krsdtId}
+			</div>
+			<div class="col-md-4" >
+				{$krsdtId_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$krsdtId_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END krsdtId_fieldblock}
+	{BEGIN krsMhsNiu_fieldblock}		
+	<div class="container {$fielddispclass_krsMhsNiu}" data-fieldname="krsMhsNiu">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_krsMhsNiu}">
+				{$label s_krs_detil krsMhsNiu}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_krsMhsNiu}
+			</div>
+			<div class="col-md-4" >
+				{$krsMhsNiu_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$krsMhsNiu_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END krsMhsNiu_fieldblock}
+	{BEGIN mhsNama_fieldblock}		
+	<div class="container {$fielddispclass_mhsNama}" data-fieldname="mhsNama">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_mhsNama}">
+				{$label s_krs_detil mhsNama}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_mhsNama}
+			</div>
+			<div class="col-md-4" >
+				{$mhsNama_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$mhsNama_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END mhsNama_fieldblock}
+	{BEGIN mhsProdiKode_fieldblock}		
+	<div class="container {$fielddispclass_mhsProdiKode}" data-fieldname="mhsProdiKode">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_mhsProdiKode}">
+				{$label s_krs_detil mhsProdiKode}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_mhsProdiKode}
+			</div>
+			<div class="col-md-4" >
+				{$mhsProdiKode_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$mhsProdiKode_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END mhsProdiKode_fieldblock}
+	{BEGIN klsNama_fieldblock}		
+	<div class="container {$fielddispclass_klsNama}" data-fieldname="klsNama">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_klsNama}">
+				{$label s_krs_detil klsNama}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_klsNama}
+			</div>
+			<div class="col-md-4" >
+				{$klsNama_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$klsNama_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END klsNama_fieldblock}
+	{BEGIN mhsEmail_fieldblock}		
+	<div class="container {$fielddispclass_mhsEmail}" data-fieldname="mhsEmail">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_mhsEmail}">
+				{$label s_krs_detil mhsEmail}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_mhsEmail}
+			</div>
+			<div class="col-md-4" >
+				{$mhsEmail_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$mhsEmail_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END mhsEmail_fieldblock}
+	{BEGIN sempSemId_fieldblock}		
+	<div class="container {$fielddispclass_sempSemId}" data-fieldname="sempSemId">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_sempSemId}">
+				{$label s_krs_detil sempSemId}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_sempSemId}
+			</div>
+			<div class="col-md-4" >
+				{$sempSemId_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$sempSemId_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END sempSemId_fieldblock}
+	{BEGIN prodiJjarKode_fieldblock}		
+	<div class="container {$fielddispclass_prodiJjarKode}" data-fieldname="prodiJjarKode">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_prodiJjarKode}">
+				{$label s_krs_detil prodiJjarKode}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_prodiJjarKode}
+			</div>
+			<div class="col-md-4" >
+				{$prodiJjarKode_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$prodiJjarKode_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END prodiJjarKode_fieldblock}
+	{BEGIN prodiNamaResmi_fieldblock}		
+	<div class="container {$fielddispclass_prodiNamaResmi}" data-fieldname="prodiNamaResmi">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_prodiNamaResmi}">
+				{$label s_krs_detil prodiNamaResmi}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_prodiNamaResmi}
+			</div>
+			<div class="col-md-4" >
+				{$prodiNamaResmi_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$prodiNamaResmi_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END prodiNamaResmi_fieldblock}
+	{BEGIN krsId_fieldblock}		
+	<div class="container {$fielddispclass_krsId}" data-fieldname="krsId">
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="{$labelfor_krsId}">
+				{$label s_krs_detil krsId}
+			</label>
+			<div class="col-md-2 bs-srchoption" >
+				{$searchtype_krsId}
+			</div>
+			<div class="col-md-4" >
+				{$krsId_editcontrol}
+			</div>
+			<div class="col-md-4" >
+				{$krsId_editcontrol1}
+			</div>
+		</div>
+	</div>
+{END krsId_fieldblock}
+</div>
+
+
+
+
+</div>
+{END container_fields}
+
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container form-horizontal   "> 
+
+
+
+
+{BEGIN container_bbuttons}
+<div {$bbuttons_chiddenattr} data-pageid="{$pageid}" data-container="bbuttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-10 col-md-offset-2"> 
+
+{BEGIN searchbuttons}
+{BEGIN search_button}
+<button class="btn btn-primary" {$searchbutton_attrs}>Search</button>
+{END search_button} 
+{BEGIN reset_button}
+<button class="btn btn-default" {$resetbutton_attrs}>Reset</button>
+{END reset_button}
+{BEGIN back_button}
+<button class="btn btn-default" {$backbutton_attrs}>Back to list</button>
+{END back_button}
+{END searchbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+</div>
+{END container_bbuttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

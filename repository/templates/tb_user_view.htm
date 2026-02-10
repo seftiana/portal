@@ -1,0 +1,278 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-view" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_viewpage}
+<div {$viewpage_chiddenattr} data-pageid="{$pageid}" data-container="viewpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-12 "> 
+
+{BEGIN viewheader}
+	<h2 {$viewheader_hiddenattr} data-pageid="{$pageid}" data-brick="viewheader" >{$pagetitlelabel tb_user view}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END viewheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+</div>
+{END container_viewpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class=" form-horizontal  col-md-12 "> 
+
+
+<div {$viewfields_hiddenattr} data-pageid="{$pageid}" data-brick="viewfields" >
+
+	<div class="container">
+					{BEGIN ID_fieldblock}
+	<div class="{$fielddispclass_ID} col-md-6 bs-viewcontrolgroup" data-fieldname="ID">
+		<label class="control-label" for="{$labelfor_ID}">
+			{$label tb_user ID}
+		</label>
+		<div class="" >
+			{$ID_value}&nbsp;
+		</div>
+	</div>
+{END ID_fieldblock}
+					{BEGIN IDUser_fieldblock}
+	<div class="{$fielddispclass_IDUser} col-md-6 bs-viewcontrolgroup" data-fieldname="IDUser">
+		<label class="control-label" for="{$labelfor_IDUser}">
+			{$label tb_user IDUser}
+		</label>
+		<div class="" >
+			{$IDUser_value}&nbsp;
+		</div>
+	</div>
+{END IDUser_fieldblock}
+					{BEGIN passwd_fieldblock}
+	<div class="{$fielddispclass_passwd} col-md-6 bs-viewcontrolgroup" data-fieldname="passwd">
+		<label class="control-label" for="{$labelfor_passwd}">
+			{$label tb_user passwd}
+		</label>
+		<div class="" >
+			{$passwd_value}&nbsp;
+		</div>
+	</div>
+{END passwd_fieldblock}
+					{BEGIN nama_fieldblock}
+	<div class="{$fielddispclass_nama} col-md-6 bs-viewcontrolgroup" data-fieldname="nama">
+		<label class="control-label" for="{$labelfor_nama}">
+			{$label tb_user nama}
+		</label>
+		<div class="" >
+			{$nama_value}&nbsp;
+		</div>
+	</div>
+{END nama_fieldblock}
+					{BEGIN jabatan_fieldblock}
+	<div class="{$fielddispclass_jabatan} col-md-6 bs-viewcontrolgroup" data-fieldname="jabatan">
+		<label class="control-label" for="{$labelfor_jabatan}">
+			{$label tb_user jabatan}
+		</label>
+		<div class="" >
+			{$jabatan_value}&nbsp;
+		</div>
+	</div>
+{END jabatan_fieldblock}
+					{BEGIN unit_kerja_fieldblock}
+	<div class="{$fielddispclass_unit_kerja} col-md-6 bs-viewcontrolgroup" data-fieldname="unit_kerja">
+		<label class="control-label" for="{$labelfor_unit_kerja}">
+			{$label tb_user unit_kerja}
+		</label>
+		<div class="" >
+			{$unit_kerja_value}&nbsp;
+		</div>
+	</div>
+{END unit_kerja_fieldblock}
+					{BEGIN atasan_fieldblock}
+	<div class="{$fielddispclass_atasan} col-md-6 bs-viewcontrolgroup" data-fieldname="atasan">
+		<label class="control-label" for="{$labelfor_atasan}">
+			{$label tb_user atasan}
+		</label>
+		<div class="" >
+			{$atasan_value}&nbsp;
+		</div>
+	</div>
+{END atasan_fieldblock}
+					{BEGIN prodi_fieldblock}
+	<div class="{$fielddispclass_prodi} col-md-6 bs-viewcontrolgroup" data-fieldname="prodi">
+		<label class="control-label" for="{$labelfor_prodi}">
+			{$label tb_user prodi}
+		</label>
+		<div class="" >
+			{$prodi_value}&nbsp;
+		</div>
+	</div>
+{END prodi_fieldblock}
+					{BEGIN peran_fieldblock}
+	<div class="{$fielddispclass_peran} col-md-6 bs-viewcontrolgroup" data-fieldname="peran">
+		<label class="control-label" for="{$labelfor_peran}">
+			{$label tb_user peran}
+		</label>
+		<div class="" >
+			{$peran_value}&nbsp;
+		</div>
+	</div>
+{END peran_fieldblock}
+					{BEGIN roleapps_fieldblock}
+	<div class="{$fielddispclass_roleapps} col-md-6 bs-viewcontrolgroup" data-fieldname="roleapps">
+		<label class="control-label" for="{$labelfor_roleapps}">
+			{$label tb_user roleapps}
+		</label>
+		<div class="" >
+			{$roleapps_value}&nbsp;
+		</div>
+	</div>
+{END roleapps_fieldblock}
+	</div>
+</div>
+
+
+
+
+</div>
+{END container_fields}
+
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-6 "> 
+
+{BEGIN viewbuttons}
+{BEGIN back_button}
+<button class="btn btn-primary" {$backbutton_attrs}>Back to list</button>
+{END back_button}
+{BEGIN close_button}
+<button href="#" class="btn btn-primary" {$closebutton_attrs}>Close window</button>
+{END close_button}
+{END viewbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+
+
+{BEGIN container_leftbuttons_1}
+<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="   col-md-4 "> 
+
+{BEGIN rightviewbuttons}
+<div class="btn-group" role="group">
+		{BEGIN prev_button}
+	<button class="btn btn-default {$prevbutton_class}" {$prevbutton_attrs}><span class="glyphicon glyphicon-chevron-left"></span></button>
+	{END prev_button}
+	{BEGIN next_button}
+	<button class="btn btn-default {$nextbutton_class}" {$nextbutton_attrs}><span class="glyphicon glyphicon-chevron-right"></span></button>
+	{END next_button}
+		{BEGIN view_menu_button}
+	<div class="btn-group dropup" role="group">
+		<button class="btn btn-default dropdown-toggle {$groupbutton_class}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<ul class="dropdown-menu dropdown-left">
+									{BEGIN edit_page_button}
+				<li><a href=# {$edit_page_button_attrs}>Edit</a></li>
+			{END edit_page_button}
+		</ul>
+	</div>
+	{END view_menu_button}
+</div>
+{END rightviewbuttons}
+
+
+
+</div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

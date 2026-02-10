@@ -1,0 +1,8 @@
+.chart{position:absolute;font-family:Verdana;font-weight:normal;font-size:8pt;line-height:13pt;color:#004080;}
+.titleChart{position:absolute;font-size:9pt;text-align:center;}
+.grupSubGrid{position:absolute;width:1px;height:1px;font-size:1pt;line-height:1pt;border-top:1px solid #808080;}
+.subGrid{position:absolute;width:1px;height:1px;font-size:1pt;border-top:1px solid #CCCCCC;}
+.bottomGridPointer{position:absolute;width:1px;border-left:1px solid #808080;height:7px;line-height:1pt;}
+.curBox{position:absolute;border:1px solid #000000;background:#0000FF url(../images/chart/v_blue.gif) repeat top center;color:#000000;text-align:center;}
+.prevBox{position:absolute;border:1px solid #000000;background:#FF0000 url(../images/chart/v_red.gif) repeat top center;color:#000000;text-align:center;}
+.hiddenBox{position:absolute;visibility:hidden;}

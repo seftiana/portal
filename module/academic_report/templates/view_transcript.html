@@ -1,0 +1,167 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Transkrip Nilai</h2>
+<!-- patTemplate:tmpl name="data_hutang" type="condition" conditionvar="BLOCK" -->
+<!-- patTemplate:sub condition="NO" -->
+   <p class="text-muted">Keterangan :</p>
+   <p>Transkrip Nilai berisi informasi nilai hasil studi mahasiswa mulai dari semester awal sampai dengan semester terakhir mahasiswa. Transkrip ini dapat dicetak dalam bentuk transkrip satu halaman.
+   </p><br />
+   <div class="border border-secondary pt-0 px-2 pb-2">
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+
+   <!-- patTemplate:tmpl name="user" visibility="hidden" -->
+   <table class="table-list">
+      <tr>
+         <th>Nama</th>
+         <td>{MHS_FULLNAME}</td>
+      </tr>
+      <tr>
+         <th>{LABEL_NIM}</th>
+         <td>{MHS_NO_ID}</td>
+      </tr>
+      <tr>
+         <th>Program Studi</th>
+         <td>{MHS_INFO}</td>
+      </tr>
+   </table>
+   <!-- /patTemplate:tmpl -->
+
+   <!-- patTemplate:tmpl name="transkrip" visibility="hidden" -->
+<div class="table-responsive">
+      <table class="table-common">
+         <tr>
+            <th>No</th>
+            <th>Semester</th>
+            <th>Kode</th>
+            <th>Mata Kuliah</th>
+            <th>Sks</th>
+            <th>Nilai</th>
+         </tr>
+         <!-- patTemplate:tmpl name="transkrip_item" type="condition" conditionvar="ODDEVEN" -->
+            <!-- patTemplate:sub condition="ODD" -->
+               <tr>
+                  <td width="3%" align="center">{TRANS_NUMBER}</td>
+                  <td width="25%">{TRANS_SEMESTER}</td>
+                  <td>{TRANS_KODE_MATAKULIAH}</td>
+                  <td>{TRANS_MATAKULIAH}</td>
+                  <td align="center">{TRANS_SKS_JUMLAH}</td>
+                  <td align="center">{TRANS_NILAI}</td>
+               </tr>
+            <!-- /patTemplate:sub -->
+            <!-- patTemplate:sub condition="EVEN" -->
+               <tr class="table-common-even">
+                  <td width="3%" align="center">{TRANS_NUMBER}</td>
+                  <td width="25%">{TRANS_SEMESTER}</td>
+                  <td>{TRANS_KODE_MATAKULIAH}</td>
+                  <td>{TRANS_MATAKULIAH}</td>
+                  <td align="center">{TRANS_SKS_JUMLAH}</td>
+                  <td align="center">{TRANS_NILAI}</td>
+               </tr>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </table>
+</div>
+</div>
+   <!-- /patTemplate:tmpl -->
+   <br>
+   <!-- patTemplate:tmpl name="prestasi" visibility="hidden" -->
+      Prestasi Akademik
+      <table>
+         <tr>
+            <td>Jumlah SKS diambil</td>
+            <td>: {PRES_SKS_DIAMBIL}</td>
+         </tr>
+         <tr>
+            <td>Jumlah mata kuliah diambil</td>
+            <td>: {PRES_MATAKULIAH_DIAMBIL}</td>
+         </tr>
+         <tr>
+            <td>IP Kumulatif</td>
+            <td>: {PRES_IP_KUMULATIF}</td>
+         </tr>
+      </table>
+   <!-- /patTemplate:tmpl -->
+   <br>
+   <!-- patTemplate:tmpl name="keterangan" visibility="hidden" -->
+      Keterangan Nilai
+      <table>
+      <!-- patTemplate:tmpl name="list_nilai" -->
+         <tr>
+            <td>{NILAI_KODE}</td>
+            <td>: {NILAI_BOBOT}</td>
+         </tr>
+      <!-- /patTemplate:tmpl -->
+      </table>
+   <!-- /patTemplate:tmpl -->
+
+
+   <br/>
+   <!-- patTemplate:tmpl name="form_aksi" visibility="visible" -->
+	<form method="post" action="{URL_BACK}" name="frmBack" >
+	<!-- /patTemplate:tmpl -->
+   <!-- patTemplate:tmpl name="buttonBack" visibility="hidden" -->
+		<input type="hidden" name="viewby" value="{VIEW_BY}">
+		<input class="input-disclaimer" type="submit" name="btnBack" value="Kembali">
+   <!-- /patTemplate:tmpl -->
+	<!-- patTemplate:tmpl name="buttonCetak" type="SimpleCondition" requiredvars="URL_CETAK_SEMENTARA_TERBAIK" -->
+      <input class="input-disclaimer btn btn-info" type="button" name="btnCetak" value="Cetak Transkrip Sementara (Nilai Terbaik)" onClick="window.open('{URL_CETAK_SEMENTARA_TERBAIK}')">
+	  <!--input class="input-disclaimer btn btn-info" type="button" name="btnCetak" value="Cetak Transkrip Sementara (Semua Nilai)" onClick="window.open('{URL_CETAK_SEMENTARA_LENGKAP}')"-->
+<br/><br/>   
+<!-- /patTemplate:tmpl -->
+
+	</form>
+<!-----------add ccp 6-3-2019---------------!>	
+<!-- /patTemplate:sub -->
+<!-- patTemplate:sub condition="YES" -->
+	Mohon maaf anda belum dapat mengakses Transkrip Nilai melalui portal dikarenakan masih ada kewajiban keuangan yg harus diselesaikan sebagai berikut:
+	<!--div class="table responsive">
+		<table class="table table-common" width="100%">
+			<tr>
+			   <th width="10">No</th>    
+			   <th>Periode</th>
+			   <th>Tagihan</th>
+			</tr>
+			< !-- patTemplate:tmpl name="data_item" -- >
+			<tr class="{_CLASS}">
+			   <td align="right">{NUMBER}</td>
+			   <td align="left">{PERIODE}</td>
+			   <td align="left">{TAGIHAN}</td>
+			</tr>  
+			< ! -- /patTemplate:tmpl -- >      
+		</table>
+	</div-->
+	
+	<div class="table responsive">
+		<table class="table table-common" width="100%">
+			<tr>
+			   <th width="10">No</th>      
+			   <th >Periode</th>
+			   <th >Tagihan</th>
+			   <th width="70">Batas Pembayaran</th>
+			   <th width="60">Total Tagihan</th>
+			   <th width="60">Sudah Bayar</th>
+			   <th width="60">Total Potongan</th>
+			   <th width="60">Sisa</th>
+			   <th width="75">Status</th>
+			</tr>
+			<!-- patTemplate:tmpl name="data_item_tagihan" -->
+			<tr class="{_CLASS}">
+			   <td align="right">{NUMBER}</td>
+			   <td align="left">{PERIODE}</td>
+			   <td align="left">{TAGIHAN}</td>
+			   <td align="center" nowrap ="nowrap">{BATAS_AKHIR}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_TAGIHAN}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_KWITANSI}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_POTONGAN}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_SISA}</td>
+			   <td align="left">
+				  <div style="float:left; width:auto;">{STATUS}</div>
+				</td>
+			</tr>
+			<!-- /patTemplate:tmpl -->      
+		</table>
+	</div>
+<!-- /patTemplate:sub -->
+<!-- /patTemplate:tmpl -->
+<!-----------add ccp 6-3-2019---------------!>
+
+<!-- /patTemplate:tmpl -->

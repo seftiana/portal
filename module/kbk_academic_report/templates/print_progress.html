@@ -1,0 +1,316 @@
+<!-- patTemplate:tmpl name="document" -->
+<html>
+<head>
+<title> Kartu Kemajuan Mahasiswa </title>
+
+<style type="text/css" media="print, screen">
+body {
+   font-family: "Times New Roman", Times, Verdana;
+   /*background-color: #C0C0C0;*/
+   font-size: 10pt;
+   margin: 0;
+   padding: 0;
+}
+
+#container {
+   margin: 0 auto;
+   padding: 10px;
+   width: 190mm;
+   background-color: #fff;
+   /*height: 280mm;*/
+   /*overflow: hidden;*/
+   /*border-bottom: 1px solid #c0c0c0;*/
+}
+
+#header {
+   text-align: center;
+   color: #3F5064;
+}
+
+#header h1 {
+   text-transform: uppercase;
+   margin: 0;
+}
+
+#header h5 {
+   margin: 0;
+}
+
+#header hr {
+   width: 75%;
+   color: #3F5064;
+}
+
+#nomor_transkrip {
+   margin: 25px 0 0 0;
+   text-align: center;
+}
+
+#nomor_transkrip h2 {
+   margin: 0;
+}
+
+#nomor_transkrip hr {
+   width: 30%;
+}
+
+#info_mhs {
+   text-align: left;
+}
+
+#info_mhs th {
+   font-weight: normal;
+}
+
+#info_mhs td {
+   padding-left: 15px;
+}
+
+.info_table {
+   padding: 20px 0 10px 0;
+   clear: both;
+   font-weight: bold;
+}
+
+table {
+   border-collapse: collapse;
+}
+
+.top {
+   border-top: 1px solid #000;
+}
+
+.right {
+   border-right: 1px solid #000;
+}
+
+.bottom {
+   border-bottom: 1px solid #000;
+}
+
+.left {
+   border-left: 1px solid #000;
+}
+
+.no-border {
+   border: none;
+}
+
+.center {
+   text-align: center;
+}
+
+.table_transkrip {
+   border: 1px solid #000;
+   clear: both;
+}
+
+.table_transkrip td {
+   font-size: 10pt;
+}
+
+.kolom {
+   width: 50px;
+}
+
+.keterangan {
+   float: right;
+   clear: both;
+}
+
+.keterangan table {
+   padding-left: 15px;
+}
+
+.keterangan table tr td {
+   padding-left: 15px;
+}
+
+.pengesah {
+   clear: both;
+   padding: 15px 0 10px 0;
+}
+
+.pengesah_left {
+   float: left;
+}
+
+.pengesah_right {
+   float: right;
+}
+
+.float_left {
+   float: left;
+}
+
+.float_right {
+   float: right;
+}
+
+.toolbar {
+   clear: both;
+   padding: 20px 0 0 0;
+}
+
+.hidden {
+   display: none;
+}
+
+</style>
+
+
+<style type="text/css" media="print">
+.hidden_print {
+   display: none;
+}
+</style>
+
+<script type="text/javascript" src="../scripts/prototype.js"></script>
+<script type="text/javascript" src="../scripts/scriptaculous.js"></script>
+
+</head>
+<body>
+   <div id="container">
+      <div id="header">
+         <center><img src="{UNIV_LOGO}" /></center>
+         <h1>{UNIV_NAMA}</h1>
+         <h5>{UNIV_ALAMAT}</h5>
+         <hr />
+      </div>
+
+		<div id="nomor_transkrip">
+			<h2>KARTU KEMAJUAN MAHASISWA</h2>
+		    <hr />
+		</div>
+		    <br />
+
+      <div class="page_break">
+      <!-- patTemplate:tmpl name="data_mahasiswa" -->
+	     
+
+	  
+	  <table id="info_mhs" width="100%">
+				<tr>
+					<th width="188">Diberikan Kepada</th>
+					<th width="10">:</th>
+					<td width="489"><strong>{NAMA}</strong></td>
+				
+				</tr>
+				<tr>
+					<th>Tempat dan Tanggal Lahir</th>
+					<th>:</th>
+					<td>{TEMPAT_LAHIR}{TGL_LAHIR}</td>
+					
+				</tr>
+				<tr>
+					<th>{LABEL_NOMOR_INDUK_MAHASISWA}</th>
+					<th>:</th>
+					<td>{NIM} / Tahun Masuk : {MHS_ANGKATAN}</td>
+					
+				</tr>
+				<tr>
+					<th>Program Pendidikan </th>
+					<th>:</th>
+					<td>{SEMESTER}</td>
+				
+				</tr>
+				<tr>
+					<th>Fakultas</th>
+					<th>:</th>
+					<td>{FAKULTAS}</td>
+				
+				</tr>
+					<tr>
+					<th>Program Studi </th>
+					<th>:</th>
+					<td>{PRODI}</td>
+				
+				</tr>
+		</table>
+	  
+	  
+	  
+	  
+      <!-- /patTemplate:tmpl -->
+     
+
+      <!-- patTemplate:tmpl name="page" -->
+       
+         <table class="table_transkrip" width="100%">
+            <tr>
+               <th class="top left bottom"rowspan="2" valign="middle">No</th>
+					<th class="top left bottom" rowspan="2" valign="middle">Kode</th>
+               <th class="top left bottom" rowspan="2" valign="middle">Matakuliah</th>
+               <th class="top left bottom" rowspan="2" width="60">Kredit <br /> 
+					(K)</th>
+					<th class="top left bottom" colspan="2">Nilai (N) </th>
+					<th class="top left bottom right" rowspan="2" width="90">K X N</th>
+            </tr>
+            <tr>
+					<th class="top left bottom">Huruf</th>
+					<th class="top left bottom">Angka</th>
+            </tr>
+            <!-- patTemplate:tmpl name="data" type="condition" conditionvar="KODE_MK" -->
+               <!-- patTemplate:sub condition="default" -->
+                  <tr>
+                     <td class="center left right">{NO}</td>
+                     <td class="center left right">{KODE_MK}</td>
+                     <td>&nbsp;{NAMA_MK}</td>
+                     <td class="center left">{KREDIT}</td>
+                     <td class="center left">{NILAI_H}</td>
+                     <td class="center left">{NILAI_A}</td>
+                     <td class="center left right">{MUTU}</td>
+                  </tr>
+
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="empty" -->
+                  <tr>
+                     <td align="center" colspan="6">Belum ada data</td>
+                  </tr>
+               <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl -->
+<br /><br />
+            <!-- patTemplate:tmpl name="prestasi_akademik" visibility="hidden" -->
+                  <tr>
+                     <td class="top bottom" colspan="3" align="right">Total Sks yang telah diambil &nbsp;</td>
+					    <td class="center top right bottom left">{JUMLAH_SKS}</td>
+                    <td class="top bottom" colspan="2" align="right"> Total Bobot &nbsp;</td>
+                     <td class="center top right bottom left">{BOBOT}</td>
+                  </tr>
+				   <tr>
+                     <td colspan="2" class="top">IPK</td>
+                     <td colspan="5" class="top">: {IPK}</td>
+                  </tr>
+            <!-- /patTemplate:tmpl -->
+         </table>
+         <!-- <hr class="hidden" /> -->
+
+      <!-- /patTemplate:tmpl -->
+<br>
+
+    
+        <table width="100%">
+			<tr>
+            <td height="60" valign="top" style="padding-left:30px;">Rektor,</td>
+            <td height="70"></td>
+		   <td width="31%" valign="top">Dekan,<br /></td>
+         </tr>
+			<tr>
+				<td nowrap="nowrap" valign="top" style="padding-left:30px;">H. Muhammad Isa Indrawan, SE.,MM</td>
+				<td nowrap="nowrap">&nbsp;</td>
+				<td>
+					<patTemplate:tmpl name="pengesah_dekan">
+						<span class="hidden" id="jabatan1">{JABATAN_SAH}&nbsp;</span>
+						<span id="nama1">{NAMA_SAH}&nbsp;</span><hr width="80%" align="left">
+						{LABEL_NIP}. <span id="nip1">{NIP_SAH}&nbsp;</span>
+					</patTemplate:tmpl>
+				</td>
+			</tr>
+		</table>
+     
+      </div>
+
+   </div>
+</body>
+<html>
+<!-- /patTemplate:tmpl -->

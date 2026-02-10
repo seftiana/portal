@@ -1,0 +1,88 @@
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript">
+<!--//
+
+   function validate(frm) {
+      if (frm.judul.value == '' || frm.isi.value == '') {
+         alert('judul dan isi pengumuman wajib diisi!'); 
+         return false;           
+      }
+      return true;
+   }
+   
+//-->
+</script>
+
+<h2> {APPLICATION_MODULE} </h2>
+<form class="form-common" action="{URL_INSERT}" method="post" enctype="multipart/form-data" name="frmAddPengumuman"  >
+   <table class="table-form" width="100%"  border="0" cellspacing="1" cellpadding="4">
+  		<!-- patTemplate:tmpl name="display_error" visibility="hidden" -->
+  		  <tr>
+  		  	<th colspan="3"><font color="Maroon" size="2"><b>Gagal Menambahkan Data. {ERROR}</b> </font></th>
+  		  </tr>
+  		<!-- /patTemplate:tmpl -->
+      <tr>
+         <td width="22%" valign="top">Kelas</td>
+         <td width="2%" valign="top">:</td>
+         <td width="76%"><select name="kelas" id="kelas">
+            <!-- patTemplate:tmpl name="list_kelas" -->
+            <option value="{KLSID}"{SELECT_{KLSID}}>{KLSNAMA}</option>
+            <!-- /patTemplate:tmpl -->
+         </select></td>
+      </tr>
+      <tr>
+         <td valign="top">Judul Pengumuman </td>
+         <td valign="top">:</td>
+         <td><input name="judul" type="text" id="judul" size="40" value="{PENGUMUMAN_JUDUL}"></td>
+      </tr>
+      <tr>
+         <td valign="top">Isi Pengumuman </td>
+         <td valign="top">:</td>
+         <td><textarea name="isi" cols="30" rows="5" id="isi">{PENGUMUMAN_ISI}</textarea>
+         <br>
+         [i] <em>miring</em> [/i] [b] <strong>tebal</strong> [/b] <br>
+         Max. 255 karakter</td>
+      </tr>
+      <tr>
+         <td valign="top">File attachment </td>
+         <td valign="top">:</td>
+         <td><input type="file" name="fileUpload"><br>
+         Ukuran File Maksimal 2MB
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">Tanggal Batas </td>
+         <td valign="top">:</td>
+         <td><select name="tgl" id="tgl">
+            <!-- patTemplate:tmpl name="list_tgl" -->
+            <option value="{TGL}" {IS_SELECT}>{TGL}</option>
+            <!-- /patTemplate:tmpl -->
+         </select>
+            <select name="bln" id="bln">
+               <!-- patTemplate:tmpl name="list_bln" -->
+            <option value="{BLN}" {IS_SELECT}>{BLN}</option>
+            <!-- /patTemplate:tmpl -->
+            </select>
+            <select name="thn" id="thn">
+               <!-- patTemplate:tmpl name="list_thn" -->
+            <option value="{THN}" {IS_SELECT}>{THN}</option>
+            <!-- /patTemplate:tmpl -->
+            </select></td>
+      </tr>
+      <!--
+      <tr>
+         <td valign="top">&nbsp;</td>
+         <td>&nbsp;</td>
+         <td valign="top"><input name="email" type="checkbox" id="email" value="1">
+         Pengiriman email </td>
+      </tr>
+      -->
+      <tr>
+         <td colspan="3" align="center"><input class="input-disclaimer btn btn-info" name="insert" type="submit" id="kirim" value="Simpan">
+         <input class="input-disclaimer btn btn-info" name="batal" type="submit" id="kirim" value="Kembali">
+         </td>
+      </tr>
+   </table>
+</form>
+<!--<a href="{URL_RIWAYAT}">Daftar Riwayat Pengumuman</a>-->
+<!-- /patTemplate:tmpl -->

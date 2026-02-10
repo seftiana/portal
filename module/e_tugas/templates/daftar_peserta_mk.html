@@ -1,0 +1,48 @@
+<!-- patTemplate:tmpl name="content" -->
+
+
+  <!-- patTemplate:tmpl name="list_student" type="condition" conditionvar="IS_EMPTY" -->
+	<!-- patTemplate:sub condition="blank" -->
+
+	<!-- /patTemplate:sub -->  
+	<!-- patTemplate:sub condition="empty" -->
+      
+		<div id="top-content-info">
+			Data Kosong
+		</div>
+	  			  
+	<!-- /patTemplate:sub -->
+	  
+	<!-- patTemplate:sub condition="default" -->
+	
+	     
+	     		
+    <table width="100%" class="table-maincontent">
+      <tr> 	
+        <th width="10%"><input type="checkbox" name="check" onclick="allSelected();" />No</th>
+        <th width="10%">{LABEL_NIM}</th>
+        <th width="40%">Nama Lengkap</th>
+        <th width="40%">Program Studi</th>        
+     </tr>
+	 <!-- patTemplate:tmpl name="item" -->
+      <tr>      
+        <td align="center"><input type="checkbox" name="chk[]" value="{STUDENT_NIM}" {STUDENT_CHECKED}> {STUDENT_NUMBER}</td>
+         	<td>{STUDENT_NIM}</td>
+        <td align="left">{STUDENT_FULLNAME}</td>
+        <td>{STUDENT_PRODI}</td>        
+     </tr>
+ 	<!-- /patTemplate:tmpl -->  
+    </table>
+    
+	     
+
+	     
+	   
+	<!-- /patTemplate:sub -->
+
+  <!-- /patTemplate:tmpl -->
+  
+
+  
+<!-- /patTemplate:tmpl -->
+

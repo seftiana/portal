@@ -1,0 +1,92 @@
+<!-- patTemplate:tmpl name="content" -->
+<style type="text/css">
+.contentUtama {
+   padding:10px 5px;
+}
+.buttonAksi {
+   float:right;
+   margin-bottom:7px;
+}
+
+.input-disclaimer {
+   cursor: pointer;
+   padding:2px;
+   text-decoration: none;
+}
+.hidden-tr {
+   display: none;
+}
+.info-warning {
+   color: #C00;
+   font-weight: bold;
+}
+</style>
+<div class="contentUtama">
+   <h2>Cetak Kartu Ujian</h2>
+   <br />
+   <p class="text-muted">Keterangan :</p>
+<!-- patTemplate:tmpl name="data_hutang" type="condition" conditionvar="BLOCK" -->
+<!-- patTemplate:sub condition="NO" -->
+<!-- patTemplate:tmpl name="content2" -->
+   <p>Pada Menu ini anda bisa mencetak Kartu Ujian anda untuk Test Tengah Semester ataupun Test Akhir Semester. Anda harus membawa kartu ini untuk bisa mengikuti Ujian.</p>   
+
+   <table class="table table-form" width="100%">
+      <tr>
+         <th width="100">Semester</th>         
+         <td>{SEMESTER_LABEL}</td>
+      </tr>
+      <tr class="HIDDEN_INFO">
+         <th valign="top">Informasi</th>         
+         <td><label class="info-warning">{INFORMASI}</label></td>
+      </tr>
+      <tr class="{HIDDEN_TOMBOL}">         
+         <td colspan="3" align="center">
+            <br />
+            <a target="_blank" href="{URL_CETAK_TENGAH}" /><button class="btn btn-info">Cetak Kartu Ujian Tengah Semester</button></a>
+            <a target="_blank" href="{URL_CETAK_AKHIR}" /><button class="btn btn-info">Cetak Kartu Ujian Akhir Semester</button></a>
+            <br style="clear:both;" />
+            <br />
+         </td>
+      </tr>
+   </table>
+
+<!-- /patTemplate:tmpl -->
+<!-- /patTemplate:sub -->
+<!-- patTemplate:sub condition="YES" -->
+	Mohon maaf anda belum dapat mengakses cetak kartu ujian melalui portal dikarenakan masih ada kewajiban keuangan yg harus diselesaikan sebagai berikut:
+	
+	<div class="table responsive">
+		<table class="table-common">
+			<tr>
+			   <th width="10">No</th>      
+			   <th >Periode</th>
+			   <th >Tagihan</th>
+			   <th width="70">Batas Pembayaran</th>
+			   <th width="60">Total Tagihan</th>
+			   <th width="60">Sudah Bayar</th>
+			   <th width="60">Total Potongan</th>
+			   <th width="60">Sisa</th>
+			   <th width="75">Status</th>
+			</tr>
+			<!-- patTemplate:tmpl name="data_item_tagihan" -->
+			<tr class="{_CLASS}">
+			   <td align="right">{NUMBER}</td>
+			   <td align="left">{PERIODE}</td>
+			   <td align="left">{TAGIHAN}</td>
+			   <td align="center" nowrap ="nowrap">{BATAS_AKHIR}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_TAGIHAN}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_KWITANSI}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_POTONGAN}</td>
+			   <td align="right" nowrap ="nowrap">{TOTAL_SISA}</td>
+			   <td align="left">
+				  <div style="float:left; width:auto;">{STATUS}</div>
+				</td>
+			</tr>
+			<!-- /patTemplate:tmpl -->      
+		</table>
+	</div>
+<!-- /patTemplate:sub -->
+<!-- /patTemplate:tmpl -->
+
+</div>
+<!-- /patTemplate:tmpl -->

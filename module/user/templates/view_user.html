@@ -1,0 +1,66 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Manajemen User</h2>
+	<br/>
+   <p class="text-muted">Keterangan :</p>
+	<p>Manajemen User digunakan untuk menampilkan, menambah, merubah, dan menghapus pengguna. Administrator dapat mencari pengguna melalui nama pengguna yang bersangkutan.
+   </p><br />	
+   <form class="form-common" method="POST" action="{URL_PROCESS}" name="frmUser">
+      <table class="table-form" width="100%">
+         <tr>
+            <th colspan="3"><b>Form Cari User</b></th>
+         </tr>
+         <tr>
+            <th width="100">Nama User</th>
+            <td width="100"><input name="cari" type="text" maxlength="255" size="20" value="{USERID_SEARCH}" /></td>
+            <td><input class="input-disclaimer btn btn-info" name="btnCari" type="submit" value="Cari" /></td>
+         </tr>
+      </table>
+      <input name="doact" type="hidden" value="default" />
+      <input class="input-disclaimer btn btn-info" name="btnTambah" type="submit" value="Tambah" />
+   </form>
+   <br />   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->            
+   <!-- patTemplate:tmpl name="data_user" type="condition" conditionvar="USER_IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->         
+      <!-- /patTemplate:sub --><!--sub:data_user-YES-->
+      <!-- patTemplate:sub condition="NO" -->
+      <div class="table-responsive">
+      <table class="table-common">
+         <tr>
+            <th>No</th>
+            <th>Nama User</th>
+            <th>Nama Lengkap</th>
+            <th>Fakultas</th>
+            <th colspan="3">Aksi</th>
+         </tr>         
+         <!-- patTemplate:tmpl name="data_user_item" type="condition" conditionvar="ODDEVEN" -->                  
+            <!-- patTemplate:sub condition="ODD" -->                 
+               <tr>
+                  <td>{USER_NUMBER}</td>
+                  <td>{USER_NAMA}</td>
+                  <td>{USER_NAMA_LENGKAP}</td>
+                  <td>{USER_FAKULTAS}</td>
+                  <td class="table-common-links" ><a href="{USER_URLDELETE}"><img src="images/button-delete.gif" alt="Delete" title="Delete" onClick="return ValidateDelete()"/></td>
+                  <td class="table-common-links" ><a href="{USER_URLUPDATE}"><img src="images/button-edit.gif" alt="Edit" title="Ubah" /></td>
+                  <td class="table-common-links" ><a href="{USER_URLRESET}"><img src="images/button-reset_password.gif" alt="Reset Password" title="Reset Password"  /></td>
+               </tr>         
+            <!-- /patTemplate:sub -->                 
+            <!-- patTemplate:sub condition="EVEN" -->                 
+               <tr class="table-common-even">
+                  <td>{USER_NUMBER}</td>
+                  <td>{USER_NAMA}</td>
+                  <td>{USER_NAMA_LENGKAP}</td>
+                  <td>{USER_FAKULTAS}</td>
+                  <td class="table-common-links" ><a href="{USER_URLDELETE}"><img src="images/button-delete.gif" alt="Delete" title="Delete" onClick="return ValidateDelete()"/></td>
+                  <td class="table-common-links" ><a href="{USER_URLUPDATE}"><img src="images/button-edit.gif" alt="Edit" title="Ubah" /></td>
+                  <td class="table-common-links" ><a href="{USER_URLRESET}"><img src="images/button-reset_password.gif" title="Reset Password" alt="Reset Password" /></td>
+               </tr>         
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl --><!--data_user_item-->
+      </table>     
+   </div>
+      <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+      <!-- /patTemplate:sub --><!--sub:data_user-NO-->
+   <!-- /patTemplate:tmpl --><!--data_user-->
+<!-- /patTemplate:tmpl -->

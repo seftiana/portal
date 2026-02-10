@@ -1,0 +1,101 @@
+<!-- patTemplate:tmpl name="content" -->
+   <form name="frmSearch" method="POST" action="{URL_CARI}">
+      <div class="table-responsive">  
+      <table class="table-form">
+         <tr>
+            <th align="left" colspan="4"><b>Form Cari {APPLICATION_SUBMODULE}</b></th>
+         </tr>
+         <tr>
+            <th ><input type="checkbox" name="chk[niu]" value="niu"></th>
+            <th>{LABEL_NIM}</th>
+            <th style="width:1px">:</th>
+            <th><input name="searchKey[niu]" type="text"  id="niu"></th>
+         </tr>
+         <tr>
+            <th ><input type="checkbox" name="chk[nama]" value="nama"></th>
+            <th>Nama</th>
+            <th style="width:1px">:</th>
+            <th><input name="searchKey[nama]" type="text"  id="nama"></th>
+         </tr>
+         <!--
+         <tr>
+            <th ><input type="checkbox" name="chk[fakultas]" value="fakultas"></th>
+            <th>Fakultas</th>
+            <th style="width:1px">:</th>
+            <th><input name="searchKey[fakultas]" type="text"  id="fakultas"></th>
+         </tr>
+         -->
+         <tr>
+            <th ><input type="checkbox" name="chk[prodi]" value="fakultas"></th>
+            <th>Prodi</th>
+            <th style="width:1px">:</th>
+            <th>
+               <select name="searchKey[prodi]" >
+                  <option value="all"></option>
+                  <!-- patTemplate:tmpl name="prodi" -->
+                  <option value="{KODE}">{PRODI}</option>
+                  <!-- /patTemplate:tmpl -->
+               </select>
+            </th>
+         </tr>         
+         <tr>
+            <th colspan="4" align="left"><input class="input-disclaimer btn btn-info" name="searchBtn" type="submit" value="Cari" class="vbtn"></th>
+         </tr>
+      </table>
+   </div>  
+   </form>
+   
+   <form name="frmAdd" method="POST" action="{URL_ADD}">
+      <input type="submit" class="input-disclaimer btn btn-info" name="btnTambah" value="Tambah Kontak">
+   </form>
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="daftar_teman" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+         
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+             
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <table border="0" cellspacing="0" cellpadding="0" id="1">           
+            <tr>
+               <td>
+                  <table border="1" cellpadding="5" cellspacing="0" class="table-common">
+                     <tr align="center">
+                        <th>No.</th>
+                        <th>{LABEL_NIM}</th>
+                        <th>Nama Lengkap</th>                        
+                        <th>Program Studi</th>
+                        <th>Aksi</th>
+                     </tr>
+                     <!-- patTemplate:tmpl name="list_teman" -->
+                     <tr>
+                        <td align="center">{TEMAN_NUMBER}</td>
+                        <td align="left">{TEMAN_NIU}</td>                         
+                        <td align="left">{TEMAN_NAMA}</td>
+                        <td align="left">{TEMAN_PRODI}</td>
+                        <form name="frmDelete" method="POST" action="{URL_DELETE}">
+                        <td>
+                           <input name="kode" type="radio" 
+                              onclick="self.opener.document.frmInput.idrec.value ='{TEMAN_NIU}';
+                                       window.close()">
+                           <input type="hidden" name="data[MessageReceiver]" value="{TEMAN_PEMILIK}">
+                           <input type="hidden" name="data[MessageSender]" value="{TEMAN_NIU}">
+                           <input class="input-disclaimer" type="hidden" name="act" value="deleteAddrBook">
+                           <input class="input-disclaimer btn btn-info" type="submit" value="Hapus">
+                        </td>
+                        </form>
+                     </tr>
+                     <!-- /patTemplate:tmpl -->
+                  </table>
+                  
+                  <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+                  
+               </td>
+            </tr>
+         </table>        
+
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

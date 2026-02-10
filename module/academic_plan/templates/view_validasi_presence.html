@@ -1,0 +1,233 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+    body { font-family: Arial, sans-serif; }
+	.overlaySesuai{
+		display: none;
+		position: fixed;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		background: rgba(0,0,0,0.5);
+		justify-content: center;
+		align-items: center;
+	}
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .popup {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .popup button {
+      margin: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-iya { background: #2ecc71; color: white; }
+    .btn-tidak { background: #e74c3c; color: white; }
+  </style>
+	<script>
+	document.addEventListener("contextmenu", e => e.preventDefault());
+	document.addEventListener("keydown", e => {
+		if (e.key === "F12" || 
+		   (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key)) || 
+		   (e.ctrlKey && e.key === "U")) {
+			e.preventDefault();
+		}
+	});
+
+	function showValidasiAbsenSesuai(preskls_id) {
+      document.getElementById("overlaySesuai").style.display = "flex";
+	  document.getElementById("presensiIdS").value = preskls_id;
+    }
+    function showValidasiAbsen(preskls_id) {
+      document.getElementById("overlay").style.display = "flex";
+	  document.getElementById("presensiId").value = preskls_id;
+    }
+	function closePopup() {
+      document.getElementById("overlaySesuai").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
+	
+	document.addEventListener("DOMContentLoaded", function() {
+		const input = document.getElementById("myText");
+
+		input.addEventListener("input", function() {
+			let val = input.value;
+			if (/['";]/.test(val)) {
+				alert("Tidak boleh ada kutip 1 ('), kutip 2 (\") atau titik koma (;)");
+				// hapus karakter terlarang
+				input.value = val.replace(/['";]/g, "");
+			}
+		});
+	});
+	
+	function submitDataS() {
+            let text = document.getElementById("myTextS").value;
+            let presensiId = document.getElementById("presensiIdS").value;
+
+            if (text.trim() === "") {
+                alert("Teks tidak boleh kosong!");
+                return;
+            }
+
+            // Kirim ke backend PHP
+            fetch("{URL_SIMPAN}", {
+                method: "POST",
+                headers: {"Content-Type": "application/x-www-form-urlencoded"},
+                body: "text=" + encodeURIComponent(text) + 
+					  "&presensiId=" + encodeURIComponent(presensiId)
+            })
+            .then(response => response.text())
+            .then(data => {
+			console.log("", data);
+                if (data === "success") {
+                    alert("Data berhasil disimpan!");
+                    closePopup();
+                    location.reload();
+                } else {
+                    alert("Gagal menyimpan data.");
+                }
+            })
+            .catch(err => {
+                alert("Terjadi error: " + err);
+            });
+        }
+    
+	function submitData() {
+			
+            let text = document.getElementById("myText").value;
+            let presensiId = document.getElementById("presensiId").value;
+			
+            if (text.trim() === "") {
+                alert("Teks tidak boleh kosong!");
+                return;
+            }
+
+            // Kirim ke backend PHP
+            fetch("{URL_SIMPAN}", {
+                method: "POST",
+                headers: {"Content-Type": "application/x-www-form-urlencoded"},
+                body: "text=" + encodeURIComponent(text) + 
+					  "&presensiId=" + encodeURIComponent(presensiId)
+            })
+            .then(response => response.text())
+            .then(data => {
+			console.log("", data);
+                if (data === "success") {
+                    alert("Data berhasil disimpan!");
+                    closePopup();
+                    location.reload();
+                } else {
+                    alert("Gagal menyimpan data.");
+                }
+            })
+            .catch(err => {
+                alert("Terjadi error: " + err);
+            });
+        }
+	
+  </script>
+  
+<h2>Daftar Pertemuan Kelas</h2>
+<br />
+  
+<!-- patTemplate:link name="error_box" src="error_box" / -->
+
+<!-- patTemplate:tmpl name="data_kelas" visibility="visible" -->
+<table width="100%" class="table-form">
+	<tr>
+	   <th>Semester</th>
+	   <td><b>{KELAS_SMT_NAMA} {KELAS_THN_AJAR}</b></td>
+	</tr>
+	<tr>
+	   <th>Nama Kelas</th>
+	   <td><b>{KELAS_KLS_NAMA}</b></td>
+	</tr>
+	<tr>
+	   <th width="20%">Matakuliah</th>
+	   <td><b>{KELAS_MK_NAMA}</b></td>
+	</tr>
+	<tr>
+	   <th >Dosen</th>
+	   <td><b>{KELAS_NAMA_DOSEN}</b></td>
+	</tr>
+</table>
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="data_pertemuan" visibility="hidden" -->
+<div class="table-responsive">
+<table class="table-common" width="100%">
+	<tr> 
+		<th align="center">NO</th>
+		<th>TANGGAL</th>
+		<th>TEMA</th>
+		<th>BAHASAN</th>
+		<th>VALIDASI</th>
+    </tr>
+	<!-- patTemplate:tmpl name="data_pertemuan_list" type="condition" conditionvar="IS_EMPTY" -->
+	
+	<!-- patTemplate:sub condition="YES" -->
+	<tr>
+		<td colspan="5">Belum ada data pertemuan.</td>
+	</tr>
+	<!-- /patTemplate:sub -->
+	
+	<!-- patTemplate:sub condition="NO" -->
+	<!-- patTemplate:tmpl name="data_pertemuan_list_item" -->
+	<tr>    
+		<td width="5%" nowrap ="nowrap" align="center">{PERTEMUAN_KE}</td>
+		<td width="17%"> {TANGGAL_TERLAKSANA_INDO}</td>
+		<td width="35%"> {TEMA} </td>
+		<td width="35%"> {POKOK_BAHASAN} </td>
+		<td width="8%" nowrap ="nowrap" align="center" class="table-common-links">
+			{KETERANGAN}
+			<!--button class="btn btn-info" type="button" name="btnEdit" onclick="showValidasiAbsenSesuai({PRESKLS_ID})">Sesuai</button> &nbsp;
+			<button class="btn btn-warning" type="button" name="btnEdit" onclick="showValidasiAbsen({PRESKLS_ID})">Tidak Sesuai</button-->
+		</td>
+    </tr>
+	<!-- /patTemplate:tmpl -->
+	<!-- /patTemplate:sub -->
+	
+	<!-- /patTemplate:tmpl -->
+</table>
+</div>
+<!-- /patTemplate:tmpl -->
+
+<div>
+	<br>
+	<form action="{URL_BACK}" method="post">
+		<input class="input-disclaimer btn btn-info" type="submit" name="btnBack" value="Kembali">
+	</form>
+</div>
+<div class="overlaySesuai" id="overlaySesuai">
+    <div class="popup">
+		<p>Yakin validasi absensi Dosen?</p>
+		<input type="hidden" id="presensiIdS" name="presensiIdS">
+		<input type="hidden" id="myTextS" name="myTextS" value="Sesuai">
+		<br>
+		<button class="btn-iya" onclick="submitDataS()">Save</button>
+		<button class="btn-tidak" onclick="closePopup()">Cancel</button>
+    </div>
+</div>
+<div class="overlay" id="overlay">
+    <div class="popup">
+		<p>Tidak sesuai karena:</p>
+		<input type="hidden" id="presensiId" name="presensiId">
+		<input type="text" id="myText" name="myText" placeholder="Keterangan">
+		<br>
+		<button class="btn-iya" onclick="submitData()">Save</button>
+		<button class="btn-tidak" onclick="closePopup()">Cancel</button>
+    </div>
+</div>
+<!-- /patTemplate:tmpl -->

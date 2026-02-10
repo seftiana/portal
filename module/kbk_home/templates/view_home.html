@@ -1,0 +1,91 @@
+
+<!-- patTemplate:tmpl name="content" -->
+	<div id="front-content-full">
+      <div class="front-content-full-left col-lg-8 col-xs-12">
+         <h2>Selamat Datang {USERFULLNAME}</h2>
+         <p>Selamat Datang di {APPLICATIONNAME}. {APPLICATIONNAME} adalah sistem yang 
+            memungkinkan para civitas akademika {APPLICATIONCLIENT} untuk menerima informasi dengan lebih cepat melalui Internet. Sistem ini diharapkan 
+            dapat memberi kemudahan setiap civitas akademika untuk melakukan aktivitas-aktivitas 
+            akademik dan proses belajar mengajar. Selamat menggunakan fasilitas ini.</p>
+      </div> <!-- end of front-content-full-left -->	
+      <div class="front-content-full-right col-lg-4 col-xs-12">
+	<div class="card">         
+         <!-- patTemplate:tmpl name="view_mailbox" type=condition conditionvar="TYPE_MAILBOX" -->
+            <!-- patTemplate:sub condition="WITH_FEEDBACK" -->
+               <h3><!--Feedback &amp; -->Kotak Pesan</h3>
+               <ul>
+                  <li>Anda memiliki: </li>
+                  <!--li><a href="{URL_FEEDBACK}"><strong>feedback baru ({TOTAL_NEWFEEDBACK})</strong></a></li-->
+                  <li><a href="{URL_INBOX}"><strong>pesan baru ({TOTAL_NEWMSG})</strong></a></li>
+                  <li></li>
+                  <li><a href="{URL_INBOX}" class="button-special-box" title="Lihat pesan masuk">Masuk</a>
+                     <a href="{URL_OUTBOX}" class="button-special-box" title="Lihat pesan keluar">Terkirim</a>
+                  </li>
+               </ul>
+            <!-- /patTemplate:sub -->            
+            <!-- patTemplate:sub condition="empty" -->
+               <h3>Kotak Pesan</h3>
+               <ul>
+                  <li>Anda memiliki  <a href="{URL_INBOX}"><strong>( {TOTAL_NEWMSG} )  pesan baru</strong></a></li>
+                  <li></li>
+                  <li><a href="{URL_INBOX}" class="button-special-box" title="Lihat pesan masuk">Masuk</a>
+                     <a href="{URL_OUTBOX}" class="button-special-box" title="Lihat pesan keluar">Terkirim</a>
+                  </li>
+               </ul>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+         </div>
+      </div> <!-- end of front-content-full-right -->				
+   </div> <!-- end of front-content-full -->
+   
+   <div id="front-content-half">
+<div class="front-content-half-left">
+         <div class="card">
+         <div class="card-header"><strong>Pengumuman</strong></div>     
+
+         <!-- patTemplate:tmpl name="category" type="condition" conditionvar="IS_EMPTY" -->
+         <!-- patTemplate:sub condition="0" -->
+        <a href="{URL}">
+<h3 class="py-3">&nbsp;<i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp;{KATEGORI}</h3>
+            <ul>
+            <!-- patTemplate:tmpl name="data_category" type="condition" conditionvar="IS_EMPTY" -->
+               <!-- patTemplate:sub condition="YES" -->
+                  <li>Belum ada informasi untuk kategori ini</li>
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="NO" -->
+                  <!-- patTemplate:tmpl name="list_data" -->
+                  <li><a href="{PENGUMUMAN_URL}">{PENGUMUMAN_TITLE}: &nbsp;<small>{PENGUMUMAN_DATE}</small></a></li>
+                  <!-- /patTemplate:tmpl -->
+               <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl -->						
+         </ul>
+        
+         <!-- /patTemplate:sub -->
+         <!-- patTemplate:sub condition="1" -->
+            <h3>Tidak ada kategori</h3>
+         <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+          </div>
+      </div> <!-- end of front-content-half-left -->				
+      <!--div class="front-content-half-right">
+         <h2>Diskusi Terbaru</h2>
+         <ul>
+            <!-- patTemplate:tmpl name="forum_diskusi" type="condition" conditionvar="IS_EMPTY" -->
+               <!-- patTemplate:sub condition="YES" -->
+                  <li>Belum ada forum diskusi</li>                  
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="NO" -->
+                  <!-- patTemplate:tmpl name="forum_diskusi_list" -->
+                  <li>
+                     <a href="{DISCUSSION_URL}">[{DISCUSSION_TOPIC}]<br />{DISCUSSION_THREAD}
+                        <small><br />( {DISCUSSION_JMLPOST} poster, Last Updates {DISCUSSION_LASTUPDATE} )</small></a>
+                  </li>                  
+                  <!-- /patTemplate:tmpl -->                                              
+                  <!--li><a href="#">Perpustakaan Daerah<br /><small>( 5 poster, Last Updates 17 Nov 05 )</small></a></li-->
+               <!-- /patTemplate:sub -->                                       
+            <!-- /patTemplate:tmpl -->
+         </ul>
+      </div--> <!-- end of front-content-half-right -->
+   </div> <!-- end of front-content-half -->
+     
+<!-- /patTemplate:tmpl -->

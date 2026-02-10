@@ -1,0 +1,146 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.subhead th{
+	font-weight: bold;
+	font-size: 10pt;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.subhead-common th{
+	font-weight: bold;
+	font-size: 7pt;
+	text-align: center;
+	vertical-align: middle;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.hidden{
+	display: none;
+}
+</style>
+   <h2>Data SMA Asal Mahasiswa</h2>
+   <br />
+   
+   <h5>Keterangan :</h5>
+   <p>Data SMA berisi data SMA asal Mahasiswa portal akademik. Apabila terdapat kesalahan data, anda dapat memperbaikinya.
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="data_biodata" -->
+         <table class="table-list" width="650">
+            <tr class="subhead">
+               <th colspan="2" >Data Riwayat Pra-SMTA </th>
+            </tr>   
+            <tr>
+               <td colspan="2">
+                  <table class="table-common" width="580">
+                     <tr class="subhead-common">
+                        <th width="5">No</th>
+                        <th>Pendidikan</th>
+                        <th>Nama Sekolah</th>
+                        <th>Tahun Lulus</th>
+                     </tr>
+                            <!-- patTemplate:tmpl name="data_riwayat" type="simplecondition" requiredVars="RIWAYAT_NO" -->  
+                           <tr>
+                              <td align="center">{RIWAYAT_NO}</td>
+                              <td>{RIWAYAT_JENJANG_NAMA}</td>                              
+                              <td>{RIWAYAT_NAMA_PENDIDIKAN}</td>                              
+                              <td>{RIWAYAT_TAHUN_LULUS}</td>
+                           </tr>
+                           <!-- /patTemplate:tmpl -->
+                  </table>
+               </td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2">Data SMTA</th>
+            </tr>   
+            <tr>
+               <th width="150" >Tahun Daftar SMTA</th>
+               <td>{TAHUN_DAFTAR_SMTA}</td>
+            </tr>         
+            <tr>
+               <th width="60">Tahun Lulus SMTA</th>
+               <td>{TAHUN_LULUS_SMTA}</td>
+            </tr>
+            <tr>
+               <th width="60">Kelas Masuk SMTA </th>
+               <td>{KELAS_MASUK_SMTA}</td>
+            </tr>
+            <tr>
+               <th width="60">Jurusan SMTA</th>
+               <td>{JURUSAN_SMTA}</td>
+            </tr>            
+            <tr>
+               <th width="60">Jenis SMTA</th>
+               <td>{JENIS_SMTA}</td>
+            </tr>
+            <tr id ="pilih_smta"> 
+               <th>Pilih SMTA</th>
+               <td>{SMTA_NAMA}"</td>
+            </tr>
+            <tr>
+               <th>Propinsi SMTA</th>
+               <td>{PROPINSI_SMTA}</td>
+            </tr>
+            <tr>
+               <th >Alamat SMTA</th>
+               <td>{ALAMAT_SMTA}</td>
+            </tr>
+            <tr>
+               <th width="60">Lulus SMTA</th>
+               <td>{IS_LULUS_SMTA}</td>
+            </tr>            		
+            <tr>
+               <th width="60">No Ijazah</th>
+               <td>{NO_IJAZAH_SMTA}</td>
+            </tr>
+            <tr>
+               <th >Tanggal Ijazah</th>
+               <td>{TGL_IJAZAH_SMTA}</td>
+            </tr>
+            <tr>
+               <th>Status SMTA</th>
+                <td>{STATUS_SMTA}</td>
+            </tr>
+            <tr>
+               <th>Akreditasi</th>
+                <td>{AKREDITASI}</td>
+             </tr>
+            <tr>
+               <th width="60">Nilai Ujian Akhir SMTA</th>
+               <td>{NILAI_UAS_SMTA}</td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2">Nilai UAN</th>
+            </tr>   
+            <tr>
+               <th width="150">Nilai Matematika</th>
+               <td>{UAN_MATE}</td>
+            </tr>
+            <tr>
+               <th width="150">Nilai Bahasa Inggris</th>
+               <td>{UAN_BING}</td>
+            </tr>
+            <tr>
+               <th width="150">Nilai Fisika</th>
+               <td>{UAN_FIS}</td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2">Nilai Raport SMTA</th>
+            </tr>   
+            <tr>
+               <th width="150">Nilai Matematika</th>
+               <td>{RAPOR_MATE}</td>
+            </tr>
+            <tr>
+               <th width="150">Nilai Bahasa Inggris</th>
+               <td>{RAPOR_BING}</td>
+            </tr>
+   <!-- /patTemplate:tmpl -->
+   </table>
+   
+	<div align="center">
+		<form name="frmEdit" action="{URL_EDIT}" method="post">
+		<input class="input-disclaimer btn btn-primary" type="submit" name="btnEdit" value="Ubah">
+		</form>
+	</div>
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,41 @@
+<!-- patTemplate:tmpl name="content" -->
+   
+   <h4>{APPLICATION_MODULE}</h4>   
+   <br>
+   <h5>{KATEGORI_TITLE}</h5>
+   <p>{KATEGORI_DESCRIPTION}</p>
+   
+   <!-- patTemplate:tmpl name="topik_list" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->         
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <table class="table-forum" width="100%">
+            <tr>
+               <th class="text-center" colspan="2"><div class="th-special-left"></div><div class="th-center"><strong>Topik Diskusi</strong></div></th>
+               <th class="text-center" width="28%"><div class="th-special-right"></div><div class="th-center"><strong>Informasi Topik</strong></div></th>
+            </tr>
+            <!-- patTemplate:tmpl name="topik_item" -->
+            <tr>
+               <td><img src="images/public.gif" alt="" /></td>
+               <td>
+                  <strong><a href="{TOPIK_URL_DETAIL}">{TOPIK_JUDUL}</a></strong><br />
+                  <p>{TOPIK_DESKRIPSI}</p>
+               </td>
+               <td class="text-center">
+                  {TOPIK_TANGGAL} <br /> 
+                  Moderator : <b>{TOPIK_NAMAMODERATOR}</b><br />                   
+               </td>
+            </tr>
+            <!-- /patTemplate:tmpl -->
+         </table>
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   <table width="50%">
+      <tr>
+         <td class="table-common-links"><a href="{URL_BACK}">Kembali</a></td>
+      </tr>
+   </table>
+<!-- /patTemplate:tmpl -->

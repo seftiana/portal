@@ -1,0 +1,122 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Presensi Kelas</h2>
+   <br />
+	<!-- patTemplate:tmpl name="data_hutang" type="condition" conditionvar="BLOCK" -->
+		<!-- patTemplate:sub condition="NO" -->
+		
+		
+			<!-- patTemplate:link name="error_box" src="error_box" / -->
+
+			<!-- patTemplate:tmpl name="keterangan" visibility="hidden" -->
+				<!-- patTemplate:tmpl name="mprodi" visibility="hidden" -->
+				<form class="form-common" method="POST" action="{URL_VIEW}" name="frmProdi">
+				<div class="table-responsive">
+					<table class="table table-bordered" width="100%" align="left">
+					 <tr>
+						<td colspan="3"><a href="{LINK_QRCODE}" class="btn btn-info"> Scan QR Code </a></td>
+					 </tr>
+					 <tr>
+						<td  align="left" class="">Tahun Semester&nbsp;</td>
+						<td  align="left"  class="">
+							<select name="semester">
+								<!-- patTemplate:tmpl name="fsemester" -->
+								<option value="{KODE}" {IS_SELECTED} >{NAMA}</option>
+								<!-- /patTemplate:tmpl -->
+							</select>
+						</td>
+						<td  align="left"  class=""><button class="btn btn-info" type="submit">lihat</button></td>
+					 </tr>
+					</table>
+				</div>
+				</form>
+				<!-- /patTemplate:tmpl -->
+
+			<div class="table-responsive">
+
+			<table class="table-common" width="99%">
+				<tr>
+					<th width="5%" >NO</th>
+					<th width="10%" >KODE MK</th>
+					<th width="45%">MATA KULIAH</th>
+					<th width="5%" >SKS</th>
+					<th width="15%" >KLP</th>
+					<th width="20%" >WAKTU KULIAH</th>
+				</tr>
+					<!-- patTemplate:tmpl name="data_list"  type="condition" conditionvar="IS_EMPTY" -->
+						<!-- patTemplate:sub condition="YES" -->
+						<tr>
+						   <td colspan="6" align="center"><em>Belum ada Data KRS di semester {MSG}</em></td>
+						</tr>
+						<!-- /patTemplate:sub -->
+						<!-- patTemplate:sub condition="NO" -->
+							<!-- patTemplate:tmpl name="data_list_item" -->
+						<tr height="20">
+							<td nowrap ="nowrap" align="center" style="vertical-align:middle">{NO}</td>
+						   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{KODE_MK}</td>
+						   <td style="vertical-align:middle">{NAMA_MK}</td>
+						   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{SKS}</td>
+						   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{KELAS}</td>
+						   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{WAKTU}</td>
+						</tr>
+							<!-- /patTemplate:tmpl -->
+						<!-- /patTemplate:sub -->
+					<!-- /patTemplate:tmpl -->
+					<!-- patTemplate:tmpl name="total" -->
+						<tr>
+							<td colspan="3" nowrap ="nowrap" align="center" style="vertical-align:middle">Total SKS yang diambil</td>
+							<td nowrap ="nowrap" align="center" style="vertical-align:middle"><strong>{JML_TOTAL_SKS}</strong></td>
+							<td colspan="4" nowrap ="nowrap" align="center" style="vertical-align:middle">&nbsp;</td>
+						</tr>
+					<!-- /patTemplate:tmpl -->
+			</table>
+			</div>
+			<div class="petunjuk-area">
+			  <h4>Petunjuk:</h4>
+			  <ul>
+				 <li style="font:12px Arial;">Klik tombol scan qr code untuk melakukan presensi kelas.</li>
+			  </ul>
+			</div>
+			<br/><br/>
+
+			<!-- /patTemplate:tmpl -->
+
+
+		<!-- /patTemplate:sub -->
+		<!-- patTemplate:sub condition="YES" -->
+		Mohon maaf anda belum dapat mengakses presensi qr code melalui portal, dikarenakan masih ada kewajiban keuangan yg harus diselesaikan sebagai berikut:
+		<div class="table responsive">
+			<table class="table table-common" width="98%">
+				<tr>
+				   <th width="10">No</th>      
+				   <th >Periode</th>
+				   <th >Tagihan</th>
+				   <th width="70">Batas Pembayaran</th>
+				   <th width="60">Total Tagihan</th>
+				   <th width="60">Sudah Bayar</th>
+				   <th width="60">Total Potongan</th>
+				   <th width="60">Sisa</th>
+				   <th width="75">Status</th>
+				</tr>
+				<!-- patTemplate:tmpl name="data_item_tagihan" -->
+				<tr class="{_CLASS}">
+				   <td align="right">{NUMBER}</td>
+				   <td align="left">{PERIODE}</td>
+				   <td align="left">{TAGIHAN}</td>
+				   <td align="center" nowrap ="nowrap">{BATAS_AKHIR}</td>
+				   <td align="right" nowrap ="nowrap">{TOTAL_TAGIHAN}</td>
+				   <td align="right" nowrap ="nowrap">{TOTAL_KWITANSI}</td>
+				   <td align="right" nowrap ="nowrap">{TOTAL_POTONGAN}</td>
+				   <td align="right" nowrap ="nowrap">{TOTAL_SISA}</td>
+				   <td align="left">
+					  <div style="float:left; width:auto;">{STATUS}</div>
+					</td>
+				</tr>
+				<!-- /patTemplate:tmpl -->      
+			</table>
+		</div>
+		<!-- /patTemplate:sub -->
+	<!-- /patTemplate:tmpl -->
+
+   
+   <!-- /patTemplate:tmpl -->
+ <!-- end of content -->

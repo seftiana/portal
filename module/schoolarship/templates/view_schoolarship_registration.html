@@ -1,0 +1,136 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Daftar Beasiswa </h2>
+	<br/>
+   <h5>Keterangan :</h5>
+	<p>Daftar Beasiswa digunakan mendaftarkan beasiswa. 
+	Aplikan diharuskan mengisi data orang tua dan data saudara kandung, sebelum dapat melakukan pendaftaran. 
+	Setelah terdaftar, aplikan diharuskan melengkapi berkas-berkas yang dibutuhkan ke bagian kemahasiswaan.
+	</p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+	<br/>
+	<h3>Data Orang Tua</h3>
+	<!-- patTemplate:tmpl name="data_orangtua" type="condition" conditionvar="ORANGTUA_IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+		
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+			
+      <!-- /patTemplate:sub --><!--sub:data_user-YES-->
+      <!-- patTemplate:sub condition="NO" -->
+			<table class="table-common" width="100%">
+         <tr>
+            <th>No</th>
+            <th>Nama</th>
+				<th>Keterangan Wali</th>
+				<th>Pekerjaan</th>
+            <th>Penghasilan</th>
+            <th>Status Wali</th>
+				<th>Aksi</th>
+         </tr>     
+			<!-- patTemplate:tmpl name="data_orangtua_item" type="condition" conditionvar="ODDEVEN" -->                  
+				<!-- patTemplate:sub condition="ODD" -->                 
+					<tr>
+						<td>{ORTU_NUMBER}</td>
+						<td>{ORTU_NAMA}</a></td>
+						<td>{ORTU_KET_KELUARGA}</td>
+						<td>{ORTU_PEKERJAAN}</td>
+						<td>{ORTU_PENGHASILAN}</td>
+						<td>{ORTU_STATUS}</td>
+						<td class="table-common-links" ><a href="{ORTU_URLUPDATE}"><img src="images/button-edit.gif" alt="Edit" title="Ubah" /></td>
+				  </tr>         
+				<!-- /patTemplate:sub -->                 
+				<!-- patTemplate:sub condition="EVEN" -->                 
+					<tr class="table-common-even">
+						<td>{ORTU_NUMBER}</td>
+						<td>{ORTU_NAMA}</a></td>
+						<td>{ORTU_KET_KELUARGA}</td>
+						<td>{ORTU_PEKERJAAN}</td>
+						<td>{ORTU_PENGHASILAN}</td>
+						<td class="table-common-links" ><a href="{ORTU_URLUPDATE}"><img src="images/button-edit.gif" alt="Edit" title="Ubah" /></td>
+				  </tr>         
+				<!-- /patTemplate:sub -->
+			<!-- /patTemplate:tmpl --><!--data_orangtua_item-->
+			</table>
+		<!-- /patTemplate:sub --><!--sub:data_user-NO-->
+	<!-- /patTemplate:tmpl --><!--tmpl:data_orangtua-->
+   <form name="frmOrangTua" action="{URL_PROCESS}" method="post">
+      <input type="submit" name="btnOrangTua" value="Tambah Data Orang Tua">
+   </form>
+	<br /><br /><br />
+	
+	<h3>Data Saudara Kandung</h3>
+	<!-- patTemplate:tmpl name="data_saudara" type="condition" conditionvar="SAUDARA_IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+		
+         <table class="table-forum" width="100%">
+				<tr>
+               <th class="text-center" width="5%">
+                  <div class="th-special-left"></div>
+               </th>
+               <th class="text-left"></th>
+               <th class="text-center" width="5%">
+                  <div class="th-special-right"></div>
+               </th>
+            </tr>
+				<tr>
+               <td colspan="3" class="text-center">
+						<div id="warning">
+							<table>
+								<tr>
+									<td rowspan="2"><img src="images/info_simbol.gif" alt="" /></td>
+									<td><h3>INFORMASI</h3></td>
+								</tr>
+								<tr>
+									<td>{WARNING_MESSAGE}</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+            </tr>
+         </table>
+			
+      <!-- /patTemplate:sub --><!--sub:data_user-YES-->
+      <!-- patTemplate:sub condition="NO" -->
+			<table class="table-common" width="100%">
+         <tr>
+            <th>No</th>
+            <th>Nama</th>
+				<th>Keterangan Saudara</th>
+				<th>Status Nikah</th>
+            <th>Pekerjaan</th>
+            <th>Aksi</th>
+         </tr>     
+			<!-- patTemplate:tmpl name="data_saudara_item" type="condition" conditionvar="ODDEVEN" -->                  
+				<!-- patTemplate:sub condition="ODD" -->                 
+					<tr>
+						<td>{SDR_NUMBER}</td>
+						<td>{SDR_NAMA}</a></td>
+						<td>{SDR_STAT_KEL}</td>
+						<td>{SDR_STAT_NIKAH}</td>
+						<td>{SDR_PEKERJAAN}</td>
+						<td class="table-common-links" ><a href="{SDR_URLUPDATE}"><img src="images/button-edit.gif" alt="Edit" title="Ubah" /></td>
+				  </tr>         
+				<!-- /patTemplate:sub -->                 
+				<!-- patTemplate:sub condition="EVEN" -->                 
+					<tr class="table-common-even">
+						<td>{SDR_NUMBER}</td>
+						<td>{SDR_NAMA}</a></td>
+						<td>{SDR_STAT_KEL}</td>
+						<td>{SDR_STAT_NIKAH}</td>
+						<td>{SDR_PEKERJAAN}</td>
+						<td class="table-common-links" ><a href="{SDR_URLUPDATE}"><img src="images/button-edit.gif" alt="Edit" title="Ubah" /></td>
+				  </tr>         
+				<!-- /patTemplate:sub -->
+			<!-- /patTemplate:tmpl --><!--data_saudara_item-->
+			</table>
+		<!-- /patTemplate:sub --><!--sub:data_user-NO-->
+	<!-- /patTemplate:tmpl --><!--tmpl:data_saudara-->
+   <form name="frmSaudara" action="{URL_PROCESS}" method="post">
+      <input type="submit" name="btnSaudara" value="Tambah Data Saudara">
+   </form>
+   <br/><br/>
+   <form name="frmPendaftaran" action="{URL_PROCESS}" method="post">
+      <input type="submit" name="btnBack" value="Batalkan Pendaftaran">
+      <input type="submit" name="btnPendaftaran" value="Daftar Beasiswa">
+   </form>
+<!-- /patTemplate:tmpl -->

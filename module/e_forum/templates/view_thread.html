@@ -1,0 +1,35 @@
+<!-- patTemplate:tmpl name="content" -->
+  <div id="main-content">
+   <h2> {APPLICATION_MODULE} </h2>
+   <table width="100%" border="0" cellpadding="3" cellspacing="0" class="table-common">
+      <tr align="center">
+         <th height="25" width="10"><strong>No.</strong></th>
+         <th width="250"><strong>Topik </strong></th>   
+         <th width="20"><strong>Pesan </strong></th>
+         <th width="20"><strong>Terakhir </strong></th>
+         <!-- patTemplate:tmpl name="aksi" visibility="hidden" -->
+         <th width="20" colspan="2"><strong>Aksi </strong></th>
+         <!-- /patTemplate:tmpl -->
+      </tr>
+      <!-- patTemplate:tmpl name="list_thread" -->
+      <tr{EVEN}>
+         <td align="center">{THREAD_NO}</td>   
+         <td><a href="{URL_POST}">{THREAD_JUDUL}</a>
+			{THREAD_DESK}
+			</td>         
+         <td align="center">{THREAD_JUMLAH_POST}</td>
+         <td align="center">{THREAD_LAST_POST}</td>
+         <!-- patTemplate:tmpl name="link_aksi" visibility="hidden" -->
+         <td class="table-common-links"><a href="{URL_EDIT}"><img src="images/button-edit.gif" alt="Edit" /></a></td>
+         <td class="table-common-links"><a href="{URL_DELETE}"><img src="images/button-delete.gif" alt="Delete" /></a></td>         
+         <!-- /patTemplate:tmpl -->
+      </tr>   
+      <!-- /patTemplate:tmpl -->      
+   </table> 
+   <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+   <!-- patTemplate:tmpl name="tambah" visibility="hidden" -->
+   <div align="right"><input class="input-disclaimer" type="button" name="tambah" value="Tambah" onclick="location.href='{URL_ADD}'">
+   <input class="input-disclaimer" type="button" name="kembali" value="Kembali" onclick="location.href='{URL_VIEW}'"></div>
+   <!-- /patTemplate:tmpl --> 
+ </div>
+<!-- /patTemplate:tmpl -->

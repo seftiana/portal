@@ -1,0 +1,34 @@
+<?php
+
+   // Load application class
+   require_once $cfg->GetValue("app_proc") . "display_base.class.php" ;
+   require_once $cfg->GetValue("app_proc") . "display_base_print.class.php" ;
+   require_once $cfg->GetValue("app_service") . "client/base_client.service.class.php";
+   
+   require_once $cfg->GetValue("app_service") . "client/sia/sia_setting_client.service.class.php";
+   // Load module class
+   require_once $cfg->GetValue("app_module") . "user/communication/user_client.service.class.php" ;
+   require_once $cfg->GetValue("app_module") . "academic_report/communication/academic_report_client.service.class.php" ;
+   require_once $cfg->GetValue("app_module") . "academic_report/display/display_print_grade_history_mhs.class.php" ;  
+   
+   $ThisPageAccessRight = "MAHASISWA | DOSEN";
+   $security = new Security($cfg);
+   
+   if (false !== $security->CheckAccessRight($ThisPageAccessRight)){
+      $ThisPageLinks = $security->mUserIdentity->GetProperty("Role");
+      $lnk = new Links($cfg, $ThisPageLinks);
+      
+      $mhsNiu = NULL;
+      if (isset($_GET["niu"])){
+         $mhsNiu = $cfg->Dec($_GET["niu"]);
+      } else {
+         $mhsNiu = $security->mUserIdentity->GetProperty("UserReferenceId");
+      }
+      
+      $ThisPage = new DisplayPrintGradeHistoryMhs($cfg, $security, $mhsNiu);
+      $ThisPage->SetLinks($lnk);
+      $ThisPage->Display();
+   }else{
+      $security->DenyPageAccess();
+   }
+?>

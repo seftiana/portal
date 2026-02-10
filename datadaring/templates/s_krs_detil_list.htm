@@ -1,0 +1,836 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-list" {$bodyattrs}>
+	{BEGIN body}{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_top}<div {$top_chiddenattr} data-pageid="{$pageid}" data-container="top" class="container    "> 
+
+
+{BEGIN container_menu}<nav {$menu_chiddenattr} data-pageid="{$pageid}" data-container="menu" class="navbar navbar-default ">					
+
+
+
+{BEGIN container_hdr}<div {$hdr_chiddenattr} data-pageid="{$pageid}" data-container="hdr" class=" navbar-header   "> 
+
+{BEGIN logo_block}<a href="{$home_link}" {$logo_hiddenattr} data-pageid="{$pageid}" data-brick="logo" class="navbar-brand" >{$logo}</a>
+{END logo_block}
+
+
+{BEGIN collapse_block}<button {$bsnavbarcollapse_hiddenattr} data-pageid="{$pageid}" data-brick="bsnavbarcollapse" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target=".bs-navcontrolled">	
+	<span class="sr-only">Toggle navigation</span>	
+	<span class="icon-bar"></span>					
+</button>												
+
+{END collapse_block}
+
+
+
+</div>
+{END container_hdr}
+
+
+
+
+
+
+{BEGIN container_menu_1}<div {$menu_1_chiddenattr} data-pageid="{$pageid}" data-container="menu_1" class="bs-navform navbar-collapse bs-hidden-xs bs-navcontrolled" aria-expanded="false" >												   
+{BEGIN menu_block}{$menu main horizontal}
+
+{END menu_block}
+
+
+
+
+
+{BEGIN container_more}<div {$more_chiddenattr} data-pageid="{$pageid}" data-container="more" class=" navbar-right navbar-form   "> 
+
+{BEGIN more_list}<div {$morebutton_hiddenattr} data-pageid="{$pageid}" data-brick="morebutton" class="btn-group bs-navsection">
+	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="glyphicon glyphicon-cog"></span>
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu">
+		
+				{BEGIN exportselected_link}<li class="massButton{$id} disabled"><a href="#" {$exportselectedlink_attrs} {$exportselectedlink_span} >Export selected</a></li>
+		{END exportselected_link}
+		
+				
+				<li role="separator" class="divider"></li>	
+
+				{BEGIN asearch_link}<li><a href="s_krs_detil_search.php" {$advsearchlink_attrs}>Advanced search</a></li>
+		{END asearch_link}
+
+				{BEGIN searchPanelTopButtons}<li><a href=# id="showOptPanel{$id}">Show search panel</a></li>
+		{END searchPanelTopButtons}	
+		
+				
+				<li role="separator" class="divider"></li>	
+		
+				
+				{BEGIN export_link}<li><a target="_blank" href="s_krs_detil_export.php"  {$exportlink_attrs}>Export results</a></li>
+		{END export_link}
+
+		
+				
+	</ul>  
+</div>
+
+{END more_list}
+
+
+{BEGIN security_block}<span {$loggedas_hiddenattr} data-pageid="{$pageid}" data-brick="loggedas" id="login_block{$id}" class="bs-navsection">
+	{BEGIN guestloginbutton}<button class="btn btn-info" type="button" {$guestloginlink_attrs}>Login</button>
+	{END guestloginbutton}
+	{BEGIN loggedas_message}<span class="dropdown">
+			<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon-user"></span>	{$username}</button>
+			<ul class="dropdown-menu">
+		{BEGIN logoutbutton}<li><a href="#" {$logoutlink_attrs}>Log out</a></li>
+		{END logoutbutton}
+		
+
+			</ul>
+		</span>
+	{END loggedas_message}
+</span>
+{END security_block}
+
+
+
+</div>
+{END container_more}
+
+
+
+
+
+
+
+
+{BEGIN container_more_1}<div {$more_1_chiddenattr} data-pageid="{$pageid}" data-container="more_1" class=" navbar-right navbar-form   "> 
+
+{BEGIN searchform_block}<span {$search_hiddenattr} data-pageid="{$pageid}" data-brick="search" class="form-group">
+
+ <div  class="input-group">
+{BEGIN searchform_text}<input type="search" class="form-control" {$searchfor_attrs} size="25">
+{END searchform_text}
+	<span class="input-group-btn">
+	{BEGIN searchform_showall}<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs} title="Show all">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
+	{END searchform_showall}
+	{BEGIN searchform_search}<button {$searchbutton_attrs} class="btn btn-primary" >
+		<span class="glyphicon glyphicon-search"></span>
+	</button>
+	{END searchform_search}
+	</span>
+</div>
+		
+</span>
+{END searchform_block}
+
+
+
+</div>
+{END container_more_1}
+
+
+
+
+												</div>						{END container_menu_1}
+
+
+									</nav>{END container_menu}
+
+
+
+
+
+
+{BEGIN container_breadcrumbs}<div {$breadcrumbs_chiddenattr} data-pageid="{$pageid}" data-container="breadcrumbs" class="    "> 
+
+
+
+
+{BEGIN container_bc}<div {$bc_chiddenattr} data-pageid="{$pageid}" data-container="bc" class="    "> 
+
+{BEGIN breadcrumbs}<ol class="breadcrumb">
+<li ><a href="{$home_link}"><span class="glyphicon glyphicon-home"></span></a>{$crumb_dropdown}</li>
+{BEGIN crumb}<li class="{$crumb_item_class}">
+{BEGIN crumb_title_link}<a {$crumb_attrs}>{$crumb_title}</a>
+{END crumb_title_link}
+{BEGIN crumb_title_span}<span {$crumb_attrs}>{$crumb_title}</span>
+{END crumb_title_span}	
+	{$crumb_dropdown}
+  </li>
+{END crumb}
+</ol>
+{END breadcrumbs}
+
+
+
+</div>
+{END container_bc}
+
+
+
+
+
+
+</div>
+{END container_breadcrumbs}
+
+
+
+
+
+
+
+
+{BEGIN container_masterinfo}<div {$masterinfo_chiddenattr} data-pageid="{$pageid}" data-container="masterinfo" class="    "> 
+
+{BEGIN mastertable_block}<div class="panel panel-info table-panel">
+	<div class="panel-heading">
+		{$master_heading}
+	</div>
+	<div class="panel-body">
+		{$showmasterfile}
+		
+	</div>
+</div>
+
+{END mastertable_block}
+
+
+
+</div>
+{END container_masterinfo}
+
+
+
+
+
+
+
+
+{BEGIN container_gridcontrols}<div {$gridcontrols_chiddenattr} data-pageid="{$pageid}" data-container="gridcontrols" class="row rnr-rowcontainer bs-navcontrolled bs-hidden-xs">
+
+
+
+
+{BEGIN container_add_delete}<div {$add_delete_chiddenattr} data-pageid="{$pageid}" data-container="add_delete" class=" bottom-margin  col-md-6 "> 
+
+{BEGIN record_controls_block}<span {$recordcontrol_hiddenattr} data-pageid="{$pageid}" data-brick="recordcontrol">
+			</span>
+
+{END record_controls_block}
+
+
+
+</div>
+{END container_add_delete}
+
+
+
+
+
+
+
+
+{BEGIN container_gridinfo}<div {$gridinfo_chiddenattr} data-pageid="{$pageid}" data-container="gridinfo" class=" bottom-margin text-right col-md-6 "> 
+
+{BEGIN details_found}<span {$details_found_hiddenattr} data-pageid="{$pageid}" data-brick="details_found" class="form-inline form-inline-always">
+	{$records_indicator}
+	<span>
+	{BEGIN recordspp_block}{$recsPerPage}
+	{END recordspp_block}
+	</span>
+</span>
+{END details_found}
+
+
+{BEGIN print_friendly}<span {$printpanel_hiddenattr} data-pageid="{$pageid}" data-brick="printpanel" class="bs-printpanel" id="printpanelblock{$id}">
+	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Print-friendly page">
+		<span class="glyphicon glyphicon-print" ></span>
+		<span class="caret"></span>
+    </button>
+	<ul class="dropdown-menu pull-right" >
+		<li>
+			<div class="container-fluid" id="print_friendly_scope{$id}">
+				<div class="row">
+					<div class="col-md-4">Scope:</div>
+										{BEGIN print_friendly_all}<div class="col-md-8">
+						<label for="printAll{$id}">
+							<input type="radio" id="printAll{$id}" data-href="s_krs_detil_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">
+							Print all pages
+						</label>
+					</div>
+					{END print_friendly_all}
+				</div>
+				<div class="row">
+					<div class="col-md-4">&nbsp;</div>
+					<div class="col-md-8">
+						<label for="printPage{$id}">
+							<input type="radio" id="printPage{$id}" data-href="s_krs_detil_print.php?{$crosstable_attrs}" name="printScope" checked>
+							Print this page
+						</label>
+					</div>
+				</div>
+								<div class="row">
+					<div class="col-md-4">&nbsp;</div>
+					<div class="col-md-8">
+						<label for="printSelection{$id}" style="color: gray;">
+							<input type="radio" id="printSelection{$id}" name="printScope" disabled="disabled">
+							Print selected
+						</label>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="divider" role="separator"></li>
+
+		
+				<li>	
+			<div class="rnr-printdetails">
+				<label for="printPerPage{$id}">
+											Records Per Page:
+				</label>
+				<input type="number" id="printPerPage{$id}" value="{$print_recspp}" class="rnr-printrecspp">		
+			</div>
+		</li>
+		<li class="divider" role="separator"></li>
+		<li class="rnr-printbutton">				
+			<button type="button" class="btn btn-primary" id="print_friendly_button{$id}" >Print</button>			
+		</li>
+	</ul>	
+</span>
+
+{END print_friendly}
+
+
+
+
+</div>
+{END container_gridinfo}
+
+
+
+
+
+
+
+</div>{END container_gridcontrols}
+
+
+
+
+
+
+</div>
+{END container_top}
+
+
+		</div>
+		<div class="bs-middle bs-centered">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+
+{BEGIN container_filt}<div {$filt_chiddenattr} data-pageid="{$pageid}" data-container="filt" class="    "> 
+
+{BEGIN searchPanel}<div {$searchpanel_hiddenattr} data-pageid="{$pageid}" data-brick="searchpanel" class="searchOptions panel panel-primary searchPanelContainer " {$srchOpt_attrs} >
+	<!-- Search panel content -->
+	
+	<div class="panel-heading">
+		<div class="btn-group" id="addSearchFieldButton{$id}">
+			<button id="showHideControlChooseMenu{$id}" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Search in
+			<span class="caret"></span>
+			</button>
+		</div>
+
+		
+		<div class="btn-group searchpanel-options" id="searchPanelOptions{$id}">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon glyphicon-option-vertical"></span>
+			</button>
+			<ul class="dropdown-menu dropdown-left">
+				<li id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}><a>Show options</a></li>
+				<li role="separator" class="divider"></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAll" {$all_checkbox}><label for="radioAll"><span class="glyphicon">&nbsp;</span>all conditions</label></a></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAny" {$any_checkbox}><label for="radioAny"><span class="glyphicon">&nbsp;</span>any condition</label></a></li>
+				<li role="separator" class="divider"></li>
+				<li><a class="close-button"><span class="glyphicon glyphicon-remove">&nbsp;</span>hide</a></li>
+			</ul>
+		</div>
+	
+		
+		</div>
+	<div class="panel-body controlsBlock" {$bottomSearchButt_attrs} >
+
+
+		
+		{BEGIN searchCtrlBlock}<div class="srchPanelRow form-group" {$filterRow_attrs}>
+			<label>{$fLabel}</label>	{$delCtrlButt}
+				<span class="rnr-searchtype">{$searchtype}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol1}</span>
+		</div>
+		{END searchCtrlBlock}
+
+
+	</div>
+	
+	<div class="panel-footer bottomSearchButt" {$bottomSearchButt_attrs}>
+		<button class="btn btn-primary" id="searchButton{$id}" {$searchbutton_attrs}>Search</button>
+		<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs}>
+		Show all
+		</button>
+	</div>
+</div>
+
+
+{END searchPanel}
+
+
+{BEGIN filterPanel}<div {$filterpanel_hiddenattr} data-pageid="{$pageid}" data-brick="filterpanel">
+<button  type="button" class="bs-hidden-xs bs-navcontrolled btn btn-info bs-togglebutton bottom-margin collapsed" data-runner-toggle="collapse" data-target=".filterPanelContainer">	
+	<span class="glyphicon glyphicon-filter"><span> Filter	
+</SPAN></SPAN></button>
+<div  class="bs-hidden-xs filterPanelContainer  {$filterPanelStateClass}">
+
+
+	
+	
+
+
+
+	
+	
+	
+		
+{BEGIN filter_control_sempSemId}<div class="panel panel-info filter-field filter-sempSemId-container">
+		<div class="panel-heading filter-expander">
+			<span class="filter-indicator glyphicon 
+							glyphicon-triangle-top
+			">
+			</span>
+						{$label s_krs_detil sempSemId}
+			{BEGIN clearLink_sempSemId}<a href="#" class="filter-clear filter-clear-sempSemId">Clear</a>
+			{END clearLink_sempSemId}
+		</div>
+		<ul class="list-group">
+		{BEGIN filterCtrlBlock_sempSemId}<li class="list-group-item filter-values filter-values-sempSemId {$collapsedClass_sempSemId} {$visibilityClass_sempSemId}">
+			{$sempSemId_filter}	
+		</li>
+		{END filterCtrlBlock_sempSemId}
+				{BEGIN filter_button_showmore_sempSemId}<li class="list-group-item filter-show-more {$collapsedClass_sempSemId} {$showMoreBtnClass_sempSemId}">
+			<a class="filter-show-more-link filterShowMore_sempSemId" href="#">{$show_n_more_sempSemId}</a>
+		</li>
+		{END filter_button_showmore_sempSemId}
+		
+				
+			</ul>
+	</div>
+{END filter_control_sempSemId}
+
+
+	
+	
+
+
+
+	
+	
+	
+		
+{BEGIN filter_control_prodiNamaResmi}<div class="panel panel-info filter-field filter-prodiNamaResmi-container">
+		<div class="panel-heading filter-expander">
+			<span class="filter-indicator glyphicon 
+							glyphicon-triangle-top
+			">
+			</span>
+						{$label s_krs_detil prodiNamaResmi}
+			{BEGIN clearLink_prodiNamaResmi}<a href="#" class="filter-clear filter-clear-prodiNamaResmi">Clear</a>
+			{END clearLink_prodiNamaResmi}
+		</div>
+		<ul class="list-group">
+		{BEGIN filterCtrlBlock_prodiNamaResmi}<li class="list-group-item filter-values filter-values-prodiNamaResmi {$collapsedClass_prodiNamaResmi} {$visibilityClass_prodiNamaResmi}">
+			{$prodiNamaResmi_filter}	
+		</li>
+		{END filterCtrlBlock_prodiNamaResmi}
+				{BEGIN filter_button_showmore_prodiNamaResmi}<li class="list-group-item filter-show-more {$collapsedClass_prodiNamaResmi} {$showMoreBtnClass_prodiNamaResmi}">
+			<a class="filter-show-more-link filterShowMore_prodiNamaResmi" href="#">{$show_n_more_prodiNamaResmi}</a>
+		</li>
+		{END filter_button_showmore_prodiNamaResmi}
+		
+				
+			</ul>
+	</div>
+{END filter_control_prodiNamaResmi}
+</div>
+</div>
+{END filterPanel}
+
+
+
+</div>
+{END container_filt}
+
+
+			</div>
+			<div class="bs-center">
+				
+
+{BEGIN container_tabs}<div {$tabs_chiddenattr} data-pageid="{$pageid}" data-container="tabs" class="    "> 
+
+{BEGIN grid_tabs}<div {$bsgrid_tabs_hiddenattr} data-pageid="{$pageid}" data-brick="bsgrid_tabs">
+<ul class="nav nav-tabs">
+{$grid_tabs_content}
+</ul>
+</div>
+{END grid_tabs}
+
+
+
+</div>
+{END container_tabs}
+
+
+
+{BEGIN container_message}<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="    "> 
+
+{BEGIN message_block}<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">{$message}</div>
+{END message_block}
+
+
+
+</div>
+{END container_message}
+
+
+
+{BEGIN container_grid}<div {$grid_chiddenattr} data-pageid="{$pageid}" data-container="grid" class="    "> 
+
+{BEGIN grid_block}<style>
+	.bs-gridcell[data-field=krsdtId]:before {
+		content: "{$label s_krs_detil krsdtId}";
+	}
+	.bs-gridcell[data-field=krsMhsNiu]:before {
+		content: "{$label s_krs_detil krsMhsNiu}";
+	}
+	.bs-gridcell[data-field=mhsNama]:before {
+		content: "{$label s_krs_detil mhsNama}";
+	}
+	.bs-gridcell[data-field=mhsProdiKode]:before {
+		content: "{$label s_krs_detil mhsProdiKode}";
+	}
+	.bs-gridcell[data-field=klsNama]:before {
+		content: "{$label s_krs_detil klsNama}";
+	}
+	.bs-gridcell[data-field=mhsEmail]:before {
+		content: "{$label s_krs_detil mhsEmail}";
+	}
+	.bs-gridcell[data-field=sempSemId]:before {
+		content: "{$label s_krs_detil sempSemId}";
+	}
+	.bs-gridcell[data-field=prodiJjarKode]:before {
+		content: "{$label s_krs_detil prodiJjarKode}";
+	}
+	.bs-gridcell[data-field=prodiNamaResmi]:before {
+		content: "{$label s_krs_detil prodiNamaResmi}";
+	}
+	.bs-gridcell[data-field=krsId]:before {
+		content: "{$label s_krs_detil krsId}";
+	}
+</style>
+<table {$grid_hiddenattr} data-pageid="{$pageid}" data-brick="grid" class="table {$grid_classes} bs-flexgrid rnr-b-grid rnr-gridtable" cellpadding="0" >
+	<thead>
+										{BEGIN grid_header}<tr class="rnr-toprow {$gridHeader_class}" >
+									{BEGIN record_header}{BEGIN listIcons_column}<th iEditCont="all">&nbsp;</th>
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}<TH><input type="checkbox" {$checkboxheader_attrs}>
+									</th>
+									{END checkbox_column}
+
+																		
+									{BEGIN krsdtId_fieldheadercolumn}<th class="rnr-gridfieldlabel {$krsdtId_class}" data-field=krsdtId>
+									{BEGIN krsdtId_fieldheader}<span {$krsdtId_orderlinkattrs}>
+											{$label s_krs_detil krsdtId}
+										</span>
+									{END krsdtId_fieldheader}
+									</th>
+									{END krsdtId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN krsMhsNiu_fieldheadercolumn}<th class="rnr-gridfieldlabel {$krsMhsNiu_class}" data-field=krsMhsNiu>
+									{BEGIN krsMhsNiu_fieldheader}<span {$krsMhsNiu_orderlinkattrs}>
+											{$label s_krs_detil krsMhsNiu}
+										</span>
+									{END krsMhsNiu_fieldheader}
+									</th>
+									{END krsMhsNiu_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNama_fieldheadercolumn}<th class="rnr-gridfieldlabel {$mhsNama_class}" data-field=mhsNama>
+									{BEGIN mhsNama_fieldheader}<span {$mhsNama_orderlinkattrs}>
+											{$label s_krs_detil mhsNama}
+										</span>
+									{END mhsNama_fieldheader}
+									</th>
+									{END mhsNama_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsProdiKode_fieldheadercolumn}<th class="rnr-gridfieldlabel {$mhsProdiKode_class}" data-field=mhsProdiKode>
+									{BEGIN mhsProdiKode_fieldheader}<span {$mhsProdiKode_orderlinkattrs}>
+											{$label s_krs_detil mhsProdiKode}
+										</span>
+									{END mhsProdiKode_fieldheader}
+									</th>
+									{END mhsProdiKode_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN klsNama_fieldheadercolumn}<th class="rnr-gridfieldlabel {$klsNama_class}" data-field=klsNama>
+									{BEGIN klsNama_fieldheader}<span {$klsNama_orderlinkattrs}>
+											{$label s_krs_detil klsNama}
+										</span>
+									{END klsNama_fieldheader}
+									</th>
+									{END klsNama_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsEmail_fieldheadercolumn}<th class="rnr-gridfieldlabel {$mhsEmail_class}" data-field=mhsEmail>
+									{BEGIN mhsEmail_fieldheader}<span {$mhsEmail_orderlinkattrs}>
+											{$label s_krs_detil mhsEmail}
+										</span>
+									{END mhsEmail_fieldheader}
+									</th>
+									{END mhsEmail_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN sempSemId_fieldheadercolumn}<th class="rnr-gridfieldlabel {$sempSemId_class}" data-field=sempSemId>
+									{BEGIN sempSemId_fieldheader}<span {$sempSemId_orderlinkattrs}>
+											{$label s_krs_detil sempSemId}
+										</span>
+									{END sempSemId_fieldheader}
+									</th>
+									{END sempSemId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN prodiJjarKode_fieldheadercolumn}<th class="rnr-gridfieldlabel {$prodiJjarKode_class}" data-field=prodiJjarKode>
+									{BEGIN prodiJjarKode_fieldheader}<span {$prodiJjarKode_orderlinkattrs}>
+											{$label s_krs_detil prodiJjarKode}
+										</span>
+									{END prodiJjarKode_fieldheader}
+									</th>
+									{END prodiJjarKode_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN prodiNamaResmi_fieldheadercolumn}<th class="rnr-gridfieldlabel {$prodiNamaResmi_class}" data-field=prodiNamaResmi>
+									{BEGIN prodiNamaResmi_fieldheader}<span {$prodiNamaResmi_orderlinkattrs}>
+											{$label s_krs_detil prodiNamaResmi}
+										</span>
+									{END prodiNamaResmi_fieldheader}
+									</th>
+									{END prodiNamaResmi_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN krsId_fieldheadercolumn}<th class="rnr-gridfieldlabel {$krsId_class}" data-field=krsId>
+									{BEGIN krsId_fieldheader}<span {$krsId_orderlinkattrs}>
+											{$label s_krs_detil krsId}
+										</span>
+									{END krsId_fieldheader}
+									</th>
+									{END krsId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN endrecordheader_block}<th class="rnr-cs">&nbsp;</th>
+									
+									{END endrecordheader_block}
+									
+									{END record_header}
+									
+								</tr>
+								{END grid_header}
+
+	</thead>
+	<tbody>	
+		{BEGIN grid_row}<tr class="{$rowclass} bs-gridrow" {$rowattrs} {$rowstyle}>
+	{BEGIN grid_record}{BEGIN listIcons_column}<td class="bs-gridicons" iEditCont="all" {$rowstyle} {$recordattrs}>
+	
+		
+	<span data-hidden {$ieditbuttonsholder_attrs}></span>
+
+	
+		</td>	
+	{END listIcons_column}	
+
+		{BEGIN checkbox_column}<td  iEditCont="checkBox" class="bs-gridcheckbox" {$rowstyle} {$recordattrs}>
+	{BEGIN checkbox}<input type="checkbox" {$checkbox_attrs}>
+	{END checkbox}
+	</td>
+	{END checkbox_column}
+
+	
+
+	{BEGIN krsdtId_fieldcolumn}<td class="bs-gridcell {$krsdtId_class}"  data-field=krsdtId {$rowstyle} {$recordattrs}>
+		<FONT size="1">
+      {$krsdtId_value}
+	</FONT> </td>
+{END krsdtId_fieldcolumn}
+
+
+	{BEGIN krsMhsNiu_fieldcolumn}<td class="bs-gridcell {$krsMhsNiu_class}"  data-field=krsMhsNiu {$rowstyle} {$recordattrs}>
+		<FONT size="1">
+      {$krsMhsNiu_value}
+	</FONT> </td>
+{END krsMhsNiu_fieldcolumn}
+
+
+	{BEGIN mhsNama_fieldcolumn}<td class="bs-gridcell {$mhsNama_class}"  data-field=mhsNama {$rowstyle} {$recordattrs}>
+		<FONT size="1">
+      {$mhsNama_value}
+	</FONT> </td>
+{END mhsNama_fieldcolumn}
+
+
+	{BEGIN mhsProdiKode_fieldcolumn}<td class="bs-gridcell {$mhsProdiKode_class}"  data-field=mhsProdiKode {$rowstyle} {$recordattrs}>
+		<FONT size="1">
+      {$mhsProdiKode_value}
+	</FONT> </td>
+{END mhsProdiKode_fieldcolumn}
+
+
+	{BEGIN klsNama_fieldcolumn}<td class="bs-gridcell {$klsNama_class}"  data-field=klsNama {$rowstyle} {$recordattrs}>
+		<FONT size="1">
+      {$klsNama_value}
+	</FONT> </td>
+{END klsNama_fieldcolumn}
+
+
+	{BEGIN mhsEmail_fieldcolumn}<td class="bs-gridcell {$mhsEmail_class}"  data-field=mhsEmail {$rowstyle} {$recordattrs}>
+		<FONT size="1">
+      {$mhsEmail_value}
+	</FONT> </td>
+{END mhsEmail_fieldcolumn}
+
+
+	{BEGIN sempSemId_fieldcolumn}<td class="bs-gridcell {$sempSemId_class}"  data-field=sempSemId {$rowstyle} {$recordattrs}>
+		<FONT size="1">
+      {$sempSemId_value}
+	</FONT> </td>
+{END sempSemId_fieldcolumn}
+
+
+	{BEGIN prodiJjarKode_fieldcolumn}<td class="bs-gridcell {$prodiJjarKode_class}"  data-field=prodiJjarKode {$rowstyle} {$recordattrs}>
+		<FONT size="1">
+      {$prodiJjarKode_value}
+	</FONT> </td>
+{END prodiJjarKode_fieldcolumn}
+
+
+	{BEGIN prodiNamaResmi_fieldcolumn}<td class="bs-gridcell {$prodiNamaResmi_class}"  data-field=prodiNamaResmi {$rowstyle} {$recordattrs}>
+		<FONT size="1">
+      {$prodiNamaResmi_value}
+	</FONT> </td>
+{END prodiNamaResmi_fieldcolumn}
+
+
+	{BEGIN krsId_fieldcolumn}<td class="bs-gridcell {$krsId_class}"  data-field=krsId {$rowstyle} {$recordattrs}>
+		<FONT 
+      size="1">
+      {$krsId_value}
+	</FONT> 
+    </td>
+{END krsId_fieldcolumn}
+
+	{BEGIN endrecord_block}<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+	{END endrecord_block}
+									
+	{END grid_record}
+
+</tr>
+{END grid_row}
+	</tbody>
+	<tfoot>
+										
+	</tfoot>
+</table>
+
+
+
+{END grid_block}
+
+
+
+</div>
+{END container_grid}
+
+
+
+{BEGIN container_pagination}<div {$pagination_chiddenattr} data-pageid="{$pageid}" data-container="pagination" class="  text-center col-md-12 "> 
+
+{BEGIN pagination_block}<div {$pagination_hiddenattr} data-pageid="{$pageid}" data-brick="pagination">
+{$pagination}
+</div>
+{END pagination_block}
+
+
+
+</div>
+{END container_pagination}
+
+
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

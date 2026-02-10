@@ -1,0 +1,81 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript">
+	function checkAll() {
+		
+	   var count = document.form_tugas.elements.length;	   
+	   for (i=1; i<count; i++)
+	      eval('document.form_tugas.elements[' + i + ']').checked = true;
+				//alert(count);
+	}
+	
+	function uncheckAll()
+	{		
+		var count = document.form_tugas.elements.length;
+	   	for (i=1; i<count; i++)
+	      eval('document.form_tugas.elements[' + i + ']').checked = false;
+	}	
+	
+	
+	function allSelected()
+	{		
+		
+		if(window.document.form_tugas.chkAll.checked) checkAll();
+		else uncheckAll();
+	}
+	
+	
+</script>
+
+<h2> {APPLICATION_MODULE} </h2></br>
+<div id="maincontent">
+<form name="form_tugas" class="form-common" method="post" action="">
+  
+  
+  <h5><font color="#CC3300">{ERROR}</font></h5>
+  
+  <!-- menampilkan hasil pencarian -->  
+      <table class="table-common" width="80%">
+          <tr>              
+              <th width="5%"><input type="checkbox" name="chkAll" onclick="allSelected();" /></th>
+              <th width="5%">No</th>
+              <th width="50%">Nama</th>
+              <th width="20%">Persen Nilai (%)</th>
+          </tr>
+          <!-- patTemplate:tmpl name="data_tugas" type="condition" conditionvar="DATA_EXIST" -->
+		  	<!-- patTemplate:sub condition="false" -->
+				<tr>
+					<td colspan="4" align="center"><i> -- Data Tidak Ditemukan -- </i></td>
+				</tr>
+			<!-- /patTemplate:sub -->
+		  	<!-- patTemplate:sub condition="true" -->	
+		  		<!-- patTemplate:tmpl name="daftar_jenis_tugas" -->		
+				  <tr>
+					  <td><input type=checkbox name=chk[{TUGAS_ID}] value='{TUGAS_TUGAS}' /></td>
+					  <td>{TUGAS_NO}</td>
+		              <td ><a href="{TUGAS_EDIT}">{TUGAS_NAMA}</a></td>
+		              <td>{TUGAS_PERSEN}</td>
+				  </tr>
+			  	<!-- /patTemplate:tmpl -->
+			  	<tr>
+			  		<th colspan="4"></th>
+			  	</tr>
+			  	<tr>
+			  		<th colspan="2"><div align="left"><input type="submit" name="hapusTugas" value="Hapus" class="input-disclaimer"  /><div></th>
+					<th colspan="2"><div align="left"><input type="submit" name="addJenisTugas" value="Tambah" class="input-disclaimer"  /><div></th>
+			  	</tr>
+			<!-- /patTemplate:sub -->		  
+          <!-- /patTemplate:tmpl -->
+      </table>
+	  <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+      
+      
+      
+
+	  
+  
+</form>  
+</div>
+<!-- /patTemplate:tmpl -->

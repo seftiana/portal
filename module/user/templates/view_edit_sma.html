@@ -1,0 +1,385 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.subhead th{
+	font-weight: bold;
+	font-size: 10pt;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.subhead-common th{
+	font-weight: bold;
+	font-size: 7pt;
+	text-align: center;
+	vertical-align: middle;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.hidden{
+	display: none;
+}
+.links{
+	text-decoration: none;
+}
+.links img{
+	border: none;
+	height: 16px;
+}
+.links img:hover{
+	border: none;
+	height: 20px;
+}
+</style>
+   <h2>Edit Data SMA</h2>
+   <br />
+   
+   <h5>Keterangan :</h5>
+   <p>Isilah Data SMA anda dengan lengkap
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="data_biodata" -->
+   <form class="form-common" method="POST" action="{URL_PROCESS}" name="frmInput" >  
+   <input type="hidden" name="doact" value="edit_smta">
+   <table class="table-form" width="100%">
+         <table class="table-form" width="100%">
+            <tr class="subhead">
+               <th colspan="2" >Data Riwayat Pra-SMTA </th>
+            </tr>   
+            <tr>
+               <td colspan="2">
+                  <div class="toolbar" align="right"> 
+                     <input type="button" class="button" onclick="showPopupPraSmta();" value="Tambah" title="Tambah Riwayat Pra SMTA">
+                  </div>
+				  <table class="table-userbio" style="display:none" id="praTable" width="100%">
+					  <tr>
+							<th colspan="2" class="subhead" width="100%">RIWAYAT PRA-SMTA</th>
+					  </tr>
+					  <tr>
+						  <td width="75">Pendidikan</td>
+						  <td>
+							<select id="pendidikan">
+								<option value=""></option>
+								<!-- patTemplate:tmpl name="data_pendidikan_pra" -->
+								<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+								<!-- /patTemplate:tmpl -->
+							</select>
+						  </td>
+					  </tr>
+					  <tr>
+						  <td>Nama Sekolah</td>
+						  <td><input type="text" id="sekolah"></td>
+					  </tr>
+					  <tr>
+						  <td>Tahun Lulus</td>
+						  <td>
+							<select id="tahun_lulus_pra">
+								<option value=""></option>
+								<!-- patTemplate:tmpl name="data_tahun_lulus_pra" -->
+								<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+								<!-- /patTemplate:tmpl -->
+							</select>
+						  </td>
+					  </tr>
+					  <tr>
+						  <td>&nbsp;</td>
+						  <td>
+						  <input class="input-disclaimer" type="button" value="tambah" onclick="tambah_entri();">
+						  <input class="input-disclaimer" type="button" value="batal" onclick="document.getElementById('praTable').style.display='none';">
+						  </td>
+					  </tr>
+				  </table>
+                  <br>
+                  <table class="table-common" width="580" id="tabel-riwayat">
+                     <tr class="subhead-common">
+                        <th width="5">No</th>
+                        <th>Aksi</th>
+                        <th>Pendidikan</th>
+                        <th>Nama Sekolah</th>
+                        <th>Tahun Lulus</th>
+                     </tr>
+                     <tbody id="riwayat-pra-smta">
+                           <!-- patTemplate:tmpl name="data_riwayat" type="simplecondition" requiredVars="RIWAYAT_NO" -->
+                           <tr>
+                              <td align="center">
+                                 {RIWAYAT_NO}
+                              </td>
+                              <td >
+                                 <a href="javascript:void(null)" title="Hapus" class="links" onclick="hapus_entri(this)" />
+                                    <img src="images/button-delete.gif" alt="Hapus" />
+                                 </a>
+                              </td>
+                              <td>
+                                 {RIWAYAT_JENJANG_NAMA}
+                                 <input name="riwayat[{RIWAYAT_NO}][pendidikan]" type="hidden" value="{RIWAYAT_JENJANG_ID}" />
+                              </td>                              
+                              <td>
+                                 {RIWAYAT_NAMA_PENDIDIKAN}
+                                 <input name="riwayat[{RIWAYAT_NO}][sekolah]" type="hidden" value="{RIWAYAT_NAMA_PENDIDIKAN}" />
+                              </td>                              
+                              <td>
+                                 {RIWAYAT_TAHUN_LULUS}
+                                 <input name="riwayat[{RIWAYAT_NO}][tahun_lulus]" type="hidden" value="{RIWAYAT_TAHUN_LULUS}" />
+                              </td>
+                           </tr>         
+                           <!-- /patTemplate:tmpl -->
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2">Data SMTA</th>
+            </tr>   
+            <tr>
+               <th width="150" >Tahun Daftar SMTA</th>
+               <td>
+					<select name="tahun_daftar">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_tahun_daftar" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>         
+            <tr>
+               <th width="60">Tahun Lulus SMTA</th>
+               <td>
+					<select name="tahun_lulus">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_tahun_lulus" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th width="60">Kelas Masuk SMTA </th>
+               <td>
+					<select name="kelas_masuk_smta">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_kelas_masuk_smta" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th width="60">Jurusan SMTA</th>
+               <td>
+					<select name="jurusan_smta">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_jurusan_smta" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>            
+            <tr>
+               <th width="60">Jenis SMTA</th>
+               <td>
+					<select name="jenis_smta">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_jenis_smta" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr id ="pilih_smta"> 
+               <th>Pilih SMTA</th>
+               <td>
+                      <input type="text" readonly id="nama_smta" name="nama_smta"  value="{SMTA_NAMA}" />
+                      <input type="hidden" readonly id="kode_smta" name="kode_smta"  value="{ID_SMTA_NAMA}" />
+                      <input type="button"  title="Pilih SMTA"  value="Pilih SMTA" onClick="showPopupSmta();" />                             
+               </td>
+            </tr>
+            <tr>
+               <th>Nama SMTA Lain</th>
+               <td>
+                  <input type="text" size="30" maxlength="255" name="smta_lain" value="{SMTA_LAIN}" />
+               </td>
+            </tr>
+            <tr>
+               <th>Propinsi SMTA</th>
+               <td>
+                  <div id="divPropinsiSmta">
+					<select name="propinsi">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_propinsi" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <th >Alamat SMTA</th>
+               <td>
+                  <Textarea name="alamat_smta" cols="50" rows="" >{ALAMAT_SMTA}</textarea>
+                  <p><font color="green">maksimal 50 karakter, gunakan spasi untuk memisahkan tiap kata</font></p>
+               </td>
+            </tr>
+            <tr>
+               <th width="60">Lulus SMTA</th>
+               <td>
+                  <input type="radio" name="lulus_smta" value="1" {IS_LULUS_SMTA_CHECKED1}><label>&nbsp;Sudah</label>
+						<input type="radio" name="lulus_smta" value="0" {IS_LULUS_SMTA_CHECKED2}><label>&nbsp;Belum</label>
+               </td>
+            </tr>            		
+            <tr>
+               <th width="60">No Ijazah</th>
+               <td>
+                  <input type="text" name="nomor_ijazah" value="{NO_IJAZAH_SMTA}" size="20" maxLength="20" notab="2" />
+               </td>
+            </tr>
+            <tr>
+               <th >Tanggal Ijazah</th>
+               <td>
+					<select name="ijasah[tanggal]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_tanggal_ijasah" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="ijasah[bulan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_bulan_ijasah" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="ijasah[tahun]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_tahun_ijasah" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th>Status SMTA</th>
+                <td>
+					<select name="status_smta">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_status_smta" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+                </td>
+            </tr>
+            <tr>
+               <th>Akreditasi</th>
+                <td>
+					<select name="akreditasi">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_akreditasi" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+                </td>
+             </tr>
+            <tr>
+               <th width="60">Nilai Ujian Akhir SMTA</th>
+               <td>
+                     <input type="text" name="nilai_uas_smta" value="{NILAI_UAS_SMTA}" size="5" maxLength="5" notab="2" />
+               </td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2">Nilai UAN</th>
+            </tr>   
+            <tr>
+               <th width="150">Nilai Matematika</th>
+               <td>
+						<input type="text" name="mhs[mhs_nilai_uan_mate]" value="{UAN_MATE}" size="5" />                          
+               </td>
+            </tr>
+            <tr>
+               <th width="150">Nilai Bahasa Inggris</th>
+               <td>
+						<input type="text" name="mhs[mhs_nilai_uan_bing]" value="{UAN_BING}" size="5" />                          
+               </td>
+            </tr>
+            <tr>
+               <th width="150">Nilai Fisika</th>
+               <td>
+						<input type="text" name="mhs[mhs_nilai_uan_fis]" value="{UAN_FIS}" size="5" />                          
+               </td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2">Nilai Raport SMTA</th>
+            </tr>   
+            <tr>
+               <th width="150">Nilai Matematika</th>
+               <td>
+						<input type="text" name="mhs[mhs_nilai_rapor_mate]" value="{RAPOR_MATE}" size="5" />                          
+               </td>
+            </tr>
+            <tr>
+               <th width="150">Nilai Bahasa Inggris</th>
+               <td>
+						<input type="text" name="mhs[mhs_nilai_rapor_bing]" value="{RAPOR_BING}" size="5" />                          
+               </td>
+            </tr>
+         <tr>
+            <th>&nbsp;</th>
+            <td>
+               <input class="input-disclaimer btn btn-primary" type="submit" id="simpan" name="simpan" value="Simpan" />
+               <input class="input-disclaimer btn btn-primary" type="button" id="kembali" name="kembali" value="Kembali" onclick="location.href='{URL_KEMBALI}'" />
+            </td>
+         </tr>
+   </table>
+   
+   </form>
+<script language="javascript">
+var showPopupSmta=function(){
+	var url = '{URL_SMTA}';
+	var wdw = window.open(url,'select smta', 'left=100,top=20,width=600,height=500,toolbar=0,resizable=1,scrollbars=1');
+};
+var showPopupPraSmta=function(){
+	document.getElementById('praTable').style.display='block';
+};
+var hapus_entri=function(el){
+	var tr=el.parentNode.parentNode;
+	tr.parentNode.removeChild(tr);
+};
+var tambah_entri=function(){
+	var elPddk=document.getElementById('pendidikan').options;
+	var sekolah=document.getElementById('sekolah').value;
+	var elTahun=document.getElementById('tahun_lulus_pra').options;
+	var pendidikan=_parseSelect(elPddk);
+	var tahun_lulus_pra=_parseSelect(elTahun);
+	
+	var dst=document.getElementById('riwayat-pra-smta');
+	var no=dst.rows.length;
+	var buff=['<tr>'];
+	buff[buff.length]='<td align="center">'+(no+1)+'</td>';
+	buff[buff.length]='<td>';
+	buff[buff.length]='<a href="javascript:void(null)" title="Hapus" class="links" onclick="hapus_entri(this)" />';
+	buff[buff.length]='<img src="images/button-delete.gif" alt="Hapus" />';
+	buff[buff.length]='</a></td>';
+	buff[buff.length]='<td>'+pendidikan[1];
+	buff[buff.length]='<input name="riwayat['+no+'][pendidikan]" type="hidden" value="'+pendidikan[0]+'" /></td>';
+	buff[buff.length]='<td>'+sekolah;
+	buff[buff.length]='<input name="riwayat['+no+'][sekolah]" type="hidden" value="'+sekolah+'" /></td>';
+	buff[buff.length]='<td>'+tahun_lulus_pra[1];
+	buff[buff.length]='<input name="riwayat['+no+'][tahun_lulus]" type="hidden" value="'+tahun_lulus_pra[0]+'" /></td>';
+	buff[buff.length]='</td></tr>';
+	dst.innerHTML += buff.join('');
+	
+	document.getElementById('praTable').style.display='none';
+	elPddk[0].selected=true;
+	elTahun[0].selected=true;
+	document.getElementById('sekolah').value='';
+};
+var _parseSelect=function(el){
+	var i = el.length - 1;
+	if(i>0)
+		do{
+			if(el[i].selected){
+				return [el[i].value, el[i].innerHTML];
+			}
+		}while(i--);
+	return['', ''];
+};
+</script>
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

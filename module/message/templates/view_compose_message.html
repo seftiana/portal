@@ -1,0 +1,55 @@
+<!-- patTemplate:tmpl name="content" -->
+
+   <h2> {APPLICATION_MODULE} </h2>
+   <p class="text-muted">{APPLICATION_SUBMODULE}</p>
+   <br>
+
+      <!-- patTemplate:link name="error_box" src="error_box" / -->
+
+   <!-- patTemplate:tmpl name="compose" type="condition" conditionvar="IS_EMPTY" -->
+      <!-- patTemplate:sub condition="YES" -->
+
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+
+      <!-- /patTemplate:sub --> <!-- end of compose YES -->
+
+      <!-- patTemplate:sub condition="NO" -->
+         <form class="form-common" name="frmInput" method="POST" action="{CMPS_URL_PROCESS}">
+            <table class="table-form" width="100%">
+               <tr>
+                  <th>Pengirim</td>
+                  <td>{CMPS_NAMA_PENGIRIM}</td>
+                  <input type="hidden" name="data[MessageSender]" value="{CMPS_ID_PENGIRIM}">
+               </tr>
+               <tr>
+                  <th>Tanggal Kirim</td>
+                  <td>{CMPS_TANGGAL_KIRIM}</td>
+               </tr>
+               <tr>
+                  <th>Tujuan</td>
+                  <td>
+                     <input name="data[MessageReceiver]" type="text" value="{CMPS_ID_TUJUAN}" id="idrec" />
+                     <input class="input-disclaimer btn btn-info" type="button" name="cari" value="Kontak" onclick="window.open('{CMPS_URL_ADDR_BOOK}','AddressBook','width=520,height=600,status=yes,resizable=no,scrollbars=yes')">
+                  </td>
+               </tr>
+               <tr>
+                  <th>Judul</td>
+                  <td><input name="data[MessageTitle]" type="text" value="{CMPS_JUDUL}" /></td>
+               </tr>
+               <tr>
+                  <th>Pesan</td>
+                  <td><textarea name="data[MessageContent]" cols="40" rows="10">{CMPS_ISI}</textarea></td>
+               </tr>
+               <tr>
+                  <th>&nbsp;</td>
+                  <td>
+                  <input type="hidden" name="act" value="doCompose">
+                  <input class="input-disclaimer btn btn-info" type="submit" name="compBtn" value="Kirim" />
+                  <input class="input-disclaimer btn btn-info" type="submit" name="compBtn" value="Batal" />
+                  </td>
+               </tr>
+            </table>
+         </form>
+      <!-- /patTemplate:sub --> <!-- end of compose NO -->
+   <!-- /patTemplate:tmpl --> <!-- end of compose -->
+<!-- /patTemplate:tmpl --> <!-- end of content-->

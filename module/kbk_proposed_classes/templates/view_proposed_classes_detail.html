@@ -1,0 +1,165 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Detil Kelas</h2>
+   <br />
+   <h5>Keterangan :</h5>
+   <p>Detil Kelas merupakan informasi detil mengenai kelas-kelas yang ditawarkan untuk matakuliah tertentu. Pembagian kelas ini diatur berdasarkan program studi, kurikulum, serta aturan-aturan akademis lainnya.</p>   
+   <br /><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+
+   <!-- patTemplate:tmpl name="data_kelas_detil" visibility="hidden" -->
+      <!-- patTemplate:tmpl name="keterangan" -->
+         <!--table width="100%" class="table-list">
+            <tr>
+               <th width='25%'><font size='4'>Nama Kelas</font></th>
+               <td><font size='4'>{KET_KELAS}</font></td>
+            </tr>
+         </table-->
+         <h3>Kelas {KET_KELAS}</h3>
+         <table width="100%" class="table-form">
+            <tr>
+               <th>Jadwal Kuliah</th>
+               <td>
+               <!-- patTemplate:tmpl name="jadwal_kuliah" visibility="hidden" -->
+                  <table width="100%">
+                     <tr>
+                        <th width="35%">Hari</th>
+                        <th width="40%">Jam</th>
+                        <th width="35%">Ruang</th>
+                     </tr>
+                     <!-- patTemplate:tmpl name="jadwal_kuliah_item" -->
+                        <tr>
+                           <td>{JK_HARI}</td>
+                           <td>{JK_JAM}</td>
+                           <td>{JK_RUANG}</td>
+                        </tr>
+                     <!-- /patTemplate:tmpl -->
+                  </table>
+               <!-- /patTemplate:tmpl -->
+               </td>
+            </tr>
+            <tr>
+               <th>Jadwal Ujian Tengah Semester</th>
+               <td>
+                  <table width="100%">
+                     <tr>
+                        <th width="35%">Tanggal</th>
+                        <th width="40%">Jam</th>
+                        <th width="35%">Ruang</th>
+                     </tr>
+                     <!-- patTemplate:tmpl name="mid_test" -->
+                     <!-- patTemplate:tmpl name="mid_test_item" -->
+                        <tr>
+                           <td>{MID_DETIL_TANGGAL}</td>
+                           <td>{MID_DETIL_JAM}</td>
+                           <td>{MID_DETIL_RUANG}</td>
+                        </tr>
+                     <!-- /patTemplate:tmpl -->
+                     <!-- /patTemplate:tmpl -->
+                  </table>
+               </td>
+            </tr>
+            <tr>
+               <th>Jadwal Ujian Akhir</th>
+               <td>
+                  <table width="100%">
+                     <tr>
+                        <th width="35%">Tanggal</th>
+                        <th width="40%">Jam</th>
+                        <th width="35%">Ruang</th>
+                     </tr>
+                     <!-- patTemplate:tmpl name="final_test" -->
+                     <!-- patTemplate:tmpl name="final_test_item" -->
+                        <tr>
+                           <td>{FINAL_DETIL_TANGGAL}</td>
+                           <td>{FINAL_DETIL_JAM}</td>
+                           <td>{FINAL_DETIL_RUANG}</td>
+                        </tr>
+                     <!-- /patTemplate:tmpl -->
+                     <!-- /patTemplate:tmpl -->
+                  </table>
+               </td>
+            </tr>
+         </table>
+      <!-- /patTemplate:tmpl -->
+      <br/>
+      
+      <h4>Detil Kelas Berdasar Program Studi</h4>
+      <!-- patTemplate:tmpl name="kelas_detil" visibility="hidden" -->
+         <table width="100%" class="table-form">
+            <tr>
+               <th width="40%">Program Studi</th>
+               <td><b>{DETIL_NAMA_PRODI}</b></td>
+            </tr>
+            <tr>
+               <th>Kode Matakuliah</th>
+               <td>{DETIL_KODE_MATA_KULIAH}</td>
+            </tr>
+            <tr>
+               <th>Nama Matakuliah</th>
+               <td>{DETIL_NAMA_MATA_KULIAH}</td>
+            </tr>
+            <tr>
+               <th>Semester</th>
+               <td>{DETIL_SEMESTER}</td>
+            </tr>
+            <tr>
+               <th>Bobot Sks</th>
+               <td>{DETIL_SKS_KULIAH}
+                  <!-- patTemplate:tmpl name="sks_praktek" type="simplecondition" requiredvars="DETIL_SKS_PRAKTEK" -->
+                     <br />{DETIL_SKS_PRAKTEK}
+                  <!-- /patTemplate:tmpl -->
+               </td>
+            </tr>
+            <tr>
+               <th>Nilai Minimal Kelulusan</th>
+               <td>{DETIL_BOBOT_NILAI_MINIMAL_LULUS}</td>
+            </tr>
+            <tr>
+               <th>Prasyarat</th>
+               <td>
+                  <!-- patTemplate:tmpl name="prasyarat" visibility="hidden" -->
+                  <table width="100%">
+                     <tr>
+                        <th>Kode</th>
+                        <th>Matakuliah</th>
+                        <th>Syarat</th>
+                     </tr>
+                     <!-- patTemplate:tmpl name="prasyarat_item" -->
+                        <tr>
+                           <td width="30%">{PRASYARAT_KODEMK_SYARAT}</td>
+                           <td width="50%">{PRASYARAT_MK_SYARAT}</td>
+                           <td width="20%">{PRASYARAT_SYARAT}</td>
+                        </tr>
+                     <!-- /patTemplate:tmpl -->
+                  </table>
+                  <!-- /patTemplate:tmpl -->
+               </td>
+            </tr>
+            <tr>
+               <th>Sifat Matakuliah</th>
+               <td>{DETIL_SIFAT_MATA_KULIAH}</td>
+            </tr>
+            <tr>
+               <th>Keterangan</th>
+               <td>
+                  Angkatan: {DETIL_KETERANGAN_ANGKATAN}<br/>
+                  Angka Akhir {LABEL_NIM}: {DETIL_KETERANGAN_AKHIRAN_NIF}<br/>
+                  Rentang {LABEL_NIM}: {DETIL_KETERANGAN_RENTANG_NIF}<br/>
+                  Peserta Maksimal: {DETIL_PESERTA_MAX}
+               </td>
+            </tr>
+         </table>
+      <!-- /patTemplate:tmpl -->
+   <!-- /patTemplate:tmpl -->
+   <br/>
+   <div>
+      <form action="{URL_BACK}" method="post">
+         <input type="hidden" name="par" value="{PARAM}">
+         <input type="hidden" name="val" value="{VALUE}">
+         <input type="hidden" name="loc" value="{MODULE}">
+         <input class="input-disclaimer" type="submit" name="btnBack" value="Kembali">
+      </form>
+   </div>
+<!-- /patTemplate:tmpl -->

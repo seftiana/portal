@@ -1,0 +1,30 @@
+<!-- patTemplate:tmpl name="content" -->
+   <p class="mt-4 text-muted"> {APPLICATION_MODULE} </p>
+   <h4> {APPLICATION_SUBMODULE} </h4>
+   <br />
+   
+   <!-- patTemplate:tmpl name="detail_announcement" type="condition" conditionvar="IS_EMPTY" --> 
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->      
+         <h3>{ANNOUNCEMENT_TITLE}</h3>
+         <small class="text-muted">{ANNOUNCEMENT_DATE}</small>
+         <br/>
+         <br/>
+<!-- patTemplate:tmpl name="view_image" visibility='visible' -->
+            <a href="{CONFIG_BASEADDRESS}images/announcement/{ANNOUNCEMENT_IMAGE_PATH}" class="active" target="_BLANK"><button class="btn btn-info"><i class="fa fa-download fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;{ANNOUNCEMENT_IMAGE_PATH}</button>
+            <!--<img src="{CONFIG_BASEADDRESS}images/announcement/{ANNOUNCEMENT_IMAGE_PATH}" alt="{ANNOUNCEMENT_IMAGE_ALT}" width="500px" height="auto" class="img-responsive"/>--></a><br/><br/>
+         <!-- /patTemplate:tmpl -->
+         <div clear="both" class="">
+				{ANNOUNCEMENT_CONTENT}
+         </div>
+         <a href="{ANNOUNCEMENT_URL_KEMBALI}"><br/><br/>
+         <button class="btn btn-info">Kembali</button></a>
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl --> <!-- end of message-->
+   
+<!-- /patTemplate:tmpl --> <!-- end of content-->
+

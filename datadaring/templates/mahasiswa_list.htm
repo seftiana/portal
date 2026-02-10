@@ -1,0 +1,3644 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-list" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{BEGIN container_menu}<nav {$menu_chiddenattr} data-pageid="{$pageid}" data-container="menu" class="navbar navbar-default ">					
+
+
+
+{BEGIN container_hdr}
+<div {$hdr_chiddenattr} data-pageid="{$pageid}" data-container="hdr" class=" navbar-header   "> 
+
+{BEGIN logo_block}
+<a href="{$home_link}" {$logo_hiddenattr} data-pageid="{$pageid}" data-brick="logo" class="navbar-brand" >{$logo}</a>
+{END logo_block}
+
+
+{BEGIN collapse_block}
+<button {$bsnavbarcollapse_hiddenattr} data-pageid="{$pageid}" data-brick="bsnavbarcollapse" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target=".bs-navcontrolled">	
+	<span class="sr-only">Toggle navigation</span>	
+	<span class="icon-bar"></span>					
+</button>												
+
+{END collapse_block}
+
+
+
+</div>
+{END container_hdr}
+
+
+
+
+
+
+{BEGIN container_menu_1}<div {$menu_1_chiddenattr} data-pageid="{$pageid}" data-container="menu_1" class="bs-navform navbar-collapse bs-navcontrolled bs-hidden-xs" aria-expanded="false" >												   
+{BEGIN menu_block}
+{$menu main horizontal}
+
+{END menu_block}
+
+
+
+
+
+{BEGIN container_more}
+<div {$more_chiddenattr} data-pageid="{$pageid}" data-container="more" class=" navbar-right navbar-form   "> 
+
+{BEGIN more_list}
+<div {$morebutton_hiddenattr} data-pageid="{$pageid}" data-brick="morebutton" class="btn-group bs-navsection">
+	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="glyphicon glyphicon-cog"></span>
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu">
+		
+				{BEGIN exportselected_link}
+		<li class="massButton{$id} disabled"><a href="#" {$exportselectedlink_attrs} {$exportselectedlink_span} >Export selected</a></li>
+		{END exportselected_link}
+		
+				{BEGIN deleteselected_link}
+		<li class="massButton{$id} disabled"><a href="#" {$deleteselectedlink_attrs} {$deleteselectedlink_span}>Delete selected</a></li>
+		{END deleteselected_link}
+		
+				<li role="separator" class="divider"></li>	
+
+				{BEGIN asearch_link}
+		<li><a href="mahasiswa_search.php" {$advsearchlink_attrs}>Advanced search</a></li>
+		{END asearch_link}
+
+				{BEGIN searchPanelTopButtons}
+		<li><a href=# id="showOptPanel{$id}">Show search panel</a></li>
+		{END searchPanelTopButtons}	
+		
+				
+				<li role="separator" class="divider"></li>	
+		
+				
+				{BEGIN export_link}
+		<li><a target="_blank" href="mahasiswa_export.php"  {$exportlink_attrs}>Export results</a></li>
+		{END export_link}
+
+				{BEGIN import_link}
+		<li><a href="mahasiswa_import.php?{$crosstable_attrs}"  {$importlink_attrs}>Import</a></li>
+		{END import_link}
+
+				
+	</ul>  
+</div>
+
+{END more_list}
+
+
+{BEGIN security_block}
+<span {$loggedas_hiddenattr} data-pageid="{$pageid}" data-brick="loggedas" id="login_block{$id}" class="bs-navsection">
+	{BEGIN guestloginbutton}
+		<button class="btn btn-info" type="button" {$guestloginlink_attrs}>Login</button>
+	{END guestloginbutton}
+	{BEGIN loggedas_message} 
+		<span class="dropdown">
+			<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon-user"></span>	{$username}</button>
+			<ul class="dropdown-menu">
+		{BEGIN logoutbutton}
+				<li><a href="#" {$logoutlink_attrs}>Log out</a></li>
+		{END logoutbutton}
+		
+
+			</ul>
+		</span>
+	{END loggedas_message}
+</span>
+{END security_block}
+
+
+
+</div>
+{END container_more}
+
+
+
+
+
+
+
+
+{BEGIN container_more_1}
+<div {$more_1_chiddenattr} data-pageid="{$pageid}" data-container="more_1" class=" navbar-right navbar-form   "> 
+
+{BEGIN searchform_block}
+<span {$search_hiddenattr} data-pageid="{$pageid}" data-brick="search" class="form-group">
+
+ <div  class="input-group">
+{BEGIN searchform_text}
+	<input type="search" class="form-control" {$searchfor_attrs} size="25">
+{END searchform_text}
+	<span class="input-group-btn">
+	{BEGIN searchform_showall}
+		<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs} title="Show all">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
+	{END searchform_showall}
+	{BEGIN searchform_search}
+	<button {$searchbutton_attrs} class="btn btn-primary" >
+		<span class="glyphicon glyphicon-search"></span>
+	</button>
+	{END searchform_search}
+	</span>
+</div>
+		
+</span>
+{END searchform_block}
+
+
+
+</div>
+{END container_more_1}
+
+
+
+
+												</div>						{END container_menu_1}
+
+
+									</nav>{END container_menu}
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+
+{BEGIN container_breadcrumbs}
+<div {$breadcrumbs_chiddenattr} data-pageid="{$pageid}" data-container="breadcrumbs" class="    "> 
+
+
+
+
+{BEGIN container_bc}
+<div {$bc_chiddenattr} data-pageid="{$pageid}" data-container="bc" class="    "> 
+
+{BEGIN breadcrumbs}
+<ol class="breadcrumb">
+<li ><a href="{$home_link}"><span class="glyphicon glyphicon-home"></span></a>{$crumb_dropdown}</li>
+{BEGIN crumb}
+  <li class="{$crumb_item_class}">
+{BEGIN crumb_title_link}
+	<a {$crumb_attrs}>{$crumb_title}</a>
+{END crumb_title_link}
+{BEGIN crumb_title_span}
+	<span {$crumb_attrs}>{$crumb_title}</span>
+{END crumb_title_span}	
+	{$crumb_dropdown}
+  </li>
+{END crumb}
+</ol>
+{END breadcrumbs}
+
+
+
+</div>
+{END container_bc}
+
+
+
+
+
+
+</div>
+{END container_breadcrumbs}
+
+
+
+
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+
+{BEGIN container_left}
+<div {$left_chiddenattr} data-pageid="{$pageid}" data-container="left" class="    "> 
+
+{BEGIN searchPanel}
+<div {$searchpanel_hiddenattr} data-pageid="{$pageid}" data-brick="searchpanel" class="searchOptions panel panel-primary searchPanelContainer " {$srchOpt_attrs} >
+	<!-- Search panel content -->
+	
+	<div class="panel-heading">
+		<div class="btn-group" id="addSearchFieldButton{$id}">
+			<button id="showHideControlChooseMenu{$id}" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Search in
+			<span class="caret"></span>
+			</button>
+		</div>
+
+		
+		<div class="btn-group searchpanel-options" id="searchPanelOptions{$id}">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon glyphicon-option-vertical"></span>
+			</button>
+			<ul class="dropdown-menu dropdown-left">
+				<li id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}><a>Show options</a></li>
+				<li role="separator" class="divider"></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAll" {$all_checkbox}><label for="radioAll"><span class="glyphicon">&nbsp;</span>all conditions</label></a></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAny" {$any_checkbox}><label for="radioAny"><span class="glyphicon">&nbsp;</span>any condition</label></a></li>
+				<li role="separator" class="divider"></li>
+				<li><a class="close-button"><span class="glyphicon glyphicon-remove">&nbsp;</span>hide</a></li>
+			</ul>
+		</div>
+	
+		
+		</div>
+	<div class="panel-body controlsBlock" {$bottomSearchButt_attrs} >
+
+
+		
+		{BEGIN searchCtrlBlock}
+		<div class="srchPanelRow form-group" {$filterRow_attrs}>
+			<label>{$fLabel}</label>	{$delCtrlButt}
+				<span class="rnr-searchtype">{$searchtype}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol1}</span>
+		</div>
+		{END searchCtrlBlock}
+
+
+	</div>
+	
+	<div class="panel-footer bottomSearchButt" {$bottomSearchButt_attrs}>
+		<button class="btn btn-primary" id="searchButton{$id}" {$searchbutton_attrs}>Search</button>
+		<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs}>
+		Show all
+		</button>
+	</div>
+</div>
+
+
+{END searchPanel}
+
+
+
+
+</div>
+{END container_left}
+
+
+			</div>
+			<div class="bs-center bs-screenwidth bs-minwidth">
+				
+
+{BEGIN container_gridcontrols}
+<div {$gridcontrols_chiddenattr} data-pageid="{$pageid}" data-container="gridcontrols" class="row rnr-rowcontainer bs-navcontrolled bs-hidden-xs">
+
+
+
+
+{BEGIN container_add_delete}
+<div {$add_delete_chiddenattr} data-pageid="{$pageid}" data-container="add_delete" class=" bottom-margin  col-md-6 "> 
+
+{BEGIN newrecord_controls_block}
+		{BEGIN add_link}
+		<a {$add_hiddenattr} data-pageid="{$pageid}" data-brick="add" type="button" class="btn btn-primary" {$addlink_attrs}>Add new</a>
+	{END add_link}
+
+	
+{END newrecord_controls_block}
+
+
+{BEGIN record_controls_block}
+<span {$recordcontrol_hiddenattr} data-pageid="{$pageid}" data-brick="recordcontrol">
+		{BEGIN deleteselected_link}
+	<button type="button" class="btn btn-default" {$deleteselectedlink_attrs} {$deleteselectedlink_span} disabled>Delete</button>
+	{END deleteselected_link}
+		</span>
+
+{END record_controls_block}
+
+
+
+</div>
+{END container_add_delete}
+
+
+
+
+
+
+
+
+{BEGIN container_gridinfo}
+<div {$gridinfo_chiddenattr} data-pageid="{$pageid}" data-container="gridinfo" class=" bottom-margin pull-right text-right col-md-6 "> 
+
+{BEGIN details_found}
+<span {$details_found_hiddenattr} data-pageid="{$pageid}" data-brick="details_found" class="form-inline form-inline-always">
+	{$records_indicator}
+	<span>
+	{BEGIN recordspp_block}
+			{$recsPerPage}
+	{END recordspp_block}
+	</span>
+</span>
+{END details_found}
+
+
+{BEGIN print_friendly}
+<span {$printpanel_hiddenattr} data-pageid="{$pageid}" data-brick="printpanel" class="bs-printpanel" id="printpanelblock{$id}">
+	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" title="Print-friendly page">
+		<span class="glyphicon glyphicon-print" ></span>
+		<span class="caret"></span>
+    </button>
+	<ul class="dropdown-menu pull-right" >
+		<li>
+			<div class="container-fluid" id="print_friendly_scope{$id}">
+				<div class="row">
+					<div class="col-md-4">Scope:</div>
+										{BEGIN print_friendly_all}
+					<div class="col-md-8">
+						<label for="printAll{$id}">
+							<input type="radio" id="printAll{$id}" data-href="mahasiswa_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">
+							Print all pages
+						</label>
+					</div>
+					{END print_friendly_all}
+				</div>
+				<div class="row">
+					<div class="col-md-4">&nbsp;</div>
+					<div class="col-md-8">
+						<label for="printPage{$id}">
+							<input type="radio" id="printPage{$id}" data-href="mahasiswa_print.php?{$crosstable_attrs}" name="printScope" checked>
+							Print this page
+						</label>
+					</div>
+				</div>
+								<div class="row">
+					<div class="col-md-4">&nbsp;</div>
+					<div class="col-md-8">
+						<label for="printSelection{$id}" style="color: gray;">
+							<input type="radio" id="printSelection{$id}" name="printScope" disabled="disabled">
+							Print selected
+						</label>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li class="divider" role="separator"></li>
+
+		
+				<li>	
+			<div class="rnr-printdetails">
+				<label for="printPerPage{$id}">
+											Records Per Page:
+				</label>
+				<input type="number" id="printPerPage{$id}" value="{$print_recspp}" class="rnr-printrecspp">		
+			</div>
+		</li>
+		<li class="divider" role="separator"></li>
+		<li class="rnr-printbutton">				
+			<button type="button" class="btn btn-primary" id="print_friendly_button{$id}" >Print</button>			
+		</li>
+	</ul>	
+</span>
+
+{END print_friendly}
+
+
+
+
+</div>
+{END container_gridinfo}
+
+
+
+
+
+
+
+</div>{END container_gridcontrols}
+
+
+
+{BEGIN container_tabs}
+<div {$tabs_chiddenattr} data-pageid="{$pageid}" data-container="tabs" class="    "> 
+
+{BEGIN grid_tabs}
+<div {$bsgrid_tabs_hiddenattr} data-pageid="{$pageid}" data-brick="bsgrid_tabs">
+<ul class="nav nav-tabs">
+{$grid_tabs_content}
+</ul>
+</div>
+{END grid_tabs}
+
+
+
+</div>
+{END container_tabs}
+
+
+
+{BEGIN container_messagerow}
+<div {$messagerow_chiddenattr} data-pageid="{$pageid}" data-container="messagerow" class="row rnr-rowcontainer ">
+
+
+
+
+{BEGIN container_message}
+<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="   col-md-12 "> 
+
+{BEGIN message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">{$message}</div>
+{END message_block}
+
+
+
+</div>
+{END container_message}
+
+
+
+
+
+
+</div>{END container_messagerow}
+
+
+
+{BEGIN container_center}
+<div {$center_chiddenattr} data-pageid="{$pageid}" data-container="center" class="    "> 
+
+
+
+
+{BEGIN container_grid}
+<div {$grid_chiddenattr} data-pageid="{$pageid}" data-container="grid" class="bs-grid    "> 
+
+{BEGIN grid_block}
+	<style>
+	.bs-gridcell[data-field=mhsNiu]:before {
+		content: "{$label mahasiswa mhsNiu}";
+	}
+	.bs-gridcell[data-field=mhsNif]:before {
+		content: "{$label mahasiswa mhsNif}";
+	}
+	.bs-gridcell[data-field=mhsNama]:before {
+		content: "{$label mahasiswa mhsNama}";
+	}
+	.bs-gridcell[data-field=mhsAngkatan]:before {
+		content: "{$label mahasiswa mhsAngkatan}";
+	}
+	.bs-gridcell[data-field=mhsSemesterMasuk]:before {
+		content: "{$label mahasiswa mhsSemesterMasuk}";
+	}
+	.bs-gridcell[data-field=mhsPasswordRegistrasi]:before {
+		content: "{$label mahasiswa mhsPasswordRegistrasi}";
+	}
+	.bs-gridcell[data-field=mhsKurId]:before {
+		content: "{$label mahasiswa mhsKurId}";
+	}
+	.bs-gridcell[data-field=mhsProdiKode]:before {
+		content: "{$label mahasiswa mhsProdiKode}";
+	}
+	.bs-gridcell[data-field=mhsProdiKodeUniv]:before {
+		content: "{$label mahasiswa mhsProdiKodeUniv}";
+	}
+	.bs-gridcell[data-field=mhsProdikonsentrasiId]:before {
+		content: "{$label mahasiswa mhsProdikonsentrasiId}";
+	}
+	.bs-gridcell[data-field=mhsWktkulId]:before {
+		content: "{$label mahasiswa mhsWktkulId}";
+	}
+	.bs-gridcell[data-field=mhsNomorTes]:before {
+		content: "{$label mahasiswa mhsNomorTes}";
+	}
+	.bs-gridcell[data-field=mhsTanggalTerdaftar]:before {
+		content: "{$label mahasiswa mhsTanggalTerdaftar}";
+	}
+	.bs-gridcell[data-field=mhsStatusMasukPt]:before {
+		content: "{$label mahasiswa mhsStatusMasukPt}";
+	}
+	.bs-gridcell[data-field=mhsIsAsing]:before {
+		content: "{$label mahasiswa mhsIsAsing}";
+	}
+	.bs-gridcell[data-field=mhsJumlahSksPindahan]:before {
+		content: "{$label mahasiswa mhsJumlahSksPindahan}";
+	}
+	.bs-gridcell[data-field=mhsKodePtPindahan]:before {
+		content: "{$label mahasiswa mhsKodePtPindahan}";
+	}
+	.bs-gridcell[data-field=mhsKodeProdiDiktiPindahan]:before {
+		content: "{$label mahasiswa mhsKodeProdiDiktiPindahan}";
+	}
+	.bs-gridcell[data-field=mhsNamaPtPindahan]:before {
+		content: "{$label mahasiswa mhsNamaPtPindahan}";
+	}
+	.bs-gridcell[data-field=mhsJjarKodeDiktiPindahan]:before {
+		content: "{$label mahasiswa mhsJjarKodeDiktiPindahan}";
+	}
+	.bs-gridcell[data-field=mhsTahunMasukPtPindahan]:before {
+		content: "{$label mahasiswa mhsTahunMasukPtPindahan}";
+	}
+	.bs-gridcell[data-field=mhsNimLama]:before {
+		content: "{$label mahasiswa mhsNimLama}";
+	}
+	.bs-gridcell[data-field=mhsJenisKelamin]:before {
+		content: "{$label mahasiswa mhsJenisKelamin}";
+	}
+	.bs-gridcell[data-field=mhsKotaKodeLahir]:before {
+		content: "{$label mahasiswa mhsKotaKodeLahir}";
+	}
+	.bs-gridcell[data-field=mhsTanggalLahir]:before {
+		content: "{$label mahasiswa mhsTanggalLahir}";
+	}
+	.bs-gridcell[data-field=mhsAgmrId]:before {
+		content: "{$label mahasiswa mhsAgmrId}";
+	}
+	.bs-gridcell[data-field=mhsSmtaKode]:before {
+		content: "{$label mahasiswa mhsSmtaKode}";
+	}
+	.bs-gridcell[data-field=mhsTdftSmta]:before {
+		content: "{$label mahasiswa mhsTdftSmta}";
+	}
+	.bs-gridcell[data-field=mhsTahunTamatSmta]:before {
+		content: "{$label mahasiswa mhsTahunTamatSmta}";
+	}
+	.bs-gridcell[data-field=mhsTahunLulusSmta]:before {
+		content: "{$label mahasiswa mhsTahunLulusSmta}";
+	}
+	.bs-gridcell[data-field=mhsJursmtarKode]:before {
+		content: "{$label mahasiswa mhsJursmtarKode}";
+	}
+	.bs-gridcell[data-field=mhsAlamatSmta]:before {
+		content: "{$label mahasiswa mhsAlamatSmta}";
+	}
+	.bs-gridcell[data-field=mhsNoIjasahSmta]:before {
+		content: "{$label mahasiswa mhsNoIjasahSmta}";
+	}
+	.bs-gridcell[data-field=mhsIjasahSmta]:before {
+		content: "{$label mahasiswa mhsIjasahSmta}";
+	}
+	.bs-gridcell[data-field=mhsTanggalIjasahSmta]:before {
+		content: "{$label mahasiswa mhsTanggalIjasahSmta}";
+	}
+	.bs-gridcell[data-field=mhsNilaiUjianAkhirSmta]:before {
+		content: "{$label mahasiswa mhsNilaiUjianAkhirSmta}";
+	}
+	.bs-gridcell[data-field=mhsJumlahMpUjianAkhirSmta]:before {
+		content: "{$label mahasiswa mhsJumlahMpUjianAkhirSmta}";
+	}
+	.bs-gridcell[data-field=mhsStnkrId]:before {
+		content: "{$label mahasiswa mhsStnkrId}";
+	}
+	.bs-gridcell[data-field=mhsJumlahSaudara]:before {
+		content: "{$label mahasiswa mhsJumlahSaudara}";
+	}
+	.bs-gridcell[data-field=mhsAlamatMhs]:before {
+		content: "{$label mahasiswa mhsAlamatMhs}";
+	}
+	.bs-gridcell[data-field=mhsAlamatTerakhir]:before {
+		content: "{$label mahasiswa mhsAlamatTerakhir}";
+	}
+	.bs-gridcell[data-field=mhsAlamatDiKotaIni]:before {
+		content: "{$label mahasiswa mhsAlamatDiKotaIni}";
+	}
+	.bs-gridcell[data-field=mhsKotaKode]:before {
+		content: "{$label mahasiswa mhsKotaKode}";
+	}
+	.bs-gridcell[data-field=mhsNgrKode]:before {
+		content: "{$label mahasiswa mhsNgrKode}";
+	}
+	.bs-gridcell[data-field=mhsKodePos]:before {
+		content: "{$label mahasiswa mhsKodePos}";
+	}
+	.bs-gridcell[data-field=mhsStatrumahId]:before {
+		content: "{$label mahasiswa mhsStatrumahId}";
+	}
+	.bs-gridcell[data-field=mhsSbdnrId]:before {
+		content: "{$label mahasiswa mhsSbdnrId}";
+	}
+	.bs-gridcell[data-field=mhsHubbiayaId]:before {
+		content: "{$label mahasiswa mhsHubbiayaId}";
+	}
+	.bs-gridcell[data-field=mhsTempatKerja]:before {
+		content: "{$label mahasiswa mhsTempatKerja}";
+	}
+	.bs-gridcell[data-field=mhsAlamatTempatKerja]:before {
+		content: "{$label mahasiswa mhsAlamatTempatKerja}";
+	}
+	.bs-gridcell[data-field=mhsNoTelpTempatKerja]:before {
+		content: "{$label mahasiswa mhsNoTelpTempatKerja}";
+	}
+	.bs-gridcell[data-field=mhsBeasiswa]:before {
+		content: "{$label mahasiswa mhsBeasiswa}";
+	}
+	.bs-gridcell[data-field=mhsWnrId]:before {
+		content: "{$label mahasiswa mhsWnrId}";
+	}
+	.bs-gridcell[data-field=mhsJlrrKode]:before {
+		content: "{$label mahasiswa mhsJlrrKode}";
+	}
+	.bs-gridcell[data-field=mhsNoAskes]:before {
+		content: "{$label mahasiswa mhsNoAskes}";
+	}
+	.bs-gridcell[data-field=mhsNoTelp]:before {
+		content: "{$label mahasiswa mhsNoTelp}";
+	}
+	.bs-gridcell[data-field=mhsNoHp]:before {
+		content: "{$label mahasiswa mhsNoHp}";
+	}
+	.bs-gridcell[data-field=mhsEmail]:before {
+		content: "{$label mahasiswa mhsEmail}";
+	}
+	.bs-gridcell[data-field=mhsHomepage]:before {
+		content: "{$label mahasiswa mhsHomepage}";
+	}
+	.bs-gridcell[data-field=mhsFoto]:before {
+		content: "{$label mahasiswa mhsFoto}";
+	}
+	.bs-gridcell[data-field=mhsStakmhsrKode]:before {
+		content: "{$label mahasiswa mhsStakmhsrKode}";
+	}
+	.bs-gridcell[data-field=mhsDsnPegNipPembimbingAkademik]:before {
+		content: "{$label mahasiswa mhsDsnPegNipPembimbingAkademik}";
+	}
+	.bs-gridcell[data-field=mhsSksWajib]:before {
+		content: "{$label mahasiswa mhsSksWajib}";
+	}
+	.bs-gridcell[data-field=mhsSksPilihan]:before {
+		content: "{$label mahasiswa mhsSksPilihan}";
+	}
+	.bs-gridcell[data-field=mhsSksA]:before {
+		content: "{$label mahasiswa mhsSksA}";
+	}
+	.bs-gridcell[data-field=mhsSksB]:before {
+		content: "{$label mahasiswa mhsSksB}";
+	}
+	.bs-gridcell[data-field=mhsSksC]:before {
+		content: "{$label mahasiswa mhsSksC}";
+	}
+	.bs-gridcell[data-field=mhsSksD]:before {
+		content: "{$label mahasiswa mhsSksD}";
+	}
+	.bs-gridcell[data-field=mhsSksE]:before {
+		content: "{$label mahasiswa mhsSksE}";
+	}
+	.bs-gridcell[data-field=mhsSksTranskrip]:before {
+		content: "{$label mahasiswa mhsSksTranskrip}";
+	}
+	.bs-gridcell[data-field=mhsBobotTotalTranskrip]:before {
+		content: "{$label mahasiswa mhsBobotTotalTranskrip}";
+	}
+	.bs-gridcell[data-field=mhsIpkTranskrip]:before {
+		content: "{$label mahasiswa mhsIpkTranskrip}";
+	}
+	.bs-gridcell[data-field=mhsLamaStudiSemester]:before {
+		content: "{$label mahasiswa mhsLamaStudiSemester}";
+	}
+	.bs-gridcell[data-field=mhsLamaStudiBulan]:before {
+		content: "{$label mahasiswa mhsLamaStudiBulan}";
+	}
+	.bs-gridcell[data-field=mhsIsTranskripAkhirDiarsipkan]:before {
+		content: "{$label mahasiswa mhsIsTranskripAkhirDiarsipkan}";
+	}
+	.bs-gridcell[data-field=mhsTanggalTranskrip]:before {
+		content: "{$label mahasiswa mhsTanggalTranskrip}";
+	}
+	.bs-gridcell[data-field=mhsNomorTranskrip]:before {
+		content: "{$label mahasiswa mhsNomorTranskrip}";
+	}
+	.bs-gridcell[data-field=mhsTempatLahirTranskrip]:before {
+		content: "{$label mahasiswa mhsTempatLahirTranskrip}";
+	}
+	.bs-gridcell[data-field=mhsTanggalLahirTranskrip]:before {
+		content: "{$label mahasiswa mhsTanggalLahirTranskrip}";
+	}
+	.bs-gridcell[data-field=mhsMetodeBuildTranskrip]:before {
+		content: "{$label mahasiswa mhsMetodeBuildTranskrip}";
+	}
+	.bs-gridcell[data-field=mhsMetodePenyetaraanTranskrip]:before {
+		content: "{$label mahasiswa mhsMetodePenyetaraanTranskrip}";
+	}
+	.bs-gridcell[data-field=mhsTahunKurikulumPenyetaraanTranskrip]:before {
+		content: "{$label mahasiswa mhsTahunKurikulumPenyetaraanTranskrip}";
+	}
+	.bs-gridcell[data-field=mhsTanggalLulus]:before {
+		content: "{$label mahasiswa mhsTanggalLulus}";
+	}
+	.bs-gridcell[data-field=mhsNoSuratYudisium]:before {
+		content: "{$label mahasiswa mhsNoSuratYudisium}";
+	}
+	.bs-gridcell[data-field=mhsTanggalSuratYudisium]:before {
+		content: "{$label mahasiswa mhsTanggalSuratYudisium}";
+	}
+	.bs-gridcell[data-field=mhsSemIdLulus]:before {
+		content: "{$label mahasiswa mhsSemIdLulus}";
+	}
+	.bs-gridcell[data-field=mhsTanggalIjasah]:before {
+		content: "{$label mahasiswa mhsTanggalIjasah}";
+	}
+	.bs-gridcell[data-field=mhsNoIjasah]:before {
+		content: "{$label mahasiswa mhsNoIjasah}";
+	}
+	.bs-gridcell[data-field=mhsKodeIjasah]:before {
+		content: "{$label mahasiswa mhsKodeIjasah}";
+	}
+	.bs-gridcell[data-field=mhsPinIjasah]:before {
+		content: "{$label mahasiswa mhsPinIjasah}";
+	}
+	.bs-gridcell[data-field=mhsPrlsrId]:before {
+		content: "{$label mahasiswa mhsPrlsrId}";
+	}
+	.bs-gridcell[data-field=mhsPrlsrNama]:before {
+		content: "{$label mahasiswa mhsPrlsrNama}";
+	}
+	.bs-gridcell[data-field=mhsPrlsrNamaAsing]:before {
+		content: "{$label mahasiswa mhsPrlsrNamaAsing}";
+	}
+	.bs-gridcell[data-field=mhsWsdId]:before {
+		content: "{$label mahasiswa mhsWsdId}";
+	}
+	.bs-gridcell[data-field=mhsTanggalPengubahan]:before {
+		content: "{$label mahasiswa mhsTanggalPengubahan}";
+	}
+	.bs-gridcell[data-field=mhsUnitPengubah]:before {
+		content: "{$label mahasiswa mhsUnitPengubah}";
+	}
+	.bs-gridcell[data-field=mhsUserPengubah]:before {
+		content: "{$label mahasiswa mhsUserPengubah}";
+	}
+	.bs-gridcell[data-field=mhsProdiGelarKelulusan]:before {
+		content: "{$label mahasiswa mhsProdiGelarKelulusan}";
+	}
+	.bs-gridcell[data-field=mhsSemIdMulai]:before {
+		content: "{$label mahasiswa mhsSemIdMulai}";
+	}
+	.bs-gridcell[data-field=mhsBiayaStudi]:before {
+		content: "{$label mahasiswa mhsBiayaStudi}";
+	}
+	.bs-gridcell[data-field=mhsPekerjaan]:before {
+		content: "{$label mahasiswa mhsPekerjaan}";
+	}
+	.bs-gridcell[data-field=mhsPTKerja]:before {
+		content: "{$label mahasiswa mhsPTKerja}";
+	}
+	.bs-gridcell[data-field=mhsPSKerja]:before {
+		content: "{$label mahasiswa mhsPSKerja}";
+	}
+	.bs-gridcell[data-field=mhsNIDNPromotor]:before {
+		content: "{$label mahasiswa mhsNIDNPromotor}";
+	}
+	.bs-gridcell[data-field=mhsKoPromotor1]:before {
+		content: "{$label mahasiswa mhsKoPromotor1}";
+	}
+	.bs-gridcell[data-field=mhsKoPromotor2]:before {
+		content: "{$label mahasiswa mhsKoPromotor2}";
+	}
+	.bs-gridcell[data-field=mhsKoPromotor3]:before {
+		content: "{$label mahasiswa mhsKoPromotor3}";
+	}
+	.bs-gridcell[data-field=mhsKoPromotor4]:before {
+		content: "{$label mahasiswa mhsKoPromotor4}";
+	}
+	.bs-gridcell[data-field=mhsProdiAsal]:before {
+		content: "{$label mahasiswa mhsProdiAsal}";
+	}
+	.bs-gridcell[data-field=mhsDiktiShift]:before {
+		content: "{$label mahasiswa mhsDiktiShift}";
+	}
+	.bs-gridcell[data-field=mhsPembayaranIpp]:before {
+		content: "{$label mahasiswa mhsPembayaranIpp}";
+	}
+	.bs-gridcell[data-field=mshNoIpp]:before {
+		content: "{$label mahasiswa mshNoIpp}";
+	}
+	.bs-gridcell[data-field=mhsPersyaratan]:before {
+		content: "{$label mahasiswa mhsPersyaratan}";
+	}
+	.bs-gridcell[data-field=mhsPengOrg]:before {
+		content: "{$label mahasiswa mhsPengOrg}";
+	}
+	.bs-gridcell[data-field=mhsOrg]:before {
+		content: "{$label mahasiswa mhsOrg}";
+	}
+	.bs-gridcell[data-field=mhsDomisili]:before {
+		content: "{$label mahasiswa mhsDomisili}";
+	}
+	.bs-gridcell[data-field=mhsJenisSttb]:before {
+		content: "{$label mahasiswa mhsJenisSttb}";
+	}
+	.bs-gridcell[data-field=mhsIsKerja]:before {
+		content: "{$label mahasiswa mhsIsKerja}";
+	}
+	.bs-gridcell[data-field=mhsStatusSmta]:before {
+		content: "{$label mahasiswa mhsStatusSmta}";
+	}
+	.bs-gridcell[data-field=mhsAkreditasi]:before {
+		content: "{$label mahasiswa mhsAkreditasi}";
+	}
+	.bs-gridcell[data-field=mhsKerja]:before {
+		content: "{$label mahasiswa mhsKerja}";
+	}
+	.bs-gridcell[data-field=mhsSaudaraLk]:before {
+		content: "{$label mahasiswa mhsSaudaraLk}";
+	}
+	.bs-gridcell[data-field=mhsSaudaraPr]:before {
+		content: "{$label mahasiswa mhsSaudaraPr}";
+	}
+	.bs-gridcell[data-field=mhsHobi]:before {
+		content: "{$label mahasiswa mhsHobi}";
+	}
+	.bs-gridcell[data-field=mhsSmtaLain]:before {
+		content: "{$label mahasiswa mhsSmtaLain}";
+	}
+	.bs-gridcell[data-field=mhsAkreditasiSmta]:before {
+		content: "{$label mahasiswa mhsAkreditasiSmta}";
+	}
+	.bs-gridcell[data-field=mhsBiayaKuliah]:before {
+		content: "{$label mahasiswa mhsBiayaKuliah}";
+	}
+	.bs-gridcell[data-field=MhsIdJenisSmta]:before {
+		content: "{$label mahasiswa MhsIdJenisSmta}";
+	}
+	.bs-gridcell[data-field=mhsSmtaPropinsiKode]:before {
+		content: "{$label mahasiswa mhsSmtaPropinsiKode}";
+	}
+	.bs-gridcell[data-field=mhsEmailOld]:before {
+		content: "{$label mahasiswa mhsEmailOld}";
+	}
+	.bs-gridcell[data-field=mhsNoKtp]:before {
+		content: "{$label mahasiswa mhsNoKtp}";
+	}
+	.bs-gridcell[data-field=mhsNoKk]:before {
+		content: "{$label mahasiswa mhsNoKk}";
+	}
+</style>
+<table {$grid_hiddenattr} data-pageid="{$pageid}" data-brick="grid" class="table {$grid_classes} bs-flexgrid rnr-b-grid rnr-gridtable" cellpadding="0" >
+	<thead>
+										{BEGIN grid_header}
+								<tr class="rnr-toprow {$gridHeader_class}" >
+									{BEGIN record_header}
+									{BEGIN listIcons_column}
+									<th iEditCont="all">&nbsp;</th>
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<th class="">
+										<input type="checkbox" {$checkboxheader_attrs}>
+									</th>
+									{END checkbox_column}
+
+																		
+									{BEGIN mhsNiu_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNiu_class}" data-field=mhsNiu>
+									{BEGIN mhsNiu_fieldheader}
+																				<span {$mhsNiu_orderlinkattrs}>
+											{$label mahasiswa mhsNiu}
+										</span>
+									{END mhsNiu_fieldheader}
+									</th>
+									{END mhsNiu_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNif_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNif_class}" data-field=mhsNif>
+									{BEGIN mhsNif_fieldheader}
+																				<span {$mhsNif_orderlinkattrs}>
+											{$label mahasiswa mhsNif}
+										</span>
+									{END mhsNif_fieldheader}
+									</th>
+									{END mhsNif_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNama_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNama_class}" data-field=mhsNama>
+									{BEGIN mhsNama_fieldheader}
+																				<span {$mhsNama_orderlinkattrs}>
+											{$label mahasiswa mhsNama}
+										</span>
+									{END mhsNama_fieldheader}
+									</th>
+									{END mhsNama_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsAngkatan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsAngkatan_class}" data-field=mhsAngkatan>
+									{BEGIN mhsAngkatan_fieldheader}
+																				<span {$mhsAngkatan_orderlinkattrs}>
+											{$label mahasiswa mhsAngkatan}
+										</span>
+									{END mhsAngkatan_fieldheader}
+									</th>
+									{END mhsAngkatan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSemesterMasuk_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSemesterMasuk_class}" data-field=mhsSemesterMasuk>
+									{BEGIN mhsSemesterMasuk_fieldheader}
+																				<span {$mhsSemesterMasuk_orderlinkattrs}>
+											{$label mahasiswa mhsSemesterMasuk}
+										</span>
+									{END mhsSemesterMasuk_fieldheader}
+									</th>
+									{END mhsSemesterMasuk_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsPasswordRegistrasi_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsPasswordRegistrasi_class}" data-field=mhsPasswordRegistrasi>
+									{BEGIN mhsPasswordRegistrasi_fieldheader}
+																				<span {$mhsPasswordRegistrasi_orderlinkattrs}>
+											{$label mahasiswa mhsPasswordRegistrasi}
+										</span>
+									{END mhsPasswordRegistrasi_fieldheader}
+									</th>
+									{END mhsPasswordRegistrasi_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKurId_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKurId_class}" data-field=mhsKurId>
+									{BEGIN mhsKurId_fieldheader}
+																				<span {$mhsKurId_orderlinkattrs}>
+											{$label mahasiswa mhsKurId}
+										</span>
+									{END mhsKurId_fieldheader}
+									</th>
+									{END mhsKurId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsProdiKode_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsProdiKode_class}" data-field=mhsProdiKode>
+									{BEGIN mhsProdiKode_fieldheader}
+																				<span {$mhsProdiKode_orderlinkattrs}>
+											{$label mahasiswa mhsProdiKode}
+										</span>
+									{END mhsProdiKode_fieldheader}
+									</th>
+									{END mhsProdiKode_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsProdiKodeUniv_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsProdiKodeUniv_class}" data-field=mhsProdiKodeUniv>
+									{BEGIN mhsProdiKodeUniv_fieldheader}
+																				<span {$mhsProdiKodeUniv_orderlinkattrs}>
+											{$label mahasiswa mhsProdiKodeUniv}
+										</span>
+									{END mhsProdiKodeUniv_fieldheader}
+									</th>
+									{END mhsProdiKodeUniv_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsProdikonsentrasiId_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsProdikonsentrasiId_class}" data-field=mhsProdikonsentrasiId>
+									{BEGIN mhsProdikonsentrasiId_fieldheader}
+																				<span {$mhsProdikonsentrasiId_orderlinkattrs}>
+											{$label mahasiswa mhsProdikonsentrasiId}
+										</span>
+									{END mhsProdikonsentrasiId_fieldheader}
+									</th>
+									{END mhsProdikonsentrasiId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsWktkulId_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsWktkulId_class}" data-field=mhsWktkulId>
+									{BEGIN mhsWktkulId_fieldheader}
+																				<span {$mhsWktkulId_orderlinkattrs}>
+											{$label mahasiswa mhsWktkulId}
+										</span>
+									{END mhsWktkulId_fieldheader}
+									</th>
+									{END mhsWktkulId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNomorTes_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNomorTes_class}" data-field=mhsNomorTes>
+									{BEGIN mhsNomorTes_fieldheader}
+																				<span {$mhsNomorTes_orderlinkattrs}>
+											{$label mahasiswa mhsNomorTes}
+										</span>
+									{END mhsNomorTes_fieldheader}
+									</th>
+									{END mhsNomorTes_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTanggalTerdaftar_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTanggalTerdaftar_class}" data-field=mhsTanggalTerdaftar>
+									{BEGIN mhsTanggalTerdaftar_fieldheader}
+																				<span {$mhsTanggalTerdaftar_orderlinkattrs}>
+											{$label mahasiswa mhsTanggalTerdaftar}
+										</span>
+									{END mhsTanggalTerdaftar_fieldheader}
+									</th>
+									{END mhsTanggalTerdaftar_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsStatusMasukPt_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsStatusMasukPt_class}" data-field=mhsStatusMasukPt>
+									{BEGIN mhsStatusMasukPt_fieldheader}
+																				<span {$mhsStatusMasukPt_orderlinkattrs}>
+											{$label mahasiswa mhsStatusMasukPt}
+										</span>
+									{END mhsStatusMasukPt_fieldheader}
+									</th>
+									{END mhsStatusMasukPt_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsIsAsing_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsIsAsing_class}" data-field=mhsIsAsing>
+									{BEGIN mhsIsAsing_fieldheader}
+																				<span {$mhsIsAsing_orderlinkattrs}>
+											{$label mahasiswa mhsIsAsing}
+										</span>
+									{END mhsIsAsing_fieldheader}
+									</th>
+									{END mhsIsAsing_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsJumlahSksPindahan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsJumlahSksPindahan_class}" data-field=mhsJumlahSksPindahan>
+									{BEGIN mhsJumlahSksPindahan_fieldheader}
+																				<span {$mhsJumlahSksPindahan_orderlinkattrs}>
+											{$label mahasiswa mhsJumlahSksPindahan}
+										</span>
+									{END mhsJumlahSksPindahan_fieldheader}
+									</th>
+									{END mhsJumlahSksPindahan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKodePtPindahan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKodePtPindahan_class}" data-field=mhsKodePtPindahan>
+									{BEGIN mhsKodePtPindahan_fieldheader}
+																				<span {$mhsKodePtPindahan_orderlinkattrs}>
+											{$label mahasiswa mhsKodePtPindahan}
+										</span>
+									{END mhsKodePtPindahan_fieldheader}
+									</th>
+									{END mhsKodePtPindahan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKodeProdiDiktiPindahan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKodeProdiDiktiPindahan_class}" data-field=mhsKodeProdiDiktiPindahan>
+									{BEGIN mhsKodeProdiDiktiPindahan_fieldheader}
+																				<span {$mhsKodeProdiDiktiPindahan_orderlinkattrs}>
+											{$label mahasiswa mhsKodeProdiDiktiPindahan}
+										</span>
+									{END mhsKodeProdiDiktiPindahan_fieldheader}
+									</th>
+									{END mhsKodeProdiDiktiPindahan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNamaPtPindahan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNamaPtPindahan_class}" data-field=mhsNamaPtPindahan>
+									{BEGIN mhsNamaPtPindahan_fieldheader}
+																				<span {$mhsNamaPtPindahan_orderlinkattrs}>
+											{$label mahasiswa mhsNamaPtPindahan}
+										</span>
+									{END mhsNamaPtPindahan_fieldheader}
+									</th>
+									{END mhsNamaPtPindahan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsJjarKodeDiktiPindahan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsJjarKodeDiktiPindahan_class}" data-field=mhsJjarKodeDiktiPindahan>
+									{BEGIN mhsJjarKodeDiktiPindahan_fieldheader}
+																				<span {$mhsJjarKodeDiktiPindahan_orderlinkattrs}>
+											{$label mahasiswa mhsJjarKodeDiktiPindahan}
+										</span>
+									{END mhsJjarKodeDiktiPindahan_fieldheader}
+									</th>
+									{END mhsJjarKodeDiktiPindahan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTahunMasukPtPindahan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTahunMasukPtPindahan_class}" data-field=mhsTahunMasukPtPindahan>
+									{BEGIN mhsTahunMasukPtPindahan_fieldheader}
+																				<span {$mhsTahunMasukPtPindahan_orderlinkattrs}>
+											{$label mahasiswa mhsTahunMasukPtPindahan}
+										</span>
+									{END mhsTahunMasukPtPindahan_fieldheader}
+									</th>
+									{END mhsTahunMasukPtPindahan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNimLama_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNimLama_class}" data-field=mhsNimLama>
+									{BEGIN mhsNimLama_fieldheader}
+																				<span {$mhsNimLama_orderlinkattrs}>
+											{$label mahasiswa mhsNimLama}
+										</span>
+									{END mhsNimLama_fieldheader}
+									</th>
+									{END mhsNimLama_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsJenisKelamin_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsJenisKelamin_class}" data-field=mhsJenisKelamin>
+									{BEGIN mhsJenisKelamin_fieldheader}
+																				<span {$mhsJenisKelamin_orderlinkattrs}>
+											{$label mahasiswa mhsJenisKelamin}
+										</span>
+									{END mhsJenisKelamin_fieldheader}
+									</th>
+									{END mhsJenisKelamin_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKotaKodeLahir_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKotaKodeLahir_class}" data-field=mhsKotaKodeLahir>
+									{BEGIN mhsKotaKodeLahir_fieldheader}
+																				<span {$mhsKotaKodeLahir_orderlinkattrs}>
+											{$label mahasiswa mhsKotaKodeLahir}
+										</span>
+									{END mhsKotaKodeLahir_fieldheader}
+									</th>
+									{END mhsKotaKodeLahir_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTanggalLahir_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTanggalLahir_class}" data-field=mhsTanggalLahir>
+									{BEGIN mhsTanggalLahir_fieldheader}
+																				<span {$mhsTanggalLahir_orderlinkattrs}>
+											{$label mahasiswa mhsTanggalLahir}
+										</span>
+									{END mhsTanggalLahir_fieldheader}
+									</th>
+									{END mhsTanggalLahir_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsAgmrId_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsAgmrId_class}" data-field=mhsAgmrId>
+									{BEGIN mhsAgmrId_fieldheader}
+																				<span {$mhsAgmrId_orderlinkattrs}>
+											{$label mahasiswa mhsAgmrId}
+										</span>
+									{END mhsAgmrId_fieldheader}
+									</th>
+									{END mhsAgmrId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSmtaKode_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSmtaKode_class}" data-field=mhsSmtaKode>
+									{BEGIN mhsSmtaKode_fieldheader}
+																				<span {$mhsSmtaKode_orderlinkattrs}>
+											{$label mahasiswa mhsSmtaKode}
+										</span>
+									{END mhsSmtaKode_fieldheader}
+									</th>
+									{END mhsSmtaKode_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTdftSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTdftSmta_class}" data-field=mhsTdftSmta>
+									{BEGIN mhsTdftSmta_fieldheader}
+																				<span {$mhsTdftSmta_orderlinkattrs}>
+											{$label mahasiswa mhsTdftSmta}
+										</span>
+									{END mhsTdftSmta_fieldheader}
+									</th>
+									{END mhsTdftSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTahunTamatSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTahunTamatSmta_class}" data-field=mhsTahunTamatSmta>
+									{BEGIN mhsTahunTamatSmta_fieldheader}
+																				<span {$mhsTahunTamatSmta_orderlinkattrs}>
+											{$label mahasiswa mhsTahunTamatSmta}
+										</span>
+									{END mhsTahunTamatSmta_fieldheader}
+									</th>
+									{END mhsTahunTamatSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTahunLulusSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTahunLulusSmta_class}" data-field=mhsTahunLulusSmta>
+									{BEGIN mhsTahunLulusSmta_fieldheader}
+																				<span {$mhsTahunLulusSmta_orderlinkattrs}>
+											{$label mahasiswa mhsTahunLulusSmta}
+										</span>
+									{END mhsTahunLulusSmta_fieldheader}
+									</th>
+									{END mhsTahunLulusSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsJursmtarKode_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsJursmtarKode_class}" data-field=mhsJursmtarKode>
+									{BEGIN mhsJursmtarKode_fieldheader}
+																				<span {$mhsJursmtarKode_orderlinkattrs}>
+											{$label mahasiswa mhsJursmtarKode}
+										</span>
+									{END mhsJursmtarKode_fieldheader}
+									</th>
+									{END mhsJursmtarKode_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsAlamatSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsAlamatSmta_class}" data-field=mhsAlamatSmta>
+									{BEGIN mhsAlamatSmta_fieldheader}
+																				<span {$mhsAlamatSmta_orderlinkattrs}>
+											{$label mahasiswa mhsAlamatSmta}
+										</span>
+									{END mhsAlamatSmta_fieldheader}
+									</th>
+									{END mhsAlamatSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNoIjasahSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNoIjasahSmta_class}" data-field=mhsNoIjasahSmta>
+									{BEGIN mhsNoIjasahSmta_fieldheader}
+																				<span {$mhsNoIjasahSmta_orderlinkattrs}>
+											{$label mahasiswa mhsNoIjasahSmta}
+										</span>
+									{END mhsNoIjasahSmta_fieldheader}
+									</th>
+									{END mhsNoIjasahSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsIjasahSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsIjasahSmta_class}" data-field=mhsIjasahSmta>
+									{BEGIN mhsIjasahSmta_fieldheader}
+																				<span {$mhsIjasahSmta_orderlinkattrs}>
+											{$label mahasiswa mhsIjasahSmta}
+										</span>
+									{END mhsIjasahSmta_fieldheader}
+									</th>
+									{END mhsIjasahSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTanggalIjasahSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTanggalIjasahSmta_class}" data-field=mhsTanggalIjasahSmta>
+									{BEGIN mhsTanggalIjasahSmta_fieldheader}
+																				<span {$mhsTanggalIjasahSmta_orderlinkattrs}>
+											{$label mahasiswa mhsTanggalIjasahSmta}
+										</span>
+									{END mhsTanggalIjasahSmta_fieldheader}
+									</th>
+									{END mhsTanggalIjasahSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNilaiUjianAkhirSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNilaiUjianAkhirSmta_class}" data-field=mhsNilaiUjianAkhirSmta>
+									{BEGIN mhsNilaiUjianAkhirSmta_fieldheader}
+																				<span {$mhsNilaiUjianAkhirSmta_orderlinkattrs}>
+											{$label mahasiswa mhsNilaiUjianAkhirSmta}
+										</span>
+									{END mhsNilaiUjianAkhirSmta_fieldheader}
+									</th>
+									{END mhsNilaiUjianAkhirSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsJumlahMpUjianAkhirSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsJumlahMpUjianAkhirSmta_class}" data-field=mhsJumlahMpUjianAkhirSmta>
+									{BEGIN mhsJumlahMpUjianAkhirSmta_fieldheader}
+																				<span {$mhsJumlahMpUjianAkhirSmta_orderlinkattrs}>
+											{$label mahasiswa mhsJumlahMpUjianAkhirSmta}
+										</span>
+									{END mhsJumlahMpUjianAkhirSmta_fieldheader}
+									</th>
+									{END mhsJumlahMpUjianAkhirSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsStnkrId_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsStnkrId_class}" data-field=mhsStnkrId>
+									{BEGIN mhsStnkrId_fieldheader}
+																				<span {$mhsStnkrId_orderlinkattrs}>
+											{$label mahasiswa mhsStnkrId}
+										</span>
+									{END mhsStnkrId_fieldheader}
+									</th>
+									{END mhsStnkrId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsJumlahSaudara_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsJumlahSaudara_class}" data-field=mhsJumlahSaudara>
+									{BEGIN mhsJumlahSaudara_fieldheader}
+																				<span {$mhsJumlahSaudara_orderlinkattrs}>
+											{$label mahasiswa mhsJumlahSaudara}
+										</span>
+									{END mhsJumlahSaudara_fieldheader}
+									</th>
+									{END mhsJumlahSaudara_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsAlamatMhs_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsAlamatMhs_class}" data-field=mhsAlamatMhs>
+									{BEGIN mhsAlamatMhs_fieldheader}
+																				<span {$mhsAlamatMhs_orderlinkattrs}>
+											{$label mahasiswa mhsAlamatMhs}
+										</span>
+									{END mhsAlamatMhs_fieldheader}
+									</th>
+									{END mhsAlamatMhs_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsAlamatTerakhir_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsAlamatTerakhir_class}" data-field=mhsAlamatTerakhir>
+									{BEGIN mhsAlamatTerakhir_fieldheader}
+																				<span {$mhsAlamatTerakhir_orderlinkattrs}>
+											{$label mahasiswa mhsAlamatTerakhir}
+										</span>
+									{END mhsAlamatTerakhir_fieldheader}
+									</th>
+									{END mhsAlamatTerakhir_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsAlamatDiKotaIni_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsAlamatDiKotaIni_class}" data-field=mhsAlamatDiKotaIni>
+									{BEGIN mhsAlamatDiKotaIni_fieldheader}
+																				<span {$mhsAlamatDiKotaIni_orderlinkattrs}>
+											{$label mahasiswa mhsAlamatDiKotaIni}
+										</span>
+									{END mhsAlamatDiKotaIni_fieldheader}
+									</th>
+									{END mhsAlamatDiKotaIni_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKotaKode_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKotaKode_class}" data-field=mhsKotaKode>
+									{BEGIN mhsKotaKode_fieldheader}
+																				<span {$mhsKotaKode_orderlinkattrs}>
+											{$label mahasiswa mhsKotaKode}
+										</span>
+									{END mhsKotaKode_fieldheader}
+									</th>
+									{END mhsKotaKode_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNgrKode_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNgrKode_class}" data-field=mhsNgrKode>
+									{BEGIN mhsNgrKode_fieldheader}
+																				<span {$mhsNgrKode_orderlinkattrs}>
+											{$label mahasiswa mhsNgrKode}
+										</span>
+									{END mhsNgrKode_fieldheader}
+									</th>
+									{END mhsNgrKode_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKodePos_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKodePos_class}" data-field=mhsKodePos>
+									{BEGIN mhsKodePos_fieldheader}
+																				<span {$mhsKodePos_orderlinkattrs}>
+											{$label mahasiswa mhsKodePos}
+										</span>
+									{END mhsKodePos_fieldheader}
+									</th>
+									{END mhsKodePos_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsStatrumahId_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsStatrumahId_class}" data-field=mhsStatrumahId>
+									{BEGIN mhsStatrumahId_fieldheader}
+																				<span {$mhsStatrumahId_orderlinkattrs}>
+											{$label mahasiswa mhsStatrumahId}
+										</span>
+									{END mhsStatrumahId_fieldheader}
+									</th>
+									{END mhsStatrumahId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSbdnrId_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSbdnrId_class}" data-field=mhsSbdnrId>
+									{BEGIN mhsSbdnrId_fieldheader}
+																				<span {$mhsSbdnrId_orderlinkattrs}>
+											{$label mahasiswa mhsSbdnrId}
+										</span>
+									{END mhsSbdnrId_fieldheader}
+									</th>
+									{END mhsSbdnrId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsHubbiayaId_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsHubbiayaId_class}" data-field=mhsHubbiayaId>
+									{BEGIN mhsHubbiayaId_fieldheader}
+																				<span {$mhsHubbiayaId_orderlinkattrs}>
+											{$label mahasiswa mhsHubbiayaId}
+										</span>
+									{END mhsHubbiayaId_fieldheader}
+									</th>
+									{END mhsHubbiayaId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTempatKerja_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTempatKerja_class}" data-field=mhsTempatKerja>
+									{BEGIN mhsTempatKerja_fieldheader}
+																				<span {$mhsTempatKerja_orderlinkattrs}>
+											{$label mahasiswa mhsTempatKerja}
+										</span>
+									{END mhsTempatKerja_fieldheader}
+									</th>
+									{END mhsTempatKerja_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsAlamatTempatKerja_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsAlamatTempatKerja_class}" data-field=mhsAlamatTempatKerja>
+									{BEGIN mhsAlamatTempatKerja_fieldheader}
+																				<span {$mhsAlamatTempatKerja_orderlinkattrs}>
+											{$label mahasiswa mhsAlamatTempatKerja}
+										</span>
+									{END mhsAlamatTempatKerja_fieldheader}
+									</th>
+									{END mhsAlamatTempatKerja_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNoTelpTempatKerja_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNoTelpTempatKerja_class}" data-field=mhsNoTelpTempatKerja>
+									{BEGIN mhsNoTelpTempatKerja_fieldheader}
+																				<span {$mhsNoTelpTempatKerja_orderlinkattrs}>
+											{$label mahasiswa mhsNoTelpTempatKerja}
+										</span>
+									{END mhsNoTelpTempatKerja_fieldheader}
+									</th>
+									{END mhsNoTelpTempatKerja_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsBeasiswa_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsBeasiswa_class}" data-field=mhsBeasiswa>
+									{BEGIN mhsBeasiswa_fieldheader}
+																				<span {$mhsBeasiswa_orderlinkattrs}>
+											{$label mahasiswa mhsBeasiswa}
+										</span>
+									{END mhsBeasiswa_fieldheader}
+									</th>
+									{END mhsBeasiswa_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsWnrId_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsWnrId_class}" data-field=mhsWnrId>
+									{BEGIN mhsWnrId_fieldheader}
+																				<span {$mhsWnrId_orderlinkattrs}>
+											{$label mahasiswa mhsWnrId}
+										</span>
+									{END mhsWnrId_fieldheader}
+									</th>
+									{END mhsWnrId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsJlrrKode_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsJlrrKode_class}" data-field=mhsJlrrKode>
+									{BEGIN mhsJlrrKode_fieldheader}
+																				<span {$mhsJlrrKode_orderlinkattrs}>
+											{$label mahasiswa mhsJlrrKode}
+										</span>
+									{END mhsJlrrKode_fieldheader}
+									</th>
+									{END mhsJlrrKode_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNoAskes_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNoAskes_class}" data-field=mhsNoAskes>
+									{BEGIN mhsNoAskes_fieldheader}
+																				<span {$mhsNoAskes_orderlinkattrs}>
+											{$label mahasiswa mhsNoAskes}
+										</span>
+									{END mhsNoAskes_fieldheader}
+									</th>
+									{END mhsNoAskes_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNoTelp_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNoTelp_class}" data-field=mhsNoTelp>
+									{BEGIN mhsNoTelp_fieldheader}
+																				<span {$mhsNoTelp_orderlinkattrs}>
+											{$label mahasiswa mhsNoTelp}
+										</span>
+									{END mhsNoTelp_fieldheader}
+									</th>
+									{END mhsNoTelp_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNoHp_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNoHp_class}" data-field=mhsNoHp>
+									{BEGIN mhsNoHp_fieldheader}
+																				<span {$mhsNoHp_orderlinkattrs}>
+											{$label mahasiswa mhsNoHp}
+										</span>
+									{END mhsNoHp_fieldheader}
+									</th>
+									{END mhsNoHp_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsEmail_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsEmail_class}" data-field=mhsEmail>
+									{BEGIN mhsEmail_fieldheader}
+																				<span {$mhsEmail_orderlinkattrs}>
+											{$label mahasiswa mhsEmail}
+										</span>
+									{END mhsEmail_fieldheader}
+									</th>
+									{END mhsEmail_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsHomepage_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsHomepage_class}" data-field=mhsHomepage>
+									{BEGIN mhsHomepage_fieldheader}
+																				<span {$mhsHomepage_orderlinkattrs}>
+											{$label mahasiswa mhsHomepage}
+										</span>
+									{END mhsHomepage_fieldheader}
+									</th>
+									{END mhsHomepage_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsFoto_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsFoto_class}" data-field=mhsFoto>
+									{BEGIN mhsFoto_fieldheader}
+																				<span {$mhsFoto_orderlinkattrs}>
+											{$label mahasiswa mhsFoto}
+										</span>
+									{END mhsFoto_fieldheader}
+									</th>
+									{END mhsFoto_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsStakmhsrKode_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsStakmhsrKode_class}" data-field=mhsStakmhsrKode>
+									{BEGIN mhsStakmhsrKode_fieldheader}
+																				<span {$mhsStakmhsrKode_orderlinkattrs}>
+											{$label mahasiswa mhsStakmhsrKode}
+										</span>
+									{END mhsStakmhsrKode_fieldheader}
+									</th>
+									{END mhsStakmhsrKode_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsDsnPegNipPembimbingAkademik_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsDsnPegNipPembimbingAkademik_class}" data-field=mhsDsnPegNipPembimbingAkademik>
+									{BEGIN mhsDsnPegNipPembimbingAkademik_fieldheader}
+																				<span {$mhsDsnPegNipPembimbingAkademik_orderlinkattrs}>
+											{$label mahasiswa mhsDsnPegNipPembimbingAkademik}
+										</span>
+									{END mhsDsnPegNipPembimbingAkademik_fieldheader}
+									</th>
+									{END mhsDsnPegNipPembimbingAkademik_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSksWajib_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSksWajib_class}" data-field=mhsSksWajib>
+									{BEGIN mhsSksWajib_fieldheader}
+																				<span {$mhsSksWajib_orderlinkattrs}>
+											{$label mahasiswa mhsSksWajib}
+										</span>
+									{END mhsSksWajib_fieldheader}
+									</th>
+									{END mhsSksWajib_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSksPilihan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSksPilihan_class}" data-field=mhsSksPilihan>
+									{BEGIN mhsSksPilihan_fieldheader}
+																				<span {$mhsSksPilihan_orderlinkattrs}>
+											{$label mahasiswa mhsSksPilihan}
+										</span>
+									{END mhsSksPilihan_fieldheader}
+									</th>
+									{END mhsSksPilihan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSksA_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSksA_class}" data-field=mhsSksA>
+									{BEGIN mhsSksA_fieldheader}
+																				<span {$mhsSksA_orderlinkattrs}>
+											{$label mahasiswa mhsSksA}
+										</span>
+									{END mhsSksA_fieldheader}
+									</th>
+									{END mhsSksA_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSksB_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSksB_class}" data-field=mhsSksB>
+									{BEGIN mhsSksB_fieldheader}
+																				<span {$mhsSksB_orderlinkattrs}>
+											{$label mahasiswa mhsSksB}
+										</span>
+									{END mhsSksB_fieldheader}
+									</th>
+									{END mhsSksB_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSksC_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSksC_class}" data-field=mhsSksC>
+									{BEGIN mhsSksC_fieldheader}
+																				<span {$mhsSksC_orderlinkattrs}>
+											{$label mahasiswa mhsSksC}
+										</span>
+									{END mhsSksC_fieldheader}
+									</th>
+									{END mhsSksC_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSksD_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSksD_class}" data-field=mhsSksD>
+									{BEGIN mhsSksD_fieldheader}
+																				<span {$mhsSksD_orderlinkattrs}>
+											{$label mahasiswa mhsSksD}
+										</span>
+									{END mhsSksD_fieldheader}
+									</th>
+									{END mhsSksD_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSksE_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSksE_class}" data-field=mhsSksE>
+									{BEGIN mhsSksE_fieldheader}
+																				<span {$mhsSksE_orderlinkattrs}>
+											{$label mahasiswa mhsSksE}
+										</span>
+									{END mhsSksE_fieldheader}
+									</th>
+									{END mhsSksE_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSksTranskrip_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSksTranskrip_class}" data-field=mhsSksTranskrip>
+									{BEGIN mhsSksTranskrip_fieldheader}
+																				<span {$mhsSksTranskrip_orderlinkattrs}>
+											{$label mahasiswa mhsSksTranskrip}
+										</span>
+									{END mhsSksTranskrip_fieldheader}
+									</th>
+									{END mhsSksTranskrip_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsBobotTotalTranskrip_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsBobotTotalTranskrip_class}" data-field=mhsBobotTotalTranskrip>
+									{BEGIN mhsBobotTotalTranskrip_fieldheader}
+																				<span {$mhsBobotTotalTranskrip_orderlinkattrs}>
+											{$label mahasiswa mhsBobotTotalTranskrip}
+										</span>
+									{END mhsBobotTotalTranskrip_fieldheader}
+									</th>
+									{END mhsBobotTotalTranskrip_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsIpkTranskrip_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsIpkTranskrip_class}" data-field=mhsIpkTranskrip>
+									{BEGIN mhsIpkTranskrip_fieldheader}
+																				<span {$mhsIpkTranskrip_orderlinkattrs}>
+											{$label mahasiswa mhsIpkTranskrip}
+										</span>
+									{END mhsIpkTranskrip_fieldheader}
+									</th>
+									{END mhsIpkTranskrip_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsLamaStudiSemester_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsLamaStudiSemester_class}" data-field=mhsLamaStudiSemester>
+									{BEGIN mhsLamaStudiSemester_fieldheader}
+																				<span {$mhsLamaStudiSemester_orderlinkattrs}>
+											{$label mahasiswa mhsLamaStudiSemester}
+										</span>
+									{END mhsLamaStudiSemester_fieldheader}
+									</th>
+									{END mhsLamaStudiSemester_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsLamaStudiBulan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsLamaStudiBulan_class}" data-field=mhsLamaStudiBulan>
+									{BEGIN mhsLamaStudiBulan_fieldheader}
+																				<span {$mhsLamaStudiBulan_orderlinkattrs}>
+											{$label mahasiswa mhsLamaStudiBulan}
+										</span>
+									{END mhsLamaStudiBulan_fieldheader}
+									</th>
+									{END mhsLamaStudiBulan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsIsTranskripAkhirDiarsipkan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsIsTranskripAkhirDiarsipkan_class}" data-field=mhsIsTranskripAkhirDiarsipkan>
+									{BEGIN mhsIsTranskripAkhirDiarsipkan_fieldheader}
+																				<span {$mhsIsTranskripAkhirDiarsipkan_orderlinkattrs}>
+											{$label mahasiswa mhsIsTranskripAkhirDiarsipkan}
+										</span>
+									{END mhsIsTranskripAkhirDiarsipkan_fieldheader}
+									</th>
+									{END mhsIsTranskripAkhirDiarsipkan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTanggalTranskrip_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTanggalTranskrip_class}" data-field=mhsTanggalTranskrip>
+									{BEGIN mhsTanggalTranskrip_fieldheader}
+																				<span {$mhsTanggalTranskrip_orderlinkattrs}>
+											{$label mahasiswa mhsTanggalTranskrip}
+										</span>
+									{END mhsTanggalTranskrip_fieldheader}
+									</th>
+									{END mhsTanggalTranskrip_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNomorTranskrip_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNomorTranskrip_class}" data-field=mhsNomorTranskrip>
+									{BEGIN mhsNomorTranskrip_fieldheader}
+																				<span {$mhsNomorTranskrip_orderlinkattrs}>
+											{$label mahasiswa mhsNomorTranskrip}
+										</span>
+									{END mhsNomorTranskrip_fieldheader}
+									</th>
+									{END mhsNomorTranskrip_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTempatLahirTranskrip_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTempatLahirTranskrip_class}" data-field=mhsTempatLahirTranskrip>
+									{BEGIN mhsTempatLahirTranskrip_fieldheader}
+																				<span {$mhsTempatLahirTranskrip_orderlinkattrs}>
+											{$label mahasiswa mhsTempatLahirTranskrip}
+										</span>
+									{END mhsTempatLahirTranskrip_fieldheader}
+									</th>
+									{END mhsTempatLahirTranskrip_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTanggalLahirTranskrip_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTanggalLahirTranskrip_class}" data-field=mhsTanggalLahirTranskrip>
+									{BEGIN mhsTanggalLahirTranskrip_fieldheader}
+																				<span {$mhsTanggalLahirTranskrip_orderlinkattrs}>
+											{$label mahasiswa mhsTanggalLahirTranskrip}
+										</span>
+									{END mhsTanggalLahirTranskrip_fieldheader}
+									</th>
+									{END mhsTanggalLahirTranskrip_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsMetodeBuildTranskrip_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsMetodeBuildTranskrip_class}" data-field=mhsMetodeBuildTranskrip>
+									{BEGIN mhsMetodeBuildTranskrip_fieldheader}
+																				<span {$mhsMetodeBuildTranskrip_orderlinkattrs}>
+											{$label mahasiswa mhsMetodeBuildTranskrip}
+										</span>
+									{END mhsMetodeBuildTranskrip_fieldheader}
+									</th>
+									{END mhsMetodeBuildTranskrip_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsMetodePenyetaraanTranskrip_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsMetodePenyetaraanTranskrip_class}" data-field=mhsMetodePenyetaraanTranskrip>
+									{BEGIN mhsMetodePenyetaraanTranskrip_fieldheader}
+																				<span {$mhsMetodePenyetaraanTranskrip_orderlinkattrs}>
+											{$label mahasiswa mhsMetodePenyetaraanTranskrip}
+										</span>
+									{END mhsMetodePenyetaraanTranskrip_fieldheader}
+									</th>
+									{END mhsMetodePenyetaraanTranskrip_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTahunKurikulumPenyetaraanTranskrip_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTahunKurikulumPenyetaraanTranskrip_class}" data-field=mhsTahunKurikulumPenyetaraanTranskrip>
+									{BEGIN mhsTahunKurikulumPenyetaraanTranskrip_fieldheader}
+																				<span {$mhsTahunKurikulumPenyetaraanTranskrip_orderlinkattrs}>
+											{$label mahasiswa mhsTahunKurikulumPenyetaraanTranskrip}
+										</span>
+									{END mhsTahunKurikulumPenyetaraanTranskrip_fieldheader}
+									</th>
+									{END mhsTahunKurikulumPenyetaraanTranskrip_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTanggalLulus_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTanggalLulus_class}" data-field=mhsTanggalLulus>
+									{BEGIN mhsTanggalLulus_fieldheader}
+																				<span {$mhsTanggalLulus_orderlinkattrs}>
+											{$label mahasiswa mhsTanggalLulus}
+										</span>
+									{END mhsTanggalLulus_fieldheader}
+									</th>
+									{END mhsTanggalLulus_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNoSuratYudisium_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNoSuratYudisium_class}" data-field=mhsNoSuratYudisium>
+									{BEGIN mhsNoSuratYudisium_fieldheader}
+																				<span {$mhsNoSuratYudisium_orderlinkattrs}>
+											{$label mahasiswa mhsNoSuratYudisium}
+										</span>
+									{END mhsNoSuratYudisium_fieldheader}
+									</th>
+									{END mhsNoSuratYudisium_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTanggalSuratYudisium_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTanggalSuratYudisium_class}" data-field=mhsTanggalSuratYudisium>
+									{BEGIN mhsTanggalSuratYudisium_fieldheader}
+																				<span {$mhsTanggalSuratYudisium_orderlinkattrs}>
+											{$label mahasiswa mhsTanggalSuratYudisium}
+										</span>
+									{END mhsTanggalSuratYudisium_fieldheader}
+									</th>
+									{END mhsTanggalSuratYudisium_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSemIdLulus_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSemIdLulus_class}" data-field=mhsSemIdLulus>
+									{BEGIN mhsSemIdLulus_fieldheader}
+																				<span {$mhsSemIdLulus_orderlinkattrs}>
+											{$label mahasiswa mhsSemIdLulus}
+										</span>
+									{END mhsSemIdLulus_fieldheader}
+									</th>
+									{END mhsSemIdLulus_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTanggalIjasah_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTanggalIjasah_class}" data-field=mhsTanggalIjasah>
+									{BEGIN mhsTanggalIjasah_fieldheader}
+																				<span {$mhsTanggalIjasah_orderlinkattrs}>
+											{$label mahasiswa mhsTanggalIjasah}
+										</span>
+									{END mhsTanggalIjasah_fieldheader}
+									</th>
+									{END mhsTanggalIjasah_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNoIjasah_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNoIjasah_class}" data-field=mhsNoIjasah>
+									{BEGIN mhsNoIjasah_fieldheader}
+																				<span {$mhsNoIjasah_orderlinkattrs}>
+											{$label mahasiswa mhsNoIjasah}
+										</span>
+									{END mhsNoIjasah_fieldheader}
+									</th>
+									{END mhsNoIjasah_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKodeIjasah_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKodeIjasah_class}" data-field=mhsKodeIjasah>
+									{BEGIN mhsKodeIjasah_fieldheader}
+																				<span {$mhsKodeIjasah_orderlinkattrs}>
+											{$label mahasiswa mhsKodeIjasah}
+										</span>
+									{END mhsKodeIjasah_fieldheader}
+									</th>
+									{END mhsKodeIjasah_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsPinIjasah_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsPinIjasah_class}" data-field=mhsPinIjasah>
+									{BEGIN mhsPinIjasah_fieldheader}
+																				<span {$mhsPinIjasah_orderlinkattrs}>
+											{$label mahasiswa mhsPinIjasah}
+										</span>
+									{END mhsPinIjasah_fieldheader}
+									</th>
+									{END mhsPinIjasah_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsPrlsrId_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsPrlsrId_class}" data-field=mhsPrlsrId>
+									{BEGIN mhsPrlsrId_fieldheader}
+																				<span {$mhsPrlsrId_orderlinkattrs}>
+											{$label mahasiswa mhsPrlsrId}
+										</span>
+									{END mhsPrlsrId_fieldheader}
+									</th>
+									{END mhsPrlsrId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsPrlsrNama_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsPrlsrNama_class}" data-field=mhsPrlsrNama>
+									{BEGIN mhsPrlsrNama_fieldheader}
+																				<span {$mhsPrlsrNama_orderlinkattrs}>
+											{$label mahasiswa mhsPrlsrNama}
+										</span>
+									{END mhsPrlsrNama_fieldheader}
+									</th>
+									{END mhsPrlsrNama_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsPrlsrNamaAsing_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsPrlsrNamaAsing_class}" data-field=mhsPrlsrNamaAsing>
+									{BEGIN mhsPrlsrNamaAsing_fieldheader}
+																				<span {$mhsPrlsrNamaAsing_orderlinkattrs}>
+											{$label mahasiswa mhsPrlsrNamaAsing}
+										</span>
+									{END mhsPrlsrNamaAsing_fieldheader}
+									</th>
+									{END mhsPrlsrNamaAsing_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsWsdId_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsWsdId_class}" data-field=mhsWsdId>
+									{BEGIN mhsWsdId_fieldheader}
+																				<span {$mhsWsdId_orderlinkattrs}>
+											{$label mahasiswa mhsWsdId}
+										</span>
+									{END mhsWsdId_fieldheader}
+									</th>
+									{END mhsWsdId_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsTanggalPengubahan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsTanggalPengubahan_class}" data-field=mhsTanggalPengubahan>
+									{BEGIN mhsTanggalPengubahan_fieldheader}
+																				<span {$mhsTanggalPengubahan_orderlinkattrs}>
+											{$label mahasiswa mhsTanggalPengubahan}
+										</span>
+									{END mhsTanggalPengubahan_fieldheader}
+									</th>
+									{END mhsTanggalPengubahan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsUnitPengubah_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsUnitPengubah_class}" data-field=mhsUnitPengubah>
+									{BEGIN mhsUnitPengubah_fieldheader}
+																				<span {$mhsUnitPengubah_orderlinkattrs}>
+											{$label mahasiswa mhsUnitPengubah}
+										</span>
+									{END mhsUnitPengubah_fieldheader}
+									</th>
+									{END mhsUnitPengubah_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsUserPengubah_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsUserPengubah_class}" data-field=mhsUserPengubah>
+									{BEGIN mhsUserPengubah_fieldheader}
+																				<span {$mhsUserPengubah_orderlinkattrs}>
+											{$label mahasiswa mhsUserPengubah}
+										</span>
+									{END mhsUserPengubah_fieldheader}
+									</th>
+									{END mhsUserPengubah_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsProdiGelarKelulusan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsProdiGelarKelulusan_class}" data-field=mhsProdiGelarKelulusan>
+									{BEGIN mhsProdiGelarKelulusan_fieldheader}
+																				<span {$mhsProdiGelarKelulusan_orderlinkattrs}>
+											{$label mahasiswa mhsProdiGelarKelulusan}
+										</span>
+									{END mhsProdiGelarKelulusan_fieldheader}
+									</th>
+									{END mhsProdiGelarKelulusan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSemIdMulai_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSemIdMulai_class}" data-field=mhsSemIdMulai>
+									{BEGIN mhsSemIdMulai_fieldheader}
+																				<span {$mhsSemIdMulai_orderlinkattrs}>
+											{$label mahasiswa mhsSemIdMulai}
+										</span>
+									{END mhsSemIdMulai_fieldheader}
+									</th>
+									{END mhsSemIdMulai_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsBiayaStudi_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsBiayaStudi_class}" data-field=mhsBiayaStudi>
+									{BEGIN mhsBiayaStudi_fieldheader}
+																				<span {$mhsBiayaStudi_orderlinkattrs}>
+											{$label mahasiswa mhsBiayaStudi}
+										</span>
+									{END mhsBiayaStudi_fieldheader}
+									</th>
+									{END mhsBiayaStudi_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsPekerjaan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsPekerjaan_class}" data-field=mhsPekerjaan>
+									{BEGIN mhsPekerjaan_fieldheader}
+																				<span {$mhsPekerjaan_orderlinkattrs}>
+											{$label mahasiswa mhsPekerjaan}
+										</span>
+									{END mhsPekerjaan_fieldheader}
+									</th>
+									{END mhsPekerjaan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsPTKerja_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsPTKerja_class}" data-field=mhsPTKerja>
+									{BEGIN mhsPTKerja_fieldheader}
+																				<span {$mhsPTKerja_orderlinkattrs}>
+											{$label mahasiswa mhsPTKerja}
+										</span>
+									{END mhsPTKerja_fieldheader}
+									</th>
+									{END mhsPTKerja_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsPSKerja_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsPSKerja_class}" data-field=mhsPSKerja>
+									{BEGIN mhsPSKerja_fieldheader}
+																				<span {$mhsPSKerja_orderlinkattrs}>
+											{$label mahasiswa mhsPSKerja}
+										</span>
+									{END mhsPSKerja_fieldheader}
+									</th>
+									{END mhsPSKerja_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNIDNPromotor_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNIDNPromotor_class}" data-field=mhsNIDNPromotor>
+									{BEGIN mhsNIDNPromotor_fieldheader}
+																				<span {$mhsNIDNPromotor_orderlinkattrs}>
+											{$label mahasiswa mhsNIDNPromotor}
+										</span>
+									{END mhsNIDNPromotor_fieldheader}
+									</th>
+									{END mhsNIDNPromotor_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKoPromotor1_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKoPromotor1_class}" data-field=mhsKoPromotor1>
+									{BEGIN mhsKoPromotor1_fieldheader}
+																				<span {$mhsKoPromotor1_orderlinkattrs}>
+											{$label mahasiswa mhsKoPromotor1}
+										</span>
+									{END mhsKoPromotor1_fieldheader}
+									</th>
+									{END mhsKoPromotor1_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKoPromotor2_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKoPromotor2_class}" data-field=mhsKoPromotor2>
+									{BEGIN mhsKoPromotor2_fieldheader}
+																				<span {$mhsKoPromotor2_orderlinkattrs}>
+											{$label mahasiswa mhsKoPromotor2}
+										</span>
+									{END mhsKoPromotor2_fieldheader}
+									</th>
+									{END mhsKoPromotor2_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKoPromotor3_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKoPromotor3_class}" data-field=mhsKoPromotor3>
+									{BEGIN mhsKoPromotor3_fieldheader}
+																				<span {$mhsKoPromotor3_orderlinkattrs}>
+											{$label mahasiswa mhsKoPromotor3}
+										</span>
+									{END mhsKoPromotor3_fieldheader}
+									</th>
+									{END mhsKoPromotor3_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKoPromotor4_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKoPromotor4_class}" data-field=mhsKoPromotor4>
+									{BEGIN mhsKoPromotor4_fieldheader}
+																				<span {$mhsKoPromotor4_orderlinkattrs}>
+											{$label mahasiswa mhsKoPromotor4}
+										</span>
+									{END mhsKoPromotor4_fieldheader}
+									</th>
+									{END mhsKoPromotor4_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsProdiAsal_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsProdiAsal_class}" data-field=mhsProdiAsal>
+									{BEGIN mhsProdiAsal_fieldheader}
+																				<span {$mhsProdiAsal_orderlinkattrs}>
+											{$label mahasiswa mhsProdiAsal}
+										</span>
+									{END mhsProdiAsal_fieldheader}
+									</th>
+									{END mhsProdiAsal_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsDiktiShift_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsDiktiShift_class}" data-field=mhsDiktiShift>
+									{BEGIN mhsDiktiShift_fieldheader}
+																				<span {$mhsDiktiShift_orderlinkattrs}>
+											{$label mahasiswa mhsDiktiShift}
+										</span>
+									{END mhsDiktiShift_fieldheader}
+									</th>
+									{END mhsDiktiShift_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsPembayaranIpp_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsPembayaranIpp_class}" data-field=mhsPembayaranIpp>
+									{BEGIN mhsPembayaranIpp_fieldheader}
+																				<span {$mhsPembayaranIpp_orderlinkattrs}>
+											{$label mahasiswa mhsPembayaranIpp}
+										</span>
+									{END mhsPembayaranIpp_fieldheader}
+									</th>
+									{END mhsPembayaranIpp_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mshNoIpp_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mshNoIpp_class}" data-field=mshNoIpp>
+									{BEGIN mshNoIpp_fieldheader}
+																				<span {$mshNoIpp_orderlinkattrs}>
+											{$label mahasiswa mshNoIpp}
+										</span>
+									{END mshNoIpp_fieldheader}
+									</th>
+									{END mshNoIpp_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsPersyaratan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsPersyaratan_class}" data-field=mhsPersyaratan>
+									{BEGIN mhsPersyaratan_fieldheader}
+																				<span {$mhsPersyaratan_orderlinkattrs}>
+											{$label mahasiswa mhsPersyaratan}
+										</span>
+									{END mhsPersyaratan_fieldheader}
+									</th>
+									{END mhsPersyaratan_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsPengOrg_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsPengOrg_class}" data-field=mhsPengOrg>
+									{BEGIN mhsPengOrg_fieldheader}
+																				<span {$mhsPengOrg_orderlinkattrs}>
+											{$label mahasiswa mhsPengOrg}
+										</span>
+									{END mhsPengOrg_fieldheader}
+									</th>
+									{END mhsPengOrg_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsOrg_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsOrg_class}" data-field=mhsOrg>
+									{BEGIN mhsOrg_fieldheader}
+																				<span {$mhsOrg_orderlinkattrs}>
+											{$label mahasiswa mhsOrg}
+										</span>
+									{END mhsOrg_fieldheader}
+									</th>
+									{END mhsOrg_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsDomisili_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsDomisili_class}" data-field=mhsDomisili>
+									{BEGIN mhsDomisili_fieldheader}
+																				<span {$mhsDomisili_orderlinkattrs}>
+											{$label mahasiswa mhsDomisili}
+										</span>
+									{END mhsDomisili_fieldheader}
+									</th>
+									{END mhsDomisili_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsJenisSttb_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsJenisSttb_class}" data-field=mhsJenisSttb>
+									{BEGIN mhsJenisSttb_fieldheader}
+																				<span {$mhsJenisSttb_orderlinkattrs}>
+											{$label mahasiswa mhsJenisSttb}
+										</span>
+									{END mhsJenisSttb_fieldheader}
+									</th>
+									{END mhsJenisSttb_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsIsKerja_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsIsKerja_class}" data-field=mhsIsKerja>
+									{BEGIN mhsIsKerja_fieldheader}
+																				<span {$mhsIsKerja_orderlinkattrs}>
+											{$label mahasiswa mhsIsKerja}
+										</span>
+									{END mhsIsKerja_fieldheader}
+									</th>
+									{END mhsIsKerja_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsStatusSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsStatusSmta_class}" data-field=mhsStatusSmta>
+									{BEGIN mhsStatusSmta_fieldheader}
+																				<span {$mhsStatusSmta_orderlinkattrs}>
+											{$label mahasiswa mhsStatusSmta}
+										</span>
+									{END mhsStatusSmta_fieldheader}
+									</th>
+									{END mhsStatusSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsAkreditasi_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsAkreditasi_class}" data-field=mhsAkreditasi>
+									{BEGIN mhsAkreditasi_fieldheader}
+																				<span {$mhsAkreditasi_orderlinkattrs}>
+											{$label mahasiswa mhsAkreditasi}
+										</span>
+									{END mhsAkreditasi_fieldheader}
+									</th>
+									{END mhsAkreditasi_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsKerja_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsKerja_class}" data-field=mhsKerja>
+									{BEGIN mhsKerja_fieldheader}
+																				<span {$mhsKerja_orderlinkattrs}>
+											{$label mahasiswa mhsKerja}
+										</span>
+									{END mhsKerja_fieldheader}
+									</th>
+									{END mhsKerja_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSaudaraLk_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSaudaraLk_class}" data-field=mhsSaudaraLk>
+									{BEGIN mhsSaudaraLk_fieldheader}
+																				<span {$mhsSaudaraLk_orderlinkattrs}>
+											{$label mahasiswa mhsSaudaraLk}
+										</span>
+									{END mhsSaudaraLk_fieldheader}
+									</th>
+									{END mhsSaudaraLk_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSaudaraPr_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSaudaraPr_class}" data-field=mhsSaudaraPr>
+									{BEGIN mhsSaudaraPr_fieldheader}
+																				<span {$mhsSaudaraPr_orderlinkattrs}>
+											{$label mahasiswa mhsSaudaraPr}
+										</span>
+									{END mhsSaudaraPr_fieldheader}
+									</th>
+									{END mhsSaudaraPr_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsHobi_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsHobi_class}" data-field=mhsHobi>
+									{BEGIN mhsHobi_fieldheader}
+																				<span {$mhsHobi_orderlinkattrs}>
+											{$label mahasiswa mhsHobi}
+										</span>
+									{END mhsHobi_fieldheader}
+									</th>
+									{END mhsHobi_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSmtaLain_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSmtaLain_class}" data-field=mhsSmtaLain>
+									{BEGIN mhsSmtaLain_fieldheader}
+																				<span {$mhsSmtaLain_orderlinkattrs}>
+											{$label mahasiswa mhsSmtaLain}
+										</span>
+									{END mhsSmtaLain_fieldheader}
+									</th>
+									{END mhsSmtaLain_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsAkreditasiSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsAkreditasiSmta_class}" data-field=mhsAkreditasiSmta>
+									{BEGIN mhsAkreditasiSmta_fieldheader}
+																				<span {$mhsAkreditasiSmta_orderlinkattrs}>
+											{$label mahasiswa mhsAkreditasiSmta}
+										</span>
+									{END mhsAkreditasiSmta_fieldheader}
+									</th>
+									{END mhsAkreditasiSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsBiayaKuliah_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsBiayaKuliah_class}" data-field=mhsBiayaKuliah>
+									{BEGIN mhsBiayaKuliah_fieldheader}
+																				<span {$mhsBiayaKuliah_orderlinkattrs}>
+											{$label mahasiswa mhsBiayaKuliah}
+										</span>
+									{END mhsBiayaKuliah_fieldheader}
+									</th>
+									{END mhsBiayaKuliah_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN MhsIdJenisSmta_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$MhsIdJenisSmta_class}" data-field=MhsIdJenisSmta>
+									{BEGIN MhsIdJenisSmta_fieldheader}
+																				<span {$MhsIdJenisSmta_orderlinkattrs}>
+											{$label mahasiswa MhsIdJenisSmta}
+										</span>
+									{END MhsIdJenisSmta_fieldheader}
+									</th>
+									{END MhsIdJenisSmta_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsSmtaPropinsiKode_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsSmtaPropinsiKode_class}" data-field=mhsSmtaPropinsiKode>
+									{BEGIN mhsSmtaPropinsiKode_fieldheader}
+																				<span {$mhsSmtaPropinsiKode_orderlinkattrs}>
+											{$label mahasiswa mhsSmtaPropinsiKode}
+										</span>
+									{END mhsSmtaPropinsiKode_fieldheader}
+									</th>
+									{END mhsSmtaPropinsiKode_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsEmailOld_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsEmailOld_class}" data-field=mhsEmailOld>
+									{BEGIN mhsEmailOld_fieldheader}
+																				<span {$mhsEmailOld_orderlinkattrs}>
+											{$label mahasiswa mhsEmailOld}
+										</span>
+									{END mhsEmailOld_fieldheader}
+									</th>
+									{END mhsEmailOld_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNoKtp_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNoKtp_class}" data-field=mhsNoKtp>
+									{BEGIN mhsNoKtp_fieldheader}
+																				<span {$mhsNoKtp_orderlinkattrs}>
+											{$label mahasiswa mhsNoKtp}
+										</span>
+									{END mhsNoKtp_fieldheader}
+									</th>
+									{END mhsNoKtp_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN mhsNoKk_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mhsNoKk_class}" data-field=mhsNoKk>
+									{BEGIN mhsNoKk_fieldheader}
+																				<span {$mhsNoKk_orderlinkattrs}>
+											{$label mahasiswa mhsNoKk}
+										</span>
+									{END mhsNoKk_fieldheader}
+									</th>
+									{END mhsNoKk_fieldheadercolumn}
+									
+									
+									
+									
+									{BEGIN endrecordheader_block}
+									<th class="rnr-cs">&nbsp;</th>
+									
+									{END endrecordheader_block}
+									
+									{END record_header}
+									
+								</tr>
+								{END grid_header}
+
+	</thead>
+	<tbody>	
+		{BEGIN grid_row}
+<tr class="{$rowclass} bs-gridrow" {$rowattrs} {$rowstyle}>
+	{BEGIN grid_record}
+	{BEGIN listIcons_column}
+	<td class="bs-gridicons" iEditCont="all" {$rowstyle} {$recordattrs}>
+		{BEGIN edit_column}
+	{BEGIN edit_link}
+			<a class="glyphicon glyphicon-pencil" {$editlink_attrs} title="Edit"></a>
+	{END edit_link}
+	{END edit_column}
+
+		
+	<span data-hidden {$ieditbuttonsholder_attrs}></span>
+
+	
+		{BEGIN view_column}
+	{BEGIN view_link}
+			<a class="glyphicon glyphicon-search" {$viewlink_attrs} title="View"></a>
+	{END view_link}
+	{END view_column}
+	</td>	
+	{END listIcons_column}	
+
+		{BEGIN checkbox_column}
+	<td  iEditCont="checkBox" class="bs-gridcheckbox" {$rowstyle} {$recordattrs}>
+	{BEGIN checkbox}
+	<input type="checkbox" {$checkbox_attrs}>
+	{END checkbox}
+	</td>
+	{END checkbox_column}
+
+	
+
+	{BEGIN mhsNiu_fieldcolumn}
+	<td class="bs-gridcell {$mhsNiu_class}"  data-field=mhsNiu {$rowstyle} {$recordattrs}>
+		{$mhsNiu_value}
+	</td>
+{END mhsNiu_fieldcolumn}
+
+
+	{BEGIN mhsNif_fieldcolumn}
+	<td class="bs-gridcell {$mhsNif_class}"  data-field=mhsNif {$rowstyle} {$recordattrs}>
+		{$mhsNif_value}
+	</td>
+{END mhsNif_fieldcolumn}
+
+
+	{BEGIN mhsNama_fieldcolumn}
+	<td class="bs-gridcell {$mhsNama_class}"  data-field=mhsNama {$rowstyle} {$recordattrs}>
+		{$mhsNama_value}
+	</td>
+{END mhsNama_fieldcolumn}
+
+
+	{BEGIN mhsAngkatan_fieldcolumn}
+	<td class="bs-gridcell {$mhsAngkatan_class}"  data-field=mhsAngkatan {$rowstyle} {$recordattrs}>
+		{$mhsAngkatan_value}
+	</td>
+{END mhsAngkatan_fieldcolumn}
+
+
+	{BEGIN mhsSemesterMasuk_fieldcolumn}
+	<td class="bs-gridcell {$mhsSemesterMasuk_class}"  data-field=mhsSemesterMasuk {$rowstyle} {$recordattrs}>
+		{$mhsSemesterMasuk_value}
+	</td>
+{END mhsSemesterMasuk_fieldcolumn}
+
+
+	{BEGIN mhsPasswordRegistrasi_fieldcolumn}
+	<td class="bs-gridcell {$mhsPasswordRegistrasi_class}"  data-field=mhsPasswordRegistrasi {$rowstyle} {$recordattrs}>
+		{$mhsPasswordRegistrasi_value}
+	</td>
+{END mhsPasswordRegistrasi_fieldcolumn}
+
+
+	{BEGIN mhsKurId_fieldcolumn}
+	<td class="bs-gridcell {$mhsKurId_class}"  data-field=mhsKurId {$rowstyle} {$recordattrs}>
+		{$mhsKurId_value}
+	</td>
+{END mhsKurId_fieldcolumn}
+
+
+	{BEGIN mhsProdiKode_fieldcolumn}
+	<td class="bs-gridcell {$mhsProdiKode_class}"  data-field=mhsProdiKode {$rowstyle} {$recordattrs}>
+		{$mhsProdiKode_value}
+	</td>
+{END mhsProdiKode_fieldcolumn}
+
+
+	{BEGIN mhsProdiKodeUniv_fieldcolumn}
+	<td class="bs-gridcell {$mhsProdiKodeUniv_class}"  data-field=mhsProdiKodeUniv {$rowstyle} {$recordattrs}>
+		{$mhsProdiKodeUniv_value}
+	</td>
+{END mhsProdiKodeUniv_fieldcolumn}
+
+
+	{BEGIN mhsProdikonsentrasiId_fieldcolumn}
+	<td class="bs-gridcell {$mhsProdikonsentrasiId_class}"  data-field=mhsProdikonsentrasiId {$rowstyle} {$recordattrs}>
+		{$mhsProdikonsentrasiId_value}
+	</td>
+{END mhsProdikonsentrasiId_fieldcolumn}
+
+
+	{BEGIN mhsWktkulId_fieldcolumn}
+	<td class="bs-gridcell {$mhsWktkulId_class}"  data-field=mhsWktkulId {$rowstyle} {$recordattrs}>
+		{$mhsWktkulId_value}
+	</td>
+{END mhsWktkulId_fieldcolumn}
+
+
+	{BEGIN mhsNomorTes_fieldcolumn}
+	<td class="bs-gridcell {$mhsNomorTes_class}"  data-field=mhsNomorTes {$rowstyle} {$recordattrs}>
+		{$mhsNomorTes_value}
+	</td>
+{END mhsNomorTes_fieldcolumn}
+
+
+	{BEGIN mhsTanggalTerdaftar_fieldcolumn}
+	<td class="bs-gridcell {$mhsTanggalTerdaftar_class}"  data-field=mhsTanggalTerdaftar {$rowstyle} {$recordattrs}>
+		{$mhsTanggalTerdaftar_value}
+	</td>
+{END mhsTanggalTerdaftar_fieldcolumn}
+
+
+	{BEGIN mhsStatusMasukPt_fieldcolumn}
+	<td class="bs-gridcell {$mhsStatusMasukPt_class}"  data-field=mhsStatusMasukPt {$rowstyle} {$recordattrs}>
+		{$mhsStatusMasukPt_value}
+	</td>
+{END mhsStatusMasukPt_fieldcolumn}
+
+
+	{BEGIN mhsIsAsing_fieldcolumn}
+	<td class="bs-gridcell {$mhsIsAsing_class}"  data-field=mhsIsAsing {$rowstyle} {$recordattrs}>
+		{$mhsIsAsing_value}
+	</td>
+{END mhsIsAsing_fieldcolumn}
+
+
+	{BEGIN mhsJumlahSksPindahan_fieldcolumn}
+	<td class="bs-gridcell {$mhsJumlahSksPindahan_class}"  data-field=mhsJumlahSksPindahan {$rowstyle} {$recordattrs}>
+		{$mhsJumlahSksPindahan_value}
+	</td>
+{END mhsJumlahSksPindahan_fieldcolumn}
+
+
+	{BEGIN mhsKodePtPindahan_fieldcolumn}
+	<td class="bs-gridcell {$mhsKodePtPindahan_class}"  data-field=mhsKodePtPindahan {$rowstyle} {$recordattrs}>
+		{$mhsKodePtPindahan_value}
+	</td>
+{END mhsKodePtPindahan_fieldcolumn}
+
+
+	{BEGIN mhsKodeProdiDiktiPindahan_fieldcolumn}
+	<td class="bs-gridcell {$mhsKodeProdiDiktiPindahan_class}"  data-field=mhsKodeProdiDiktiPindahan {$rowstyle} {$recordattrs}>
+		{$mhsKodeProdiDiktiPindahan_value}
+	</td>
+{END mhsKodeProdiDiktiPindahan_fieldcolumn}
+
+
+	{BEGIN mhsNamaPtPindahan_fieldcolumn}
+	<td class="bs-gridcell {$mhsNamaPtPindahan_class}"  data-field=mhsNamaPtPindahan {$rowstyle} {$recordattrs}>
+		{$mhsNamaPtPindahan_value}
+	</td>
+{END mhsNamaPtPindahan_fieldcolumn}
+
+
+	{BEGIN mhsJjarKodeDiktiPindahan_fieldcolumn}
+	<td class="bs-gridcell {$mhsJjarKodeDiktiPindahan_class}"  data-field=mhsJjarKodeDiktiPindahan {$rowstyle} {$recordattrs}>
+		{$mhsJjarKodeDiktiPindahan_value}
+	</td>
+{END mhsJjarKodeDiktiPindahan_fieldcolumn}
+
+
+	{BEGIN mhsTahunMasukPtPindahan_fieldcolumn}
+	<td class="bs-gridcell {$mhsTahunMasukPtPindahan_class}"  data-field=mhsTahunMasukPtPindahan {$rowstyle} {$recordattrs}>
+		{$mhsTahunMasukPtPindahan_value}
+	</td>
+{END mhsTahunMasukPtPindahan_fieldcolumn}
+
+
+	{BEGIN mhsNimLama_fieldcolumn}
+	<td class="bs-gridcell {$mhsNimLama_class}"  data-field=mhsNimLama {$rowstyle} {$recordattrs}>
+		{$mhsNimLama_value}
+	</td>
+{END mhsNimLama_fieldcolumn}
+
+
+	{BEGIN mhsJenisKelamin_fieldcolumn}
+	<td class="bs-gridcell {$mhsJenisKelamin_class}"  data-field=mhsJenisKelamin {$rowstyle} {$recordattrs}>
+		{$mhsJenisKelamin_value}
+	</td>
+{END mhsJenisKelamin_fieldcolumn}
+
+
+	{BEGIN mhsKotaKodeLahir_fieldcolumn}
+	<td class="bs-gridcell {$mhsKotaKodeLahir_class}"  data-field=mhsKotaKodeLahir {$rowstyle} {$recordattrs}>
+		{$mhsKotaKodeLahir_value}
+	</td>
+{END mhsKotaKodeLahir_fieldcolumn}
+
+
+	{BEGIN mhsTanggalLahir_fieldcolumn}
+	<td class="bs-gridcell {$mhsTanggalLahir_class}"  data-field=mhsTanggalLahir {$rowstyle} {$recordattrs}>
+		{$mhsTanggalLahir_value}
+	</td>
+{END mhsTanggalLahir_fieldcolumn}
+
+
+	{BEGIN mhsAgmrId_fieldcolumn}
+	<td class="bs-gridcell {$mhsAgmrId_class}"  data-field=mhsAgmrId {$rowstyle} {$recordattrs}>
+		{$mhsAgmrId_value}
+	</td>
+{END mhsAgmrId_fieldcolumn}
+
+
+	{BEGIN mhsSmtaKode_fieldcolumn}
+	<td class="bs-gridcell {$mhsSmtaKode_class}"  data-field=mhsSmtaKode {$rowstyle} {$recordattrs}>
+		{$mhsSmtaKode_value}
+	</td>
+{END mhsSmtaKode_fieldcolumn}
+
+
+	{BEGIN mhsTdftSmta_fieldcolumn}
+	<td class="bs-gridcell {$mhsTdftSmta_class}"  data-field=mhsTdftSmta {$rowstyle} {$recordattrs}>
+		{$mhsTdftSmta_value}
+	</td>
+{END mhsTdftSmta_fieldcolumn}
+
+
+	{BEGIN mhsTahunTamatSmta_fieldcolumn}
+	<td class="bs-gridcell {$mhsTahunTamatSmta_class}"  data-field=mhsTahunTamatSmta {$rowstyle} {$recordattrs}>
+		{$mhsTahunTamatSmta_value}
+	</td>
+{END mhsTahunTamatSmta_fieldcolumn}
+
+
+	{BEGIN mhsTahunLulusSmta_fieldcolumn}
+	<td class="bs-gridcell {$mhsTahunLulusSmta_class}"  data-field=mhsTahunLulusSmta {$rowstyle} {$recordattrs}>
+		{$mhsTahunLulusSmta_value}
+	</td>
+{END mhsTahunLulusSmta_fieldcolumn}
+
+
+	{BEGIN mhsJursmtarKode_fieldcolumn}
+	<td class="bs-gridcell {$mhsJursmtarKode_class}"  data-field=mhsJursmtarKode {$rowstyle} {$recordattrs}>
+		{$mhsJursmtarKode_value}
+	</td>
+{END mhsJursmtarKode_fieldcolumn}
+
+
+	{BEGIN mhsAlamatSmta_fieldcolumn}
+	<td class="bs-gridcell {$mhsAlamatSmta_class}"  data-field=mhsAlamatSmta {$rowstyle} {$recordattrs}>
+		{$mhsAlamatSmta_value}
+	</td>
+{END mhsAlamatSmta_fieldcolumn}
+
+
+	{BEGIN mhsNoIjasahSmta_fieldcolumn}
+	<td class="bs-gridcell {$mhsNoIjasahSmta_class}"  data-field=mhsNoIjasahSmta {$rowstyle} {$recordattrs}>
+		{$mhsNoIjasahSmta_value}
+	</td>
+{END mhsNoIjasahSmta_fieldcolumn}
+
+
+	{BEGIN mhsIjasahSmta_fieldcolumn}
+	<td class="bs-gridcell {$mhsIjasahSmta_class}"  data-field=mhsIjasahSmta {$rowstyle} {$recordattrs}>
+		{$mhsIjasahSmta_value}
+	</td>
+{END mhsIjasahSmta_fieldcolumn}
+
+
+	{BEGIN mhsTanggalIjasahSmta_fieldcolumn}
+	<td class="bs-gridcell {$mhsTanggalIjasahSmta_class}"  data-field=mhsTanggalIjasahSmta {$rowstyle} {$recordattrs}>
+		{$mhsTanggalIjasahSmta_value}
+	</td>
+{END mhsTanggalIjasahSmta_fieldcolumn}
+
+
+	{BEGIN mhsNilaiUjianAkhirSmta_fieldcolumn}
+	<td class="bs-gridcell {$mhsNilaiUjianAkhirSmta_class}"  data-field=mhsNilaiUjianAkhirSmta {$rowstyle} {$recordattrs}>
+		{$mhsNilaiUjianAkhirSmta_value}
+	</td>
+{END mhsNilaiUjianAkhirSmta_fieldcolumn}
+
+
+	{BEGIN mhsJumlahMpUjianAkhirSmta_fieldcolumn}
+	<td class="bs-gridcell {$mhsJumlahMpUjianAkhirSmta_class}"  data-field=mhsJumlahMpUjianAkhirSmta {$rowstyle} {$recordattrs}>
+		{$mhsJumlahMpUjianAkhirSmta_value}
+	</td>
+{END mhsJumlahMpUjianAkhirSmta_fieldcolumn}
+
+
+	{BEGIN mhsStnkrId_fieldcolumn}
+	<td class="bs-gridcell {$mhsStnkrId_class}"  data-field=mhsStnkrId {$rowstyle} {$recordattrs}>
+		{$mhsStnkrId_value}
+	</td>
+{END mhsStnkrId_fieldcolumn}
+
+
+	{BEGIN mhsJumlahSaudara_fieldcolumn}
+	<td class="bs-gridcell {$mhsJumlahSaudara_class}"  data-field=mhsJumlahSaudara {$rowstyle} {$recordattrs}>
+		{$mhsJumlahSaudara_value}
+	</td>
+{END mhsJumlahSaudara_fieldcolumn}
+
+
+	{BEGIN mhsAlamatMhs_fieldcolumn}
+	<td class="bs-gridcell {$mhsAlamatMhs_class}"  data-field=mhsAlamatMhs {$rowstyle} {$recordattrs}>
+		{$mhsAlamatMhs_value}
+	</td>
+{END mhsAlamatMhs_fieldcolumn}
+
+
+	{BEGIN mhsAlamatTerakhir_fieldcolumn}
+	<td class="bs-gridcell {$mhsAlamatTerakhir_class}"  data-field=mhsAlamatTerakhir {$rowstyle} {$recordattrs}>
+		{$mhsAlamatTerakhir_value}
+	</td>
+{END mhsAlamatTerakhir_fieldcolumn}
+
+
+	{BEGIN mhsAlamatDiKotaIni_fieldcolumn}
+	<td class="bs-gridcell {$mhsAlamatDiKotaIni_class}"  data-field=mhsAlamatDiKotaIni {$rowstyle} {$recordattrs}>
+		{$mhsAlamatDiKotaIni_value}
+	</td>
+{END mhsAlamatDiKotaIni_fieldcolumn}
+
+
+	{BEGIN mhsKotaKode_fieldcolumn}
+	<td class="bs-gridcell {$mhsKotaKode_class}"  data-field=mhsKotaKode {$rowstyle} {$recordattrs}>
+		{$mhsKotaKode_value}
+	</td>
+{END mhsKotaKode_fieldcolumn}
+
+
+	{BEGIN mhsNgrKode_fieldcolumn}
+	<td class="bs-gridcell {$mhsNgrKode_class}"  data-field=mhsNgrKode {$rowstyle} {$recordattrs}>
+		{$mhsNgrKode_value}
+	</td>
+{END mhsNgrKode_fieldcolumn}
+
+
+	{BEGIN mhsKodePos_fieldcolumn}
+	<td class="bs-gridcell {$mhsKodePos_class}"  data-field=mhsKodePos {$rowstyle} {$recordattrs}>
+		{$mhsKodePos_value}
+	</td>
+{END mhsKodePos_fieldcolumn}
+
+
+	{BEGIN mhsStatrumahId_fieldcolumn}
+	<td class="bs-gridcell {$mhsStatrumahId_class}"  data-field=mhsStatrumahId {$rowstyle} {$recordattrs}>
+		{$mhsStatrumahId_value}
+	</td>
+{END mhsStatrumahId_fieldcolumn}
+
+
+	{BEGIN mhsSbdnrId_fieldcolumn}
+	<td class="bs-gridcell {$mhsSbdnrId_class}"  data-field=mhsSbdnrId {$rowstyle} {$recordattrs}>
+		{$mhsSbdnrId_value}
+	</td>
+{END mhsSbdnrId_fieldcolumn}
+
+
+	{BEGIN mhsHubbiayaId_fieldcolumn}
+	<td class="bs-gridcell {$mhsHubbiayaId_class}"  data-field=mhsHubbiayaId {$rowstyle} {$recordattrs}>
+		{$mhsHubbiayaId_value}
+	</td>
+{END mhsHubbiayaId_fieldcolumn}
+
+
+	{BEGIN mhsTempatKerja_fieldcolumn}
+	<td class="bs-gridcell {$mhsTempatKerja_class}"  data-field=mhsTempatKerja {$rowstyle} {$recordattrs}>
+		{$mhsTempatKerja_value}
+	</td>
+{END mhsTempatKerja_fieldcolumn}
+
+
+	{BEGIN mhsAlamatTempatKerja_fieldcolumn}
+	<td class="bs-gridcell {$mhsAlamatTempatKerja_class}"  data-field=mhsAlamatTempatKerja {$rowstyle} {$recordattrs}>
+		{$mhsAlamatTempatKerja_value}
+	</td>
+{END mhsAlamatTempatKerja_fieldcolumn}
+
+
+	{BEGIN mhsNoTelpTempatKerja_fieldcolumn}
+	<td class="bs-gridcell {$mhsNoTelpTempatKerja_class}"  data-field=mhsNoTelpTempatKerja {$rowstyle} {$recordattrs}>
+		{$mhsNoTelpTempatKerja_value}
+	</td>
+{END mhsNoTelpTempatKerja_fieldcolumn}
+
+
+	{BEGIN mhsBeasiswa_fieldcolumn}
+	<td class="bs-gridcell {$mhsBeasiswa_class}"  data-field=mhsBeasiswa {$rowstyle} {$recordattrs}>
+		{$mhsBeasiswa_value}
+	</td>
+{END mhsBeasiswa_fieldcolumn}
+
+
+	{BEGIN mhsWnrId_fieldcolumn}
+	<td class="bs-gridcell {$mhsWnrId_class}"  data-field=mhsWnrId {$rowstyle} {$recordattrs}>
+		{$mhsWnrId_value}
+	</td>
+{END mhsWnrId_fieldcolumn}
+
+
+	{BEGIN mhsJlrrKode_fieldcolumn}
+	<td class="bs-gridcell {$mhsJlrrKode_class}"  data-field=mhsJlrrKode {$rowstyle} {$recordattrs}>
+		{$mhsJlrrKode_value}
+	</td>
+{END mhsJlrrKode_fieldcolumn}
+
+
+	{BEGIN mhsNoAskes_fieldcolumn}
+	<td class="bs-gridcell {$mhsNoAskes_class}"  data-field=mhsNoAskes {$rowstyle} {$recordattrs}>
+		{$mhsNoAskes_value}
+	</td>
+{END mhsNoAskes_fieldcolumn}
+
+
+	{BEGIN mhsNoTelp_fieldcolumn}
+	<td class="bs-gridcell {$mhsNoTelp_class}"  data-field=mhsNoTelp {$rowstyle} {$recordattrs}>
+		{$mhsNoTelp_value}
+	</td>
+{END mhsNoTelp_fieldcolumn}
+
+
+	{BEGIN mhsNoHp_fieldcolumn}
+	<td class="bs-gridcell {$mhsNoHp_class}"  data-field=mhsNoHp {$rowstyle} {$recordattrs}>
+		{$mhsNoHp_value}
+	</td>
+{END mhsNoHp_fieldcolumn}
+
+
+	{BEGIN mhsEmail_fieldcolumn}
+	<td class="bs-gridcell {$mhsEmail_class}"  data-field=mhsEmail {$rowstyle} {$recordattrs}>
+		{$mhsEmail_value}
+	</td>
+{END mhsEmail_fieldcolumn}
+
+
+	{BEGIN mhsHomepage_fieldcolumn}
+	<td class="bs-gridcell {$mhsHomepage_class}"  data-field=mhsHomepage {$rowstyle} {$recordattrs}>
+		{$mhsHomepage_value}
+	</td>
+{END mhsHomepage_fieldcolumn}
+
+
+	{BEGIN mhsFoto_fieldcolumn}
+	<td class="bs-gridcell {$mhsFoto_class}"  data-field=mhsFoto {$rowstyle} {$recordattrs}>
+		{$mhsFoto_value}
+	</td>
+{END mhsFoto_fieldcolumn}
+
+
+	{BEGIN mhsStakmhsrKode_fieldcolumn}
+	<td class="bs-gridcell {$mhsStakmhsrKode_class}"  data-field=mhsStakmhsrKode {$rowstyle} {$recordattrs}>
+		{$mhsStakmhsrKode_value}
+	</td>
+{END mhsStakmhsrKode_fieldcolumn}
+
+
+	{BEGIN mhsDsnPegNipPembimbingAkademik_fieldcolumn}
+	<td class="bs-gridcell {$mhsDsnPegNipPembimbingAkademik_class}"  data-field=mhsDsnPegNipPembimbingAkademik {$rowstyle} {$recordattrs}>
+		{$mhsDsnPegNipPembimbingAkademik_value}
+	</td>
+{END mhsDsnPegNipPembimbingAkademik_fieldcolumn}
+
+
+	{BEGIN mhsSksWajib_fieldcolumn}
+	<td class="bs-gridcell {$mhsSksWajib_class}"  data-field=mhsSksWajib {$rowstyle} {$recordattrs}>
+		{$mhsSksWajib_value}
+	</td>
+{END mhsSksWajib_fieldcolumn}
+
+
+	{BEGIN mhsSksPilihan_fieldcolumn}
+	<td class="bs-gridcell {$mhsSksPilihan_class}"  data-field=mhsSksPilihan {$rowstyle} {$recordattrs}>
+		{$mhsSksPilihan_value}
+	</td>
+{END mhsSksPilihan_fieldcolumn}
+
+
+	{BEGIN mhsSksA_fieldcolumn}
+	<td class="bs-gridcell {$mhsSksA_class}"  data-field=mhsSksA {$rowstyle} {$recordattrs}>
+		{$mhsSksA_value}
+	</td>
+{END mhsSksA_fieldcolumn}
+
+
+	{BEGIN mhsSksB_fieldcolumn}
+	<td class="bs-gridcell {$mhsSksB_class}"  data-field=mhsSksB {$rowstyle} {$recordattrs}>
+		{$mhsSksB_value}
+	</td>
+{END mhsSksB_fieldcolumn}
+
+
+	{BEGIN mhsSksC_fieldcolumn}
+	<td class="bs-gridcell {$mhsSksC_class}"  data-field=mhsSksC {$rowstyle} {$recordattrs}>
+		{$mhsSksC_value}
+	</td>
+{END mhsSksC_fieldcolumn}
+
+
+	{BEGIN mhsSksD_fieldcolumn}
+	<td class="bs-gridcell {$mhsSksD_class}"  data-field=mhsSksD {$rowstyle} {$recordattrs}>
+		{$mhsSksD_value}
+	</td>
+{END mhsSksD_fieldcolumn}
+
+
+	{BEGIN mhsSksE_fieldcolumn}
+	<td class="bs-gridcell {$mhsSksE_class}"  data-field=mhsSksE {$rowstyle} {$recordattrs}>
+		{$mhsSksE_value}
+	</td>
+{END mhsSksE_fieldcolumn}
+
+
+	{BEGIN mhsSksTranskrip_fieldcolumn}
+	<td class="bs-gridcell {$mhsSksTranskrip_class}"  data-field=mhsSksTranskrip {$rowstyle} {$recordattrs}>
+		{$mhsSksTranskrip_value}
+	</td>
+{END mhsSksTranskrip_fieldcolumn}
+
+
+	{BEGIN mhsBobotTotalTranskrip_fieldcolumn}
+	<td class="bs-gridcell {$mhsBobotTotalTranskrip_class}"  data-field=mhsBobotTotalTranskrip {$rowstyle} {$recordattrs}>
+		{$mhsBobotTotalTranskrip_value}
+	</td>
+{END mhsBobotTotalTranskrip_fieldcolumn}
+
+
+	{BEGIN mhsIpkTranskrip_fieldcolumn}
+	<td class="bs-gridcell {$mhsIpkTranskrip_class}"  data-field=mhsIpkTranskrip {$rowstyle} {$recordattrs}>
+		{$mhsIpkTranskrip_value}
+	</td>
+{END mhsIpkTranskrip_fieldcolumn}
+
+
+	{BEGIN mhsLamaStudiSemester_fieldcolumn}
+	<td class="bs-gridcell {$mhsLamaStudiSemester_class}"  data-field=mhsLamaStudiSemester {$rowstyle} {$recordattrs}>
+		{$mhsLamaStudiSemester_value}
+	</td>
+{END mhsLamaStudiSemester_fieldcolumn}
+
+
+	{BEGIN mhsLamaStudiBulan_fieldcolumn}
+	<td class="bs-gridcell {$mhsLamaStudiBulan_class}"  data-field=mhsLamaStudiBulan {$rowstyle} {$recordattrs}>
+		{$mhsLamaStudiBulan_value}
+	</td>
+{END mhsLamaStudiBulan_fieldcolumn}
+
+
+	{BEGIN mhsIsTranskripAkhirDiarsipkan_fieldcolumn}
+	<td class="bs-gridcell {$mhsIsTranskripAkhirDiarsipkan_class}"  data-field=mhsIsTranskripAkhirDiarsipkan {$rowstyle} {$recordattrs}>
+		{$mhsIsTranskripAkhirDiarsipkan_value}
+	</td>
+{END mhsIsTranskripAkhirDiarsipkan_fieldcolumn}
+
+
+	{BEGIN mhsTanggalTranskrip_fieldcolumn}
+	<td class="bs-gridcell {$mhsTanggalTranskrip_class}"  data-field=mhsTanggalTranskrip {$rowstyle} {$recordattrs}>
+		{$mhsTanggalTranskrip_value}
+	</td>
+{END mhsTanggalTranskrip_fieldcolumn}
+
+
+	{BEGIN mhsNomorTranskrip_fieldcolumn}
+	<td class="bs-gridcell {$mhsNomorTranskrip_class}"  data-field=mhsNomorTranskrip {$rowstyle} {$recordattrs}>
+		{$mhsNomorTranskrip_value}
+	</td>
+{END mhsNomorTranskrip_fieldcolumn}
+
+
+	{BEGIN mhsTempatLahirTranskrip_fieldcolumn}
+	<td class="bs-gridcell {$mhsTempatLahirTranskrip_class}"  data-field=mhsTempatLahirTranskrip {$rowstyle} {$recordattrs}>
+		{$mhsTempatLahirTranskrip_value}
+	</td>
+{END mhsTempatLahirTranskrip_fieldcolumn}
+
+
+	{BEGIN mhsTanggalLahirTranskrip_fieldcolumn}
+	<td class="bs-gridcell {$mhsTanggalLahirTranskrip_class}"  data-field=mhsTanggalLahirTranskrip {$rowstyle} {$recordattrs}>
+		{$mhsTanggalLahirTranskrip_value}
+	</td>
+{END mhsTanggalLahirTranskrip_fieldcolumn}
+
+
+	{BEGIN mhsMetodeBuildTranskrip_fieldcolumn}
+	<td class="bs-gridcell {$mhsMetodeBuildTranskrip_class}"  data-field=mhsMetodeBuildTranskrip {$rowstyle} {$recordattrs}>
+		{$mhsMetodeBuildTranskrip_value}
+	</td>
+{END mhsMetodeBuildTranskrip_fieldcolumn}
+
+
+	{BEGIN mhsMetodePenyetaraanTranskrip_fieldcolumn}
+	<td class="bs-gridcell {$mhsMetodePenyetaraanTranskrip_class}"  data-field=mhsMetodePenyetaraanTranskrip {$rowstyle} {$recordattrs}>
+		{$mhsMetodePenyetaraanTranskrip_value}
+	</td>
+{END mhsMetodePenyetaraanTranskrip_fieldcolumn}
+
+
+	{BEGIN mhsTahunKurikulumPenyetaraanTranskrip_fieldcolumn}
+	<td class="bs-gridcell {$mhsTahunKurikulumPenyetaraanTranskrip_class}"  data-field=mhsTahunKurikulumPenyetaraanTranskrip {$rowstyle} {$recordattrs}>
+		{$mhsTahunKurikulumPenyetaraanTranskrip_value}
+	</td>
+{END mhsTahunKurikulumPenyetaraanTranskrip_fieldcolumn}
+
+
+	{BEGIN mhsTanggalLulus_fieldcolumn}
+	<td class="bs-gridcell {$mhsTanggalLulus_class}"  data-field=mhsTanggalLulus {$rowstyle} {$recordattrs}>
+		{$mhsTanggalLulus_value}
+	</td>
+{END mhsTanggalLulus_fieldcolumn}
+
+
+	{BEGIN mhsNoSuratYudisium_fieldcolumn}
+	<td class="bs-gridcell {$mhsNoSuratYudisium_class}"  data-field=mhsNoSuratYudisium {$rowstyle} {$recordattrs}>
+		{$mhsNoSuratYudisium_value}
+	</td>
+{END mhsNoSuratYudisium_fieldcolumn}
+
+
+	{BEGIN mhsTanggalSuratYudisium_fieldcolumn}
+	<td class="bs-gridcell {$mhsTanggalSuratYudisium_class}"  data-field=mhsTanggalSuratYudisium {$rowstyle} {$recordattrs}>
+		{$mhsTanggalSuratYudisium_value}
+	</td>
+{END mhsTanggalSuratYudisium_fieldcolumn}
+
+
+	{BEGIN mhsSemIdLulus_fieldcolumn}
+	<td class="bs-gridcell {$mhsSemIdLulus_class}"  data-field=mhsSemIdLulus {$rowstyle} {$recordattrs}>
+		{$mhsSemIdLulus_value}
+	</td>
+{END mhsSemIdLulus_fieldcolumn}
+
+
+	{BEGIN mhsTanggalIjasah_fieldcolumn}
+	<td class="bs-gridcell {$mhsTanggalIjasah_class}"  data-field=mhsTanggalIjasah {$rowstyle} {$recordattrs}>
+		{$mhsTanggalIjasah_value}
+	</td>
+{END mhsTanggalIjasah_fieldcolumn}
+
+
+	{BEGIN mhsNoIjasah_fieldcolumn}
+	<td class="bs-gridcell {$mhsNoIjasah_class}"  data-field=mhsNoIjasah {$rowstyle} {$recordattrs}>
+		{$mhsNoIjasah_value}
+	</td>
+{END mhsNoIjasah_fieldcolumn}
+
+
+	{BEGIN mhsKodeIjasah_fieldcolumn}
+	<td class="bs-gridcell {$mhsKodeIjasah_class}"  data-field=mhsKodeIjasah {$rowstyle} {$recordattrs}>
+		{$mhsKodeIjasah_value}
+	</td>
+{END mhsKodeIjasah_fieldcolumn}
+
+
+	{BEGIN mhsPinIjasah_fieldcolumn}
+	<td class="bs-gridcell {$mhsPinIjasah_class}"  data-field=mhsPinIjasah {$rowstyle} {$recordattrs}>
+		{$mhsPinIjasah_value}
+	</td>
+{END mhsPinIjasah_fieldcolumn}
+
+
+	{BEGIN mhsPrlsrId_fieldcolumn}
+	<td class="bs-gridcell {$mhsPrlsrId_class}"  data-field=mhsPrlsrId {$rowstyle} {$recordattrs}>
+		{$mhsPrlsrId_value}
+	</td>
+{END mhsPrlsrId_fieldcolumn}
+
+
+	{BEGIN mhsPrlsrNama_fieldcolumn}
+	<td class="bs-gridcell {$mhsPrlsrNama_class}"  data-field=mhsPrlsrNama {$rowstyle} {$recordattrs}>
+		{$mhsPrlsrNama_value}
+	</td>
+{END mhsPrlsrNama_fieldcolumn}
+
+
+	{BEGIN mhsPrlsrNamaAsing_fieldcolumn}
+	<td class="bs-gridcell {$mhsPrlsrNamaAsing_class}"  data-field=mhsPrlsrNamaAsing {$rowstyle} {$recordattrs}>
+		{$mhsPrlsrNamaAsing_value}
+	</td>
+{END mhsPrlsrNamaAsing_fieldcolumn}
+
+
+	{BEGIN mhsWsdId_fieldcolumn}
+	<td class="bs-gridcell {$mhsWsdId_class}"  data-field=mhsWsdId {$rowstyle} {$recordattrs}>
+		{$mhsWsdId_value}
+	</td>
+{END mhsWsdId_fieldcolumn}
+
+
+	{BEGIN mhsTanggalPengubahan_fieldcolumn}
+	<td class="bs-gridcell {$mhsTanggalPengubahan_class}"  data-field=mhsTanggalPengubahan {$rowstyle} {$recordattrs}>
+		{$mhsTanggalPengubahan_value}
+	</td>
+{END mhsTanggalPengubahan_fieldcolumn}
+
+
+	{BEGIN mhsUnitPengubah_fieldcolumn}
+	<td class="bs-gridcell {$mhsUnitPengubah_class}"  data-field=mhsUnitPengubah {$rowstyle} {$recordattrs}>
+		{$mhsUnitPengubah_value}
+	</td>
+{END mhsUnitPengubah_fieldcolumn}
+
+
+	{BEGIN mhsUserPengubah_fieldcolumn}
+	<td class="bs-gridcell {$mhsUserPengubah_class}"  data-field=mhsUserPengubah {$rowstyle} {$recordattrs}>
+		{$mhsUserPengubah_value}
+	</td>
+{END mhsUserPengubah_fieldcolumn}
+
+
+	{BEGIN mhsProdiGelarKelulusan_fieldcolumn}
+	<td class="bs-gridcell {$mhsProdiGelarKelulusan_class}"  data-field=mhsProdiGelarKelulusan {$rowstyle} {$recordattrs}>
+		{$mhsProdiGelarKelulusan_value}
+	</td>
+{END mhsProdiGelarKelulusan_fieldcolumn}
+
+
+	{BEGIN mhsSemIdMulai_fieldcolumn}
+	<td class="bs-gridcell {$mhsSemIdMulai_class}"  data-field=mhsSemIdMulai {$rowstyle} {$recordattrs}>
+		{$mhsSemIdMulai_value}
+	</td>
+{END mhsSemIdMulai_fieldcolumn}
+
+
+	{BEGIN mhsBiayaStudi_fieldcolumn}
+	<td class="bs-gridcell {$mhsBiayaStudi_class}"  data-field=mhsBiayaStudi {$rowstyle} {$recordattrs}>
+		{$mhsBiayaStudi_value}
+	</td>
+{END mhsBiayaStudi_fieldcolumn}
+
+
+	{BEGIN mhsPekerjaan_fieldcolumn}
+	<td class="bs-gridcell {$mhsPekerjaan_class}"  data-field=mhsPekerjaan {$rowstyle} {$recordattrs}>
+		{$mhsPekerjaan_value}
+	</td>
+{END mhsPekerjaan_fieldcolumn}
+
+
+	{BEGIN mhsPTKerja_fieldcolumn}
+	<td class="bs-gridcell {$mhsPTKerja_class}"  data-field=mhsPTKerja {$rowstyle} {$recordattrs}>
+		{$mhsPTKerja_value}
+	</td>
+{END mhsPTKerja_fieldcolumn}
+
+
+	{BEGIN mhsPSKerja_fieldcolumn}
+	<td class="bs-gridcell {$mhsPSKerja_class}"  data-field=mhsPSKerja {$rowstyle} {$recordattrs}>
+		{$mhsPSKerja_value}
+	</td>
+{END mhsPSKerja_fieldcolumn}
+
+
+	{BEGIN mhsNIDNPromotor_fieldcolumn}
+	<td class="bs-gridcell {$mhsNIDNPromotor_class}"  data-field=mhsNIDNPromotor {$rowstyle} {$recordattrs}>
+		{$mhsNIDNPromotor_value}
+	</td>
+{END mhsNIDNPromotor_fieldcolumn}
+
+
+	{BEGIN mhsKoPromotor1_fieldcolumn}
+	<td class="bs-gridcell {$mhsKoPromotor1_class}"  data-field=mhsKoPromotor1 {$rowstyle} {$recordattrs}>
+		{$mhsKoPromotor1_value}
+	</td>
+{END mhsKoPromotor1_fieldcolumn}
+
+
+	{BEGIN mhsKoPromotor2_fieldcolumn}
+	<td class="bs-gridcell {$mhsKoPromotor2_class}"  data-field=mhsKoPromotor2 {$rowstyle} {$recordattrs}>
+		{$mhsKoPromotor2_value}
+	</td>
+{END mhsKoPromotor2_fieldcolumn}
+
+
+	{BEGIN mhsKoPromotor3_fieldcolumn}
+	<td class="bs-gridcell {$mhsKoPromotor3_class}"  data-field=mhsKoPromotor3 {$rowstyle} {$recordattrs}>
+		{$mhsKoPromotor3_value}
+	</td>
+{END mhsKoPromotor3_fieldcolumn}
+
+
+	{BEGIN mhsKoPromotor4_fieldcolumn}
+	<td class="bs-gridcell {$mhsKoPromotor4_class}"  data-field=mhsKoPromotor4 {$rowstyle} {$recordattrs}>
+		{$mhsKoPromotor4_value}
+	</td>
+{END mhsKoPromotor4_fieldcolumn}
+
+
+	{BEGIN mhsProdiAsal_fieldcolumn}
+	<td class="bs-gridcell {$mhsProdiAsal_class}"  data-field=mhsProdiAsal {$rowstyle} {$recordattrs}>
+		{$mhsProdiAsal_value}
+	</td>
+{END mhsProdiAsal_fieldcolumn}
+
+
+	{BEGIN mhsDiktiShift_fieldcolumn}
+	<td class="bs-gridcell {$mhsDiktiShift_class}"  data-field=mhsDiktiShift {$rowstyle} {$recordattrs}>
+		{$mhsDiktiShift_value}
+	</td>
+{END mhsDiktiShift_fieldcolumn}
+
+
+	{BEGIN mhsPembayaranIpp_fieldcolumn}
+	<td class="bs-gridcell {$mhsPembayaranIpp_class}"  data-field=mhsPembayaranIpp {$rowstyle} {$recordattrs}>
+		{$mhsPembayaranIpp_value}
+	</td>
+{END mhsPembayaranIpp_fieldcolumn}
+
+
+	{BEGIN mshNoIpp_fieldcolumn}
+	<td class="bs-gridcell {$mshNoIpp_class}"  data-field=mshNoIpp {$rowstyle} {$recordattrs}>
+		{$mshNoIpp_value}
+	</td>
+{END mshNoIpp_fieldcolumn}
+
+
+	{BEGIN mhsPersyaratan_fieldcolumn}
+	<td class="bs-gridcell {$mhsPersyaratan_class}"  data-field=mhsPersyaratan {$rowstyle} {$recordattrs}>
+		{$mhsPersyaratan_value}
+	</td>
+{END mhsPersyaratan_fieldcolumn}
+
+
+	{BEGIN mhsPengOrg_fieldcolumn}
+	<td class="bs-gridcell {$mhsPengOrg_class}"  data-field=mhsPengOrg {$rowstyle} {$recordattrs}>
+		{$mhsPengOrg_value}
+	</td>
+{END mhsPengOrg_fieldcolumn}
+
+
+	{BEGIN mhsOrg_fieldcolumn}
+	<td class="bs-gridcell {$mhsOrg_class}"  data-field=mhsOrg {$rowstyle} {$recordattrs}>
+		{$mhsOrg_value}
+	</td>
+{END mhsOrg_fieldcolumn}
+
+
+	{BEGIN mhsDomisili_fieldcolumn}
+	<td class="bs-gridcell {$mhsDomisili_class}"  data-field=mhsDomisili {$rowstyle} {$recordattrs}>
+		{$mhsDomisili_value}
+	</td>
+{END mhsDomisili_fieldcolumn}
+
+
+	{BEGIN mhsJenisSttb_fieldcolumn}
+	<td class="bs-gridcell {$mhsJenisSttb_class}"  data-field=mhsJenisSttb {$rowstyle} {$recordattrs}>
+		{$mhsJenisSttb_value}
+	</td>
+{END mhsJenisSttb_fieldcolumn}
+
+
+	{BEGIN mhsIsKerja_fieldcolumn}
+	<td class="bs-gridcell {$mhsIsKerja_class}"  data-field=mhsIsKerja {$rowstyle} {$recordattrs}>
+		{$mhsIsKerja_value}
+	</td>
+{END mhsIsKerja_fieldcolumn}
+
+
+	{BEGIN mhsStatusSmta_fieldcolumn}
+	<td class="bs-gridcell {$mhsStatusSmta_class}"  data-field=mhsStatusSmta {$rowstyle} {$recordattrs}>
+		{$mhsStatusSmta_value}
+	</td>
+{END mhsStatusSmta_fieldcolumn}
+
+
+	{BEGIN mhsAkreditasi_fieldcolumn}
+	<td class="bs-gridcell {$mhsAkreditasi_class}"  data-field=mhsAkreditasi {$rowstyle} {$recordattrs}>
+		{$mhsAkreditasi_value}
+	</td>
+{END mhsAkreditasi_fieldcolumn}
+
+
+	{BEGIN mhsKerja_fieldcolumn}
+	<td class="bs-gridcell {$mhsKerja_class}"  data-field=mhsKerja {$rowstyle} {$recordattrs}>
+		{$mhsKerja_value}
+	</td>
+{END mhsKerja_fieldcolumn}
+
+
+	{BEGIN mhsSaudaraLk_fieldcolumn}
+	<td class="bs-gridcell {$mhsSaudaraLk_class}"  data-field=mhsSaudaraLk {$rowstyle} {$recordattrs}>
+		{$mhsSaudaraLk_value}
+	</td>
+{END mhsSaudaraLk_fieldcolumn}
+
+
+	{BEGIN mhsSaudaraPr_fieldcolumn}
+	<td class="bs-gridcell {$mhsSaudaraPr_class}"  data-field=mhsSaudaraPr {$rowstyle} {$recordattrs}>
+		{$mhsSaudaraPr_value}
+	</td>
+{END mhsSaudaraPr_fieldcolumn}
+
+
+	{BEGIN mhsHobi_fieldcolumn}
+	<td class="bs-gridcell {$mhsHobi_class}"  data-field=mhsHobi {$rowstyle} {$recordattrs}>
+		{$mhsHobi_value}
+	</td>
+{END mhsHobi_fieldcolumn}
+
+
+	{BEGIN mhsSmtaLain_fieldcolumn}
+	<td class="bs-gridcell {$mhsSmtaLain_class}"  data-field=mhsSmtaLain {$rowstyle} {$recordattrs}>
+		{$mhsSmtaLain_value}
+	</td>
+{END mhsSmtaLain_fieldcolumn}
+
+
+	{BEGIN mhsAkreditasiSmta_fieldcolumn}
+	<td class="bs-gridcell {$mhsAkreditasiSmta_class}"  data-field=mhsAkreditasiSmta {$rowstyle} {$recordattrs}>
+		{$mhsAkreditasiSmta_value}
+	</td>
+{END mhsAkreditasiSmta_fieldcolumn}
+
+
+	{BEGIN mhsBiayaKuliah_fieldcolumn}
+	<td class="bs-gridcell {$mhsBiayaKuliah_class}"  data-field=mhsBiayaKuliah {$rowstyle} {$recordattrs}>
+		{$mhsBiayaKuliah_value}
+	</td>
+{END mhsBiayaKuliah_fieldcolumn}
+
+
+	{BEGIN MhsIdJenisSmta_fieldcolumn}
+	<td class="bs-gridcell {$MhsIdJenisSmta_class}"  data-field=MhsIdJenisSmta {$rowstyle} {$recordattrs}>
+		{$MhsIdJenisSmta_value}
+	</td>
+{END MhsIdJenisSmta_fieldcolumn}
+
+
+	{BEGIN mhsSmtaPropinsiKode_fieldcolumn}
+	<td class="bs-gridcell {$mhsSmtaPropinsiKode_class}"  data-field=mhsSmtaPropinsiKode {$rowstyle} {$recordattrs}>
+		{$mhsSmtaPropinsiKode_value}
+	</td>
+{END mhsSmtaPropinsiKode_fieldcolumn}
+
+
+	{BEGIN mhsEmailOld_fieldcolumn}
+	<td class="bs-gridcell {$mhsEmailOld_class}"  data-field=mhsEmailOld {$rowstyle} {$recordattrs}>
+		{$mhsEmailOld_value}
+	</td>
+{END mhsEmailOld_fieldcolumn}
+
+
+	{BEGIN mhsNoKtp_fieldcolumn}
+	<td class="bs-gridcell {$mhsNoKtp_class}"  data-field=mhsNoKtp {$rowstyle} {$recordattrs}>
+		{$mhsNoKtp_value}
+	</td>
+{END mhsNoKtp_fieldcolumn}
+
+
+	{BEGIN mhsNoKk_fieldcolumn}
+	<td class="bs-gridcell {$mhsNoKk_class}"  data-field=mhsNoKk {$rowstyle} {$recordattrs}>
+		{$mhsNoKk_value}
+	</td>
+{END mhsNoKk_fieldcolumn}
+
+	{BEGIN endrecord_block}
+	<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+	{END endrecord_block}
+									
+	{END grid_record}
+
+</tr>
+{END grid_row}
+	</tbody>
+	<tfoot>
+										
+	</tfoot>
+</table>
+
+
+
+{END grid_block}
+
+
+
+</div>
+{END container_grid}
+
+
+
+
+
+
+</div>
+{END container_center}
+
+
+
+{BEGIN container_pagination}
+<div {$pagination_chiddenattr} data-pageid="{$pageid}" data-container="pagination" class="  text-center col-md-12 "> 
+
+{BEGIN pagination_block}
+<div {$pagination_hiddenattr} data-pageid="{$pageid}" data-brick="pagination">
+{$pagination}
+</div>
+{END pagination_block}
+
+
+
+</div>
+{END container_pagination}
+
+
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

@@ -1,0 +1,144 @@
+<!-- patTemplate:tmpl name="document" -->
+<html>
+<head>
+<title>Cetak Nilai Kelas OBE</title>
+<link rel="stylesheet" type="text/css" href="styles/a_sia_cetak_krs.css" />
+<link rel="stylesheet" type="text/css" media="print" href="../styles/a_sia_cetak_krs_print.css" />
+
+</head>
+<body onLoad="window.print();">
+<!--div class="page-landscape"-->
+<div class="page-portrait">
+
+<div class="nobreak">
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.hidden{
+	display:none;
+}
+</style>
+<script language="javascript">
+function openWindow(url){
+      WindowObjectReference = window.open(url, "CetakForm", "width=600,height=300,resizable,scrollbars=yes,status=1");
+      //WindowObjectReference.print();
+}
+</script>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   <table width="100%" class="">
+      <tr>
+         <td>Noreg Dosen</td>
+         <td>: {USER}</td>
+      </tr>
+	  <tr>
+         <td>MataKuliah / Kelas</td>
+         <td>: {KELAS} / {MATAKULIAH}</td>
+      </tr>
+      <tr>
+         <td>Semester / Tanggal Cetak</td>
+         <td>: {SEMESTER} / {NOW}</td>
+      </tr>
+	  
+	  <!-- patTemplate:tmpl name="nilai_bobot_visible" type="condition" conditionvar="READONLY" -->
+      <!-- patTemplate:sub condition="YES" -->
+	  <!-- patTemplate:tmpl name="nilai_bobot" -->
+	  <tr class="{DISPLAY_CPMK1}">
+         <td>Sub CPMK 1</td>
+         <td>: {BOBOT_CPMK1}%</td>
+      </tr>
+      <tr class="{DISPLAY_CPMK2}">
+         <td>Sub CPMK 2</td>
+         <td>: {BOBOT_CPMK2}%</td>
+      </tr>
+	  <tr class="{DISPLAY_CPMK3}">
+         <td>Sub CPMK 3</td>
+         <td>: {BOBOT_CPMK3}%</td>
+      </tr>
+	  <tr class="{DISPLAY_CPMK4}">
+         <td>Sub CPMK 4</td>
+         <td>: {BOBOT_CPMK4}%</td>
+      </tr>
+	  <tr class="{DISPLAY_CPMK5}">
+         <td>Sub CPMK 5</td>
+         <td>: {BOBOT_CPMK5}%</td>
+      </tr>
+	  <tr class="{DISPLAY_CPMK6}">
+         <td>Sub CPMK 6</td>
+         <td>: {BOBOT_CPMK6}%</td>
+      </tr>
+
+      <tr>
+         <td>Total</td>
+         <td>: {BOBOT_TOTAL}<input name="totalBobot" type="hidden" id="totalBobot" value="{BOBOT_TOTAL}" size="5" maxlength="5" onload="Javascript:jumlah();" readonly /> %</td>
+      </tr>
+	  <!-- /patTemplate:tmpl -->
+	  <!-- /patTemplate:sub -->
+	  <!-- /patTemplate:tmpl -->
+   </table> 
+   
+   <!-- patTemplate:tmpl name="nilai" type="condition" conditionvar="NILAI_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+      <div style="overflow:auto;">
+      <table class="table-common" width="100%" border="1">
+         <tr> 
+            <th rowspan="2">No</th>
+            <th rowspan="2">{LABEL_NIM}</th>
+            <th rowspan="2">Nama</th>
+            <th colspan="{JUMLAH_DITAMPILKAN}">Nilai CPMK</th>
+            <th rowspan="2">Absolut</th>
+            <th rowspan="2">Relatif</th>
+         </tr>
+         <tr>
+            <th width="1%" class="{DISPLAY_CPMK1}">&nbsp;Sub CPMK 1&nbsp;</th>
+			<th width="1%" class="{DISPLAY_CPMK2}">&nbsp;Sub CPMK 2&nbsp;</th>
+			<th width="1%" class="{DISPLAY_CPMK3}">&nbsp;Sub CPMK 3&nbsp;</th>
+			<th width="1%" class="{DISPLAY_CPMK4}">&nbsp;Sub CPMK 4&nbsp;</th>
+            <th width="1%" class="{DISPLAY_CPMK5}">&nbsp;Sub CPMK 5&nbsp;</th>
+            <th width="1%" class="{DISPLAY_CPMK6}">&nbsp;Sub CPMK 6&nbsp;</th>
+         </tr>
+         
+            <!-- patTemplate:tmpl name="nilai_access" type="condition" conditionvar="READONLY" -->        
+               <!-- patTemplate:sub condition="YES" -->
+			   
+			    <!-- patTemplate:tmpl name="nilai_access_item_yes" type="condition" conditionvar="ODDEVEN" -->
+				  <!-- patTemplate:sub condition="EVEN" -->
+                        <!-- patTemplate:tmpl name="nilai_access_item_yes_ok" -->             
+                        <tr>
+							<td height="20px" align="center">{NILAI_NOMOR}</td>                          
+							<td align="center">{NILAI_NIF}</td>                          
+							<td>&nbsp;{NILAI_NAMA}<!--a href="#" onclick="openWindow('{NILAI_URL_DETAIL}')">{NILAI_NAMA} </a--></td>
+						 
+							<!-- patTemplate:tmpl name="nilai_dpna_noedit" -->
+							<td class="{DISPLAY_CPMK1}">{KRSDPNACPMKASAL1}</td>
+							<td class="{DISPLAY_CPMK2}">{KRSDPNACPMKASAL2}</td>
+							<td class="{DISPLAY_CPMK3}">{KRSDPNACPMKASAL3}</td>
+							<td class="{DISPLAY_CPMK4}">{KRSDPNACPMKASAL4}</td>
+							<td class="{DISPLAY_CPMK5}">{KRSDPNACPMKASAL5}</td>
+							<td class="{DISPLAY_CPMK6}">{KRSDPNACPMKASAL6}</td>                       
+							<td>{KRSDPNSABSOLUT}</td>
+                           
+							<!-- /patTemplate:tmpl -->
+							<td>{NILAI_NILAI}</td>						 
+						
+						</tr>
+                       <!-- /patTemplate:tmpl -->
+				  <!-- /patTemplate:sub -->
+                <!-- /patTemplate:tmpl -->
+				
+               <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl -->
+         </tr>
+      </table>
+      </div>
+      
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl --> <!-- end of nilai -->
+<!-- /patTemplate:tmpl -->
+   
+
+</div>
+</body>
+</html>
+<!-- /patTemplate:tmpl -->

@@ -1,0 +1,135 @@
+<!-- patTemplate:tmpl name="document" -->    
+   <html>
+      <head>
+         <title>{PRINT_TITLE} - {APPLICATION_NAME}</title>         
+         <link href="{CONFIG_BASEADDRESS}styles/a-portal-khs-print.css" rel="stylesheet" type="text/css" title="Default" />
+      </head>
+      <body>
+         <div id="common">
+            <div id="page-khs">
+               <div class="header-khs">
+                  <img src="{UNIVERSITY_LOGO}" alt="logo" />
+                  <h1>{UNIVERSITY_NAME}</h1>
+                  <!-- patTemplate:tmpl name="fakultas" type="condition" conditionvar="TIPE" -->
+                     <!-- patTemplate:sub condition="1" -->
+                        <h3>{FACULTY_NAME}</h3>
+                     <!-- /patTemplate:sub -->
+                     <!-- patTemplate:sub condition="2" -->
+                        <br />
+                     <!-- /patTemplate:sub -->
+                  <!-- /patTemplate:tmpl -->
+               </div>
+               <!-- patTemplate:tmpl name="data_khs" -->
+                  <h2>KARTU HASIL STUDI</h2>
+                  <h4>Semester: {MHS_SEM}</h4>
+				  
+      <table width="677" class="table-common">
+          
+          <tr>
+            <td width="150">Nama Mahasiswa</td>
+            <td>:</td>
+            <td>{MHS_NAMA}</td>
+         </tr>
+         <tr>
+            <td>{LABEL_NOMOR_INDUK_MAHASISWA}</td>
+            <td>:</td>
+            <td>{MHS_NIM}</td>
+         </tr>
+         <tr>
+            <td>Angkatan</td>
+            <td>:</td>
+            <td>{MHS_ANGKATAN}</td>
+         </tr>
+         <tr>
+            <td>Program Studi</td>
+            <td>:</td>
+            <td>{MHS_PRODI_INFO}</td>
+         </tr>
+         <tr>
+            <td>Pembimbing Akademik</td>
+            <td>:</td>
+            <td>{MHS_DOSEN_PA}</td>
+         </tr>
+               
+         
+      </table>
+                  <!-- patTemplate:tmpl name="khs" type="condition" conditionvar="IS_EMPTY" -->
+                  <!-- patTemplate:sub condition="YES" -->
+Data hasil studi tidak ada. <br/>
+                     <!-- /patTemplate:sub -->
+                     <!-- patTemplate:sub condition="NO" -->
+                        <table width="100%" class="table-khs">
+                           <tbody>
+                              <tr>
+            <th rowspan="2">No</th>
+            <th colspan="2">Matakuliah</th>
+            <th rowspan="2">SKS</th>
+            <th rowspan="2">KE</th>
+            <th rowspan="2">Nilai</th>
+            <th rowspan="2">BOBOT </th>
+            <th rowspan="2">NILAI SKS </th>
+         </tr>
+         <tr>
+            <th>Kode</th>
+            <th>Nama</th>
+         </tr>
+                              <!-- patTemplate:tmpl name="data_khs_item" -->
+                                 <tr>
+                                    <td align="center">{KHS_NUMBER}</td>
+                                    <td class="left">{KHS_KODE_MATAKULIAH}</td>
+                                    <td class="left">{KHS_MATAKULIAH}</td>
+                                    <td align="center">{KHS_SKS_JUMLAH}</td>
+                                    <td align="center">{KHS_AMBIL_KE}</td>
+                                    <td align="center">{KHS_NILAI}</td>
+                                    <td align="right">{KHS_BOBOT_NILAI}</td>
+                                    <td align="center" width="20%">{KHS_NILAISKS}</td>
+                                 </tr>
+                              <!-- /patTemplate:tmpl --> <!-- end of khs_item -->
+                              <tr>
+                                 <td colspan="3" align="center"><b>Total SKS</b></td>
+                                 <td align="center"><b>{SKS_DIAMBIL}</b></td>
+                                 <td colspan="3" width="20%" align="center">&nbsp;</td>
+                                 <td align="center">{TOTAL_NILAISKS}</td>
+                              </tr>
+							    
+                           </tbody>
+                        </table>
+                     <!-- /patTemplate:sub -->
+                  <!-- /patTemplate:tmpl -->
+                      <br />
+                    <table style="font-size: small">
+                        <tr>
+                            <td>IP Semester (IPS)</td>
+                            <td>:</td>
+                           <td>{MHS_IP_SEMESTER}</td>
+                        </tr>
+                        <tr>
+                           <td>IP Kumulatif (IPK)</td>
+                           <td>:</td>
+                           <td>{MHS_IP_KUMULATIF}</td>
+                        </tr>
+                        <tr>
+                           <td>Maks. Beban sks semester berikutnya</td>
+                           <td>:</td>
+                           <td>{MHS_MAX_SKS}</td>
+                        </tr>
+                    </table>
+                              
+                  <!-- /patTemplate:tmpl -->
+				  <!-- patTemplate:tmpl name="page" -->
+<div align="right" class="signature">
+                  <p>{TANGGAL_CETAK}</p>
+                  <p>{TIPE_PENGESAH}<br />
+                     {JABATAN_PENGESAH} </p>
+                  <br />
+                  <br />
+                  <br />
+                  <p>{NAMA_PENGESAH}</p>
+                  <p>----------------------------</p>
+                  <p>{LABEL_NIP}. {NIP_PENGESAH}</p>
+              </div>  <!-- /patTemplate:tmpl -->
+            </div>
+         </div>
+      </body>
+   </html>
+<!-- /patTemplate:tmpl -->

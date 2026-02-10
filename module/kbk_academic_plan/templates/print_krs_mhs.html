@@ -1,0 +1,225 @@
+<!-- patTemplate:tmpl name="content" -->
+<style type="text/css">
+.hidden {display:none;}
+.clearBr {
+   clear:both;
+   display:table;
+}
+
+#containerHeader {
+   width:100%;   
+}
+#areaKiriHeader, #areaKananHeader {
+   width:47%;
+   height:80px;
+   float:left;
+   padding:10px;   
+}
+div#headerKanan {       
+   text-align: center;
+   line-height:80px;          
+}
+
+.containerDiv {
+   width:100%;
+}
+.areaKiriConDiv, .areaKananConDiv {
+   width:47%;
+   height:80px;
+   float:left;
+   padding:10px;   
+}
+[class*='kolomFooter-'] {
+   float:left;
+   padding:10px;   
+}
+.kolomFooter-1 {
+   width:31%;
+}
+.kolomFooter-2 {
+   width:31%;
+}
+.kolomFooter-3 {
+   width:31%;
+}
+
+
+
+div.containerDiv td {
+   padding:3px;
+}
+td.withBorder {
+   border:1px solid black;
+}
+
+
+#tabelList td {
+   border:1px solid black;
+   padding:3px;
+}
+#tabelList thead td {
+   text-align:center;
+   font-weight:bold;
+}   
+</style>
+
+<div class="page-landscape">
+<div class="{BREAK}">
+   <!-- patTemplate:tmpl name="kop" -->
+   <div id="containerHeader">
+      <div id="areaKiriHeader">
+         <table width="100%">
+            <tr>
+               <td><img src="{UNIVERSITY_LOGO}" alt="logo" width="75" /></td>
+               <td align="center">
+                  <h3>KEMENTRIAN PENDIDIKAN DAN KEBUDAYAAN</h3>
+                  <h2>{UNIVERSITY_NAME}</h2>
+                  <h2>{FACULTY_NAME}</h2>
+               </td>
+            </tr>
+         </table>                  
+      </div>
+      <div id="areaKananHeader">
+         <div id="headerKanan">
+            <h1>KARTU RENCANA STUDI (KRS)</h1>
+         </div>
+      </div>
+   </div>   
+   <br class="clearBr" />  
+   <hr />
+   <!-- /patTemplate:tmpl -->
+
+   <!-- patTemplate:tmpl name="data_judul" -->
+      <div class="containerDiv">
+         <div class="areaKiriConDiv">
+            <table width="100%">
+               <tr>
+                  <td width="28%"><strong>NAMA</strong></td>
+                  <td width="2%">:</td>
+                  <td class="withBorder" width="70%">{MHS_NAMA}</td>
+               </tr>
+               <tr>
+                  <td><strong>NIM</strong></td>
+                  <td>:</td>
+                  <td class="withBorder">{MHS_NIM}</td>
+               </tr>
+               <tr>
+                  <td><strong>STRATA</strong></td>
+                  <td>:</td>
+                  <td class="withBorder">{MHS_PRODI_JENJANG}</td>
+               </tr>
+               <tr>
+                  <td><strong>PROGRAM STUDI</strong></td>
+                  <td>:</td>
+                  <td class="withBorder">{MHS_PRODI}</td>
+               </tr>
+               <tr>
+                  <td><strong>{LABELNYA_KONSENTRASI}</strong></td>
+                  <td>:</td>
+                  <td class="withBorder">{MHS_KONSENTRASI}</td>
+               </tr>
+            </table>
+         </div>                        
+         <div class="areaKananConDiv">
+            <table width="100%">
+               <tr>
+                  <td width="33%"><strong>SEMESTER</strong></td>
+                  <td width="2%">:</td>
+                  <td class="withBorder" width="65%">{SEM_NAMA}</td>
+               </tr>
+               <tr>
+                  <td><strong>TAHUN AKADEMIK</strong></td>
+                  <td>:</td>
+                  <td class="withBorder">{SEM_TAHUN}</td>
+               </tr>
+               <tr>
+                  <td><strong>DOSEN PEMBIMBING</strong></td>
+                  <td>:</td>
+                  <td class="withBorder">1. {MHS_PA}</td>
+               </tr>
+               <tr>
+                  <td></td>
+                  <td></td>
+                  <td class="withBorder">2.</td>
+               </tr>
+               <tr>
+                  <td></td>
+                  <td></td>
+                  <td class="withBorder">3.</td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   <!-- /patTemplate:tmpl -->
+
+   <br class="clearBr" />
+   <br />
+   <br />
+   
+   <table id="tabelList" width="100%">
+      <thead>
+         <tr>
+            <td width="2%">NO</td>
+            <td>NAMA MATA KULIAH</td>
+            <td width="8%">KODE</td>
+            <td width="8%">SKS</td>
+            <td>KETERANGAN</td>
+         </tr>
+      </thead>
+      <tfoot>
+         <tr>
+            <td align="center" colspan="3"><strong>JUMLAH</strong></td>               
+            <td align="center">{SKS_TOT}</td>
+            <td></td>
+         </tr>
+      </tfoot>
+      <tbody>
+         <!-- patTemplate:tmpl name="tbody_data" -->
+         <tr>
+            <td>{NO}</td>
+            <td>{MK_NAMA}</td>
+            <td>{MK_KODE}</td>
+            <td align="center">{MK_SKS}</td>
+            <td></td>
+         </tr>                                             
+         <!-- /patTemplate:tmpl -->
+      </tbody>
+   </table>
+   
+   <br /><br />
+
+   <br /><br />
+      
+   <!-- patTemplate:tmpl name="data_footer" -->
+   <div class="containerDiv">
+      <div class="kolomFooter-1">
+         <p>
+            <strong>KRS DIBUAT RANGKAP 4 (EMPAT)</strong><br />
+            1. MAHASISWA YANG BERSANGKUTAN<br />
+            2. DOSEN PEMBIMBING<br />
+            3. KETUA PROGRAM STUDI<br />
+            4. TU AKADEMIK
+         </p>
+      </div>
+      <div class="kolomFooter-2">
+         <p style="text-align:center;">MAHASISWA YANG BERSANGKUTAN</p>
+         <br /><br /><br /><br />
+         <p style="text-align:center;">
+            {MHS_NAMA}<br />
+            ......................................
+         </p>
+      </div>
+      <div class="kolomFooter-3">
+         <p>
+            {LOKASI}, <span id="tglDokumen">{TANGGAL_CETAK}</span><br />
+            DOSEN PEMBIMBING / KETUA PROGRAM STUDI               
+         </p>
+         <br /><br /><br /><br />
+         <p>............................................</p>
+      </div>
+   </div>
+   <!-- /patTemplate:tmpl -->
+   <br class="clearBr" />
+</div>
+</div>
+<!-- /patTemplate:tmpl -->

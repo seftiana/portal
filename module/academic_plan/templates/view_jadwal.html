@@ -1,0 +1,86 @@
+<!-- patTemplate:tmpl name="content" -->
+
+   <h2>Jadwal Kuliah</h2> 
+   <br />
+   <form name="frmKRS" method="POST" action="{FORM_AKSI}">
+      <div class="border border-secondary pt-0 px-2 pb-2">
+         <input type="hidden" name="id" value="{ID}">
+         <!-- patTemplate:tmpl name="mahasiswa" -->
+		<div class="table-responsive">
+            <table width="100%" class="table">
+               <tr>
+                  <th>Nama</th>
+                  <td>{MHS_FULLNAME}</td>
+               </tr>
+               <tr>
+                  <th>{LABEL_NIM}</th>
+                  <td>{MHS_NIU}</td>
+               </tr>
+               <tr>
+                  <th>Program Studi</th>
+                  <td>{MHS_INFO}</td>
+               </tr>
+               <tr>
+                  <th>Semester</th>
+                  <td>{MHS_SEM}</td>
+               </tr>
+               <tr>
+                  <th>Maksimum SKS</th>
+                  <td>{MHS_MAX_SKS_DIAMBIL}</td>
+               </tr>
+               <tr>
+                  <th>Dosen Pembimbing Akademik</th>
+                  <td>{MHS_DOSEN_PA}</td>
+               </tr>
+			</table>
+		</div>
+		<!-- /patTemplate:tmpl --> <!-- end of mahasiswa -->
+		<!--a href="{LINK_QRCODE}" class="btn btn-info"> Scan QR Code </a-->
+		<div class="table-responsive">
+			<table class="table-common">
+				<tr>	
+					<th width="5%" >NO</th>
+					<th width="10%" >KODE MK</th>
+					<th width="25%">MATA KULIAH</th>
+					<th width="5%" >SKS</th>
+					<th width="10%" >KLP</th>
+					<th width="20%" >WAKTU KULIAH</th>
+					<th width="15%" >RUANG</th>
+					<th width="18%" >Ket.</th>
+				</tr>
+				<!-- patTemplate:tmpl name="data_list"  type="condition" conditionvar="IS_EMPTY" -->
+				 <!-- patTemplate:sub condition="YES" -->
+					<tr>
+					   <td colspan="8" align="center"><em>Belum ada Data KRS di semester {MSG}</em></td>
+					</tr>
+				 <!-- /patTemplate:sub -->
+				 <!-- patTemplate:sub condition="NO" -->
+					<!-- patTemplate:tmpl name="data_list_item" -->
+					<tr height="20">
+						<td nowrap ="nowrap" align="center" style="vertical-align:middle">{NO}</td>
+					   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{KODE_MK}</td>
+					   <td style="vertical-align:middle">{NAMA_MK}</td>
+					   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{SKS}</td>
+					   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{KELAS}</td>
+					   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{WAKTU}</td>
+					   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{RUANG}</td>
+					   <td align="center">
+							<a href="{URL_VALIDASI}">Validasi </a>
+					   </td>
+					</tr>
+					<!-- /patTemplate:tmpl -->
+				 <!-- /patTemplate:sub -->
+				<!-- /patTemplate:tmpl -->				
+				<!-- patTemplate:tmpl name="total" -->
+					<tr>
+						<td colspan="3" nowrap ="nowrap" align="center" style="vertical-align:middle">Total SKS yang diambil</td>
+						<td nowrap ="nowrap" align="center" style="vertical-align:middle"><strong>{JML_TOTAL_SKS}</strong></td>
+						<td colspan="4" nowrap ="nowrap" align="center" style="vertical-align:middle">&nbsp;</td>
+					</tr>
+				<!-- /patTemplate:tmpl -->
+			</table>
+         </div>
+      </div>
+   </form>
+
+<!-- /patTemplate:tmpl --> <!-- end of content -->

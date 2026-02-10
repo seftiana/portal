@@ -1,0 +1,51 @@
+<div {$pageattrs}>
+
+{BEGIN container_column}
+<div class="rnr-c rnr-ch rnr-c-column">
+
+{BEGIN masterlist_title}
+<div  class="style1 rnr-bl rnr-b-masterprintheader {$brickclass_masterprintheader}"><span>{$pagetitlelabel s_semester masterprint}</span></div>
+{END masterlist_title}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_column}
+
+
+
+{BEGIN container_mastergrid}
+
+
+
+<table {$bsmasterprintgrid_hiddenattr} data-pageid="{$pageid}" data-brick="bsmasterprintgrid" class="table rnr-b-mastergridfields rnr-gridtable" >
+		<thead>
+		<tr>
+			<th class="{$semId_class}">{$label s_semester semId}</th>
+			<th class="{$semTahun_class}">{$label s_semester semTahun}</th>
+			<th class="{$semNmsemrId_class}">{$label s_semester semNmsemrId}</th>
+			<th class="{$semTanggalMulai_class}">{$label s_semester semTanggalMulai}</th>
+			<th class="{$semTanggalSelesai_class}">{$label s_semester semTanggalSelesai}</th>
+			<th class="{$semIsNilaiBolehDieditDariPortal_class}">{$label s_semester semIsNilaiBolehDieditDariPortal}</th>
+			<th class="{$semIsEditBiodataPortal_class}">{$label s_semester semIsEditBiodataPortal}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="{$semId_class}">{$semId_mastervalue}</td>
+			<td class="{$semTahun_class}">{$semTahun_mastervalue}</td>
+			<td class="{$semNmsemrId_class}">{$semNmsemrId_mastervalue}</td>
+			<td class="{$semTanggalMulai_class}">{$semTanggalMulai_mastervalue}</td>
+			<td class="{$semTanggalSelesai_class}">{$semTanggalSelesai_mastervalue}</td>
+			<td class="{$semIsNilaiBolehDieditDariPortal_class}">{$semIsNilaiBolehDieditDariPortal_mastervalue}</td>
+			<td class="{$semIsEditBiodataPortal_class}">{$semIsEditBiodataPortal_mastervalue}</td>
+		</tr>
+	</tbody>
+
+</table> 
+
+
+
+
+{END container_mastergrid}
+
+</div>

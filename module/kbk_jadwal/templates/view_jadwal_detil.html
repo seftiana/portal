@@ -1,0 +1,76 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Detil Jadwal</h2>
+<br />
+<!-- patTemplate:tmpl name="data_jadwal" type="condition" conditionvar="JADWAL_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+      <table width="100%" class="table-list">
+            <tr> 
+               <th width="150">Nama</th>
+               <td>{MHS_NAMA}</td>
+            </tr>
+            <tr> 
+               <th>{LABEL_NIM}</th>
+               <td>{MHS_NIM}</td>
+            </tr>
+            <tr> 
+               <th>Program Studi</th>
+               <td>{MHS_PRODI}</td>
+            </tr>
+            <tr> 
+               <th>Semester</th>
+               <td>{MHS_SEM}</td>
+            </tr>
+         </table>
+	<table class="table-common" width="100%">
+   	<tr>	
+      	<th rowspan="2">No</th>   
+			<th rowspan="2">Hari</th>
+			<th rowspan="2">Tanggal</th>
+			<th colspan="2">Waktu</th>
+			<th rowspan="2">Metode<br />Pembelajaran</th>
+			<th rowspan="2">Materi</th>
+			<th rowspan="2">Dosen</th>
+ 		</tr>
+ 		<tr>
+ 			<th>Mulai</th>
+ 			<th>Selesai</th>
+ 		</tr>
+ 		<!-- patTemplate:tmpl name="jadwal_item" type="condition" conditionvar="ODDEVEN" -->
+               <!-- patTemplate:sub condition="ODD" -->
+	 				<tr>
+						<td align="center">{NUMBER}</td>
+						<td>{HARI}</td>
+						<td>{TANGGAL}</td>
+						<td>{TTPMUKARENCJAMMULAI}</td>
+						<td>{TTPMUKARENCJAMSELESAI}</td>
+						<td align="center"><abbr title="{MTDPBLJRNAMA}">{MTDPBLJRKODE}</abbr></td>
+						<td>{TTPMUKAMATERI}</td>
+						<td>{DOSEN}</td>
+					</tr>
+					<!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="EVEN" -->
+               <tr class="table-common-even">
+						<td align="center">{NUMBER}</td>
+						<td>{HARI}</td>
+						<td>{TANGGAL}</td>
+						<td>{TTPMUKARENCJAMMULAI}</td>
+						<td>{TTPMUKARENCJAMSELESAI}</td>
+						<td align="center"><abbr title="{MTDPBLJRNAMA}">{MTDPBLJRKODE}</abbr></td>
+						<td>{TTPMUKAMATERI}</td>
+						<td>{DOSEN}</td>
+					</tr>
+ 					<!-- /patTemplate:sub -->
+      <!-- /patTemplate:tmpl -->
+		</table>
+		<!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+<br />
+<div>
+      <form action="{URL_BACK}" method="post">
+         <input class="input-disclaimer" type="submit" name="btnBack" value="Kembali">
+      </form>
+   </div>
+<!-- /patTemplate:tmpl -->

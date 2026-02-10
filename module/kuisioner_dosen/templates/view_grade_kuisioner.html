@@ -1,0 +1,98 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.hidden{
+	display:none;
+}
+</style>
+   <h2>Hasil Kuisioner Dosen</h2>
+   
+   <form name="form1" method="post" action="{URL_PROCESS}"> 
+   <table width="100%" class="table-list">
+      <tr>
+         <th>MataKuliah</th>
+         <td>{KELAS}</td>
+      </tr>
+      <tr>
+         <th>Kelas</th>
+         <td>{MATAKULIAH}</td>
+      </tr>
+      <tr>
+         <th>Semester</th>
+         <td>{SEMESTER}</td>
+      </tr>
+   </table>
+	<!-- patTemplate:tmpl name="data_matakuliah_diampu" type="condition" conditionvar="MATAKULIAH_DIAMPU_AVAILABLE" visibility="hidden" -->      
+		<!-- patTemplate:sub condition="YES" -->
+		<table class="table-common" width="100%">
+         <tr>
+            <th>No.</th>
+            <th>Ket</th>
+            <th>Pertanyaan</th>
+			<th>Jml. Responden</th>
+            <th>Avg (Nilai)</th>
+         </tr>
+   
+			<!-- patTemplate:tmpl name="data_matakuliah_diampu_item" type="condition" conditionvar="ODDEVEN" -->
+				<!-- patTemplate:sub condition="ODD" -->
+				   <tr>
+					  <td width="5%" align="center">{MK_DIAMPU_NUMBER}</td>
+					  <td width="8%">{MK_DIAMPU_KET}</td>
+					  <td width="66%">{MK_DIAMPU_PERTANYAAN}</td>
+					  <td width="8%" align="center">{MK_DIAMPU_JUMLAH}</td>
+					  <td width="8%" align="center">{MK_DIAMPU_NILAI}</td>
+				   </tr>
+				<!-- /patTemplate:sub -->
+				<!-- patTemplate:sub condition="EVEN" -->
+				   <tr class="table-common-even">
+					  <td width="5%" align="center">{MK_DIAMPU_NUMBER}</td>
+					  <td width="8%">{MK_DIAMPU_KET}</td>
+					  <td width="66%">{MK_DIAMPU_PERTANYAAN}</td>
+					  <td width="8%" align="center">{MK_DIAMPU_JUMLAH}</td>
+					  <td width="8%" align="center">{MK_DIAMPU_NILAI}</td>
+				   </tr>
+				<!-- /patTemplate:sub -->
+			<!-- /patTemplate:tmpl -->
+      </table>
+	  <!-- /patTemplate:sub -->
+	  <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+	<!-- /patTemplate:tmpl -->
+      <br/>
+		<!-- patTemplate:tmpl name="data_matakuliah_diampu_k" type="condition" conditionvar="MATAKULIAH_DIAMPU_AVAILABLE_K" visibility="hidden" -->      
+			<!-- patTemplate:sub condition="YES" -->
+			<table class="table-common" width="100%">
+				 <tr>
+					<th>No.</th>
+					<th>Nim</th>
+					<th>Komentar</th>
+				 </tr>
+				 <!-- patTemplate:tmpl name="data_matakuliah_diampu_item_k" type="condition" conditionvar="ODDEVEN" -->
+					<!-- patTemplate:sub condition="ODD" -->
+					   <tr>
+						  <td width="5%" align="center">{MK_KOMEN_NUMBER}</td>
+						  <td width="8%">hidden</td>
+						  <td width="66%">{MK_KOMEN_KOMENTAR}</td>
+					   </tr>
+					<!-- /patTemplate:sub -->
+					<!-- patTemplate:sub condition="EVEN" -->
+					   <tr class="table-common-even">
+						  <td width="5%" align="center">{MK_KOMEN_NUMBER}</td>
+						  <td width="8%">hidden</td>
+						  <td width="66%">{MK_KOMEN_KOMENTAR}</td>
+					   </tr>
+					<!-- /patTemplate:sub -->
+				<!-- /patTemplate:tmpl -->
+		  </table>
+		  <!-- /patTemplate:sub -->
+		  <!-- patTemplate:sub condition="NO" -->
+			 <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+		  <!-- /patTemplate:sub -->
+		<!-- /patTemplate:tmpl -->
+   <br/>
+   <div><input class="input-disclaimer btn btn-info" type="submit" name="btnKembali" value="<< Kembali">
+   <!--a href="{URL_PRINT}" target="_blank" rel="noopener noreferrer" class="input-disclaimer btn btn-info">Print/Cetak</a-->
+   </div>
+   </form> 
+
+<!-- /patTemplate:tmpl -->

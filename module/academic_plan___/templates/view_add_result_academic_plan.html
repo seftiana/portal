@@ -1,0 +1,57 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Kartu Rencana Studi</h2>
+<br />
+
+<!-- patTemplate:link name="error_box" src="error_box" / -->
+
+<form class="form-common" method="POST" action="{URL_VIEW}" name="frmKrs">
+   <table class="table table-forum" width="100%">
+      <tr>
+         <th class="text-center" width="5%">
+            <div class="th-special-left"></div>
+         </th>
+         <th class="text-center">Hasil Tambah KRS</th>
+         <th class="text-center" width="5%">
+            <div class="th-special-right"></div>
+         </th>
+      </tr>
+      <!-- patTemplate:tmpl name="mkgagal_tidakada_matkul" visibility="hidden" -->
+         <tr>
+            <td colspan="3">{MKGAGAL_TIDAKADA_MATKUL}</td>
+         </tr>
+      <!-- /patTemplate:tmpl -->
+      <!-- patTemplate:tmpl name="mkgagal_lebih" visibility="hidden" -->
+         <tr>
+            <td colspan="3">{MKGAGAL_LEBIH_MSG}</td>
+         </tr>
+      <!-- /patTemplate:tmpl -->
+      <!-- patTemplate:tmpl name="matakul_wajib" visibility="hidden" -->
+         <tr>
+            <td colspan="3">{MATAKUL_WAJIB_MSG}</td>
+         </tr>
+      <!-- /patTemplate:tmpl -->
+      <!-- patTemplate:tmpl name="mkberhasil" visibility="hidden" -->
+         <tr>
+            <td colspan="3"><strong>Mata Kuliah yang berhasil diambil</strong><br />
+            <ul>
+            <!-- patTemplate:tmpl name="mkberhasil_item" -->
+               <li>{MKBERHASIL_NAMA_MK} ({MKBERHASIL_KODE_MK})</li>
+            <!-- /patTemplate:tmpl -->
+            </ul>
+            </td>
+         </tr>
+      <!-- /patTemplate:tmpl --> 
+      <!-- patTemplate:tmpl name="mkgagal" visibility="hidden" -->
+         <tr>
+            <td colspan="3"><strong>Mata Kuliah yang tidak berhasil diambil</strong><br />
+            <ul>
+            <!-- patTemplate:tmpl name="mkgagal_item" -->
+               <li>{MKGAGAL_MSG}</li>
+            <!-- /patTemplate:tmpl -->
+            </ul>
+         </tr>
+      <!-- /patTemplate:tmpl -->
+   </table><br/>
+   <input class="input-disclaimer btn btn-info" name="btnKembali" type="submit" value="Kembali" />   
+</form>
+<!-- /patTemplate:tmpl -->

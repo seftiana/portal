@@ -1,0 +1,69 @@
+<!-- patTemplate:tmpl name="content" -->
+<h3>Perpustakaan</h3>
+<h4>Detail Buku</h4><br />
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <table width="100%" class="table-list">
+      <tr  width="150"> 
+         <th>Judul</th>
+         <td>{BUKU_JUDUL}</td>
+      </tr> 
+      <tr> 
+         <th>Pengarang</th>
+         <td>{BUKU_PENGARANG}</td>
+      </tr>
+      <tr> 
+         <th>Pengarang Tambahan</th>
+         <td>{BUKU_PENGARANG_TAMBAHAN}</td>
+      </tr>
+      <tr> 
+         <th>Penerbit</th>
+         <td>{BUKU_PENERBIT}</td>
+      </tr>
+      <tr> 
+         <th>Edisi</th>
+         <td>{BUKU_EDISI}</td>
+      </tr>
+      <tr> 
+         <th>Tahun</th>
+         <td>{BUKU_TAHUN}</td>
+      </tr>
+      <tr> 
+         <th>ISBN</th>
+         <td>{BUKU_ISBN}</td>
+      </tr>
+      <tr> 
+         <th>Nomor Klasifikasi</th>
+         <td>{BUKU_NOMOR_KLASIFIKASI}</td>
+      </tr>
+      <tr> 
+         <th>Golongan</th>
+         <td>{BUKU_GOLONGAN}</td>
+      </tr>
+      <tr> 
+         <th>Bahasa</th>
+         <td>{BUKU_BAHASA}</td>
+      </tr>
+      <tr> 
+         <th>Jumlah Eksemplar</th>
+         <td>{BUKU_JUMLAH_EKSEMPLAR}</td>
+      </tr>
+      <tr> 
+         <th>Jumlah Terpinjam</th>
+         <td>{BUKU_JUMLAH_TERPINJAM}</td>
+      </tr>
+      <tr> 
+         <th>Jumlah Tersedia</th>
+         <td>{BUKU_JUMLAH_TERSEDIA}</td>
+      </tr>
+   </table><br/>
+   <div align="center">
+      <form name="frmBack" action="{URL_BACK}" method="post">
+         <input name="act" type="hidden" value="carikatalog" />
+         <input name="perpusserv" type="hidden" value="{SERVICE_ADDR}" />
+         <input name="cari" type="hidden" value="{KEY_SEARCH}" />
+         <input name="next" type="hidden" value="{START_RECORD}" />
+         <input class="input-disclaimer" type="submit" name="btnBack" value="Kembali">
+      </form>
+   </div>
+<!-- /patTemplate:tmpl -->

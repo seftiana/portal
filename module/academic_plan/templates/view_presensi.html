@@ -1,0 +1,70 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>Rekap Presensi Mahasiswa</h2>
+ 
+   <br />
+   <form name="frmKRS" method="POST" action="{FORM_AKSI}">
+      <div class="border border-secondary pt-0 px-2 pb-2">
+         <input type="hidden" name="id" value="{ID}">
+         <!-- patTemplate:tmpl name="mahasiswa" -->
+            <table class="table">
+               <tr>
+                  <th>Nama</th>
+                  <td>{MHS_FULLNAME}</td>
+               </tr>
+               <tr>
+                  <th>{LABEL_NIM}</th>
+                  <td>{MHS_NIU}</td>
+               </tr>
+               <tr>
+                  <th>Program Studi</th>
+                  <td>{MHS_JENJANG_KODE} {MHS_INFO}</td>
+               </tr>
+               <tr>
+                  <th>Semester</th>
+                  <td>{MHS_SEM}</td>
+               </tr>
+               <tr>
+                  <th>Dosen Pembimbing Akademik</th>
+                  <td>{MHS_DOSEN_PA}</td>
+               </tr>
+            </table>
+         <!-- /patTemplate:tmpl --> <!-- end of mahasiswa -->
+<div class="table-responsive">
+			<table class="table-common">
+				<tr>	
+					<th width="5%" >NO</th>
+					<th width="10%" >KELAS</th>
+					<th width="25%">MATA KULIAH</th>
+					<th width="5%" >SKS</th>
+					<th width="20%" >TOTAL KEHADIRAN</th>
+					<th width="15%" >Ket.</th>
+				</tr>
+				<!-- patTemplate:tmpl name="data_list"  type="condition" conditionvar="IS_EMPTY" -->
+				 <!-- patTemplate:sub condition="YES" -->
+					<tr>
+					   <td colspan="5" align="center"><em>Belum ada Data KRS di semester {MSG}</em></td>
+					</tr>
+				 <!-- /patTemplate:sub -->
+				 <!-- patTemplate:sub condition="NO" -->
+					<!-- patTemplate:tmpl name="data_list_item" -->
+					<tr height="20">
+						<td nowrap ="nowrap" align="center" style="vertical-align:middle">{NO}</td>
+					   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{KELAS}</td>
+					   <td style="vertical-align:middle">{MK}</td>
+					   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{SKS}</td>
+					   <td nowrap ="nowrap" align="center" style="vertical-align:middle">{JUMLAH}</td>
+					   <td><button class="btn btn-info" type="submit" name="btnEdit" > Validasi</button></td>
+					</tr>
+					<!-- /patTemplate:tmpl -->
+				 <!-- /patTemplate:sub -->
+				<!-- /patTemplate:tmpl -->
+				
+				
+			</table>
+         </div>
+      </div>
+
+      <!-- </div> -->
+
+   </form>
+<!-- /patTemplate:tmpl --> <!-- end of content -->

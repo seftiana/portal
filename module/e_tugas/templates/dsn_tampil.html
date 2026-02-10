@@ -1,0 +1,151 @@
+<!-- patTemplate:tmpl name="head_addition" -->
+	<link href="{CONFIG_BASEDIR}css/a_portalAkademik_table.css" rel="stylesheet" type="text/css" />
+<!-- /patTemplate:tmpl -->
+<!-- patTemplate:tmpl name="content" -->
+<script language="javascript">
+	function checkAll() {
+		
+	   var count = document.form_tugas.elements.length;	   
+	   for (i=4; i<count; i++)
+	      eval('document.form_tugas.elements[' + i + ']').checked = true;
+				//alert(count);
+	}
+	
+	function uncheckAll()
+	{		
+		var count = document.form_tugas.elements.length;
+	   	for (i=4; i<count; i++)
+	      eval('document.form_tugas.elements[' + i + ']').checked = false;
+	}	
+	
+	
+	function allSelected()
+	{		
+		
+		if(window.document.form_tugas.chkAll.checked) checkAll();
+		else uncheckAll();
+	}
+</script>
+
+<h2> {APPLICATION_MODULE} </h2></br>
+<div id="maincontent">
+<form name="form_tugas" class="form-common" method="post" action="">
+  
+  <table class="table-form" width="100%">
+  	<tr>
+  		<th>Semester</th>
+  		<td>{NAMA_SEMESTER}</td>
+  	</tr>
+    <tr>
+        <th>Pilihan Semester </th>
+        <td>
+            <select name="semId">
+                <!-- patTemplate:tmpl name="list_semester" -->
+                <option value="{SEM_ID}" {SELECT_{SEM_ID}}>{SEM_NAMA}</option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+			<input type="submit" name="getSemester" value="Ganti" class="input-disclaimer" />
+        </td>
+    </tr>
+    <tr>
+        <th>
+        	Mata Kuliah       
+        </th>
+        <td>
+            <select name="klsId"  >
+                <!-- patTemplate:tmpl name="list_kelas" -->
+                <option value="{KLS_ID}" {SELECT_{KLS_ID}}>{KLS_KODE} - {KLS_NAMA} </option>
+                <!-- /patTemplate:tmpl -->
+            </select>
+        </td>    
+    </tr>
+     <tr>
+        <th>
+            Judul
+        </th>
+        <td><input type="textbox" name="judul" size="50" /></td>
+    </tr>
+    <tr>
+          <th colspan=2><input type="submit" name="cari" value="Tampilkan" class="input-disclaimer" /> </th>
+    </tr>
+  </table>
+
+  <table width="100%">
+	<tr>
+		<th align="right">
+			<input type="submit" name="addTugas" value="Tambah" class="input-disclaimer"  />	
+		</th>
+	</tr>
+  </table>	
+	
+	
+  <!-- menampilkan hasil pencarian -->  
+  <!-- patTemplate:tmpl name="show_table" visibility="hidden" -->
+      <table class="table-common" width="80%">
+          <tr>              
+              <th width="5%"><input type="checkbox" name="chkAll" onclick="allSelected();" /></th>
+              <th width="5%">No</th>
+              <th width="20%">Judul</th>
+              <th width="15%">File</th>
+              <th width="20%">Mulai</th>
+              <th width="20%">Selesai</th>
+              <th width="5%">Terkumpul</th>
+              <th width="5%">Aksi</th>
+          </tr>
+          <!-- patTemplate:tmpl name="data_tugas" type="condition" conditionvar="DATA_EXIST" -->
+		  	<!-- patTemplate:sub condition="false" -->
+				<tr>
+					<td colspan="9" align="center"><i> -- Data Tidak Ditemukan -- </i></td>
+				</tr>
+			<!-- /patTemplate:sub -->
+		  	<!-- patTemplate:sub condition="true" -->	
+		  		<!-- patTemplate:tmpl name="daftar_tugas" -->		
+				  <tr>
+					  <td><input type=checkbox name=chk[{TUGAS_ID}] value='{TUGAS_NAMA_FILE}' /></td>
+					  <td> {TUGAS_NO}</td>
+		              <td ><a href="{TUGAS_LINK_EDIT}">{TUGAS_JUDUL}</a></td>
+		              <td nowrap ><a href="{TUGAS_DOWNLOAD}"> {TUGAS_FILE}</a></td>
+		              <td>{TUGAS_MULAI}</td>
+		              <td>{TUGAS_SELESAI}</td>
+		              <td>{TUGAS_TERKUMPUL}</td>
+		              <td><a href="{TUGAS_LINK_NILAI}">Nilai</a></td>
+				  </tr>
+			  	<!-- /patTemplate:tmpl -->
+			  	<tr>
+			  		<th colspan="8"></th>
+			  	</tr>
+			  	<tr>
+			  		<th colspan="8"><div align="left"><input type="submit" name="hapusTugas" value="Hapus" class="input-disclaimer"  /><div></th>
+			  	</tr>
+			<!-- /patTemplate:sub -->		  
+          <!-- /patTemplate:tmpl -->
+      </table>
+      
+      
+      <!-- patTemplate:link name="navigation_page" src="navigation_page" / -->
+      
+       <!-- patTemplate:tmpl name="show_description" visibility="hidden"  -->
+	   
+	   
+		<table class="table-maincontent" width="100%" >	
+			<tr>
+				<th width="100%"><div align="left">
+					Keterangan</div>
+				</th>
+			</tr>		
+			<tr>
+				<td>
+				  <div align="left">
+					<b>Status</b> <br/> <i>Aktif(A)</i> jika saat ini tugas masih dalam masa pengerjaan, dan 
+					<br/><i>Tidak Aktif(T)</i> jika tidak dalam masa pengerjaan</td>
+			  	  </div>
+			</tr>
+		</table>
+	  
+	  <!-- /patTemplate:tmpl -->
+   <!-- /patTemplate:tmpl -->
+	  
+  
+</form>  
+</div>
+<!-- /patTemplate:tmpl -->

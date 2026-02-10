@@ -1,0 +1,66 @@
+<!-- patTemplate:tmpl name="content" -->
+<br />
+<h2>Tugas Tambahan MAHASISWA</h2>
+<br />	
+<h5>Keterangan :</h5>
+<p style="font:11px Arial">
+	Halaman ini adalah untuk CRUD (Tambah, Edit, dan Hapus) Tugas Tambahan untuk mahasiswa yang bersangkutan.
+</p>
+
+<br />
+
+<!-- patTemplate:link name="error_box" src="error_box" / -->
+
+<table width="100%" class="table-list">
+<tr>
+   <th colspan="2">MataKuliah</th>
+   <td colspan="2">{MATAKULIAH}</td>
+</tr>
+<tr>
+   <th colspan="2">Kelas</th>
+   <td colspan="2">{KELAS}</td>
+</tr>
+<tr>
+   <th colspan="2">Semester</th>
+   <td colspan="2">{SEMESTER}</td>
+</tr>
+<tr>
+   <th colspan="2">{LABEL_NIM}</th>
+   <td colspan="2">{NIM}</td>
+</tr>
+<tr>
+   <th colspan="2">NAMA</th>
+   <td colspan="2">{MHS_NAMA}</td>
+</tr>
+</table>
+
+<div align="right">
+   <input type="button" name="addTugas" class="input-disclaimer" value="Tambah Tugas" onclick="window.location.href='{URL_TAMBAH}';" />
+</div>
+<table class="table-common" width="100%">
+<tr>
+   <th width=5%>No.</th>
+   <th>Judul Tugas</th>   
+   <th width=16%>Aksi</th>
+</tr>
+<!-- patTemplate:tmpl name="data_tugas" type="condition" conditionvar="EMPTY" -->        
+<!-- patTemplate:sub condition="YES" -->
+   <tr>
+      <td colspan="3" align="center">Belum ada data</td>
+   </tr>
+<!-- /patTemplate:sub -->
+<!-- patTemplate:sub condition="NO" -->
+   <!-- patTemplate:tmpl name="list_data_tugas" -->
+   <tr>
+      <td>{NO}</td>
+      <td>{KRSDPNATGSJUDULTGS}</td>
+      <td class="table-common-links">
+         <a href="{URL_EDIT}" title="Edit Tugas Tambahan">Edit</a>               
+         <a href="{URL_HAPUS}" title="Hapus Tugas Tambahan">Hapus</a>
+      </td>
+   </tr>
+   <!-- /patTemplate:tmpl -->
+<!-- /patTemplate:sub -->
+<!-- /patTemplate:tmpl -->
+</table>
+<!-- /patTemplate:tmpl -->

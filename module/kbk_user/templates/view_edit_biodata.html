@@ -1,0 +1,530 @@
+<!-- patTemplate:tmpl name="content" -->
+<style>
+.subhead th{
+	font-weight: bold;
+	font-size: 10pt;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.subhead-common th{
+	font-weight: bold;
+	font-size: 7pt;
+	text-align: center;
+	vertical-align: middle;
+	background: #e3eff9 url('styles/default/images/content-half-h2.gif') repeat-x top;
+}
+.links{
+	text-decoration: none;
+}
+.links img{
+	border: none;
+	height: 16px;
+}
+.links img:hover{
+	border: none;
+	height: 20px;
+}
+</style>
+   <h2>Edit Biodata Mahasiswa</h2>
+   <br />
+   
+   <h5>Keterangan :</h5>
+   <p>Isilah biodata anda dengan lengkap
+   </p><br />
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="data_biodata" -->
+   <form class="form-common" method="POST" action="{URL_PROCESS}" name="frmInput" > 
+   <input type="hidden" name="doact" value="edit">
+         <table class="table-userbio" width="100%">
+            <tr class="subhead">
+               <th colspan="2">Biodata</th>
+            </tr>
+            <tr>
+               <th width="20%">Nama</th>
+               <td>
+                  <input type="text" name="mhs[mhs_nama]" value="{MHS_NAMA}" size="30" maxLength="255" notab="2" />&nbsp;*
+               </td>
+            </tr>
+            <tr>
+               <th >Jenis Kelamin</th>
+               <td >
+                  <input id="jk1" type="radio" name="mhs[mhs_jenis_kelamin]" value="L" {SEX_CHECKED1}><label for="jk1">&nbsp;Laki-Laki</label>
+                  <input id="jk2" type="radio" name="mhs[mhs_jenis_kelamin]" value="P" {SEX_CHECKED2} ><label for="jk2">&nbsp;Perempuan</label>
+			   </td> 
+            </tr>
+            <tr>
+               <th>Pilih Propinsi Tempat Lahir</th>
+               <td>
+					<select name="mhs[propinsi_lahir]" id="lahir" onchange="propinsiChange(this);">
+						<option value="">-- PILIH PROPINSI  --</option>
+						<!-- patTemplate:tmpl name="data_propinsi_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr> 
+            <tr>
+               <th>Pilih Kota Tempat Lahir</th>
+               <td>
+                  <div id="kota_lahir">
+					<select name="mhs[kota_lahir]">
+						<option value="">-- PILIH KOTA  --</option>
+						<!-- patTemplate:tmpl name="data_kota_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+                  </div>
+                   <input type="hidden" value="{MHS_KOTA_LAHIR}" id="hidden_kota_lahir" name="mhs[mhs_kota_lahir]" />
+               </td>
+            </tr>
+            <tr>
+               <th >Tempat Lahir</th>
+               <td>
+                  <input type="text" name="mhs[mhs_tempat_lahir]" value="{MHS_TMPT_LAHIR}" size="25" maxLength="50" notab="2" />
+               </td>
+            </tr>
+            <tr>
+               <th >Tanggal Lahir</th>
+               <td>
+					<select name="mhs[mhs_lahir_tanggal]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_tanggal_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="mhs[mhs_lahir_bulan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_bulan_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+					-
+					<select name="mhs[mhs_lahir_tahun]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_tahun_lahir" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th>Golongan Darah</th>
+               <td>
+					<select name="mhs[golongan_darah]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_golongan_darah" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th>Tinggi Badan</th>
+               <td>
+               	<input type="text" name="mhs[mhs_tinggi_badan]" value="{MHS_TINGGI_BADAN}" size="3" maxLength="3" notab="2" /> cm           
+               </td>
+            </tr>
+            <tr>
+               <th>Berat Badan</th>
+               <td>
+               	<input type="text" name="mhs[mhs_berat_badan]" value="{MHS_BERAT_BADAN}" size="3" maxLength="3" notab="2" /> kg           
+               </td>
+            </tr>
+            <tr>
+               <th>Kondisi Buta Warna</th>
+               <td>
+               	<input type="radio" name="mhs[mhs_buta_warna]" value="1" {BUTA_WARNA_CHECKED2}><label>&nbsp;Ya</label>
+						<input type="radio" name="mhs[mhs_buta_warna]" value="0" {BUTA_WARNA_CHECKED1}><label>&nbsp;Tidak</label>           
+               </td>
+            </tr>
+            <tr>
+               <th>Memakai Kacamata</th>
+               <td>
+						<input type="radio" name="mhs[mhs_kacamata]" value="1" {KACAMATA_CHECKED2}><label>&nbsp;Ya</label>
+						<input type="radio" name="mhs[mhs_kacamata]" value="0" {KACAMATA_CHECKED1}><label>&nbsp;Tidak</label>               	           
+               </td>
+            </tr>
+            <tr>
+               <th>Kondisi Gigi</th>
+               <td>
+               	<input type="radio" name="mhs[mhs_kondisi_gigi]" value="1" {KONDISI_GIGI_CHECKED1}><label>&nbsp;Lengkap</label>
+						<input type="radio" name="mhs[mhs_kondisi_gigi]" value="0" {KONDISI_GIGI_CHECKED2}><label>&nbsp;Tidak Lengkap</label>	           
+               </td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2">Kewarganegaraan</th>
+            </tr>
+            <tr>
+               <th >Agama</th>
+               <td>
+					<select name="mhs[agama]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_agama" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>         
+            <tr>
+               <th >Status Nikah</th>
+               <td>
+					<select name="mhs[status_nikah]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_status_nikah" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th >Kewarganegaraan</th>
+               <td>
+					<select name="mhs[warga_negara]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_wn" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>     
+            <tr>
+               <th >Status Rumah</th>
+               <td>
+					<select name="mhs[status_rumah]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_status_rumah" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th>Pilih Propinsi Tempat Tinggal</th>
+               <td>
+					<select name="mhs[propinsi_tinggal]" id="tinggal" onchange="propinsiChange(this);">
+						<option value="">-- PILIH PROPINSI  --</option>
+						<!-- patTemplate:tmpl name="data_propinsi_tinggal" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr> 
+            <tr>
+               <th>Pilih Kota Tempat Tinggal</th>
+               <td>
+                  <div id="kota_tinggal">
+					<select name="mhs[kota_tinggal]">
+						<option value="">-- PILIH KOTA  --</option>
+						<!-- patTemplate:tmpl name="data_kota_tinggal" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+                  </div>
+                  <input type="hidden" value="{MHS_KOTA_TINGGAL}" id="hidden_kota_tinggal" name="mhs[mhs_kota_tinggal]" />
+               </td>
+            </tr>
+             <tr>
+               <th>Alamat</th>
+               <td>
+                  <Textarea name="mhs[mhs_alamat]" cols="50" rows="" >{MHS_ALAMAT}</textarea>
+                  <p><font color="green">maksimal 50 karakter, gunakan spasi untuk memisahkan tiap kata</font></p>
+               </td>
+            </tr>
+            <tr>
+               <th>Kelurahan</th>
+               <td>
+                  <input type="text" name="mhs[mhs_kelurahan]" size="30" maxlength="50" value="{MHS_KELURAHAN}" notab="2" />
+               </td>
+            </tr>
+            <tr>
+               <th>Kecamatan</th>
+               <td>
+                  <input type="text" name="mhs[mhs_kecamatan]" size="30" maxlength="50" value="{MHS_KECAMATAN}" notab="2" />
+               </td>
+            </tr>
+            <tr>
+               <th >Kode Pos</th>
+               <td>
+                  <input type="text" name="mhs[mhs_kode_pos]" value="{MHS_KODE_POS}" size="5" maxLength="5" notab="2" />
+                  <font color="green">misal: 31711, jika belum tahu, isi dengan 0</font>
+               </td>
+            </tr>
+            <tr>
+               <th >Negara</th>
+               <td>
+					<select name="mhs[negara]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_negara" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th >Nomor Telepon/ Hp</th>
+               <td>
+                  <input type="text" name="mhs[mhs_no_telp]" value="{MHS_NO_TELP}" size="20" maxLength="50" notab="2" /><BR>
+                  <font color="green">isi dengan angkanya saja, misal: 0734451418 / 0814447568</font>
+               </td>
+            </tr>
+            <tr>
+               <th >Email</th>
+               <td>
+                  <input type="text" name="mhs[mhs_email]" value="{MHS_EMAIL}" size="30" maxLength="30" notab="2" /><BR>
+                  <font color="green">misal: <i>email_contoh@contoh.com</i></font>
+               </td>
+            </tr>
+            <tr class="subhead">
+               <th colspan="2">Lain-lain</th>
+            </tr>
+             <tr>
+               <th>Hubungan Biaya</th>
+               <td>
+					<select name="mhs[hubungan_biaya]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_hubungan_biaya" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th>Sumber Dana</th>
+               <td>
+					<select name="mhs[sumber_dana]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_sumber_dana" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            </tr>
+            <tr>
+               <th >Sumber Dana Beasiswa</th>
+               <td>
+                  <input name="mhs_tgl_bayar_ipp_day" type="hidden" value=""  />
+                  <input name="mhs_tgl_bayar_ipp_mon" type="hidden" value=""  />
+                  <input name="mhs_tgl_bayar_ipp_year" type="hidden" value=""  />
+                  <input name="mhs[ipp_kwitansi]" value="" type="hidden" />
+                  <input type="text" name="mhs[mhs_beasiswa]" value="{MHS_BEASISWA}" size="30" maxLength="255" notab="2" /><BR>
+               </td>
+            </tr>
+            <tr >
+               <th >Jumlah Saudara</th>
+               <td>
+                  
+                   <input type="text" id="jml_lk" size="2"  name="mhs[saudara_laki]" onchange="jumlahSdr();" value="{MHS_JUMLAH_SDR_LK}" />&nbsp;Laki-Laki&nbsp;&nbsp;
+                   <input type="text" id="jml_pr" size="2"  name="mhs[saudara_perempuan]"  onchange="jumlahSdr();" value="{MHS_JUMLAH_SDR_PR}" />&nbsp;Perempuan
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" id="jml_sdr" size="2" readonly name="mhs[mhs_jumlah_sdr]" value="{MHS_JUMLAH_SDR}"  />
+                </td>
+            </tr>     
+            <tr id="status_kerja">
+               <th>Status Bekerja</th>
+               <td>
+                  <input id="is_kerja_y" type="radio" name="mhs[mhs_is_kerja]" onclick="jenisPekerjaan(this.value);" value="1" ><label for="is_kerja_y">&nbsp;Ya</label>
+                  <input id="is_kerja_t" type="radio" name="mhs[mhs_is_kerja]" onclick="jenisPekerjaan(this.value);" value="0" ><label for="is_kerja_t">&nbsp;Tidak</label>
+               </td>
+            </tr>         
+            <tr>
+               <th >Jenis Pekerjaan</th>
+               <td >
+					<select name="mhs[jenis_pekerjaan]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_jenis_pekerjaan" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr>
+            <tr>
+               <th >Intitusi/Kantor</th>
+               <td>
+                  <input type="text" name="mhs[mhs_tempat_kerja]" value="{MHS_TEMPAT_KERJA}" size="30" maxLength="255" notab="2" /><BR>
+               </td>
+            </tr>
+            <tr>
+               <th>Alamat Intitusi/Kantor</th>
+               <td>
+                  <Textarea name="mhs[mhs_alamat_kantor]" cols="50" rows="" >{MHS_KANTOR}</textarea>
+                  <p><font color="green">maksimal 50 karakter, gunakan spasi untuk memisahkan tiap kata</font></p>
+               </td>
+            </tr>
+            
+            <tr>
+               <th >No. Asuransi</th>
+               <td>
+                  <input type="text" name="mhs[mhs_no_askes]" value="{MHS_NO_ASKES}" size="20" maxLength="20" notab="2" /><BR>
+               </td>
+            </tr>
+            <tr >
+               <th >Hobi</th>
+               <td>
+                   <input type="text" size="30" maxlength="50"  name="mhs[mhs_hobi]" value="{MHS_HOBY}"  />
+               </td>
+            </tr> 
+            <tr>
+               <th>Tahu Kampus ini dari</th>
+               <td>
+					<select name="mhs[mhs_sumber_info]">
+						<option value=""></option>
+						<!-- patTemplate:tmpl name="data_sumber_info" -->
+						<option value="{VALUE}" {SELECTED}>{LABEL}</option>
+						<!-- /patTemplate:tmpl -->
+					</select>
+               </td>
+            </tr> 
+            <tr class="subhead">
+               <th colspan="2">Pengalaman Organisasi</th>
+            </tr>
+            <tr>
+               <td colspan="2">
+                  <div class="toolbar" align="right"> 
+                     <input type="button" class ="button" id="tambahPeng" value="Tambah" onclick="popupPengOrg();" title="Tambah Pengalaman Organisasi">
+                  </div>
+				  <table class="table-form" style="display:none" id="pengorgTable">
+					  <tr>
+							<th colspan="2">Tambah Pengalaman Organisasi</th>
+					  </tr>
+					  <tr>
+						  <td width="75">Status Pengalaman Organisasi</td>
+						  <td><label><input type="radio" name="status_pengalaman" id="status_pengalaman_1" value="Sekolah" checked> Di Sekolah</label> <label><input type="radio" name="status_pengalaman" id="status_pengalaman_2" value="Masyarakat"> Di Masyarakat</label></td>
+					  </tr>
+					  <tr>
+						  <td>Nama Pengalaman Organisasi</td>
+						  <td><input type="text" id="nama_pengalaman"></td>
+					  </tr>
+					  <tr>
+						  <td>&nbsp;</td>
+						  <td>
+						  <input class="input-disclaimer" type="button" value="tambah" onclick="tambah_entri();">
+						  <input class="input-disclaimer" type="button" value="batal" onclick="document.getElementById('pengorgTable').style.display='none';">
+						  </td>
+					  </tr>
+				  </table>
+                  <br>
+                  <table class="table-common" width="580" >
+                     <tbody>
+                        <tr>
+                           <th style="width: 5px;">No</th>
+                           <th style="width: 25px;">Aksi</th>
+                           <th style="width: 50px;">Tempat</th>
+                           <th style="width: 500px;">Pengalaman Organisasi</th>
+                        </tr>
+                     </tbody>
+                     <tbody id="peng-org">
+                            <!-- patTemplate:tmpl name="data_pengalaman" type="simplecondition" requiredVars="NO" -->
+                           <tr>
+                              <td align="center">
+                                 {NO}
+                              </td>
+                              <td >
+                                 <a href="javascript:void(null)" title="Hapus" class="links" onclick="hapus_entri(this)" />
+                                    <img src="images/button-delete.gif" alt="Hapus" />
+                                 </a>
+                              </td>
+                              <td>
+                                 {TEMPAT}
+                                 <input name="peng[{NO}][tempat]" type="hidden" value="{TEMPAT}" />
+                              </td>                              
+                              <td>
+                                 {ORGANISASI}
+                                 <input name="peng[{NO}][organisasi]" type="hidden" value="{ORGANISASI}" />
+                              </td>
+                           </tr>             
+                           <!-- /patTemplate:tmpl -->
+                     </tbody>
+                  </table>
+               </td>
+            </tr>  
+         <tr>
+            <th>&nbsp;</th>
+            <td>
+               <input class="input-disclaimer" type="submit" id="simpan" name="simpan" value="Simpan" />
+               <input class="input-disclaimer" type="button" id="kembali" name="kembali" value="Kembali" onclick="location.href='{URL_KEMBALI}'" />
+            </td>
+         </tr>
+       </table> 
+   
+   </form>
+<script language="javascript">
+var jenisPekerjaan=function(val){
+	var tr=document.getElementById('status_kerja');
+	var row=tr.parentNode.rows;
+	var i=tr.rowIndex+1;
+	var m=i+3;
+	if(val=='1'){
+		var style='';
+		document.getElementById('is_kerja_y').checked=true;
+	}else{
+		var style='none';
+		document.getElementById('is_kerja_t').checked=true;
+	}
+	do{
+		row[i].style.display=style;
+	}while(++i<m);
+};
+var jumlahSdr=function(){
+	var lk=parseInt(document.getElementById('jml_lk').value);
+	var pr=parseInt(document.getElementById('jml_pr').value);
+	document.getElementById('jml_sdr').value = lk+pr;
+};
+var propinsiChange=function(el){
+	var id='kota_'+el.id;
+	var name='mhs['+id+']';
+	var dest=document.getElementById(id);
+	var hidden=document.getElementById('hidden_'+id);
+	var pr=el.parentNode;
+	pr.appendChild(loadingBox);
+	el.disabled=true;
+	new mAjax('{URL_COMBO}',function(result){
+		dest.innerHTML=result;
+		loadingBox.parentNode.removeChild(loadingBox);
+		el.disabled=false;
+	},'e='+name+'&m=kota&p='+el.value);
+};
+var popupPengOrg=function(){
+	document.getElementById('pengorgTable').style.display='block';
+};
+var hapus_entri=function(el){
+	var tr=el.parentNode.parentNode;
+	tr.parentNode.removeChild(tr);
+};
+var tambah_entri=function(){
+	var chk=document.getElementById('status_pengalaman_1');
+	if(chk.checked)var status=chk.value;
+	else var status=document.getElementById('status_pengalaman_2').value;
+	var nama=document.getElementById('nama_pengalaman').value;
+	
+	var dst=document.getElementById('peng-org');
+	var no=dst.rows.length;
+	var buff=['<tr>'];
+	buff[buff.length]='<td align="center">'+(no+1)+'</td>';
+	buff[buff.length]='<td>';
+	buff[buff.length]='<a href="javascript:void(null)" title="Hapus" class="links" onclick="hapus_entri(this)" />';
+	buff[buff.length]='<img src="images/button-delete.gif" alt="Hapus" />';
+	buff[buff.length]='</a></td>';
+	buff[buff.length]='<td>'+status;
+	buff[buff.length]='<input name="peng['+no+'][tempat]" type="hidden" value="'+status+'" /></td>';
+	buff[buff.length]='<td>'+nama;
+	buff[buff.length]='<input name="peng['+no+'][organisasi]" type="hidden" value="'+nama+'" /></td>';
+	buff[buff.length]='</td></tr>';
+	dst.innerHTML += buff.join('');
+	
+	document.getElementById('pengorgTable').style.display='none';
+	document.getElementById('nama_pengalaman').value='';
+};
+
+window.onload=function(){
+	loadingBox=document.createElement('img');
+	loadingBox.src='images/ajax-loader.gif';
+	loadingBox.width='48';
+	loadingBox.height='16';
+	jenisPekerjaan({MHS_STATUS_KERJA});
+};
+var loadingBox;
+</script>
+	<!-- /patTemplate:tmpl -->
+<!-- /patTemplate:tmpl -->

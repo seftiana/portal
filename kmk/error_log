@@ -1,0 +1,4 @@
+[30-Jul-2021 04:15:49 UTC] PHP Fatal error:  Call to a member function gSQLWhere() on a non-object in /home/dwiatmo1/public_html/star2/kmk/include/t_user_variables.php on line 18
+[30-Jul-2021 04:15:54 UTC] PHP Fatal error:  Call to a member function gSQLWhere() on a non-object in /home/dwiatmo1/public_html/star2/kmk/include/t_user_variables.php on line 18
+[30-Jul-2021 05:48:54 UTC] PHP Fatal error:  Call to a member function gSQLWhere() on a non-object in /home/dwiatmo1/public_html/star2/kmk/include/t_user_variables.php on line 18
+[30-Jul-2021 06:10:12 UTC] PHP Fatal error:  Call to a member function gSQLWhere() on a non-object in /home/dwiatmo1/public_html/star2/kmk/include/t_user_variables.php on line 18

@@ -1,0 +1,52 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2> {APPLICATION_MODULE} </h2>
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="form_update_announcement" type="condition" conditionvar="IS_EMPTY" --> 
+      <!-- patTemplate:sub condition="YES" -->
+      
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+         
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->      
+         <form class="form-common" method="POST" action="{URL_PROCESS}" enctype="multipart/form-data">
+			<input type="hidden" name="cari" value="{CARI}" >
+            <table class="table-form" width="100%">
+               <tr>
+                  <th colspan="2"><strong>Form Komentar Pembimbing</strong></th>
+               </tr>
+               <tr>
+					<th>Nim / Nama</th>
+					<td>{ANNOUNCEMENT_NIM} / {ANNOUNCEMENT_NAMA}
+					</td>
+               </tr>
+               <tr>
+					<th>Tanggal</th>
+					<td>{ANNOUNCEMENT_TANGGAL}
+						<input type="hidden" name="data[Tanggal]" value="{ANNOUNCEMENT_TANGGAL}" >
+						<input type="hidden" name="data[IDUser]" value="{ANNOUNCEMENT_IDUSER}" >
+					</td>
+               </tr>
+               <tr>
+                  <th>Kegiatan</th>
+                  <td>{ANNOUNCEMENT_KEGIATAN}</td>
+               </tr>
+               <tr>
+                  <th>Komentar</th>
+                  <td><textarea name="data[Komentar]" cols="60" rows="6" >{ANNOUNCEMENT_KOMENTAR}</textarea></td>
+               </tr>
+         
+               <tr>
+                  <td colspan="2">
+                     <input type="hidden" name="act" value="DoUpdateKomentarMbkm">
+                     <input type="hidden" name="data[AnnouncementId]" value="{ANNOUNCEMENT_ID}">
+                     <input class="input-disclaimer btn btn-info" type="submit" name="btnUpd" value="Simpan">
+                     <input class="input-disclaimer btn btn-info" type="submit" name="btnCancel" value="Batal">
+                  </td>
+               </tr>
+            </table>
+         </form>
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl --> <!-- end of message-->
+   
+<!-- /patTemplate:tmpl --> <!-- end of content-->

@@ -1,0 +1,129 @@
+<!-- patTemplate:tmpl name="content" -->
+   <h2>{JUDUL}</h2>
+   <br />
+   <h5>Keterangan :</h5>
+   <p>
+   <!-- patTemplate:tmpl name="keterangan_halaman" type="condition" conditionvar="TYPE" -->
+      <!-- patTemplate:sub condition="MATAKULIAH" -->
+         Matakuliah Diampu berisiss daftar matakuliah yang diampu oleh dosen pengguna. Dosen dapat melihat matakuliah yang ditawarkan oleh program studi lain dengan memilih Sistem Informasi Akademik yang bersesuaian. 
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NILAI" -->
+         Pengelolaan Nilai dapat digunakan untuk memasukkan nilai mahasiswa secara on-line. Dosen dapat memberikan nilai sesuai dengan matakuliah yang diampunya. Untuk memasukkan nilai matakuliah yang ditawarkan oleh program studi lain dapat dilakukan dengan memilih Sistem Informasi Akademik yang bersesuaian.
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   </p><br />   
+   
+   <!-- patTemplate:link name="error_box" src="error_box" / -->
+   
+   <!-- patTemplate:tmpl name="option_form" visibility="visible" -->
+   <form class="form-common" method="POST" action="{URL_VIEW}" name="frmUser">      
+      <table class="table-form" width="100%">
+         <tr>
+            <th width="200">Sistem Informasi Akademik</th>
+            <td width="100">
+               <select name='sia' {ONCHANGE_SIA_ACTION}>
+                  <!-- patTemplate:tmpl name="unit_list" -->
+                     <option value="{SIA_ADDR}" {SIA_SELECTED}> {SIA_NAMA} </option>
+                  <!-- /patTemplate:tmpl -->
+               </select>
+            </td>            
+         </tr>
+         <!-- patTemplate:tmpl name="view_semester_list" visibility="visible" -->
+         <input name="action" type="hidden" value="viewMatKulDiampuFromNilai" />
+         <tr>
+            <th width="100">Semester</th>
+            <td width="100">
+               <select name="lstSemester">
+               <!-- patTemplate:tmpl name="semester_list" -->
+                  <option value="{SMT_ID}" {SMT_SELECTED}> {SMT_NAME} </option>
+               <!-- /patTemplate:tmpl -->
+            </select>
+            </td>            
+         </tr>
+         <!-- /patTemplate:tmpl -->
+         <tr>
+            <!-- patTemplate:tmpl name="button_lihat" visibility="visible" -->
+            <td colspan="3"><input class="input-disclaimer" name="btnLihat" type="submit" value="Lihat" />
+				<input class="input-disclaimer" name="form" type="hidden" value="{VIEW_BY}" />
+				</td>
+            <!-- /patTemplate:tmpl -->
+         </tr>
+      </table>
+   </form>
+   <br />
+   <!-- /patTemplate:tmpl -->
+   
+      
+   <!-- patTemplate:tmpl name="data_dosen" visibility="hidden" -->
+      <table width="100%" class="table-list">
+         <tr> 
+            <th width="150">Nama</th>
+            <td>{DOSEN_FULLNAME}</td>
+         </tr>
+         <tr> 
+            <th>{LABEL_NIP}</th>
+            <td>{DOSEN_NO_ID}</td>
+         </tr>
+         <tr> 
+            <th>Program Studi</th>
+            <td>{DOSEN_INFO}</td>
+         </tr>
+         <tr> 
+            <th>Semester</th>
+            <td>{DOSEN_SEM}</td>
+         </tr>
+      </table>
+   <!-- /patTemplate:tmpl -->
+   
+   <!-- patTemplate:tmpl name="data_matakuliah_diampu" type="condition" conditionvar="MATAKULIAH_DIAMPU_AVAILABLE" visibility="hidden" -->      
+      <!-- patTemplate:sub condition="YES" -->                     
+         <table class="table-common" width="100%">
+         <tr>
+            <th rowspan="2">No.</th>
+            <th rowspan="2">Matakuliah</th>
+            <th rowspan="2">Kelas</th>
+            <th colspan="3">SKS</th>
+			<th rowspan="2">Aksi</th>
+         </tr>
+         <tr>
+            <th>Kuliah</th>
+            <th>Praktek</th>
+            <th>Total</th>
+         </tr>
+         <!-- patTemplate:tmpl name="data_matakuliah_diampu_item" type="condition" conditionvar="ODDEVEN" -->
+            <!-- patTemplate:sub condition="ODD" -->
+               <tr>
+                  <td width="5%" align="center">{MK_DIAMPU_NUMBER}</td>
+                  <td width="56%">{MK_DIAMPU_MATAKULIAH}</td>
+                  <td width="15%"><a href="{MK_DIAMPU_URLDETAIL}">{MK_DIAMPU_KELAS}</a></td>
+                  <td width="8%" align="center">{MK_DIAMPU_JUMLAH_SKS_TEORI}</td>
+                  <td width="8%" align="center">{MK_DIAMPU_JUMLAH_SKS_PRAKTIKUM}</td>
+                  <td width="8%" align="center">{MK_DIAMPU_JUMLAH_SKS}</td>
+				  <td class="table-common-links">
+					<a href="{MK_DIAMPU_URL_PRESENSI}">Presensi</a>
+				  </td>
+               </tr>
+            <!-- /patTemplate:sub -->
+            <!-- patTemplate:sub condition="EVEN" -->
+               <tr class="table-common-even">
+                  <td width="5%" align="center">{MK_DIAMPU_NUMBER}</td>
+                  <td width="56%">{MK_DIAMPU_MATAKULIAH}</td>
+                  <td width="15%"><a href="{MK_DIAMPU_URLDETAIL}">{MK_DIAMPU_KELAS}</a></td>
+                  <td width="8%" align="center">{MK_DIAMPU_JUMLAH_SKS_TEORI}</td>
+                  <td width="8%" align="center">{MK_DIAMPU_JUMLAH_SKS_PRAKTIKUM}</td>
+                  <td width="8%" align="center">{MK_DIAMPU_JUMLAH_SKS}</td>
+				  <td class="table-common-links">
+					<a href="{MK_DIAMPU_URL_PRESENSI}">Presensi</a>
+				  </td>
+               </tr>
+            <!-- /patTemplate:sub -->
+         <!-- /patTemplate:tmpl -->
+      </table>
+      <br/>
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl -->
+   
+<!-- /patTemplate:tmpl -->

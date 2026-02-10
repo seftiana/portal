@@ -1,0 +1,101 @@
+<!-- patTemplate:tmpl name="content" -->
+<style type="text/css">
+.table-common-links a {
+	padding: 0px 5px !important; 
+	margin: 0px 0px 0px 0px !important;
+}
+</style>
+
+   <h2>Daftar Bimbingan Akademik</h2>
+   <br />
+   <h5>Keterangan :</h5>
+   <p>Bimbingan Akademik berisi daftar mahasiswa yang merupakan mahasiswa bimbingan dari dosen pengguna. Dari menu ini dosen dapat melihat kartu rencana studi (KRS), kartu hasil studi (KHS), <!--transkrip, kartu kemajuan mahasiswa (KKM),--> riwayat nilai, serta profil mahasiswa. 
+   </p> <br />
+
+<!-- patTemplate:tmpl name="unit" visibility="hidden" -->
+   <form class="form-common" method="POST" action="{URL_VIEW}" name="frmUser">
+      <table class="table-form" width="100%">
+         <tr>
+            <th width="200">Sistem Informasi Akademik</th>
+            <td width="100">
+               <select name='sia'>
+                  <!-- patTemplate:tmpl name="unit_list" -->
+                     <option value="{SIA_ADDR}" {SIA_SELECTED}> {SIA_NAMA} </option>
+                  <!-- /patTemplate:tmpl -->
+               </select>
+            </td>
+            <td><input class="input-disclaimer" name="btnLihat" type="submit" value="Lihat" /></td>
+         </tr>
+      </table>
+   </form>
+   <br />
+   <!-- /patTemplate:tmpl -->
+
+<!-- patTemplate:link name="error_box" src="error_box" / -->
+
+<!-- patTemplate:tmpl name="keterangan" visibility="hidden" -->
+   <table width="100%" class="table-list">
+      <tr>
+         <th>Dosen Pembimbing</th>
+         <td>{DOSEN_PEMBIMBING}</td>
+      </tr>
+   </table>
+<!-- /patTemplate:tmpl -->
+
+   <!-- patTemplate:tmpl name="bimbingan" type="condition" conditionvar="STUDENT_AVAILABLE" -->
+      <!-- patTemplate:sub condition="YES" -->
+         <table class="table-common" width="100%">
+         <tr>
+            <th width="3%">No</th>
+            <th width="15%">{LABEL_NIM}</th>
+            <th width="29%">Nama</th>
+            <th width="25%">Program Studi</th>
+            <th width="28%">Lihat</th>
+            <th width="25%">Status KRS</th>
+         </tr>
+            <!-- patTemplate:tmpl name="bimbingan_item" type="condition" conditionvar="ODDEVEN" -->
+               <!-- patTemplate:sub condition="ODD" -->
+                  <tr>
+                     <td align="center">{BIMBINGAN_NUMBER}</td>
+                     <td><a href="{BIMBINGAN_URL_PROFIL}">{BIMBINGAN_ID}</a></td>
+                     <td>{BIMBINGAN_NAMA}</td>
+                     <td>{BIMBINGAN_PROGRAM_STUDI}</td>
+                     <td class="table-common-links"><a href="{BIMBINGAN_URL_KRS}">KRS</a>
+                         <a href="{BIMBINGAN_URL_KHS}">KHS</a>
+                         <a href="{BIMBINGAN_URL_TRANSKRIP}">Transkrip</a><br>
+                         <!--a href="{BIMBINGAN_URL_KKM}">KKM</a-->
+                         <a href="{BIMBINGAN_URL_RIWAYAT_NILAI}">Riwayat Nilai</a></td>
+                     <td {BIMBINGAN_STATUS_KRS_STYLE}>{BIMBINGAN_STATUS_KRS}</td>
+                  </tr>
+               <!-- /patTemplate:sub -->
+               <!-- patTemplate:sub condition="EVEN" -->
+                  <tr class="table-common-even">
+                     <td align="center">{BIMBINGAN_NUMBER}</td>
+                     <td><a href="{BIMBINGAN_URL_PROFIL}">{BIMBINGAN_ID}</a></td>
+                     <td>{BIMBINGAN_NAMA}</td>
+                     <td>{BIMBINGAN_PROGRAM_STUDI}</td>
+                     <td class="table-common-links"><a href="{BIMBINGAN_URL_KRS}">KRS</a>
+                         <a href="{BIMBINGAN_URL_KHS}">KHS</a>
+                         <a href="{BIMBINGAN_URL_TRANSKRIP}">Transkrip</a><br>
+                         <!--a href="{BIMBINGAN_URL_KKM}">KKM</a-->
+                         <a href="{BIMBINGAN_URL_RIWAYAT_NILAI}">Riwayat Nilai</a></td>
+                     <td {BIMBINGAN_STATUS_KRS_STYLE}>{BIMBINGAN_STATUS_KRS}</td>
+                  </tr>
+               <!-- /patTemplate:sub -->
+            <!-- /patTemplate:tmpl -->
+         </table>
+         <div class="petunjuk-area">
+            <h4>Petunjuk:</h4>
+            <ul>
+               <li>Untuk melihat profil mahasiswa klik field {LABEL_NIM}.</li>
+               <li>Status KRS adalah status KRS pada semester aktif.</li>
+               <!--li>KKM adalah Kartu Kemajuan Mahasiswa</li-->
+            </ul>
+         </div>
+      <!-- /patTemplate:sub -->
+      <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+      <!-- /patTemplate:sub -->
+   <!-- /patTemplate:tmpl --> <!-- end of bimbingan -->
+   <br/><br/>
+<!-- /patTemplate:tmpl -->

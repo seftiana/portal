@@ -1,0 +1,243 @@
+/* CSS Document */
+/* created by PT. Gamatechno Indonesia 2006/01 */
+
+#common {
+	font-family: 'Open Sans', sans-serif;
+}
+.bg-login {
+	background: rgb(0,70,114);
+    background: linear-gradient(0deg, rgba(0,70,114,1) 0%, rgba(0,132,216,0.9163866230085784) 35%);
+}
+.bg-main-green {
+	background-color: #BCD420;
+  }
+.dark-blue {
+	background-color: #004672;
+}
+
+#page-popup {
+	background-image: url('../images/bg-main-popup.gif');
+	background-position: left top;
+	background-repeat: repeat-y;
+	width: 470px;
+	margin: 0px 0px 0px 0px;
+	padding: 10px 10px 10px 20px;
+}
+
+/*#page {
+	
+	margin: 0px auto 0px auto;
+	border-radius: 8px;
+	-webkit-box-shadow: 0px 0px 65px -10px rgba(230,230,230,1);
+	-moz-box-shadow: 0px 0px 65px -10px rgba(230,230,230,1);
+	box-shadow: 0px 0px 65px -10px rgba(230,230,230,1);
+}
+*/
+#header {
+	margin: 0px;
+	padding: 10px;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Raleway', sans-serif;
+}
+#header h1 {
+	color: white;
+	font-weight: 700;
+}
+
+.logo {
+	float: left;
+	margin:8px 10px 10px 10px;
+}
+
+#header-disclaimer {
+	background-color: #FFFFFF;
+	background-image: url('../images/header-portal-UGM.gif');
+	background-position: left top;
+	background-repeat: no-repeat;
+	width: 754px;
+	height: 55px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 10px 0px;
+}
+
+#main-content {
+	background-color:#ffffff;
+	clear: both;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#main-content-white {
+	margin: 0px 0px 0px 6px;
+	padding: 10px 0px 10px 0px;
+}
+
+#main-content-white h3 {
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+	padding: 8px 0px 0px 15px;
+	font-weight: bold;
+}
+
+#footer {
+	color: #FFFFFF;	
+	text-align: left;
+	margin: 0px 0px 10px 15px ;
+	padding: 0px 0px 0px 0px;
+	font-size: 0.8em;
+}
+
+#footer p {
+	margin: 0px 0px 0px 0px ;
+	padding: 20px;
+	font-size:1em;
+	text-align:center;
+}
+
+#ffhack {
+	clear: both;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.pageBar {
+	clear: both;
+	width: 527px;
+	height: 30px;
+	margin: 0px 0px 0px 0px;
+}
+
+.pageInfo {
+	float: left;
+	color: #555;	
+	font-size: 8pt;
+	padding: 10px 0px 10px 10px;
+}
+
+.pageInfo b {
+	font-weight: bold;
+	color: #003366;
+	padding: 0px 2px;
+}
+
+.pageNav {
+	float: right;	
+	font-size: 8pt;
+	width: 130px;
+}
+
+.pageNav div {
+	padding: 6px 8px;
+	margin: 4px 0px 1px 2px;
+	float: left;
+	color: #aaa;
+}
+
+.pageNav a {
+	border: #CDDCC8 1px solid;
+	padding: 4px 6px;
+	text-decoration: none;
+	margin: 4px 0px 1px 3px;
+	display: block;
+	float: left;
+	color: #003366;
+}
+
+.pageNav a:hover {
+	text-decoration: none;
+	background-image: url('../images/pageNav-button-bg.gif');
+	background-repeat: repeat-x;
+	padding: 3px 5px;
+	border: #afcfed 2px solid;
+	border-top: #fffef5 2px solid;
+	border-left: #fffef5 2px solid;
+}
+
+.pageNav a:active {
+	text-decoration: none;
+	padding: 5px 5px 3px 7px;
+	border: #afcfed 2px solid;
+	border-bottom: #fffef5 2px solid;
+	border-right: #fffef5 2px solid;
+}
+
+.pageNav img {
+	border: none;
+}
+
+.left {
+	float: left !important;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.right {
+	float: right !important;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.text-left {
+	text-align: left !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+.footer-nav {
+   color: #FFCC33 !important;
+   float: right;
+   text-align: right;
+   margin: -25px 0px 0px 0px;
+   padding: 0px 30px 0px 0px;
+}
+
+.footer-nav a {
+   color: #FFCC33 !important;
+   font-weight: normal !important;
+   margin: 0px 2px 0px 2px;
+   padding: 0px 0px 0px 0px;
+}
+
+.footer-nav ul {
+   margin: 0px 0px 0px 0px;
+   padding: 0px 0px 0px 0px;
+}
+
+.footer-nav li {
+   display: inline;
+   margin: 0px 0px 0px 0px;
+   padding: 0px 0px 0px 0px;
+}
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+
+    color: #555;
+    text-decoration: none;
+}
+.popup {
+	z-index:998;top: 25%;left: 35%; margin-top: -50px;
+}
+@media print {
+ a[href]::after
+  { 
+  	content: none !important;
+  }
+ }
+@media only screen and (max-width: 990px) {
+	#header h1 {
+		 font-size: 1.5rem;
+		 font-weight: bold;
+	 }
+	 .popup {
+		z-index:998;		
+		top: 25%;
+		left: 5%; 
+		margin-top: -50px;
+	}
+}

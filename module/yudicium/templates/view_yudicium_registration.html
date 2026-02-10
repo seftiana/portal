@@ -1,0 +1,65 @@
+<!-- patTemplate:tmpl name="content" -->
+<h2>Pendaftaran Yudisium</h2>
+   <br />
+   <h5>Keterangan :</h5>
+   <p>Pendaftaran Yudisium berfungsi untuk melakukan pendaftaran yudisium bagi mahasiswa yang telah menyelesaikan studinya.
+           Setelah melakukan pendaftaran, mahasiswa diwajibkan menghubungi tata usaha untuk menyerahkan berkas-berkas yang diperlukan.
+   </p><br />
+
+<!-- patTemplate:link name="error_box" src="error_box" / -->
+
+<!-- patTemplate:tmpl name="profil" -->
+      <table width="100%" class="table-list">
+            <tr  width="150">
+               <th>{LABEL_NIM}</th>
+               <td>{YUDICIUM_NIM}</td>
+            </tr>
+            <tr>
+               <th>Nama</th>
+               <td>{YUDICIUM_NAMA}</td>
+            </tr>
+            <tr>
+               <th>Program Studi</th>
+               <td>{YUDICIUM_PS}</td>
+            </tr>
+            <tr>
+               <th>Jumlah SKS</th>
+               <td>{YUDICIUM_SKS}</td>
+            </tr>
+            <tr>
+               <th>IPK</th>
+               <td>{YUDICIUM_IPK}</td>
+            </tr>
+      </table>
+<!-- /patTemplate:tmpl -->
+
+<br />
+<!-- patTemplate:tmpl name="syarat_judul" visibility="hidden" -->
+<h4>Syarat Yudisium</h4>
+<!-- /patTemplate:tmpl -->
+
+<!-- patTemplate:tmpl name="syarat" type="condition" conditionvar="SYARAT_AVAILABLE" -->
+   <!-- patTemplate:sub condition="YES" -->
+   <table width="100%" class="table-list">
+	 <!-- patTemplate:tmpl name="list_sayarat" -->
+      <tr>
+      <td width="3%" align="center">{SYARAT_NUMBER}</td>
+      <td width="25%">{SYARAT_SYARAT}</td>
+	  <td width="50%">-->&nbsp;&nbsp;&nbsp;{SYARAT_KETERANGAN}</td>
+      </tr>
+	  <!-- /patTemplate:tmpl -->
+   </table>
+ <!-- /patTemplate:sub -->
+    <!-- patTemplate:sub condition="NO" -->
+         <!-- patTemplate:link name="empty_box" src="empty_box" / -->
+   <!-- /patTemplate:sub -->
+<!-- /patTemplate:tmpl -->
+<br />
+
+   <form method="POST" action="{URL_DAFTAR}" name="frmDaftar" >
+      <!-- patTemplate:tmpl name="btn_daftar" visibility="hidden" -->
+         <input class="input-disclaimer" type="submit" name="btnDaftar" value="Daftar">
+      <!-- /patTemplate:tmpl -->
+   </form>
+
+<!-- /patTemplate:tmpl -->
